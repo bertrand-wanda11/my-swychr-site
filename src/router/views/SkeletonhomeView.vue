@@ -946,7 +946,6 @@ onUnmounted(() => {
 }
 
 
-
 .smart {
   margin-bottom: 0;
   color: #ffffff;
@@ -956,7 +955,7 @@ onUnmounted(() => {
   font-weight: 600;
   line-height: 95%;
   padding-top: 0;
-  margin-right: 1.125vw;
+
 }
 
 .maths {
