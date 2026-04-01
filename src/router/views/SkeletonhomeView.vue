@@ -954,7 +954,7 @@ onUnmounted(() => {
   font-weight: 600;
   line-height: 95%;
   padding-top: 0;
-  width:15rem;
+  width:18rem;
 
 }
 
