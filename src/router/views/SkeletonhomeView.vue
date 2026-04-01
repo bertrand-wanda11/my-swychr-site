@@ -931,20 +931,19 @@ onUnmounted(() => {
 }
 
 .inside1 {
-  padding-top: 4rem; 
+  padding-top: 4rem;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  width: 90vw;
   margin-top: 0;
-  margin-right: 4.375vw; 
-  flex-grow: 1;
-  display: flex;
-  width: 90%;
+  margin-right: 4.375vw;
 }
 
 .tech {
   text-align: justify;
   line-height: 1;
-  margin-right: 5.81vw; 
+  margin-right: 3.81vw; 
 }
 
 .smart {
