@@ -942,7 +942,7 @@ onUnmounted(() => {
 .tech {
   text-align: justify;
   line-height: 1;
-  margin-right: 1.81vw;
+
 }
 
 .smart {
@@ -952,10 +952,9 @@ onUnmounted(() => {
   font-size: 3.2625rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 120%;
+  line-height:80%;
   padding-top: 0;
-  width:33rem;
-
+  width:30rem;
 }
 
 .maths {
