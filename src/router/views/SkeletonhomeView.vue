@@ -49,7 +49,7 @@
     
 <div class="inside1">
      <div class="tech">
-<p class="smart">The Future of Global <br> Payments Starts Here.</p>
+<p class="smart">The Future of Global Payments Starts Here.</p>
 <p class="maths">
   SwyChr connects people and businesses with seamless <br>
   payments, digital wallets and cross-border financial
