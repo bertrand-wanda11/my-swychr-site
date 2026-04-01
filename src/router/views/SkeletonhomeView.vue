@@ -919,529 +919,141 @@ onUnmounted(() => {
 .section1 {
   text-align: center;
   margin: 0 auto;
-  padding: 0.625rem 0;
+  padding: 1rem 0;
   background: url('@/assets/images/kirak.png');
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  aspect-ratio: 16 / 9;
+  background-size: cover; /* Changed from 100% auto to fill the space */
+  background-position: center;
   width: 100%;
-  height: auto;
-  image-rendering: -webkit-optimize-contrast;
-}
-
-.inside1 {
-  padding-top: 10rem; 
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 90vw;
-  margin-top: 0;
-  margin-right: 4.375vw; 
-}
-
-.tech {
-  text-align: justify;
-  line-height: 1;
-  margin-right: 7.81vw; 
-}
-
-.smart {
-  margin-bottom: 0;
-  color: #ffffff;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 3.5625rem; 
-  font-style: normal;
-  font-weight: 600;
-  line-height: 95%;
-  padding-top: 0;
-  margin-right: 3.125vw;
-}
-
-.maths {
-  color: #ffffff;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 136%;
-  letter-spacing: 0.075rem; 
-  margin-top: 0;
-}
-
-.proton {
-  display: inline-flex;
-  align-items: center;
-  margin-top: 0.75rem;
-}
-
-.seam {
-  margin-top: 1.25rem;
-  margin-left: 4.18vw; 
-}
-
-.stavo {
-  border: none;
-  background: #fff;
-  width: 10rem;
-  align-items: center;
-  justify-content: center;
-  height: 2.5rem; 
-  text-align: center;
+  min-height: 100vh; /* Ensures it fills the screen on mobile */
   display: flex;
-  border-radius: 6.25rem;
-  margin-right: 6.25vw; 
-  margin-top: 0.625rem;
-}
-
-.stavo a {
-  text-decoration: none;
-  color: #000;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.1875rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 120%;
-  padding: 0 0.9375rem;
-}
-
-.steve {
-  border: none;
-  background-color: #FFF;
-  width: 13.75rem; 
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  height: 2.9375rem; 
-  text-align: center;
-  display: flex;
-  font-size: 1.1875rem;
-  border-radius: 6.25rem;
-  font-family: Figtree, Arial;
-}
-
-.steve a {
-  text-decoration: none;
-  color: #000;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 120%;
-}
-
-.obus {
-  border: none;
-  width: 13.75rem;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  height: 2.9375rem;
-  text-align: center;
-  display: flex;
-  font-size: 0.9rem;
-  font-weight: bold;
-  border-radius: 6.25rem;
-  border: 0.125rem solid #fff;
-  margin-left: 5vw; 
-}
-
-.obus a {
-  text-decoration: none;
-  color: #FFF;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 120%;
-}
-
-.Goon {
-  width: 25.625rem; 
-  height: 21.25rem; 
-  box-shadow: 0.125rem;
-  border-radius: 1.25rem;
-  display: block;
-  background: #D7D5D5;
-  backdrop-filter: blur(1.0625rem);
-  margin-top: 6.25rem;
-}
-
-.bride {
-  background-color: #FFFFFF;
-  color: #000;
-  height: 4.5rem;
-  width: 24.375rem; 
-  border-radius: 1.25rem;
-  margin-left: 0.625rem;
-  margin-top: 1.25rem;
-}
-
-.groom {
-  display: inline-flex;
-  background-color: #FFFFFF;
-  color: #000;
-  height: 4.25rem;
-  width: 24.375rem;
-  border-radius: 1.25rem;
-  margin-top: 0.625rem;
-}
-
-.amount {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  margin-right: 19.375rem;
-  color: #616161;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 120%;
-}
-
-.swiss1 {
-  display: inline-flex;
-  margin-left: 0.625rem;
-  margin-right: 0.9375rem;
-  color: #282828;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.25rem; 
-  font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
-}
-
-.mates1 {
-  height: 2.1875rem; 
-  width: 10.9375rem; 
-  background-color: #F1F0f5;
-  border-radius: 0.9375rem;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  margin-left: 5rem;
-  margin-bottom: 1.25rem;
-}
-
-.mates1 h4 {
-  margin-top: 0.3125rem;
-  margin-left: 7.5rem;
-  color: #000;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.1875rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 120%;
-}
-
-.amount1 {
-  margin-bottom: 0.3125rem;
-  margin-right: 18.75rem; 
-  color: #616161;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 120%;
-}
-
-.swiss2 {
-  display: inline-flex;
-  margin-left: 0.9375rem;
-  margin-right: 0.9375rem;
-  color: #282828;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.3125rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
-}
-
-.mates4 {
-  height: 2.1875rem;
-  width: 10.9375rem;
-  background-color: #F1F0f5;
-  border-radius: 0.9375rem;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  margin-left: 3.125rem;
-}
-
-.mates4 h4 {
-  margin-top: 0.3125rem;
-  margin-left: 4.375rem;
-  color: #000;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.1875rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 120%;
-}
-
-.demas {
-  color: #424242;
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.0625rem; 
-  font-style: normal;
-  font-weight: 500;
-  line-height: 120%;
+  flex-direction: column;
 }
 
 .numero {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 95%;
+  width: 90%;
+  max-width: 1400px; /* Prevents it from stretching too far on ultra-wide monitors */
   margin: 1.5rem auto;
-
+  gap: 1rem;
 }
 
-.food-pill-container {
-border: 1px solid #FFF;
-  border-radius: 50px;
-  height: 3.5rem;
-  padding: 0 1rem;
+.inside1 {
+  flex-grow: 1;
   display: flex;
+  flex-direction: row; /* Desktop default */
   align-items: center;
-  position: relative; 
-  overflow: visible;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
 }
 
-.nav-indicator {
-position: absolute;
-  top: -1px; 
-  height: 6px; 
-  background: #fff;
-  border-radius: 0 0 5px 5px;
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  z-index: 10;
-  width: 4px;
+.tech {
+  flex: 1;
+  text-align: left; /* Better for readability on all devices */
+  padding-right: 2rem;
 }
 
-.mannav {
- display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  position: relative; 
-  height: 100%;
+.smart {
+  font-size: clamp(1.8rem, 4vw, 3.26rem); /* Dynamically scales between 1.8rem and 3.26rem */
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.maths {
+  font-size: clamp(0.9rem, 1.5vw, 1.125rem);
+  margin-bottom: 2rem;
+}
+
+.Goon {
   width: 100%;
-  align-items: center;
+  max-width: 410px; /* Fixed max-width so it doesn't get weirdly huge */
+  height: auto;
+  padding: 1.5rem 0.5rem;
+  /* ... existing styles ... */
 }
 
-.nav-link {
-  color: white;
-  text-decoration: none;
-  padding: 0 15px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.mega-dropdown {
-  display: block; 
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
-  padding: 25px;
-  border-radius: 15px;
-  width: 520px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-  margin-top: 15px;
-  z-index: 1000;
-  font-family: 'Montserrat', sans-serif !important;
-    font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
-  font-size: 1.432rem;
-}
-
-.dropdown-arrow {
-  transition: transform 0.3s ease;
-}
-.dropdown-arrow.rotated {
-  transform: rotate(180deg);
-}
-
-
-.dropdown-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
- font-family: 'Montserrat', sans-serif;
-   font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
-}
-
-
-.company-grid {
-  display: grid;
-  grid-template-columns: 1fr !important;
-  gap: 12px; 
-}
-
-.dropdown-item {
-  display: grid;
-  grid-template-columns: 30px 1fr;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
-}
-
-.nav-icon-img {
-  width: 22px;
-  height: 22px;
-  object-fit: contain;
-}
-
-.item-text {
-  color: #333;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
-}
-
-.nav-item-wrapper:nth-child(4) .mega-dropdown {
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  width: 260px; 
-}
-
-
-.nav-item-wrapper:nth-child(4) .mega-dropdown::before {
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-
-@media (max-width: 1194px) {
-  .nav-link {
-    padding: 0 8px;
-    font-size: 0.85rem;
+@media screen and (max-width: 1180px) {
+  .inside1 {
+    gap: 3rem;
   }
-  .mega-dropdown {
-    width: 450px;
-  }
-}
-
-
-@media screen and (max-width: 1194px) {
-  .numero {
-    width: 95vw;
-    margin-left: 2.5vw;
-  }
-
+  
   .food-pill-container {
-    padding: 0 0.5rem; 
-    height: 3rem; 
-    flex-grow: 0; 
-  }
-
-  .mannav {
-    padding: 0; 
-    gap: 0; 
-  }
-
-  .mannav li a {
-    margin: 0 0.4rem; 
+    height: 3rem;
     padding: 0 0.5rem;
-    font-size: 0.9rem; 
-    white-space: nowrap; 
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 0 8px;
   }
 
   .stavo {
-    margin-left: 1rem; 
+    width: 8rem;
+    font-size: 0.9rem;
   }
 }
 
-@media (max-width: 430px) {
-  .mega-dropdown {
-    width: 90vw;
-    position: fixed; 
-    left: 5vw;
-    transform: none;
-    grid-template-columns: 1fr; 
+@media screen and (max-width: 820px) {
+  .numero {
+    flex-wrap: wrap; /* Allows logo/menu/sales to stack if needed */
+    justify-content: center;
+    gap: 1rem;
   }
 
-  .dropdown-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.mega-dropdown::before {
-  content: "";
-  position: absolute;
-  top: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 8px solid white;
-}
-
-.nav-icon-img {
-  width: 20px; 
-  height: 20px;
-  object-fit: contain;
-  display: block;
-}
-
-
-.nav-item-wrapper:nth-child(4) .mega-dropdown {
-  width: 260px; 
-}
-
-.nav-item-wrapper:nth-child(4) .dropdown-grid {
-  grid-template-columns: 1fr; 
-}
-
-
-@media (max-width: 430px) {
-  .mega-dropdown {
-    width: 95vw; 
-    padding: 15px;
-  }
-  
-  .dropdown-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .item-text {
-    white-space: normal; 
-    font-size: 0.8rem;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1180px) {
+  /* Hide the menu or move it for mobile */
   .food-pill-container {
-    padding: 0 0.5rem; 
+    order: 3; /* Moves menu below logo and sales button */
+    width: 100%;
+    justify-content: center;
+    overflow-x: auto; /* Allows swiping through nav items */
   }
 
-  .nav-link {
-    padding: 0 0.5rem;
-    font-size: 0.85rem; 
+  .inside1 {
+    flex-direction: column; /* Stack text and calculator */
+    text-align: center;
+    padding-top: 2rem;
   }
 
-  .mega-dropdown {
-    width: 440px;
-    left: 50%;
-    transform: translateX(-50%);
+  .tech {
+    text-align: center;
+    padding-right: 0;
+    margin-bottom: 3rem;
   }
+
+  .smart br, .maths br {
+    display: none; /* Removes forced line breaks on small screens */
+  }
+
+  .proton {
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .obus {
+    margin-left: 0; /* Remove the 5vw gap on mobile */
+  }
+
+  .Goon {
+    margin-top: 0;
+    margin-bottom: 4rem;
+  }
+}
+
+.bride, .groom {
+  width: 95%; /* Fits within the Goon container */
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mates1, .mates4 {
+  margin-left: auto; /* Pushes the currency amount to the right automatically */
 }
 
 .section2 {
@@ -3013,155 +2625,6 @@ line-height: 120%;
   .inside11 {
     margin-left: 0 !important;
     padding: 0 2rem !important;
-  }
-}
-
-@media screen and (max-width: 1194px) {
-  .section1 {
-    height: auto !important;
-    min-height: 100vh !important;
-    background-size: cover !important; 
-    padding-bottom: 5rem !important;
-    display: flex !important;
-    flex-direction: column !important;
-  }
-
-  .inside1 {
-    display: flex !important;
-    flex-direction: column !important; 
-    align-items: center !important;    
-    justify-content: center !important;
-    width: 100% !important;
-    padding-top: 12rem !important;   
-    margin-right: 0 !important;      
-  }
-
- 
-  .tech {
-    text-align: center !important; 
-    margin-right: 0 !important;
-    width: 90% !important;
-    max-width: 600px !important;     
-    margin-bottom: 3rem !important;    
-  }
-
-  .smart {
-    font-size: 3rem !important;       
-    margin-right: 0 !important;
-    line-height: 1.1 !important;
-  }
-
-  .maths {
-    font-size: 1.2rem !important;
-    margin-top: 1rem !important;
-    br { display: none; }             
-  }
-
-  .proton {
-    display: flex !important;
-    justify-content: center !important;
-    gap: 1.5rem !important;
-    margin-top: 2rem !important;
-    width: 100% !important;
-  }
-
-  .Goon {
-    margin-top: 0 !important;
-    margin-left: auto !important;
-    margin-right: auto !important;     
-    width: 25.625rem !important;   
-  }
-
-  .numero {
-    width: 100% !important;
-    margin-left: 0 !important;
-    padding: 1rem 2rem !important;
-    position: absolute !important;     
-  }
-}
-
-@media screen and (max-width: 1194px) {
-  .numero {
-    position: absolute !important;
-    display: flex !important;
-    flex-direction: row !important; 
-    justify-content: space-between !important; 
-    align-items: center !important;
-    width: 100% !important; 
-    padding: 1.5rem 3% !important;
-    margin: 0 !important;
-    left: 0 !important;
-  }
-
-  .seam {
-    margin: 0 !important;
-    flex-shrink: 0 !important;
-  }
-
-  .food-pill-container {
-    width: auto !important;
-    max-width: 50% !important; 
-    margin: 0 auto !important; 
-    height: 3rem !important;
-  }
-
-  .mannav li a {
-    margin: 0 0.5rem !important; 
-    font-size: 0.9rem !important;
-  }
-
-  .stavo {
-    margin: 0 !important; 
-    flex-shrink: 0 !important;
-  }
-
-  .section1 {
-    width: 100% !important;
-    overflow-x: hidden !important;
-  }
-
-  .inside1 {
-    width: 100% !important;
-    margin-right: 0 !important;
-    margin-left: 0 !important;
-    padding-top: 10rem !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-
-  .tech {
-    width: 90% !important; 
-    margin: 0 auto !important;
-    text-align: center !important;
-  }
-
-  .smart {
-    font-size: 2.8rem !important;
-    margin-right: 0 !important;
-    text-align: center !important;
-  }
-
-  .maths {
-    width: 100% !important;
-    text-align: center !important;
-  }
-
-
-  .proton {
-    width: 100% !important;
-    justify-content: center !important;
-    margin-left: 0 !important;
-    gap: 1rem !important;
-  }
-
-  .obus {
-    margin-left: 0 !important; 
-  }
-
-
-  .Goon {
-    margin: 3rem auto 0 auto !important; 
   }
 }
 
