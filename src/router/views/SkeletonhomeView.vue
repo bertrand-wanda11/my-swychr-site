@@ -917,784 +917,417 @@ onUnmounted(() => {
 
 <style>
 .section1 {
-
   text-align: center;
-
   margin: 0 auto;
-
   padding: 0.625rem 0;
-
   background: url('@/assets/images/kirak.png');
-
   background-size: 100% auto;
-
   background-repeat: no-repeat;
-
   aspect-ratio: 16 / 9;
-
   width: 100%;
-
   height: auto;
-
   image-rendering: -webkit-optimize-contrast;
-
 }
-
-
 
 .inside1 {
-
   padding-top: 4rem;
-
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
-
   width: 90vw;
-
   margin-top: 0;
-
   margin-right: 4.375vw;
-
 }
 
-
 .tech {
-
   text-align: justify;
-
   line-height: 1;
-
   margin-right: 7.81vw;
-
 }
 
 
 
 .smart {
-
   margin-bottom: 0;
-
   color: #ffffff;
-
   font-family: 'Montserrat', sans-serif;
-
   font-size: 3.2625rem;
-
   font-style: normal;
-
   font-weight: 600;
-
   line-height: 95%;
-
   padding-top: 0;
-
-  margin-right: 3.125vw;
-
+  margin-right: 1.125vw;
 }
-
-
 
 .maths {
-
   color: #ffffff;
-
   font-family: 'Montserrat', sans-serif;
-
   font-size: 1.125rem;
-
   font-style: normal;
-
   font-weight: 400;
-
   line-height: 136%;
-
   letter-spacing: 0.075rem;
-
   margin-top: 0;
-
 }
-
 
 
 .proton {
-
   display: inline-flex;
-
   align-items: center;
-
   margin-top: 0.75rem;
-
 }
-
-
 
 .seam {
-
   margin-top: 1.25rem;
-
   margin-left: 4.18vw;
-
 }
-
-
 
 .stavo {
-
   border: none;
-
   background: #fff;
-
   width: 10rem;
-
   align-items: center;
-
   justify-content: center;
-
   height: 2.5rem;
-
   text-align: center;
-
   display: flex;
-
   border-radius: 6.25rem;
-
   margin-right: 6.25vw;
-
   margin-top: 0.625rem;
-
 }
-
 
 
 .stavo a {
-
   text-decoration: none;
-
   color: #000;
-
   font-family: 'Montserrat', sans-serif;
-
   font-size: 1.1875rem;
-
   font-style: normal;
-
   font-weight: 400;
-
   line-height: 120%;
-
   padding: 0 0.9375rem;
-
 }
-
-
 
 .steve {
-
   border: none;
-
   background-color: #FFF;
-
   width: 13.75rem;
-
   align-items: center;
-
   justify-content: center;
-
   margin: 0;
-
   height: 2.9375rem;
-
   text-align: center;
-
   display: flex;
-
   font-size: 1.1875rem;
-
   border-radius: 6.25rem;
-
   font-family: Figtree, Arial;
-
 }
-
 
 
 .steve a {
-
   text-decoration: none;
-
   color: #000;
-
   font-family: 'Montserrat', sans-serif;
-
   font-size: 1.125rem;
-
   font-style: normal;
-
   font-weight: 400;
-
   line-height: 120%;
-
 }
-
 
 
 .obus {
-
   border: none;
-
   width: 13.75rem;
-
   align-items: center;
-
   justify-content: center;
-
   margin: 0;
-
   height: 2.9375rem;
-
   text-align: center;
-
   display: flex;
-
   font-size: 0.9rem;
-
   font-weight: bold;
-
   border-radius: 6.25rem;
-
   border: 0.125rem solid #fff;
-
   margin-left: 5vw;
-
 }
-
 
 
 .obus a {
-
   text-decoration: none;
-
   color: #FFF;
-
   font-family: 'Montserrat', sans-serif;
-
   font-size: 1.125rem;
-
   font-style: normal;
-
   font-weight: 400;
-
   line-height: 120%;
-
 }
-
 
 
 .Goon {
-
   width: 25.625rem;
-
   height: 21.25rem;
-
   box-shadow: 0.125rem;
-
   border-radius: 1.25rem;
-
   display: block;
-
   background: #D7D5D5;
-
   backdrop-filter: blur(1.0625rem);
-
   margin-top: 6.25rem;
-
 }
-
-
 
 .bride {
-
   background-color: #FFFFFF;
-
   color: #000;
-
   height: 4.5rem;
-
   width: 24.375rem;
-
   border-radius: 1.25rem;
-
   margin-left: 0.625rem;
-
   margin-top: 1.25rem;
-
 }
-
-
 
 .groom {
-
   display: inline-flex;
-
   background-color: #FFFFFF;
-
   color: #000;
-
   height: 4.25rem;
-
   width: 24.375rem;
-
   border-radius: 1.25rem;
-
   margin-top: 0.625rem;
-
 }
-
 
 
 .amount {
-
   margin-bottom: 0;
-
   padding-bottom: 0;
-
   margin-right: 19.375rem;
-
   color: #616161;
-
   font-family: 'Montserrat', sans-serif;
-
   font-size: 1rem;
-
   font-style: normal;
-
   font-weight: 500;
-
   line-height: 120%;
-
 }
-
 
 
 .swiss1 {
-
   display: inline-flex;
-
   margin-left: 0.625rem;
-
   margin-right: 0.9375rem;
-
   color: #282828;
-
   font-family: 'Montserrat', sans-serif;
-
   font-size: 1.25rem;
-
   font-style: normal;
-
   font-weight: 600;
-
   line-height: 120%;
-
 }
-
 
 
 .mates1 {
-
   height: 2.1875rem;
-
   width: 10.9375rem;
-
   background-color: #F1F0f5;
-
   border-radius: 0.9375rem;
-
   align-items: center;
-
   text-align: center;
-
   justify-content: center;
-
   margin-left: 5rem;
-
   margin-bottom: 1.25rem;
-
 }
-
 
 
 .mates1 h4 {
-
   margin-top: 0.3125rem;
-
   margin-left: 7.5rem;
-
   color: #000;
-
   font-family: 'Montserrat', sans-serif;
-
   font-size: 1.1875rem;
-
   font-style: normal;
-
   font-weight: 500;
-
   line-height: 120%;
-
 }
-
-
 
 .amount1 {
-
   margin-bottom: 0.3125rem;
-
   margin-right: 18.75rem;
-
   color: #616161;
-
   font-family: 'Montserrat', sans-serif;
-
   font-size: 1rem;
-
   font-style: normal;
-
   font-weight: 500;
-
   line-height: 120%;
-
 }
-
-
 
 .swiss2 {
-
   display: inline-flex;
-
   margin-left: 0.9375rem;
-
   margin-right: 0.9375rem;
-
   color: #282828;
-
   font-family: 'Montserrat', sans-serif;
-
   font-size: 1.3125rem;
-
   font-style: normal;
-
   font-weight: 600;
-
   line-height: 120%;
-
 }
-
 
 
 .mates4 {
-
   height: 2.1875rem;
-
   width: 10.9375rem;
-
   background-color: #F1F0f5;
-
   border-radius: 0.9375rem;
-
   align-items: center;
-
   text-align: center;
-
   justify-content: center;
-
   margin-left: 3.125rem;
-
 }
-
 
 
 .mates4 h4 {
-
   margin-top: 0.3125rem;
-
   margin-left: 4.375rem;
-
   color: #000;
-
   font-family: 'Montserrat', sans-serif;
-
   font-size: 1.1875rem;
-
   font-style: normal;
-
   font-weight: 500;
-
   line-height: 120%;
-
 }
-
-
 
 .demas {
-
   color: #424242;
-
   text-align: center;
-
   font-family: 'Montserrat', sans-serif;
-
   font-size: 1.0625rem;
-
   font-style: normal;
-
   font-weight: 500;
-
   line-height: 120%;
-
 }
-
 
 
 .numero {
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   width: 95%;
-
   margin: 1.5rem auto;
-
-
-
 }
-
-
 
 .food-pill-container {
-
 border: 1px solid #FFF;
-
-  border-radius: 50px;
-
-  height: 3.5rem;
-
-  padding: 0 1rem;
-
-  display: flex;
-
-  align-items: center;
-
-  position: relative;
-
-  overflow: visible;
-
+border-radius: 50px;
+height: 3.5rem;
+ padding: 0 1rem;
+display: flex;
+align-items: center;
+position: relative;
+overflow: visible;
 }
-
-
 
 .nav-indicator {
-
 position: absolute;
-
-  top: -1px;
-
-  height: 6px;
-
-  background: #fff;
-
+top: -1px;
+ height: 6px;
+ background: #fff;
   border-radius: 0 0 5px 5px;
-
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-
   z-index: 10;
-
   width: 4px;
-
 }
-
-
 
 .mannav {
-
  display: flex;
-
   list-style: none;
-
   padding: 0;
-
   margin: 0;
-
   position: relative;
-
   height: 100%;
-
   width: 100%;
-
   align-items: center;
-
 }
-
 
 
 .nav-link {
-
   color: white;
-
   text-decoration: none;
-
   padding: 0 15px;
-
   font-weight: 600;
-
   font-size: 0.95rem;
-
   display: flex;
-
   align-items: center;
-
   gap: 5px;
-
 }
-
 
 
 .mega-dropdown {
-
   display: block;
-
   position: absolute;
-
   top: 100%;
-
   left: 50%;
-
   transform: translateX(-50%);
-
   background: white;
-
   padding: 25px;
-
   border-radius: 15px;
-
   width: 520px;
-
   box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-
   margin-top: 15px;
-
   z-index: 1000;
-
   font-family: 'Montserrat', sans-serif !important;
-
-    font-style: normal;
-
+  font-style: normal;
   font-weight: 600;
-
   line-height: 120%;
-
   font-size: 1.432rem;
-
 }
-
 
 
 .dropdown-arrow {
-
   transition: transform 0.3s ease;
-
 }
 
 .dropdown-arrow.rotated {
-
   transform: rotate(180deg);
-
 }
-
-
 
 
 
 .dropdown-grid {
-
   display: grid;
-
   grid-template-columns: 1fr 1fr;
-
   gap: 15px;
-
  font-family: 'Montserrat', sans-serif;
-
-   font-style: normal;
-
+  font-style: normal;
   font-weight: 600;
-
   line-height: 120%;
-
   font-family: 'Montserrat', sans-serif;
-
   font-size: 0.9rem;
-
 }
 
 
-
-
-
 .company-grid {
-
   display: grid;
-
   grid-template-columns: 1fr !important;
-
   gap: 12px;
-
 }
 
 
 
 .dropdown-item {
-
   display: grid;
-
   grid-template-columns: 30px 1fr;
-
   align-items: center;
-
   gap: 10px;
-
   text-decoration: none;
-
   font-style: normal;
-
   font-weight: 600;
-
   line-height: 120%;
-
   font-family: 'Montserrat', sans-serif;
-
   font-size: 0.9rem;
-
 }
-
 
 
 .nav-icon-img {
-
   width: 22px;
-
   height: 22px;
-
   object-fit: contain;
-
 }
-
 
 
 .item-text {
@@ -1788,7 +1421,6 @@ position: absolute;
   object-fit: contain;
   display: block;
 }
-
 
 .nav-item-wrapper:nth-child(4) .mega-dropdown {
   width: 260px; 
