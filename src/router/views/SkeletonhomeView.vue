@@ -934,12 +934,10 @@ onUnmounted(() => {
   padding-top: 4rem; 
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
   margin-top: 0;
   margin-right: 4.375vw; 
   flex-grow: 1;
   display: flex;
-  flex-direction: row;
   width: 90%;
 }
 
