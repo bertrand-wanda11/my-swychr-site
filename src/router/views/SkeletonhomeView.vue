@@ -921,28 +921,32 @@ onUnmounted(() => {
   margin: 0 auto;
   padding: 0.625rem 0;
   background: url('@/assets/images/kirak.png');
-  background-size: 100% auto;
+  background-size: cover;
   background-repeat: no-repeat;
   aspect-ratio: 16 / 9;
   width: 100%;
-  height: auto;
+  min-width: 100vh;
+  display: flex;
   image-rendering: -webkit-optimize-contrast;
 }
 
 .inside1 {
-  padding-top: 6.5rem; 
-  display: inline-flex;
+  padding-top: 4rem; 
   align-items: center;
-  justify-content: center;
-  width: 90vw;
+  justify-content: space-between;
+  max-width: 1200px;
   margin-top: 0;
   margin-right: 4.375vw; 
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  width: 90%;
 }
 
 .tech {
   text-align: justify;
   line-height: 1;
-  margin-right: 7.81vw; 
+  margin-right: 5.81vw; 
 }
 
 .smart {
