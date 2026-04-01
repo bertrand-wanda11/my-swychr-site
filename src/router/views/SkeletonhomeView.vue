@@ -1106,7 +1106,6 @@ onUnmounted(() => {
   line-height: 120%;
 }
 
-
 .swiss1 {
   display: inline-flex;
   margin-left: 0.625rem;
@@ -1285,8 +1284,6 @@ top: -1px;
   transform: rotate(180deg);
 }
 
-
-
 .dropdown-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1306,8 +1303,6 @@ top: -1px;
   gap: 12px;
 }
 
-
-
 .dropdown-item {
   display: grid;
   grid-template-columns: 30px 1fr;
@@ -1321,13 +1316,11 @@ top: -1px;
   font-size: 0.9rem;
 }
 
-
 .nav-icon-img {
   width: 22px;
   height: 22px;
   object-fit: contain;
 }
-
 
 .item-text {
   color: #333;
@@ -1358,7 +1351,6 @@ top: -1px;
     width: 450px;
   }
 }
-
 
 @media screen and (max-width: 1194px) {
   .numero {
@@ -1512,8 +1504,8 @@ top: -1px;
 
 .card-container {
   position: relative;
-  height: 31.875rem; 
-  width: 25.9375rem; 
+  height: 30.875rem; 
+  width: 23.9375rem; 
   border-radius: 1.25rem; 
   overflow: hidden;
   display: flex;
@@ -1561,7 +1553,7 @@ top: -1px;
 }
 
 .card-title {
-  font-size: 1.5rem; 
+  font-size: 1.1rem; 
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 0.75rem; 
@@ -1574,7 +1566,7 @@ top: -1px;
 }
 
 .card-description {
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.9); 
   font-family: Montserrat;
