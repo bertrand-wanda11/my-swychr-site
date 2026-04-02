@@ -512,7 +512,9 @@ const indicatorStyle = ref({ width: '0px', left: '0px', opacity: 0 });
 
 const setActive = (index) => {
   activeIndex.value = index;
-  nextTick(() => updateIndicator());
+  setTimeout(() => {
+    updateIndicator();
+  }, 100); 
 };
 
 const updateIndicator = () => {
