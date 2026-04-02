@@ -1060,7 +1060,7 @@ onUnmounted(() => {
   width: 24.375rem;
   border-radius: 1.25rem;
   margin-left: 0.625rem;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
 .groom {
@@ -1070,7 +1070,7 @@ onUnmounted(() => {
   height: 4.25rem;
   width: 24.375rem;
   border-radius: 1.25rem;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
 .mates, .mates3 {
