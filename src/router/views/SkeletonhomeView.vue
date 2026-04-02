@@ -1414,7 +1414,7 @@ top: -1px;
 .card-content {
   position: relative;
   z-index: 3;
-  padding: 1.875rem;
+  padding: 1.275rem;
   color: white;
   font-family: sans-serif;
 }
