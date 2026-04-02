@@ -2001,26 +2001,18 @@ margin-left: 67px;
   }
 }
 
-@media only screen and (max-width: 1180px) {
-  .Air1 {
+  
+  @media screen and (max-width: 1180px) {
+   .seamAIR{
+    margin-left: 1.25rem !important; 
+    margin-top: 0;
+    flex-shrink: 0;
+  }
+ 
+    .Air1 {
     height: auto;
     min-height: 100vh;
     padding-bottom: 3.125rem;
-  }
-
-  .numeroAir {
-    width: 98%;
-    margin: 1rem auto;
-  }
-
-  .food-pill-container {
-    height: 3.2rem;
-    padding: 0 0.5rem;
-  }
-
-  .nav-link {
-    font-size: 0.85rem;
-    padding: 0 0.625rem;
   }
 
   .insideAir1 {
@@ -2032,64 +2024,30 @@ margin-left: 67px;
     font-size: 3rem;
   }
 
-  .mega-dropdown {
-    width: 450px;
-  }
-}
-
-@media only screen and (max-width: 1180px) {
-  .numeroAir {
-    width: 98% !important;
-    justify-content: space-between;
-    gap: 0.625rem; 
-    margin: 1rem auto;
-  }
-
-  .seamAIR{
-    margin-left: 1.25rem !important; 
-    margin-top: 0;
-    flex-shrink: 0;
-  }
-
-  .stavoAir{
-    margin-right: 1.25rem !important;
-    margin-top: 0;
-    flex-shrink: 0;
+  .numeroAir{
+    width: 95%;
+    gap: 10px; /* Reduces gap so items don't push each other out */
   }
 
   .food-pill-container {
-    flex: 1; 
-    max-width: 31.25rem; 
+    padding: 0 5px;
     height: 3.2rem;
-    padding: 0 0.5rem;
-    margin: 0 0.625rem;
-    justify-content: center;
-  }
-
-  .mannav {
-    justify-content: space-around;
-    width: 100%;
   }
 
   .nav-link {
-    font-size: 0.82rem; 
-    padding: 0 0.5rem;
-    white-space: nowrap;
+    padding: 0 10px; /* Narrower padding to prevent overflow */
+    font-size: 0.85rem;
   }
 
- 
-  @media (max-width: 920px) {
-    .dropdown-arrow {
-      display: none !important;
-    }
-    .nav-link {
-      font-size: 0.78rem;
-    }
+  .stavoAir{
+    width: 9rem; /* Slightly smaller button to save space */
+    margin-right: 0; 
   }
 }
 
-@media only screen and (max-width: 430px) {
-  .Air1 {
+
+@media screen and (max-width: 430px) {
+   .Air1 {
     height: auto;
     min-height: 100vh;
     overflow-y: visible;
@@ -2097,16 +2055,82 @@ margin-left: 67px;
     padding-bottom: 2rem;
   }
 
-  .numeroAir {
-    flex-direction: column;
-    gap: 1.25rem;
-    width: 100%;
-    margin: 1rem 0;
-  }
-
   .seamAIR{
     text-align: center;
   }
+
+  .insideAir1 {
+    padding-top: 3.5rem;
+    width: 100%;
+  }
+
+    .protonAir {
+    width: 100%;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+
+  .icon-circle2 {
+    width: 85vw;
+    height: 2.8rem;
+  }
+
+  .numeroAir{
+    flex-wrap: wrap; /* Allows the logo and button to sit on one line, and menu on next */
+    justify-content: space-between;
+    margin: 1rem auto;
+  }
+
+  .seamAIR{
+    margin-left: 0;
+    order: 1; /* Logo top left */
+  }
+
+  .stavoAir-container{
+    order: 2; /* Contact Sales top right */
+  }
+
+  .food-pill-container {
+    order: 3; /* Menu Pill on a new line below */
+    width: 100%; /* Spans full width */
+    margin-top: 15px;
+    justify-content: center;
+    overflow-x: auto; /* Allows swiping if links are too many */
+  }
+
+  .mannav {
+    justify-content: center;
+    width: auto;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 0 8px;
+    white-space: nowrap;
+  }
+
+  @media screen and (max-width: 430px) {
+  .mega-dropdown {
+    position: fixed; /* Keeps it relative to the screen, not the tiny pill */
+    top: 25%; /* Adjust based on your header height */
+    left: 5% !important;
+    width: 90% !important;
+    transform: none !important;
+    z-index: 9999;
+  }
+
+  .dropdown-grid {
+    grid-template-columns: 1fr; /* Single column on mobile for clarity */
+  }
+}
+
+  /* Fix for active indicator on mobile */
+  .nav-indicator {
+    display: block !important; 
+    height: 4px;
+  }
+}
+
 
   .food-pill-container {
     width: 96vw;
@@ -2157,10 +2181,7 @@ margin-left: 67px;
   }
 
 
-  .insideAir1 {
-    padding-top: 3.5rem;
-    width: 100%;
-  }
+  
 
   .techAir {
     margin-left: 0;
@@ -2187,17 +2208,7 @@ margin-left: 67px;
     margin-right: 0;
   }
 
-  .protonAir {
-    width: 100%;
-    justify-content: center;
-    margin-top: 1.5rem;
-  }
 
-  .icon-circle2 {
-    width: 85vw;
-    height: 2.8rem;
-  }
-}
 
 @media only screen and (max-width: 1180px) {
   .Air6 {
