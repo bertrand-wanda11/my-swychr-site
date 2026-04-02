@@ -1060,7 +1060,7 @@ onUnmounted(() => {
   width: 24.375rem;
   border-radius: 1.25rem;
   margin-left: 0.625rem;
-  margin-top:4rem;
+  margin-top:1rem;
 }
 
 .groom {
@@ -1070,7 +1070,7 @@ onUnmounted(() => {
   height: 4.25rem;
   width: 24.375rem;
   border-radius: 1.25rem;
-  margin-top:4rem;
+  margin-top:1rem;
 }
 
 .mates, .mates3 {
@@ -1115,7 +1115,6 @@ onUnmounted(() => {
   line-height: 120%;
   padding-bottom:4rem;
 }
-
 
 .numero {
   display: flex;
