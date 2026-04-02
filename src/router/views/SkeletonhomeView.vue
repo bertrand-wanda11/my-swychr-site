@@ -942,11 +942,11 @@ onUnmounted(() => {
 .tech {
   text-align: left;
   line-height: 1;
-  margin-right: 1.81vw;
+  margin-right: 4.81vw;
 }
 
 .smart {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
   font-size: 3.2625rem;
