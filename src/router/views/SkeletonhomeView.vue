@@ -1113,6 +1113,7 @@ onUnmounted(() => {
   font-style: normal;
   font-weight: 500;
   line-height: 120%;
+  padding-bottom:4rem;
 }
 
 
@@ -1168,7 +1169,6 @@ top: -1px;
   align-items: center;
   gap: 5px;
 }
-
 
 .mega-dropdown {
   display: block;
