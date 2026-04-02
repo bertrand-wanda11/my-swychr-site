@@ -1102,6 +1102,7 @@ onUnmounted(() => {
 .mates1 h4, .mates4 h4 {
   margin-left: 0; /* Clean up old fixed margins */
   text-align: center;
+  margin-bottom:2rem;
 }
 
 .demas {
