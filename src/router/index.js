@@ -37,7 +37,6 @@ const routes = [
   { path: '/', name: 'skeletonhome', component: SkeletonhomeView },
   { path: '/layout', name: 'layout', component: LayoutView },
   { path: '/support', name: 'support', component: SupportView },
-  { path: '/personal', name: 'personal', component: PersonalView },
   { path: '/company', name: 'company', component: CompanyView },
   { path: '/business', name: 'business', component: BusinessView },
   { path: '/sales', name: 'sales', component: SalesView },
