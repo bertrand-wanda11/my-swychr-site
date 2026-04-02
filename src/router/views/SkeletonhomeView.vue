@@ -1041,38 +1041,72 @@ onUnmounted(() => {
   line-height: 120%;
 }
 
-
 .Goon {
+
   width: 25.625rem;
+
   height: 21.25rem;
+
   box-shadow: 0.125rem;
+
   border-radius: 1.25rem;
+
   display: block;
+
   background: #D7D5D5;
+
   backdrop-filter: blur(1.0625rem);
-  margin-top: 4.25rem;
+
+  margin-top: 6.25rem;
+
 }
+
+
 
 .bride {
+
   background-color: #FFFFFF;
+
   color: #000;
+
   height: 4.5rem;
+
   width: 24.375rem;
+
   border-radius: 1.25rem;
+
   margin-left: 0.625rem;
-  margin-top:1rem;
+
+  margin-top: 1.25rem;
+
 }
+
+
 
 .groom {
+
   display: inline-flex;
+
   background-color: #FFFFFF;
+
   color: #000;
+
   height: 4.25rem;
+
   width: 24.375rem;
+
   border-radius: 1.25rem;
-  margin-top:1rem;
+
+  margin-top: 0.625rem;
+
 }
 
+.mates, .mates3 {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 15px;
+  width: 100%;
+}
 .mates, .mates3 {
   display: flex;
   flex-direction: column;
@@ -1102,7 +1136,6 @@ onUnmounted(() => {
 .mates1 h4, .mates4 h4 {
   margin-left: 0; /* Clean up old fixed margins */
   text-align: center;
- padding-top:0;
 }
 
 .demas {
