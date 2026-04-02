@@ -790,7 +790,9 @@ const indicatorStyle = ref({ width: '0px', left: '0px', opacity: 0 });
 
 const setActive = (index) => {
   activeIndex.value = index;
-  nextTick(() => updateIndicator());
+  setTimeout(() => {
+    updateIndicator();
+  }, 100); 
 };
 
 const updateIndicator = () => {
@@ -916,6 +918,7 @@ onUnmounted(() => {
 
 
 <style>
+
 .section1 {
   text-align: center;
   margin: 0 auto;
@@ -930,7 +933,7 @@ onUnmounted(() => {
 }
 
 .inside1 {
-  padding-top: 1rem;
+  padding-top: 4rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -940,13 +943,13 @@ onUnmounted(() => {
 }
 
 .tech {
-  text-align: left;
+  text-align: justify;
   line-height: 1;
-  margin-right: 7.81vw;
+  margin-right: 8.81vw;
 }
 
 .smart {
-  margin-bottom: 1rem;
+  margin-bottom: 1;
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
   font-size: 3.2625rem;
@@ -955,7 +958,6 @@ onUnmounted(() => {
   line-height:80%;
   padding-top: 0;
   width:35rem;
- 
 }
 
 .maths {
@@ -968,6 +970,7 @@ onUnmounted(() => {
   letter-spacing: 0.075rem;
   margin-top: 0;
 }
+
 
 .proton {
   display: inline-flex;
@@ -1092,101 +1095,35 @@ onUnmounted(() => {
   margin-top: 0.625rem;
 }
 
-
-.amount {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  margin-right: 19.375rem;
-  color: #616161;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 120%;
+.mates, .mates3 {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 15px;
+  width: 100%;
 }
 
-.swiss1 {
-  display: inline-flex;
-  margin-left: 0.625rem;
-  margin-right: 0.9375rem;
-  color: #282828;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.25rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
+.amount, .amount1 {
+  margin-right: 0; /* Remove the fixed margin */
+  text-align: left;
+  width: 100%;
 }
 
-
-.mates1 {
-  height: 2.1875rem;
-  width: 10.9375rem;
-  background-color: #F1F0f5;
-  border-radius: 0.9375rem;
+.swiss1, .swiss2 {
+  display: flex;
   align-items: center;
+  justify-content: space-between; /* This pushes NGN to the left and amount to the right */
+  width: 100%;
+}
+
+.mates1, .mates4 {
+  margin-left: auto; /* Pushes the price box to the far right */
+  width: auto;
+  min-width: 100px;
+}
+
+.mates1 h4, .mates4 h4 {
+  margin-left: 0; /* Clean up old fixed margins */
   text-align: center;
-  justify-content: center;
-  margin-left: 5rem;
-  margin-bottom: 1.25rem;
-}
-
-
-.mates1 h4 {
-  margin-top: 0.3125rem;
-  margin-left: 7.5rem;
-  color: #000;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.1875rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 120%;
-}
-
-.amount1 {
-  margin-bottom: 0.3125rem;
-  margin-right: 18.75rem;
-  color: #616161;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 120%;
-}
-
-.swiss2 {
-  display: inline-flex;
-  margin-left: 0.9375rem;
-  margin-right: 0.9375rem;
-  color: #282828;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.3125rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
-}
-
-
-.mates4 {
-  height: 2.1875rem;
-  width: 10.9375rem;
-  background-color: #F1F0f5;
-  border-radius: 0.9375rem;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  margin-left: 3.125rem;
-}
-
-
-.mates4 h4 {
-  margin-top: 0.3125rem;
-  margin-left: 4.375rem;
-  color: #000;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.1875rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 120%;
 }
 
 .demas {
@@ -1421,36 +1358,82 @@ top: -1px;
 }
 
 
-@media (max-width: 430px) {
-  .mega-dropdown {
-    width: 95vw; 
-    padding: 15px;
-  }
-  
-  .dropdown-grid {
-    grid-template-columns: 1fr;
+@media screen and (max-width: 430px) {
+  .numero {
+    flex-wrap: wrap; /* Allows the logo and button to sit on one line, and menu on next */
+    justify-content: space-between;
+    margin: 1rem auto;
   }
 
-  .item-text {
-    white-space: normal; 
-    font-size: 0.8rem;
+  .seam {
+    margin-left: 0;
+    order: 1; /* Logo top left */
   }
-}
 
-@media (min-width: 768px) and (max-width: 1180px) {
+  .stavo-container {
+    order: 2; /* Contact Sales top right */
+  }
+
   .food-pill-container {
-    padding: 0 0.5rem; 
+    order: 3; /* Menu Pill on a new line below */
+    width: 100%; /* Spans full width */
+    margin-top: 15px;
+    justify-content: center;
+    overflow-x: auto; /* Allows swiping if links are too many */
+  }
+
+  .mannav {
+    justify-content: center;
+    width: auto;
   }
 
   .nav-link {
-    padding: 0 0.5rem;
-    font-size: 0.85rem; 
+    font-size: 0.8rem;
+    padding: 0 8px;
+    white-space: nowrap;
   }
 
+  @media screen and (max-width: 430px) {
   .mega-dropdown {
-    width: 440px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: fixed; /* Keeps it relative to the screen, not the tiny pill */
+    top: 25%; /* Adjust based on your header height */
+    left: 5% !important;
+    width: 90% !important;
+    transform: none !important;
+    z-index: 9999;
+  }
+
+  .dropdown-grid {
+    grid-template-columns: 1fr; /* Single column on mobile for clarity */
+  }
+}
+
+  /* Fix for active indicator on mobile */
+  .nav-indicator {
+    display: block !important; 
+    height: 4px;
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  .numero {
+    width: 95%;
+    gap: 10px; /* Reduces gap so items don't push each other out */
+  }
+
+  .food-pill-container {
+    padding: 0 5px;
+    height: 3.2rem;
+  }
+
+  .nav-link {
+    padding: 0 10px; /* Narrower padding to prevent overflow */
+    font-size: 0.85rem;
+  }
+
+  .stavo {
+    width: 9rem; /* Slightly smaller button to save space */
+    margin-right: 0; 
   }
 }
 

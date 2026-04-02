@@ -263,7 +263,9 @@ const indicatorStyle = ref({ width: '0px', left: '0px', opacity: 0 });
 
 const setActive = (index) => {
   activeIndex.value = index;
-  nextTick(() => updateIndicator());
+  setTimeout(() => {
+    updateIndicator();
+  }, 100); 
 };
 
 const updateIndicator = () => {
@@ -654,145 +656,85 @@ line-height: 120%;
  } 
 
 
- @media only screen and (max-width: 1180px) {
-  .lay1 {
-    height: auto;
-    min-height: 100vh;
-  }
-
-  .numerolay{
-    width: 98%;
-    margin: 1.25rem auto;
-  }
-
-  .food-pill-container {
-    height: 3.2rem;
-    padding: 0 0.625rem;
-  }
-
-  .nav-link {
-    font-size: 0.875rem;
-    padding: 0 0.625rem;
-  }
-
-  .insidelay1 {
-    padding-top: 8rem;
-    width: 92vw;
-  }
-
-  .smartlay{
-    font-size: 3rem;
-  }
-
-  .mathslay {
-    max-width: 85%;
-  }
-
-  .stevelay, .obuslay {
-    width: 15rem;
-  }
-}
-
-@media only screen and (max-width: 430px) {
-  .lay1 {
-    height: auto;
-    min-height: 100vh;
-    overflow-y: visible;
-  }
-
-  .background-image {
-    width: 100%;
-    height: 100%;
-  }
-
-
-  .numerolay{
-    flex-direction: column;
-    gap: 1.25rem;
+@media screen and (max-width: 430px) {
+  .numero {
+    flex-wrap: wrap; /* Allows the logo and button to sit on one line, and menu on next */
+    justify-content: space-between;
     margin: 1rem auto;
   }
 
   .seam {
-    margin: 0;
-    text-align: center;
+    margin-left: 0;
+    order: 1; /* Logo top left */
+  }
+
+  .stavo-container {
+    order: 2; /* Contact Sales top right */
   }
 
   .food-pill-container {
-    width: 96vw;
-    height: 3rem;
-    padding: 0 0.25rem;
+    order: 3; /* Menu Pill on a new line below */
+    width: 100%; /* Spans full width */
+    margin-top: 15px;
+    justify-content: center;
+    overflow-x: auto; /* Allows swiping if links are too many */
   }
 
   .mannav {
-    justify-content: space-around;
+    justify-content: center;
+    width: auto;
   }
 
   .nav-link {
-    font-size: 0.72rem;
-    padding: 0;
+    font-size: 0.8rem;
+    padding: 0 8px;
     white-space: nowrap;
   }
 
-  .dropdown-arrow, .nav-indicator {
-    display: none !important;
+  @media screen and (max-width: 430px) {
+  .mega-dropdown {
+    position: fixed; /* Keeps it relative to the screen, not the tiny pill */
+    top: 25%; /* Adjust based on your header height */
+    left: 5% !important;
+    width: 90% !important;
+    transform: none !important;
+    z-index: 9999;
   }
 
-  .insidelay1 {
-    padding-top: 4rem;
-    width: 100%;
-  }
-
-  .techlay {
-    margin-left: 0;
-    text-align: center;
-    padding: 0 1.25rem;
-  }
-
-  .smartlay {
-    font-size: 2.1rem;
-    line-height: 1.1;
-    margin-bottom: 1rem;
-    margin-right: 0;
-  }
-
-  .mathslay{
-    font-size: 0.95rem;
-    line-height: 1.5;
-    letter-spacing: 0.02rem;
-    padding: 0 0.5rem;
-    br { display: none; } 
-  }
-
-  .protonlay {
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-    margin-top: 2rem;
-  }
-
-  .stevelay, .obuslay {
-    width: 85vw;
-    height: 3.125rem;
-    margin-left: 0 !important; 
-  }
-
-  .stevelay a, .obuslay a {
-    font-size: 1rem;
-    padding: 0.625rem 1.25rem;
-  }
-
-  .stavolay-con {
-    order: 3;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .stavolay {
-    width: 85vw;
-    margin-right: 0;
+  .dropdown-grid {
+    grid-template-columns: 1fr; /* Single column on mobile for clarity */
   }
 }
+
+  /* Fix for active indicator on mobile */
+  .nav-indicator {
+    display: block !important; 
+    height: 4px;
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  .numero {
+    width: 95%;
+    gap: 10px; /* Reduces gap so items don't push each other out */
+  }
+
+  .food-pill-container {
+    padding: 0 5px;
+    height: 3.2rem;
+  }
+
+  .nav-link {
+    padding: 0 10px; /* Narrower padding to prevent overflow */
+    font-size: 0.85rem;
+  }
+
+  .stavo {
+    width: 9rem; /* Slightly smaller button to save space */
+    margin-right: 0; 
+  }
+}
+
 
 @media only screen and (max-width: 1180px) {
     .mothers11lay {
