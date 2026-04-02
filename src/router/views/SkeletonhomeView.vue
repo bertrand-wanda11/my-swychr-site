@@ -930,7 +930,7 @@ onUnmounted(() => {
 }
 
 .inside1 {
-  padding-top: 4rem;
+  padding-top: 1rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -940,7 +940,7 @@ onUnmounted(() => {
 }
 
 .tech {
-  text-align: justify;
+  text-align: left;
   line-height: 1;
   margin-right: 1.81vw;
 }
@@ -955,6 +955,7 @@ onUnmounted(() => {
   line-height:80%;
   padding-top: 0;
   width:35rem;
+ 
 }
 
 .maths {
@@ -967,7 +968,6 @@ onUnmounted(() => {
   letter-spacing: 0.075rem;
   margin-top: 0;
 }
-
 
 .proton {
   display: inline-flex;
