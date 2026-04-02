@@ -2,9 +2,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 import SkeletonhomeView from './views/SkeletonhomeView.vue'
 import LayoutView from './views/LayoutView.vue'
 import SupportView from './views/SupportView.vue'
-import PersonalView from './views/PersonalView.vue'
-import BusinessView from './views/BusinessView.vue'
-import CompanyView from './views/CompanyView.vue'
 import SalesView from './views/SalesView.vue'
 import FrequentView from './views/FrequentView.vue'
 import BlogView from './views/BlogView.vue'
@@ -37,8 +34,6 @@ const routes = [
   { path: '/', name: 'skeletonhome', component: SkeletonhomeView },
   { path: '/layout', name: 'layout', component: LayoutView },
   { path: '/support', name: 'support', component: SupportView },
-  { path: '/company', name: 'company', component: CompanyView },
-  { path: '/business', name: 'business', component: BusinessView },
   { path: '/sales', name: 'sales', component: SalesView },
   { path: '/frequent', name: 'frequent', component: FrequentView },
   { path: '/blog', name: 'blog', component: BlogView },
