@@ -946,7 +946,7 @@ onUnmounted(() => {
 }
 
 .smart {
-  margin-bottom: 0;
+  margin-bottom: 2rem;
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
   font-size: 3.2625rem;
