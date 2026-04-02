@@ -748,7 +748,7 @@ const navItems = [
       { name: 'Remit (Send)', icon: p2p, path: '/P2p'},
       { name: 'Cards (Spend)', icon: billIcon, path: '/Airtime' },
       { name: 'USD Accounts (Receive)', icon: cardIcon, path: '/Card' },
-      { name: 'Airtime (Connect)', icon: usdIcon, path: '/Usdman' },
+      { name: 'Airtime (Connect)', icon: usdIcon, path: '/Usdman' }
     ]
   },
   { 
@@ -758,7 +758,7 @@ const navItems = [
     children: [
       { name: 'Online Payments', icon: onlinePayIcon,path: '/Online'},
       { name: 'Cross-Border Payments', icon: crossBorderIcon,path: '/Lastmile'},
-      { name: 'Virtual Card Issuance', icon:Virtualcard ,path: '/Issuance'},
+      { name: 'Virtual Card Issuance', icon:Virtualcard ,path: '/Issuance'}
     ]
   },
   { 
@@ -1071,7 +1071,7 @@ onUnmounted(() => {
   width: 24.375rem;
   border-radius: 1.25rem;
   margin-left: 0.625rem;
-  margin-top: 1.25rem;
+
 }
 
 .groom {
@@ -1081,7 +1081,7 @@ onUnmounted(() => {
   height: 4.25rem;
   width: 24.375rem;
   border-radius: 1.25rem;
-  margin-top: 0.625rem;
+
 }
 
 .mates, .mates3 {
