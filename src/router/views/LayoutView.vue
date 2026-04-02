@@ -221,15 +221,8 @@ const navItems = [
       { name: 'Remit (Send)', icon: p2p, path: '/p2p'},
       { name: 'Cards (Spend)', icon: billIcon, path: '/Card' },
       { name: 'USD Accounts(Receive)', icon: cardIcon, path: '/Airtime' },
-      { name: 'Pay (Bank)', icon: esimIcon, path: '#' },
-      { name: 'Airtime (Connect)', icon: usdIcon, path: '/Usdman' },
-      { name: 'Gift Cards (Unlock)', icon: cryptoIcon, path: '#' },
-      { name: 'Bills (Settle)', icon: microIcon, path: '#' },
-      { name: 'eSIMs (Travel)', icon: qrIcon , path: '#'},
-      { name: 'Crypto (Invest)', icon: savingsIcon,path: '#'},
-      { name: 'QR (Checkout)', icon:dataIcon, path: '#'},
-      { name: 'Savings (Grow)', icon:loanIcon,path: '#'},
-      { name: 'Loans (Empower).', icon: giftIcon, path: '#'}
+      { name: 'Airtime (Connect)', icon: usdIcon, path: '/Usdman' }
+   
     ]
   },
   { 
@@ -238,11 +231,8 @@ const navItems = [
     dropdownTitle: 'Discover swychr Business',
     children: [
       { name: 'Online Payments', icon: onlinePayIcon,path: '/Online'},
-      { name: 'Business Accounts', icon: bizAccIcon, path: '#'},
-      { name: 'In-Store Payments', icon: inStoreIcon,path: '#'},
-      { name: 'Bulk Payments', icon: bulkIcon,path: '#'},
       { name: 'Cross-Border Payments', icon: crossBorderIcon,path: '/Lastmile'},
-      { name: 'Virtual Card Issuance', icon:Virtualcard ,path: '/Issuance'},
+      { name: 'Virtual Card Issuance', icon:Virtualcard ,path: '/Issuance'}
     ]
   },
   { 
