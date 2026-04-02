@@ -1050,7 +1050,7 @@ onUnmounted(() => {
   display: block;
   background: #D7D5D5;
   backdrop-filter: blur(1.0625rem);
-  margin-top: 6.25rem;
+  margin-top: 4.25rem;
 }
 
 .bride {
@@ -1060,7 +1060,7 @@ onUnmounted(() => {
   width: 24.375rem;
   border-radius: 1.25rem;
   margin-left: 0.625rem;
-
+ padding-bottom:2rem;
 }
 
 .groom {
@@ -1070,7 +1070,7 @@ onUnmounted(() => {
   height: 4.25rem;
   width: 24.375rem;
   border-radius: 1.25rem;
-
+ padding-bottom:2rem;
 }
 
 .mates, .mates3 {
