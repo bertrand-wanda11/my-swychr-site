@@ -70,6 +70,22 @@
 
       </div>
 
+       <div class="Goon">
+<div class="bride">
+<div class="mates">
+  <div class="amount">Amount</div>
+  <span class="swiss1"><img src="@/assets/images/pusd.png" alt=""
+     width="55px" height="54px"><span class="swiss1"><b>pUSD</b><div class="mates1"><h4>$200</h4></div></span></span>
+ 
+    </div>
+</div>
+
+<div class="trotas">
+<i class="fa-solid fa-arrow-down arrow-icon"></i>
+<i class="fa-solid fa-arrow-up arrow-icon"></i>
+</div>
+<br>
+
 <div class="groom">
   <div class="mates3">
     <div class="amount1">Converted to</div>
@@ -86,6 +102,12 @@
     </div>
   </div>
 </div>
+
+<p class="demas">Exchange rates are dynamic. Always remember to <br>
+  check the applicable rate in-app before carrying <br>
+   out your transactions.
+</p>
+</div> 
 </div>
 
     </section>
@@ -1414,7 +1436,7 @@ top: -1px;
 .card-content {
   position: relative;
   z-index: 3;
-  padding: 1.275rem;
+  padding: 1.175rem;
   color: white;
   font-family: sans-serif;
 }
