@@ -914,7 +914,7 @@ onUnmounted(() => {
 .tech {
   text-align: justify;
   line-height: 1;
-  margin-right: 4.81vw;
+  margin-right: 2.81vw;
 }
 
 .smart {
@@ -1051,12 +1051,12 @@ onUnmounted(() => {
 /* --- The White Boxes --- */
 .bride, .groom {
   background-color: #FFFFFF;
-  width: 98%;/* Spans the full width of the Goon container */
+  width: 96%;/* Spans the full width of the Goon container */
   height: auto; /* Allow height to adjust to content */
-  min-height: 75px;
+  min-height: 60px;
   border-radius: 1.25rem;
   margin: 0.5rem 0;
-  padding: 10px 14px;
+  padding: 8px 12px;
   display: flex;
   flex-direction: column;
   justify-content: center;
