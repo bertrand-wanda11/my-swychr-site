@@ -749,7 +749,7 @@ const navItems = [
     { name: 'About Us', icon: About,path: '/About'},
       { name: 'Careers', icon: Careers,path: '/Career'},
       { name: 'Blogs', icon: Blogs,path: '/Blog'},
-      { name: 'Culture', icon: Culture,path: '/Culture'}
+      { name: 'Culture', icon: Culture,path: '/Culture'},
     ]
   },
   { name: 'Support', path: '/support' }
