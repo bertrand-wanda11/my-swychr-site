@@ -208,7 +208,7 @@
 </div>
 <div class="thedon">
 <div class="zip">
-<img src="@/assets/images/13p.png" alt="" height="560px" width="500px">   
+<img src="@/assets/images/13p.png" alt="" height="460px" width="260px"> 
 </div>
 <div class="republic">
 <div class="first">
@@ -268,7 +268,7 @@
 </div> 
 
 <div class="zip1">
-<img src="@/assets/images/local22.png" alt="" height="520px" width="500px">   
+<img src="@/assets/images/13p.png" alt="" height="460px" width="260px"> 
 </div>
 </div>
   </div>
@@ -1795,7 +1795,7 @@ top: -1px;
 }
 
 .republic {
-  font-size: 2rem; 
+  font-size: 1.5rem;
   display: block; 
   align-items: center;
   text-align: center; 
@@ -1823,7 +1823,7 @@ top: -1px;
   color: var(--Purple-500, #8C1BC1);
   text-align: center;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem; 
+  font-size: 1.2rem; 
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
@@ -1834,7 +1834,7 @@ top: -1px;
 .first11 {
   color: var(--Gray-800, #424242);
   font-family: 'Montserrat', sans-serif;
-  font-size: 2.0625rem; 
+  font-size: 2rem; 
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
@@ -1844,7 +1844,7 @@ top: -1px;
 .first111 {
   color: var(--Gray-800, #424242);
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
@@ -1854,7 +1854,7 @@ top: -1px;
 .first1111, .first11111, .first111111, .first1111111 {
   color: var(--Gray-800, #424242);
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem; 
+  font-size: 1.2rem; 
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
@@ -1965,7 +1965,7 @@ top: -1px;
   color: var(--Purple-500, #8C1BC1);
   text-align: center;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
@@ -1976,7 +1976,7 @@ top: -1px;
 .second11 {
   color: var(--Gray-800, #424242);
   font-family: 'Montserrat', sans-serif;
-  font-size: 2.0625rem; 
+  font-size: 2rem; 
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
@@ -1986,7 +1986,7 @@ top: -1px;
 .second111 {
   color: var(--Gray-800, #424242);
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.4375rem; 
+  font-size: 1.2rem; 
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
@@ -1996,7 +1996,7 @@ top: -1px;
 .second1111, .second11111, .second111111, .second1111111 {
   color: var(--Gray-800, #424242);
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem; 
+  font-size: 1.2rem; 
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
@@ -2121,7 +2121,7 @@ top: -1px;
   color: var(--Purple-500, #8C1BC1);
   text-align: center;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem; 
+  font-size: 1.2rem; 
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
@@ -2132,7 +2132,7 @@ top: -1px;
 .third11 {
   color: var(--Gray-800, #424242);
   font-family: 'Montserrat', sans-serif;
-  font-size: 2rem; 
+  font-size: 1.2rem;
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
@@ -2143,7 +2143,7 @@ top: -1px;
 .third111 {
   color: var(--Gray-800, #424242);
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.375rem;
+  font-size: 1.2rem;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
@@ -2153,7 +2153,7 @@ top: -1px;
 .third1111, .third11111, .third111111, .third1111111 {
   color: var(--Gray-800, #424242);
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
