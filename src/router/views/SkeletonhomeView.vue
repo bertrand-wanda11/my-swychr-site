@@ -913,6 +913,9 @@ onUnmounted(() => {
 .tech {
   text-align: justify;
   line-height: 1;
+    margin-top: 0;
+     padding-top:0;
+
 }
 
 .smart {
