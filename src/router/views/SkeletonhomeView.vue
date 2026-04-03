@@ -913,7 +913,7 @@ onUnmounted(() => {
 .tech {
   text-align: justify;
   line-height: 1;
-   margin-bottom:8rem;
+   margin-bottom:10rem;
 
 }
 
