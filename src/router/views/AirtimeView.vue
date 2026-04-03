@@ -2165,14 +2165,23 @@ margin-left: 67px;
     height: 2.8rem;
   }
 
-  .nav-indicator {
-    display: block !important; /* Change from 'none' to 'block' */
-    height: 3px; /* Slightly thinner for mobile */
-    bottom: 0;
-    top: auto; /* Move it to the bottom of the pill */
+.nav-indicator {
+    display: block !important;
+    position: absolute;
+    /* This pushes it to the very top edge of the pill border */
+    top: -2px; 
+    height: 5px; /* Slightly thicker looks better on high-res mobile screens */
     background: #fff;
-    opacity: 1 !important;
+    border-radius: 0 0 4px 4px; /* Rounded at bottom to look like a tab */
+    z-index: 20; /* Ensures it stays above the border */
+    transition: all 0.3s ease;
   }
+
+  .food-pill-container {
+    /* Ensure the container doesn't cut off the indicator sitting on the border */
+    overflow: visible !important; 
+  }
+
 
   /* --- FIX 2: Allow Dropdowns to "Break Out" --- */
   .Air1 {
@@ -2181,11 +2190,7 @@ margin-left: 67px;
     min-height: 100vh;
   }
 
-  .food-pill-container {
-    overflow: visible !important; /* Allows dropdowns to show */
-    z-index: 100;
-  }
-
+ 
   /* --- FIX 3: Center and Scale the Dropdown --- */
   .mega-dropdown {
     display: block; 
