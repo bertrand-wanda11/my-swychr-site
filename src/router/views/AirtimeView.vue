@@ -2086,24 +2086,10 @@ margin-left: 67px;
     text-align: center;
   }
 
-  .food-pill-container {
-    width: 96vw;
-    height: 3rem;
-    padding: 0 0.25rem;
-    border-radius: 6.25rem;
-    justify-content: center;
-  }
-
   .mannav {
     justify-content: space-around;
     width: 100%;
     gap: 0;
-  }
-
-  .nav-item-wrapper {
-    flex: 1;
-    display: flex;
-    justify-content: center;
   }
 
   .nav-link {
@@ -2115,19 +2101,6 @@ margin-left: 67px;
 
   .dropdown-arrow {
     display: none !important;
-  }
-
-  .nav-indicator {
-    display: none !important;
-  }
-
-  .mega-dropdown {
-    width: 90vw !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    position: fixed;
-    top: 25%;
-    padding: 1.25rem;
   }
 
   .dropdown-grid {
@@ -2174,6 +2147,47 @@ margin-left: 67px;
   .icon-circle2 {
     width: 85vw;
     height: 2.8rem;
+  }
+
+  .nav-indicator {
+    display: block !important; /* Change from 'none' to 'block' */
+    height: 3px; /* Slightly thinner for mobile */
+    bottom: 0;
+    top: auto; /* Move it to the bottom of the pill */
+    background: #fff;
+    opacity: 1 !important;
+  }
+
+  /* --- FIX 2: Allow Dropdowns to "Break Out" --- */
+  .Air1 {
+    overflow: visible; /* CRITICAL: Allows the dropdown to be seen outside the section */
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .food-pill-container {
+    overflow: visible !important; /* Allows dropdowns to show */
+    z-index: 100;
+  }
+
+  /* --- FIX 3: Center and Scale the Dropdown --- */
+  .mega-dropdown {
+    display: block; 
+    position: fixed; /* Fixed is better for mobile to avoid being cut off */
+    top: 30%; /* Move it down so it doesn't cover the nav */
+    left: 5% !important;
+    width: 90% !important;
+    transform: none !important;
+    z-index: 9999;
+    padding: 1.5rem;
+    max-height: 60vh; /* Adds scrolling if items are too many */
+    overflow-y: auto;
+  }
+
+  /* Ensure the nav links are relative so indicator positions correctly */
+  .nav-item-wrapper {
+    position: relative;
+    flex: 1;
   }
 }
 
