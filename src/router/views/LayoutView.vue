@@ -559,37 +559,9 @@ margin-right: 2.8rem;
   border-top: 1px solid #fff;
   width: 90%;
   margin-left: 80px;
- }    
+ }   
  
- .sergiolay{
-  display: inline-flex;
-  text-align: justify;
-  align-items: center;
-  line-height: 1;
- }
-
- .sergiopikanlay{
-color: #ffffff;
-font-family: Montserrat;
-font-size: 16px;
-font-style: normal;
-font-weight: 600;
-line-height: 120%;
-margin-bottom: 2px;
-margin-top: 0;
- }
-
- .sergiosonlay{
-color: var(--Gray-200, #EEE);
-font-family: Montserrat;
-font-size: 14px;
-font-style: normal;
-font-weight: 500;
-line-height: 120%;
-margin-top: 0;
- }
-
- .showlay{
+  .showlay{
 color: #ffffff;
 font-family: 'Montserrat', sans-serif;
 font-size: 14px;
@@ -597,42 +569,47 @@ font-style: normal;
 font-weight: 535;
 line-height: 120%;
  }
+ 
 
- .zoukielay{
-  margin-right: 560px;
- }
 
-.chanalay{
-  margin-right: 100px;
-  display: inline-flex;
-  list-style: none;
- }
-
- .chana1lay{
-color: white;
-font-family: Montserrat;
-font-size: 16px;
-font-style: normal;
-font-weight: 500;
-line-height: 120%;
- }
-
-.chana1lay a{
-text-decoration: none;
+/* Container for the footer bottom row */
+.sergiolay {
+  display: flex; /* Changed from inline-flex */
+  justify-content: space-between; /* This is the key: pushes left to left, right to right */
+  align-items: center;
+  width: 90%; /* Matches your line width */
+  margin: 30px auto; /* Centers the whole row */
+  padding: 0;
 }
 
- .rufuslay{
-margin-top: 0;
-font-family: 'Montserrat', sans-serif;
- color: #ffffff;
- width: 100%;
- text-align: justify;
-font-size: 15px;
-font-weight: 500;
-line-height: 120%;
- margin-left: 80px;
- } 
+/* Contains © 2026 and Borderless finance */
+.zoukielay {
+  margin-right: 0; /* REMOVE the 560px margin */
+  text-align: left;
+}
 
+/* Contains Terms and Privacy links */
+.chanalay {
+  margin-right: 0; /* REMOVE the 100px margin */
+  display: flex;
+  gap: 20px; /* Space between the two links */
+  list-style: none;
+  padding: 0;
+}
+
+/* Ensure the links stay on one line on desktop */
+.chana1lay {
+  white-space: nowrap;
+}
+
+/* Alignment fix for the legal text at the bottom */
+.rufuslay {
+  margin: 40px auto; /* Centers the legal block */
+  width: 90%;
+  text-align: justify;
+  font-size: 14px;
+  line-height: 1.6;
+}
 
 @media screen and (max-width: 430px) {
   .numero {
@@ -713,6 +690,22 @@ line-height: 120%;
   }
 }
 
+@media only screen and (max-width: 820px) {
+  .sergiolay {
+    flex-direction: column; /* Stacks items vertically on small screens */
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .zoukielay {
+    text-align: center;
+  }
+  
+  .chanalay {
+    justify-content: center;
+  }
+}
 
 @media only screen and (max-width: 1180px) {
     .mothers11lay {
