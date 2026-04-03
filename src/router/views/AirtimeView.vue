@@ -1223,6 +1223,8 @@ display: flex;
   border-radius: 1.5rem; 
 }
 
+
+
 @media (max-width: 768px) {
   .step-row, .step-row.reverse {
     flex-direction: column;
