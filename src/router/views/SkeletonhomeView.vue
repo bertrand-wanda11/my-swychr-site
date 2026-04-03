@@ -208,7 +208,7 @@
 </div>
 <div class="thedon">
 <div class="zip">
-<img src="@/assets/images/13p.png" alt="" height="460px" width="260px"> 
+<img src="@/assets/images/13p.png" alt="" height="360px" width="260px"> 
 </div>
 <div class="republic">
 <div class="first">
@@ -268,7 +268,7 @@
 </div> 
 
 <div class="zip1">
-<img src="@/assets/images/13p.png" alt="" height="460px" width="260px"> 
+<img src="@/assets/images/13p.png" alt="" height="360px" width="260px"> 
 </div>
 </div>
   </div>
@@ -908,7 +908,7 @@ onUnmounted(() => {
   justify-content: center;
   width: 90vw;
   margin-top: 0;
-  margin-right: 3.375vw;
+  margin-right: 1.375vw;
 }
 
 .tech {
@@ -1032,7 +1032,6 @@ onUnmounted(() => {
 }
 
 .Goon {
-  /* Use max-width instead of width so it can shrink */
   width: 95%; 
   max-width: 410px; 
   height: auto; 
@@ -1044,14 +1043,13 @@ onUnmounted(() => {
   flex-direction: column;
   align-items: center;
   margin: 1.5rem auto;
-  box-sizing: border-box; /* Ensures padding doesn't increase width */
+  box-sizing: border-box; 
 }
 
-/* --- The White Boxes --- */
 .bride, .groom {
   background-color: #FFFFFF;
-  width: 96%;/* Spans the full width of the Goon container */
-  height: auto; /* Allow height to adjust to content */
+  width: 96%;
+  height: auto;
   min-height: 60px;
   border-radius: 1.25rem;
   margin: 0.5rem 0;
@@ -1062,28 +1060,28 @@ onUnmounted(() => {
   box-sizing: border-box;
 }
 
-/* --- The Content Row (Flag + Name + Value) --- */
+
 .swiss1, .swiss2 {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* This is key for mobile alignment */
+  justify-content: space-between; 
   width: 100%;
   gap: 10px;
 }
 
-/* Ensure images don't get squashed */
+
 .swiss1 img, .swiss2 img {
   flex-shrink: 0;
   width: 40px;
   height: 40px;
 }
 
-/* The Money Text ($200 / N288,006) */
+
 .mates1 h4, .mates4 h4 {
   margin: 0;
   font-size: 1.1rem;
   font-weight: 600;
-  white-space: nowrap; /* Prevents the price from breaking into two lines */
+  white-space: nowrap; 
 }
 
 .amount, .amount1 {
@@ -1272,26 +1270,26 @@ top: -1px;
 
 @media screen and (max-width: 430px) {
   .numero {
-    flex-wrap: wrap; /* Allows the logo and button to sit on one line, and menu on next */
+    flex-wrap: wrap; 
     justify-content: space-between;
     margin: 1rem auto;
   }
 
   .seam {
     margin-left: 0;
-    order: 1; /* Logo top left */
+    order: 1;
   }
 
   .stavo-container {
-    order: 2; /* Contact Sales top right */
+    order: 2; 
   }
 
   .food-pill-container {
-    order: 3; /* Menu Pill on a new line below */
-    width: 100%; /* Spans full width */
+    order: 3; 
+    width: 100%;
     margin-top: 15px;
     justify-content: center;
-    overflow-x: auto; /* Allows swiping if links are too many */
+    overflow-x: auto; 
   }
 
   .mannav {
@@ -1307,8 +1305,8 @@ top: -1px;
 
   @media screen and (max-width: 430px) {
   .mega-dropdown {
-    position: fixed; /* Keeps it relative to the screen, not the tiny pill */
-    top: 25%; /* Adjust based on your header height */
+    position: fixed;
+    top: 25%;
     left: 5% !important;
     width: 90% !important;
     transform: none !important;
@@ -1316,11 +1314,11 @@ top: -1px;
   }
 
   .dropdown-grid {
-    grid-template-columns: 1fr; /* Single column on mobile for clarity */
+    grid-template-columns: 1fr; 
   }
 }
 
-  /* Fix for active indicator on mobile */
+ 
   .nav-indicator {
     display: block !important; 
     height: 4px;
@@ -1330,7 +1328,7 @@ top: -1px;
 @media screen and (max-width: 1180px) {
   .numero {
     width: 95%;
-    gap: 10px; /* Reduces gap so items don't push each other out */
+    gap: 10px; 
   }
 
   .food-pill-container {
@@ -1339,12 +1337,12 @@ top: -1px;
   }
 
   .nav-link {
-    padding: 0 10px; /* Narrower padding to prevent overflow */
+    padding: 0 10px;
     font-size: 0.85rem;
   }
 
   .stavo {
-    width: 9rem; /* Slightly smaller button to save space */
+    width: 9rem; 
     margin-right: 0; 
   }
 }
@@ -1764,7 +1762,7 @@ top: -1px;
   margin-left: 1.25vw; 
   color: #000;
   font-family: 'Montserrat', sans-serif;
-  font-size: 3.375rem; 
+  font-size: 3.175rem; 
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
@@ -1879,7 +1877,7 @@ top: -1px;
 
 .lemon {
   display: flex;
-  width: 12.5rem;
+  width: 12rem;
   height: 2.8125rem;
   padding: 0.625rem;
   justify-content: center;
@@ -1895,7 +1893,7 @@ top: -1px;
   text-decoration: none;
   color: var(--WhiTE-mAIN, #FFF);
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
@@ -2011,7 +2009,7 @@ top: -1px;
 
 .lemontea {
   display: flex;
-  width: 12.5rem; 
+  width: 12rem; 
   height: 2.8125rem;
   padding: 0.625rem;
   justify-content: center;
@@ -2027,7 +2025,7 @@ top: -1px;
   text-decoration: none;
   color: var(--WhiTE-mAIN, #FFF);
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
@@ -2170,7 +2168,7 @@ top: -1px;
   border-radius: 6.25rem; 
   background: var(--black-dark, #000);
   display: flex;
-  width: 13.4375rem; 
+  width: 13.1375rem; 
   height: 2.8125rem; 
   padding: 0.625rem;
   justify-content: center;
@@ -2186,7 +2184,7 @@ top: -1px;
   text-decoration: none;
   color: var(--WhiTE-mAIN, #FFF);
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.25rem; 
+  font-size: 1rem; 
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
