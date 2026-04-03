@@ -1223,8 +1223,6 @@ display: flex;
   border-radius: 1.5rem; 
 }
 
-
-
 @media (max-width: 768px) {
   .step-row, .step-row.reverse {
     flex-direction: column;
@@ -2067,104 +2065,7 @@ margin-left: 67px;
 }
 
 @media only screen and (max-width: 430px) {
-  .Air1 {
-    height: auto;
-    min-height: 100vh;
-    overflow-y: visible;
-    display: block;
-    padding-bottom: 2rem;
-  }
-
-  .numeroAir {
-    display: flex;
-    flex-direction: column; /* Stack them: Button -> Logo -> Pill */
-    align-items: center;
-    gap: 1.5rem;
-  }
-
-  .stavoAir-con {
-    order: 1; /* Puts "Open Web App" at the very top as per your image */
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .seamAIR {
-    order: 2; /* Puts "SwyChr" in the middle */
-    margin: 0 !important;
-  }
-
-  .food-pill-container {
-    order: 3; /* Puts the Pill navigation at the bottom */
-    width: 90%;
-  }
-
-  .mannav {
-    justify-content: space-around;
-    width: 100%;
-    gap: 0;
-  }
-
-  .nav-link {
-    font-size: 0.72rem;
-    padding: 0;
-    white-space: nowrap;
-    letter-spacing: -0.02rem;
-  }
-
-  .dropdown-arrow {
-    display: none !important;
-  }
-
-  .dropdown-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .bride, .groom{
-    width: 97%;
-  }
-
-  .insideAir1 {
-    padding-top: 3.5rem;
-    width: 100%;
-  }
-
-  .techAir {
-    margin-left: 0;
-    text-align: center;
-    padding: 0 1rem;
-  }
-
-  .smartAir {
-    font-size: 2.25rem;
-    line-height: 105%;
-    margin-right: 0;
-    margin-bottom: 1rem;
-  }
-
-  .mathsAir {
-    font-size: 0.95rem;
-    padding: 0 1.5rem;
-    br { display: none; } 
-  }
-
-  .stavoAir{
-    margin: 1.5rem auto 0;
-    width: 85vw;
-    margin-right: 0;
-  }
-
-  .protonAir {
-    width: 100%;
-    justify-content: center;
-    margin-top: 1.5rem;
-  }
-
-  .icon-circle2 {
-    width: 85vw;
-    height: 2.8rem;
-  }
-
+  /* --- FIX 1: Restore the Active Tab Indicator --- */
   .nav-indicator {
     display: block !important; /* Change from 'none' to 'block' */
     height: 3px; /* Slightly thinner for mobile */
@@ -2204,6 +2105,32 @@ margin-left: 67px;
   .nav-item-wrapper {
     position: relative;
     flex: 1;
+  }
+}
+
+  @media only screen and (max-width: 430px) {
+  .numeroAir {
+    display: flex;
+    flex-direction: column; /* Stack them: Button -> Logo -> Pill */
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .stavoAir-con {
+    order: 1; /* Puts "Open Web App" at the very top as per your image */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .seamAIR {
+    order: 2; /* Puts "SwyChr" in the middle */
+    margin: 0 !important;
+  }
+
+  .food-pill-container {
+    order: 3; /* Puts the Pill navigation at the bottom */
+    width: 90%;
   }
 }
 
