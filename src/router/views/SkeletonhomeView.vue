@@ -278,7 +278,7 @@
   <div class="inside7">
     <div class="thedon2">
 <div class="zip2">
-<img src="@/assets/images/trader.png" alt="" height="500px" width="550px">   
+<img src="@/assets/images/trader.png" alt="" height="400px" width="500px">   
 </div>
 <div class="republic2">
    <div class="third">
