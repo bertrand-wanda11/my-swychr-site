@@ -1051,12 +1051,12 @@ onUnmounted(() => {
 /* --- The White Boxes --- */
 .bride, .groom {
   background-color: #FFFFFF;
-  width: 100%; /* Spans the full width of the Goon container */
+  width: 98%;/* Spans the full width of the Goon container */
   height: auto; /* Allow height to adjust to content */
-  min-height: 80px;
+  min-height: 75px;
   border-radius: 1.25rem;
   margin: 0.5rem 0;
-  padding: 12px 16px;
+  padding: 10px 14px;
   display: flex;
   flex-direction: column;
   justify-content: center;
