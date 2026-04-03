@@ -208,7 +208,7 @@
 </div>
 <div class="thedon">
 <div class="zip">
-<img src="@/assets/images/13p.png" alt="" height="300px" width="260px"> 
+<img src="@/assets/images/13p.png" alt="" height="300px" width="300px">
 </div>
 <div class="republic">
 <div class="first">
@@ -268,7 +268,7 @@
 </div> 
 
 <div class="zip1">
-<img src="@/assets/images/13p.png" alt="" height="300px" width="260px"> 
+<img src="@/assets/images/13p.png" alt="" height="300px" width="300px">
 </div>
 </div>
   </div>
