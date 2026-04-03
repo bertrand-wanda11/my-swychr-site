@@ -492,7 +492,7 @@ const setActive = (index) => {
   activeIndex.value = index;
   setTimeout(() => {
     updateIndicator();
-  }, 100); 
+  }, 150); 
 };
 
 const updateIndicator = () => {
@@ -2076,14 +2076,27 @@ margin-left: 67px;
   }
 
   .numeroAir {
-    flex-direction: column;
-    gap: 1.25rem;
-    width: 100%;
-    margin: 1rem 0;
+    display: flex;
+    flex-direction: column; /* Stack them: Button -> Logo -> Pill */
+    align-items: center;
+    gap: 1.5rem;
   }
 
-  .seamAIR{
-    text-align: center;
+  .stavoAir-con {
+    order: 1; /* Puts "Open Web App" at the very top as per your image */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .seamAIR {
+    order: 2; /* Puts "SwyChr" in the middle */
+    margin: 0 !important;
+  }
+
+  .food-pill-container {
+    order: 3; /* Puts the Pill navigation at the bottom */
+    width: 90%;
   }
 
   .mannav {
