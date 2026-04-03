@@ -908,13 +908,13 @@ onUnmounted(() => {
   justify-content: center;
   width: 90vw;
   margin-top: 0;
-  margin-right: 4.375vw;
+  margin-right: 3.375vw;
 }
 
 .tech {
   text-align: justify;
   line-height: 1;
-  margin-right: 6.81vw;
+  margin-right: 4.81vw;
 }
 
 .smart {

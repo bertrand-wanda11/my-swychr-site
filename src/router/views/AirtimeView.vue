@@ -434,19 +434,8 @@ import { useRoute } from 'vue-router';
 import p2p from '@/assets/images/P2P.png';
 import billIcon from '@/assets/images/invoice.png';
 import cardIcon from '@/assets/images/card.png';
-import esimIcon from '@/assets/images/esim.png';
 import usdIcon from '@/assets/images/virtual bsnk.png';
-import cryptoIcon from '@/assets/images/Crypto.png';
-import microIcon from '@/assets/images/microfinance.png';
-import qrIcon from '@/assets/images/QR Code.png';
-import savingsIcon from '@/assets/images/Savings and invest.png';
-import dataIcon from '@/assets/images/airtine and data.png';
-import loanIcon from '@/assets/images/loan.png';
-import giftIcon from '@/assets/images/Gift card.png';
 import onlinePayIcon from '@/assets/images/Online Payments.png';
-import bizAccIcon from '@/assets/images/Business Accounts.png';
-import inStoreIcon from '@/assets/images/In-Store Payments.png';
-import bulkIcon from '@/assets/images/Bulk Payments.png';
 import crossBorderIcon from '@/assets/images/Cross Border Payments.png';
 import Virtualcard from '@/assets/images/Virtual Card Issuance.png';
 import About from '@/assets/images/About Us.png';
@@ -470,28 +459,17 @@ const navItems = [
       { name: 'Remit (Send)', icon: p2p, path: '/p2p'},
       { name: 'Cards (Spend)', icon: billIcon, path: '/Card' },
       { name: 'USD Accounts(Receive)', icon: cardIcon, path: '/Airtime'},
-      { name: 'Pay (Bank)', icon: esimIcon, path: '#' },
-      { name: 'Airtime (Connect)', icon: usdIcon, path: '/Usd' },
-      { name: 'Gift Cards (Unlock)', icon: cryptoIcon, path: '#' },
-      { name: 'Bills (Settle)', icon: microIcon, path: '#' },
-      { name: 'eSIMs (Travel)', icon: qrIcon , path: '#'},
-      { name: 'Crypto (Invest)', icon: savingsIcon,path: '#'},
-      { name: 'QR (Checkout)', icon:dataIcon, path: '#'},
-      { name: 'Savings (Grow)', icon:loanIcon,path: '#'},
-      { name: 'Loans (Empower).', icon: giftIcon, path: '#'}
+      { name: 'Airtime (Connect)', icon: usdIcon, path: '/Usd' }
     ]
   },
   { 
     name: 'Business', 
     path: '/business',
     dropdownTitle: 'Discover swychr Business',
-    children: [
-      { name: 'Online Payments', icon: onlinePayIcon,path: '#'},
-      { name: 'Business Accounts', icon: bizAccIcon, path: '#'},
-      { name: 'In-Store Payments', icon: inStoreIcon,path: '#'},
-      { name: 'Bulk Payments', icon: bulkIcon,path: '#'},
-      { name: 'Cross-Border Payments', icon: crossBorderIcon,path: '#'},
-      { name: 'Virtual Card Issuance', icon:Virtualcard ,path: '#'},
+  children: [
+      { name: 'Online Payments', icon: onlinePayIcon,path: '/Online'},
+      { name: 'Cross-Border Payments', icon: crossBorderIcon,path: '/Lastmile'},
+      { name: 'Virtual Card Issuance', icon:Virtualcard ,path: '/Issuance'}
     ]
   },
   { 
@@ -499,10 +477,10 @@ const navItems = [
     path: '/company',
     dropdownTitle: 'Discover swychr',
     children: [
-    { name: 'About Us', icon: About,path: '#'},
-      { name: 'Careers', icon: Careers,path: '#'},
+    { name: 'About Us', icon: About,path: '/About'},
+      { name: 'Careers', icon: Careers,path: '/Career'},
       { name: 'Blogs', icon: Blogs,path: '/Blog'},
-      { name: 'Culture', icon: Culture,path: '#'}
+      { name: 'Culture', icon: Culture,path: '/Culture'}
     ]
   },
   { name: 'Support', path: '/support' }
