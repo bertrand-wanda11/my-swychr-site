@@ -908,7 +908,6 @@ onUnmounted(() => {
   justify-content: center;
   width: 90vw;
   margin-top: 0;
-  margin-right: 1.375vw;
 }
 
 .tech {
