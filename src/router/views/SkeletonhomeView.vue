@@ -1877,7 +1877,7 @@ top: -1px;
 
 .lemon {
   display: flex;
-  width: 12rem;
+  width: 10rem;
   height: 2.8125rem;
   padding: 0.625rem;
   justify-content: center;
@@ -2009,7 +2009,7 @@ top: -1px;
 
 .lemontea {
   display: flex;
-  width: 12rem; 
+  width: 10rem; 
   height: 2.8125rem;
   padding: 0.625rem;
   justify-content: center;
@@ -2168,7 +2168,7 @@ top: -1px;
   border-radius: 6.25rem; 
   background: var(--black-dark, #000);
   display: flex;
-  width: 13.1375rem; 
+  width: 11.1375rem; 
   height: 2.8125rem; 
   padding: 0.625rem;
   justify-content: center;
