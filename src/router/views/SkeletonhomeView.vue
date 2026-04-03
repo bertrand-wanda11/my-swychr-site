@@ -914,7 +914,6 @@ onUnmounted(() => {
 .tech {
   text-align: justify;
   line-height: 1;
-  margin-right: 2.81vw;
 }
 
 .smart {
@@ -1044,7 +1043,7 @@ onUnmounted(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2rem auto;
+  margin: 1.5rem auto;
   box-sizing: border-box; /* Ensures padding doesn't increase width */
 }
 
@@ -1173,7 +1172,6 @@ top: -1px;
   align-items: center;
 }
 
-
 .nav-link {
   color: white;
   text-decoration: none;
@@ -1204,7 +1202,6 @@ top: -1px;
   line-height: 120%;
   font-size: 1.432rem;
 }
-
 
 .dropdown-arrow {
   transition: transform 0.3s ease;
