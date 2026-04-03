@@ -1033,53 +1033,69 @@ onUnmounted(() => {
 }
 
 .Goon {
-  width: 25.625rem;
+  /* Use max-width instead of width so it can shrink */
+  width: 95%; 
+  max-width: 410px; 
+  height: auto; 
   padding: 1.5rem 1rem;
   border-radius: 1.5rem;
-  background: rgba(215, 213, 213, 0.8);
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(15px);
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
   align-items: center;
+  margin: 2rem auto;
+  box-sizing: border-box; /* Ensures padding doesn't increase width */
 }
 
-/* --- The White Boxes (Bride & Groom) --- */
+/* --- The White Boxes --- */
 .bride, .groom {
   background-color: #FFFFFF;
   width: 100%; /* Spans the full width of the Goon container */
+  height: auto; /* Allow height to adjust to content */
+  min-height: 80px;
   border-radius: 1.25rem;
-  padding: 1rem 1.25rem;
+  margin: 0.5rem 0;
+  padding: 12px 16px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   box-sizing: border-box;
 }
 
-/* --- Label Row (Amount / Converted to) --- */
+/* --- The Content Row (Flag + Name + Value) --- */
+.swiss1, .swiss2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* This is key for mobile alignment */
+  width: 100%;
+  gap: 10px;
+}
+
+/* Ensure images don't get squashed */
+.swiss1 img, .swiss2 img {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+}
+
+/* The Money Text ($200 / N288,006) */
+.mates1 h4, .mates4 h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  white-space: nowrap; /* Prevents the price from breaking into two lines */
+}
+
 .amount, .amount1 {
   color: #616161;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
-  text-align: left; /* Aligns "Amount" to the left */
+  text-align: left; 
 }
 
-/* --- The Content Row (Flag + Name + Value) --- */
-.swiss1, .swiss2 {
-  display: flex;
-  align-items: center; /* Vertically centers flag, text, and value */
-  justify-content: space-between; /* Pushes flag/text to left, and money to right */
-  width: 100%;
-}
-
-/* --- Container for Flag and Currency Name --- */
-.swiss1 img, .swiss2 img {
-  margin-right: 10px; /* Space between flag and name */
-  object-fit: contain;
-}
-
-/* Wrap the Flag + Code so they stay together on the left */
 .swiss1 b, .swiss2 b {
   display: flex;
   align-items: center;
@@ -1088,23 +1104,15 @@ onUnmounted(() => {
   font-weight: 700;
 }
 
-/* --- The Money Boxes ($200 / N288,006) --- */
+
 .mates1, .mates4 {
-  background: transparent; /* Remove the grey background if you want the clean look */
+  background: transparent; 
   margin: 0; 
   padding: 0;
   display: flex;
   align-items: center;
 }
 
-.mates1 h4, .mates4 h4 {
-  margin: 0;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #000;
-}
-
-/* --- The Swap Arrows --- */
 .trotas {
   display: flex;
   flex-direction: column;
@@ -1115,7 +1123,7 @@ onUnmounted(() => {
   color: #333;
 }
 
-/* --- The Disclaimer Text --- */
+
 .demas {
   font-size: 0.85rem;
   color: #424242;
@@ -1341,6 +1349,25 @@ top: -1px;
   .stavo {
     width: 9rem; /* Slightly smaller button to save space */
     margin-right: 0; 
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .Goon {
+    padding: 1rem 0.75rem;
+  }
+  
+  .swiss1 b, .swiss2 b {
+    font-size: 1rem;
+  }
+  
+  .mates1 h4, .mates4 h4 {
+    font-size: 1rem;
+  }
+
+  .demas {
+    font-size: 0.8rem;
+    padding: 0 5px;
   }
 }
 
