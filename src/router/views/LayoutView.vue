@@ -334,7 +334,6 @@ margin-left: 67px;
   justify-content: space-between;
   width: 95%;
   margin: 1.5rem auto;
-  background-color: #A1A7AF;
 }
 
 .food-pill-container {
