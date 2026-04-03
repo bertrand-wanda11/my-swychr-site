@@ -2110,7 +2110,7 @@ margin-left: 67px;
   .bride, .groom{
     width: 97%;
   }
-  
+
   .insideAir1 {
     padding-top: 3.5rem;
     width: 100%;
