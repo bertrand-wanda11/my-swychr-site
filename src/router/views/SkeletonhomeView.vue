@@ -736,7 +736,7 @@ const navItems = [
   { name: 'Home', path: '/home' },
   { 
     name: 'Personal', 
-    path: '/personal',
+    path: '',
     dropdownTitle: 'Discover swychr Personal',
     children: [
       { name: 'Remit (Send)', icon: p2p, path: '/p2p'},
@@ -748,7 +748,7 @@ const navItems = [
   },
   { 
     name: 'Business', 
-    path: '/business',
+    path: '',
     dropdownTitle: 'Discover swychr Business',
     children: [
       { name: 'Online Payments', icon: onlinePayIcon,path: '/Online'},
@@ -758,7 +758,7 @@ const navItems = [
   },
   { 
     name: 'Company', 
-    path: '/company',
+    path: '',
     dropdownTitle: 'Discover swychr',
     children: [
     { name: 'About Us', icon: About,path: '/About'},
