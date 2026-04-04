@@ -363,6 +363,33 @@ position: absolute;
   gap: 5px;
 }
 
+.nav-item-wrapper {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* --- THE HOVER BRIDGE --- */
+/* This invisible element fills the gap between the pill and the dropdown */
+.nav-item-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 20px; /* Adjust based on your margin-top */
+  z-index: 5;
+  display: none; /* Hidden by default */
+}
+
+/* Show the bridge only on desktop hover */
+@media (min-width: 821px) {
+  .nav-item-wrapper:hover::after {
+    display: block;
+  }
+}
+
 .mega-dropdown {
   position: absolute;
   top: calc(100% + 12px); 
