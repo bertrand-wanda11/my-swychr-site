@@ -6,41 +6,53 @@
     <img src="@/assets/images/motive.png" alt="Logo" class="dreak" width="127" height="32">
   </h2>
   
-  <div class="food-pill-container">
-    <ul class="mannav" ref="navMenu"> 
-         <li v-for="(item, index) in navItems" :key="item.name" class="nav-item-wrapper">
-  <router-link 
-    :to="item.path" 
-    class="nav-link"
-    :class="{ active: activeIndex === index }"
-    @click="item.children ? toggleDropdown(index) : setActive(index)" 
-  >
-    {{ item.name }}
-    <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }">▾</span>
-  </router-link>
-
-  <div v-if="item.children && openDropdownIndex === index" class="mega-dropdown">
-    <p class="dropdown-label">{{ item.dropdownTitle }}</p>
-    <div class="dropdown-grid" :class="{ 'company-grid': item.name === 'Company' }">
+ <div class="food-pill-container">
+  <ul class="mannav" ref="navMenu"> 
+    <li 
+      v-for="(item, index) in navItems" 
+      :key="item.name" 
+      class="nav-item-wrapper"
+      @mouseenter="!isMobile && item.children ? openDropdownIndex = index : null"
+      @mouseleave="!isMobile ? openDropdownIndex = null : null"
+    >
       <router-link 
-        v-for="child in item.children" 
-        :key="child.name" 
-        :to="child.path" 
-        class="dropdown-item"
-        @click="openDropdownIndex = null" 
+        :to="item.path" 
+        class="nav-link"
+        :class="{ active: activeIndex === index }"
+        @click="(e) => { 
+          if(item.children) { 
+            e.preventDefault(); // Prevents navigating to /personal, /business, etc.
+            if(isMobile) toggleDropdown(index); // Still allow click for mobile
+          } else { 
+            setActive(index); 
+          }
+        }" 
       >
-        <span class="item-icon">
-          <img :src="child.icon" :alt="child.name" class="nav-icon-img">
-        </span>
-        <span class="item-text">{{ child.name }}</span>
+        {{ item.name }}
+        <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }">▾</span>
       </router-link>
-    </div>
-  </div>
-</li>
 
-      <div class="nav-indicator" :style="indicatorStyle"></div>
-    </ul>
-  </div>
+      <div v-if="item.children && openDropdownIndex === index" class="mega-dropdown">
+        <p class="dropdown-label">{{ item.dropdownTitle }}</p>
+        <div class="dropdown-grid" :class="{ 'company-grid': item.name === 'Company' }">
+          <router-link 
+            v-for="child in item.children" 
+            :key="child.name" 
+            :to="child.path" 
+            class="dropdown-item"
+            @click="openDropdownIndex = null" 
+          >
+            <span class="item-icon">
+              <img :src="child.icon" :alt="child.name" class="nav-icon-img">
+            </span>
+            <span class="item-text">{{ child.name }}</span>
+          </router-link>
+        </div>
+      </div>
+    </li>
+    <div class="nav-indicator" :style="indicatorStyle"></div>
+  </ul>
+</div>
 
   <div class="stavo-container"> 
        <li class="stavo"><a href="/sales">Contact Sales</a></li>
@@ -717,6 +729,8 @@ import Culture from '@/assets/images/Culture.png';
 const route = useRoute();
 const navMenu = ref(null); 
 const activeIndex = ref(0);
+const openDropdownIndex = ref(null);
+const isMobile = ref(false);
 
 const navItems = [
   { name: 'Home', path: '/home' },
@@ -725,10 +739,11 @@ const navItems = [
     path: '/personal',
     dropdownTitle: 'Discover swychr Personal',
     children: [
-      { name: 'Remit (Send)', icon: p2p, path: '/P2p'},
-      { name: 'Cards (Spend)', icon: billIcon, path: '/Airtime' },
-      { name: 'USD Accounts (Receive)', icon: cardIcon, path: '/Card' },
+      { name: 'Remit (Send)', icon: p2p, path: '/p2p'},
+      { name: 'Cards (Spend)', icon: billIcon, path: '/Card' },
+      { name: 'USD Accounts(Receive)', icon: cardIcon, path: '/Airtime' },
       { name: 'Airtime (Connect)', icon: usdIcon, path: '/Usdman' }
+   
     ]
   },
   { 
@@ -749,7 +764,7 @@ const navItems = [
     { name: 'About Us', icon: About,path: '/About'},
       { name: 'Careers', icon: Careers,path: '/Career'},
       { name: 'Blogs', icon: Blogs,path: '/Blog'},
-      { name: 'Culture', icon: Culture,path: '/Culture'},
+      { name: 'Culture', icon: Culture,path: '/Culture'}
     ]
   },
   { name: 'Support', path: '/support' }
@@ -759,32 +774,29 @@ const indicatorStyle = ref({ width: '0px', left: '0px', opacity: 0 });
 
 const setActive = (index) => {
   activeIndex.value = index;
-  setTimeout(() => {
-    updateIndicator();
-  }, 100); 
+  nextTick(() => updateIndicator());
 };
 
 const updateIndicator = () => {
   if (!navMenu.value) return;
-  
-
   const activeElement = navMenu.value.querySelector('.nav-link.active');
-  
   if (activeElement) {
-  const reducedWidth = activeElement.offsetWidth * 0.6;
-
-  const left = activeElement.offsetLeft + (activeElement.offsetWidth - reducedWidth) / 2;
-    
-     indicatorStyle.value = {
-     width: `${reducedWidth}px`,
-      left: `${left}px`,
-      opacity: 1
-    };
+    const reducedWidth = activeElement.offsetWidth * 0.6;
+    const left = activeElement.offsetLeft + (activeElement.offsetWidth - reducedWidth) / 2;
+    indicatorStyle.value = { width: `${reducedWidth}px`, left: `${left}px`, opacity: 1 };
   } else {
- 
     indicatorStyle.value.opacity = 0;
   }
 };
+
+const toggleDropdown = (index) => {
+  openDropdownIndex.value = openDropdownIndex.value === index ? null : index;
+};
+
+const checkScreen = () => {
+  isMobile.value = window.innerWidth <= 820; // Set to tablet/mobile threshold
+};
+
 
 watch(() => route.path, (newPath) => {
   const pathName = newPath.replace('/', '').toLowerCase() || 'home';
@@ -795,22 +807,6 @@ watch(() => route.path, (newPath) => {
   }
 }, { immediate: true });
 
-const openDropdownIndex = ref(null);
-
-const toggleDropdown = (index) => {
-  if (openDropdownIndex.value === index) {
-    openDropdownIndex.value = null; 
-  } else {
-    openDropdownIndex.value = index;
-  }
-};
-
-const closeOnOutsideClick = (event) => {
-  if (!event.target.closest('.nav-item-wrapper')) {
-    openDropdownIndex.value = null;
-  }
-};
-
 onMounted(() => {
   updateIndicator();
   window.addEventListener('resize', updateIndicator);
@@ -820,6 +816,15 @@ onMounted(() => {
 onBeforeUnmount(() => {
   window.removeEventListener('resize', updateIndicator);
   window.removeEventListener('click', closeOnOutsideClick); 
+});
+
+onMounted(() => {
+  checkScreen();
+  window.addEventListener('resize', checkScreen);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', checkScreen);
 });
 
  
@@ -868,21 +873,6 @@ const features = [
     class: 'feature-standard'
   }
 ];
-
-const isMobile = ref(false);
-
-const checkScreen = () => {
-  isMobile.value = window.innerWidth <= 430; 
-};
-
-onMounted(() => {
-  checkScreen();
-  window.addEventListener('resize', checkScreen);
-});
-
-onUnmounted(() => {
-  window.removeEventListener('resize', checkScreen);
-});
 </script>
 
 
@@ -914,7 +904,6 @@ onUnmounted(() => {
   text-align: justify;
   line-height: 1;
    margin-bottom:11rem;
-
 }
 
 .smart {
@@ -993,7 +982,6 @@ onUnmounted(() => {
   font-family: Figtree, Arial;
 }
 
-
 .steve a {
   text-decoration: none;
   color: #000;
@@ -1003,7 +991,6 @@ onUnmounted(() => {
   font-weight: 400;
   line-height: 120%;
 }
-
 
 .obus {
   border: none;
@@ -1060,7 +1047,6 @@ onUnmounted(() => {
   justify-content: center;
   box-sizing: border-box;
 }
-
 
 .swiss1, .swiss2 {
   display: flex;
@@ -1182,8 +1168,16 @@ top: -1px;
   gap: 5px;
 }
 
+
+.nav-item-wrapper {
+  position: relative;
+  /* This bridge keeps the dropdown open when moving mouse down */
+  padding-bottom: 20px; 
+  margin-bottom: -20px;
+}
+
 .mega-dropdown {
-  display: block;
+  display: block; 
   position: absolute;
   top: 100%;
   left: 50%;
@@ -1193,21 +1187,23 @@ top: -1px;
   border-radius: 15px;
   width: 520px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-  margin-top: 15px;
+  margin-top: 5px; /* Reduced gap for smoother hover */
   z-index: 1000;
-  font-family: 'Montserrat', sans-serif !important;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
-  font-size: 1.432rem;
+  /* Add a smooth fade-in */
+  animation: fadeIn 0.2s ease-in-out;
 }
 
-.dropdown-arrow {
-  transition: transform 0.3s ease;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
-.dropdown-arrow.rotated {
-  transform: rotate(180deg);
+/* On mobile, remove the hover bridge */
+@media screen and (max-width: 430px) {
+  .nav-item-wrapper {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
 }
 
 .dropdown-grid {

@@ -2077,25 +2077,25 @@ margin-left: 67px;
 
   .numeroAir {
     display: flex;
-    flex-direction: column; /* Stack them: Button -> Logo -> Pill */
+    flex-direction: column;
     align-items: center;
     gap: 1.5rem;
   }
 
   .stavoAir-con {
-    order: 1; /* Puts "Open Web App" at the very top as per your image */
+    order: 1; 
     width: 100%;
     display: flex;
     justify-content: center;
   }
 
   .seamAIR {
-    order: 2; /* Puts "SwyChr" in the middle */
+    order: 2;
     margin: 0 !important;
   }
 
   .food-pill-container {
-    order: 3; /* Puts the Pill navigation at the bottom */
+    order: 3; 
     width: 90%;
   }
 
@@ -2168,44 +2168,39 @@ margin-left: 67px;
 .nav-indicator {
     display: block !important;
     position: absolute;
-    /* This pushes it to the very top edge of the pill border */
     top: -2px; 
-    height: 5px; /* Slightly thicker looks better on high-res mobile screens */
+    height: 5px; 
     background: #fff;
-    border-radius: 0 0 4px 4px; /* Rounded at bottom to look like a tab */
-    z-index: 20; /* Ensures it stays above the border */
+    border-radius: 0 0 4px 4px;
+    z-index: 20;
     transition: all 0.3s ease;
   }
 
   .food-pill-container {
-    /* Ensure the container doesn't cut off the indicator sitting on the border */
     overflow: visible !important; 
   }
 
 
-  /* --- FIX 2: Allow Dropdowns to "Break Out" --- */
   .Air1 {
-    overflow: visible; /* CRITICAL: Allows the dropdown to be seen outside the section */
+    overflow: visible; 
     height: auto;
     min-height: 100vh;
   }
 
  
-  /* --- FIX 3: Center and Scale the Dropdown --- */
   .mega-dropdown {
     display: block; 
-    position: fixed; /* Fixed is better for mobile to avoid being cut off */
-    top: 30%; /* Move it down so it doesn't cover the nav */
+    position: fixed;
+    top: 30%;
     left: 5% !important;
     width: 90% !important;
     transform: none !important;
     z-index: 9999;
     padding: 1.5rem;
-    max-height: 60vh; /* Adds scrolling if items are too many */
+    max-height: 60vh; 
     overflow-y: auto;
   }
 
-  /* Ensure the nav links are relative so indicator positions correctly */
   .nav-item-wrapper {
     position: relative;
     flex: 1;
@@ -2464,5 +2459,4 @@ margin-left: 67px;
     padding: 0.5rem 1rem 1rem 1rem;
   }
 }
-
 </style>

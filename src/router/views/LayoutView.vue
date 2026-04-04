@@ -6,41 +6,53 @@
     <img src="@/assets/images/motive.png" alt="Logo" class="dreak" width="127" height="32">
   </h2>
   
-  <div class="food-pill-container">
-    <ul class="mannav" ref="navMenu"> 
-         <li v-for="(item, index) in navItems" :key="item.name" class="nav-item-wrapper">
-  <router-link 
-    :to="item.path" 
-    class="nav-link"
-    :class="{ active: activeIndex === index }"
-    @click="item.children ? toggleDropdown(index) : setActive(index)" 
-  >
-    {{ item.name }}
-    <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }">▾</span>
-  </router-link>
-
-  <div v-if="item.children && openDropdownIndex === index" class="mega-dropdown">
-    <p class="dropdown-label">{{ item.dropdownTitle }}</p>
-    <div class="dropdown-grid" :class="{ 'company-grid': item.name === 'Company' }">
+<div class="food-pill-container">
+  <ul class="mannav" ref="navMenu"> 
+    <li 
+      v-for="(item, index) in navItems" 
+      :key="item.name" 
+      class="nav-item-wrapper"
+      @mouseenter="!isMobile && item.children ? openDropdownIndex = index : null"
+      @mouseleave="!isMobile ? openDropdownIndex = null : null"
+    >
       <router-link 
-        v-for="child in item.children" 
-        :key="child.name" 
-        :to="child.path" 
-        class="dropdown-item"
-        @click="openDropdownIndex = null" 
+        :to="item.path" 
+        class="nav-link"
+        :class="{ active: activeIndex === index }"
+        @click="(e) => { 
+          if(item.children) { 
+            e.preventDefault(); // Prevents navigating to /personal, /business, etc.
+            if(isMobile) toggleDropdown(index); // Still allow click for mobile
+          } else { 
+            setActive(index); 
+          }
+        }" 
       >
-        <span class="item-icon">
-          <img :src="child.icon" :alt="child.name" class="nav-icon-img">
-        </span>
-        <span class="item-text">{{ child.name }}</span>
+        {{ item.name }}
+        <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }">▾</span>
       </router-link>
-    </div>
-  </div>
-</li>
 
-      <div class="nav-indicator" :style="indicatorStyle"></div>
-    </ul>
-  </div>
+      <div v-if="item.children && openDropdownIndex === index" class="mega-dropdown">
+        <p class="dropdown-label">{{ item.dropdownTitle }}</p>
+        <div class="dropdown-grid" :class="{ 'company-grid': item.name === 'Company' }">
+          <router-link 
+            v-for="child in item.children" 
+            :key="child.name" 
+            :to="child.path" 
+            class="dropdown-item"
+            @click="openDropdownIndex = null" 
+          >
+            <span class="item-icon">
+              <img :src="child.icon" :alt="child.name" class="nav-icon-img">
+            </span>
+            <span class="item-text">{{ child.name }}</span>
+          </router-link>
+        </div>
+      </div>
+    </li>
+    <div class="nav-indicator" :style="indicatorStyle"></div>
+  </ul>
+</div>
 
   <div class="stavo-container"> 
     <li class="stavo"><a href="/sales">Contact Sales</a></li>
@@ -179,7 +191,8 @@ the Swychr mobile application, Swychr Connect web platform, and API suites are f
     </div>
 </template>
 
-<script setup>import { ref, onMounted, onBeforeUnmount, nextTick, watch } from 'vue';
+<script setup>
+import { ref, onMounted, onBeforeUnmount, nextTick, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { onUnmounted } from 'vue';
 import p2p from '@/assets/images/P2P.png';
@@ -195,10 +208,11 @@ import Blogs from '@/assets/images/Blogs.png';
 import Culture from '@/assets/images/Culture.png';
 
 
-
 const route = useRoute();
 const navMenu = ref(null); 
 const activeIndex = ref(0);
+const openDropdownIndex = ref(null);
+const isMobile = ref(false);
 
 const navItems = [
   { name: 'Home', path: '/home' },
@@ -242,32 +256,29 @@ const indicatorStyle = ref({ width: '0px', left: '0px', opacity: 0 });
 
 const setActive = (index) => {
   activeIndex.value = index;
-  setTimeout(() => {
-    updateIndicator();
-  }, 100); 
+  nextTick(() => updateIndicator());
 };
 
 const updateIndicator = () => {
   if (!navMenu.value) return;
-  
-
   const activeElement = navMenu.value.querySelector('.nav-link.active');
-  
   if (activeElement) {
-  const reducedWidth = activeElement.offsetWidth * 0.6;
-
-  const left = activeElement.offsetLeft + (activeElement.offsetWidth - reducedWidth) / 2;
-    
-     indicatorStyle.value = {
-     width: `${reducedWidth}px`,
-      left: `${left}px`,
-      opacity: 1
-    };
+    const reducedWidth = activeElement.offsetWidth * 0.6;
+    const left = activeElement.offsetLeft + (activeElement.offsetWidth - reducedWidth) / 2;
+    indicatorStyle.value = { width: `${reducedWidth}px`, left: `${left}px`, opacity: 1 };
   } else {
- 
     indicatorStyle.value.opacity = 0;
   }
 };
+
+const toggleDropdown = (index) => {
+  openDropdownIndex.value = openDropdownIndex.value === index ? null : index;
+};
+
+const checkScreen = () => {
+  isMobile.value = window.innerWidth <= 820; // Set to tablet/mobile threshold
+};
+
 
 watch(() => route.path, (newPath) => {
   const pathName = newPath.replace('/', '').toLowerCase() || 'home';
@@ -277,23 +288,6 @@ watch(() => route.path, (newPath) => {
     nextTick(updateIndicator);
   }
 }, { immediate: true });
-
-const openDropdownIndex = ref(null);
-
-const toggleDropdown = (index) => {
-  if (openDropdownIndex.value === index) {
-    openDropdownIndex.value = null; 
-  } else {
-    openDropdownIndex.value = index; 
-  }
-};
-
-
-const closeOnOutsideClick = (event) => {
-  if (!event.target.closest('.nav-item-wrapper')) {
-    openDropdownIndex.value = null;
-  }
-};
 
 onMounted(() => {
   updateIndicator();
@@ -306,11 +300,6 @@ onBeforeUnmount(() => {
   window.removeEventListener('click', closeOnOutsideClick); 
 });
 
-const isMobile = ref(false);
-
-const checkScreen = () => {
-  isMobile.value = window.innerWidth <= 430; 
-};
 
 onMounted(() => {
   checkScreen();
@@ -380,6 +369,13 @@ position: absolute;
   gap: 5px;
 }
 
+.nav-item-wrapper {
+  position: relative;
+  /* This bridge keeps the dropdown open when moving mouse down */
+  padding-bottom: 20px; 
+  margin-bottom: -20px;
+}
+
 .mega-dropdown {
   display: block; 
   position: absolute;
@@ -391,22 +387,24 @@ position: absolute;
   border-radius: 15px;
   width: 520px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-  margin-top: 15px;
+  margin-top: 5px; /* Reduced gap for smoother hover */
   z-index: 1000;
-  font-family: 'Montserrat', sans-serif !important;
-    font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
-  font-size: 1.432rem;
+  /* Add a smooth fade-in */
+  animation: fadeIn 0.2s ease-in-out;
 }
 
-.dropdown-arrow {
-  transition: transform 0.3s ease;
-}
-.dropdown-arrow.rotated {
-  transform: rotate(180deg);
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
+/* On mobile, remove the hover bridge */
+@media screen and (max-width: 430px) {
+  .nav-item-wrapper {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+}
 
 .dropdown-grid {
   display: grid;
@@ -424,19 +422,6 @@ position: absolute;
   display: grid;
   grid-template-columns: 1fr !important;
   gap: 12px; 
-}
-
-.dropdown-item {
-  display: grid;
-  grid-template-columns: 30px 1fr;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
 }
 
 .nav-icon-img {
@@ -571,40 +556,38 @@ line-height: 120%;
  }
  
 
-
-/* Container for the footer bottom row */
 .sergiolay {
-  display: flex; /* Changed from inline-flex */
-  justify-content: space-between; /* This is the key: pushes left to left, right to right */
+  display: flex; 
+  justify-content: space-between;
   align-items: center;
-  width: 90%; /* Matches your line width */
-  margin: 30px auto; /* Centers the whole row */
+  width: 90%;
+  margin: 30px auto; 
   padding: 0;
 }
 
-/* Contains © 2026 and Borderless finance */
+
 .zoukielay {
-  margin-right: 0; /* REMOVE the 560px margin */
+  margin-right: 0; 
   text-align: left;
 }
 
-/* Contains Terms and Privacy links */
+
 .chanalay {
-  margin-right: 0; /* REMOVE the 100px margin */
+  margin-right: 0;
   display: flex;
-  gap: 20px; /* Space between the two links */
+  gap: 20px; 
   list-style: none;
   padding: 0;
 }
 
-/* Ensure the links stay on one line on desktop */
+
 .chana1lay {
   white-space: nowrap;
 }
 
-/* Alignment fix for the legal text at the bottom */
+
 .rufuslay {
-  margin: 40px auto; /* Centers the legal block */
+  margin: 40px auto; 
   width: 90%;
   text-align: justify;
   font-size: 14px;
@@ -613,26 +596,26 @@ line-height: 120%;
 
 @media screen and (max-width: 430px) {
   .numero {
-    flex-wrap: wrap; /* Allows the logo and button to sit on one line, and menu on next */
+    flex-wrap: wrap; 
     justify-content: space-between;
     margin: 1rem auto;
   }
 
   .seam {
     margin-left: 0;
-    order: 1; /* Logo top left */
+    order: 1; 
   }
 
   .stavo-container {
-    order: 2; /* Contact Sales top right */
+    order: 2; 
   }
 
   .food-pill-container {
-    order: 3; /* Menu Pill on a new line below */
-    width: 100%; /* Spans full width */
+    order: 3;
+    width: 100%;
     margin-top: 15px;
     justify-content: center;
-    overflow-x: auto; /* Allows swiping if links are too many */
+    overflow-x: auto; 
   }
 
   .mannav {
@@ -648,8 +631,8 @@ line-height: 120%;
 
   @media screen and (max-width: 430px) {
   .mega-dropdown {
-    position: fixed; /* Keeps it relative to the screen, not the tiny pill */
-    top: 25%; /* Adjust based on your header height */
+    position: fixed; 
+    top: 25%;
     left: 5% !important;
     width: 90% !important;
     transform: none !important;
@@ -657,11 +640,10 @@ line-height: 120%;
   }
 
   .dropdown-grid {
-    grid-template-columns: 1fr; /* Single column on mobile for clarity */
+    grid-template-columns: 1fr;
   }
 }
 
-  /* Fix for active indicator on mobile */
   .nav-indicator {
     display: block !important; 
     height: 4px;
@@ -671,7 +653,7 @@ line-height: 120%;
 @media screen and (max-width: 1180px) {
   .numero {
     width: 95%;
-    gap: 10px; /* Reduces gap so items don't push each other out */
+    gap: 10px; 
   }
 
   .food-pill-container {
@@ -680,19 +662,19 @@ line-height: 120%;
   }
 
   .nav-link {
-    padding: 0 10px; /* Narrower padding to prevent overflow */
+    padding: 0 10px; 
     font-size: 0.85rem;
   }
 
   .stavo {
-    width: 9rem; /* Slightly smaller button to save space */
+    width: 9rem; 
     margin-right: 0; 
   }
 }
 
 @media only screen and (max-width: 820px) {
   .sergiolay {
-    flex-direction: column; /* Stacks items vertically on small screens */
+    flex-direction: column; 
     align-items: center;
     text-align: center;
     gap: 20px;
