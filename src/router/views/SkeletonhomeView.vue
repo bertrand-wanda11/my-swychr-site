@@ -772,14 +772,11 @@ const navItems = [
 
 const indicatorStyle = ref({ width: '0px', left: '0px', opacity: 0 });
 
-const setActive = (index) => {
-  activeIndex.value = index;
-  nextTick(() => updateIndicator());
-};
-
+// Updated: Only moves the white line for actual pages (Home/Support)
 const updateIndicator = () => {
   if (!navMenu.value) return;
   const activeElement = navMenu.value.querySelector('.nav-link.active');
+  
   if (activeElement) {
     const reducedWidth = activeElement.offsetWidth * 0.6;
     const left = activeElement.offsetLeft + (activeElement.offsetWidth - reducedWidth) / 2;
@@ -789,15 +786,20 @@ const updateIndicator = () => {
   }
 };
 
+const setActive = (index) => {
+  activeIndex.value = index;
+  nextTick(() => updateIndicator());
+};
+
 const toggleDropdown = (index) => {
   openDropdownIndex.value = openDropdownIndex.value === index ? null : index;
 };
 
 const checkScreen = () => {
-  isMobile.value = window.innerWidth <= 820; // Set to tablet/mobile threshold
+  isMobile.value = window.innerWidth <= 820; 
 };
 
-
+// Watches URL changes to snap the indicator back to the correct page
 watch(() => route.path, (newPath) => {
   const pathName = newPath.replace('/', '').toLowerCase() || 'home';
   const index = navItems.findIndex(item => item.name.toLowerCase() === pathName);
@@ -808,25 +810,17 @@ watch(() => route.path, (newPath) => {
 }, { immediate: true });
 
 onMounted(() => {
+  checkScreen();
   updateIndicator();
-  window.addEventListener('resize', updateIndicator);
-  window.addEventListener('click', closeOnOutsideClick); 
+  window.addEventListener('resize', () => {
+    checkScreen();
+    updateIndicator();
+  });
 });
 
 onBeforeUnmount(() => {
-  window.removeEventListener('resize', updateIndicator);
-  window.removeEventListener('click', closeOnOutsideClick); 
-});
-
-onMounted(() => {
-  checkScreen();
-  window.addEventListener('resize', checkScreen);
-});
-
-onUnmounted(() => {
   window.removeEventListener('resize', checkScreen);
 });
-
  
 
 const cards = [
@@ -1168,75 +1162,86 @@ top: -1px;
   gap: 5px;
 }
 
-
+/* --- Base Wrapper --- */
 .nav-item-wrapper {
   position: relative;
-  /* This bridge keeps the dropdown open when moving mouse down */
-  padding-bottom: 20px; 
-  margin-bottom: -20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
-.mega-dropdown {
-  display: block; 
+/* --- THE HOVER BRIDGE --- */
+/* This invisible element fills the gap between the pill and the dropdown */
+.nav-item-wrapper::after {
+  content: "";
   position: absolute;
   top: 100%;
+  left: 0;
+  width: 100%;
+  height: 20px; /* Adjust based on your margin-top */
+  z-index: 5;
+  display: none; /* Hidden by default */
+}
+
+/* Show the bridge only on desktop hover */
+@media (min-width: 821px) {
+  .nav-item-wrapper:hover::after {
+    display: block;
+  }
+}
+
+/* --- Mega Dropdown Modifications --- */
+.mega-dropdown {
+  /* Keep your existing visual styles, but update positioning */
+  display: block; 
+  position: absolute;
+  top: calc(100% + 12px); /* Space below the pill */
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(10px);
+  opacity: 0;
+  visibility: hidden; /* Hide it initially */
+  pointer-events: none; /* Prevent accidental interaction when hidden */
+  
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 1000;
+  
+  /* Visuals from your code */
   background: white;
   padding: 25px;
   border-radius: 15px;
   width: 520px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-  margin-top: 5px; /* Reduced gap for smoother hover */
-  z-index: 1000;
-  /* Add a smooth fade-in */
-  animation: fadeIn 0.2s ease-in-out;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateX(-50%) translateY(10px); }
-  to { opacity: 1; transform: translateX(-50%) translateY(0); }
-}
-
-/* On mobile, remove the hover bridge */
-@media screen and (max-width: 430px) {
-  .nav-item-wrapper {
-    padding-bottom: 0;
-    margin-bottom: 0;
+/* --- THE HOVER TRIGGER --- */
+/* When hovering the wrapper, show the dropdown */
+@media (min-width: 821px) {
+  .nav-item-wrapper:hover .mega-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+  }
+  
+  /* Rotate arrow on hover */
+  .nav-item-wrapper:hover .dropdown-arrow {
+    transform: rotate(180deg);
   }
 }
 
-.dropdown-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
- font-family: 'Montserrat', sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
+/* --- Nav Indicator logic --- */
+/* Ensure the white line only shows for actual active pages, not just hover */
+.nav-indicator {
+  position: absolute;
+  top: -1px;
+  height: 6px;
+  background: #fff;
+  border-radius: 0 0 5px 5px;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 10;
+  pointer-events: none;
 }
 
-
-.company-grid {
-  display: grid;
-  grid-template-columns: 1fr !important;
-  gap: 12px;
-}
-
-.dropdown-item {
-  display: grid;
-  grid-template-columns: 30px 1fr;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
-}
 
 .nav-icon-img {
   width: 22px;
