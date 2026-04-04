@@ -8,48 +8,48 @@
   
 <div class="food-pill-container">
   <ul class="mannav" ref="navMenu"> 
-    <li 
-      v-for="(item, index) in navItems" 
-      :key="item.name" 
-      class="nav-item-wrapper"
-      @mouseenter="!isMobile && item.children ? openDropdownIndex = index : null"
-      @mouseleave="!isMobile ? openDropdownIndex = null : null"
-    >
-      <router-link 
-        :to="item.path" 
-        class="nav-link"
-        :class="{ active: activeIndex === index }"
-        @click="(e) => { 
-          if(item.children) { 
-            e.preventDefault(); // Prevents navigating to /personal, /business, etc.
-            if(isMobile) toggleDropdown(index); // Still allow click for mobile
-          } else { 
-            setActive(index); 
-          }
-        }" 
-      >
-        {{ item.name }}
-        <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }">▾</span>
-      </router-link>
+   <li 
+  v-for="(item, index) in navItems" 
+  :key="item.name" 
+  class="nav-item-wrapper"
+  @mouseenter="!isMobile && item.children ? openDropdownIndex = index : null"
+  @mouseleave="!isMobile ? openDropdownIndex = null : null"
+>
+  <router-link 
+    :to="item.path" 
+    class="nav-link"
+    :class="{ active: activeIndex === index }"
+    @click="(e) => { 
+      if(item.children) { 
+        e.preventDefault(); 
+        if(isMobile) toggleDropdown(index); 
+      } else { 
+        setActive(index); 
+      }
+    }" 
+  >
+    {{ item.name }}
+    <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }">▾</span>
+  </router-link>
 
-      <div v-if="item.children && openDropdownIndex === index" class="mega-dropdown">
-        <p class="dropdown-label">{{ item.dropdownTitle }}</p>
-        <div class="dropdown-grid" :class="{ 'company-grid': item.name === 'Company' }">
-          <router-link 
-            v-for="child in item.children" 
-            :key="child.name" 
-            :to="child.path" 
-            class="dropdown-item"
-            @click="openDropdownIndex = null" 
-          >
-            <span class="item-icon">
-              <img :src="child.icon" :alt="child.name" class="nav-icon-img">
-            </span>
-            <span class="item-text">{{ child.name }}</span>
-          </router-link>
-        </div>
-      </div>
-    </li>
+  <div v-if="item.children && openDropdownIndex === index" class="mega-dropdown">
+    <p class="dropdown-label">{{ item.dropdownTitle }}</p>
+    <div class="dropdown-grid" :class="{ 'company-grid': item.name === 'Company' }">
+      <router-link 
+        v-for="child in item.children" 
+        :key="child.name" 
+        :to="child.path" 
+        class="dropdown-item"
+        @click="openDropdownIndex = null" 
+      >
+        <span class="item-icon">
+          <img :src="child.icon" :alt="child.name" class="nav-icon-img">
+        </span>
+        <span class="item-text">{{ child.name }}</span>
+      </router-link>
+    </div>
+  </div>
+</li>
     <div class="nav-indicator" :style="indicatorStyle"></div>
   </ul>
 </div>
@@ -363,70 +363,59 @@ position: absolute;
   gap: 5px;
 }
 
-.nav-item-wrapper {
-  position: relative;
-  height: 100%;
-  display: flex;
-  align-items: center;
+.mega-dropdown {
+  position: absolute;
+  top: calc(100% + 12px); 
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  width: 520px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+  z-index: 1000;
+  
+  /* Entrance Animation: This makes it feel like it's fading in */
+  animation: dropdownFadeIn 0.25s ease-out forwards;
 }
 
-/* --- THE HOVER BRIDGE --- */
-/* This invisible element fills the gap between the pill and the dropdown */
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* --- The Hover Bridge --- */
+/* This is critical to prevent the menu from closing when moving mouse from link to dropdown */
 .nav-item-wrapper::after {
   content: "";
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
-  height: 20px; /* Adjust based on your margin-top */
+  height: 20px; 
   z-index: 5;
-  display: none; /* Hidden by default */
 }
 
-/* Show the bridge only on desktop hover */
-@media (min-width: 821px) {
-  .nav-item-wrapper:hover::after {
-    display: block;
+/* Only show bridge on desktop */
+@media (max-width: 820px) {
+  .nav-item-wrapper::after {
+    display: none;
   }
 }
 
-/* --- Mega Dropdown Modifications --- */
-.mega-dropdown {
-  /* Keep your existing visual styles, but update positioning */
-  display: block; 
-  position: absolute;
-  top: calc(100% + 12px); /* Space below the pill */
-  left: 50%;
-  transform: translateX(-50%) translateY(10px);
-  opacity: 0;
-  visibility: hidden; /* Hide it initially */
-  pointer-events: none; /* Prevent accidental interaction when hidden */
-  
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-  z-index: 1000;
-  
-  /* Visuals from your code */
-  background: white;
-  padding: 25px;
-  border-radius: 15px;
-  width: 520px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+/* Arrow Rotation Fix */
+.dropdown-arrow {
+  transition: transform 0.3s ease;
+  display: inline-block;
 }
-
-/* --- THE HOVER TRIGGER --- */
-/* When hovering the wrapper, show the dropdown */
-@media (min-width: 821px) {
-  .nav-item-wrapper:hover .mega-dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
-    pointer-events: auto;
-  }
-  
-  /* Rotate arrow on hover */
-  .nav-item-wrapper:hover .dropdown-arrow {
-    transform: rotate(180deg);
-  }
+.dropdown-arrow.rotated {
+  transform: rotate(180deg);
 }
 
 /* --- Nav Indicator logic --- */
