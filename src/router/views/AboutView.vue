@@ -902,7 +902,7 @@ display: flex;
   color: #555;
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 110%;
   letter-spacing: 0.055rem; 
   text-align: justify;
