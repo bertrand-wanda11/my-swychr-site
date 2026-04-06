@@ -820,7 +820,7 @@ display: flex;
   }
 }
 
-.stavovest-con {
+.stavovest {
   border: none;
   background: #fff;
   width: 13rem;
@@ -834,7 +834,7 @@ display: flex;
   margin-top: 0.625rem;
 }
 
-.stavovest-con a {
+.stavovest a {
   text-decoration: none;
   color: #000;
   font-family: 'Montserrat', sans-serif;
@@ -892,7 +892,7 @@ display: flex;
     flex-shrink: 0;
   }
 
-  .stavovest-con {
+  .stavovest {
     margin-right: 1.25rem !important;
     margin-top: 0;
     flex-shrink: 0;
@@ -1005,7 +1005,7 @@ display: flex;
   }
 
 
-  .stavovest-con {
+  .stavovest {
     margin: 1.5rem auto 0;
     width: 85vw;
     margin-right: 0;
