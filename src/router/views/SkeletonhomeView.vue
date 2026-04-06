@@ -70,12 +70,12 @@
 </p>
 <div class="proton">
   <div class="kelly"> 
-      <li class="steve"><a href="https://apps.apple.com/ae/app/swychr/id1586029318">
+      <li class="steve"><a href="https://urlgeni.us/swychr">
      
       Global E-Wallet</a></li>
 </div>
   <div class="nelly"> 
-      <li class="obus"><a href="https://play.google.com/store/apps/details?id=com.innobins.jtqwallet">
+      <li class="obus"><a href="https://urlgeni.us/swychr">
   
       Local E-Wallet</a></li>
       </div>
@@ -132,7 +132,7 @@
 <p class="tilla">SwyChr brings together everything you need to manage money from payments<br>
   and currency to business tools and digital banking.</p>
      <div class=""> 
-      <li class="nick"><a href="" class="">Explore More</a></li>
+      <li class="nick"><a href="https://urlgeni.us/swychr" class="">Explore More</a></li>
 
 </div>
 </div>
@@ -898,7 +898,8 @@ const features = [
 .tech {
   text-align: justify;
   line-height: 1;
-   margin-bottom:11rem;
+  margin-bottom:11rem;
+  padding-left : 6rem;
 }
 
 .smart {
