@@ -57,7 +57,7 @@ beyond it lands in seconds.
 </p>
 <div class="protonusd">
   <div class="icon-circle10">
-     <span class="button-text10">Send Airtime Now</span>
+     <span class="button-text10">My Usd Account</span>
           <img src="@/assets/images/dreams.png" alt="Card" />
         </div>
   
