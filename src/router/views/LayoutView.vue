@@ -33,7 +33,23 @@
       </router-link>
 
       <div v-if="item.children && openDropdownIndex === index" class="mega-dropdown">
-         </div>
+  <p class="dropdown-label">{{ item.dropdownTitle }}</p>
+  
+  <div class="dropdown-grid" :class="{ 'company-grid': item.name === 'Company' }">
+    <router-link 
+      v-for="child in item.children" 
+      :key="child.name" 
+      :to="child.path" 
+      class="dropdown-item"
+      @click="openDropdownIndex = null" 
+    >
+      <span class="item-icon">
+        <img :src="child.icon" :alt="child.name" class="nav-icon-img">
+      </span>
+      <span class="item-text">{{ child.name }}</span>
+    </router-link>
+  </div>
+</div>
     </li>
     <div class="nav-indicator" :style="indicatorStyle"></div>
   </ul>
@@ -444,10 +460,23 @@ position: absolute;
   pointer-events: none;
 }
 
+.dropdown-label {
+  color: #8C1BC1; /* SwyChr Purple */
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  text-align: left;
+  display: block;
+}
+
+/* Ensure icons in the dropdown look sharp */
 .nav-icon-img {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   object-fit: contain;
+  display: block;
 }
 
 .item-text {

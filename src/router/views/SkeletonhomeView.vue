@@ -32,8 +32,24 @@
         <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }">▾</span>
       </router-link>
 
-      <div v-if="item.children && openDropdownIndex === index" class="mega-dropdown">
-         </div>
+     <div v-if="item.children && openDropdownIndex === index" class="mega-dropdown">
+  <p class="dropdown-label">{{ item.dropdownTitle }}</p>
+  
+  <div class="dropdown-grid" :class="{ 'company-grid': item.name === 'Company' }">
+    <router-link 
+      v-for="child in item.children" 
+      :key="child.name" 
+      :to="child.path" 
+      class="dropdown-item"
+      @click="openDropdownIndex = null" 
+    >
+      <span class="item-icon">
+        <img :src="child.icon" :alt="child.name" class="nav-icon-img">
+      </span>
+      <span class="item-text">{{ child.name }}</span>
+    </router-link>
+  </div>
+</div>
     </li>
     <div class="nav-indicator" :style="indicatorStyle"></div>
   </ul>
@@ -1105,20 +1121,20 @@ const features = [
 
 .food-pill-container {
 border: 1px solid #FFF;
-border-radius: 50px;
-height: 3.5rem;
- padding: 0 1rem;
-display: flex;
-align-items: center;
-position: relative;
-overflow: visible;
+  border-radius: 50px;
+  height: 3.5rem;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  position: relative; 
+  overflow: visible;
 }
 
 .nav-indicator {
 position: absolute;
-top: -1px;
- height: 6px;
- background: #fff;
+  top: -1px; 
+  height: 6px; 
+  background: #fff;
   border-radius: 0 0 5px 5px;
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   z-index: 10;
@@ -1130,7 +1146,7 @@ top: -1px;
   list-style: none;
   padding: 0;
   margin: 0;
-  position: relative;
+  position: relative; 
   height: 100%;
   width: 100%;
   align-items: center;
@@ -1147,7 +1163,6 @@ top: -1px;
   gap: 5px;
 }
 
-/* --- Base Wrapper --- */
 .nav-item-wrapper {
   position: relative;
   height: 100%;
@@ -1229,6 +1244,7 @@ top: -1px;
 .dropdown-arrow.rotated {
   transform: rotate(180deg);
 }
+
 /* --- Nav Indicator logic --- */
 /* Ensure the white line only shows for actual active pages, not just hover */
 .nav-indicator {
@@ -1242,11 +1258,23 @@ top: -1px;
   pointer-events: none;
 }
 
+.dropdown-label {
+  color: #8C1BC1; /* SwyChr Purple */
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  text-align: left;
+  display: block;
+}
 
+/* Ensure icons in the dropdown look sharp */
 .nav-icon-img {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   object-fit: contain;
+  display: block;
 }
 
 .item-text {
@@ -1261,14 +1289,13 @@ top: -1px;
 .nav-item-wrapper:nth-child(4) .mega-dropdown {
   left: 50% !important;
   transform: translateX(-50%) !important;
-  width: 260px;
+  width: 260px; 
 }
 
 .nav-item-wrapper:nth-child(4) .mega-dropdown::before {
   left: 50%;
   transform: translateX(-50%);
 }
-
 
 @media screen and (max-width: 430px) {
   .numero {
