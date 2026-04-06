@@ -532,58 +532,58 @@ position: absolute;
 }
 
 @media screen and (max-width: 430px) {
-  /* --- The Wrapper --- */
-  .nav-item-wrapper::after {
-    display: none !important; /* Kill the hover bridge for mobile */
+  .numero {
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    margin: 1rem auto;
   }
 
-  /* --- The Dropdown Box --- */
+  .seam {
+    margin-left: 0;
+    order: 1;
+  }
+
+  .stavo-container {
+    order: 2; 
+  }
+
+  .food-pill-container {
+    order: 3; 
+    width: 100%;
+    margin-top: 15px;
+    justify-content: center;
+    overflow-x: auto; 
+  }
+
+  .mannav {
+    justify-content: center;
+    width: auto;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 0 8px;
+    white-space: nowrap;
+  }
+
+  @media screen and (max-width: 430px) {
   .mega-dropdown {
-    position: fixed; /* Fixed works better for mobile popups */
-    top: 25%; /* Adjust based on your header height */
-    left: 5% !important; /* Small 5% margin from left */
-    right: 5% !important; /* Small 5% margin from right */
-    width: 90% !important; /* Spans 90% of screen width */
-    height: auto;
-    max-height: 70vh; /* Prevents it from going off bottom of screen */
-    overflow-y: auto; /* Allows scrolling if many items exist */
-    transform: none !important; /* Remove the desktop translate centering */
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    position: fixed;
+    top: 25%;
+    left: 5% !important;
+    width: 90% !important;
+    transform: none !important;
     z-index: 9999;
   }
 
-  /* --- The Grid Alignment --- */
   .dropdown-grid {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: flex-start; /* Align icons/text to the left */
-    gap: 15px;
-    width: 100%;
+    grid-template-columns: 1fr; 
   }
+}
 
-  /* Force Company grid to behave same as others on mobile */
-  .company-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* --- The Individual Items --- */
-  .dropdown-item {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    padding: 5px 0;
-  }
-
-  .item-text {
-    font-size: 1rem; /* Slightly larger for easier mobile reading */
-    text-align: left;
-  }
-
-  .nav-icon-img {
-    width: 28px; /* Larger icons for finger-tapping */
-    height: 28px;
+  .nav-indicator {
+    display: block !important; 
+    height: 4px;
   }
 }
 
@@ -640,6 +640,29 @@ position: absolute;
   .nav-icon-img {
     width: 28px; /* Larger icons for finger-tapping */
     height: 28px;
+  }
+}
+
+
+@media screen and (max-width: 1180px) {
+  .numero {
+    width: 95%;
+    gap: 10px; 
+  }
+
+  .food-pill-container {
+    padding: 0 5px;
+    height: 3.2rem;
+  }
+
+  .nav-link {
+    padding: 0 10px;
+    font-size: 0.85rem;
+  }
+
+  .stavo {
+    width: 9rem; 
+    margin-right: 0; 
   }
 }
 

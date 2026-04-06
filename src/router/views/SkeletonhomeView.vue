@@ -1436,6 +1436,7 @@ position: absolute;
   }
 }
 
+
 @media screen and (max-width: 1180px) {
   .numero {
     width: 95%;
