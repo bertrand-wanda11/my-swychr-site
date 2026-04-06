@@ -132,7 +132,7 @@
 
  <section class="p2p3">
   <div class="insidep2p3">
-<h2 class="person4p2p">Why SwyChr Remit</h2>
+<h2 class="person4p2p">Why Swychremit</h2>
  <div class="bento-gridp2p">
   <div 
     v-for="(feature, index) in features" 
@@ -229,39 +229,6 @@
     </div>
   </section>
 
-  <section class="p2p6">
-    <div class="header">
-      <h2>Stop overpaying for your love.</h2>
-      <p>We compared the total cost of sending $1,000 USD to Nigeria (NGN).</p>
-    </div>
-
-    <div class="insidep2p6">
-      <table class="comparison-table">
-        <thead>
-          <tr>
-            <th>Provider</th>
-            <th>Exchange Rate</th>
-            <th>Transfer Fee</th>
-            <th>Total Received</th>
-            <th>Speed</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="item in providers" :key="item.name" :class="{ 'highlight-row': item.isMain }">
-            <td class="provider-name">{{ item.name }}</td>
-            <td>{{ item.rate }} NGN</td>
-            <td>${{ item.fee.toFixed(2) }}</td>
-            <td class="total-received">{{ item.total }} NGN</td>
-            <td class="speed">
-              <span v-if="item.isMain"><img src="@/assets/images/Vector (2).png" alt="" width="10px"></span>
-              <span v-else>🕒</span>
-              {{ item.speed }}
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
 
   <section class="p2p7">
   <div class="insidep2p7">
@@ -371,11 +338,11 @@ How secure is my money?
       <p class="cta-subtitle">Experience the new standard in global remittances.</p>
       
       <div class="store-buttons">
-        <a href="#" class="store-link">
+        <a href="https://urlgeni.us/swychr" class="store-link">
           <img src="@/assets/images/appt.png" alt="App Store" class="icon" />
           <span>App Store</span>
         </a>
-        <a href="#" class="store-link">
+        <a href="https://urlgeni.us/swychr" class="store-link">
           <img src="@/assets/images/playt.png" alt="Google Play" class="icon" />
           <span>Google Play</span>
         </a>
@@ -718,13 +685,6 @@ const steps = [
   }
 ];
 
-
-const providers = [
-  { name: 'Swych Remit', rate: '1,550', fee: 0.00, total: '1,550,000', speed: 'Seconds', isMain: true },
-  { name: 'Western Union', rate: '1,495', fee: 4.99, total: '1,487,530', speed: '1-2 Days', isMain: false },
-  { name: 'WorldRemit', rate: '1,510', fee: 2.99, total: '1,505,480', speed: 'Minutes', isMain: false },
-  { name: 'High Street Bank', rate: '1,420', fee: 25.00, total: '1,384,500', speed: '3-5 Days', isMain: false }
-];
  </script>
    
 <style scoped>
@@ -928,7 +888,7 @@ display: flex;
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   font-style: normal;
-  font-weight: 400;
+  font-weight: bold;
   line-height: 136%;
   letter-spacing: 0.075rem; 
   margin-top: 0;
@@ -1468,80 +1428,6 @@ display: flex;
 
 .star {
   font-size: 12px;
-}
-
-
-.p2p6 {
-  padding: 60px 20px;
-  background-color: #f8f9fa;
-  font-family: 'Inter', sans-serif;
-  text-align: center;
-}
-
-.header h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.header p {
-  color: #666;
-  margin-bottom: 40px;
-}
-
-.insidep2p6 {
-  max-width: 1000px;
-  margin: 0 auto;
-  overflow-x: auto; 
-}
-
-.comparison-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
-  background: transparent;
-}
-
-
-thead th {
-  background-color: #111;
-  color: white;
-  padding: 20px;
-  font-weight: 500;
-}
-
-
-thead th:first-child { border-top-left-radius: 12px; }
-thead th:last-child { border-top-right-radius: 12px; }
-
-
-tbody td {
-  padding: 20px;
-  border-bottom: 1px solid #eee;
-  color: #444;
-  font-size: 0.95rem;
-}
-
-.highlight-row {
-  background-color: white !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transform: scale(1.01);
-  z-index: 10;
-}
-
-.highlight-row td {
-  border-bottom: none;
-}
-
-.highlight-row .total-received, 
-.highlight-row .speed {
-  color: #5d38a0; 
-  font-weight: 700;
-}
-
-.provider-name {
-  font-weight: 600;
-  color: #111;
 }
 
 
@@ -2479,104 +2365,6 @@ margin-left: 67px;
   }
 }
 
-
-@media only screen and (max-width: 1180px) {
-  .p2p6 {
-    padding: 3.75rem 1.25rem; 
-  }
-
-  .insidep2p6 {
-    max-width: 95%;
-    overflow-x: auto; 
-  }
-
-  .comparison-table {
-    min-width: 43.75rem; 
-  }
-
-  thead th, tbody td {
-    padding: 1rem;
-    font-size: 0.875rem;
-  }
-}
-
-
-@media only screen and (max-width: 430px) {
-  .p2p6 {
-    padding: 3rem 1rem;
-  }
-
-  .header h2 {
-    font-size: 1.75rem;
-    line-height: 1.2;
-  }
-
-  .header p {
-    font-size: 0.9rem;
-    margin-bottom: 2rem;
-  }
-
-  .comparison-table thead {
-    display: none;
-  }
-
-
-  .comparison-table, 
-  .comparison-table tbody, 
-  .comparison-table tr, 
-  .comparison-table td {
-    display: block;
-    width: 100%;
-  }
-
-  .comparison-table tr {
-    background: white;
-    margin-bottom: 1.5rem;
-    border-radius: 1rem;
-    padding: 1.25rem;
-    border: 0.0625rem solid #eee;
-    text-align: left;
-  }
-
- 
-  .highlight-row {
-    transform: none !important; 
-    border: 0.125rem solid #5d38a0 !important;
-    box-shadow: 0 0.625rem 1.875rem rgba(93, 56, 160, 0.1) !important;
-  }
-
-  .comparison-table td {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 0;
-    border-bottom: 0.0625rem solid #f9f9f9;
-    font-size: 0.9rem;
-  }
-
-  .comparison-table td:last-child {
-    border-bottom: none;
-  }
-
-  .comparison-table td::before {
-    content: attr(data-label); 
-    font-weight: 600;
-    color: #888;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-  }
-
-  .comparison-table td:nth-of-type(1)::before { content: "Provider"; }
-  .comparison-table td:nth-of-type(2)::before { content: "Rate"; }
-  .comparison-table td:nth-of-type(3)::before { content: "Fee"; }
-  .comparison-table td:nth-of-type(4)::before { content: "Received"; }
-  .comparison-table td:nth-of-type(5)::before { content: "Speed"; }
-
-  .provider-name {
-    font-size: 1.1rem;
-    color: #5d38a0;
-  }
-}
 
 @media only screen and (max-width: 1180px) {
   .insidep2p7 {
