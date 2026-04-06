@@ -56,7 +56,7 @@ locally. Funded instantly via Mobile Money or Bank Transfer.
 </p>
 <div class="protoncard">
   <div class="icon-circle1">
-     <span class="button-text1">Create My Free Card</span>
+     <span class="button-text1">Create My Virtual Card</span>
           <img src="@/assets/images/itie.png" alt="Card" />
         </div>
   
@@ -295,7 +295,7 @@ How secure is my money?
       </p>
       
       <button class="pill-button">
-        <span class="button-text">Create My Free Card</span>
+        <span class="button-text">Create My Virtual Card</span>
         <div class="icon-circle">
           <img src="@/assets/images/itie.png" alt="Card" />
         </div>
