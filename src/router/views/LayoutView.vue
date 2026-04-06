@@ -137,7 +137,7 @@
 
     <div class="sergiolay">
       <div class="zoukielay">
- <h3 class="sergiopikanlay">© 2026 SwyChr Technologies Africa limited</h3>
+ <h3 class="sergiopikanlay"> © 2026 The Swych Group(TSG)</h3>
 <p class="sergiosonlay">Borderless finance for a digital world.</p>
 </div>
 
@@ -183,7 +183,7 @@ the Swychr mobile application, Swychr Connect web platform, and API suites are f
      of Directors – SWYCOP BOD), operating  Financial Cooperative Submission<br> Number
      <b>340/MINADER/DRADER/DDADER/SDR.</b><br>
 <br>
-     © 2026 Swychr Technology Africa Limited. All rights reserved.
+     © 2026 The Swych Group(TSG). All rights reserved.
 
     </p>
  </section>
