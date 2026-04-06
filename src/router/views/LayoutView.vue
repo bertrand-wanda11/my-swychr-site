@@ -565,21 +565,61 @@ position: absolute;
     justify-content: flex-start;
     padding: 0 1rem;
   }
-
-  /* Make Dropdown full width on mobile so it's easy to tap */
-  .mega-dropdown {
-    position: fixed;
-    top: 30%;
-    left: 5% !important;
-    width: 90% !important;
-    transform: none !important;
-    grid-template-columns: 1fr;
+  /* --- The Wrapper --- */
+  .nav-item-wrapper::after {
+    display: none !important; /* Kill the hover bridge for mobile */
   }
 
+  /* --- The Dropdown Box --- */
+  .mega-dropdown {
+    position: fixed; /* Fixed works better for mobile popups */
+    top: 25%; /* Adjust based on your header height */
+    left: 5% !important; /* Small 5% margin from left */
+    right: 5% !important; /* Small 5% margin from right */
+    width: 90% !important; /* Spans 90% of screen width */
+    height: auto;
+    max-height: 70vh; /* Prevents it from going off bottom of screen */
+    overflow-y: auto; /* Allows scrolling if many items exist */
+    transform: none !important; /* Remove the desktop translate centering */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    z-index: 9999;
+  }
+
+  /* --- The Grid Alignment --- */
   .dropdown-grid {
-    grid-template-columns: 1fr; /* Single column for easier finger tapping */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align icons/text to the left */
+    gap: 15px;
+    width: 100%;
+  }
+
+  /* Force Company grid to behave same as others on mobile */
+  .company-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* --- The Individual Items --- */
+  .dropdown-item {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 5px 0;
+  }
+
+  .item-text {
+    font-size: 1rem; /* Slightly larger for easier mobile reading */
+    text-align: left;
+  }
+
+  .nav-icon-img {
+    width: 28px; /* Larger icons for finger-tapping */
+    height: 28px;
   }
 }
+
 
 .footerlay {
            font-family: 'Montserrat', sans-serif;
