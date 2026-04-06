@@ -573,7 +573,7 @@ const benefits = [
   {
     title: 'Personalized Details',
     icon: new URL('@/assets/images/jross1.png', import.meta.url).href,
-    text: 'You get a unique Account Number and Routing Number in your name.'
+    text: 'You get a unique account number and routing number in your name.'
   },
   {
     title: 'Multi-Platform Sync',
