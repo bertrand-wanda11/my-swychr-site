@@ -46,26 +46,26 @@
   </div>
 
   <div class="stavop2p-con"> 
-    <li class="stavop2p"><a href="/sales">Open Web App  <img src="@/assets/images/ror.png" alt="App Store"  width="13px"/></a></li>
+    <li class="stavop2p"><a href="https://urlgeni.us/swychr">Open Web App  <img src="@/assets/images/ror.png" alt="App Store"  width="13px"/></a></li>
   </div>
 </nav>      
  <div class="insidep2p1">
   <div class="techp2p">
 <p class="smartp2p">Send money home.Fast,<br> fair and effortlessly.</p>
 <p class="mathsp2p">
- Near-instant transfers from the USA, Canada, UK, Europe, UAE,
-  Australia, New <br> Zealand, and beyond to Africa, Asia and South America
+ Near-instant transfers from the USA, Canada, <br>UK, Europe, UAE,
+  Australia, New <br> Zealand, and beyond to Africa, Asia <br>
+  and South America
   . No hidden fees. Just the<br>  best rates in the market.
 </p>
 <div class="protonp2p">
   <div class=""> 
-      <li class="stevep2p"><a href="https://apps.apple.com/ae/app/swychr/id1586029318">
+      <li class="stevep2p"><a href="https://urlgeni.us/swychr">
      
       Download on App Store  <img src="@/assets/images/appt.png" alt="App Store"  width="16px"  /></a></li>
 </div>
   <div class=""> 
-      <li class="obusp2p"><a href="https://play.google.com/store/apps/details?id=com.innobins.jtqwallet">
-  
+      <li class="obusp2p"><a href="https://urlgeni.us/swychr">
       Get it on Google Play <img src="@/assets/images/playt.png" alt="Play Store" width="14px" /></a></li>
       </div>
 </div>
@@ -926,7 +926,7 @@ display: flex;
 .mathsp2p {
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 136%;
@@ -992,6 +992,7 @@ display: flex;
 }
 
 .obusp2p {
+  background-color: #FFF;
   border: none;
   width: 17rem;
   align-items: center;
@@ -1003,13 +1004,12 @@ display: flex;
   font-size: 0.9rem;
   font-weight: bold;
   border-radius: 6.25rem;
-  border: 0.125rem solid #fff;
   margin-left: 5vw; 
 }
 
 .obusp2p a {
   text-decoration: none;
-  color: #FFF;
+  color: #000;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.125rem;
   font-style: normal;
