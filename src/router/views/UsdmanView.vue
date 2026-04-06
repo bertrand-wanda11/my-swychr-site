@@ -657,7 +657,7 @@ const steps = [
   {
     number: 'Third',
     title: 'Pay & Send',
-    description: ':Pay via your Swychr Wallet, Virtual Card, or Apple/Google Pay.',
+    description: 'Pay via your Swychr Wallet, Virtual Card, or Apple/Google Pay.',
       image: require('@/assets/images/collae3.png')
   },
   
