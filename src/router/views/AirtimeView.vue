@@ -564,7 +564,7 @@ const earningsCards = [
   },
   {
      image: new URL('@/assets/images/Glo2.png', import.meta.url).href,
-    text: 'We provide you with a Routing Number and Account Number. To your clients in the USA, you look like a local. To you, it\'s the easiest way to grow your wealth in a stable currency.'
+    text: 'We provide you with a routing number and account number. To your clients in the USA, you look like a local. To you, it\'s the easiest way to grow your wealth in a stable currency.'
   }
 ];
 
