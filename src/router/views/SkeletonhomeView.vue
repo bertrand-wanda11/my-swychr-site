@@ -590,7 +590,7 @@
             Fast,Secure,Borderless Finance.</p>
             <div class="sgrouplay">
             <a href=" https://web.facebook.com/swychrglobal" target="_blank"><i class="fab fa-facebook icon-fb"></i> </a>
-             <a href=" https://www.linkedin.com/authwall?tr" target="_blank"> <i class="fab fa-linkedin icon-fb"></i></a>  
+             <a href="https://www.linkedin.com/company/swychrglobal/?viewAsMember=true" target="_blank"> <i class="fab fa-linkedin icon-fb"></i></a>  
             <a href=" https://x.com/swychrglobal?mx=2" target="_blank"><i class="fas fa-times icon-fb"></i></a> 
              <a href="https://www.instagram.com/swychrglobal" target="_blank"> <i class="fab fa-instagram icon-fb"></i></a> 
         </div> 
