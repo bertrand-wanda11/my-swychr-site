@@ -596,7 +596,7 @@ const steps = [
   {
     number: 'First',
     title: 'Verify',
-    description: 'Use your local Mobile Money or Bank App to add funds to your Swychr E-Wallet.',
+    description: 'Quick and easy KYC. Proivde a few personal details, government issued identification document and complete the liveliness check.',
     image: require('@/assets/images/poppy1.png')
   },
   {
