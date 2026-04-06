@@ -228,11 +228,11 @@
   <p  class="first1">First</p>
    <p  class="first11">Swychr – Global eWallet App</p>
    <p class="first111">Swychr is your global digital wallet for instant, secure, and low-<br>
-    cost cross-border transactions. Send money across 100+<br>countries .......</p>
+    cost cross-border transactions. Send money across 100+<br>countries</p>
   <p class ="first1111"><span class="Diose">1</span> Create an account and verify your identity.</p>
   <p class ="first11111"><span class="Diose">2</span>Add funds via card, bank transfer, mobile money,<br>
     crypto or other supported payment methods.</p>
-  <p class ="first111111"><span class="Diose">3</span> Transact globally: send money, buy digital products,<br>
+  <p class ="first111111"><span class="Diose">3</span><span class="rooming">Transact globally:</span> send money, buy digital products,<br>
     or pay bills instantly.</p>
   <p class ="first1111111"><span class="Diose">4</span>Use virtual cards for safe and seamless online<br>
      payments and in-store payments.</p>
@@ -260,7 +260,7 @@
   <p  class="second1">Second</p>
    <p  class="second11">Swychr Pay – Local eWallet App</p>
    <p class="second111">Swychr Pay is a local digital wallet designed to simplify<br>
-    payments within specific local markets. Receive money, pay<br>bills, buy airtime, make merchant payments......</p>
+    payments within specific local markets. Receive money, pay<br>bills, buy airtime, make merchant payments</p>
   <p class ="second1111"><span class="Diose">1</span>Download the app and sign up in minutes.</p>
   <p class ="second11111"><span class="Diose">2</span>Add money locally using mobile money or bank<br>
     accounts.</p>
@@ -301,7 +301,7 @@
    and connectivity tools for businesses, fintechs, and NGOs. From<br>bulk payments to virtual card 
    issuance and cross-border transactions</p>
   <p class ="third1111"><span class="Diose">1</span>Sign up as a business and access the dashboard or APIs.</p>
-  <p class ="third11111"><span class="Diose">2</span>Choose your service: bulk payments, virtual cards,<br>
+  <p class ="third11111"><span class="Diose">2</span><span class="rooming">Choose your service:</span> bulk payments, virtual cards,<br>
     payout APIs, USD accounts, or airtime distribution.</p>
   <p class ="third111111"><span class="Diose">3</span>Integrate via API or use our web dashboard for no-<br>
   code operations.</p>
@@ -653,7 +653,7 @@
 
     <div class="sergiolay">
       <div class="zoukielay">
- <h3 class="sergiopikanlay">© 2026 SwyChr Technologies Africa limited</h3>
+ <h3 class="sergiopikanlay">© 2026 The Swych Group (TSG)</h3>
 <p class="sergiosonlay">Borderless finance for a digital world.</p>
 </div>
 
@@ -699,7 +699,7 @@ the Swychr mobile application, Swychr Connect web platform, and API suites are f
      of Directors – SWYCOP BOD), operating  Financial Cooperative Submission<br> Number
      <b>340/MINADER/DRADER/DDADER/SDR.</b><br>
 <br>
-     © 2026 Swychr Technology Africa Limited. All rights reserved.
+     © 2026 The Swych Group (TSG). All rights reserved.
 
     </p>
  </section>
@@ -2320,6 +2320,9 @@ position: absolute;
   line-height: 120%;
 }
 
+.rooming{
+  font-weight: bold;
+}
 .papa3 {
   display: inline-flex;
 }
@@ -2846,7 +2849,7 @@ input[type="checkbox"]:checked ~ .wanda-expected {
         }
         
  .mother11lay{
-            margin: 1.1rem;
+            margin: 1rem;
             text-align: center;
             text-align: justify; 
             margin-left: 2rem;
@@ -2920,7 +2923,7 @@ margin-right: 2.8rem;
   
  .schoollay{
   border-top: 1px solid #fff;
-  width: 90%;
+  width: 92%;
   margin-left: 80px;
  }    
  

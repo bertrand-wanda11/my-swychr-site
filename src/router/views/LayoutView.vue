@@ -703,7 +703,7 @@ position: absolute;
         }
         
  .mother11lay{
-            margin: 1.1rem;
+            margin: 1rem;
             text-align: center;
             text-align: justify; 
             margin-left: 2rem;
@@ -776,7 +776,7 @@ margin-right: 2.8rem;
   
  .schoollay{
   border-top: 1px solid #fff;
-  width: 90%;
+  width: 92%;
   margin-left: 80px;
  }   
  
