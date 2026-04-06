@@ -899,7 +899,7 @@ const features = [
   text-align: justify;
   line-height: 1;
   margin-bottom:11rem;
-  padding-left : 6rem;
+  padding-left : 3rem;
 }
 
 .smart {
