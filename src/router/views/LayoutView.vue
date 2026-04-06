@@ -8,48 +8,33 @@
   
 <div class="food-pill-container">
   <ul class="mannav" ref="navMenu"> 
-   <li 
-  v-for="(item, index) in navItems" 
-  :key="item.name" 
-  class="nav-item-wrapper"
-  @mouseenter="!isMobile && item.children ? openDropdownIndex = index : null"
-  @mouseleave="!isMobile ? openDropdownIndex = null : null"
->
-  <router-link 
-    :to="item.path" 
-    class="nav-link"
-    :class="{ active: activeIndex === index }"
-    @click="(e) => { 
-      if(item.children) { 
-        e.preventDefault(); 
-        if(isMobile) toggleDropdown(index); 
-      } else { 
-        setActive(index); 
-      }
-    }" 
-  >
-    {{ item.name }}
-    <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }">▾</span>
-  </router-link>
-
-  <div v-if="item.children && openDropdownIndex === index" class="mega-dropdown">
-    <p class="dropdown-label">{{ item.dropdownTitle }}</p>
-    <div class="dropdown-grid" :class="{ 'company-grid': item.name === 'Company' }">
+    <li 
+      v-for="(item, index) in navItems" 
+      :key="item.name" 
+      class="nav-item-wrapper"
+      @mouseenter="!isMobile && item.children ? openDropdownIndex = index : null"
+      @mouseleave="!isMobile ? openDropdownIndex = null : null"
+    >
       <router-link 
-        v-for="child in item.children" 
-        :key="child.name" 
-        :to="child.path" 
-        class="dropdown-item"
-        @click="openDropdownIndex = null" 
+        :to="item.path" 
+        class="nav-link"
+        :class="{ active: activeIndex === index }"
+        @click="(e) => { 
+          if(item.children) { 
+            e.preventDefault(); // This stops navigation on parent click
+            if(isMobile) toggleDropdown(index); // Mobile still needs click
+          } else { 
+            setActive(index); 
+          }
+        }" 
       >
-        <span class="item-icon">
-          <img :src="child.icon" :alt="child.name" class="nav-icon-img">
-        </span>
-        <span class="item-text">{{ child.name }}</span>
+        {{ item.name }}
+        <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }">▾</span>
       </router-link>
-    </div>
-  </div>
-</li>
+
+      <div v-if="item.children && openDropdownIndex === index" class="mega-dropdown">
+         </div>
+    </li>
     <div class="nav-indicator" :style="indicatorStyle"></div>
   </ul>
 </div>
@@ -194,7 +179,6 @@ the Swychr mobile application, Swychr Connect web platform, and API suites are f
 <script setup>
 import { ref, onMounted, onBeforeUnmount, nextTick, watch } from 'vue';
 import { useRoute } from 'vue-router';
-import { onUnmounted } from 'vue';
 import p2p from '@/assets/images/P2P.png';
 import billIcon from '@/assets/images/invoice.png';
 import cardIcon from '@/assets/images/card.png';
@@ -384,9 +368,9 @@ position: absolute;
 }
 
 /* Show the bridge only on desktop hover */
-@media (min-width: 821px) {
-  .nav-item-wrapper:hover::after {
-    display: block;
+@media only screen and (max-width: 430px) {
+  .nav-item-wrapper::after {
+    display: none; /* Do not show on mobile screens */
   }
 }
 
