@@ -857,7 +857,7 @@ const features = [
   },
   {
     title: 'Built for Businesses & Individuals',
-    description: 'Hold, send, and receive NGN, GHS, KES, USD, GBP & more.',
+    description: 'Send , receive and manage money across borders seamlessly',
     image: new URL('@/assets/images/tribe3.png', import.meta.url).href,
     class: 'feature-tall'
   },
