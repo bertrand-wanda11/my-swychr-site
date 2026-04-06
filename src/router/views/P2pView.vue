@@ -681,7 +681,7 @@ const features = [
   },
   {
     title: 'Global Reach, Local Touch',
-    description: 'Why wait days? Most of our transfers to mobile money and bank accounts land in under 60 seconds.',
+    description: 'Earn global, send local.Funds are delivered directly to beneficiary mobile money or bank accounts',
     image: new URL('@/assets/images/philla4.png', import.meta.url).href,
     class: 'feature-standard'
   }
