@@ -190,7 +190,7 @@ import About from '@/assets/images/About Us.png';
 import Careers from '@/assets/images/Careers.png';
 import Blogs from '@/assets/images/Blogs.png';
 import Culture from '@/assets/images/Culture.png';
-
+import vestor from '@/assets/images/sabinus.png';
 
 const route = useRoute();
 const navMenu = ref(null); 
@@ -230,7 +230,8 @@ const navItems = [
     { name: 'About Us', icon: About,path: '/About'},
       { name: 'Careers', icon: Careers,path: '/Career'},
       { name: 'Blogs', icon: Blogs,path: '/Blog'},
-      { name: 'Culture', icon: Culture,path: '/Culture'}
+      { name: 'Culture', icon: Culture,path: '/Culture'},
+      { name: 'Invest', icon: vestor,path: '/Invest'}
     ]
   },
   { name: 'Support', path: '/support' }
@@ -290,6 +291,7 @@ onBeforeUnmount(() => {
 </script>
 
 <style>
+
 .seam{
 margin-top: 20px;
 margin-left: 67px;
