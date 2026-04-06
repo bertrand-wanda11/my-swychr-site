@@ -595,51 +595,70 @@ position: absolute;
 
   /* --- The Dropdown Box --- */
   .mega-dropdown {
-    position: fixed; /* Fixed works better for mobile popups */
-    top: 25%; /* Adjust based on your header height */
-    left: 5% !important; /* Small 5% margin from left */
-    right: 5% !important; /* Small 5% margin from right */
-    width: 90% !important; /* Spans 90% of screen width */
-    height: auto;
-    max-height: 70vh; /* Prevents it from going off bottom of screen */
-    overflow-y: auto; /* Allows scrolling if many items exist */
-    transform: none !important; /* Remove the desktop translate centering */
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    position: fixed;
+    top: 22%; /* Adjust based on your logo/button height */
+    left: 5% !important;
+    right: 5% !important;
+    width: 90% !important;
+    transform: none !important;
+    padding: 24px; /* More padding for a premium feel */
+    border-radius: 24px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
     z-index: 9999;
+    text-align: left; /* FORCE LEFT ALIGNMENT */
   }
 
-  /* --- The Grid Alignment --- */
+  /* --- The Headings --- */
+  .dropdown-label {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-bottom: 24px;
+    font-size: 0.85rem;
+    color: #8C1BC1; /* SwyChr Purple */
+    width: 100%;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 12px;
+  }
+
+  /* --- The Grid --- */
   .dropdown-grid {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: flex-start; /* Align icons/text to the left */
-    gap: 15px;
+    flex-direction: column; /* Stack vertically */
+    align-items: flex-start; /* Align all items to the left edge */
+    gap: 20px; /* Consistent space between items */
     width: 100%;
   }
 
-  /* Force Company grid to behave same as others on mobile */
-  .company-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* --- The Individual Items --- */
+  /* --- Individual Items --- */
   .dropdown-item {
-    width: 100%;
     display: flex;
-    justify-content: flex-start;
-    padding: 5px 0;
+    flex-direction: row; /* Icon and text side-by-side */
+    align-items: center; /* Vertically center icon with text */
+    justify-content: flex-start; /* Push everything to the left */
+    width: 100%;
+    gap: 16px; /* Space between the icon and the text */
+    text-decoration: none !important;
   }
 
-  .item-text {
-    font-size: 1rem; /* Slightly larger for easier mobile reading */
-    text-align: left;
+  .item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px; /* Set a fixed width so text starts at same spot */
   }
 
   .nav-icon-img {
-    width: 28px; /* Larger icons for finger-tapping */
+    width: 28px;
     height: 28px;
+    object-fit: contain;
+  }
+
+  .item-text {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #282828;
+    text-align: left;
+    white-space: nowrap;
   }
 }
 
