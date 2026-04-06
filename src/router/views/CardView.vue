@@ -43,7 +43,7 @@
   </div>
 
   <div class="stavocard-con"> 
-    <li class="stavocard"><a href="/sales">Open Web App<img src="@/assets/images/ror.png" alt="App Store"  width="13px"/></a></li>
+    <li class="stavocard"><a href="https://urlgeni.us/swychr">Open Web App<img src="@/assets/images/ror.png" alt="App Store"  width="13px"/></a></li>
   </div>
 </nav>      
  <div class="insidecard1">
@@ -56,8 +56,10 @@ locally. Funded instantly via Mobile Money or Bank Transfer.
 </p>
 <div class="protoncard">
   <div class="icon-circle1">
-     <span class="button-text1">Create My Virtual Card</span>
-          <img src="@/assets/images/itie.png" alt="Card" />
+           <a href="https://urlgeni.us/swychr" >
+          <img src="@/assets/images/itie.png" alt="Card"/>
+          <span class="button-text1">Create My Virtual Card</span>
+        </a>
         </div>
   
 </div>
@@ -299,6 +301,11 @@ How secure is my money?
         <div class="icon-circle">
           <img src="@/assets/images/itie.png" alt="Card" />
         </div>
+
+        <a href="https://urlgeni.us/swychr" >
+          <img src="@/assets/images/itie.png"  class="icon-circle"/>
+          <span class="button-text">Create My Virtual Card</span>
+        </a>
       </button>
     </div>
   </section>
@@ -865,7 +872,7 @@ display: flex;
 .mathscard {
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
+  font-size: 0.7rem;
   font-style: normal;
   font-weight: 400;
   line-height: 136%;
