@@ -162,7 +162,7 @@
 <section class="section3">
   <div class="inside3">
 <div class="broom">
-  <h3 class="tembi">Trusted By 40,000 + Users Globally</h3>
+  <h3 class="tembi">Trusted By 50,000 + Users Globally</h3>
 </div>
 
 <div class="commissioner">
@@ -189,8 +189,8 @@
 <section class="section4">
   <div class="inside4">
      <div class="move4">
-<h2 class="person4">Why Thousands choose SwyChr</h2>
-<p class="tilla4">Fast, Secure, Cost Effective And Built For Global Reach</p>
+<h2 class="person4">Why thousands choose SwyChr</h2>
+<p class="tilla4">Fast, secure, cost effective and built for global reach</p>
   </div>
   </div>
 
@@ -845,7 +845,7 @@ const cards = [
 const features = [
   {
     title: 'Lightning-Fast Transfers',
-    description: 'Move money Across the globe in seconds not hours.',
+    description: 'Move money across the globe in seconds not hours.',
     image: new URL('@/assets/images/tribe1.png', import.meta.url).href,
     class: 'feature-wide' 
   },
