@@ -79,7 +79,7 @@ locally. Funded instantly via Mobile Money or Bank Transfer.
         </div>
         <div class="card-text">
           <h3>Payment Declined</h3>
-          <p>Many international sites do not accept local African debit cards.</p>
+          <p>Many international sites do not accept cards issued by banks across emerging market countries.</p>
         </div>
       </div>
 
