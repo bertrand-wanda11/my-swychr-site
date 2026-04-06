@@ -531,40 +531,7 @@ position: absolute;
   transform: translateX(-50%);
 }
 
-/* --- TABLET DYNAMICS (821px to 1180px) --- */
-@media screen and (max-width: 1180px) {
-  .numero {
-    width: 95%;
-    gap: 10px;
-  }
-  .mega-dropdown {
-    padding: 15px;
-    min-width: 200px;
-  }
-  .dropdown-grid {
-    gap: 10px 15px;
-  }
-}
-
-/* --- MOBILE DYNAMICS (iPhone 14 Pro Max & smaller) --- */
 @media screen and (max-width: 430px) {
-  /* Stack the Header elements */
-  .numero {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .seam { margin: 0; }
-  .stavo-container { margin: 0; }
-
-  /* Adjust the Pill for mobile swiping */
-  .food-pill-container {
-    width: 95%;
-    height: 3rem;
-    overflow-x: auto;
-    justify-content: flex-start;
-    padding: 0 1rem;
-  }
   /* --- The Wrapper --- */
   .nav-item-wrapper::after {
     display: none !important; /* Kill the hover bridge for mobile */
@@ -620,6 +587,61 @@ position: absolute;
   }
 }
 
+@media screen and (max-width: 430px) {
+  /* --- The Wrapper --- */
+  .nav-item-wrapper::after {
+    display: none !important; /* Kill the hover bridge for mobile */
+  }
+
+  /* --- The Dropdown Box --- */
+  .mega-dropdown {
+    position: fixed; /* Fixed works better for mobile popups */
+    top: 25%; /* Adjust based on your header height */
+    left: 5% !important; /* Small 5% margin from left */
+    right: 5% !important; /* Small 5% margin from right */
+    width: 90% !important; /* Spans 90% of screen width */
+    height: auto;
+    max-height: 70vh; /* Prevents it from going off bottom of screen */
+    overflow-y: auto; /* Allows scrolling if many items exist */
+    transform: none !important; /* Remove the desktop translate centering */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    z-index: 9999;
+  }
+
+  /* --- The Grid Alignment --- */
+  .dropdown-grid {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align icons/text to the left */
+    gap: 15px;
+    width: 100%;
+  }
+
+  /* Force Company grid to behave same as others on mobile */
+  .company-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* --- The Individual Items --- */
+  .dropdown-item {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 5px 0;
+  }
+
+  .item-text {
+    font-size: 1rem; /* Slightly larger for easier mobile reading */
+    text-align: left;
+  }
+
+  .nav-icon-img {
+    width: 28px; /* Larger icons for finger-tapping */
+    height: 28px;
+  }
+}
 
 .footerlay {
            font-family: 'Montserrat', sans-serif;

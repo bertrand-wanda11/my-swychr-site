@@ -1324,40 +1324,63 @@ position: absolute;
   transform: translateX(-50%);
 }
 
-/* --- TABLET DYNAMICS (821px to 1180px) --- */
-@media screen and (max-width: 1180px) {
+@media screen and (max-width: 430px) {
   .numero {
-    width: 95%;
-    gap: 10px;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    margin: 1rem auto;
   }
+
+  .seam {
+    margin-left: 0;
+    order: 1;
+  }
+
+  .stavo-container {
+    order: 2; 
+  }
+
+  .food-pill-container {
+    order: 3; 
+    width: 100%;
+    margin-top: 15px;
+    justify-content: center;
+    overflow-x: auto; 
+  }
+
+  .mannav {
+    justify-content: center;
+    width: auto;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 0 8px;
+    white-space: nowrap;
+  }
+
+  @media screen and (max-width: 430px) {
   .mega-dropdown {
-    padding: 15px;
-    min-width: 200px;
+    position: fixed;
+    top: 25%;
+    left: 5% !important;
+    width: 90% !important;
+    transform: none !important;
+    z-index: 9999;
   }
+
   .dropdown-grid {
-    gap: 10px 15px;
+    grid-template-columns: 1fr; 
   }
 }
 
-/* --- MOBILE DYNAMICS (iPhone 14 Pro Max & smaller) --- */
+  .nav-indicator {
+    display: block !important; 
+    height: 4px;
+  }
+}
+
 @media screen and (max-width: 430px) {
-  /* Stack the Header elements */
-  .numero {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .seam { margin: 0; }
-  .stavo-container { margin: 0; }
-
-  /* Adjust the Pill for mobile swiping */
-  .food-pill-container {
-    width: 95%;
-    height: 3rem;
-    overflow-x: auto;
-    justify-content: flex-start;
-    padding: 0 1rem;
-  }
   /* --- The Wrapper --- */
   .nav-item-wrapper::after {
     display: none !important; /* Kill the hover bridge for mobile */
@@ -1410,47 +1433,6 @@ position: absolute;
   .nav-icon-img {
     width: 28px; /* Larger icons for finger-tapping */
     height: 28px;
-  }
-}
-
-@media screen and (max-width: 430px) {
-  .numero {
-    flex-wrap: wrap; 
-    justify-content: space-between;
-    margin: 1rem auto;
-  }
-
-  .seam {
-    margin-left: 0;
-    order: 1;
-  }
-
-  .stavo-container {
-    order: 2; 
-  }
-
-  .food-pill-container {
-    order: 3; 
-    width: 100%;
-    margin-top: 15px;
-    justify-content: center;
-    overflow-x: auto; 
-  }
-
-  .mannav {
-    justify-content: center;
-    width: auto;
-  }
-
-  .nav-link {
-    font-size: 0.8rem;
-    padding: 0 8px;
-    white-space: nowrap;
-  }
- 
-  .nav-indicator {
-    display: block !important; 
-    height: 4px;
   }
 }
 
