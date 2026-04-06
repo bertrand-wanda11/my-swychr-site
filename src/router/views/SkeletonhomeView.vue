@@ -765,7 +765,7 @@ const navItems = [
       { name: 'Careers', icon: Careers,path: '/Career'},
       { name: 'Blogs', icon: Blogs,path: '/Blog'},
       { name: 'Culture', icon: Culture,path: '/Culture'},
-      { name: 'Invest', icon: vestor,path: '/Invest'}
+      { name: 'Investors', icon: vestor,path: '/Invest'}
     ]
   },
   { name: 'Support', path: '/support' }
