@@ -354,6 +354,78 @@ position: absolute;
   align-items: center;
 }
 
+.mega-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 20px 25px;
+  border-radius: 12px;
+  /* FIX: Change fixed 520px to max-content so it shrinks to fit items */
+  width: max-content; 
+  min-width: 240px; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  z-index: 1000;
+  animation: dropdownFadeIn 0.25s ease-out forwards;
+}
+
+.dropdown-label {
+  color: #8C1BC1; /* SwyChr Purple */
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+/* --- The Grid --- */
+.dropdown-grid {
+  display: grid;
+  /* Personal & Business will have 2 columns */
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 12px 30px; /* Vertical gap 12px, Horizontal gap 30px */
+}
+
+/* FIX: Company will have 1 column and be narrower */
+.company-grid {
+  grid-template-columns: 1fr !important;
+  min-width: 180px;
+}
+
+/* --- Individual Items --- */
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  /* FIX: Remove Underline */
+  text-decoration: none !important; 
+  padding: 8px 0;
+  transition: transform 0.2s ease;
+}
+
+.dropdown-item:hover {
+  transform: translateX(5px);
+}
+
+.item-text {
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  /* FIX: Ensure text never gets underlined */
+  text-decoration: none !important; 
+  white-space: nowrap;
+}
+
+.nav-icon-img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+
 .nav-link {
   color: white;
   text-decoration: none;
@@ -392,21 +464,8 @@ position: absolute;
   }
 }
 
-.mega-dropdown {
-  position: absolute;
-  top: calc(100% + 12px); 
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
-  padding: 25px;
-  border-radius: 15px;
-  width: 520px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-  z-index: 1000;
-  
-  /* Entrance Animation: This makes it feel like it's fading in */
-  animation: dropdownFadeIn 0.25s ease-out forwards;
-}
+
+
 
 @keyframes dropdownFadeIn {
   from {
@@ -460,33 +519,6 @@ position: absolute;
   pointer-events: none;
 }
 
-.dropdown-label {
-  color: #8C1BC1; /* SwyChr Purple */
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 20px;
-  text-align: left;
-  display: block;
-}
-
-/* Ensure icons in the dropdown look sharp */
-.nav-icon-img {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  display: block;
-}
-
-.item-text {
-  color: #333;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
-}
 
 .nav-item-wrapper:nth-child(4) .mega-dropdown {
   left: 50% !important;
@@ -499,6 +531,55 @@ position: absolute;
   transform: translateX(-50%);
 }
 
+/* --- TABLET DYNAMICS (821px to 1180px) --- */
+@media screen and (max-width: 1180px) {
+  .numero {
+    width: 95%;
+    gap: 10px;
+  }
+  .mega-dropdown {
+    padding: 15px;
+    min-width: 200px;
+  }
+  .dropdown-grid {
+    gap: 10px 15px;
+  }
+}
+
+/* --- MOBILE DYNAMICS (iPhone 14 Pro Max & smaller) --- */
+@media screen and (max-width: 430px) {
+  /* Stack the Header elements */
+  .numero {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .seam { margin: 0; }
+  .stavo-container { margin: 0; }
+
+  /* Adjust the Pill for mobile swiping */
+  .food-pill-container {
+    width: 95%;
+    height: 3rem;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 0 1rem;
+  }
+
+  /* Make Dropdown full width on mobile so it's easy to tap */
+  .mega-dropdown {
+    position: fixed;
+    top: 30%;
+    left: 5% !important;
+    width: 90% !important;
+    transform: none !important;
+    grid-template-columns: 1fr;
+  }
+
+  .dropdown-grid {
+    grid-template-columns: 1fr; /* Single column for easier finger tapping */
+  }
+}
 
 .footerlay {
            font-family: 'Montserrat', sans-serif;
