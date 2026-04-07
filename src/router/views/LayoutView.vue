@@ -777,7 +777,7 @@ margin-right: 2.8rem;
  .schoollay{
   border-top: 1px solid #fff;
   width: 92%;
-  margin-left: 80px;
+  margin-left: 60px;
  }   
  
   .showlay{
