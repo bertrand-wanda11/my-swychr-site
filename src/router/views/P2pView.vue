@@ -481,7 +481,7 @@ the Swychr mobile application, Swychr Connect web platform, and API suites are f
      of Directors – SWYCOP BOD), operating  Financial Cooperative Submission<br> Number
      <b>340/MINADER/DRADER/DDADER/SDR.</b><br>
 <br>
-     © 2026 Swychr Technology Africa Limited. All rights reserved.
+     © 2026 Swychr Technology Africa Limited. All rights reserved
 
     </p>
  </section>
