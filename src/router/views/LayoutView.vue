@@ -657,7 +657,7 @@ position: absolute;
         }
         
  .mother11lay{
-            margin: 0.5rem;
+            margin: 0.3rem;
             text-align: center;
             text-align: justify; 
             margin-left: 2rem;
@@ -697,8 +697,8 @@ color:  #ffffff;
 font-family: 'Montserrat', sans-serif;
 font-size: 14px;
 font-style: normal;
-font-weight: 535;
-line-height: 120%;
+font-weight: 500;
+line-height: 100%;
 text-align:justify;
 }
 

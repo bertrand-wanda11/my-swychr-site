@@ -1961,7 +1961,9 @@ position: absolute;
 }
 
 .lemon {
-  padding-top: 4rem;
+   justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
   margin-left: 9rem;
   display: flex;
   width: 9rem;
@@ -2092,7 +2094,9 @@ position: absolute;
 .second1111111 { width: 40.375rem; }
 
 .lemontea {
-  padding-top: 4rem;
+   justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
   margin-left: 9rem;
   display: flex;
   width: 9rem; 
@@ -2250,7 +2254,7 @@ position: absolute;
 .greentea {
   justify-content: center;
   align-items: center;
-  padding-top: 4rem;
+  margin-top: 4rem;
   margin-left: 11rem;
   border-radius: 6.25rem; 
   display: flex;
@@ -2805,7 +2809,7 @@ input[type="checkbox"]:checked ~ .wanda-expected {
         }
         
  .mother11lay{
-            margin: 0.5rem;
+            margin: 0.3rem;
             text-align: center;
             text-align: justify; 
             margin-left: 2rem;
@@ -2846,8 +2850,8 @@ color:  #ffffff;
 font-family: 'Montserrat', sans-serif;
 font-size: 14px;
 font-style: normal;
-font-weight: 535;
-line-height: 120%;
+font-weight: 500;
+line-height: 100%;
 text-align:justify;
 }
 
