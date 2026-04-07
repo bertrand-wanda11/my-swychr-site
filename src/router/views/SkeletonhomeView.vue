@@ -941,6 +941,7 @@ const features = [
 
 .seam {
   margin-top: 1.25rem;
+  margin-left:1rem;
 }
 
 .stavo {
