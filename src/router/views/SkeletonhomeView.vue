@@ -278,7 +278,7 @@
 </div> 
 
 <div class="zip1">
-<img src="@/assets/images/13p.png" alt="" height="300px" width="300px">
+<img src="@/assets/images/vomba.png" alt="" height="300px" width="300px">
 </div>
 </div>
   </div>
@@ -1961,12 +1961,12 @@ position: absolute;
 }
 
 .lemon {
-  padding-top: 1rem;
-  margin-left: 5rem;
+  padding-top: 2rem;
+  margin-left: 7rem;
   display: flex;
   width: 9rem;
   height: 2.8125rem;
-  padding: 0.625rem;
+  padding: 0.225rem;
   justify-content: center;
   align-items: center;
   gap: 0.625rem;
