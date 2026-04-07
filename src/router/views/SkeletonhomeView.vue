@@ -1961,6 +1961,8 @@ position: absolute;
 }
 
 .lemon {
+  padding-top: 1rem;
+  margin-left: 5rem;
   display: flex;
   width: 9rem;
   height: 2.8125rem;
@@ -2092,6 +2094,8 @@ position: absolute;
 .second1111111 { width: 40.375rem; }
 
 .lemontea {
+  padding-top: 1rem;
+  margin-left: 5rem;
   display: flex;
   width: 9rem; 
   height: 2.8125rem;
@@ -2250,7 +2254,8 @@ position: absolute;
 .greentea {
   justify-content: center;
   align-items: center;
-  margin-left: 2rem;
+  padding-top: 1rem;
+  margin-left: 5rem;
   border-radius: 6.25rem; 
   display: flex;
   width: 11.1375rem; 
