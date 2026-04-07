@@ -260,7 +260,7 @@
 <div class="wanda-villap2p">
   <input type="checkbox" id="wanda-3">
   <label for="wanda-3" class="wanda-requestp2p">
-    How can Swych Remit be so much cheaper than my bank?
+    How can Swychremit be much cheaper than my bank?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedp2p">
