@@ -55,12 +55,9 @@ locally. Funded instantly via Mobile Money or Bank Transfer.
 
 </p>
 <div class="protoncard">
-  <div class="icon-circle1">
-           <a href="https://urlgeni.us/swychr" >
-          <img src="@/assets/images/itie.png" alt="Card"/>
-          <span class="button-text1">Create My Virtual Card</span>
-        </a>
-        </div>
+  <div class="stavocard5-con"> 
+    <li class="stavocard5"><a href="https://urlgeni.us/swychr">Create My Virtual Card<img src="@/assets/images/itie.png" alt=""  width="13px"/></a></li>
+  </div>
   
 </div>
 </div>
@@ -911,30 +908,32 @@ display: flex;
   padding: 0 0.9375rem;
 }
 
-.button-text1 {
-  font-weight: 400;
-  font-size: 1.1875rem;
-  color: #1a1b1e;
-}
-
-.icon-circle1 {
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
+.stavocard5{
+  border: none;
+  background: #fff;
+  width: 13rem;
   align-items: center;
+  justify-content: center;
+  height: 2.5rem; 
+  text-align: center;
+  display: flex;
   border-radius: 6.25rem;
-  background-color:  #fff;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  width:15rem;
-    height: 2.5rem; 
+  margin-right: 6.25vw; 
+  margin-top: 0.625rem;
 }
 
-.icon-circle1 img {
-  width: 35px;
-  height: 35px;
-  margin-left: 7px;
+.stavocard5 a {
+   text-decoration: none;
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  padding: 0 0.9375rem;
 }
+
+
 
 .card2 {
   padding: 60px 20px;
