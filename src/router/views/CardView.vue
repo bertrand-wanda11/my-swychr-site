@@ -228,7 +228,7 @@ locally. Funded instantly via Mobile Money or Bank Transfer.
 <div class="wanda-villacard6">
   <input type="checkbox" id="wanda-4">
   <label for="wanda-4" class="wanda-requestcard6">
-   Is it really Instant
+   Is it really Instant?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedcard6">
@@ -271,7 +271,7 @@ How secure is my money?
 <div class="wanda-villacard6">
   <input type="checkbox" id="wanda-7">
   <label for="wanda-7" class="wanda-requestcard6">
-  What if I send money to the wrong number
+  What if I send money to the wrong number?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedcard6">
