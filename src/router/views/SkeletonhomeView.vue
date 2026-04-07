@@ -2809,7 +2809,7 @@ input[type="checkbox"]:checked ~ .wanda-expected {
         }
         
  .mother11lay{
-            margin: 1rem;
+            margin: 0.5rem;
             text-align: center;
             text-align: justify; 
             margin-left: 2rem;
@@ -2828,7 +2828,7 @@ input[type="checkbox"]:checked ~ .wanda-expected {
           flex: 1;
           text-align: justify;
           align-items: center;
-          padding: 10px;
+          padding: 5px;
         } 
 
         .icon-fblay{
@@ -3696,10 +3696,7 @@ line-height: 120%;
 }
 
 
-
-
 @media screen and (max-width: 430px) {
- 
   .numero {
     display: flex !important;
     flex-direction: column !important;

@@ -303,7 +303,7 @@ onMounted(() => {
     checkScreen();
     updateIndicator();
   });
-  // Add listener for clicking outside
+
   window.addEventListener('click', handleClickOutside);
 });
 
@@ -551,10 +551,6 @@ position: absolute;
 }
 
 @media screen and (max-width: 430px) {
-  .nav-item-wrapper::after {
-    display: none !important;
-  }
-
   .mega-dropdown {
     position: fixed;
     top: 22%; 
@@ -661,7 +657,7 @@ position: absolute;
         }
         
  .mother11lay{
-            margin: 1rem;
+            margin: 0.5rem;
             text-align: center;
             text-align: justify; 
             margin-left: 2rem;
@@ -679,7 +675,7 @@ position: absolute;
           flex: 1;
           text-align: justify;
           align-items: center;
-          padding: 10px;
+          padding: 5px;
         } 
 
         .icon-fblay{
