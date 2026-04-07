@@ -1966,7 +1966,7 @@ position: absolute;
   font-weight: 400;
   line-height: 120%;
   text-align: justify;
-  margin-left: 1.875rem; 
+ 
 }
 
 .first1111 { width: 36.1875rem; flex-shrink: 0; }
@@ -2107,7 +2107,6 @@ position: absolute;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-  margin-left: 1.875rem; 
   text-align: justify;
 }
 
@@ -2264,7 +2263,6 @@ position: absolute;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-  margin-left: 1.875rem; 
   text-align: justify;
 }
 
@@ -2274,8 +2272,9 @@ position: absolute;
 .third1111111 { width: 40.375rem; }
 
 .greentea {
+  justify-content: center;
+  align-items: center;
   border-radius: 6.25rem; 
-  background: var(--black-dark, #000);
   display: flex;
   width: 11.1375rem; 
   height: 2.8125rem; 
@@ -3345,7 +3344,7 @@ line-height: 120%;
 
   .first1111, .second1111, .third1111,
   .first11111, .second11111, .third11111 {
-    width: 90% !important; 
+    width: 80% !important; 
     text-align: left !important; 
   }
 }
