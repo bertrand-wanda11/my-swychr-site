@@ -223,7 +223,7 @@ const toggleKid = (index) => {
    font-size: 28px;
    font-weight: 600;
    font-weight: 700;
-   padding-left: 10rem;
+   padding-left: 8rem;
    padding-top: 100px;
 }
  </style>
