@@ -309,8 +309,8 @@ onBeforeUnmount(() => {
 <style>
 
 .seam{
-margin-top: 20px;
-margin-left: 67px;
+  margin-top: 1.25rem;
+   margin-left: 1.18vw;
 }
 
 .numero {
