@@ -1961,15 +1961,13 @@ position: absolute;
 }
 
 .lemon {
-  padding-top: 2rem;
+  padding-top: 4rem;
   margin-left: 9rem;
   display: flex;
   width: 9rem;
   height: 2.8125rem;
-  padding: 0.125rem;
   justify-content: center;
   align-items: center;
-  gap: 0.125rem;
   border-radius: 0.9375rem; 
   background: linear-gradient(270deg, var(--Purple-400, #A34FD3) 0%, 
   var(--Purple-500, #8C1BC1) 100%), var(--Purple-400, #A34FD3);
@@ -2094,15 +2092,13 @@ position: absolute;
 .second1111111 { width: 40.375rem; }
 
 .lemontea {
-  padding-top: 2rem;
+  padding-top: 4rem;
   margin-left: 9rem;
   display: flex;
   width: 9rem; 
   height: 2.8125rem;
-  padding: 0.125rem;
   justify-content: center;
   align-items: center;
-  gap: 0.125rem;
   border-radius: 0.9375rem; 
   background: linear-gradient(270deg, var(--Purple-400, #A34FD3) 0%, 
   var(--Purple-500, #8C1BC1) 100%), var(--Purple-400, #A34FD3);
@@ -2254,8 +2250,8 @@ position: absolute;
 .greentea {
   justify-content: center;
   align-items: center;
-  padding-top: 2rem;
-  margin-left: 9rem;
+  padding-top: 4rem;
+  margin-left: 11rem;
   border-radius: 6.25rem; 
   display: flex;
   width: 11.1375rem; 
