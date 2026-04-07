@@ -616,21 +616,21 @@ const features = [
 const steps = [
   {
     number: 'First',
-    title: 'Top Up',
-    description: 'Use your local Mobile Money or Bank App to add funds to your Swychr E-Wallet.',
+    title: 'Generate',
+    description: 'Tap "Create Card" and choose your card type',
     image: require('@/assets/images/ios1.png')
   },
   {
     number: 'Second',
     title: 'Generate',
-    description: 'Tap "Create Card" and choose your card type',
-     image: require('@/assets/images/ios2.png')
+    description: 'Use your local Mobile Money or Bank App to add funds to your Swychr E-Wallet.',
+    image: require('@/assets/images/oak.png')
   },
   {
     number: 'Third',
     title: 'Spend',
     description: 'Copy your card details and start shopping globally immediately or attach your contactless card to Apple Pay or Google Pay for an in-person payment experience.',
-     image: require('@/assets/images/ios3.png')
+    image: require('@/assets/images/ios3.png')
   }
 ];
 
