@@ -238,7 +238,7 @@
 <li class="lemon"><a href="https://apps.apple.com/ae/app/swychr/id1586029318">
   <i class="fab fa-apple"></i>
   Appstore<i class="fas fa-arrow-right arrow-1"></i></a></li>
-<li class="lemon"><a href="https://play.google.com/store/apps/details?id=com.innobins.jtqwallet">
+<li class="lemon1"><a href="https://play.google.com/store/apps/details?id=com.innobins.jtqwallet">
    <i class="fab fa-google-play"></i>
   Playtstore<i class="fas fa-arrow-right arrow-1"></i></a></li>
 </div> 
@@ -270,7 +270,7 @@
 <li class="lemontea"><a href="https://apps.apple.com/ae/app/swychr/id1586029318">
    <i class="fab fa-apple"></i>
   Appstore<i class="fas fa-arrow-right arrow-1"></i></a></li>
-<li class="lemontea"><a href="https://play.google.com/store/apps/details?id=com.innobins.jtqwallet">
+<li class="lemontea1"><a href="https://play.google.com/store/apps/details?id=com.innobins.jtqwallet">
     <i class="fab fa-google-play"></i>
   Playtstore<i class="fas fa-arrow-right arrow-1"></i></a></li>
 </div> 
@@ -430,7 +430,6 @@
 </div>
 
 
-
   <div class="semi8">
  <div class="kiman1"><img src="@/assets/images/Star 1.png" alt=" " width="26px" 
   height="26px"><p>5.0</p></div>
@@ -438,7 +437,6 @@
  <div class="kimani3"><img src="@/assets/images/sabi.webp" alt=" " width="35px" height="35px">
   <p>Sabiu Ibrahim</p> <span class="sophia"><img src="@/assets/images/benin.svg" alt=" " width="35px" height="35px"></span></div> 
 </div>
-
 
 
   <div class="semi8">
@@ -457,7 +455,6 @@
  <div class="kimani3"><img src="@/assets/images/boyce.webp" alt=" " width="35px" height="35px">
   <p>Devon Boyce</p> <span class="sophia"><img src="@/assets/images/Ellipse 50.png" alt=" " width="35px" height="35px"></span></div> 
 </div>
-
 
 
   <div class="semi8">
@@ -1976,6 +1973,31 @@ position: absolute;
   box-shadow: 0 0.25rem 0.40625rem 0 rgba(57, 6, 82, 0.18);
 }
 
+.lemon1{
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  display: flex;
+  width: 9rem;
+  height: 2.8125rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.9375rem; 
+  background: linear-gradient(270deg, var(--Purple-400, #A34FD3) 0%, 
+  var(--Purple-500, #8C1BC1) 100%), var(--Purple-400, #A34FD3);
+  box-shadow: 0 0.25rem 0.40625rem 0 rgba(57, 6, 82, 0.18);
+}
+
+.lemon1 a{
+    text-decoration: none;
+  color: var(--WhiTE-mAIN, #FFF);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+}
+
 .lemon a {
   text-decoration: none;
   color: var(--WhiTE-mAIN, #FFF);
@@ -2109,7 +2131,33 @@ position: absolute;
   box-shadow: 0 0.25rem 0.40625rem 0 rgba(57, 6, 82, 0.18);
 }
 
+
 .lemontea a {
+  text-decoration: none;
+  color: var(--WhiTE-mAIN, #FFF);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+}
+
+.lemontea1 {
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  display: flex;
+  width: 9rem; 
+  height: 2.8125rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.9375rem; 
+  background: linear-gradient(270deg, var(--Purple-400, #A34FD3) 0%, 
+  var(--Purple-500, #8C1BC1) 100%), var(--Purple-400, #A34FD3);
+  box-shadow: 0 0.25rem 0.40625rem 0 rgba(57, 6, 82, 0.18);
+}
+
+.lemontea1 a{
   text-decoration: none;
   color: var(--WhiTE-mAIN, #FFF);
   font-family: 'Montserrat', sans-serif;
@@ -2850,8 +2898,8 @@ color:  #ffffff;
 font-family: 'Montserrat', sans-serif;
 font-size: 14px;
 font-style: normal;
-font-weight: 500;
-line-height: 100%;
+font-weight: 470;
+line-height: 75%;
 text-align:justify;
 }
 

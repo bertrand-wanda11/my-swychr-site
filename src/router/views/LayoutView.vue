@@ -697,8 +697,8 @@ color:  #ffffff;
 font-family: 'Montserrat', sans-serif;
 font-size: 14px;
 font-style: normal;
-font-weight: 500;
-line-height: 100%;
+font-weight: 470;
+line-height: 75%;
 text-align:justify;
 }
 
