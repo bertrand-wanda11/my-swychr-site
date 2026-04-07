@@ -152,6 +152,7 @@ const toggleKid = (index) => {
   .faq-container {
   font-family: 'Montserrat', sans-serif;
   max-width: 1300px;
+  padding-left: 4rem;
   margin: 20px auto;
   border-top: 1px solid #ddd;
 }
