@@ -1247,6 +1247,7 @@ display: flex;
   line-height: 1.4;
 }
 
+
 .online4 {
   background-color: #05070A; 
   padding: 5rem 2rem;
@@ -1393,6 +1394,10 @@ display: flex;
   .special-badge {
     height: 1.8rem;
     padding: 0.15rem 0.5rem;
+  }
+
+   .reach-content{
+   padding-bottom: 2rem;
   }
 }
 

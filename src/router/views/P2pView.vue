@@ -863,7 +863,7 @@ display: flex;
 }
 
 .insidep2p1 {
-  padding-top: 3rem; 
+  padding-top: 2.7rem; 
   display: block;
   align-items: center;
   justify-content: center;
@@ -875,7 +875,7 @@ display: flex;
   margin-bottom: 0;
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
-  font-size: 3.5625rem; 
+  font-size: 3rem; 
   font-style: normal;
   font-weight: 600;
   line-height: 95%;
@@ -891,7 +891,7 @@ display: flex;
   font-weight: bold;
   line-height: 136%;
   letter-spacing: 0.075rem; 
-  margin-top: 0;
+  margin-top: 1rem;
 }
 
 .protonp2p {
