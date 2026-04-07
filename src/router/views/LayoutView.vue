@@ -19,11 +19,11 @@
         :class="{ active: activeIndex === index }"
         @click="(e) => { 
           if(item.children) { 
-            e.preventDefault(); // Stop navigation to empty parent routes
-            toggleDropdown(index); // Explicit click to open
+            e.preventDefault(); 
+            toggleDropdown(index);
           } else { 
             setActive(index); 
-            openDropdownIndex = null; // Close any open menu when a page is clicked
+            openDropdownIndex = null; 
           }
         }" 
       >
@@ -253,7 +253,6 @@ const navItems = [
 
 const indicatorStyle = ref({ width: '0px', left: '0px', opacity: 0 });
 
-// Updated: Only moves the white line for actual pages (Home/Support)
 const updateIndicator = () => {
   if (!navMenu.value) return;
   const activeElement = navMenu.value.querySelector('.nav-link.active');
@@ -287,7 +286,7 @@ const checkScreen = () => {
   isMobile.value = window.innerWidth <= 820; 
 };
 
-// Watches URL changes to snap the indicator back to the correct page
+
 watch(() => route.path, (newPath) => {
   const pathName = newPath.replace('/', '').toLowerCase() || 'home';
   const index = navItems.findIndex(item => item.name.toLowerCase() === pathName);
@@ -315,10 +314,9 @@ onBeforeUnmount(() => {
 </script>
 
 <style>
-
 .seam{
   margin-top: 1.25rem;
-  margin-left:2rem;
+  margin-left:4rem;
 }
 
 .numero {
@@ -364,7 +362,7 @@ position: absolute;
 
 
 .dropdown-label {
-  color: #8C1BC1; /* SwyChr Purple */
+  color: #8C1BC1; 
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -373,26 +371,21 @@ position: absolute;
   text-align: left;
 }
 
-/* --- The Grid --- */
 .dropdown-grid {
   display: grid;
-  /* Personal & Business will have 2 columns */
   grid-template-columns: repeat(2, 1fr); 
-  gap: 12px 30px; /* Vertical gap 12px, Horizontal gap 30px */
+  gap: 12px 30px; 
 }
 
-/* FIX: Company will have 1 column and be narrower */
 .company-grid {
   grid-template-columns: 1fr !important;
   min-width: 180px;
 }
 
-/* --- Individual Items --- */
 .dropdown-item {
   display: flex;
   align-items: center;
   gap: 12px;
-  /* FIX: Remove Underline */
   text-decoration: none !important; 
   padding: 8px 0;
   transition: transform 0.2s ease;
@@ -407,7 +400,6 @@ position: absolute;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
-  /* FIX: Ensure text never gets underlined */
   text-decoration: none !important; 
   white-space: nowrap;
 }
@@ -430,7 +422,6 @@ position: absolute;
   gap: 5px;
 }
 
-
 .nav-item-wrapper {
   position: relative;
   height: 100%;
@@ -438,10 +429,9 @@ position: absolute;
   align-items: center;
 }
 
-/* --- Mega Dropdown --- */
 .mega-dropdown {
   position: absolute;
-  top: calc(100% + 15px); /* Clean gap below pill */
+  top: calc(100% + 15px); 
   left: 50%;
   transform: translateX(-50%);
   background: white;
@@ -451,11 +441,9 @@ position: absolute;
   min-width: 240px; 
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   z-index: 1000;
-  /* Use a standard fade animation when it enters the DOM via v-if */
   animation: dropdownFadeIn 0.2s ease-out;
 }
 
-/* Ensure the arrow rotation works correctly on click */
 .dropdown-arrow {
   transition: transform 0.3s ease;
   display: inline-block;
@@ -464,7 +452,7 @@ position: absolute;
   transform: rotate(180deg);
 }
 
-/* ANIMATION */
+
 @keyframes dropdownFadeIn {
   from {
     opacity: 0;
@@ -476,8 +464,6 @@ position: absolute;
   }
 }
 
-
-/* Arrow Rotation Fix */
 .dropdown-arrow {
   transition: transform 0.3s ease;
   display: inline-block;
@@ -486,8 +472,6 @@ position: absolute;
   transform: rotate(180deg);
 }
 
-/* --- Nav Indicator logic --- */
-/* Ensure the white line only shows for actual active pages, not just hover */
 .nav-indicator {
   position: absolute;
   top: -1px;
@@ -498,7 +482,6 @@ position: absolute;
   z-index: 10;
   pointer-events: none;
 }
-
 
 .nav-item-wrapper:nth-child(4) .mega-dropdown {
   left: 50% !important;
@@ -568,55 +551,50 @@ position: absolute;
 }
 
 @media screen and (max-width: 430px) {
-  /* --- The Wrapper --- */
   .nav-item-wrapper::after {
-    display: none !important; /* Kill the hover bridge for mobile */
+    display: none !important;
   }
 
-  /* --- The Dropdown Box --- */
   .mega-dropdown {
     position: fixed;
-    top: 22%; /* Adjust based on your logo/button height */
+    top: 22%; 
     left: 5% !important;
     right: 5% !important;
     width: 90% !important;
     transform: none !important;
-    padding: 24px; /* More padding for a premium feel */
+    padding: 24px;
     border-radius: 24px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.25);
     z-index: 9999;
-    text-align: left; /* FORCE LEFT ALIGNMENT */
+    text-align: left;
   }
 
-  /* --- The Headings --- */
   .dropdown-label {
     text-align: left !important;
     margin-left: 0 !important;
     margin-bottom: 24px;
     font-size: 0.85rem;
-    color: #8C1BC1; /* SwyChr Purple */
+    color: #8C1BC1; 
     width: 100%;
     border-bottom: 1px solid #f0f0f0;
     padding-bottom: 12px;
   }
 
-  /* --- The Grid --- */
   .dropdown-grid {
     display: flex;
-    flex-direction: column; /* Stack vertically */
-    align-items: flex-start; /* Align all items to the left edge */
-    gap: 20px; /* Consistent space between items */
+    flex-direction: column; 
+    align-items: flex-start;
+    gap: 20px; 
     width: 100%;
   }
 
-  /* --- Individual Items --- */
   .dropdown-item {
     display: flex;
-    flex-direction: row; /* Icon and text side-by-side */
-    align-items: center; /* Vertically center icon with text */
-    justify-content: flex-start; /* Push everything to the left */
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
     width: 100%;
-    gap: 16px; /* Space between the icon and the text */
+    gap: 16px;
     text-decoration: none !important;
   }
 
@@ -624,7 +602,7 @@ position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px; /* Set a fixed width so text starts at same spot */
+    width: 32px; 
   }
 
   .nav-icon-img {
