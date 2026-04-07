@@ -217,7 +217,7 @@ locally. Funded instantly via Mobile Money or Bank Transfer.
 <div class="wanda-villacard6">
   <input type="checkbox" id="wanda-3">
   <label for="wanda-3" class="wanda-requestcard6">
-    How can Swych Remit be so much cheaper than my bank?
+    How can Swychremit be much cheaper than bank?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedcard6">
@@ -861,7 +861,7 @@ display: flex;
   margin-bottom: 0;
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
-  font-size: 3.5625rem; 
+  font-size: 3rem; 
   font-style: normal;
   font-weight: 600;
   line-height: 95%;
@@ -872,7 +872,7 @@ display: flex;
 .mathscard {
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.7rem;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 136%;
