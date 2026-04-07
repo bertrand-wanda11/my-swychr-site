@@ -12,8 +12,6 @@
       v-for="(item, index) in navItems" 
       :key="item.name" 
       class="nav-item-wrapper"
-      @mouseenter="!isMobile && item.children ? openDropdownIndex = index : null"
-      @mouseleave="!isMobile ? openDropdownIndex = null : null"
     >
       <router-link 
         :to="item.path" 
@@ -21,10 +19,11 @@
         :class="{ active: activeIndex === index }"
         @click="(e) => { 
           if(item.children) { 
-            e.preventDefault(); // This stops navigation on parent click
-            if(isMobile) toggleDropdown(index); // Mobile still needs click
+            e.preventDefault(); // Stop navigation to empty parent routes
+            toggleDropdown(index); // Explicit click to open
           } else { 
             setActive(index); 
+            openDropdownIndex = null; // Close any open menu when a page is clicked
           }
         }" 
       >
@@ -33,23 +32,22 @@
       </router-link>
 
       <div v-if="item.children && openDropdownIndex === index" class="mega-dropdown">
-  <p class="dropdown-label">{{ item.dropdownTitle }}</p>
-  
-  <div class="dropdown-grid" :class="{ 'company-grid': item.name === 'Company' }">
-    <router-link 
-      v-for="child in item.children" 
-      :key="child.name" 
-      :to="child.path" 
-      class="dropdown-item"
-      @click="openDropdownIndex = null" 
-    >
-      <span class="item-icon">
-        <img :src="child.icon" :alt="child.name" class="nav-icon-img">
-      </span>
-      <span class="item-text">{{ child.name }}</span>
-    </router-link>
-  </div>
-</div>
+        <p class="dropdown-label">{{ item.dropdownTitle }}</p>
+        <div class="dropdown-grid" :class="{ 'company-grid': item.name === 'Company' }">
+          <router-link 
+            v-for="child in item.children" 
+            :key="child.name" 
+            :to="child.path" 
+            class="dropdown-item"
+            @click="openDropdownIndex = null" 
+          >
+            <span class="item-icon">
+              <img :src="child.icon" :alt="child.name" class="nav-icon-img">
+            </span>
+            <span class="item-text">{{ child.name }}</span>
+          </router-link>
+        </div>
+      </div>
     </li>
     <div class="nav-indicator" :style="indicatorStyle"></div>
   </ul>
@@ -278,6 +276,13 @@ const toggleDropdown = (index) => {
   openDropdownIndex.value = openDropdownIndex.value === index ? null : index;
 };
 
+const handleClickOutside = (event) => {
+  const navContainer = document.querySelector('.food-pill-container');
+  if (navContainer && !navContainer.contains(event.target)) {
+    openDropdownIndex.value = null;
+  }
+};
+
 const checkScreen = () => {
   isMobile.value = window.innerWidth <= 820; 
 };
@@ -299,10 +304,13 @@ onMounted(() => {
     checkScreen();
     updateIndicator();
   });
+  // Add listener for clicking outside
+  window.addEventListener('click', handleClickOutside);
 });
 
 onBeforeUnmount(() => {
   window.removeEventListener('resize', checkScreen);
+  window.removeEventListener('click', handleClickOutside);
 });
 </script>
 
@@ -310,7 +318,6 @@ onBeforeUnmount(() => {
 
 .seam{
   margin-top: 1.25rem;
-   margin-left: 1.18vw;
 }
 
 .numero {
@@ -354,21 +361,6 @@ position: absolute;
   align-items: center;
 }
 
-.mega-dropdown {
-  position: absolute;
-  top: calc(100% + 12px);
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
-  padding: 20px 25px;
-  border-radius: 12px;
-  /* FIX: Change fixed 520px to max-content so it shrinks to fit items */
-  width: max-content; 
-  min-width: 240px; 
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  z-index: 1000;
-  animation: dropdownFadeIn 0.25s ease-out forwards;
-}
 
 .dropdown-label {
   color: #8C1BC1; /* SwyChr Purple */
@@ -437,6 +429,7 @@ position: absolute;
   gap: 5px;
 }
 
+
 .nav-item-wrapper {
   position: relative;
   height: 100%;
@@ -444,33 +437,37 @@ position: absolute;
   align-items: center;
 }
 
-/* --- THE HOVER BRIDGE --- */
-/* This invisible element fills the gap between the pill and the dropdown */
-.nav-item-wrapper::after {
-  content: "";
+/* --- Mega Dropdown --- */
+.mega-dropdown {
   position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 20px; /* Adjust based on your margin-top */
-  z-index: 5;
-  display: none; /* Hidden by default */
+  top: calc(100% + 15px); /* Clean gap below pill */
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 20px 25px;
+  border-radius: 12px;
+  width: max-content; 
+  min-width: 240px; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  z-index: 1000;
+  /* Use a standard fade animation when it enters the DOM via v-if */
+  animation: dropdownFadeIn 0.2s ease-out;
 }
 
-/* Show the bridge only on desktop hover */
-@media only screen and (max-width: 430px) {
-  .nav-item-wrapper::after {
-    display: none; /* Do not show on mobile screens */
-  }
+/* Ensure the arrow rotation works correctly on click */
+.dropdown-arrow {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+.dropdown-arrow.rotated {
+  transform: rotate(180deg);
 }
 
-
-
-
+/* ANIMATION */
 @keyframes dropdownFadeIn {
   from {
     opacity: 0;
-    transform: translateX(-50%) translateY(10px);
+    transform: translateX(-50%) translateY(5px);
   }
   to {
     opacity: 1;
@@ -478,24 +475,6 @@ position: absolute;
   }
 }
 
-/* --- The Hover Bridge --- */
-/* This is critical to prevent the menu from closing when moving mouse from link to dropdown */
-.nav-item-wrapper::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 20px; 
-  z-index: 5;
-}
-
-/* Only show bridge on desktop */
-@media (max-width: 820px) {
-  .nav-item-wrapper::after {
-    display: none;
-  }
-}
 
 /* Arrow Rotation Fix */
 .dropdown-arrow {
