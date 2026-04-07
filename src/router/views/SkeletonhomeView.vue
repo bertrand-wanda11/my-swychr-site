@@ -906,7 +906,7 @@ const features = [
   text-align: justify;
   line-height: 1;
   margin-bottom:11rem;
-  padding-left : 5rem;
+  padding-left : 1rem;
 }
 
 .smart {
