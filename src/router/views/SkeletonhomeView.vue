@@ -879,7 +879,6 @@ const features = [
 
 
 <style>
-
 .section1 {
   text-align: center;
   margin: 0 auto;
@@ -3346,9 +3345,8 @@ line-height: 120%;
 
   .first1111, .second1111, .third1111,
   .first11111, .second11111, .third11111 {
-    width: 80% !important; 
+    width: 90% !important; 
     text-align: left !important; 
-    margin: 0 auto 0.8rem auto !important;
   }
 }
 
