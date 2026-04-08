@@ -1729,35 +1729,38 @@ input[type="checkbox"]:checked ~ .wanda-expectedcard6 {
 
 
 .stavocard6{
- background-color: #FFF;
-  border: none;
+list-style: none; 
+  background-color: #FFF;
   width: 17rem;
+  height: 2.9375rem;
+  border-radius: 6.25rem;
+  margin: 0;
+  display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0;
-  height: 2.9375rem;
-  text-align: center;
-  display: flex;
-  font-size: 0.9rem;
-  font-weight: bold;
-  border-radius: 6.25rem;
-  margin-left: 5vw; 
+  overflow: hidden;
 }
 
-.stavocard6 a {
- text-decoration: none;
+.stavocard6 a{
+  text-decoration: none;
   color: #000;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.125rem;
-  font-style: normal;
   font-weight: 400;
-  line-height: 120%;
+  line-height: 1; 
+  display: flex;
+  flex-direction: row; 
+  align-items: center; 
+  justify-content: center; 
+  width: 100%;
+  height: 100%;
 }
 
 .stavocard6 img{
   margin-left: 0.5rem;
+  display: block; 
+  flex-shrink: 0;
 }
-
 
 
 @media (max-width: 430px) {
@@ -1768,7 +1771,7 @@ input[type="checkbox"]:checked ~ .wanda-expectedcard6 {
     padding: 40px 20px;
     border-radius: 16px;
   }
-  .pill-button {
+  .stavocard6{
     width: 100%;
     justify-content: space-between;
   }
