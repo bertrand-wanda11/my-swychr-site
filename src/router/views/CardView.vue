@@ -805,7 +805,7 @@ display: flex;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-  padding: 0 0.9375rem;
+  padding: 0 0.6375rem;
 }
 
 .stavocard5 img{
@@ -1751,7 +1751,7 @@ input[type="checkbox"]:checked ~ .wanda-expectedcard6 {
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-  padding: 0 0.9375rem;
+  padding: 0 0.6375rem;
 }
 
 .stavocard6 img{
