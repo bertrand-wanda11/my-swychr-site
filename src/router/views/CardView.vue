@@ -56,7 +56,7 @@ locally. Funded instantly via Mobile Money or Bank Transfer.
 </p>
 <div class="protoncard">
   <div class="stavocard5-con"> 
-    <a class="stavocard5"><a href="https://urlgeni.us/swychr">Create My Virtual Card<img src="@/assets/images/itie.png" alt=""  width="30px"/></a></a>
+    <li class="stavocard5"><a href="https://urlgeni.us/swychr">Create My Virtual Card<img src="@/assets/images/itie.png" alt=""  width="30px"/></a></li>
   </div>
   
 </div>
@@ -796,7 +796,7 @@ list-style: none;
 }
 
 .stavocard5 a {
-text-decoration: none;
+  text-decoration: none;
   color: #000;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.125rem;
