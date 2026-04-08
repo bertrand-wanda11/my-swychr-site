@@ -9,52 +9,41 @@
     <img src="@/assets/images/motive.png" alt="Logo" class="dreak" width="127" height="32">
   </h2>
   
- <div class="food-pill-container">
-  <ul class="mannav" ref="navMenu"> 
-    <li 
-      v-for="(item, index) in navItems" 
-      :key="item.name" 
-      class="nav-item-wrapper"
-    >
-      <router-link 
-        :to="item.path" 
-        class="nav-link"
-        :class="{ active: activeIndex === index }"
-        @click="(e) => { 
-          if(item.children) { 
-            e.preventDefault(); 
-            toggleDropdown(index); 
-          } else { 
-            setActive(index); 
-            openDropdownIndex = null;
-          }
-        }" 
-      >
-        {{ item.name }}
-        <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }">▾</span>
-      </router-link>
+  <div class="food-pill-container">
+    <ul class="mannav" ref="navMenu"> 
+     <li v-for="(item, index) in navItems" :key="item.name" class="nav-item-wrapper">
+  <router-link 
+    :to="item.path" 
+    class="nav-link"
+    :class="{ active: activeIndex === index }"
+    @click="item.children ? toggleDropdown(index) : setActive(index)" 
+  >
+    {{ item.name }}
+    <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }">▾</span>
+  </router-link>
 
-      <div v-if="item.children && openDropdownIndex === index" class="mega-dropdown">
-        <p class="dropdown-label">{{ item.dropdownTitle }}</p>
-        <div class="dropdown-grid" :class="{ 'company-grid': item.name === 'Company' }">
-          <router-link 
-            v-for="child in item.children" 
-            :key="child.name" 
-            :to="child.path" 
-            class="dropdown-item"
-            @click="openDropdownIndex = null" 
-          >
-            <span class="item-icon">
-              <img :src="child.icon" :alt="child.name" class="nav-icon-img">
-            </span>
-            <span class="item-text">{{ child.name }}</span>
-          </router-link>
-        </div>
-      </div>
-    </li>
-    <div class="nav-indicator" :style="indicatorStyle"></div>
-  </ul>
-</div>
+  <div v-if="item.children && openDropdownIndex === index" class="mega-dropdown">
+    <p class="dropdown-label">{{ item.dropdownTitle }}</p>
+    <div class="dropdown-grid" :class="{ 'company-grid': item.name === 'Company' }">
+      <router-link 
+        v-for="child in item.children" 
+        :key="child.name" 
+        :to="child.path" 
+        class="dropdown-item"
+        @click="openDropdownIndex = null" 
+      >
+        <span class="item-icon">
+          <img :src="child.icon" :alt="child.name" class="nav-icon-img">
+        </span>
+        <span class="item-text">{{ child.name }}</span>
+      </router-link>
+    </div>
+  </div>
+</li>
+
+      <div class="nav-indicator" :style="indicatorStyle"></div>
+    </ul>
+  </div>
 
   <div class="stavop2p-con"> 
     <li class="stavop2p"><a href="https://urlgeni.us/swychr">Open Web App  <img src="@/assets/images/ror.png" alt="App Store"  width="13px"/></a></li>
@@ -271,7 +260,7 @@
 <div class="wanda-villap2p">
   <input type="checkbox" id="wanda-3">
   <label for="wanda-3" class="wanda-requestp2p">
-    How can Swychremit be much cheaper than my bank?
+    How can Swychremit much cheaper than my bank?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedp2p">
@@ -481,7 +470,7 @@ the Swychr mobile application, Swychr Connect web platform, and API suites are f
      of Directors – SWYCOP BOD), operating  Financial Cooperative Submission<br> Number
      <b>340/MINADER/DRADER/DDADER/SDR.</b><br>
 <br>
-     © 2026 Swychr Technology Africa Limited. All rights reserved
+     © 2026 Swychr Technology Africa Limited. All rights reserved.
 
     </p>
  </section>
@@ -491,61 +480,79 @@ the Swychr mobile application, Swychr Connect web platform, and API suites are f
  </template>  
  
   <script setup>
-import { ref, onMounted, onBeforeUnmount, nextTick, watch } from 'vue';
+import { ref, onMounted,computed, onBeforeUnmount, nextTick, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import p2p from '@/assets/images/P2P.png';
 import billIcon from '@/assets/images/invoice.png';
 import cardIcon from '@/assets/images/card.png';
+import esimIcon from '@/assets/images/esim.png';
 import usdIcon from '@/assets/images/virtual bsnk.png';
+import cryptoIcon from '@/assets/images/Crypto.png';
+import microIcon from '@/assets/images/microfinance.png';
+import qrIcon from '@/assets/images/QR Code.png';
+import savingsIcon from '@/assets/images/Savings and invest.png';
+import dataIcon from '@/assets/images/airtine and data.png';
+import loanIcon from '@/assets/images/loan.png';
+import giftIcon from '@/assets/images/Gift card.png';
 import onlinePayIcon from '@/assets/images/Online Payments.png';
+import bizAccIcon from '@/assets/images/Business Accounts.png';
+import inStoreIcon from '@/assets/images/In-Store Payments.png';
+import bulkIcon from '@/assets/images/Bulk Payments.png';
 import crossBorderIcon from '@/assets/images/Cross Border Payments.png';
 import Virtualcard from '@/assets/images/Virtual Card Issuance.png';
 import About from '@/assets/images/About Us.png';
 import Careers from '@/assets/images/Careers.png';
 import Blogs from '@/assets/images/Blogs.png';
 import Culture from '@/assets/images/Culture.png';
-import vestor from '@/assets/images/sabinus.png';
 
 const route = useRoute();
 const navMenu = ref(null); 
 const activeIndex = ref(0);
-const openDropdownIndex = ref(null);
-const isMobile = ref(false);
+
 
 const navItems = [
   { name: 'Home', path: '/home' },
   { 
     name: 'Personal', 
-    path: '',
+    path: '/personal',
     dropdownTitle: 'Discover swychr Personal',
-    children: [
+ children: [
       { name: 'Remit (Send)', icon: p2p, path: '/p2p'},
-      { name: 'Cards (Spend)', icon: billIcon, path: '/Card' },
+      { name: 'Cards (Spend)', icon: billIcon, path: '/Cards' },
       { name: 'USD Accounts(Receive)', icon: cardIcon, path: '/Airtime' },
-      { name: 'Airtime (Connect)', icon: usdIcon, path: '/Usdman' }
-   
+      { name: 'Pay (Bank)', icon: esimIcon, path: '#' },
+      { name: 'Airtime (Connect)', icon: usdIcon, path: '/Usd' },
+      { name: 'Gift Cards (Unlock)', icon: cryptoIcon, path: '#' },
+      { name: 'Bills (Settle)', icon: microIcon, path: '#' },
+      { name: 'eSIMs (Travel)', icon: qrIcon , path: '#'},
+      { name: 'Crypto (Invest)', icon: savingsIcon,path: '#'},
+      { name: 'QR (Checkout)', icon:dataIcon, path: '#'},
+      { name: 'Savings (Grow)', icon:loanIcon,path: '#'},
+      { name: 'Loans (Empower).', icon: giftIcon, path: '#'}
     ]
   },
   { 
     name: 'Business', 
-    path: '',
+    path: '/business',
     dropdownTitle: 'Discover swychr Business',
     children: [
-      { name: 'Online Payments', icon: onlinePayIcon,path: '/Online'},
-      { name: 'Cross-Border Payments', icon: crossBorderIcon,path: '/Lastmile'},
-      { name: 'Virtual Card Issuance', icon:Virtualcard ,path: '/Issuance'}
+      { name: 'Online Payments', icon: onlinePayIcon,path: '#n'},
+      { name: 'Business Accounts', icon: bizAccIcon, path: '#'},
+      { name: 'In-Store Payments', icon: inStoreIcon,path: '#'},
+      { name: 'Bulk Payments', icon: bulkIcon,path: '#'},
+      { name: 'Cross-Border Payments', icon: crossBorderIcon,path: '#'},
+      { name: 'Virtual Card Issuance', icon:Virtualcard ,path: '#'},
     ]
   },
   { 
     name: 'Company', 
-    path: '',
+    path: '/company',
     dropdownTitle: 'Discover swychr',
     children: [
-    { name: 'About Us', icon: About,path: '/About'},
-      { name: 'Careers', icon: Careers,path: '/Career'},
+    { name: 'About Us', icon: About,path: '#'},
+      { name: 'Careers', icon: Careers,path: '#'},
       { name: 'Blogs', icon: Blogs,path: '/Blog'},
-      { name: 'Culture', icon: Culture,path: '/Culture'},
-      { name: 'Investors', icon: vestor,path: '/Invest'}
+      { name: 'Culture', icon: Culture,path: '#'}
     ]
   },
   { name: 'Support', path: '/support' }
@@ -553,40 +560,32 @@ const navItems = [
 
 const indicatorStyle = ref({ width: '0px', left: '0px', opacity: 0 });
 
-
-const updateIndicator = () => {
-  if (!navMenu.value) return;
-  const activeElement = navMenu.value.querySelector('.nav-link.active');
-  
-  if (activeElement) {
-    const reducedWidth = activeElement.offsetWidth * 0.6;
-    const left = activeElement.offsetLeft + (activeElement.offsetWidth - reducedWidth) / 2;
-    indicatorStyle.value = { width: `${reducedWidth}px`, left: `${left}px`, opacity: 1 };
-  } else {
-    indicatorStyle.value.opacity = 0;
-  }
-};
-
 const setActive = (index) => {
   activeIndex.value = index;
   nextTick(() => updateIndicator());
 };
 
-const toggleDropdown = (index) => {
-  openDropdownIndex.value = openDropdownIndex.value === index ? null : index;
-};
+const updateIndicator = () => {
+  if (!navMenu.value) return;
+  
+  const activeElement = navMenu.value.querySelector('.nav-link.active');
+  
+  if (activeElement) {
 
-const handleClickOutside = (event) => {
-  const navContainer = document.querySelector('.food-pill-container');
-  if (navContainer && !navContainer.contains(event.target)) {
-    openDropdownIndex.value = null;
+  const reducedWidth = activeElement.offsetWidth * 0.6;
+
+  const left = activeElement.offsetLeft + (activeElement.offsetWidth - reducedWidth) / 2;
+    
+    indicatorStyle.value = {
+     width: `${reducedWidth}px`,
+      left: `${left}px`,
+      opacity: 1
+    };
+  } else {
+
+    indicatorStyle.value.opacity = 0;
   }
 };
-
-const checkScreen = () => {
-  isMobile.value = window.innerWidth <= 820; 
-};
-
 
 watch(() => route.path, (newPath) => {
   const pathName = newPath.replace('/', '').toLowerCase() || 'home';
@@ -597,22 +596,36 @@ watch(() => route.path, (newPath) => {
   }
 }, { immediate: true });
 
-onMounted(() => {
-  checkScreen();
-  updateIndicator();
-  window.addEventListener('resize', () => {
-    checkScreen();
-    updateIndicator();
-  });
 
-  window.addEventListener('click', handleClickOutside);
+
+const openDropdownIndex = ref(null);
+
+
+const toggleDropdown = (index) => {
+  if (openDropdownIndex.value === index) {
+    openDropdownIndex.value = null;
+  } else {
+    openDropdownIndex.value = index; 
+  }
+};
+
+
+const closeOnOutsideClick = (event) => {
+  if (!event.target.closest('.nav-item-wrapper')) {
+    openDropdownIndex.value = null;
+  }
+};
+
+onMounted(() => {
+  updateIndicator();
+  window.addEventListener('resize', updateIndicator);
+  window.addEventListener('click', closeOnOutsideClick);
 });
 
 onBeforeUnmount(() => {
-  window.removeEventListener('resize', checkScreen);
-  window.removeEventListener('click', handleClickOutside);
-});
- 
+  window.removeEventListener('resize', updateIndicator);
+  window.removeEventListener('click', closeOnOutsideClick); 
+});  
 
 const features = [
   {
@@ -754,7 +767,6 @@ display: flex;
   align-items: center;
 }
 
-
 .nav-link {
   color: white;
   text-decoration: none;
@@ -766,116 +778,77 @@ display: flex;
   gap: 5px;
 }
 
-
-.nav-item-wrapper {
-  position: relative;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-
 .mega-dropdown {
+  display: block; 
   position: absolute;
-  top: calc(100% + 15px); 
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   background: white;
-  padding: 20px 25px;
-  border-radius: 12px;
-  width: max-content; 
-  min-width: 240px; 
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  padding: 25px;
+  border-radius: 15px;
+  width: 520px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+  margin-top: 15px;
   z-index: 1000;
-  animation: dropdownFadeIn 0.2s ease-out;
+  font-family: 'Montserrat', sans-serif !important;
+    font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+   font-size: 1.432rem;
 }
 
 .dropdown-arrow {
   transition: transform 0.3s ease;
-  display: inline-block;
 }
-
 .dropdown-arrow.rotated {
   transform: rotate(180deg);
-}
-
-@keyframes dropdownFadeIn {
-  from {
-    opacity: 0;
-    transform: translateX(-50%) translateY(5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-}
-
-.dropdown-arrow {
-  transition: transform 0.3s ease;
-  display: inline-block;
-}
-
-.dropdown-arrow.rotated {
-  transform: rotate(180deg);
-}
-
-.nav-indicator {
-  position: absolute;
-  top: -1px;
-  height: 6px;
-  background: #fff;
-  border-radius: 0 0 5px 5px;
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  z-index: 10;
-  pointer-events: none;
-}
-
-.dropdown-label {
-  color: #8C1BC1; 
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-  text-align: left;
 }
 
 .dropdown-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 12px 30px;
+  grid-template-columns: 1fr 1fr; 
+  gap: 15px;
+ font-family: 'Montserrat', sans-serif;
+   font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
 }
 
 .company-grid {
+  display: grid;
   grid-template-columns: 1fr !important;
-  min-width: 180px;
+  gap: 12px;
 }
 
 .dropdown-item {
-  display: flex;
+  display: grid;
+  grid-template-columns: 30px 1fr;
   align-items: center;
-  gap: 12px;
-  text-decoration: none !important; 
-  padding: 8px 0;
-  transition: transform 0.2s ease;
-}
-
-.dropdown-item:hover {
-  transform: translateX(5px);
-}
-
-.item-text {
-  color: #333;
+  gap: 10px;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
-  text-decoration: none !important; 
-  white-space: nowrap;
 }
 
 .nav-icon-img {
   width: 22px;
   height: 22px;
   object-fit: contain;
+}
+
+.item-text {
+  color: #333;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
 }
 
 .nav-item-wrapper:nth-child(4) .mega-dropdown {
@@ -888,152 +861,6 @@ display: flex;
   left: 50%;
   transform: translateX(-50%);
 }
-
-@media screen and (max-width: 430px) {
-  .numerop2p {
-    flex-wrap: wrap; 
-    justify-content: space-between;
-    margin: 1rem auto;
-  }
-
-  .seam {
-    margin-left: 0;
-    order: 1;
-  }
-
-  .stavop2p {
-    order: 2; 
-  }
-
-  .food-pill-container {
-    order: 3; 
-    width: 100%;
-    margin-top: 15px;
-    justify-content: center;
-    overflow-x: auto; 
-  }
-
-  .mannav {
-    justify-content: center;
-    width: auto;
-  }
-
-  .nav-link {
-    font-size: 0.8rem;
-    padding: 0 8px;
-    white-space: nowrap;
-  }
-
-  @media screen and (max-width: 430px) {
-  .mega-dropdown {
-    position: fixed;
-    top: 25%;
-    left: 5% !important;
-    width: 90% !important;
-    transform: none !important;
-    z-index: 9999;
-  }
-
-  .dropdown-grid {
-    grid-template-columns: 1fr; 
-  }
-}
-
-  .nav-indicator {
-    display: block !important; 
-    height: 4px;
-  }
-}
-
-@media screen and (max-width: 430px) {
-.mega-dropdown {
-    position: fixed;
-    top: 22%; 
-    left: 5% !important;
-    right: 5% !important;
-    width: 90% !important;
-    transform: none !important;
-    padding: 24px; 
-    border-radius: 24px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-    z-index: 9999;
-    text-align: left;
-  }
-
-  .dropdown-label {
-    text-align: left !important;
-    margin-left: 0 !important;
-    margin-bottom: 24px;
-    font-size: 0.85rem;
-    color: #8C1BC1;
-    width: 100%;
-    border-bottom: 1px solid #f0f0f0;
-    padding-bottom: 12px;
-  }
-
-
-  .dropdown-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
-    gap: 20px;
-    width: 100%;
-  }
-
-  .dropdown-item {
-    display: flex;
-    flex-direction: row; 
-    align-items: center; 
-    justify-content: flex-start; 
-    width: 100%;
-    gap: 16px; 
-    text-decoration: none !important;
-  }
-
-  .item-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px; 
-  }
-
-  .nav-icon-img {
-    width: 28px;
-    height: 28px;
-    object-fit: contain;
-  }
-
-  .item-text {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #282828;
-    text-align: left;
-    white-space: nowrap;
-  }
-}
-
-@media screen and (max-width: 1180px) {
-  .numerop2p {
-    width: 95%;
-    gap: 10px; 
-  }
-
-  .food-pill-container {
-    padding: 0 5px;
-    height: 3.2rem;
-  }
-
-  .nav-link {
-    padding: 0 10px;
-    font-size: 0.85rem;
-  }
-
-  .stavop2p {
-    width: 9rem; 
-    margin-right: 0; 
-  }
-}
-
 
 .insidep2p1 {
   padding-top: 2.7rem; 
@@ -1150,9 +977,6 @@ display: flex;
   line-height: 120%;
   padding: 10px 24px;
 }
-
-
-
 
 .p2p2{
   padding: 3.125rem 0;
@@ -2235,7 +2059,7 @@ margin-left: 67px;
     min-height: 100vh;
   }
 
-  .numerop2p {
+  .numeroP2p {
     width: 98%;
     margin: 1.25rem auto;
   }
