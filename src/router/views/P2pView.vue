@@ -271,7 +271,7 @@
 <div class="wanda-villap2p">
   <input type="checkbox" id="wanda-3">
   <label for="wanda-3" class="wanda-requestp2p">
-    How can Swychremit much cheaper than my bank?
+    How can Swychremit be much cheaper than my bank?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedp2p">
@@ -285,7 +285,7 @@
 <div class="wanda-villap2p">
   <input type="checkbox" id="wanda-4">
   <label for="wanda-4" class="wanda-requestp2p">
-   Is it really Instant
+   Is it really Instant?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedp2p">
@@ -1148,7 +1148,6 @@ display: flex;
     margin-right: 0; 
   }
 }
-
 
 
 .p2p2{
