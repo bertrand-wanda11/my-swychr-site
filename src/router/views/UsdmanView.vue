@@ -668,7 +668,7 @@ const transactions = [
   align-items: center;
   justify-content: center;
   background-image: url('@/assets/images/Air.png');
-  background-position: center 30px;
+  background-position: center 15px;
   background-repeat: no-repeat;
   background-size: 95% auto;
 }
@@ -825,7 +825,7 @@ display: flex;
   display: block;
   align-items: center;
   justify-content: center;
-  width: 90vw;
+  width: 95vw;
   margin-top: 0; 
 }
 
