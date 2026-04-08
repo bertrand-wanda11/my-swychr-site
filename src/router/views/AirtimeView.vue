@@ -1901,6 +1901,7 @@ input[type="checkbox"]:checked ~ .wanda-expectedusd6 {
   background-color: #e2e4e7; 
   width: 100%;
   max-width: 1000px;
+    height: 270px;
   border-radius: 24px;
   padding: 60px 40px;
   text-align: center;
