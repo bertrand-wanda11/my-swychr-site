@@ -668,9 +668,9 @@ const transactions = [
   align-items: center;
   justify-content: center;
   background-image: url('@/assets/images/Air.png');
-  background-position: center;
+  background-position: center 120px;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 85% auto;
 }
 
 .seamAIR{
