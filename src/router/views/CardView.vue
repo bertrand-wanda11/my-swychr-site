@@ -744,7 +744,7 @@ display: flex;
 .mathscard {
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-style: normal;
   font-weight: 400;
   line-height: 136%;
@@ -823,14 +823,12 @@ display: flex;
   gap: 5px;
 }
 
-
 .nav-item-wrapper {
   position: relative;
   height: 100%;
   display: flex;
   align-items: center;
 }
-
 
 .mega-dropdown {
   position: absolute;
