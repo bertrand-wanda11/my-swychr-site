@@ -293,11 +293,11 @@ How secure is my money?
         Spend globally, fund locally, and pay with confidence.
       </p>
       
-      <button class="pill-button">
+     
        <div class="stavocard5-con"> 
     <li class="stavocard5"><a href="https://urlgeni.us/swychr">Create My Virtual Card<img src="@/assets/images/itie.png" alt=""  width="25px"/></a></li>
   </div>
-      </button>
+
     </div>
   </section>
 
@@ -744,11 +744,11 @@ display: flex;
 .mathscard {
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-style: normal;
   font-weight: 400;
   line-height: 136%;
-  letter-spacing: 0.075rem; 
+  letter-spacing: 0.055rem; 
   margin-top: 1rem;
 }
 
