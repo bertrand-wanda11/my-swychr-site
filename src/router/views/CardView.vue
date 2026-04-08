@@ -805,7 +805,6 @@ display: flex;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-  padding: 10px 24px;
 }
 
 .stavocard5 img{
@@ -1402,7 +1401,6 @@ display: flex;
   flex-direction: column;
 }
 
-
 .shield-card.featured {
   background: linear-gradient(145deg, rgba(82, 57, 185, 0.2), rgba(0, 0, 0, 0.03));
   border: 1px solid rgba(129, 63, 214, 0.5);
@@ -1749,7 +1747,6 @@ input[type="checkbox"]:checked ~ .wanda-expectedcard6 {
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-  padding: 10px 24px;
 }
 
 .stavocard6 img{

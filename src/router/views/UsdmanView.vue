@@ -59,7 +59,7 @@ clients directly into your USD account powered by Swychr wallet.
 </p>
 <div class="protonAir">
   <div class="icon-circle2">
-     <span class="button-text2">Open My USD Account </span>
+     <span class="button-text2">Open My Usd Account </span>
           <img src="@/assets/images/Gogo.png" alt="Card" />
         </div>
   
@@ -668,7 +668,7 @@ const transactions = [
   align-items: center;
   justify-content: center;
   background-image: url('@/assets/images/Air.png');
-  background-position: center 90px;
+  background-position: center 30px;
   background-repeat: no-repeat;
   background-size: 95% auto;
 }
@@ -898,7 +898,7 @@ display: flex;
   background-color:  #fff;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  width:14rem;
+  width:16rem;
   height: 2.5rem; 
 }
 
