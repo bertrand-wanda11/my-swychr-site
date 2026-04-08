@@ -430,7 +430,6 @@ the Swychr mobile application, Swychr Connect web platform, and API suites are f
   <script setup>
 import { ref, onMounted, onBeforeUnmount, nextTick, watch } from 'vue';
 import { useRoute } from 'vue-router';
-
 import p2p from '@/assets/images/P2P.png';
 import billIcon from '@/assets/images/invoice.png';
 import cardIcon from '@/assets/images/card.png';
@@ -458,8 +457,8 @@ const navItems = [
  children: [
       { name: 'Remit (Send)', icon: p2p, path: '/p2p'},
       { name: 'Cards (Spend)', icon: billIcon, path: '/Card' },
-      { name: 'USD Accounts(Receive)', icon: cardIcon, path: '/Airtime'},
-      { name: 'Airtime (Connect)', icon: usdIcon, path: '/Usd' }
+      { name: 'USD Accounts(Receive)', icon: cardIcon, path: '/Usdman'},
+      { name: 'Airtime (Connect)', icon: usdIcon, path: '/Airtime' }
     ]
   },
   { 
@@ -664,7 +663,7 @@ const transactions = [
   height: auto;
   position: relative; 
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   overflow: hidden;
   align-items: center;
   justify-content: center;
