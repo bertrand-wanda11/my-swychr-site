@@ -521,8 +521,8 @@ const navItems = [
     children: [
       { name: 'Remit (Send)', icon: p2p, path: '/p2p'},
       { name: 'Cards (Spend)', icon: billIcon, path: '/Card' },
-      { name: 'USD Accounts(Receive)', icon: cardIcon, path: '/Airtime' },
-      { name: 'Airtime (Connect)', icon: usdIcon, path: '/Usdman' }
+      { name: 'USD Accounts(Receive)', icon: cardIcon, path: '/Usdman' },
+      { name: 'Airtime (Connect)', icon: usdIcon, path: '/Airtime' }
    
     ]
   },

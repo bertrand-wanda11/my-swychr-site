@@ -602,19 +602,19 @@ const steps = [
   {
     number: 'Second',
     title: 'Activate',
-    description: 'Tap "Create Card" and choose your card type',
+    description: 'Simply request and have your USD virtual account issued near instantly within the app.',
     image: require('@/assets/images/poppy2.png')
   },
   {
     number: 'Third',
     title: 'Share',
-    description: 'Copy your card details and start shopping globally immediately or attach your contactless card to Apple Pay or Google Pay for an in-person payment experience.',
+    description: 'Copy and share your personalized USD routing and account number to get paid in USD like a local.',
     image: require('@/assets/images/poppy3.png')
   },
     {
     number: 'Fourth',
     title: 'Withdraw',
-    description: 'Copy your card details and start shopping globally immediately or attach your contactless card to Apple Pay or Google Pay for an in-person payment experience.',
+    description: 'Seamlessly convert USD to any supported local currency within the app at very competitive exchange rates. Withdraw to mobile money,bank accounts and other supported payout methods and have the funds delivered in minutes.',
     image: require('@/assets/images/poppy4.png')
   }
 ];
