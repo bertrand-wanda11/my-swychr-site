@@ -663,7 +663,7 @@ const transactions = [
   height: auto;
   position: relative; 
   width: 100%;
-  height: 70vh;
+  height: 100vh;
   overflow: hidden;
   align-items: center;
   justify-content: center;
