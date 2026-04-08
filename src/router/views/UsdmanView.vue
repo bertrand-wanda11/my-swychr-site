@@ -49,17 +49,17 @@
 
  <div class="insideAir1">
   <div class="techAir">
-<p class="smartAir">Keep their world 
-<br>connected.</p>
+<p class="smartAir">Get paid in USD.
+<br> Like a local.</p>
 <p class="mathsAir">
-Send airtime and data to your loved ones in 125+ countries. Whether <br>
-it’s local top-ups in Cameroon or international gifts to Nigeria, India, o<br>
-beyond it lands in seconds.
+Go beyong borders, Open a fully functional US Virtual Account in  <br>
+minutes. Receive payments from Amazon, Deel, PayPal, and global<br>
+clients directly into your USD account powered by Swychr wallet.
 
 </p>
 <div class="protonAir">
   <div class="icon-circle2">
-     <span class="button-text2">Send Airtime Now </span>
+     <span class="button-text2">Open My USD Account </span>
           <img src="@/assets/images/Gogo.png" alt="Card" />
         </div>
   
@@ -668,9 +668,9 @@ const transactions = [
   align-items: center;
   justify-content: center;
   background-image: url('@/assets/images/Air.png');
-  background-position: center 120px;
+  background-position: center 90px;
   background-repeat: no-repeat;
-  background-size: 85% auto;
+  background-size: 95% auto;
 }
 
 .seamAIR{
