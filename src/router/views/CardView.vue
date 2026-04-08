@@ -56,7 +56,7 @@ locally. Funded instantly via Mobile Money or Bank Transfer.
 </p>
 <div class="protoncard">
   <div class="stavocard5-con"> 
-    <li class="stavocard5"><a href="https://urlgeni.us/swychr">Create My Virtual Card<img src="@/assets/images/itie.png" alt=""  width="25px"/></a></li>
+    <li class="stavocard5"><a href="https://urlgeni.us/swychr">Create My Virtual Card<img src="@/assets/images/itie.png" alt=""  width="1.375rem"/></a></li>
   </div>
   
 </div>
@@ -295,7 +295,7 @@ How secure is my money?
       
    
        <div class="stavocard5-con"> 
-    <li class="stavocard5"><a href="https://urlgeni.us/swychr">Create My Virtual Card<img src="@/assets/images/itie.png" alt=""  width="25px"/></a></li>
+    <li class="stavocard5"><a href="https://urlgeni.us/swychr">Create My Virtual Card<img src="@/assets/images/itie.png" alt=""  width="1.375rem"/></a></li>
   </div>
 
     </div>
@@ -805,11 +805,12 @@ display: flex;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-  padding: 0 0.6375rem;
+  padding: 0 0.1375rem;
 }
 
 .stavocard5 img{
-  margin-top: 0.5rem;
+   margin-top: 0.2rem;
+  margin-left: 0.5rem;
 }
 
 .nav-link {
@@ -1751,11 +1752,12 @@ input[type="checkbox"]:checked ~ .wanda-expectedcard6 {
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-  padding: 0 0.6375rem;
+  padding: 0 0.1375rem;
 }
 
 .stavocard6 img{
-  margin-top: 0.5rem;
+  margin-top: 0.2rem;
+  margin-left: 0.5rem;
 }
 
 .button-text {
