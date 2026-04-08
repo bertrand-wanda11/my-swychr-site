@@ -481,6 +481,7 @@ import About from '@/assets/images/About Us.png';
 import Careers from '@/assets/images/Careers.png';
 import Blogs from '@/assets/images/Blogs.png';
 import Culture from '@/assets/images/Culture.png';
+import vestor from '@/assets/images/sabinus.png';
 
 const route = useRoute();
 const navMenu = ref(null); 
