@@ -293,11 +293,11 @@ How secure is my money?
         Spend globally, fund locally, and pay with confidence.
       </p>
       
-     
+      <button class="pill-button">
        <div class="stavocard5-con"> 
     <li class="stavocard5"><a href="https://urlgeni.us/swychr">Create My Virtual Card<img src="@/assets/images/itie.png" alt=""  width="25px"/></a></li>
   </div>
-
+      </button>
     </div>
   </section>
 
@@ -744,7 +744,7 @@ display: flex;
 .mathscard {
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 136%;
@@ -808,6 +808,9 @@ display: flex;
   padding: 0 0.9375rem;
 }
 
+.stavocard5 img{
+  margin-top:0.4rem;
+}
 
 .nav-link {
   color: white;
@@ -827,7 +830,6 @@ display: flex;
   display: flex;
   align-items: center;
 }
-
 
 .mega-dropdown {
   position: absolute;
@@ -1724,21 +1726,11 @@ input[type="checkbox"]:checked ~ .wanda-expectedcard6 {
 }
 
 .pill-button {
-  background-color: #f3f4f6;
-  border: 1px solid #d1d5db;
-  border-radius: 50px; 
-  padding: 8px 8px 8px 24px;
   display: inline-flex;
   align-items: center;
   gap: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
-}
-
-.pill-button:hover {
-  background-color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .button-text {
