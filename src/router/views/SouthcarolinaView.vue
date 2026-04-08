@@ -1340,9 +1340,6 @@ input:focus, select:focus, textarea:focus {
 }
 
 
-
-
-
 @media screen and (max-width: 430px) {
   .blogbeep, .blogbeep1, .blogbeep2, .blogbeep3, .blogbeep4 {
     padding: 20px 0 !important;

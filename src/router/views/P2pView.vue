@@ -317,7 +317,7 @@ How secure is my money?
 <div class="wanda-villap2p">
   <input type="checkbox" id="wanda-7">
   <label for="wanda-7" class="wanda-requestp2p">
-  What if I send money to the wrong number
+  What if I send money to the wrong number?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedp2p">
