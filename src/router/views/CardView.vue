@@ -1740,7 +1740,7 @@ list-style: none;
   justify-content: center;
   overflow: hidden;
   cursor: pointer;
-  margin-left:10rem;
+  margin-left:16rem;
 }
 
 .stavocard6 a{

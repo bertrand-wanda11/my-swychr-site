@@ -1926,6 +1926,7 @@ input[type="checkbox"]:checked ~ .wanda-expectedusd6 {
 
 .stavousd46{
   list-style: none; 
+  background:#fff;
   border: 1px solid #d1d5db;
   width: 12rem;
   height: 2.9375rem;
@@ -1935,9 +1936,10 @@ input[type="checkbox"]:checked ~ .wanda-expectedusd6 {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  margin-left: 10rem;
+  margin-left: 20rem;
   cursor: pointer;
   transition: all 0.3s ease;
+    color: #fff;
 }
 
 .stavousd46 a {
