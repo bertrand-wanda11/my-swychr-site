@@ -1001,7 +1001,7 @@ display: flex;
   display: block;
   align-items: center;
   justify-content: center;
-  width: 95vw;
+  width: 100vw;
   margin-top: 0; 
 }
 
