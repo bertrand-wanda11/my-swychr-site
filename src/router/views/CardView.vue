@@ -809,7 +809,6 @@ display: flex;
 }
 
 .stavocard5 img{
-   margin-top: 0.2rem;
   margin-left: 0.5rem;
 }
 
@@ -1756,28 +1755,10 @@ input[type="checkbox"]:checked ~ .wanda-expectedcard6 {
 }
 
 .stavocard6 img{
-  margin-top: 0.2rem;
   margin-left: 0.5rem;
 }
 
-.button-text {
-  font-weight: 600;
-  font-size: 1rem;
-  color: #1a1b1e;
-}
 
-.icon-circle {
-  background-color:  #A84FDA;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.icon-circle img {
-  width: 35px;
-  height: 35px;
-}
 
 @media (max-width: 430px) {
   .cta-heading {
