@@ -744,7 +744,7 @@ display: flex;
 .mathscard {
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-style: normal;
   font-weight: 400;
   line-height: 136%;
@@ -794,7 +794,7 @@ display: flex;
   display: flex;
   border-radius: 6.25rem;
   margin-right: 6.25vw; 
-  margin-top: 0.625rem;
+  margin-top: 0.425rem;
 }
 
 .stavocard5 a {
@@ -809,7 +809,7 @@ display: flex;
 }
 
 .stavocard5 img{
-  margin-top:0.4rem;
+  margin-top: 0.5rem;
 }
 
 .nav-link {
@@ -830,6 +830,7 @@ display: flex;
   display: flex;
   align-items: center;
 }
+
 
 .mega-dropdown {
   position: absolute;
@@ -1725,12 +1726,36 @@ input[type="checkbox"]:checked ~ .wanda-expectedcard6 {
   font-weight: 500;
 }
 
-.pill-button {
-  display: inline-flex;
+
+.stavocard6{
+  border: none;
+  background: #fff;
+  width: 16rem;
   align-items: center;
-  gap: 16px;
+  justify-content: center;
+  height: 2.5rem; 
+  text-align: center;
+  display: inline-flex;
+  border-radius: 6.25rem;
+  margin-right: 6.25vw; 
+  padding: 8px 8px 8px 24px;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.stavocard6 a {
+   text-decoration: none;
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  padding: 0 0.9375rem;
+}
+
+.stavocard6 img{
+  margin-top: 0.5rem;
 }
 
 .button-text {
