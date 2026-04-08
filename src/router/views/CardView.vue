@@ -294,8 +294,8 @@ How secure is my money?
       </p>
       
    
-       <div class="stavocard5-con"> 
-    <li class="stavocard5"><a href="https://urlgeni.us/swychr">Create My Virtual Card<img src="@/assets/images/itie.png" alt=""  width="30px"/></a></li>
+       <div class="stavocard6-con"> 
+    <li class="stavocard6"><a href="https://urlgeni.us/swychr">Create My Virtual Card<img src="@/assets/images/itie.png" alt=""  width="30px"/></a></li>
   </div>
 
     </div>
@@ -769,7 +769,6 @@ display: flex;
   display: flex;
   border-radius: 6.25rem;
   margin-right: 6.25vw; 
-  margin-top: 0.625rem;
 }
 
 .stavocard a {
@@ -780,32 +779,33 @@ display: flex;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-  padding: 0 0.9375rem;
+ padding: 10px 24px;
 }
 
 .stavocard5{
+ background-color: #FFF;
   border: none;
-  background: #fff;
-   width: 18rem;
+  width: 17rem;
   align-items: center;
   justify-content: center;
-  height: 2.5rem; 
+  margin: 0;
+  height: 2.9375rem;
   text-align: center;
   display: flex;
+  font-size: 0.9rem;
+  font-weight: bold;
   border-radius: 6.25rem;
-  margin-right: 6.25vw; 
-  margin-top: 0.425rem;
 }
 
 .stavocard5 a {
-   text-decoration: none;
+ text-decoration: none;
   color: #000;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.1875rem;
+  font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-  padding: 0 0.9375rem;
+  padding: 10px 24px;
 }
 
 .stavocard5 img{
@@ -1726,30 +1726,30 @@ input[type="checkbox"]:checked ~ .wanda-expectedcard6 {
 
 
 .stavocard6{
+ background-color: #FFF;
   border: none;
-  background: #fff;
-  width: 18rem;
+  width: 17rem;
   align-items: center;
   justify-content: center;
-  height: 2.5rem; 
+  margin: 0;
+  height: 2.9375rem;
   text-align: center;
-  display: inline-flex;
+  display: flex;
+  font-size: 0.9rem;
+  font-weight: bold;
   border-radius: 6.25rem;
-  margin-right: 6.25vw; 
-  padding: 8px 8px 8px 24px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  margin-left: 5vw; 
 }
 
 .stavocard6 a {
-   text-decoration: none;
+ text-decoration: none;
   color: #000;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.1875rem;
+  font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-   padding: 0 0.9375rem;
+  padding: 10px 24px;
 }
 
 .stavocard6 img{
