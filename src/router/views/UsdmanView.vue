@@ -693,7 +693,7 @@ margin-left: 67px;
 }
 
 .food-pill-container {
-border: 1px solid #FFF;
+  border: 1px solid #FFF;
   border-radius: 50px;
   height: 3.5rem;
   padding: 0 1rem;
@@ -844,11 +844,11 @@ display: flex;
 .mathsAir {
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 136%;
-  letter-spacing: 0.075rem; 
+  letter-spacing: 0.050rem; 
   margin-top: 0;
 }
 
