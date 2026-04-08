@@ -6,7 +6,7 @@
     <img src="@/assets/images/motive.png" alt="Logo" class="dreak" width="127" height="32">
   </h2>
   
-    <div class="food-pill-container">
+   <div class="food-pill-container">
     <ul class="mannav" ref="navMenu"> 
      <li v-for="(item, index) in navItems" :key="item.name" class="nav-item-wrapper">
   <router-link 
@@ -56,10 +56,9 @@ beyond it lands in seconds.
 
 </p>
 <div class="protonusd">
-  <div class="icon-circle10">
-     <span class="button-text10">Send Airtime Now</span>
-          <img src="@/assets/images/dreams.png" alt="Card" />
-        </div>
+   <div class="stavousd45-con"> 
+    <li class="stavousd45"><a href="https://urlgeni.us/swychr">Send Airtime Now<img src="@/assets/images/dreams.png" alt="" width="35px"/></a></li>
+  </div>
   
 </div>
 </div>
@@ -254,7 +253,7 @@ beyond it lands in seconds.
 <div class="wanda-villausd6">
   <input type="checkbox" id="wanda-3">
   <label for="wanda-3" class="wanda-requestusd6">
-    How can Swych Remit be so much cheaper than my bank?
+    How can Swychremit be much cheaper than bank?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedusd6">
@@ -268,7 +267,7 @@ beyond it lands in seconds.
 <div class="wanda-villausd6">
   <input type="checkbox" id="wanda-4">
   <label for="wanda-4" class="wanda-requestusd6">
-   Is it really Instant
+   Is it really Instant?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedusd6">
@@ -311,7 +310,7 @@ How secure is my money?
 <div class="wanda-villausd6">
   <input type="checkbox" id="wanda-7">
   <label for="wanda-7" class="wanda-requestusd6">
-  What if I send money to the wrong number
+  What if I send money to the wrong number?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedusd6">
@@ -333,9 +332,9 @@ How secure is my money?
         Top up loved ones, gift data bundles, and keep people connected across borders.
       </p>
       
-      <button class="pill-button">
-        <span class="button-text">Send Airtime Now</span>
-      </button>
+     <div class="stavocard46-con"> 
+    <li class="stavocard46"><a href="https://urlgeni.us/swychr">Send Airtime Now<img src="@/assets/images/dreams.png" alt="" width="35px"/></a></li>
+  </div>
     </div>
   </section>
 
@@ -1002,11 +1001,11 @@ margin-left: 67px;
 .mathsusd {
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 136%;
-  letter-spacing: 0.075rem; 
+  letter-spacing: 0.050rem; 
   margin-top: 0;
 }
 
@@ -1041,31 +1040,39 @@ margin-left: 67px;
   padding: 0 0.9375rem;
 }
 
-.button-text10 {
-  font-weight: 400;
-  font-size: 1.1875rem;
-  color: #1a1b1e;
-}
-
-.icon-circle10 {
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.stavousd45{
+list-style: none; 
+  background-color: #FFF;
+  width: 12rem;
+  height: 2.9375rem;
   border-radius: 6.25rem;
-  background-color:  #fff;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.stavousd45 a {
+  text-decoration: none;
+  color: #000;
   font-family: 'Montserrat', sans-serif;
+  font-size: 1.125rem;
   font-weight: 400;
-  width:14rem;
-    height: 2.5rem; 
+  line-height: 1; 
+  display: flex;
+  flex-direction: row; 
+  align-items: center; 
+  justify-content: center; 
+  width: 100%;
+  height: 100%;
 }
 
-.icon-circle10 img {
-  width: 35px;
-  height: 35px;
-  margin-left: 7px;
+.stavousd45 img{
+  margin-left: 0.5rem;
+  display: block; 
+  flex-shrink: 0;
 }
-
 
 .usd2 {
   padding: 5rem 1.25rem; 
@@ -1941,29 +1948,44 @@ input[type="checkbox"]:checked ~ .wanda-expectedusd6 {
   font-weight: 500;
 }
 
-.pill-button {
+
+.stavousd46{
+  list-style: none; 
   background-color: #A84FDA;
   border: 1px solid #d1d5db;
-  border-radius: 50px; 
-  padding: 8px 8px 8px 24px;
-  display: inline-flex;
+  width: 12rem;
+  height: 2.9375rem;
+  border-radius: 6.25rem;
+  margin: 0;
+  display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: center;
+  overflow: hidden;
+  padding: 8px 8px 8px 24px;
   width: 11.8rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.pill-button:hover {
-  background-color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+.stavousd46 a {
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1; 
+  display: flex;
+  flex-direction: row; 
+  align-items: center; 
+  justify-content: center; 
+  width: 100%;
+  height: 100%;
 }
 
-.button-text {
-  font-weight: 600;
-  font-size: 1rem;
-  color: #fff;
+.stavousd46 img{
+  margin-left: 0.5rem;
+  display: block; 
+  flex-shrink: 0;
 }
 
 
@@ -2161,7 +2183,7 @@ input[type="checkbox"]:checked ~ .wanda-expectedusd6 {
     margin-top: 1.5rem;
   }
 
-  .icon-circle10 {
+  .stavousd45 {
     width: 85vw;
     height: 2.8rem;
   }
@@ -2232,7 +2254,6 @@ input[type="checkbox"]:checked ~ .wanda-expectedusd6 {
     gap: 0;
   }
 
-
   .spirusd6, .personusd6{
     font-size: 2.1rem;
     text-align: center;
@@ -2293,7 +2314,6 @@ input[type="checkbox"]:checked ~ .wanda-expectedusd6 {
     padding: 0.5rem 1rem 1rem 1rem;
   }
 } 
-
 
 
 .footerusd{
