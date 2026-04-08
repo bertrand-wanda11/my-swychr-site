@@ -58,10 +58,9 @@ clients directly into your USD account powered by Swychr wallet.
 
 </p>
 <div class="protonAir">
-  <div class="icon-circle2">
-     <span class="button-text2">Open My Usd Account </span>
-          <img src="@/assets/images/Gogo.png" alt="Card" />
-        </div>
+   <div class="stavocard9-con"> 
+    <li class="stavocard9"><a href="https://urlgeni.us/swychr">Open My Usd Account<img src="@/assets/images/Gogo.png" alt="" width="35px"/></a></li>
+  </div>
   
 </div>
 </div>
@@ -228,7 +227,7 @@ clients directly into your USD account powered by Swychr wallet.
 <div class="wanda-villaAir7">
   <input type="checkbox" id="wanda-3">
   <label for="wanda-3" class="wanda-requestAir7">
-    How can Swych Remit be so much cheaper than my bank?
+    How can Swychremit be much cheaper than bank?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedAir7">
@@ -242,7 +241,7 @@ clients directly into your USD account powered by Swychr wallet.
 <div class="wanda-villaAir7">
   <input type="checkbox" id="wanda-4">
   <label for="wanda-4" class="wanda-requestAir7">
-   Is it really Instant
+   Is it really Instant?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedAir7">
@@ -285,7 +284,7 @@ How secure is my money?
 <div class="wanda-villaAir7">
   <input type="checkbox" id="wanda-7">
   <label for="wanda-7" class="wanda-requestAir7">
-  What if I send money to the wrong number
+  What if I send money to the wrong number?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedAir7">
@@ -441,31 +440,34 @@ import About from '@/assets/images/About Us.png';
 import Careers from '@/assets/images/Careers.png';
 import Blogs from '@/assets/images/Blogs.png';
 import Culture from '@/assets/images/Culture.png';
+import vestor from '@/assets/images/sabinus.png';
 import tygacook from '@/assets/images/tyga.png';
 
 const route = useRoute();
 const navMenu = ref(null); 
 const activeIndex = ref(0);
-
+const openDropdownIndex = ref(null);
+const isMobile = ref(false);
 
 const navItems = [
   { name: 'Home', path: '/home' },
   { 
     name: 'Personal', 
-    path: '/personal',
+    path: '',
     dropdownTitle: 'Discover swychr Personal',
- children: [
+    children: [
       { name: 'Remit (Send)', icon: p2p, path: '/p2p'},
       { name: 'Cards (Spend)', icon: billIcon, path: '/Card' },
-      { name: 'USD Accounts(Receive)', icon: cardIcon, path: '/Usdman'},
+      { name: 'USD Accounts(Receive)', icon: cardIcon, path: '/Usdman' },
       { name: 'Airtime (Connect)', icon: usdIcon, path: '/Airtime' }
+   
     ]
   },
   { 
     name: 'Business', 
-    path: '/business',
+    path: '',
     dropdownTitle: 'Discover swychr Business',
-  children: [
+    children: [
       { name: 'Online Payments', icon: onlinePayIcon,path: '/Online'},
       { name: 'Cross-Border Payments', icon: crossBorderIcon,path: '/Lastmile'},
       { name: 'Virtual Card Issuance', icon:Virtualcard ,path: '/Issuance'}
@@ -473,13 +475,14 @@ const navItems = [
   },
   { 
     name: 'Company', 
-    path: '/company',
+    path: '',
     dropdownTitle: 'Discover swychr',
     children: [
     { name: 'About Us', icon: About,path: '/About'},
       { name: 'Careers', icon: Careers,path: '/Career'},
       { name: 'Blogs', icon: Blogs,path: '/Blog'},
-      { name: 'Culture', icon: Culture,path: '/Culture'}
+      { name: 'Culture', icon: Culture,path: '/Culture'},
+      { name: 'Investors', icon: vestor,path: '/Invest'}
     ]
   },
   { name: 'Support', path: '/support' }
@@ -487,34 +490,39 @@ const navItems = [
 
 const indicatorStyle = ref({ width: '0px', left: '0px', opacity: 0 });
 
-const setActive = (index) => {
-  activeIndex.value = index;
-  setTimeout(() => {
-    updateIndicator();
-  }, 150); 
-};
-
 const updateIndicator = () => {
   if (!navMenu.value) return;
-  
   const activeElement = navMenu.value.querySelector('.nav-link.active');
   
   if (activeElement) {
-
-  const reducedWidth = activeElement.offsetWidth * 0.6;
-
-  const left = activeElement.offsetLeft + (activeElement.offsetWidth - reducedWidth) / 2;
-    
-    indicatorStyle.value = {
-     width: `${reducedWidth}px`,
-      left: `${left}px`,
-      opacity: 1
-    };
+    const reducedWidth = activeElement.offsetWidth * 0.6;
+    const left = activeElement.offsetLeft + (activeElement.offsetWidth - reducedWidth) / 2;
+    indicatorStyle.value = { width: `${reducedWidth}px`, left: `${left}px`, opacity: 1 };
   } else {
-
     indicatorStyle.value.opacity = 0;
   }
 };
+
+const setActive = (index) => {
+  activeIndex.value = index;
+  nextTick(() => updateIndicator());
+};
+
+const toggleDropdown = (index) => {
+  openDropdownIndex.value = openDropdownIndex.value === index ? null : index;
+};
+
+const handleClickOutside = (event) => {
+  const navContainer = document.querySelector('.food-pill-container');
+  if (navContainer && !navContainer.contains(event.target)) {
+    openDropdownIndex.value = null;
+  }
+};
+
+const checkScreen = () => {
+  isMobile.value = window.innerWidth <= 820; 
+};
+
 
 watch(() => route.path, (newPath) => {
   const pathName = newPath.replace('/', '').toLowerCase() || 'home';
@@ -525,36 +533,22 @@ watch(() => route.path, (newPath) => {
   }
 }, { immediate: true });
 
-
-
-const openDropdownIndex = ref(null);
-
-
-const toggleDropdown = (index) => {
-  if (openDropdownIndex.value === index) {
-    openDropdownIndex.value = null;
-  } else {
-    openDropdownIndex.value = index; 
-  }
-};
-
-
-const closeOnOutsideClick = (event) => {
-  if (!event.target.closest('.nav-item-wrapper')) {
-    openDropdownIndex.value = null;
-  }
-};
-
 onMounted(() => {
+  checkScreen();
   updateIndicator();
-  window.addEventListener('resize', updateIndicator);
-  window.addEventListener('click', closeOnOutsideClick);
+  window.addEventListener('resize', () => {
+    checkScreen();
+    updateIndicator();
+  });
+
+  window.addEventListener('click', handleClickOutside);
 });
 
 onBeforeUnmount(() => {
-  window.removeEventListener('resize', updateIndicator);
-  window.removeEventListener('click', closeOnOutsideClick); 
-});  
+  window.removeEventListener('resize', checkScreen);
+  window.removeEventListener('click', handleClickOutside);
+});
+
 
 const earningsCards = [
   {
@@ -596,25 +590,25 @@ const steps = [
     number: 'First',
     title: 'Verify',
     description: 'Quick and easy KYC. Proivde a few personal details, government issued identification document and complete the liveliness check.',
-    image: require('@/assets/images/poppy1.png')
+    image: require('@/assets/images/tibo1.png')
   },
   {
     number: 'Second',
     title: 'Activate',
     description: 'Simply request and have your USD virtual account issued near instantly within the app.',
-    image: require('@/assets/images/poppy2.png')
+    image: require('@/assets/images/tibo2.png')
   },
   {
     number: 'Third',
     title: 'Share',
     description: 'Copy and share your personalized USD routing and account number to get paid in USD like a local.',
-    image: require('@/assets/images/poppy3.png')
+    image: require('@/assets/images/tibo3.png')
   },
     {
     number: 'Fourth',
     title: 'Withdraw',
     description: 'Seamlessly convert USD to any supported local currency within the app at very competitive exchange rates. Withdraw to mobile money,bank accounts and other supported payout methods and have the funds delivered in minutes.',
-    image: require('@/assets/images/poppy4.png')
+    image: require('@/assets/images/tibo4.png')
   }
 ];
 
@@ -736,77 +730,114 @@ display: flex;
   gap: 5px;
 }
 
+.nav-item-wrapper {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
 .mega-dropdown {
-  display: block; 
   position: absolute;
-  top: 100%;
+  top: calc(100% + 15px); 
   left: 50%;
   transform: translateX(-50%);
   background: white;
-  padding: 25px;
-  border-radius: 15px;
-  width: 520px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-  margin-top: 15px;
+  padding: 20px 25px;
+  border-radius: 12px;
+  width: max-content; 
+  min-width: 240px; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   z-index: 1000;
-  font-family: 'Montserrat', sans-serif !important;
-    font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
-   font-size: 1.432rem;
+  animation: dropdownFadeIn 0.2s ease-out;
 }
 
 .dropdown-arrow {
   transition: transform 0.3s ease;
+  display: inline-block;
 }
+
 .dropdown-arrow.rotated {
   transform: rotate(180deg);
 }
 
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.dropdown-arrow {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.dropdown-arrow.rotated {
+  transform: rotate(180deg);
+}
+
+.nav-indicator {
+  position: absolute;
+  top: -1px;
+  height: 6px;
+  background: #fff;
+  border-radius: 0 0 5px 5px;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.dropdown-label {
+  color: #8C1BC1; 
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
 .dropdown-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; 
-  gap: 15px;
- font-family: 'Montserrat', sans-serif;
-   font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 12px 30px;
 }
 
 .company-grid {
-  display: grid;
   grid-template-columns: 1fr !important;
-  gap: 12px;
+  min-width: 180px;
 }
 
 .dropdown-item {
-  display: grid;
-  grid-template-columns: 30px 1fr;
+  display: flex;
   align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
+  gap: 12px;
+  text-decoration: none !important; 
+  padding: 8px 0;
+  transition: transform 0.2s ease;
+}
+
+.dropdown-item:hover {
+  transform: translateX(5px);
+}
+
+.item-text {
+  color: #333;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
+  text-decoration: none !important; 
+  white-space: nowrap;
 }
 
 .nav-icon-img {
   width: 22px;
   height: 22px;
   object-fit: contain;
-}
-
-.item-text {
-  color: #333;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
 }
 
 .nav-item-wrapper:nth-child(4) .mega-dropdown {
@@ -818,6 +849,151 @@ display: flex;
 .nav-item-wrapper:nth-child(4) .mega-dropdown::before {
   left: 50%;
   transform: translateX(-50%);
+}
+
+@media screen and (max-width: 430px) {
+  .numeroAir {
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    margin: 1rem auto;
+  }
+
+  .seam {
+    margin-left: 0;
+    order: 1;
+  }
+
+  .stavoAir-container {
+    order: 2; 
+  }
+
+  .food-pill-container {
+    order: 3; 
+    width: 100%;
+    margin-top: 15px;
+    justify-content: center;
+    overflow-x: auto; 
+  }
+
+  .mannav {
+    justify-content: center;
+    width: auto;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 0 8px;
+    white-space: nowrap;
+  }
+
+  @media screen and (max-width: 430px) {
+  .mega-dropdown {
+    position: fixed;
+    top: 25%;
+    left: 5% !important;
+    width: 90% !important;
+    transform: none !important;
+    z-index: 9999;
+  }
+
+  .dropdown-grid {
+    grid-template-columns: 1fr; 
+  }
+}
+
+  .nav-indicator {
+    display: block !important; 
+    height: 4px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+.mega-dropdown {
+    position: fixed;
+    top: 22%; 
+    left: 5% !important;
+    right: 5% !important;
+    width: 90% !important;
+    transform: none !important;
+    padding: 24px; 
+    border-radius: 24px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    z-index: 9999;
+    text-align: left;
+  }
+
+  .dropdown-label {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-bottom: 24px;
+    font-size: 0.85rem;
+    color: #8C1BC1;
+    width: 100%;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 12px;
+  }
+
+
+  .dropdown-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    gap: 20px;
+    width: 100%;
+  }
+
+  .dropdown-item {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: flex-start; 
+    width: 100%;
+    gap: 16px; 
+    text-decoration: none !important;
+  }
+
+  .item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px; 
+  }
+
+  .nav-icon-img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+  }
+
+  .item-text {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #282828;
+    text-align: left;
+    white-space: nowrap;
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  .numerocard {
+    width: 95%;
+    gap: 10px; 
+  }
+
+  .food-pill-container {
+    padding: 0 5px;
+    height: 3.2rem;
+  }
+
+  .nav-link {
+    padding: 0 10px;
+    font-size: 0.85rem;
+  }
+
+  .stavoAir{
+    width: 9rem; 
+    margin-right: 0; 
+  }
 }
 
 .insideAir1 {
@@ -883,29 +1059,39 @@ display: flex;
   padding: 0 0.9375rem;
 }
 
-.button-text2 {
-  font-weight: 400;
-  font-size: 1.1875rem;
-  color: #1a1b1e;
-}
 
-.icon-circle2 {
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.stavocard9{
+list-style: none; 
+  background-color: #FFF;
+  width: 17rem;
+  height: 2.9375rem;
   border-radius: 6.25rem;
-  background-color:  #fff;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  width:16rem;
-  height: 2.5rem; 
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.icon-circle2 img {
-  width: 35px;
-  height: 35px;
-  margin-left: 7px;
+.stavocard9 a {
+  text-decoration: none;
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1; 
+  display: flex;
+  flex-direction: row; 
+  align-items: center; 
+  justify-content: center; 
+  width: 100%;
+  height: 100%;
+}
+
+.stavocard9 img{
+  margin-left: 0.5rem;
+  display: block; 
+  flex-shrink: 0;
 }
 
 
