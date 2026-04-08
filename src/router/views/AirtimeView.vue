@@ -43,7 +43,7 @@
   </div>
 
   <div class="stavousd-con"> 
-    <li class="stavousd"><a href="/sales">Open Web App  <img src="@/assets/images/ror.png" alt="App Store"  width="13px"/></a></li>
+    <li class="stavousd"><a href="https://urlgeni.us/swychr">Open Web App  <img src="@/assets/images/ror.png" alt="App Store"  width="13px"/></a></li>
   </div>
 </nav>      
  <div class="insideusd1">
@@ -332,8 +332,8 @@ How secure is my money?
         Top up loved ones, gift data bundles, and keep people connected across borders.
       </p>
       
-     <div class="stavocard46-con"> 
-    <li class="stavocard46"><a href="https://urlgeni.us/swychr">Send Airtime Now<img src="@/assets/images/dreams.png" alt="" width="35px"/></a></li>
+     <div class="stavousd46-con"> 
+    <li class="stavousd46"><a href="https://urlgeni.us/swychr">Send Airtime Now<img src="@/assets/images/dreams.png" alt="" width="35px"/></a></li>
   </div>
     </div>
   </section>
@@ -473,19 +473,8 @@ import { useRoute } from 'vue-router';
 import p2p from '@/assets/images/P2P.png';
 import billIcon from '@/assets/images/invoice.png';
 import cardIcon from '@/assets/images/card.png';
-import esimIcon from '@/assets/images/esim.png';
 import usdIcon from '@/assets/images/virtual bsnk.png';
-import cryptoIcon from '@/assets/images/Crypto.png';
-import microIcon from '@/assets/images/microfinance.png';
-import qrIcon from '@/assets/images/QR Code.png';
-import savingsIcon from '@/assets/images/Savings and invest.png';
-import dataIcon from '@/assets/images/airtine and data.png';
-import loanIcon from '@/assets/images/loan.png';
-import giftIcon from '@/assets/images/Gift card.png';
 import onlinePayIcon from '@/assets/images/Online Payments.png';
-import bizAccIcon from '@/assets/images/Business Accounts.png';
-import inStoreIcon from '@/assets/images/In-Store Payments.png';
-import bulkIcon from '@/assets/images/Bulk Payments.png';
 import crossBorderIcon from '@/assets/images/Cross Border Payments.png';
 import Virtualcard from '@/assets/images/Virtual Card Issuance.png';
 import About from '@/assets/images/About Us.png';
@@ -496,51 +485,43 @@ import Culture from '@/assets/images/Culture.png';
 const route = useRoute();
 const navMenu = ref(null); 
 const activeIndex = ref(0);
-
+const openDropdownIndex = ref(null);
+const isMobile = ref(false);
 
 const navItems = [
   { name: 'Home', path: '/home' },
   { 
     name: 'Personal', 
-    path: '/personal',
+    path: '',
     dropdownTitle: 'Discover swychr Personal',
- children: [
-      { name: 'Remit (Send)', icon: p2p, path: 'p2p'},
-      { name: 'Cards (Spend)', icon: billIcon, path: 'billicon' },
-      { name: 'USD Accounts(Receive)', icon: cardIcon, path: 'cardIcon' },
-      { name: 'Pay (Bank)', icon: esimIcon, path: 'esimIcon' },
-      { name: 'Airtime (Connect)', icon: usdIcon, path: 'Usd' },
-      { name: 'Gift Cards (Unlock)', icon: cryptoIcon, path: 'cryptoIcon' },
-      { name: 'Bills (Settle)', icon: microIcon, path: 'microIcon' },
-      { name: 'eSIMs (Travel)', icon: qrIcon , path: 'qrIcon'},
-      { name: 'Crypto (Invest)', icon: savingsIcon,path: 'savingsIcon'},
-      { name: 'QR (Checkout)', icon:dataIcon, path: 'dataIcon'},
-      { name: 'Savings (Grow)', icon:loanIcon,path: 'loanIcon'},
-      { name: 'Loans (Empower).', icon: giftIcon, path: 'giftIcon'}
+    children: [
+      { name: 'Remit (Send)', icon: p2p, path: '/p2p'},
+      { name: 'Cards (Spend)', icon: billIcon, path: '/Card' },
+      { name: 'USD Accounts(Receive)', icon: cardIcon, path: '/Usdman' },
+      { name: 'Airtime (Connect)', icon: usdIcon, path: '/Airtime' }
+   
     ]
   },
   { 
     name: 'Business', 
-    path: '/business',
+    path: '',
     dropdownTitle: 'Discover swychr Business',
     children: [
-      { name: 'Online Payments', icon: onlinePayIcon,path: 'OnlinePayIcon'},
-      { name: 'Business Accounts', icon: bizAccIcon, path: 'bizAccIcon'},
-      { name: 'In-Store Payments', icon: inStoreIcon,path: 'inStoreIcon'},
-      { name: 'Bulk Payments', icon: bulkIcon,path: 'bulkIcon'},
-      { name: 'Cross-Border Payments', icon: crossBorderIcon,path: 'crossBorderIcon'},
-      { name: 'Virtual Card Issuance', icon:Virtualcard ,path: 'Virtualcard'},
+      { name: 'Online Payments', icon: onlinePayIcon,path: '/Online'},
+      { name: 'Cross-Border Payments', icon: crossBorderIcon,path: '/Lastmile'},
+      { name: 'Virtual Card Issuance', icon:Virtualcard ,path: '/Issuance'}
     ]
   },
   { 
     name: 'Company', 
-    path: '/company',
+    path: '',
     dropdownTitle: 'Discover swychr',
     children: [
-    { name: 'About Us', icon: About,path: 'About'},
-      { name: 'Careers', icon: Careers,path: 'Careers'},
+    { name: 'About Us', icon: About,path: '/About'},
+      { name: 'Careers', icon: Careers,path: '/Career'},
       { name: 'Blogs', icon: Blogs,path: '/Blog'},
-      { name: 'Culture', icon: Culture,path: 'Culture'}
+      { name: 'Culture', icon: Culture,path: '/Culture'},
+      { name: 'Investors', icon: vestor,path: '/Invest'}
     ]
   },
   { name: 'Support', path: '/support' }
@@ -548,32 +529,39 @@ const navItems = [
 
 const indicatorStyle = ref({ width: '0px', left: '0px', opacity: 0 });
 
+const updateIndicator = () => {
+  if (!navMenu.value) return;
+  const activeElement = navMenu.value.querySelector('.nav-link.active');
+  
+  if (activeElement) {
+    const reducedWidth = activeElement.offsetWidth * 0.6;
+    const left = activeElement.offsetLeft + (activeElement.offsetWidth - reducedWidth) / 2;
+    indicatorStyle.value = { width: `${reducedWidth}px`, left: `${left}px`, opacity: 1 };
+  } else {
+    indicatorStyle.value.opacity = 0;
+  }
+};
+
 const setActive = (index) => {
   activeIndex.value = index;
   nextTick(() => updateIndicator());
 };
 
-const updateIndicator = () => {
-  if (!navMenu.value) return;
-  
-  const activeElement = navMenu.value.querySelector('.nav-link.active');
-  
-  if (activeElement) {
+const toggleDropdown = (index) => {
+  openDropdownIndex.value = openDropdownIndex.value === index ? null : index;
+};
 
-  const reducedWidth = activeElement.offsetWidth * 0.6;
-
-  const left = activeElement.offsetLeft + (activeElement.offsetWidth - reducedWidth) / 2;
-    
-    indicatorStyle.value = {
-     width: `${reducedWidth}px`,
-      left: `${left}px`,
-      opacity: 1
-    };
-  } else {
-
-    indicatorStyle.value.opacity = 0;
+const handleClickOutside = (event) => {
+  const navContainer = document.querySelector('.food-pill-container');
+  if (navContainer && !navContainer.contains(event.target)) {
+    openDropdownIndex.value = null;
   }
 };
+
+const checkScreen = () => {
+  isMobile.value = window.innerWidth <= 820; 
+};
+
 
 watch(() => route.path, (newPath) => {
   const pathName = newPath.replace('/', '').toLowerCase() || 'home';
@@ -584,36 +572,23 @@ watch(() => route.path, (newPath) => {
   }
 }, { immediate: true });
 
-
-
-const openDropdownIndex = ref(null);
-
-
-const toggleDropdown = (index) => {
-  if (openDropdownIndex.value === index) {
-    openDropdownIndex.value = null;
-  } else {
-    openDropdownIndex.value = index; 
-  }
-};
-
-
-const closeOnOutsideClick = (event) => {
-  if (!event.target.closest('.nav-item-wrapper')) {
-    openDropdownIndex.value = null;
-  }
-};
-
 onMounted(() => {
+  checkScreen();
   updateIndicator();
-  window.addEventListener('resize', updateIndicator);
-  window.addEventListener('click', closeOnOutsideClick);
+  window.addEventListener('resize', () => {
+    checkScreen();
+    updateIndicator();
+  });
+
+  window.addEventListener('click', handleClickOutside);
 });
 
 onBeforeUnmount(() => {
-  window.removeEventListener('resize', updateIndicator);
-  window.removeEventListener('click', closeOnOutsideClick); 
+  window.removeEventListener('resize', checkScreen);
+  window.removeEventListener('click', handleClickOutside);
 });
+
+
 
 
 const benefits = [
@@ -914,7 +889,6 @@ margin-left: 67px;
     padding-bottom: 12px;
   }
 
-
   .dropdown-grid {
     display: flex;
     flex-direction: column;
@@ -1043,7 +1017,7 @@ margin-left: 67px;
 .stavousd45{
 list-style: none; 
   background-color: #FFF;
-  width: 12rem;
+  width: 14rem;
   height: 2.9375rem;
   border-radius: 6.25rem;
   margin: 0;

@@ -1739,6 +1739,9 @@ list-style: none;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding: 8px 8px 8px 24px;
+  width: 11.8rem;
+  cursor: pointer;
 }
 
 .stavocard6 a{
