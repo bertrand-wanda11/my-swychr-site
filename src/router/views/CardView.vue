@@ -786,7 +786,7 @@ display: flex;
 .stavocard5{
   border: none;
   background: #fff;
-  width: 16rem;
+   width: 18rem;
   align-items: center;
   justify-content: center;
   height: 2.5rem; 
@@ -1730,7 +1730,7 @@ input[type="checkbox"]:checked ~ .wanda-expectedcard6 {
 .stavocard6{
   border: none;
   background: #fff;
-  width: 16rem;
+  width: 18rem;
   align-items: center;
   justify-content: center;
   height: 2.5rem; 
