@@ -1063,7 +1063,7 @@ display: flex;
 .stavocard9{
 list-style: none; 
   background-color: #FFF;
-  width: 17rem;
+  width: 15rem;
   height: 2.9375rem;
   border-radius: 6.25rem;
   margin: 0;
