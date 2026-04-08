@@ -56,7 +56,7 @@ locally. Funded instantly via Mobile Money or Bank Transfer.
 </p>
 <div class="protoncard">
   <div class="stavocard5-con"> 
-    <li class="stavocard5"><a href="https://urlgeni.us/swychr">Create My Virtual Card<img src="@/assets/images/itie.png" alt=""  width="20px"/></a></li>
+    <li class="stavocard5"><a href="https://urlgeni.us/swychr">Create My Virtual Card<img src="@/assets/images/itie.png" alt=""  width="25px"/></a></li>
   </div>
   
 </div>
@@ -294,15 +294,9 @@ How secure is my money?
       </p>
       
       <button class="pill-button">
-        <span class="button-text">Create My Virtual Card</span>
-        <div class="icon-circle">
-          <img src="@/assets/images/itie.png" alt="Card" />
-        </div>
-
-        <a href="https://urlgeni.us/swychr" >
-          <img src="@/assets/images/itie.png"  class="icon-circle"/>
-          <span class="button-text">Create My Virtual Card</span>
-        </a>
+       <div class="stavocard5-con"> 
+    <li class="stavocard5"><a href="https://urlgeni.us/swychr">Create My Virtual Card<img src="@/assets/images/itie.png" alt=""  width="25px"/></a></li>
+  </div>
       </button>
     </div>
   </section>
