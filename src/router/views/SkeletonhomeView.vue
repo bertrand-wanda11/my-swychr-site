@@ -4041,7 +4041,7 @@ line-height: 120%;
 
   .lemon1, .lemontea1, .greentea1 {
     width: 14rem !important; 
-    margin-left:0 auto !important;
+    margin-left:0 auto ;
   }
 }
 
