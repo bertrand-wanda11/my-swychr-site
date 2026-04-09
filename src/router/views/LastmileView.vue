@@ -56,11 +56,11 @@ made simple.
 </p>
 <div class="protonmile">
    <div class="stavomile401-con"> 
-    <li class="stavomile401"><a href="https://urlgeni.us/swychr">Contact Sales<img src="@/assets/images/dreams.png" alt="" width="35px"/></a></li>
+    <li class="stavomile401"><a href="https://urlgeni.us/swychr">Contact Sales</a></li>
   </div>
 
    <div class="stavomile400-con"> 
-    <li class="stavomile400"><a href="https://urlgeni.us/swychr">Explore Payout Api<img src="@/assets/images/hross.png" alt="" width="30px"/></a></li>
+    <li class="stavomile400"><a href="https://urlgeni.us/swychr">Explore Payout Api</a></li>
   </div>
 </div>
 </div>
@@ -1351,7 +1351,6 @@ display: flex;
 .stavomile15{
   list-style: none; 
  background: #8C1BC1;
- color:#ffffff;
   width:11.5rem;
   height: 2.9375rem;
   border-radius: 6.25rem;
@@ -1363,6 +1362,7 @@ display: flex;
 }
 
 .stavomile15 a{
+   color:#ffffff;
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.125rem;
@@ -1385,7 +1385,6 @@ display: flex;
 
 .stavomile14{
   list-style: none; 
-   color: #fff;
   background-color: #3E3F5D;
   width:11rem;
   height: 2.5rem;
@@ -1398,6 +1397,7 @@ display: flex;
 }
 
 .stavomile14 a {
+  color: #fff;
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.125rem;
