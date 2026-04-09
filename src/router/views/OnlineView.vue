@@ -2085,7 +2085,7 @@ input[type="checkbox"]:checked ~ .wanda-expectedonline{
   background-color: #e2e4e7; 
   width: 100%;
   max-width: 900px;
-  height: 280px;
+  height: 24 0px;
   border-radius: 24px;
   text-align: center;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
@@ -2103,6 +2103,7 @@ input[type="checkbox"]:checked ~ .wanda-expectedonline{
   margin-top: 0.55rem;
   width: 100%;
  justify-content: center;
+ margin:10px;
 }
 
 

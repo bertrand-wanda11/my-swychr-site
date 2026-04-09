@@ -1738,7 +1738,7 @@ list-style: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: hidden; 
   cursor: pointer;
   margin-left:18rem;
 }
