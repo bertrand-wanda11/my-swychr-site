@@ -1891,7 +1891,7 @@ input[type="checkbox"]:checked ~ .wanda-expectedusd6 {
 
 .usd7 {
   background: linear-gradient(#29013E,#28013C,#170124); 
-  padding: 80px 20px;
+  padding: 50px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1901,7 +1901,7 @@ input[type="checkbox"]:checked ~ .wanda-expectedusd6 {
   background-color: #e2e4e7; 
   width: 100%;
   max-width: 1000px;
-    height: 320px;
+  height: 320px;
   border-radius: 24px;
   padding: 60px 40px;
   text-align: center;
