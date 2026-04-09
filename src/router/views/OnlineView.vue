@@ -265,7 +265,7 @@
 <div class="wanda-villaonline">
   <input type="checkbox" id="wanda-3">
   <label for="wanda-3" class="wanda-requestonline">
-    How can Swych Remit be so much cheaper than my bank?
+    How can Swychremit be much cheaper than bank?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedonline">
@@ -279,7 +279,7 @@
 <div class="wanda-villap2p">
   <input type="checkbox" id="wanda-4">
   <label for="wanda-4" class="wanda-requestonline">
-   Is it really Instant
+   Is it really Instant?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedonline">
@@ -322,7 +322,7 @@ How secure is my money?
 <div class="wanda-villaonline">
   <input type="checkbox" id="wanda-7">
   <label for="wanda-7" class="wanda-requestonline">
-  What if I send money to the wrong number
+  What if I send money to the wrong number?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedonline">
@@ -921,7 +921,7 @@ display: flex;
     order: 1;
   }
 
-  .stavoonline-container {
+  .stavoonline-con {
     order: 2; 
   }
 
@@ -1123,7 +1123,7 @@ display: flex;
   width:13rem;
   height: 2.9375rem;
   border-radius: 6.25rem;
-  margin: 0;
+ margin: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1143,6 +1143,7 @@ display: flex;
   justify-content: center; 
   width: 100%;
   height: 100%;
+  margin: 10px;
 }
 
 .stavoonline401 img{
@@ -1153,7 +1154,6 @@ display: flex;
 
 .stavoonline400{
   list-style: none; 
-  color: #FFF;
   background-color: #3E3F5D;
   width:11rem;
   height: 2.9375rem;
@@ -1167,7 +1167,7 @@ display: flex;
 
 .stavoonline400 a {
   text-decoration: none;
-  color: #000;
+  color: #FFF;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
@@ -2106,47 +2106,6 @@ input[type="checkbox"]:checked ~ .wanda-expectedonline{
 }
 
 
-.icon-circle55 {
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 6.25rem;
-  background-color:  #fff;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  width:13rem;
-  height: 2.5rem; 
-  margin: 10px;
-}
-
-.icon-circle55 img {
-  width: 35px;
-  height: 35px;
-  margin-left: 7px;
-}
-
-.icon-circle54 {
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 6.25rem;
-  color: #fff;
-  background-color: #3E3F5D;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  width:11rem;
-  height: 2.5rem; 
-  margin: 10px;
-}
-
-.icon-circle54 img {
-  width: 30px;
-  height: 27px;
-  margin-left: 5px;
-}
-
 @media (max-width: 430px) {
   .cta-heading {
     font-size: 1.8rem;
@@ -2156,9 +2115,8 @@ input[type="checkbox"]:checked ~ .wanda-expectedonline{
     border-radius: 16px;
   }
   
-
-.icon-circle54, .icon-circle55{
-      margin-bottom: 6rem;
+.stavoonline400, .stavoonline401{
+   margin-bottom: 6rem;
    height: 1.9rem;
   
 }
@@ -2739,7 +2697,6 @@ margin-left: 67px;
     line-height: 1.5;
     padding: 0 0.5rem;
   }
-
 
   .feature-onlineonline:hover {
     transform: none;
