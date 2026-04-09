@@ -278,15 +278,6 @@
       </p>
       
       <div class="protonissue7">
-    <div class="icon-circle91">
-     <span class="button-text91">Sign up for the Connect</span>
-          <img src="@/assets/images/hwan.png" alt="Card" />
-        </div>
-  <div class="icon-circle90">
-     <span class="button-text90">View API Doc</span>
-          <img src="@/assets/images/hross.png" alt="Card" />
-        </div>
-
             <div class="stavoissue15-con"> 
     <li class="stavoissue15"><a href="https://urlgeni.us/swychr">Sign up for the Connect<img src="@/assets/images/hwan.png" alt=""  width="19px" /></a></li>
   </div>
@@ -1041,7 +1032,7 @@ display: flex;
   margin-top: 0.75rem;
 }
 
-.stavomile401{
+.stavoissue401{
   list-style: none; 
   background-color:  #fff;
   width:13rem;
@@ -1054,7 +1045,7 @@ display: flex;
   overflow: hidden;
 }
 
-.stavomile401 a{
+.stavoissue401 a{
    color:#ffffff;
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
@@ -1070,13 +1061,13 @@ display: flex;
   margin: 10px;
 }
 
-.stavomile401 img{
+.stavoissue401 img{
   margin-left: 0.5rem;
   display: block; 
   flex-shrink: 0;
 }
 
-.stavomile400{
+.stavoissue400{
   list-style: none; 
   background-color: #3E3F5D;
   width:11rem;
@@ -1089,7 +1080,7 @@ display: flex;
   overflow: hidden;
 }
 
-.stavomile400 a {
+.stavoissue400 a {
   color: #fff;
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
@@ -1104,7 +1095,7 @@ display: flex;
   height: 100%;
 }
 
-.stavomile400 img{
+.stavoissue400 img{
   margin-left: 0.5rem;
   display: block; 
   flex-shrink: 0;
