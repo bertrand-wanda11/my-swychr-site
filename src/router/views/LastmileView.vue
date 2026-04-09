@@ -996,10 +996,9 @@ display: flex;
 
 .stavomile401{
   list-style: none; 
-    color: #000;
   background-color: #fff;
-  width:9rem;
-  height: 2.9375rem;
+  width:10rem;
+  height: 2.5rem;
   border-radius: 6.25rem;
  margin: 10px;
   display: flex;
@@ -1009,6 +1008,7 @@ display: flex;
 }
 
 .stavomile401 a{
+  color: #000;
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.125rem;
@@ -1025,10 +1025,9 @@ display: flex;
 
 .stavomile400{
   list-style: none; 
-  color: #fff;
   background-color: #3E3F5D;
    width:12rem;
-  height: 2.9375rem;
+  height: 2.5rem;
   border-radius: 6.25rem;
   margin: 0;
   display: flex;
@@ -1038,6 +1037,7 @@ display: flex;
 }
 
 .stavomile400 a {
+  color: #fff;
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.125rem;
