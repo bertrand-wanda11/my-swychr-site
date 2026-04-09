@@ -4038,6 +4038,10 @@ line-height: 120%;
   .lemon, .lemontea, .greentea {
     width: 14rem !important; 
   }
+
+  .lemon1, .lemontea1, .greentea1 {
+    width: 14rem !important; 
+  }
 }
 
 @media screen and (max-width: 430px) {
