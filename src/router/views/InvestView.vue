@@ -549,9 +549,9 @@ const milestonesvest = [
   align-items: center;
   justify-content: center;
   background: url('@/assets/images/letholo.png');
-  background-position: center;
+ background-position: center 15px;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 95% auto;
 }
 
 .seam{
@@ -579,7 +579,7 @@ border: 1px solid #FFF;
 }
 
 .nav-indicator {
-position: absolute;
+  position: absolute;
   top: -1px; 
   height: 6px; 
   background: #fff;
@@ -881,7 +881,7 @@ display: flex;
   display: block;
   align-items: center;
   justify-content: center;
-  width: 90vw;
+  width: 100vw;
   margin-top: 0; 
 }
 
