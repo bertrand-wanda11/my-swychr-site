@@ -1063,7 +1063,7 @@ display: flex;
   font-style: normal;
   font-weight: 400;
   line-height: 110%;
-  letter-spacing: 0.055rem; 
+  letter-spacing: 0.020rem; 
   text-align: justify;
 }
 
