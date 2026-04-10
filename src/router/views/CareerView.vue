@@ -993,7 +993,7 @@ display: flex;
   margin-bottom: 0;
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
-  font-size: 3.5625rem; 
+  font-size: 3rem; 
   font-style: normal;
   font-weight: 600;
   line-height: 95%;
@@ -1004,11 +1004,11 @@ display: flex;
 .mathscareer {
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 136%;
-  letter-spacing: 0.075rem; 
+  letter-spacing: 0.055rem; 
   margin-top: 0;
 }
 

@@ -194,15 +194,14 @@ goal:Financial borders should not exist.
       </p>
       
       <div class="protonculture8">
-    <div class="icon-circlemileculture9">
-     <span class="button-textmileculture9">View Open Role</span>
-          <img src="@/assets/images/hwan.png" alt="Card" />
-        </div>
-  <div class="icon-circlemileculture8">
-    <img src="@/assets/images/cup.png" alt="Card" />
-     <span class="button-textmileculture8">Explore Careers</span>
-        </div>
-        </div>
+            <div class="stavoculture401-con"> 
+    <li class="stavoculture401"><a href="https://urlgeni.us/swychr">View Open Role<img src="@/assets/images/hwan.png" alt="" width="19px"/></a></li>
+  </div>
+
+   <div class="stavoculture400-con"> 
+    <li class="stavoculture400"><img src="@/assets/images/cup.png" alt="" width="30px"/><a href="/Career">Explore Careers</a></li>
+  </div>
+</div>
     </div>
   </section>
 
@@ -340,25 +339,15 @@ import { useRoute } from 'vue-router';
 import p2p from '@/assets/images/P2P.png';
 import billIcon from '@/assets/images/invoice.png';
 import cardIcon from '@/assets/images/card.png';
-import esimIcon from '@/assets/images/esim.png';
 import usdIcon from '@/assets/images/virtual bsnk.png';
-import cryptoIcon from '@/assets/images/Crypto.png';
-import microIcon from '@/assets/images/microfinance.png';
-import qrIcon from '@/assets/images/QR Code.png';
-import savingsIcon from '@/assets/images/Savings and invest.png';
-import dataIcon from '@/assets/images/airtine and data.png';
-import loanIcon from '@/assets/images/loan.png';
-import giftIcon from '@/assets/images/Gift card.png';
 import onlinePayIcon from '@/assets/images/Online Payments.png';
-import bizAccIcon from '@/assets/images/Business Accounts.png';
-import inStoreIcon from '@/assets/images/In-Store Payments.png';
-import bulkIcon from '@/assets/images/Bulk Payments.png';
 import crossBorderIcon from '@/assets/images/Cross Border Payments.png';
 import Virtualcard from '@/assets/images/Virtual Card Issuance.png';
 import About from '@/assets/images/About Us.png';
 import Careers from '@/assets/images/Careers.png';
 import Blogs from '@/assets/images/Blogs.png';
 import Culture from '@/assets/images/Culture.png';
+import vestor from '@/assets/images/sabinus.png';
 import ownershipIcon from '@/assets/images/ubi.png'
 import icon1 from '@/assets/images/fross.png' 
 import trustculture4 from '@/assets/images/life1.png'
@@ -368,50 +357,43 @@ import securityculture4 from '@/assets/images/life3.png'
 const route = useRoute();
 const navMenu = ref(null); 
 const activeIndex = ref(0);
+const openDropdownIndex = ref(null);
+const isMobile = ref(false);
 
 const navItems = [
   { name: 'Home', path: '/home' },
   { 
     name: 'Personal', 
-    path: '/personal',
+    path: '',
     dropdownTitle: 'Discover swychr Personal',
- children: [
-      { name: 'Remit (Send)', icon: p2p, path: 'p2p'},
-      { name: 'Cards (Spend)', icon: billIcon, path: 'billicon' },
-      { name: 'USD Accounts(Receive)', icon: cardIcon, path: 'cardIcon' },
-      { name: 'Pay (Bank)', icon: esimIcon, path: 'esimIcon' },
-      { name: 'Airtime (Connect)', icon: usdIcon, path: 'Usd' },
-      { name: 'Gift Cards (Unlock)', icon: cryptoIcon, path: 'cryptoIcon' },
-      { name: 'Bills (Settle)', icon: microIcon, path: 'microIcon' },
-      { name: 'eSIMs (Travel)', icon: qrIcon , path: 'qrIcon'},
-      { name: 'Crypto (Invest)', icon: savingsIcon,path: 'savingsIcon'},
-      { name: 'QR (Checkout)', icon:dataIcon, path: 'dataIcon'},
-      { name: 'Savings (Grow)', icon:loanIcon,path: 'loanIcon'},
-      { name: 'Loans (Empower).', icon: giftIcon, path: 'giftIcon'}
+    children: [
+      { name: 'Remit (Send)', icon: p2p, path: '/p2p'},
+      { name: 'Cards (Spend)', icon: billIcon, path: '/Card' },
+      { name: 'USD Accounts(Receive)', icon: cardIcon, path: '/Usdman' },
+      { name: 'Airtime (Connect)', icon: usdIcon, path: '/Airtime' }
+   
     ]
   },
   { 
     name: 'Business', 
-    path: '/business',
+    path: '',
     dropdownTitle: 'Discover swychr Business',
     children: [
-      { name: 'Online Payments', icon: onlinePayIcon,path: 'OnlinePayIcon'},
-      { name: 'Business Accounts', icon: bizAccIcon, path: 'bizAccIcon'},
-      { name: 'In-Store Payments', icon: inStoreIcon,path: 'inStoreIcon'},
-      { name: 'Bulk Payments', icon: bulkIcon,path: 'bulkIcon'},
-      { name: 'Cross-Border Payments', icon: crossBorderIcon,path: 'crossBorderIcon'},
-      { name: 'Virtual Card Issuance', icon:Virtualcard ,path: 'Virtualcard'},
+      { name: 'Online Payments', icon: onlinePayIcon,path: '/Online'},
+      { name: 'Cross-Border Payments', icon: crossBorderIcon,path: '/Lastmile'},
+      { name: 'Virtual Card Issuance', icon:Virtualcard ,path: '/Issuance'}
     ]
   },
   { 
     name: 'Company', 
-    path: '/company',
+    path: '',
     dropdownTitle: 'Discover swychr',
     children: [
-    { name: 'About Us', icon: About,path: 'About'},
-      { name: 'Careers', icon: Careers,path: 'Careers'},
+    { name: 'About Us', icon: About,path: '/About'},
+      { name: 'Careers', icon: Careers,path: '/Career'},
       { name: 'Blogs', icon: Blogs,path: '/Blog'},
-      { name: 'Culture', icon: Culture,path: 'Culture'}
+      { name: 'Culture', icon: Culture,path: '/Culture'},
+      { name: 'Investors', icon: vestor,path: '/Invest'}
     ]
   },
   { name: 'Support', path: '/support' }
@@ -419,32 +401,39 @@ const navItems = [
 
 const indicatorStyle = ref({ width: '0px', left: '0px', opacity: 0 });
 
+const updateIndicator = () => {
+  if (!navMenu.value) return;
+  const activeElement = navMenu.value.querySelector('.nav-link.active');
+  
+  if (activeElement) {
+    const reducedWidth = activeElement.offsetWidth * 0.6;
+    const left = activeElement.offsetLeft + (activeElement.offsetWidth - reducedWidth) / 2;
+    indicatorStyle.value = { width: `${reducedWidth}px`, left: `${left}px`, opacity: 1 };
+  } else {
+    indicatorStyle.value.opacity = 0;
+  }
+};
+
 const setActive = (index) => {
   activeIndex.value = index;
   nextTick(() => updateIndicator());
 };
 
-const updateIndicator = () => {
-  if (!navMenu.value) return;
-  
-  const activeElement = navMenu.value.querySelector('.nav-link.active');
-  
-  if (activeElement) {
+const toggleDropdown = (index) => {
+  openDropdownIndex.value = openDropdownIndex.value === index ? null : index;
+};
 
-  const reducedWidth = activeElement.offsetWidth * 0.6;
-
-  const left = activeElement.offsetLeft + (activeElement.offsetWidth - reducedWidth) / 2;
-    
-    indicatorStyle.value = {
-     width: `${reducedWidth}px`,
-      left: `${left}px`,
-      opacity: 1
-    };
-  } else {
-
-    indicatorStyle.value.opacity = 0;
+const handleClickOutside = (event) => {
+  const navContainer = document.querySelector('.food-pill-container');
+  if (navContainer && !navContainer.contains(event.target)) {
+    openDropdownIndex.value = null;
   }
 };
+
+const checkScreen = () => {
+  isMobile.value = window.innerWidth <= 820; 
+};
+
 
 watch(() => route.path, (newPath) => {
   const pathName = newPath.replace('/', '').toLowerCase() || 'home';
@@ -455,34 +444,20 @@ watch(() => route.path, (newPath) => {
   }
 }, { immediate: true });
 
-
-const openDropdownIndex = ref(null);
-
-
-const toggleDropdown = (index) => {
-  if (openDropdownIndex.value === index) {
-    openDropdownIndex.value = null;
-  } else {
-    openDropdownIndex.value = index; 
-  }
-};
-
-
-const closeOnOutsideClick = (event) => {
-  if (!event.target.closest('.nav-item-wrapper')) {
-    openDropdownIndex.value = null;
-  }
-};
-
 onMounted(() => {
+  checkScreen();
   updateIndicator();
-  window.addEventListener('resize', updateIndicator);
-  window.addEventListener('click', closeOnOutsideClick);
+  window.addEventListener('resize', () => {
+    checkScreen();
+    updateIndicator();
+  });
+
+  window.addEventListener('click', handleClickOutside);
 });
 
 onBeforeUnmount(() => {
-  window.removeEventListener('resize', updateIndicator);
-  window.removeEventListener('click', closeOnOutsideClick); 
+  window.removeEventListener('resize', checkScreen);
+  window.removeEventListener('click', handleClickOutside);
 });
 
 
@@ -643,77 +618,114 @@ display: flex;
   gap: 5px;
 }
 
+.nav-item-wrapper {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
 .mega-dropdown {
-  display: block; 
   position: absolute;
-  top: 100%;
+  top: calc(100% + 15px); 
   left: 50%;
   transform: translateX(-50%);
   background: white;
-  padding: 25px;
-  border-radius: 15px;
-  width: 520px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-  margin-top: 15px;
+  padding: 20px 25px;
+  border-radius: 12px;
+  width: max-content; 
+  min-width: 240px; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   z-index: 1000;
-  font-family: 'Montserrat', sans-serif !important;
-    font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
-   font-size: 1.432rem;
+  animation: dropdownFadeIn 0.2s ease-out;
 }
 
 .dropdown-arrow {
   transition: transform 0.3s ease;
+  display: inline-block;
 }
+
 .dropdown-arrow.rotated {
   transform: rotate(180deg);
 }
 
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.dropdown-arrow {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.dropdown-arrow.rotated {
+  transform: rotate(180deg);
+}
+
+.nav-indicator {
+  position: absolute;
+  top: -1px;
+  height: 6px;
+  background: #fff;
+  border-radius: 0 0 5px 5px;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.dropdown-label {
+  color: #8C1BC1; 
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
 .dropdown-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; 
-  gap: 15px;
- font-family: 'Montserrat', sans-serif;
-   font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 12px 30px;
 }
 
 .company-grid {
-  display: grid;
   grid-template-columns: 1fr !important;
-  gap: 12px;
+  min-width: 180px;
 }
 
 .dropdown-item {
-  display: grid;
-  grid-template-columns: 30px 1fr;
+  display: flex;
   align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
+  gap: 12px;
+  text-decoration: none !important; 
+  padding: 8px 0;
+  transition: transform 0.2s ease;
+}
+
+.dropdown-item:hover {
+  transform: translateX(5px);
+}
+
+.item-text {
+  color: #333;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
+  text-decoration: none !important; 
+  white-space: nowrap;
 }
 
 .nav-icon-img {
   width: 22px;
   height: 22px;
   object-fit: contain;
-}
-
-.item-text {
-  color: #333;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
 }
 
 .nav-item-wrapper:nth-child(4) .mega-dropdown {
@@ -725,6 +737,150 @@ display: flex;
 .nav-item-wrapper:nth-child(4) .mega-dropdown::before {
   left: 50%;
   transform: translateX(-50%);
+}
+
+@media screen and (max-width: 430px) {
+  .numeroculture{
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    margin: 1rem auto;
+  }
+
+  .seam {
+    margin-left: 0;
+    order: 1;
+  }
+
+  .stavoculture-con {
+    order: 2; 
+  }
+
+  .food-pill-container {
+    order: 3; 
+    width: 100%;
+    margin-top: 15px;
+    justify-content: center;
+    overflow-x: auto; 
+  }
+
+  .mannav {
+    justify-content: center;
+    width: auto;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 0 8px;
+    white-space: nowrap;
+  }
+
+  @media screen and (max-width: 430px) {
+  .mega-dropdown {
+    position: fixed;
+    top: 25%;
+    left: 5% !important;
+    width: 90% !important;
+    transform: none !important;
+    z-index: 9999;
+  }
+
+  .dropdown-grid {
+    grid-template-columns: 1fr; 
+  }
+}
+
+  .nav-indicator {
+    display: block !important; 
+    height: 4px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+.mega-dropdown {
+    position: fixed;
+    top: 22%; 
+    left: 5% !important;
+    right: 5% !important;
+    width: 90% !important;
+    transform: none !important;
+    padding: 24px; 
+    border-radius: 24px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    z-index: 9999;
+    text-align: left;
+  }
+
+  .dropdown-label {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-bottom: 24px;
+    font-size: 0.85rem;
+    color: #8C1BC1;
+    width: 100%;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 12px;
+  }
+
+  .dropdown-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    gap: 20px;
+    width: 100%;
+  }
+
+  .dropdown-item {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: flex-start; 
+    width: 100%;
+    gap: 16px; 
+    text-decoration: none !important;
+  }
+
+  .item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px; 
+  }
+
+  .nav-icon-img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+  }
+
+  .item-text {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #282828;
+    text-align: left;
+    white-space: nowrap;
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  .numeroculture{
+    width: 95%;
+    gap: 10px; 
+  }
+
+  .food-pill-container {
+    padding: 0 5px;
+    height: 3.2rem;
+  }
+
+  .nav-link {
+    padding: 0 10px;
+    font-size: 0.85rem;
+  }
+
+  .stavoculture-con{
+    width: 9rem; 
+    margin-right: 0; 
+  }
 }
 
 .insideculture1 {
@@ -1579,48 +1735,76 @@ display: flex;
   margin-top: 0.55rem;
 }
 
-.icon-circlemileculture9 {
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.stavoculture401{
+  list-style: none; 
+  background: #8C1BC1;
+  width:14rem;
+  height: 2.5rem;
   border-radius: 6.25rem;
- background: #8C1BC1;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.stavoculture401 a{
+  text-decoration: none;
  color:#ffffff;
   font-family: 'Montserrat', sans-serif;
+  font-size: 1.125rem;
   font-weight: 400;
-  width:13rem;
-  height: 2.5rem; 
-  margin: 10px;
-}
-
-.icon-circlemileculture9 img {
-  width: 19px;
-  height: 19px;
-  margin-left: 7px;
-}
-
-.icon-circlemileculture8 {
-  border-radius: 50%;
+  line-height: 1; 
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 6.25rem;
-  color: #000;
-  background-color: #fff;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  width:11rem;
-  height: 2.5rem; 
+  flex-direction: row; 
+  align-items: center; 
+  justify-content: center; 
+  width: 100%;
+  height: 100%;
   margin: 10px;
 }
 
-.icon-circlemileculture8 img {
-  width: 30px;
-  height: 27px;
-  margin-left: 5px;
-  color: #000;
+.stavoculture401 img{
+  margin-left: 0.5rem;
+  display: block; 
+  flex-shrink: 0;
 }
+
+.stavoculture400{
+  list-style: none; 
+  background-color: #fff;
+  width:11rem;
+  height: 2.5rem;
+  border-radius: 6.25rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.stavoculture400 a {
+  text-decoration: none;
+ color: #000;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1; 
+  display: flex;
+  flex-direction: row; 
+  align-items: center; 
+  justify-content: center; 
+  width: 100%;
+  height: 100%;
+}
+
+.stavoculture400 img{
+  margin-left: 0.5rem;
+  display: block; 
+  flex-shrink: 0;
+}
+
  
 @media only screen and (max-width: 1180px) {
   .insideculture8 {
@@ -1666,16 +1850,16 @@ display: flex;
     gap: 10px;
   }
 
-  .icon-circlemileculture9, 
-  .icon-circlemileculture8 {
+  .stavoculture400, 
+  .stavoculture401{
     width: 90% !important; 
     margin: 0 auto;
     height: 3rem; 
     font-size: 0.9rem;
   }
 
-  .icon-circlemileculture9 img,
-  .icon-circlemileculture8 img {
+  .stavoculture400 img,
+  .stavoculture401 img {
     width: 20px;
     height: 20px;
   }
