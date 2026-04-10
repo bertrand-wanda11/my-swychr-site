@@ -951,7 +951,7 @@ display: flex;
 
 
 .ir-subtitle {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: #AAAAAA;
   font-weight: 400;
 }
