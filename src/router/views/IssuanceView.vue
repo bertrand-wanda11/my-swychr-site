@@ -1046,7 +1046,7 @@ display: flex;
 }
 
 .stavoissue401 a{
-   color:#ffffff;
+   color:#000;
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.125rem;
@@ -1972,7 +1972,7 @@ tbody td {
 .stavoissue15{
   list-style: none; 
  background: #8C1BC1;
-   width:13rem;
+   width:15rem;
   height: 2.9375rem;
   border-radius: 6.25rem;
  margin: 10px;
@@ -2047,7 +2047,7 @@ tbody td {
     padding: 40px 20px;
     border-radius: 16px;
   }
-  .pill-button {
+  .protonissue7{
     width: 100%;
     margin-left: 0 auto;
     justify-content: space-between;
@@ -2536,13 +2536,13 @@ margin-left: 67px;
     margin-top: 2rem;
   }
 
-  .steveissue, .obusissue {
+  .stavoissue400, .stavoissue401 {
     width: 85vw;
     height: 3.125rem;
     margin-left: 0 !important; 
   }
 
-  .steveissue a, .obusissue a {
+  .stavoissue400 a, .stavoissue401 a {
     font-size: 1rem;
     padding: 0.625rem 1.25rem;
   }
