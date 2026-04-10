@@ -549,7 +549,7 @@ const milestonesvest = [
   align-items: center;
   justify-content: center;
   background: url('@/assets/images/letholo.png');
- background-position: center 15px;
+ background-position: center 50px;
   background-repeat: no-repeat;
   background-size: 95% auto;
 }
@@ -950,7 +950,7 @@ display: flex;
 
 
 .ir-subtitle {
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   color: #AAAAAA;
   font-weight: 400;
 }
@@ -963,7 +963,8 @@ display: flex;
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1rem;
   border-radius: 1rem;
-  max-width: 22rem;
+  max-width: 21rem;
+  margin-right: 2rem;
 }
 
 .ir-notice-box p {
