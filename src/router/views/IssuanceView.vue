@@ -660,7 +660,7 @@ margin-left: 67px;
 }
 
 .food-pill-container {
-border: 1px solid #FFF;
+  border: 1px solid #FFF;
   border-radius: 50px;
   height: 3.5rem;
   padding: 0 1rem;
@@ -671,14 +671,14 @@ border: 1px solid #FFF;
 }
 
 .nav-indicator {
-position: absolute;
+  position: absolute;
   top: -1px; 
   height: 6px; 
   background: #fff;
   border-radius: 0 0 5px 5px;
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   z-index: 10;
-   width: 4px;
+  width: 4px;
 }
 
 .mannav {
@@ -1065,6 +1065,7 @@ display: flex;
   margin-left: 0.5rem;
   display: block; 
   flex-shrink: 0;
+  color:#000;
 }
 
 .stavoissue400{
