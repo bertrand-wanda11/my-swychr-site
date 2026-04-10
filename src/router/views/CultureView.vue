@@ -907,11 +907,11 @@ display: flex;
 .mathsculture{
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 136%;
-  letter-spacing: 0.075rem; 
+  letter-spacing: 0.035rem; 
   margin-top: 1rem;
 }
 
@@ -1774,7 +1774,7 @@ display: flex;
 .stavoculture400{
   list-style: none; 
   background-color: #fff;
-  width:11rem;
+  width:13rem;
   height: 2.5rem;
   border-radius: 6.25rem;
   margin: 0;
