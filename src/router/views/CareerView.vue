@@ -713,7 +713,6 @@ display: flex;
   gap: 5px;
 }
 
-
 .nav-item-wrapper {
   position: relative;
   height: 100%;
