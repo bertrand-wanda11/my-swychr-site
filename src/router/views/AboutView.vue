@@ -1057,7 +1057,7 @@ display: flex;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   font-style: normal;
-  font-size: 0.95rem;
+  font-size: 0.99rem;
   color: #000;
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
