@@ -1016,7 +1016,7 @@ margin-left: 67px;
 }
 
 .stavousd45{
-list-style: none; 
+  list-style: none; 
   background-color: #FFF;
   width: 14rem;
   height: 2.9375rem;

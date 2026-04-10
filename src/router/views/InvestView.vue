@@ -43,7 +43,7 @@
   </div>
 
   <div class="stavovest-con"> 
-    <li class="stavovest"><a href="/sales">Open Web App <img src="@/assets/images/ror.png" alt="App Store"  width="13px"/></a></li>
+    <li class="stavovest"><a href="https://urlgeni.us/swychr">Open Web App <img src="@/assets/images/ror.png" alt="App Store"  width="13px"/></a></li>
   </div>
 </nav>      
  <div class="insidevest1">

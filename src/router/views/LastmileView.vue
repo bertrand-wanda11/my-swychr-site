@@ -43,7 +43,7 @@
   </div>
 
   <div class="stavomile-con"> 
-    <li class="stavomile"><a href="/sales">Open Web App<img src="@/assets/images/ror.png" alt="App Store"  width="13px"/></a></li>
+    <li class="stavomile"><a href="https://urlgeni.us/swychr">Open Web App<img src="@/assets/images/ror.png" alt="App Store"  width="13px"/></a></li>
   </div>
 </nav>      
  <div class="insidemile1">
@@ -258,7 +258,6 @@ made simple.
       </p>
       
       <div class="protonmile4">
-  
       <div class="stavomile15-con"> 
     <li class="stavomile15"><a href="https://urlgeni.us/swychr">Create Account<img src="@/assets/images/hwan.png" alt=""  width="19px" /></a></li>
   </div>
@@ -663,7 +662,6 @@ display: flex;
   align-items: center;
   gap: 5px;
 }
-
 
 .nav-item-wrapper {
   position: relative;
