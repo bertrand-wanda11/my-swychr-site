@@ -55,7 +55,7 @@
 </p>
 <div class="protonissue">
       <div class="stavoissue401-con"> 
-    <li class="stavoissue401"><a href="https://urlgeni.us/swychr">Sign Up Now<img src="@/assets/images/hwan.png" alt=""  width="19px" /></a></li>
+    <li class="stavoissue401"><a href="https://urlgeni.us/swychr">Sign Up Now<img src="@/assets/images/ror.png" alt=""  width="19px" /></a></li>
   </div>
 
    <div class="stavoissue400-con"> 
