@@ -1973,7 +1973,7 @@ tbody td {
   list-style: none; 
  background: #8C1BC1;
    width:15rem;
-  height: 2.9375rem;
+  height: 2.5rem;
   border-radius: 6.25rem;
  margin: 10px;
   display: flex;
