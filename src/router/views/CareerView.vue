@@ -242,17 +242,6 @@ the builders, and the problem-solvers to join our Dream Team.
       </p>
       
       <div class="protoncareer8">
-    <div class="icon-circlemilecareer9">
-     <span class="button-textmilecareer9">View Open Positions</span>
-          <img src="@/assets/images/hwan.png" alt="Card" />
-        </div>
-
-  <div class="icon-circlemilecareer8">
-    <img src="@/assets/images/cup.png" alt="Card" />
-    <span class="button-textmilecareer8">Send Your Cv</span>      
-        </div>
-
-
             <div class="stavocareer401-con"> 
     <li class="stavocareer401"><a href="https://urlgeni.us/swychr">View Open Positions<img src="@/assets/images/hwan.png" alt="" width="19px"/></a></li>
   </div>
@@ -2088,11 +2077,10 @@ list-style: none;
   margin-top: 0.55rem;
 }
 
-
 .stavocareer401{
   list-style: none; 
   background: #8C1BC1;
-  width:13rem;
+  width:14rem;
   height: 2.5rem;
   border-radius: 6.25rem;
   margin: 10px;
