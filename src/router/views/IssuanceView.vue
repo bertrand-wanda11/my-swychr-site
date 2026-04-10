@@ -1036,7 +1036,7 @@ display: flex;
   list-style: none; 
   background-color:  #fff;
   width:13rem;
-  height: 2.9375rem;
+  height: 2.5rem;
   border-radius: 6.25rem;
   margin: 10px;
   display: flex;
