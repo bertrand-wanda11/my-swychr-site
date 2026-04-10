@@ -545,7 +545,7 @@ const milestonesvest = [
   height: auto;
   position: relative; 
   width: 100%;
-  height: 100vh;
+  height: 150vh;
   overflow: hidden;
   align-items: center;
   justify-content: center;
