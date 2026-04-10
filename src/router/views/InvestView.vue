@@ -550,7 +550,7 @@ const milestonesvest = [
   align-items: center;
   justify-content: center;
   background: url('@/assets/images/letholo.png');
- background-position: center 50px;
+ background-position: center 25px;
   background-repeat: no-repeat;
   background-size: 95% auto;
 }
