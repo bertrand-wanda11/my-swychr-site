@@ -537,6 +537,7 @@ const milestonesvest = [
 
 
 <style scoped>
+
 .vest1{
   text-align: center;
   margin: 0 auto;
@@ -900,7 +901,7 @@ display: flex;
 .ir-text-content {
   flex: 1.5;
   text-align: left;
-  margin-left: 6rem;
+  margin-left: 4rem;
 }
 
 
