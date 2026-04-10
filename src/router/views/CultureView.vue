@@ -50,10 +50,11 @@
   <div class="techculture">
 <p class="smartculture">The Swychr DNA: <br> How we build the future</p>
 <p class="mathsculture">
-Culture isn't about office perks or colorful walls. At Swychr, culture is the set of<br>
-invisible rails that allow us to ship faster, think bigger, and solve the hardest <br>
-financial problems in the world. We are a team of A-players obsessed with one <br>
-goal:Financial borders should not exist.
+Culture isn't about office perks or colorful walls. At Swychr,<br>
+culture is the set of invisible rails that allow us to ship faster,<br>
+ think bigger, and solve the hardest financial problems in the world. <br>
+ We are a team of A-players obsessed with one goal:Financial borders<br>
+should not exist.
 
 </p>
 
