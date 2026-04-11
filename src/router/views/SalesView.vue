@@ -12,7 +12,7 @@
        <section class="small1">
         <div class="support1">
           <div class="post">
-            <img src="@/assets/images/connect1.png" alt="" width="" height="842px">
+                       <img src="https://swychr.com/storage/2023/09/contacts-3.webp" alt="" width="237px" height="842px">
           </div>
          <div class="remove">
         <div class="contact-container">

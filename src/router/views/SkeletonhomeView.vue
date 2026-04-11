@@ -2933,37 +2933,9 @@ margin-right: 2.8rem;
   border-top: 1px solid #fff;
   width: 92%;
   margin-left: 60px;
- }    
+ }   
  
- .sergiolay{
-  display: inline-flex;
-  text-align: justify;
-  align-items: center;
-  line-height: 1;
- }
-
- .sergiopikanlay{
-color: #ffffff;
-font-family: Montserrat;
-font-size: 16px;
-font-style: normal;
-font-weight: 600;
-line-height: 120%;
-margin-bottom: 2px;
-margin-top: 0;
- }
-
- .sergiosonlay{
-color: var(--Gray-200, #EEE);
-font-family: Montserrat;
-font-size: 14px;
-font-style: normal;
-font-weight: 500;
-line-height: 120%;
-margin-top: 0;
- }
-
- .showlay{
+  .showlay{
 color: #ffffff;
 font-family: 'Montserrat', sans-serif;
 font-size: 14px;
@@ -2971,42 +2943,62 @@ font-style: normal;
 font-weight: 535;
 line-height: 120%;
  }
+ 
 
- .zoukielay{
-  margin-right: 560px;
- }
-
-.chanalay{
-  margin-right: 100px;
-  display: inline-flex;
-  list-style: none;
- }
-
- .chana1lay{
-color: white;
-font-family: Montserrat;
-font-size: 16px;
-font-style: normal;
-font-weight: 500;
-line-height: 120%;
- }
-
-.chana1lay a{
-text-decoration: none;
+.sergiolay {
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 30px auto; 
+  padding: 0;
 }
 
- .rufuslay{
-margin-top: 0;
-font-family: 'Montserrat', sans-serif;;
- color: #ffffff;
- width: 100%;
- text-align: justify;
-font-size: 15px;
-font-weight: 500;
-line-height: 120%;
- margin-left: 80px;
- } 
 
+.zoukielay {
+  margin-right: 0; 
+  text-align: left;
+}
+
+
+.chanalay {
+  margin-right: 0;
+  display: flex;
+  gap: 20px; 
+  list-style: none;
+  padding: 0;
+}
+
+
+.chana1lay {
+  white-space: nowrap;
+}
+
+
+.rufuslay {
+  margin: 40px auto; 
+  width: 90%;
+  text-align: justify;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+@media only screen and (max-width: 820px) {
+  .sergiolay {
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .zoukielay {
+    text-align: center;
+  }
+  
+  .chanalay {
+    justify-content: center;
+  }
+}
 
 @media screen and (max-width: 1194px) {
   .numero {

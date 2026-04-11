@@ -1955,39 +1955,11 @@ margin-right: 2.8rem;
   
  .schoolp2p{
   border-top: 1px solid #fff;
-  width: 90%;
-  margin-left: 80px;
- }    
+  width: 92%;
+  margin-left: 60px;
+ }   
  
- .sergiop2p{
-  display: inline-flex;
-  text-align: justify;
-  align-items: center;
-  line-height: 1;
- }
-
- .sergiopikanp2p{
-color: #ffffff;
-font-family: Montserrat;
-font-size: 16px;
-font-style: normal;
-font-weight: 600;
-line-height: 120%;
-margin-bottom: 2px;
-margin-top: 0;
- }
-
- .sergiosonp2p{
-color: var(--Gray-200, #EEE);
-font-family: Montserrat;
-font-size: 14px;
-font-style: normal;
-font-weight: 500;
-line-height: 120%;
-margin-top: 0;
- }
-
- .showp2p{
+  .showp2p{
 color: #ffffff;
 font-family: 'Montserrat', sans-serif;
 font-size: 14px;
@@ -1995,47 +1967,67 @@ font-style: normal;
 font-weight: 535;
 line-height: 120%;
  }
+ 
 
- .zoukiep2p{
-  margin-right: 560px;
- }
-
-.chanap2p{
-  margin-right: 100px;
-  display: inline-flex;
-  list-style: none;
- }
-
- .chana1p2p{
-color: white;
-font-family: Montserrat;
-font-size: 16px;
-font-style: normal;
-font-weight: 500;
-line-height: 120%;
- }
-
-.chana1p2p a{
-text-decoration: none;
+.sergiop2p {
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 30px auto; 
+  padding: 0;
 }
 
- .rufusp2p{
-margin-top: 0;
-font-family: 'Montserrat', sans-serif;;
- color: #ffffff;
- width: 100%;
- text-align: justify;
-font-size: 15px;
-font-weight: 500;
-line-height: 120%;
- margin-left: 80px;
- } 
+
+.zoukiep2p {
+  margin-right: 0; 
+  text-align: left;
+}
+
+
+.chanap2p {
+  margin-right: 0;
+  display: flex;
+  gap: 20px; 
+  list-style: none;
+  padding: 0;
+}
+
+
+.chana1p2p {
+  white-space: nowrap;
+}
+
+
+.rufusp2p{
+  margin: 40px auto; 
+  width: 90%;
+  text-align: justify;
+  font-size: 14px;
+  line-height: 1.6;
+}
 
 .seam{
 margin-top: 20px;
 margin-left: 67px;
 }
 
+@media only screen and (max-width: 820px) {
+  .sergiolay {
+    flex-direction: column; /* Stacks items vertically on small screens */
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .zoukielay {
+    text-align: center;
+  }
+  
+  .chanalay {
+    justify-content: center;
+  }
+}
 
 @media only screen and (max-width: 1180px) {
     .mothers11p2p{
