@@ -336,6 +336,7 @@ border: 1px solid #FFF;
   align-items: center;
   position: relative; 
   overflow: visible;
+  background-color: #A9AAB2;
 }
 
 .nav-indicator {
