@@ -2014,7 +2014,7 @@ margin-left: 67px;
 
 @media only screen and (max-width: 820px) {
   .sergiolay {
-    flex-direction: column; /* Stacks items vertically on small screens */
+    flex-direction: column; 
     align-items: center;
     text-align: center;
     gap: 20px;

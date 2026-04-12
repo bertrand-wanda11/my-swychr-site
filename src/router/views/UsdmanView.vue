@@ -650,6 +650,7 @@ const transactions = [
  </script>
 
  <style scoped>
+
 .Air1{
   text-align: center;
   margin: 0 auto;
@@ -1892,41 +1893,13 @@ margin-right: 2.8rem;
   color: #ffffff;
         } 
   
- .schoolAir{
+  .schoolAir{
   border-top: 1px solid #fff;
-  width: 90%;
-  margin-left: 80px;
- }    
+  width: 92%;
+  margin-left: 60px;
+ }   
  
- .sergioAir{
-  display: inline-flex;
-  text-align: justify;
-  align-items: center;
-  line-height: 1;
- }
-
- .sergiopikanAir{
-color: #ffffff;
-font-family: Montserrat;
-font-size: 16px;
-font-style: normal;
-font-weight: 600;
-line-height: 120%;
-margin-bottom: 2px;
-margin-top: 0;
- }
-
- .sergiosonAir{
-color: var(--Gray-200, #EEE);
-font-family: Montserrat;
-font-size: 14px;
-font-style: normal;
-font-weight: 500;
-line-height: 120%;
-margin-top: 0;
- }
-
- .showAir{
+  .showAir {
 color: #ffffff;
 font-family: 'Montserrat', sans-serif;
 font-size: 14px;
@@ -1934,47 +1907,67 @@ font-style: normal;
 font-weight: 535;
 line-height: 120%;
  }
+ 
 
- .zoukieAir{
-  margin-right: 560px;
- }
-
-.chanaAir{
-  margin-right: 100px;
-  display: inline-flex;
-  list-style: none;
- }
-
- .chana1Air{
-color: white;
-font-family: Montserrat;
-font-size: 16px;
-font-style: normal;
-font-weight: 500;
-line-height: 120%;
- }
-
-.chana1Air a{
-text-decoration: none;
+.sergioAir{
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 30px auto; 
+  padding: 0;
 }
 
- .rufusAir{
-margin-top: 0;
-font-family: 'Montserrat', sans-serif;;
- color: #ffffff;
- width: 100%;
- text-align: justify;
-font-size: 15px;
-font-weight: 500;
-line-height: 120%;
- margin-left: 80px;
- } 
+
+.zoukieAir  {
+  margin-right: 0; 
+  text-align: left;
+}
+
+
+.chanaAir{
+  margin-right: 0;
+  display: flex;
+  gap: 20px; 
+  list-style: none;
+  padding: 0;
+}
+
+
+.chana1Air {
+  white-space: nowrap;
+}
+
+
+.rufusAir{
+  margin: 40px auto; 
+  width: 90%;
+  text-align: justify;
+  font-size: 14px;
+  line-height: 1.6;
+}
 
 .seam{
 margin-top: 20px;
 margin-left: 67px;
 }
 
+@media only screen and (max-width: 820px) {
+  .sergioAir {
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .zoukieAir {
+    text-align: center;
+  }
+  
+  .chanaAir {
+    justify-content: center;
+  }
+}
 
 @media only screen and (max-width: 1180px) {
     .mothers11Air{

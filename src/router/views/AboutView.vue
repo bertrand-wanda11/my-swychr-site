@@ -1948,41 +1948,13 @@ margin-right: 2.8rem;
   color: #ffffff;
         } 
   
- .schoolabout{
+  .schoolabout{
   border-top: 1px solid #fff;
-  width: 90%;
-  margin-left: 80px;
- }    
+  width: 92%;
+  margin-left: 60px;
+ }   
  
- .sergioabout{
-  display: inline-flex;
-  text-align: justify;
-  align-items: center;
-  line-height: 1;
- }
-
- .sergiopikanabout{
-color: #ffffff;
-font-family: Montserrat;
-font-size: 16px;
-font-style: normal;
-font-weight: 600;
-line-height: 120%;
-margin-bottom: 2px;
-margin-top: 0;
- }
-
- .sergiosonabout{
-color: var(--Gray-200, #EEE);
-font-family: Montserrat;
-font-size: 14px;
-font-style: normal;
-font-weight: 500;
-line-height: 120%;
-margin-top: 0;
- }
-
- .showabout{
+  .showabout{
 color: #ffffff;
 font-family: 'Montserrat', sans-serif;
 font-size: 14px;
@@ -1990,45 +1962,66 @@ font-style: normal;
 font-weight: 535;
 line-height: 120%;
  }
+ 
 
- .zoukieabout{
-  margin-right: 560px;
- }
-
-.chanaabout{
-  margin-right: 100px;
-  display: inline-flex;
-  list-style: none;
- }
-
- .chana1about{
-color: white;
-font-family: Montserrat;
-font-size: 16px;
-font-style: normal;
-font-weight: 500;
-line-height: 120%;
- }
-
-.chana1about a{
-text-decoration: none;
+.sergioabout {
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 30px auto; 
+  padding: 0;
 }
 
- .rufusabout{
-margin-top: 0;
-font-family: 'Montserrat', sans-serif;;
- color: #ffffff;
- width: 100%;
- text-align: justify;
-font-size: 15px;
-font-weight: 500;
-line-height: 120%;
- margin-left: 80px;
- } 
+
+.zoukieabout{
+  margin-right: 0; 
+  text-align: left;
+}
+
+
+.chanaabout {
+  margin-right: 0;
+  display: flex;
+  gap: 20px; 
+  list-style: none;
+  padding: 0;
+}
+
+
+.chana1about{
+  white-space: nowrap;
+}
+
+
+.rufusabout{
+  margin: 40px auto; 
+  width: 90%;
+  text-align: justify;
+  font-size: 14px;
+  line-height: 1.6;
+}
 
 .seam{
 margin-top: 20px;
 margin-left: 67px;
+}
+
+@media only screen and (max-width: 820px) {
+  .sergioabout{
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .zoukieabout {
+    text-align: center;
+  }
+  
+  .chanaabout{
+    justify-content: center;
+  }
 }
 
  @media only screen and (max-width: 1180px) {

@@ -2296,39 +2296,11 @@ margin-right: 2.8rem;
   
  .schoolcareer{
   border-top: 1px solid #fff;
-  width: 90%;
-  margin-left: 80px;
- }    
+  width: 92%;
+  margin-left: 60px;
+ }   
  
- .sergiocareer{
-  display: inline-flex;
-  text-align: justify;
-  align-items: center;
-  line-height: 1;
- }
-
- .sergiopikancareer{
-color: #ffffff;
-font-family: Montserrat;
-font-size: 16px;
-font-style: normal;
-font-weight: 600;
-line-height: 120%;
-margin-bottom: 2px;
-margin-top: 0;
- }
-
- .sergiosoncareer{
-color: var(--Gray-200, #EEE);
-font-family: Montserrat;
-font-size: 14px;
-font-style: normal;
-font-weight: 500;
-line-height: 120%;
-margin-top: 0;
- }
-
- .showcareer{
+  .showcareer {
 color: #ffffff;
 font-family: 'Montserrat', sans-serif;
 font-size: 14px;
@@ -2336,45 +2308,66 @@ font-style: normal;
 font-weight: 535;
 line-height: 120%;
  }
+ 
 
- .zoukiecareer{
-  margin-right: 560px;
- }
-
-.chanacareer{
-  margin-right: 100px;
-  display: inline-flex;
-  list-style: none;
- }
-
- .chana1career{
-color: white;
-font-family: Montserrat;
-font-size: 16px;
-font-style: normal;
-font-weight: 500;
-line-height: 120%;
- }
-
-.chana1career a{
-text-decoration: none;
+.sergiocareer{
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 30px auto; 
+  padding: 0;
 }
 
- .rufuscareer{
-margin-top: 0;
-font-family: 'Montserrat', sans-serif;;
- color: #ffffff;
- width: 100%;
- text-align: justify;
-font-size: 15px;
-font-weight: 500;
-line-height: 120%;
- margin-left: 80px;
- } 
+
+.zoukiecareer{
+  margin-right: 0; 
+  text-align: left;
+}
+
+
+.chanacareer{
+  margin-right: 0;
+  display: flex;
+  gap: 20px; 
+  list-style: none;
+  padding: 0;
+}
+
+
+.chana1career{
+  white-space: nowrap;
+}
+
+
+.rufuscareer{
+  margin: 40px auto; 
+  width: 90%;
+  text-align: justify;
+  font-size: 14px;
+  line-height: 1.6;
+}
 
 .seam{
 margin-top: 20px;
 margin-left: 67px;
+}
+
+@media only screen and (max-width: 820px) {
+  .sergiocareer{
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .zoukiecareer{
+    text-align: center;
+  }
+  
+  .chanacareer {
+    justify-content: center;
+  }
 }
 
 @media only screen and (max-width: 1180px) {

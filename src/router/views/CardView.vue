@@ -2362,41 +2362,13 @@ margin-right: 2.8rem;
   color: #ffffff;
         } 
   
- .schoolcard{
+  .schoolcard {
   border-top: 1px solid #fff;
-  width: 90%;
-  margin-left: 80px;
- }    
+  width: 92%;
+  margin-left: 60px;
+ }   
  
- .sergiocard{
-  display: inline-flex;
-  text-align: justify;
-  align-items: center;
-  line-height: 1;
- }
-
- .sergiopikancard{
-color: #ffffff;
-font-family: Montserrat;
-font-size: 16px;
-font-style: normal;
-font-weight: 600;
-line-height: 120%;
-margin-bottom: 2px;
-margin-top: 0;
- }
-
- .sergiosoncard{
-color: var(--Gray-200, #EEE);
-font-family: Montserrat;
-font-size: 14px;
-font-style: normal;
-font-weight: 500;
-line-height: 120%;
-margin-top: 0;
- }
-
- .showcard{
+  .showcard {
 color: #ffffff;
 font-family: 'Montserrat', sans-serif;
 font-size: 14px;
@@ -2404,47 +2376,67 @@ font-style: normal;
 font-weight: 535;
 line-height: 120%;
  }
+ 
 
- .zoukiecard{
-  margin-right: 560px;
- }
-
-.chanacard{
-  margin-right: 100px;
-  display: inline-flex;
-  list-style: none;
- }
-
- .chana1card{
-color: white;
-font-family: Montserrat;
-font-size: 16px;
-font-style: normal;
-font-weight: 500;
-line-height: 120%;
- }
-
-.chana1card a{
-text-decoration: none;
+.sergiocard  {
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 30px auto; 
+  padding: 0;
 }
 
- .rufuscard{
-margin-top: 0;
-font-family: 'Montserrat', sans-serif;;
- color: #ffffff;
- width: 100%;
- text-align: justify;
-font-size: 15px;
-font-weight: 500;
-line-height: 120%;
- margin-left: 80px;
- } 
+
+.zoukiecard  {
+  margin-right: 0; 
+  text-align: left;
+}
+
+
+.chanacard {
+  margin-right: 0;
+  display: flex;
+  gap: 20px; 
+  list-style: none;
+  padding: 0;
+}
+
+
+.chana1card  {
+  white-space: nowrap;
+}
+
+
+.rufuscard {
+  margin: 40px auto; 
+  width: 90%;
+  text-align: justify;
+  font-size: 14px;
+  line-height: 1.6;
+}
 
 .seam{
 margin-top: 20px;
 margin-left: 67px;
 }
 
+@media only screen and (max-width: 820px) {
+  .sergiocard  {
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .zoukiecard  {
+    text-align: center;
+  }
+  
+  .chanacard {
+    justify-content: center;
+  }
+}
 
 @media only screen and (max-width: 1180px) {
     .mothers11card{

@@ -2384,39 +2384,11 @@ margin-right: 2.8rem;
   
  .schoolusd{
   border-top: 1px solid #fff;
-  width: 90%;
-  margin-left: 80px;
- }    
+  width: 92%;
+  margin-left: 60px;
+ }   
  
- .sergiousd{
-  display: inline-flex;
-  text-align: justify;
-  align-items: center;
-  line-height: 1;
- }
-
- .sergiopikanusd{
-color: #ffffff;
-font-family: Montserrat;
-font-size: 16px;
-font-style: normal;
-font-weight: 600;
-line-height: 120%;
-margin-bottom: 2px;
-margin-top: 0;
- }
-
- .sergiosonusd{
-color: var(--Gray-200, #EEE);
-font-family: Montserrat;
-font-size: 14px;
-font-style: normal;
-font-weight: 500;
-line-height: 120%;
-margin-top: 0;
- }
-
- .showusd{
+  .showusd {
 color: #ffffff;
 font-family: 'Montserrat', sans-serif;
 font-size: 14px;
@@ -2424,45 +2396,66 @@ font-style: normal;
 font-weight: 535;
 line-height: 120%;
  }
+ 
 
- .zoukieusd{
-  margin-right: 560px;
- }
-
-.chanausd{
-  margin-right: 100px;
-  display: inline-flex;
-  list-style: none;
- }
-
- .chana1usd{
-color: white;
-font-family: Montserrat;
-font-size: 16px;
-font-style: normal;
-font-weight: 500;
-line-height: 120%;
- }
-
-.chana1usd a{
-text-decoration: none;
+.sergiousd{
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 30px auto; 
+  padding: 0;
 }
 
- .rufususd{
-margin-top: 0;
-font-family: 'Montserrat', sans-serif;;
- color: #ffffff;
- width: 100%;
- text-align: justify;
-font-size: 15px;
-font-weight: 500;
-line-height: 120%;
- margin-left: 80px;
- } 
+
+.zoukieusd  {
+  margin-right: 0; 
+  text-align: left;
+}
+
+
+.chanausd{
+  margin-right: 0;
+  display: flex;
+  gap: 20px; 
+  list-style: none;
+  padding: 0;
+}
+
+
+.chana1usd {
+  white-space: nowrap;
+}
+
+
+.rufususd{
+  margin: 40px auto; 
+  width: 90%;
+  text-align: justify;
+  font-size: 14px;
+  line-height: 1.6;
+}
 
 .seam{
 margin-top: 20px;
 margin-left: 67px;
+}
+
+@media only screen and (max-width: 820px) {
+  .sergiousd {
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .zoukieusd  {
+    text-align: center;
+  }
+  
+  .chanausd {
+    justify-content: center;
+  }
 }
 
 
