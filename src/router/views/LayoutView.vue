@@ -1,13 +1,13 @@
 <template>
     <div>
     <section class="bloodline">
-   <nav class="numero">
-  <h2 class="seam">
+   <nav class="numerolay">
+  <h2 class="seamlay">
     <img src="@/assets/images/motive.png" alt="Logo" class="dreak" width="127" height="32">
   </h2>
   
-<div class="food-pill-container">
-  <ul class="mannav" ref="navMenu"> 
+<div class="food-pill-containerlay">
+  <ul class="mannavlay" ref="navMenu"> 
     <li 
       v-for="(item, index) in navItems" 
       :key="item.name" 
@@ -49,11 +49,11 @@
         </div>
       </div>
     </li>
-    <div class="nav-indicator" :style="indicatorStyle"></div>
+    <div class="nav-indicatorlay" :style="indicatorStyle"></div>
   </ul>
 </div>
 
-  <div class="stavo-container"> 
+  <div class="stavo-containerlay"> 
     <li class="stavo"><a href="/sales">Contact Sales</a></li>
   </div>
 </nav>
@@ -314,12 +314,12 @@ onBeforeUnmount(() => {
 </script>
 
 <style>
-.seam{
+.seamlay{
   margin-top: 1.25rem;
   margin-left:4rem;
 }
 
-.numero {
+.numerolay {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -328,7 +328,7 @@ onBeforeUnmount(() => {
   background-color: #A9AAB2;
 }
 
-.food-pill-container {
+.food-pill-containerlay {
 border: 1px solid #FFF;
   border-radius: 50px;
   height: 3.5rem;
@@ -340,7 +340,7 @@ border: 1px solid #FFF;
   background-color: #A9AAB2;
 }
 
-.nav-indicator {
+.nav-indicatorlay {
 position: absolute;
   top: -1px; 
   height: 6px; 
@@ -351,7 +351,7 @@ position: absolute;
   width: 4px;
 }
 
-.mannav {
+.mannavlay {
  display: flex;
   list-style: none;
   padding: 0;
@@ -474,7 +474,7 @@ position: absolute;
   transform: rotate(180deg);
 }
 
-.nav-indicator {
+.nav-indicatorlay {
   position: absolute;
   top: -1px;
   height: 6px;
@@ -497,22 +497,22 @@ position: absolute;
 }
 
 @media screen and (max-width: 430px) {
-  .numero {
+  .numerolay {
     flex-wrap: wrap; 
     justify-content: space-between;
     margin: 1rem auto;
   }
 
-  .seam {
+  .seamlay {
     margin-left: 0;
     order: 1;
   }
 
-  .stavo-container {
+  .stavo-containerlay {
     order: 2; 
   }
 
-  .food-pill-container {
+  .food-pill-containerlay{
     order: 3; 
     width: 100%;
     margin-top: 15px;
@@ -520,7 +520,7 @@ position: absolute;
     overflow-x: auto; 
   }
 
-  .mannav {
+  .mannavlay {
     justify-content: center;
     width: auto;
   }
@@ -546,7 +546,7 @@ position: absolute;
   }
 }
 
-  .nav-indicator {
+  .nav-indicatorlay {
     display: block !important; 
     height: 4px;
   }
@@ -620,12 +620,12 @@ position: absolute;
 
 
 @media screen and (max-width: 1180px) {
-  .numero {
+  .numerolay {
     width: 95%;
     gap: 10px; 
   }
 
-  .food-pill-container {
+  .food-pill-containerlay {
     padding: 0 5px;
     height: 3.2rem;
   }
@@ -635,7 +635,7 @@ position: absolute;
     font-size: 0.85rem;
   }
 
-  .stavo {
+  .stavolay {
     width: 9rem; 
     margin-right: 0; 
   }
@@ -785,22 +785,22 @@ line-height: 120%;
 }
 
 @media screen and (max-width: 430px) {
-  .numero {
+  .numerolay {
     flex-wrap: wrap; 
     justify-content: space-between;
     margin: 1rem auto;
   }
 
-  .seam {
+  .seamlay {
     margin-left: 0;
     order: 1; 
   }
 
-  .stavo-container {
+  .stavo-containerlay {
     order: 2; 
   }
 
-  .food-pill-container {
+  .food-pill-containerlay {
     order: 3;
     width: 100%;
     margin-top: 15px;
@@ -834,19 +834,19 @@ line-height: 120%;
   }
 }
 
-  .nav-indicator {
+  .nav-indicatorlay {
     display: block !important; 
     height: 4px;
   }
 }
 
 @media screen and (max-width: 1180px) {
-  .numero {
+  .numerolay {
     width: 95%;
     gap: 10px; 
   }
 
-  .food-pill-container {
+  .food-pill-containerlay {
     padding: 0 5px;
     height: 3.2rem;
   }
@@ -856,7 +856,7 @@ line-height: 120%;
     font-size: 0.85rem;
   }
 
-  .stavo {
+  .stavolay {
     width: 9rem; 
     margin-right: 0; 
   }

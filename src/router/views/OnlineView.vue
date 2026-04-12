@@ -2289,6 +2289,7 @@ margin-left: 67px;
     justify-content: center;
   }
 }
+
 @media only screen and (max-width: 1180px) {
     .mothers11online {
         flex-wrap: wrap;
