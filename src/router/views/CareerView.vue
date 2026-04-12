@@ -238,7 +238,7 @@ the builders, and the problem-solvers to join our Dream Team.
     <div class="insidecareer8">
       <h2 class="cta-headingcareer8">Ready to build the future with us?</h2>
       <p class="cta-subtextcareer8">
-    Start delivering payouts to millions of wallets across Africa and India
+   Ready to build the financial infrastructure for the next billion users?
       </p>
       
       <div class="protoncareer8">
