@@ -1,60 +1,55 @@
 <template>
     <div class="server">
 <section class="section1">
-  <nav class="numero">
+ <nav class="numero">
   <h2 class="seam">
     <img src="@/assets/images/motive.png" alt="Logo" class="dreak" width="127" height="32">
   </h2>
   
-<div class="food-pill-container">
-  <ul class="mannav" ref="navMenu"> 
-    <li 
-      v-for="(item, index) in navItems" 
-      :key="item.name" 
-      class="nav-item-wrapper"
-    >
- <router-link 
-  :to="item.path" 
-  class="nav-link"
-  :class="{ active: activeIndex === index }" 
-  @click="(e) => { 
-    if(item.children) { 
-      e.preventDefault(); 
-      toggleDropdown(index); 
-    } else { 
-      setActive(index); 
-      openDropdownIndex = null;
-    }
-  }"
->
-  {{ item.name }}
-  <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }">▾</span>
-</router-link>
+  <div class="food-pill-container">
+    <ul class="mannav" ref="navMenu"> 
+      <li v-for="(item, index) in navItems" :key="item.name" class="nav-item-wrapper">
+        <router-link 
+          :to="item.path" 
+          class="nav-link"
+          :class="{ active: activeIndex === index }"
+          @click="(e) => { 
+            if(item.children) { 
+              e.preventDefault(); 
+              toggleDropdown(index); 
+            } else { 
+              setActive(index); 
+            }
+          }" 
+        >
+          {{ item.name }}
+          <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }">▾</span>
+        </router-link>
 
-      <div v-if="item.children && openDropdownIndex === index" class="mega-dropdown">
-        <p class="dropdown-label">{{ item.dropdownTitle }}</p>
-        <div class="dropdown-grid" :class="{ 'company-grid': item.name === 'Company' }">
-          <router-link 
-            v-for="child in item.children" 
-            :key="child.name" 
-            :to="child.path" 
-            class="dropdown-item"
-            @click="openDropdownIndex = null" 
-          >
-            <span class="item-icon">
-              <img :src="child.icon" :alt="child.name" class="nav-icon-img">
-            </span>
-            <span class="item-text">{{ child.name }}</span>
-          </router-link>
+        <div v-if="item.children && openDropdownIndex === index" class="mega-dropdown">
+          <p class="dropdown-label">{{ item.dropdownTitle }}</p>
+          <div class="dropdown-grid" :class="{ 'company-grid': item.name === 'Company' }">
+            <router-link 
+              v-for="child in item.children" 
+              :key="child.name" 
+              :to="child.path" 
+              class="dropdown-item"
+              @click="openDropdownIndex = null" 
+            >
+              <span class="item-icon">
+                <img :src="child.icon" :alt="child.name" class="nav-icon-img">
+              </span>
+              <span class="item-text">{{ child.name }}</span>
+            </router-link>
+          </div>
         </div>
-      </div>
-    </li>
-    <div class="nav-indicator" :style="indicatorStyle"></div>
-  </ul>
-</div>
+      </li>
+      <div class="nav-indicator" :style="indicatorStyle"></div>
+    </ul>
+  </div>
 
   <div class="stavo-container"> 
-       <li class="stavo"><a href="/sales">Contact Sales</a></li>
+    <li class="stavo"><a href="/sales">Contact Sales</a></li>
   </div>
 </nav>
     
@@ -783,9 +778,9 @@ const toggleDropdown = (index) => {
     syncWithRoute();
   } else {
     openDropdownIndex.value = index;
-    activeIndex.value = index; // Move indicator
-    setTimeout(updateIndicator, 50); // Small delay to let DOM settle
+    activeIndex.value = index; // Move indicator manually
   }
+  setTimeout(updateIndicator, 50); // Delay for layout shift
 };
 
 const setActive = (index) => {
@@ -820,7 +815,6 @@ onMounted(() => {
     }
   });
 });
-
 
 const cards = [
   {
@@ -1118,7 +1112,7 @@ const features = [
   display: flex;
   align-items: center;
   position: relative;
-  overflow: visible; /* CRITICAL */
+  overflow: visible;
 }
 
 .mannav {
@@ -1132,7 +1126,7 @@ const features = [
 }
 
 .nav-item-wrapper {
-  flex: 1; /* Ensures all 5 items fit exactly inside the pill */
+  flex: 1; /* FORCES all items to fit inside the border */
   display: flex;
   justify-content: center;
   position: relative;
@@ -1142,9 +1136,9 @@ const features = [
   color: white;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   white-space: nowrap;
-  padding: 0 5px;
+  padding: 0 2px;
   cursor: pointer;
 }
 
@@ -1154,117 +1148,21 @@ const features = [
   height: 5px;
   background: #fff;
   border-radius: 0 0 5px 5px;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
   z-index: 50;
   pointer-events: none;
 }
-
-
-.mega-dropdown {
-  position: absolute;
-  top: calc(100% + 15px); 
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
-  padding: 20px 25px;
-  border-radius: 12px;
-  width: max-content; 
-  min-width: 240px; 
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  z-index: 1000;
-  animation: dropdownFadeIn 0.2s ease-out;
-}
-
-.dropdown-arrow {
-  transition: transform 0.3s ease;
-  display: inline-block;
-}
-
-.dropdown-arrow.rotated {
-  transform: rotate(180deg);
-}
-
-@keyframes dropdownFadeIn {
-  from {
-    opacity: 0;
-    transform: translateX(-50%) translateY(5px);
+/* --- TABLET (iPad 820px) --- */
+@media screen and (max-width: 1180px) {
+  .food-pill-container {
+    width: 75% !important;
   }
-  to {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
+  .nav-link {
+    font-size: 0.75rem;
   }
 }
 
-.dropdown-arrow {
-  transition: transform 0.3s ease;
-  display: inline-block;
-}
-
-.dropdown-arrow.rotated {
-  transform: rotate(180deg);
-}
-
-
-.dropdown-label {
-  color: #8C1BC1; 
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-  text-align: left;
-}
-
-.dropdown-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 12px 30px;
-}
-
-.company-grid {
-  grid-template-columns: 1fr !important;
-  min-width: 180px;
-}
-
-.dropdown-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none !important; 
-  padding: 8px 0;
-  transition: transform 0.2s ease;
-}
-
-.dropdown-item:hover {
-  transform: translateX(5px);
-}
-
-.item-text {
-  color: #333;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
-  text-decoration: none !important; 
-  white-space: nowrap;
-}
-
-.nav-icon-img {
-  width: 22px;
-  height: 22px;
-  object-fit: contain;
-}
-
-.nav-item-wrapper:nth-child(4) .mega-dropdown {
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  width: 260px; 
-}
-
-.nav-item-wrapper:nth-child(4) .mega-dropdown::before {
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-
+/* --- MOBILE (iPhone 430px) --- */
 @media screen and (max-width: 430px) {
   .numero {
     flex-direction: column !important;
@@ -1283,43 +1181,22 @@ const features = [
     left: 5% !important;
     width: 90% !important;
     transform: none !important;
-    padding: 20px;
-    border-radius: 20px;
+    padding: 24px;
+    border-radius: 24px;
+    background: white;
     text-align: left;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
   }
   .dropdown-grid {
     display: flex;
     flex-direction: column;
     gap: 15px;
   }
-}
-  
-
-  @media screen and (max-width: 1180px) {
-  .numero {
-    width: 98% !important;
-    padding: 0 10px;
-  }
-  .food-pill-container {
-    width: 70%; /* Give the pill more room on tablet */
-  }
-  .nav-link {
-    font-size: 0.75rem; /* Shrink text to fit inside the border */
-  }
-
-  .stavo {
-    width: 9rem; 
-    margin-right: 0; 
-  }
-}
-
-
-@media screen and (max-width: 1180px) {
-  .food-pill-container {
-    width: 65%; /* Wider pill for tablet */
-  }
-  .nav-link {
-    font-size: 0.75rem; /* Shorter text to stay inside border */
+  .dropdown-item {
+    text-decoration: none !important;
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
 }
 
@@ -1342,8 +1219,6 @@ const features = [
     padding: 0 5px;
   }
 }
-
-
 
 .section2 {
   padding: 3.125rem 0; 
@@ -2898,46 +2773,6 @@ line-height: 120%;
 }
 
 @media screen and (max-width: 1194px) {
-  .numero {
-    padding: 0 2rem !important;
-    width: 100% !important;
-    margin-left: 0 !important;
-  }
-.food-pill-container {
-    position: relative !important;
-    display: flex !important;
-    justify-content: center !important;
-    overflow: visible !important; 
-  }
-  .mannav {
-    position: relative !important;
-    width: 100% !important;
-    display: flex !important;
-    justify-content: space-around !important;
-    padding: 0 0.5rem !important;
-  }
-
-  .nav-indicator {
-    display: block !important; 
-    position: absolute !important;
-    bottom: -2px !important; 
-    height: 3px !important;
-    background: #ffffff !important;
-    transition: all 0.3s ease-in-out !important;
-    z-index: 10 !important;
-  }
-
-  .nav-link {
-    position: relative !important;
-    padding: 0.5rem 0.2rem !important;
-    font-size: 0.8rem !important;
-  }
-
-  .mannav li a {
-    margin: 0.5rem !important;
-    font-size: 0.9rem !important;
-  }
-
   .inside1, .thedon, .thedon1, .thedon2, .thedon9 {
     flex-direction: column !important;
     height: auto !important;
@@ -3024,12 +2859,6 @@ line-height: 120%;
     width: 25.625rem !important;   
   }
 
-  .numero {
-    width: 100% !important;
-    margin-left: 0 !important;
-    padding: 1rem 2rem !important;
-    position: absolute !important;     
-  }
 }
 
 
@@ -3406,16 +3235,6 @@ line-height: 120%;
 
 
 @media screen and (max-width: 430px) {
-  .numero {
-    flex-direction: column !important;
-    height: auto !important;
-    position: relative !important;
-    gap: 1.5rem !important;
-  }
-  .food-pill-container {
-    width: 95vw !important;
-    order: 2 !important;
-  }
   .stavo {
     order: 3 !important;
     margin-right: 0 !important;
