@@ -3142,91 +3142,6 @@ line-height: 120%;
   }
 }
 
-@media screen and (max-width: 1194px) {
-  .numero {
-    position: absolute !important;
-    display: flex !important;
-    flex-direction: row !important; 
-    justify-content: space-between !important; 
-    align-items: center !important;
-    width: 100% !important; 
-    padding: 1.5rem 3% !important;
-    margin: 0 !important;
-    left: 0 !important;
-  }
-
-  .seam {
-    margin: 0 !important;
-    flex-shrink: 0 !important;
-  }
-
-  .food-pill-container {
-    width: auto !important;
-    max-width: 50% !important; 
-    margin: 0 auto !important; 
-    height: 3rem !important;
-  }
-
-  .mannav li a {
-    margin: 0 0.5rem !important; 
-    font-size: 0.9rem !important;
-  }
-
-  .stavo {
-    margin: 0 !important; 
-    flex-shrink: 0 !important;
-  }
-
-  .section1 {
-    width: 100% !important;
-    overflow-x: hidden !important;
-  }
-
-  .inside1 {
-    width: 100% !important;
-    margin-right: 0 !important;
-    margin-left: 0 !important;
-    padding-top: 10rem !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-
-  .tech {
-    width: 90% !important; 
-    margin: 0 auto !important;
-    text-align: center !important;
-  }
-
-  .smart {
-    font-size: 2.8rem !important;
-    margin-right: 0 !important;
-    text-align: center !important;
-  }
-
-  .maths {
-    width: 100% !important;
-    text-align: center !important;
-  }
-
-
-  .proton {
-    width: 100% !important;
-    justify-content: center !important;
-    margin-left: 0 !important;
-    gap: 1rem !important;
-  }
-
-  .obus {
-    margin-left: 0 !important; 
-  }
-
-
-  .Goon {
-    margin: 3rem auto 0 auto !important; 
-  }
-}
-
 
 @media screen and (max-width: 1194px) {
   .section2 {
@@ -3744,76 +3659,6 @@ line-height: 120%;
 
 
 @media screen and (max-width: 430px) {
-  .numero {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;  
-    justify-content: center !important;
-    width: 100% !important;
-    margin: 0 !important;
-    left: 0 !important;
-    padding: 1rem 0 !important;
-  }
-
-  
-  .seam {
-    margin: 0 auto 1rem auto !important; 
-    display: flex !important;
-    justify-content: center !important;
-    width: 100% !important;
-  }
- 
-  .stavo {
-    margin: 0 auto 1.5rem auto !important;  
-    order: 2 !important; 
-    display: flex !important;
-    justify-content: center !important;
-  }
-
-
-  .food-pill-container {
-    width: 95vw !important; 
-    max-width: 410px !important;  
-    margin: 0 auto !important;  
-    order: 3 !important;
-    height: 3.5rem !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important; 
-    padding: 0 !important;
-  }
-
-
-  .mannav {
-    width: 100% !important;
-    padding: 0 0.5rem !important;
-    display: flex !important;
-    justify-content: space-between !important; 
-    align-items: center !important;
-    list-style: none !important;
-    height: 100% !important;
-  }
-
-  .mannav li {
-    flex: 1 !important; 
-    text-align: center !important;
-  }
-
-  .mannav li a {
-    font-size: 0.8rem !important; 
-    margin: 0 !important;
-    padding: 0 !important;
-    white-space: nowrap !important; 
-    display: inline-block !important;
-  }
-
-  .nav-indicator {
-    display: none !important;
-  }
-}
-
-
-@media screen and (max-width: 430px) {
   .section1 {
     background: url('@/assets/images/kirak.png') !important;
     background-size: cover !important; 
@@ -3874,11 +3719,6 @@ line-height: 120%;
     display: flex !important; 
   }
 
-  .numero {
-    position: relative !important;
-    height: auto !important;
-    margin-bottom: 2rem !important;
-  }
 }
 
 @media screen and (max-width: 430px) {
