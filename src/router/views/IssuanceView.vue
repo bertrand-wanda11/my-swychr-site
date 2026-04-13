@@ -43,7 +43,7 @@
   </div>
 
   <div class="stavoissue-con"> 
-    <li class="stavoissue"><a href="https://urlgeni.us/swychr">Open Web App  <img src="@/assets/images/ror.png" alt="App Store"  width="13px"/></a></li>
+    <li class="stavoissue"><a href="https://app.swychrconnect.com/">Open Web App  <img src="@/assets/images/ror.png" alt="App Store"  width="13px"/></a></li>
   </div>
 </nav>      
  <div class="insideissue1">
@@ -55,11 +55,11 @@
 </p>
 <div class="protonissue">
       <div class="stavoissue401-con"> 
-    <li class="stavoissue401"><a href="https://urlgeni.us/swychr">Sign Up Now<img src="@/assets/images/ror.png" alt=""  width="19px" /></a></li>
+    <li class="stavoissue401"><a href="https://app.swychrconnect.com/">Sign Up Now<img src="@/assets/images/ror.png" alt=""  width="19px" /></a></li>
   </div>
 
    <div class="stavoissue400-con"> 
-    <li class="stavoissue400"><a href="https://urlgeni.us/swychr">View Card Doc<img src="@/assets/images/hross.png" alt="" width="30px"/></a></li>
+    <li class="stavoissue400"><a href="https://app.swychrconnect.com/">View Card Doc<img src="@/assets/images/hross.png" alt="" width="30px"/></a></li>
         </div>
 </div>
 </div>
@@ -279,11 +279,11 @@
       
       <div class="protonissue7">
             <div class="stavoissue15-con"> 
-    <li class="stavoissue15"><a href="https://urlgeni.us/swychr">Sign up for the Connect<img src="@/assets/images/hwan.png" alt=""  width="19px" /></a></li>
+    <li class="stavoissue15"><a href="https://app.swychrconnect.com/">Sign up for the Connect<img src="@/assets/images/hwan.png" alt=""  width="19px" /></a></li>
   </div>
 
    <div class="stavoissue14-con"> 
-    <li class="stavoissue14"><a href="https://urlgeni.us/swychr">View API Doc<img src="@/assets/images/hross.png" alt="" width="30px"/></a></li>
+    <li class="stavoissue14"><a href="https://app.swychrconnect.com/">View API Doc<img src="@/assets/images/hross.png" alt="" width="30px"/></a></li>
         </div>
         </div>
     </div>
@@ -460,7 +460,7 @@ const navItems = [
     dropdownTitle: 'Discover swychr Business',
     children: [
       { name: 'Online Payments', icon: onlinePayIcon,path: '/Online'},
-      { name: 'Cross-Border Payments', icon: crossBorderIcon,path: '/Lastmile'},
+      { name: 'Lastmile Payment Delivery', icon: crossBorderIcon,path: '/Lastmile'},
       { name: 'Virtual Card Issuance', icon:Virtualcard ,path: '/Issuance'}
     ]
   },

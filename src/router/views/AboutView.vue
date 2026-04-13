@@ -431,7 +431,7 @@ const navItems = [
     dropdownTitle: 'Discover swychr Business',
     children: [
       { name: 'Online Payments', icon: onlinePayIcon,path: '/Online'},
-      { name: 'Cross-Border Payments', icon: crossBorderIcon,path: '/Lastmile'},
+      { name: 'Lastmile Payment Delivery', icon: crossBorderIcon,path: '/Lastmile'},
       { name: 'Virtual Card Issuance', icon:Virtualcard ,path: '/Issuance'}
     ]
   },
@@ -591,19 +591,13 @@ const board = [
     bio: 'Decades of experience leading multi-billion dollar telecom giants including Ooredoo Algeria, Telekom Romania, Bakcell, and Deutsche Bank.',
     link: 'https://www.linkedin.com/in/nikolai-beckers-5a2a52/'
   },
-  {
-    name: 'Lan Anh Nguyen',
-    role: 'Member, Board of Directors',
-    image: lanImg,
-    bio: 'Extensive experience in investment strategy, governance, M-PESA Mozambique, and Vodacom. Brings board-level oversight in fundraising.',
-    link: 'https://www.linkedin.com/in/lan-anh-nguyen-b995b8166/'
-  },
+
   {
     name: 'Nabil Abdul Rahman',
     role: 'Member, Board of Directors',
     image: nabilImg,
     bio: 'Over 20 years of mastery in global insurance and financial services. Nabil contributes critical expertise in risk mitigation and corporate strategy.',
-    link: '#'
+    link: 'https://www.linkedin.com/authwall?tr'
   }
 ];
 

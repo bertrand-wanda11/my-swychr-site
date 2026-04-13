@@ -509,7 +509,7 @@ const navItems = [
     dropdownTitle: 'Discover swychr Business',
     children: [
       { name: 'Online Payments', icon: onlinePayIcon,path: '/Online'},
-      { name: 'Cross-Border Payments', icon: crossBorderIcon,path: '/Lastmile'},
+      { name: 'Lastmile Payment Delivery', icon: crossBorderIcon,path: '/Lastmile'},
       { name: 'Virtual Card Issuance', icon:Virtualcard ,path: '/Issuance'}
     ]
   },

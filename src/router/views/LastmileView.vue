@@ -43,12 +43,12 @@
   </div>
 
   <div class="stavomile-con"> 
-    <li class="stavomile"><a href="https://urlgeni.us/swychr">Open Web App<img src="@/assets/images/ror.png" alt="App Store"  width="13px"/></a></li>
+    <li class="stavomile"><a href="https://app.swychrconnect.com/">Open Web App<img src="@/assets/images/ror.png" alt="App Store"  width="13px"/></a></li>
   </div>
 </nav>      
  <div class="insidemile1">
   <div class="techmile">
-<p class="smartmile">Last-Mile Delivery:Reach <br> Millions of Wallets <br>Instantly.</p>
+<p class="smartmile">Reach  Millions of<br> Wallets Instantly.</p>
 <p class="mathsmile">
 The most reliable rails for payouts in Africa and India. Bulk <br> 
 disbursements for payroll, remittances, and contractor settlements <br>
@@ -56,11 +56,11 @@ made simple.
 </p>
 <div class="protonmile">
    <div class="stavomile401-con"> 
-    <li class="stavomile401"><a href="https://urlgeni.us/swychr">Contact Sales</a></li>
+    <li class="stavomile401"><a href="https://app.swychrconnect.com/">Contact Sales</a></li>
   </div>
 
    <div class="stavomile400-con"> 
-    <li class="stavomile400"><a href="https://urlgeni.us/swychr">Explore Payout Api</a></li>
+    <li class="stavomile400"><a href="https://app.swychrconnect.com/">Explore Payout Api</a></li>
   </div>
 </div>
 </div>
@@ -259,11 +259,11 @@ made simple.
       
       <div class="protonmile4">
       <div class="stavomile15-con"> 
-    <li class="stavomile15"><a href="https://urlgeni.us/swychr">Create Account<img src="@/assets/images/hwan.png" alt=""  width="19px" /></a></li>
+    <li class="stavomile15"><a href="https://app.swychrconnect.com/">Create Account<img src="@/assets/images/hwan.png" alt=""  width="19px" /></a></li>
   </div>
 
    <div class="stavomile14-con"> 
-    <li class="stavomile14"><a href="https://urlgeni.us/swychr">View API Doc<img src="@/assets/images/hross.png" alt="" width="30px"/></a></li>
+    <li class="stavomile14"><a href="https://app.swychrconnect.com/">View API Doc<img src="@/assets/images/hross.png" alt="" width="30px"/></a></li>
         </div>
         </div>
     </div>
@@ -439,7 +439,7 @@ const navItems = [
     dropdownTitle: 'Discover swychr Business',
     children: [
       { name: 'Online Payments', icon: onlinePayIcon,path: '/Online'},
-      { name: 'Cross-Border Payments', icon: crossBorderIcon,path: '/Lastmile'},
+      { name: 'Lastmile Payment Delivery', icon: crossBorderIcon,path: '/Lastmile'},
       { name: 'Virtual Card Issuance', icon:Virtualcard ,path: '/Issuance'}
     ]
   },

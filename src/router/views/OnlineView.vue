@@ -43,7 +43,7 @@
   </div>
 
   <div class="stavoonline-con"> 
-    <li class="stavoonline"><a href="https://urlgeni.us/swychr">Open Web App  <img src="@/assets/images/ror.png" alt="App Store"  width="13px"/></a></li>
+    <li class="stavoonline"><a href="https://app.swychrconnect.com/">Open Web App  <img src="@/assets/images/ror.png" alt="App Store"  width="13px"/></a></li>
   </div>
 </nav>      
  <div class="insideonline1">
@@ -55,11 +55,11 @@
 </p>
 <div class="protononline">
     <div class="stavoonline401-con"> 
-    <li class="stavoonline401"><a href="https://urlgeni.us/swychr">Create Account<img src="@/assets/images/dreams.png" alt="" width="35px"/></a></li>
+    <li class="stavoonline401"><a href="https://app.swychrconnect.com/">Create Account<img src="@/assets/images/dreams.png" alt="" width="35px"/></a></li>
   </div>
 
    <div class="stavoonline400-con"> 
-    <li class="stavoonline400"><a href="https://urlgeni.us/swychr">View API Doc<img src="@/assets/images/hross.png" alt="" width="30px"/></a></li>
+    <li class="stavoonline400"><a href="https://app.swychrconnect.com/">View API Doc<img src="@/assets/images/hross.png" alt="" width="30px"/></a></li>
   </div>
 </div>
 </div>
@@ -346,11 +346,11 @@ How secure is my money?
       
       <div class="protononline8">
        <div class="stavoonline401-con"> 
-    <li class="stavoonline401"><a href="https://urlgeni.us/swychr">Create Account<img src="@/assets/images/dreams.png" alt="" width="35px"/></a></li>
+    <li class="stavoonline401"><a href="https://app.swychrconnect.com/">Create Account<img src="@/assets/images/dreams.png" alt="" width="35px"/></a></li>
   </div>
 
    <div class="stavoonline400-con"> 
-    <li class="stavoonline400"><a href="https://urlgeni.us/swychr">View API Doc<img src="@/assets/images/hross.png" alt="" width="30px"/></a></li>
+    <li class="stavoonline400"><a href="https://app.swychrconnect.com/">View API Doc<img src="@/assets/images/hross.png" alt="" width="30px"/></a></li>
   </div>
         </div>
     </div>
@@ -548,7 +548,7 @@ const navItems = [
     dropdownTitle: 'Discover swychr Business',
     children: [
       { name: 'Online Payments', icon: onlinePayIcon,path: '/Online'},
-      { name: 'Cross-Border Payments', icon: crossBorderIcon,path: '/Lastmile'},
+      { name: 'Lastmile Payment Delivery', icon: crossBorderIcon,path: '/Lastmile'},
       { name: 'Virtual Card Issuance', icon:Virtualcard ,path: '/Issuance'}
     ]
   },

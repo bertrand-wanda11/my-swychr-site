@@ -48,7 +48,7 @@
 </nav>      
  <div class="insidecareer1">
   <div class="techcareer">
-<p class="smartcareer">Help us build the future <br> of money in Africa</p>
+<p class="smartcareer">Help us build the future of <br> money across emerging markets.</p>
 <p class="mathscareer">
 At Swychr, we aren't just building an app; we are building the financial<br>
 infrastructure for the next billion users. We're looking for the rebels,<br>
@@ -435,7 +435,7 @@ const navItems = [
     dropdownTitle: 'Discover swychr Business',
     children: [
       { name: 'Online Payments', icon: onlinePayIcon,path: '/Online'},
-      { name: 'Cross-Border Payments', icon: crossBorderIcon,path: '/Lastmile'},
+      { name: 'Lastmile Payment Delivery', icon: crossBorderIcon,path: '/Lastmile'},
       { name: 'Virtual Card Issuance', icon:Virtualcard ,path: '/Issuance'}
     ]
   },

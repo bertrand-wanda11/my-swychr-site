@@ -48,7 +48,7 @@
 </nav>      
  <div class="insideculture1">
   <div class="techculture">
-<p class="smartculture">The Swychr DNA: <br> How we build the future</p>
+<p class="smartculture"> How we build the future</p>
 <p class="mathsculture">
 Culture isn't about office perks or colorful walls. At Swychr,<br>
 culture is the set of invisible rails that allow us to ship faster,<br>
@@ -173,7 +173,7 @@ should not exist.
           Impact that moves <span class="purple-text">millions</span>
         </h2>
         <p class="impact-description">
-          We don’t just move bits and bytes; we move opportunity. When a business in Rwanda can pay a supplier in Cameroon instantly, or a diaspora worker can support their family without losing 15% to fees—that is why we exist.
+          We don’t just move bits and bytes; we move opportunity. When a business in Rwanda can pay a supplier in Cameroon instantly, or a diaspora worker can support their family without losing 15% to fees,that is why we exist.
         </p>
       </div>
 
@@ -187,24 +187,6 @@ should not exist.
   </section>
 
 
-   <section class="culture8">
-    <div class="insideculture8">
-      <h2 class="cta-headingculture8">Want to build with us?</h2>
-      <p class="cta-subtextculture8">
-   Start delivering payouts to millions of wallets across Africa and India
-      </p>
-      
-      <div class="protonculture8">
-            <div class="stavoculture401-con"> 
-    <li class="stavoculture401"><a href="https://urlgeni.us/swychr">View Open Role<img src="@/assets/images/hwan.png" alt="" width="19px"/></a></li>
-  </div>
-
-   <div class="stavoculture400-con"> 
-    <li class="stavoculture400"><img src="@/assets/images/cup.png" alt="" width="30px"/><a href="/Career">Explore Careers</a></li>
-  </div>
-</div>
-    </div>
-  </section>
 
   <section  class="footerculture">
       <div class="mothers11culture">
@@ -381,7 +363,7 @@ const navItems = [
     dropdownTitle: 'Discover swychr Business',
     children: [
       { name: 'Online Payments', icon: onlinePayIcon,path: '/Online'},
-      { name: 'Cross-Border Payments', icon: crossBorderIcon,path: '/Lastmile'},
+      { name: 'Lastmile Payment Delivery', icon: crossBorderIcon,path: '/Lastmile'},
       { name: 'Virtual Card Issuance', icon:Virtualcard ,path: '/Issuance'}
     ]
   },
@@ -463,8 +445,8 @@ onBeforeUnmount(() => {
 
 
 const statistics = [
-  { number: '12+', label: 'Markets Active' },
-  { number: '$2B+', label: 'Projected Volume' },
+  { number: '25+', label: 'Markets Active' },
+  { number: '$5B+', label: 'Value Processed' },
   { number: '24/7', label: 'Uptime Mandate' }
 ];
 
