@@ -726,34 +726,27 @@ const activeIndex = ref(0);
 const openDropdownIndex = ref(null);
 const isMobile = ref(false);
 
-// --- Navigation Data ---
 const navItems = [
   { name: 'Home', path: '/home' },
   { 
-    name: 'Personal', 
-    path: '', // Empty path to prevent page navigation
-    dropdownTitle: 'Discover swychr Personal',
+    name: 'Personal', path: '', dropdownTitle: 'Discover swychr Personal',
     children: [
       { name: 'Remit (Send)', icon: p2p, path: '/p2p'},
       { name: 'Cards (Spend)', icon: billIcon, path: '/Card' },
-      { name: 'USD Accounts(Receive)', icon: cardIcon, path: '/Usdman' },
-      { name: 'Airtime (Connect)', icon: usdIcon, path: '/Airtime' }
+      { name: 'USD Accounts', icon: cardIcon, path: '/Usdman' },
+      { name: 'Airtime', icon: usdIcon, path: '/Airtime' }
     ]
   },
   { 
-    name: 'Business', 
-    path: '',
-    dropdownTitle: 'Discover swychr Business',
+    name: 'Business', path: '', dropdownTitle: 'Discover swychr Business',
     children: [
       { name: 'Online Payments', icon: onlinePayIcon, path: '/Online'},
-      { name: 'Lastmile Payment Delivery', icon: crossBorderIcon, path: '/Lastmile'},
-      { name: 'Virtual Card Issuance', icon: Virtualcard, path: '/Issuance'}
+      { name: 'Lastmile Delivery', icon: crossBorderIcon, path: '/Lastmile'},
+      { name: 'Virtual Cards', icon: Virtualcard, path: '/Issuance'}
     ]
   },
   { 
-    name: 'Company', 
-    path: '',
-    dropdownTitle: 'Discover swychr',
+    name: 'Company', path: '', dropdownTitle: 'Discover swychr',
     children: [
       { name: 'About Us', icon: About, path: '/About'},
       { name: 'Careers', icon: Careers, path: '/Career'},
@@ -767,10 +760,8 @@ const navItems = [
 
 const indicatorStyle = ref({ width: '0px', left: '0px', opacity: 0 });
 
-// --- Core Logic: Update the White Indicator ---
 const updateIndicator = () => {
   if (!navMenu.value) return;
-  // Select all links and target the one at activeIndex
   const links = navMenu.value.querySelectorAll('.nav-link');
   const activeElement = links[activeIndex.value];
   
@@ -786,67 +777,50 @@ const updateIndicator = () => {
   }
 };
 
-// --- Click Handlers ---
-const setActive = (index) => {
-  activeIndex.value = index;
-  openDropdownIndex.value = null; // Close any open menu when a page is clicked
-  nextTick(() => updateIndicator());
-};
-
 const toggleDropdown = (index) => {
   if (openDropdownIndex.value === index) {
     openDropdownIndex.value = null;
-    // Snap back to the actual page you are on (Home/Support)
-    syncIndicatorWithRoute();
+    syncWithRoute();
   } else {
     openDropdownIndex.value = index;
-    activeIndex.value = index; // FORCES the indicator to move to Personal/Business
+    activeIndex.value = index; // Move indicator
+    setTimeout(updateIndicator, 50); // Small delay to let DOM settle
   }
-  nextTick(() => updateIndicator());
 };
 
-// Helper to keep indicator in sync with real pages
-const syncIndicatorWithRoute = () => {
+const setActive = (index) => {
+  activeIndex.value = index;
+  openDropdownIndex.value = null;
+  setTimeout(updateIndicator, 50);
+};
+
+const syncWithRoute = () => {
   const pathName = route.path.replace('/', '').toLowerCase() || 'home';
   const index = navItems.findIndex(item => item.name.toLowerCase() === pathName);
   activeIndex.value = index !== -1 ? index : 0;
-  nextTick(() => updateIndicator());
-};
-
-// --- Utilities ---
-const handleClickOutside = (event) => {
-  const navContainer = document.querySelector('.food-pill-container');
-  if (navContainer && !navContainer.contains(event.target)) {
-    openDropdownIndex.value = null;
-    syncIndicatorWithRoute(); // Reset indicator if menu closed by clicking outside
-  }
+  setTimeout(updateIndicator, 50);
 };
 
 const checkScreen = () => {
-  isMobile.value = window.innerWidth <= 820; 
+  isMobile.value = window.innerWidth <= 820;
 };
 
-// Watch for URL changes to move the indicator automatically
-watch(() => route.path, () => {
-  syncIndicatorWithRoute();
-}, { immediate: true });
+watch(() => route.path, syncWithRoute, { immediate: true });
 
-// --- Lifecycle Hooks ---
 onMounted(() => {
   checkScreen();
-  updateIndicator();
   window.addEventListener('resize', () => {
     checkScreen();
     updateIndicator();
   });
-  window.addEventListener('click', handleClickOutside);
+  window.addEventListener('click', (e) => {
+    if (!e.target.closest('.food-pill-container')) {
+      openDropdownIndex.value = null;
+      syncWithRoute();
+    }
+  });
 });
 
-onBeforeUnmount(() => {
-  window.removeEventListener('resize', checkScreen);
-  window.removeEventListener('click', handleClickOutside);
-});
- 
 
 const cards = [
   {
@@ -1128,7 +1102,6 @@ const features = [
   line-height: 1.4;
   text-align: center;
 }
-
 .numero {
   display: flex;
   align-items: center;
@@ -1141,11 +1114,11 @@ const features = [
   border: 1px solid #FFF;
   border-radius: 50px;
   height: 3.5rem;
-  padding: 0 5px; /* Less padding to save space */
+  padding: 0 5px;
   display: flex;
   align-items: center;
-  position: relative; 
-  overflow: visible;
+  position: relative;
+  overflow: visible; /* CRITICAL */
 }
 
 .mannav {
@@ -1159,7 +1132,7 @@ const features = [
 }
 
 .nav-item-wrapper {
-  flex: 1; /* Each item (Home, Personal, etc) gets EXACTLY 20% width */
+  flex: 1; /* Ensures all 5 items fit exactly inside the pill */
   display: flex;
   justify-content: center;
   position: relative;
@@ -1169,24 +1142,22 @@ const features = [
   color: white;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.85rem; /* Smaller font for better fit */
+  font-size: 0.9rem;
   white-space: nowrap;
-  padding: 0 2px;
+  padding: 0 5px;
+  cursor: pointer;
 }
 
 .nav-indicator {
   position: absolute;
-  top: -2px; 
-  height: 5px; 
+  top: -2px;
+  height: 5px;
   background: #fff;
   border-radius: 0 0 5px 5px;
-  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 0.3s ease;
   z-index: 50;
   pointer-events: none;
-  display: block !important; 
 }
-
-
 
 
 .mega-dropdown {
@@ -1295,109 +1266,33 @@ const features = [
 
 
 @media screen and (max-width: 430px) {
- .numero {
+  .numero {
     flex-direction: column !important;
-    gap: 1rem !important;
-    width: 100% !important;
+    gap: 1.2rem;
   }
-
   .food-pill-container {
-    width: 95vw !important; /* Full width minus tiny margin */
-    height: 2.8rem !important;
+    width: 96vw !important;
+    height: 3rem !important;
   }
-
   .nav-link {
-    font-size: 0.65rem !important; /* Smallest font for mobile */
+    font-size: 0.65rem !important;
   }
-
-  .nav-indicator {
-    top: -1px;
-    height: 4px;
-    display: block !important;
-    opacity: 1 !important;
-  }
-
   .mega-dropdown {
     position: fixed;
-    top: 25%;
+    top: 22%;
     left: 5% !important;
     width: 90% !important;
     transform: none !important;
-    z-index: 9999;
-  }
-
-  .dropdown-grid {
-    grid-template-columns: 1fr; 
-  }
-}
-
-@media screen and (max-width: 430px) {
-.mega-dropdown {
-    position: fixed;
-    top: 22%; 
-    left: 5% !important;
-    right: 5% !important;
-    width: 90% !important;
-    transform: none !important;
-    padding: 24px; 
-    border-radius: 24px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-    z-index: 9999;
+    padding: 20px;
+    border-radius: 20px;
     text-align: left;
   }
-
-  .dropdown-label {
-    text-align: left !important;
-    margin-left: 0 !important;
-    margin-bottom: 24px;
-    font-size: 0.85rem;
-    color: #8C1BC1;
-    width: 100%;
-    border-bottom: 1px solid #f0f0f0;
-    padding-bottom: 12px;
-  }
-
-
   .dropdown-grid {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; 
-    gap: 20px;
-    width: 100%;
-  }
-
-  .dropdown-item {
-    display: flex;
-    flex-direction: row; 
-    align-items: center; 
-    justify-content: flex-start; 
-    width: 100%;
-    gap: 16px; 
-    text-decoration: none !important;
-  }
-
-  .item-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px; 
-  }
-
-  .nav-icon-img {
-    width: 28px;
-    height: 28px;
-    object-fit: contain;
-  }
-
-  .item-text {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #282828;
-    text-align: left;
-    white-space: nowrap;
+    gap: 15px;
   }
 }
-
   
 
   @media screen and (max-width: 1180px) {
@@ -1415,6 +1310,16 @@ const features = [
   .stavo {
     width: 9rem; 
     margin-right: 0; 
+  }
+}
+
+
+@media screen and (max-width: 1180px) {
+  .food-pill-container {
+    width: 65%; /* Wider pill for tablet */
+  }
+  .nav-link {
+    font-size: 0.75rem; /* Shorter text to stay inside border */
   }
 }
 
@@ -1437,6 +1342,8 @@ const features = [
     padding: 0 5px;
   }
 }
+
+
 
 .section2 {
   padding: 3.125rem 0; 
