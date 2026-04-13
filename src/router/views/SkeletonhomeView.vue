@@ -13,23 +13,23 @@
       :key="item.name" 
       class="nav-item-wrapper"
     >
-   <router-link 
+ <router-link 
   :to="item.path" 
   class="nav-link"
-  :class="{ active: activeIndex === index }"
+  :class="{ active: activeIndex === index }" 
   @click="(e) => { 
     if(item.children) { 
       e.preventDefault(); 
-      toggleDropdown(index); // This now handles the indicator movement
+      toggleDropdown(index); 
     } else { 
       setActive(index); 
       openDropdownIndex = null;
     }
-  }" 
+  }"
 >
-        {{ item.name }}
-        <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }">▾</span>
-      </router-link>
+  {{ item.name }}
+  <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }">▾</span>
+</router-link>
 
       <div v-if="item.children && openDropdownIndex === index" class="mega-dropdown">
         <p class="dropdown-label">{{ item.dropdownTitle }}</p>
@@ -770,13 +770,11 @@ const indicatorStyle = ref({ width: '0px', left: '0px', opacity: 0 });
 // --- Core Logic: Update the White Indicator ---
 const updateIndicator = () => {
   if (!navMenu.value) return;
-  
-  // Select all links and find the one corresponding to the current activeIndex
+  // Select all links and target the one at activeIndex
   const links = navMenu.value.querySelectorAll('.nav-link');
   const activeElement = links[activeIndex.value];
   
   if (activeElement) {
-    // Math to ensure the line is centered exactly under the text
     const reducedWidth = activeElement.offsetWidth * 0.7; 
     const left = activeElement.offsetLeft + (activeElement.offsetWidth - reducedWidth) / 2;
     
@@ -798,24 +796,21 @@ const setActive = (index) => {
 const toggleDropdown = (index) => {
   if (openDropdownIndex.value === index) {
     openDropdownIndex.value = null;
-    // When closing, snap the indicator back to the actual route page
+    // Snap back to the actual page you are on (Home/Support)
     syncIndicatorWithRoute();
   } else {
     openDropdownIndex.value = index;
-    activeIndex.value = index; // Move indicator to the clicked dropdown label
+    activeIndex.value = index; // FORCES the indicator to move to Personal/Business
   }
-  // Small timeout to allow mobile keyboard or layout shifts to settle
-  setTimeout(() => updateIndicator(), 50);
+  nextTick(() => updateIndicator());
 };
 
-// --- Helper: Sync Indicator with URL ---
+// Helper to keep indicator in sync with real pages
 const syncIndicatorWithRoute = () => {
   const pathName = route.path.replace('/', '').toLowerCase() || 'home';
   const index = navItems.findIndex(item => item.name.toLowerCase() === pathName);
-  if (index !== -1) {
-    activeIndex.value = index;
-    nextTick(updateIndicator);
-  }
+  activeIndex.value = index !== -1 ? index : 0;
+  nextTick(() => updateIndicator());
 };
 
 // --- Utilities ---
@@ -1146,11 +1141,11 @@ const features = [
   border: 1px solid #FFF;
   border-radius: 50px;
   height: 3.5rem;
-  padding: 0 10px; /* Reduced side padding to give links more room */
+  padding: 0 5px; /* Less padding to save space */
   display: flex;
   align-items: center;
   position: relative; 
-  overflow: visible; /* Required for the indicator and dropdowns */
+  overflow: visible;
 }
 
 .mannav {
@@ -1161,7 +1156,22 @@ const features = [
   width: 100%;
   height: 100%;
   align-items: center;
-  justify-content: space-between; /* Ensures Support stays at the far right */
+}
+
+.nav-item-wrapper {
+  flex: 1; /* Each item (Home, Personal, etc) gets EXACTLY 20% width */
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem; /* Smaller font for better fit */
+  white-space: nowrap;
+  padding: 0 2px;
 }
 
 .nav-indicator {
@@ -1177,20 +1187,6 @@ const features = [
 }
 
 
-.nav-item-wrapper {
-  flex: 1; /* Each item takes equal width to prevent overlap */
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-
-
-.nav-item-wrapper {
-  flex: 1; /* Each item takes equal width to prevent overlap */
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
 
 
 .mega-dropdown {
@@ -1297,60 +1293,30 @@ const features = [
   transform: translateX(-50%);
 }
 
+
 @media screen and (max-width: 430px) {
-  .numero {
+ .numero {
     flex-direction: column !important;
-    gap: 1rem;
-    position: relative !important;
+    gap: 1rem !important;
+    width: 100% !important;
   }
 
   .food-pill-container {
-    width: 95vw !important;
-    height: 3rem !important;
-    min-width: unset;
-    padding: 0 2px !important;
+    width: 95vw !important; /* Full width minus tiny margin */
+    height: 2.8rem !important;
   }
 
   .nav-link {
-    font-size: 0.7rem !important; /* Even smaller for mobile */
-    padding: 0 4px !important;
+    font-size: 0.65rem !important; /* Smallest font for mobile */
   }
-  
+
   .nav-indicator {
-    top: -1px; /* Hook it over the mobile border */
-    height: 4px;
-    display: block !important;
-    opacity: 1 !important;
-  }
-}
-
-@media screen and (max-width: 430px) {
-  .numero {
-    flex-direction: column !important;
-    gap: 1rem;
-    position: relative !important;
-  }
-
-  .food-pill-container {
-    width: 95vw !important;
-    height: 3rem !important;
-    min-width: unset;
-    padding: 0 2px !important;
-  }
-
-  .nav-link {
-    font-size: 0.7rem !important; /* Even smaller for mobile */
-    padding: 0 4px !important;
-  }
-  
-  .nav-indicator {
-    top: -1px; /* Hook it over the mobile border */
+    top: -1px;
     height: 4px;
     display: block !important;
     opacity: 1 !important;
   }
 
-  @media screen and (max-width: 430px) {
   .mega-dropdown {
     position: fixed;
     top: 25%;
@@ -1362,12 +1328,6 @@ const features = [
 
   .dropdown-grid {
     grid-template-columns: 1fr; 
-  }
-}
-
-  .nav-indicator {
-    display: block !important; 
-    height: 4px;
   }
 }
 
@@ -1438,12 +1398,26 @@ const features = [
   }
 }
 
-@media screen and (max-width: 1180px) {
+  
+
+  @media screen and (max-width: 1180px) {
+  .numero {
+    width: 98% !important;
+    padding: 0 10px;
+  }
+  .food-pill-container {
+    width: 70%; /* Give the pill more room on tablet */
+  }
+  .nav-link {
+    font-size: 0.75rem; /* Shrink text to fit inside the border */
+  }
+
   .stavo {
     width: 9rem; 
     margin-right: 0; 
   }
 }
+
 
 @media screen and (max-width: 430px) {
   .Goon {

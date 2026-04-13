@@ -1734,9 +1734,9 @@ display: flex;
 
 .board-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  max-width: 75rem;
+  max-width: 65rem;
   margin: 0 auto 8rem;
 }
 
