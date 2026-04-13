@@ -726,18 +726,18 @@ const activeIndex = ref(0);
 const openDropdownIndex = ref(null);
 const isMobile = ref(false);
 
+// --- Navigation Data ---
 const navItems = [
   { name: 'Home', path: '/home' },
   { 
     name: 'Personal', 
-    path: '',
+    path: '', // Empty path to prevent page navigation
     dropdownTitle: 'Discover swychr Personal',
     children: [
       { name: 'Remit (Send)', icon: p2p, path: '/p2p'},
       { name: 'Cards (Spend)', icon: billIcon, path: '/Card' },
       { name: 'USD Accounts(Receive)', icon: cardIcon, path: '/Usdman' },
       { name: 'Airtime (Connect)', icon: usdIcon, path: '/Airtime' }
-   
     ]
   },
   { 
@@ -745,9 +745,9 @@ const navItems = [
     path: '',
     dropdownTitle: 'Discover swychr Business',
     children: [
-      { name: 'Online Payments', icon: onlinePayIcon,path: '/Online'},
-      { name: 'Lastmile Payment Delivery', icon: crossBorderIcon,path: '/Lastmile'},
-      { name: 'Virtual Card Issuance', icon:Virtualcard ,path: '/Issuance'}
+      { name: 'Online Payments', icon: onlinePayIcon, path: '/Online'},
+      { name: 'Lastmile Payment Delivery', icon: crossBorderIcon, path: '/Lastmile'},
+      { name: 'Virtual Card Issuance', icon: Virtualcard, path: '/Issuance'}
     ]
   },
   { 
@@ -755,11 +755,11 @@ const navItems = [
     path: '',
     dropdownTitle: 'Discover swychr',
     children: [
-    { name: 'About Us', icon: About,path: '/About'},
-      { name: 'Careers', icon: Careers,path: '/Career'},
-      { name: 'Blogs', icon: Blogs,path: '/Blog'},
-      { name: 'Culture', icon: Culture,path: '/Culture'},
-      { name: 'Investors', icon: vestor,path: '/Invest'}
+      { name: 'About Us', icon: About, path: '/About'},
+      { name: 'Careers', icon: Careers, path: '/Career'},
+      { name: 'Blogs', icon: Blogs, path: '/Blog'},
+      { name: 'Culture', icon: Culture, path: '/Culture'},
+      { name: 'Investors', icon: vestor, path: '/Invest'}
     ]
   },
   { name: 'Support', path: '/support' }
@@ -767,14 +767,16 @@ const navItems = [
 
 const indicatorStyle = ref({ width: '0px', left: '0px', opacity: 0 });
 
-
+// --- Core Logic: Update the White Indicator ---
 const updateIndicator = () => {
   if (!navMenu.value) return;
   
-  const activeElement = navMenu.value.querySelector('.nav-link.active') || 
-                        navMenu.value.querySelectorAll('.nav-link')[activeIndex.value];
+  // Select all links and find the one corresponding to the current activeIndex
+  const links = navMenu.value.querySelectorAll('.nav-link');
+  const activeElement = links[activeIndex.value];
   
   if (activeElement) {
+    // Math to ensure the line is centered exactly under the text
     const reducedWidth = activeElement.offsetWidth * 0.7; 
     const left = activeElement.offsetLeft + (activeElement.offsetWidth - reducedWidth) / 2;
     
@@ -786,28 +788,42 @@ const updateIndicator = () => {
   }
 };
 
+// --- Click Handlers ---
 const setActive = (index) => {
   activeIndex.value = index;
+  openDropdownIndex.value = null; // Close any open menu when a page is clicked
   nextTick(() => updateIndicator());
 };
 
 const toggleDropdown = (index) => {
   if (openDropdownIndex.value === index) {
     openDropdownIndex.value = null;
-    const currentPath = route.path.replace('/', '').toLowerCase() || 'home';
-    const activeIdx = navItems.findIndex(item => item.name.toLowerCase() === currentPath);
-    activeIndex.value = activeIdx !== -1 ? activeIdx : 0;
+    // When closing, snap the indicator back to the actual route page
+    syncIndicatorWithRoute();
   } else {
     openDropdownIndex.value = index;
-    activeIndex.value = index; 
+    activeIndex.value = index; // Move indicator to the clicked dropdown label
   }
-  nextTick(() => updateIndicator());
+  // Small timeout to allow mobile keyboard or layout shifts to settle
+  setTimeout(() => updateIndicator(), 50);
 };
 
+// --- Helper: Sync Indicator with URL ---
+const syncIndicatorWithRoute = () => {
+  const pathName = route.path.replace('/', '').toLowerCase() || 'home';
+  const index = navItems.findIndex(item => item.name.toLowerCase() === pathName);
+  if (index !== -1) {
+    activeIndex.value = index;
+    nextTick(updateIndicator);
+  }
+};
+
+// --- Utilities ---
 const handleClickOutside = (event) => {
   const navContainer = document.querySelector('.food-pill-container');
   if (navContainer && !navContainer.contains(event.target)) {
     openDropdownIndex.value = null;
+    syncIndicatorWithRoute(); // Reset indicator if menu closed by clicking outside
   }
 };
 
@@ -815,16 +831,12 @@ const checkScreen = () => {
   isMobile.value = window.innerWidth <= 820; 
 };
 
-
-watch(() => route.path, (newPath) => {
-  const pathName = newPath.replace('/', '').toLowerCase() || 'home';
-  const index = navItems.findIndex(item => item.name.toLowerCase() === pathName);
-  if (index !== -1) {
-    activeIndex.value = index;
-    nextTick(updateIndicator);
-  }
+// Watch for URL changes to move the indicator automatically
+watch(() => route.path, () => {
+  syncIndicatorWithRoute();
 }, { immediate: true });
 
+// --- Lifecycle Hooks ---
 onMounted(() => {
   checkScreen();
   updateIndicator();
@@ -832,7 +844,6 @@ onMounted(() => {
     checkScreen();
     updateIndicator();
   });
-
   window.addEventListener('click', handleClickOutside);
 });
 
@@ -1132,14 +1143,25 @@ const features = [
 }
 
 .food-pill-container {
-border: 1px solid #FFF;
+  border: 1px solid #FFF;
   border-radius: 50px;
   height: 3.5rem;
-  padding: 0 1rem;
+  padding: 0 10px; /* Reduced side padding to give links more room */
   display: flex;
   align-items: center;
   position: relative; 
-  overflow: visible;
+  overflow: visible; /* Required for the indicator and dropdowns */
+}
+
+.mannav {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between; /* Ensures Support stays at the far right */
 }
 
 .nav-indicator {
@@ -1154,34 +1176,20 @@ border: 1px solid #FFF;
   display: block !important; 
 }
 
-.mannav {
- display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  position: relative; 
-  height: 100%;
-  width: 100%;
-  align-items: center;
-}
 
-.nav-link {
-  color: white;
-  text-decoration: none;
-  padding: 0 15px;
-  font-weight: 600;
-  font-size: 0.95rem;
+.nav-item-wrapper {
+  flex: 1; /* Each item takes equal width to prevent overlap */
   display: flex;
-  align-items: center;
-  gap: 5px;
+  justify-content: center;
+  position: relative;
 }
 
 
 .nav-item-wrapper {
-  position: relative;
-  height: 100%;
+  flex: 1; /* Each item takes equal width to prevent overlap */
   display: flex;
-  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 
@@ -1292,39 +1300,55 @@ border: 1px solid #FFF;
 @media screen and (max-width: 430px) {
   .numero {
     flex-direction: column !important;
-    gap: 1.5rem !important;
-    width: 100% !important;
-    align-items: center;
+    gap: 1rem;
+    position: relative !important;
   }
 
   .food-pill-container {
-    width: 96vw !important;
-    height: 3.2rem !important;
-    padding: 0 5px !important;
-    overflow: visible !important; /* CRITICAL for indicator/dropdown visibility */
-    display: flex;
-    justify-content: center;
-  }
-
-  .mannav {
-    width: 100%;
-    justify-content: space-around;
-    position: relative; /* Context for indicator */
+    width: 95vw !important;
+    height: 3rem !important;
+    min-width: unset;
+    padding: 0 2px !important;
   }
 
   .nav-link {
-    padding: 0 8px !important;
-    font-size: 0.75rem !important;
-    white-space: nowrap;
+    font-size: 0.7rem !important; /* Even smaller for mobile */
+    padding: 0 4px !important;
   }
-
+  
   .nav-indicator {
+    top: -1px; /* Hook it over the mobile border */
     height: 4px;
-    top: -1px; /* Adjust for thinner mobile border */
     display: block !important;
     opacity: 1 !important;
   }
+}
 
+@media screen and (max-width: 430px) {
+  .numero {
+    flex-direction: column !important;
+    gap: 1rem;
+    position: relative !important;
+  }
+
+  .food-pill-container {
+    width: 95vw !important;
+    height: 3rem !important;
+    min-width: unset;
+    padding: 0 2px !important;
+  }
+
+  .nav-link {
+    font-size: 0.7rem !important; /* Even smaller for mobile */
+    padding: 0 4px !important;
+  }
+  
+  .nav-indicator {
+    top: -1px; /* Hook it over the mobile border */
+    height: 4px;
+    display: block !important;
+    opacity: 1 !important;
+  }
 
   @media screen and (max-width: 430px) {
   .mega-dropdown {
@@ -1415,21 +1439,6 @@ border: 1px solid #FFF;
 }
 
 @media screen and (max-width: 1180px) {
-  .numero {
-    width: 95%;
-    gap: 10px; 
-  }
-
-  .food-pill-container {
-    padding: 0 5px;
-    height: 3.2rem;
-  }
-
-  .nav-link {
-    padding: 0 10px;
-    font-size: 0.85rem;
-  }
-
   .stavo {
     width: 9rem; 
     margin-right: 0; 
