@@ -13,20 +13,20 @@
       :key="item.name" 
       class="nav-item-wrapper"
     >
-      <router-link 
-        :to="item.path" 
-        class="nav-link"
-        :class="{ active: activeIndex === index }"
-        @click="(e) => { 
-          if(item.children) { 
-            e.preventDefault(); 
-            toggleDropdown(index); 
-          } else { 
-            setActive(index); 
-            openDropdownIndex = null;
-          }
-        }" 
-      >
+   <router-link 
+  :to="item.path" 
+  class="nav-link"
+  :class="{ active: activeIndex === index }"
+  @click="(e) => { 
+    if(item.children) { 
+      e.preventDefault(); 
+      toggleDropdown(index); // This now handles the indicator movement
+    } else { 
+      setActive(index); 
+      openDropdownIndex = null;
+    }
+  }" 
+>
         {{ item.name }}
         <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }">▾</span>
       </router-link>
@@ -770,14 +770,19 @@ const indicatorStyle = ref({ width: '0px', left: '0px', opacity: 0 });
 
 const updateIndicator = () => {
   if (!navMenu.value) return;
-  const activeElement = navMenu.value.querySelector('.nav-link.active');
+  
+  const activeElement = navMenu.value.querySelector('.nav-link.active') || 
+                        navMenu.value.querySelectorAll('.nav-link')[activeIndex.value];
   
   if (activeElement) {
-    const reducedWidth = activeElement.offsetWidth * 0.6;
+    const reducedWidth = activeElement.offsetWidth * 0.7; 
     const left = activeElement.offsetLeft + (activeElement.offsetWidth - reducedWidth) / 2;
-    indicatorStyle.value = { width: `${reducedWidth}px`, left: `${left}px`, opacity: 1 };
-  } else {
-    indicatorStyle.value.opacity = 0;
+    
+    indicatorStyle.value = {
+      width: `${reducedWidth}px`,
+      left: `${left}px`,
+      opacity: 1
+    };
   }
 };
 
@@ -787,7 +792,16 @@ const setActive = (index) => {
 };
 
 const toggleDropdown = (index) => {
-  openDropdownIndex.value = openDropdownIndex.value === index ? null : index;
+  if (openDropdownIndex.value === index) {
+    openDropdownIndex.value = null;
+    const currentPath = route.path.replace('/', '').toLowerCase() || 'home';
+    const activeIdx = navItems.findIndex(item => item.name.toLowerCase() === currentPath);
+    activeIndex.value = activeIdx !== -1 ? activeIdx : 0;
+  } else {
+    openDropdownIndex.value = index;
+    activeIndex.value = index; 
+  }
+  nextTick(() => updateIndicator());
 };
 
 const handleClickOutside = (event) => {
@@ -1129,14 +1143,15 @@ border: 1px solid #FFF;
 }
 
 .nav-indicator {
-position: absolute;
-  top: -1px; 
-  height: 6px; 
+  position: absolute;
+  top: -2px; 
+  height: 5px; 
   background: #fff;
   border-radius: 0 0 5px 5px;
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  z-index: 10;
-  width: 4px;
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 50;
+  pointer-events: none;
+  display: block !important; 
 }
 
 .mannav {
@@ -1214,16 +1229,6 @@ position: absolute;
   transform: rotate(180deg);
 }
 
-.nav-indicator {
-  position: absolute;
-  top: -1px;
-  height: 6px;
-  background: #fff;
-  border-radius: 0 0 5px 5px;
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  z-index: 10;
-  pointer-events: none;
-}
 
 .dropdown-label {
   color: #8C1BC1; 
@@ -1286,38 +1291,40 @@ position: absolute;
 
 @media screen and (max-width: 430px) {
   .numero {
-    flex-wrap: wrap; 
-    justify-content: space-between;
-    margin: 1rem auto;
-  }
-
-  .seam {
-    margin-left: 0;
-    order: 1;
-  }
-
-  .stavo-container {
-    order: 2; 
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+    align-items: center;
   }
 
   .food-pill-container {
-    order: 3; 
-    width: 100%;
-    margin-top: 15px;
+    width: 96vw !important;
+    height: 3.2rem !important;
+    padding: 0 5px !important;
+    overflow: visible !important; /* CRITICAL for indicator/dropdown visibility */
+    display: flex;
     justify-content: center;
-    overflow-x: auto; 
   }
 
   .mannav {
-    justify-content: center;
-    width: auto;
+    width: 100%;
+    justify-content: space-around;
+    position: relative; /* Context for indicator */
   }
 
   .nav-link {
-    font-size: 0.8rem;
-    padding: 0 8px;
+    padding: 0 8px !important;
+    font-size: 0.75rem !important;
     white-space: nowrap;
   }
+
+  .nav-indicator {
+    height: 4px;
+    top: -1px; /* Adjust for thinner mobile border */
+    display: block !important;
+    opacity: 1 !important;
+  }
+
 
   @media screen and (max-width: 430px) {
   .mega-dropdown {
