@@ -132,7 +132,7 @@ the builders, and the problem-solvers to join our Dream Team.
 
 <section class="career5">
     <div class="insidecareer5">
-      <h2 class="careers-main-title">Open Roles</h2>
+      <h2 class="careers-main-title">Roles</h2>
 
       <div v-for="(group, gIndex) in roleGroups" :key="gIndex" class="role-group">
         <div class="group-header">
@@ -242,9 +242,7 @@ the builders, and the problem-solvers to join our Dream Team.
       </p>
       
       <div class="protoncareer8">
-            <div class="stavocareer401-con"> 
-    <li class="stavocareer401"><a href="https://urlgeni.us/swychr">View Open Positions<img src="@/assets/images/hwan.png" alt="" width="19px"/></a></li>
-  </div>
+   
 
    <div class="stavocareer400-con"> 
     <li class="stavocareer400"><img src="@/assets/images/cup.png" alt="" width="30px"/><a href="https://urlgeni.us/swychr">Send Your Cv</a></li>
@@ -610,14 +608,14 @@ const successStories = [
   {
     name: 'Bertrand Wanda',
     role: 'Web Developer',
-    bio: 'Bertrand joined as a Junior Developer Intern and became an integral part of building the SwyChr 2.0 interface. His transition to full-time Web Developer in March 2026 reflects his technical growth and user-obsessed approach.',
+    bio: 'Bertrand joined as a Junior Developer Intern and became an integral part of building the SwyChr 2.0 interface. His transition to full-time Web Developer reflects his technical growth and user-obsessed approach.',
     image: bertoImg,
-    linkedin: '#'
+    linkedin: 'https://www.linkedin.com/in/bertrand-wanda?utm_source=share_via&utm_content=profile&utm_medium=member_ios'
   },
   {
     name: 'Awung George',
     role: 'Accounting Officer',
-    bio: 'George began as an accounting intern and became essential in managing multi-currency reconciliations and fintech compliance. Today he serves as a full-time Accounting Officer and supports SwyChr\'s compliance-first mission.',
+    bio: 'George began as an Accounting Intern and became essential in managing multi-currency reconciliations and fintech compliance. Today he serves as a full-time Accounting Officer and supports SwyChr\'s compliance-first mission.',
     image: awungImg,
     linkedin: 'https://www.linkedin.com/in/awungazeambeh?utm_source=share_via&utm_content=profile&utm_medium=member_ios'
   }
