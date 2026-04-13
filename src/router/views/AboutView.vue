@@ -400,7 +400,6 @@ import boardIcon from '@/assets/images/Container.png'
 import policyIcon from '@/assets/images/Container (1).png'
 import aaronImg from '@/assets/images/aaron.jpeg' 
 import nikolaiImg from '@/assets/images/nikolai.png'
-import lanImg from '@/assets/images/lan.jpg'
 import nabilImg from '@/assets/images/nabil.jpeg'
 import locIcon from '@/assets/images/bvlog.png'
 
