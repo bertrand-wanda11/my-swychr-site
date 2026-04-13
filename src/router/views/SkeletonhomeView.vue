@@ -1096,6 +1096,7 @@ const features = [
   line-height: 1.4;
   text-align: center;
 }
+
 .numero {
   display: flex;
   align-items: center;

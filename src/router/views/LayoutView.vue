@@ -1,57 +1,52 @@
 <template>
     <div>
     <section class="bloodline">
-   <nav class="numerolay">
+<nav class="numerolay">
   <h2 class="seamlay">
     <img src="@/assets/images/motive.png" alt="Logo" class="dreak" width="127" height="32">
   </h2>
   
-<div class="food-pill-containerlay">
-  <ul class="mannavlay" ref="navMenu"> 
-    <li 
-      v-for="(item, index) in navItems" 
-      :key="item.name" 
-      class="nav-item-wrapper"
-    >
-      <router-link 
-        :to="item.path" 
-        class="nav-link"
-        :class="{ active: activeIndex === index }"
-        @click="(e) => { 
-          if(item.children) { 
-            e.preventDefault(); 
-            toggleDropdown(index);
-          } else { 
-            setActive(index); 
-            openDropdownIndex = null; 
-          }
-        }" 
-      >
-        {{ item.name }}
-        <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }">▾</span>
-      </router-link>
+  <div class="food-pill-containerlay">
+    <ul class="mannavlay" ref="navMenu"> 
+      <li v-for="(item, index) in navItems" :key="item.name" class="nav-item-wrapper">
+        <router-link 
+          :to="item.path" 
+          class="nav-link"
+          :class="{ active: activeIndex === index }"
+          @click="(e) => { 
+            if(item.children) { 
+              e.preventDefault(); 
+              toggleDropdown(index); 
+            } else { 
+              setActive(index); 
+            }
+          }" 
+        >
+          {{ item.name }}
+          <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }">▾</span>
+        </router-link>
 
-      <div v-if="item.children && openDropdownIndex === index" class="mega-dropdown">
-        <p class="dropdown-label">{{ item.dropdownTitle }}</p>
-        <div class="dropdown-grid" :class="{ 'company-grid': item.name === 'Company' }">
-          <router-link 
-            v-for="child in item.children" 
-            :key="child.name" 
-            :to="child.path" 
-            class="dropdown-item"
-            @click="openDropdownIndex = null" 
-          >
-            <span class="item-icon">
-              <img :src="child.icon" :alt="child.name" class="nav-icon-img">
-            </span>
-            <span class="item-text">{{ child.name }}</span>
-          </router-link>
+        <div v-if="item.children && openDropdownIndex === index" class="mega-dropdown">
+          <p class="dropdown-label">{{ item.dropdownTitle }}</p>
+          <div class="dropdown-grid" :class="{ 'company-grid': item.name === 'Company' }">
+            <router-link 
+              v-for="child in item.children" 
+              :key="child.name" 
+              :to="child.path" 
+              class="dropdown-item"
+              @click="openDropdownIndex = null" 
+            >
+              <span class="item-icon">
+                <img :src="child.icon" :alt="child.name" class="nav-icon-img">
+              </span>
+              <span class="item-text">{{ child.name }}</span>
+            </router-link>
+          </div>
         </div>
-      </div>
-    </li>
-    <div class="nav-indicatorlay" :style="indicatorStyle"></div>
-  </ul>
-</div>
+      </li>
+      <div class="nav-indicatorlay" :style="indicatorStyle"></div>
+    </ul>
+  </div>
 
   <div class="stavo-containerlay"> 
     <li class="stavo"><a href="/sales">Contact Sales</a></li>
@@ -193,6 +188,9 @@ the Swychr mobile application, Swychr Connect web platform, and API suites are f
 <script setup>
 import { ref, onMounted, onBeforeUnmount, nextTick, watch } from 'vue';
 import { useRoute } from 'vue-router';
+import img1 from '@/assets/images/firstly.png'
+import img2 from '@/assets/images/middle.jpg'
+import img3 from '@/assets/images/lastlyy.png'
 import p2p from '@/assets/images/P2P.png';
 import billIcon from '@/assets/images/invoice.png';
 import cardIcon from '@/assets/images/card.png';
@@ -215,37 +213,30 @@ const isMobile = ref(false);
 const navItems = [
   { name: 'Home', path: '/home' },
   { 
-    name: 'Personal', 
-    path: '',
-    dropdownTitle: 'Discover swychr Personal',
+    name: 'Personal', path: '', dropdownTitle: 'Discover swychr Personal',
     children: [
       { name: 'Remit (Send)', icon: p2p, path: '/p2p'},
       { name: 'Cards (Spend)', icon: billIcon, path: '/Card' },
-      { name: 'USD Accounts(Receive)', icon: cardIcon, path: '/Usdman' },
-      { name: 'Airtime (Connect)', icon: usdIcon, path: '/Airtime' }
-   
+      { name: 'USD Accounts', icon: cardIcon, path: '/Usdman' },
+      { name: 'Airtime', icon: usdIcon, path: '/Airtime' }
     ]
   },
   { 
-    name: 'Business', 
-    path: '',
-    dropdownTitle: 'Discover swychr Business',
+    name: 'Business', path: '', dropdownTitle: 'Discover swychr Business',
     children: [
-      { name: 'Online Payments', icon: onlinePayIcon,path: '/Online'},
-      { name: 'Lastmile Payment Delivery', icon: crossBorderIcon,path: '/Lastmile'},
-      { name: 'Virtual Card Issuance', icon:Virtualcard ,path: '/Issuance'}
+      { name: 'Online Payments', icon: onlinePayIcon, path: '/Online'},
+      { name: 'Lastmile Delivery', icon: crossBorderIcon, path: '/Lastmile'},
+      { name: 'Virtual Cards', icon: Virtualcard, path: '/Issuance'}
     ]
   },
   { 
-    name: 'Company', 
-    path: '',
-    dropdownTitle: 'Discover swychr',
+    name: 'Company', path: '', dropdownTitle: 'Discover swychr',
     children: [
-    { name: 'About Us', icon: About,path: '/About'},
-      { name: 'Careers', icon: Careers,path: '/Career'},
-      { name: 'Blogs', icon: Blogs,path: '/Blog'},
-      { name: 'Culture', icon: Culture,path: '/Culture'},
-      { name: 'Investors', icon: vestor,path: '/Invest'}
+      { name: 'About Us', icon: About, path: '/About'},
+      { name: 'Careers', icon: Careers, path: '/Career'},
+      { name: 'Blogs', icon: Blogs, path: '/Blog'},
+      { name: 'Culture', icon: Culture, path: '/Culture'},
+      { name: 'Investors', icon: vestor, path: '/Invest'}
     ]
   },
   { name: 'Support', path: '/support' }
@@ -255,62 +246,65 @@ const indicatorStyle = ref({ width: '0px', left: '0px', opacity: 0 });
 
 const updateIndicator = () => {
   if (!navMenu.value) return;
-  const activeElement = navMenu.value.querySelector('.nav-link.active');
+  const links = navMenu.value.querySelectorAll('.nav-link');
+  const activeElement = links[activeIndex.value];
   
   if (activeElement) {
-    const reducedWidth = activeElement.offsetWidth * 0.6;
+    const reducedWidth = activeElement.offsetWidth * 0.7; 
     const left = activeElement.offsetLeft + (activeElement.offsetWidth - reducedWidth) / 2;
-    indicatorStyle.value = { width: `${reducedWidth}px`, left: `${left}px`, opacity: 1 };
-  } else {
-    indicatorStyle.value.opacity = 0;
+    
+    indicatorStyle.value = {
+      width: `${reducedWidth}px`,
+      left: `${left}px`,
+      opacity: 1
+    };
   }
+};
+
+const toggleDropdown = (index) => {
+  if (openDropdownIndex.value === index) {
+    openDropdownIndex.value = null;
+    syncWithRoute();
+  } else {
+    openDropdownIndex.value = index;
+    activeIndex.value = index; // Move indicator manually
+  }
+  setTimeout(updateIndicator, 50); // Delay for layout shift
 };
 
 const setActive = (index) => {
   activeIndex.value = index;
-  nextTick(() => updateIndicator());
+  openDropdownIndex.value = null;
+  setTimeout(updateIndicator, 50);
 };
 
-const toggleDropdown = (index) => {
-  openDropdownIndex.value = openDropdownIndex.value === index ? null : index;
-};
-
-const handleClickOutside = (event) => {
-  const navContainer = document.querySelector('.food-pill-container');
-  if (navContainer && !navContainer.contains(event.target)) {
-    openDropdownIndex.value = null;
-  }
+const syncWithRoute = () => {
+  const pathName = route.path.replace('/', '').toLowerCase() || 'home';
+  const index = navItems.findIndex(item => item.name.toLowerCase() === pathName);
+  activeIndex.value = index !== -1 ? index : 0;
+  setTimeout(updateIndicator, 50);
 };
 
 const checkScreen = () => {
-  isMobile.value = window.innerWidth <= 820; 
+  isMobile.value = window.innerWidth <= 820;
 };
 
-
-watch(() => route.path, (newPath) => {
-  const pathName = newPath.replace('/', '').toLowerCase() || 'home';
-  const index = navItems.findIndex(item => item.name.toLowerCase() === pathName);
-  if (index !== -1) {
-    activeIndex.value = index;
-    nextTick(updateIndicator);
-  }
-}, { immediate: true });
+watch(() => route.path, syncWithRoute, { immediate: true });
 
 onMounted(() => {
   checkScreen();
-  updateIndicator();
   window.addEventListener('resize', () => {
     checkScreen();
     updateIndicator();
   });
-
-  window.addEventListener('click', handleClickOutside);
+  window.addEventListener('click', (e) => {
+    if (!e.target.closest('.food-pill-container')) {
+      openDropdownIndex.value = null;
+      syncWithRoute();
+    }
+  });
 });
 
-onBeforeUnmount(() => {
-  window.removeEventListener('resize', checkScreen);
-  window.removeEventListener('click', handleClickOutside);
-});
 </script>
 
 <style>
@@ -319,327 +313,110 @@ onBeforeUnmount(() => {
   margin-left:4rem;
 }
 
-.numerolay {
+.numerolay  {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 95%;
   margin: 1.5rem auto;
-  background-color: #A9AAB2;
 }
 
-.food-pill-containerlay {
-border: 1px solid #FFF;
+.food-pill-containerlay  {
+  border: 1px solid #FFF;
   border-radius: 50px;
   height: 3.5rem;
-  padding: 0 1rem;
+  padding: 0 5px;
   display: flex;
   align-items: center;
-  position: relative; 
+  position: relative;
   overflow: visible;
-  background-color: #A9AAB2;
 }
 
-.nav-indicatorlay {
-position: absolute;
-  top: -1px; 
-  height: 6px; 
-  background: #fff;
-  border-radius: 0 0 5px 5px;
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  z-index: 10;
-  width: 4px;
-}
-
-.mannavlay {
- display: flex;
+.mannavlay  {
+  display: flex;
   list-style: none;
   padding: 0;
   margin: 0;
-  position: relative; 
-  height: 100%;
   width: 100%;
+  height: 100%;
   align-items: center;
 }
 
-
-.dropdown-label {
-  color: #8C1BC1; 
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-  text-align: left;
-}
-
-.dropdown-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 12px 30px; 
-}
-
-.company-grid {
-  grid-template-columns: 1fr !important;
-  min-width: 180px;
-}
-
-.dropdown-item {
+.nav-item-wrapper {
+  flex: 1; /* FORCES all items to fit inside the border */
   display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none !important; 
-  padding: 8px 0;
-  transition: transform 0.2s ease;
+  justify-content: center;
+  position: relative;
 }
-
-.dropdown-item:hover {
-  transform: translateX(5px);
-}
-
-.item-text {
-  color: #333;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-decoration: none !important; 
-  white-space: nowrap;
-}
-
-.nav-icon-img {
-  width: 22px;
-  height: 22px;
-  object-fit: contain;
-}
-
 
 .nav-link {
   color: white;
   text-decoration: none;
-  padding: 0 15px;
   font-weight: 600;
-  font-size: 0.95rem;
-  display: flex;
-  align-items: center;
-  gap: 5px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  padding: 0 2px;
+  cursor: pointer;
 }
 
-.nav-item-wrapper {
-  position: relative;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.mega-dropdown {
+.nav-indicatorlay  {
   position: absolute;
-  top: calc(100% + 15px); 
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
-  padding: 20px 25px;
-  border-radius: 12px;
-  width: max-content; 
-  min-width: 240px; 
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  z-index: 1000;
-  animation: dropdownFadeIn 0.2s ease-out;
-}
-
-.dropdown-arrow {
-  transition: transform 0.3s ease;
-  display: inline-block;
-}
-.dropdown-arrow.rotated {
-  transform: rotate(180deg);
-}
-
-
-@keyframes dropdownFadeIn {
-  from {
-    opacity: 0;
-    transform: translateX(-50%) translateY(5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-}
-
-.dropdown-arrow {
-  transition: transform 0.3s ease;
-  display: inline-block;
-}
-.dropdown-arrow.rotated {
-  transform: rotate(180deg);
-}
-
-.nav-indicatorlay {
-  position: absolute;
-  top: -1px;
-  height: 6px;
+  top: -2px;
+  height: 5px;
   background: #fff;
   border-radius: 0 0 5px 5px;
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  z-index: 10;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 50;
   pointer-events: none;
 }
-
-.nav-item-wrapper:nth-child(4) .mega-dropdown {
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  width: 260px; 
-}
-
-.nav-item-wrapper:nth-child(4) .mega-dropdown::before {
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-@media screen and (max-width: 430px) {
-  .numerolay {
-    flex-wrap: wrap; 
-    justify-content: space-between;
-    margin: 1rem auto;
+/* --- TABLET (iPad 820px) --- */
+@media screen and (max-width: 1180px) {
+  .food-pill-containerlay  {
+    width: 75% !important;
   }
-
-  .seamlay {
-    margin-left: 0;
-    order: 1;
-  }
-
-  .stavo-containerlay {
-    order: 2; 
-  }
-
-  .food-pill-containerlay{
-    order: 3; 
-    width: 100%;
-    margin-top: 15px;
-    justify-content: center;
-    overflow-x: auto; 
-  }
-
-  .mannavlay {
-    justify-content: center;
-    width: auto;
-  }
-
   .nav-link {
-    font-size: 0.8rem;
-    padding: 0 8px;
-    white-space: nowrap;
-  }
-
-  @media screen and (max-width: 430px) {
-  .mega-dropdown {
-    position: fixed;
-    top: 25%;
-    left: 5% !important;
-    width: 90% !important;
-    transform: none !important;
-    z-index: 9999;
-  }
-
-  .dropdown-grid {
-    grid-template-columns: 1fr; 
+    font-size: 0.75rem;
   }
 }
 
-  .nav-indicatorlay {
-    display: block !important; 
-    height: 4px;
-  }
-}
-
+/* --- MOBILE (iPhone 430px) --- */
 @media screen and (max-width: 430px) {
+  .numerolay  {
+    flex-direction: column !important;
+    gap: 1.2rem;
+  }
+  .food-pill-containerlay {
+    width: 96vw !important;
+    height: 3rem !important;
+  }
+  .nav-link {
+    font-size: 0.65rem !important;
+  }
   .mega-dropdown {
     position: fixed;
-    top: 22%; 
+    top: 22%;
     left: 5% !important;
-    right: 5% !important;
     width: 90% !important;
     transform: none !important;
     padding: 24px;
     border-radius: 24px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-    z-index: 9999;
+    background: white;
     text-align: left;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
   }
-
-  .dropdown-label {
-    text-align: left !important;
-    margin-left: 0 !important;
-    margin-bottom: 24px;
-    font-size: 0.85rem;
-    color: #8C1BC1; 
-    width: 100%;
-    border-bottom: 1px solid #f0f0f0;
-    padding-bottom: 12px;
-  }
-
   .dropdown-grid {
     display: flex;
-    flex-direction: column; 
-    align-items: flex-start;
-    gap: 20px; 
-    width: 100%;
+    flex-direction: column;
+    gap: 15px;
   }
-
   .dropdown-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    gap: 16px;
     text-decoration: none !important;
-  }
-
-  .item-icon {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 32px; 
-  }
-
-  .nav-icon-img {
-    width: 28px;
-    height: 28px;
-    object-fit: contain;
-  }
-
-  .item-text {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #282828;
-    text-align: left;
-    white-space: nowrap;
+    gap: 12px;
   }
 }
 
-
-@media screen and (max-width: 1180px) {
-  .numerolay {
-    width: 95%;
-    gap: 10px; 
-  }
-
-  .food-pill-containerlay {
-    padding: 0 5px;
-    height: 3.2rem;
-  }
-
-  .nav-link {
-    padding: 0 10px;
-    font-size: 0.85rem;
-  }
-
-  .stavolay {
-    width: 9rem; 
-    margin-right: 0; 
-  }
-}
 
 .footerlay {
            font-family: 'Montserrat', sans-serif;
@@ -782,84 +559,6 @@ line-height: 120%;
   text-align: justify;
   font-size: 14px;
   line-height: 1.6;
-}
-
-@media screen and (max-width: 430px) {
-  .numerolay {
-    flex-wrap: wrap; 
-    justify-content: space-between;
-    margin: 1rem auto;
-  }
-
-  .seamlay {
-    margin-left: 0;
-    order: 1; 
-  }
-
-  .stavo-containerlay {
-    order: 2; 
-  }
-
-  .food-pill-containerlay {
-    order: 3;
-    width: 100%;
-    margin-top: 15px;
-    justify-content: center;
-    overflow-x: auto; 
-  }
-
-  .mannav {
-    justify-content: center;
-    width: auto;
-  }
-
-  .nav-link {
-    font-size: 0.8rem;
-    padding: 0 8px;
-    white-space: nowrap;
-  }
-
-  @media screen and (max-width: 430px) {
-  .mega-dropdown {
-    position: fixed; 
-    top: 25%;
-    left: 5% !important;
-    width: 90% !important;
-    transform: none !important;
-    z-index: 9999;
-  }
-
-  .dropdown-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-  .nav-indicatorlay {
-    display: block !important; 
-    height: 4px;
-  }
-}
-
-@media screen and (max-width: 1180px) {
-  .numerolay {
-    width: 95%;
-    gap: 10px; 
-  }
-
-  .food-pill-containerlay {
-    padding: 0 5px;
-    height: 3.2rem;
-  }
-
-  .nav-link {
-    padding: 0 10px; 
-    font-size: 0.85rem;
-  }
-
-  .stavolay {
-    width: 9rem; 
-    margin-right: 0; 
-  }
 }
 
 @media only screen and (max-width: 820px) {
