@@ -686,7 +686,7 @@ position: absolute;
           flex: 1;
           text-align: justify;
           align-items: center;
-          padding: 5px;
+          padding: 3px;
         } 
 
         .icon-fblay{
@@ -726,6 +726,7 @@ font-style: normal;
 font-weight: 550;
 line-height: 120%;
 margin-right: 2.8rem;
+margin-top: 3rem;
 }
 
 .span2lay{

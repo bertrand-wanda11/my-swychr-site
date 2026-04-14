@@ -1742,43 +1742,27 @@ const features = [
 
 
   .item-icon {
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     width: 32px;
-
   }
 
 
-
   .nav-icon-img {
-
     width: 28px;
-
     height: 28px;
-
     object-fit: contain;
-
   }
 
 
 
   .item-text {
-
     font-size: 1.05rem;
-
     font-weight: 600;
-
     color: #282828;
-
     text-align: left;
-
     white-space: nowrap;
-
   }
 
 }
@@ -3218,7 +3202,7 @@ input[type="checkbox"]:checked ~ .wanda-expected {
           flex: 1;
           text-align: justify;
           align-items: center;
-          padding: 5px;
+          padding: 3px;
         } 
 
         .icon-fblay{
@@ -3258,6 +3242,7 @@ font-style: normal;
 font-weight: 550;
 line-height: 120%;
 margin-right: 2.8rem;
+margin-top: 3rem;
 }
 
 .span2lay{
