@@ -319,318 +319,101 @@ onMounted(() => {
 }
 
 .food-pill-containerlay {
-border: 1px solid #FFF;
+  border: 1px solid #FFF;
   border-radius: 50px;
-  height: 3rem;
-  padding: 0 1rem;
+  height: 3.5rem;
+  padding: 0 5px;
   display: flex;
   align-items: center;
-  position: relative; 
+  position: relative;
   overflow: visible;
-  background-color: #A9AAB2;
-  
-}
-
-.nav-indicatorlay {
-position: absolute;
-  top: -1px; 
-  height: 6px; 
-  background: #fff;
-  border-radius: 0 0 5px 5px;
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  z-index: 10;
-  width: 4px;
 }
 
 .mannavlay {
- display: flex;
+  display: flex;
   list-style: none;
   padding: 0;
   margin: 0;
-  position: relative; 
-  height: 100%;
   width: 100%;
+  height: 100%;
   align-items: center;
 }
 
-
-.dropdown-label {
-  color: #8C1BC1; 
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-  text-align: left;
-}
-
-.dropdown-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 12px 30px; 
-}
-
-.company-grid {
-  grid-template-columns: 1fr !important;
-  min-width: 180px;
-}
-
-.dropdown-item {
+.nav-item-wrapper {
+  flex: 1; 
   display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none !important; 
-  padding: 8px 0;
-  transition: transform 0.2s ease;
+  justify-content: center;
+  position: relative;
 }
-
-.dropdown-item:hover {
-  transform: translateX(5px);
-}
-
-.item-text {
-  color: #333;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-decoration: none !important; 
-  white-space: nowrap;
-}
-
-.nav-icon-img {
-  width: 22px;
-  height: 22px;
-  object-fit: contain;
-}
-
 
 .nav-link {
   color: white;
   text-decoration: none;
-  padding: 0 15px;
   font-weight: 600;
-  font-size: 0.95rem;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.nav-item-wrapper {
-  position: relative;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.mega-dropdown {
-  position: absolute;
-  top: calc(100% + 15px); 
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
-  padding: 20px 25px;
-  border-radius: 12px;
-  width: max-content; 
-  min-width: 240px; 
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  z-index: 1000;
-  animation: dropdownFadeIn 0.2s ease-out;
-}
-
-.dropdown-arrow {
-  transition: transform 0.3s ease;
-  display: inline-block;
-}
-.dropdown-arrow.rotated {
-  transform: rotate(180deg);
-}
-
-
-@keyframes dropdownFadeIn {
-  from {
-    opacity: 0;
-    transform: translateX(-50%) translateY(5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-}
-
-.dropdown-arrow {
-  transition: transform 0.3s ease;
-  display: inline-block;
-}
-.dropdown-arrow.rotated {
-  transform: rotate(180deg);
+  font-size: 0.85rem;
+  white-space: nowrap;
+  padding: 0 2px;
+  cursor: pointer;
 }
 
 .nav-indicatorlay {
   position: absolute;
-  top: -1px;
-  height: 6px;
+  top: -2px;
+  height: 5px;
   background: #fff;
   border-radius: 0 0 5px 5px;
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  z-index: 10;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 50;
   pointer-events: none;
 }
 
-.nav-item-wrapper:nth-child(4) .mega-dropdown {
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  width: 260px; 
+@media screen and (max-width: 1180px) {
+  .food-pill-containerlay {
+    width: 75% !important;
+  }
+  .nav-link {
+    font-size: 0.75rem;
+  }
 }
 
-.nav-item-wrapper:nth-child(4) .mega-dropdown::before {
-  left: 50%;
-  transform: translateX(-50%);
-}
 
 @media screen and (max-width: 430px) {
   .numerolay {
-    flex-wrap: wrap; 
-    justify-content: space-between;
-    margin: 1rem auto;
+    flex-direction: column !important;
+    gap: 1.2rem;
   }
-
-  .seamlay {
-    margin-left: 0;
-    order: 1;
+  .food-pill-containerlay {
+    width: 96vw !important;
+    height: 3rem !important;
   }
-
-  .stavo-containerlay {
-    order: 2; 
-  }
-
-  .food-pill-containerlay{
-    order: 3; 
-    width: 100%;
-    margin-top: 15px;
-    justify-content: center;
-    overflow-x: auto; 
-  }
-
-  .mannavlay {
-    justify-content: center;
-    width: auto;
-  }
-
   .nav-link {
-    font-size: 0.8rem;
-    padding: 0 8px;
-    white-space: nowrap;
+    font-size: 0.65rem !important;
   }
-
-  @media screen and (max-width: 430px) {
   .mega-dropdown {
     position: fixed;
-    top: 25%;
+    top: 22%;
     left: 5% !important;
-    width: 90% !important;
-    transform: none !important;
-    z-index: 9999;
-  }
-
-  .dropdown-grid {
-    grid-template-columns: 1fr; 
-  }
-}
-
-  .nav-indicatorlay {
-    display: block !important; 
-    height: 4px;
-  }
-}
-
-@media screen and (max-width: 430px) {
-  .mega-dropdown {
-    position: fixed;
-    top: 22%; 
-    left: 5% !important;
-    right: 5% !important;
     width: 90% !important;
     transform: none !important;
     padding: 24px;
     border-radius: 24px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-    z-index: 9999;
+    background: white;
     text-align: left;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
   }
-
-  .dropdown-label {
-    text-align: left !important;
-    margin-left: 0 !important;
-    margin-bottom: 24px;
-    font-size: 0.85rem;
-    color: #8C1BC1; 
-    width: 100%;
-    border-bottom: 1px solid #f0f0f0;
-    padding-bottom: 12px;
-  }
-
   .dropdown-grid {
     display: flex;
-    flex-direction: column; 
-    align-items: flex-start;
-    gap: 20px; 
-    width: 100%;
+    flex-direction: column;
+    gap: 15px;
   }
-
   .dropdown-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    gap: 16px;
     text-decoration: none !important;
-  }
-
-  .item-icon {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 32px; 
-  }
-
-  .nav-icon-img {
-    width: 28px;
-    height: 28px;
-    object-fit: contain;
-  }
-
-  .item-text {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #282828;
-    text-align: left;
-    white-space: nowrap;
+    gap: 12px;
   }
 }
 
-
-@media screen and (max-width: 1180px) {
-  .numerolay {
-    width: 95%;
-    gap: 10px; 
-  }
-
-  .food-pill-containerlay {
-    padding: 0 5px;
-    height: 3.2rem;
-  }
-
-  .nav-link {
-    padding: 0 10px;
-    font-size: 0.85rem;
-  }
-
-  .stavolay {
-    width: 9rem; 
-    margin-right: 0; 
-  }
-}
 
 .footerlay {
            font-family: 'Montserrat', sans-serif;
