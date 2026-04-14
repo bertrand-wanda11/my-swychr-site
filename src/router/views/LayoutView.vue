@@ -199,113 +199,128 @@ import About from '@/assets/images/About Us.png';
 import Careers from '@/assets/images/Careers.png';
 import Blogs from '@/assets/images/Blogs.png';
 import Culture from '@/assets/images/Culture.png';
-import vestor from '@/assets/images/sabinus.png';
+
+
 
 const route = useRoute();
-const navMenu = ref(null); 
+const navMenu = ref(null);
 const activeIndex = ref(0);
 const openDropdownIndex = ref(null);
 const isMobile = ref(false);
+// --- Navigation Data ---
 
 const navItems = [
   { name: 'Home', path: '/home' },
-  { 
-    name: 'Personal', 
-    path: '',
+  {
+    name: 'Personal',
+    path: '', // Empty path to prevent page navigation
     dropdownTitle: 'Discover swychr Personal',
     children: [
       { name: 'Remit (Send)', icon: p2p, path: '/p2p'},
       { name: 'Cards (Spend)', icon: billIcon, path: '/Card' },
       { name: 'USD Accounts(Receive)', icon: cardIcon, path: '/Usdman' },
       { name: 'Airtime (Connect)', icon: usdIcon, path: '/Airtime' }
-   
     ]
   },
-  { 
-    name: 'Business', 
+
+  {
+    name: 'Business',
     path: '',
     dropdownTitle: 'Discover swychr Business',
+
     children: [
-      { name: 'Online Payments', icon: onlinePayIcon,path: '/Online'},
-      { name: 'Lastmile Payment Delivery', icon: crossBorderIcon,path: '/Lastmile'},
-      { name: 'Virtual Card Issuance', icon:Virtualcard ,path: '/Issuance'}
+      { name: 'Online Payments', icon: onlinePayIcon, path: '/Online'},
+      { name: 'Lastmile Payment Delivery', icon: crossBorderIcon, path: '/Lastmile'},
+      { name: 'Virtual Card Issuance', icon: Virtualcard, path: '/Issuance'}
     ]
   },
-  { 
-    name: 'Company', 
+  {
+
+    name: 'Company',
     path: '',
     dropdownTitle: 'Discover swychr',
     children: [
-    { name: 'About Us', icon: About,path: '/About'},
-      { name: 'Careers', icon: Careers,path: '/Career'},
-      { name: 'Blogs', icon: Blogs,path: '/Blog'},
-      { name: 'Culture', icon: Culture,path: '/Culture'},
-      { name: 'Investors', icon: vestor,path: '/Invest'}
+
+      { name: 'About Us', icon: About, path: '/About'},
+      { name: 'Careers', icon: Careers, path: '/Career'},
+      { name: 'Blogs', icon: Blogs, path: '/Blog'},
+      { name: 'Culture', icon: Culture, path: '/Culture'},
+
     ]
+
   },
+
   { name: 'Support', path: '/support' }
 ];
 
 const indicatorStyle = ref({ width: '0px', left: '0px', opacity: 0 });
 
+
+
+// --- Core Logic: Update the White Indicator ---
+
 const updateIndicator = () => {
   if (!navMenu.value) return;
-  const activeElement = navMenu.value.querySelector('.nav-link.active');
-  
+
+ 
+
+  // Select all links and find the one corresponding to the current activeIndex
+
+  const links = navMenu.value.querySelectorAll('.nav-link');
+  const activeElement = links[activeIndex.value];
+
+ 
   if (activeElement) {
-    const reducedWidth = activeElement.offsetWidth * 0.6;
+
+    const reducedWidth = activeElement.offsetWidth * 0.7;
     const left = activeElement.offsetLeft + (activeElement.offsetWidth - reducedWidth) / 2;
-    indicatorStyle.value = { width: `${reducedWidth}px`, left: `${left}px`, opacity: 1 };
-  } else {
-    indicatorStyle.value.opacity = 0;
+    indicatorStyle.value = {
+
+      width: `${reducedWidth}px`,
+
+      left: `${left}px`,
+
+      opacity: 1
+
+    };
   }
 };
+
 
 const setActive = (index) => {
   activeIndex.value = index;
+  openDropdownIndex.value = null; 
   nextTick(() => updateIndicator());
 };
 
+
+
 const toggleDropdown = (index) => {
-  openDropdownIndex.value = openDropdownIndex.value === index ? null : index;
-};
+  if (openDropdownIndex.value === index) {
 
-const handleClickOutside = (event) => {
-  const navContainer = document.querySelector('.food-pill-container');
-  if (navContainer && !navContainer.contains(event.target)) {
     openDropdownIndex.value = null;
+    syncIndicatorWithRoute();
+
+  } else {
+
+    openDropdownIndex.value = index;
+    activeIndex.value = index; 
+
   }
-};
-
-const checkScreen = () => {
-  isMobile.value = window.innerWidth <= 820; 
+  setTimeout(() => updateIndicator(), 50);
 };
 
 
-watch(() => route.path, (newPath) => {
-  const pathName = newPath.replace('/', '').toLowerCase() || 'home';
+const syncIndicatorWithRoute = () => {
+  const pathName = route.path.replace('/', '').toLowerCase() || 'home';
   const index = navItems.findIndex(item => item.name.toLowerCase() === pathName);
+
   if (index !== -1) {
     activeIndex.value = index;
     nextTick(updateIndicator);
+
   }
-}, { immediate: true });
-
-onMounted(() => {
-  checkScreen();
-  updateIndicator();
-  window.addEventListener('resize', () => {
-    checkScreen();
-    updateIndicator();
-  });
-
-  window.addEventListener('click', handleClickOutside);
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener('resize', checkScreen);
-  window.removeEventListener('click', handleClickOutside);
-});
+};
 </script>
 
 <style>

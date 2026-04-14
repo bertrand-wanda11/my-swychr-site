@@ -757,116 +757,65 @@ the Swychr mobile application, Swychr Connect web platform, and API suites are f
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount, nextTick, watch } from 'vue';
-
 import { useRoute } from 'vue-router';
-
 import img1 from '@/assets/images/firstly.png'
-
 import img2 from '@/assets/images/middle.jpg'
-
 import img3 from '@/assets/images/lastlyy.png'
-
 import p2p from '@/assets/images/P2P.png';
-
 import billIcon from '@/assets/images/invoice.png';
-
 import cardIcon from '@/assets/images/card.png';
-
 import usdIcon from '@/assets/images/virtual bsnk.png';
-
 import onlinePayIcon from '@/assets/images/Online Payments.png';
-
 import crossBorderIcon from '@/assets/images/Cross Border Payments.png';
-
 import Virtualcard from '@/assets/images/Virtual Card Issuance.png';
-
 import About from '@/assets/images/About Us.png';
-
 import Careers from '@/assets/images/Careers.png';
-
 import Blogs from '@/assets/images/Blogs.png';
-
 import Culture from '@/assets/images/Culture.png';
 
 
-
-
 const route = useRoute();
-
 const navMenu = ref(null);
-
 const activeIndex = ref(0);
-
 const openDropdownIndex = ref(null);
-
 const isMobile = ref(false);
-
-
-
 // --- Navigation Data ---
 
 const navItems = [
-
   { name: 'Home', path: '/home' },
-
   {
-
     name: 'Personal',
-
     path: '', // Empty path to prevent page navigation
-
     dropdownTitle: 'Discover swychr Personal',
-
     children: [
-
       { name: 'Remit (Send)', icon: p2p, path: '/p2p'},
-
       { name: 'Cards (Spend)', icon: billIcon, path: '/Card' },
-
       { name: 'USD Accounts(Receive)', icon: cardIcon, path: '/Usdman' },
-
       { name: 'Airtime (Connect)', icon: usdIcon, path: '/Airtime' }
-
     ]
-
   },
 
   {
-
     name: 'Business',
-
     path: '',
-
     dropdownTitle: 'Discover swychr Business',
 
     children: [
-
       { name: 'Online Payments', icon: onlinePayIcon, path: '/Online'},
-
       { name: 'Lastmile Payment Delivery', icon: crossBorderIcon, path: '/Lastmile'},
-
       { name: 'Virtual Card Issuance', icon: Virtualcard, path: '/Issuance'}
-
     ]
-
   },
-
   {
 
     name: 'Company',
-
     path: '',
-
     dropdownTitle: 'Discover swychr',
-
     children: [
 
       { name: 'About Us', icon: About, path: '/About'},
-
       { name: 'Careers', icon: Careers, path: '/Career'},
-
       { name: 'Blogs', icon: Blogs, path: '/Blog'},
-
       { name: 'Culture', icon: Culture, path: '/Culture'},
 
     ]
@@ -874,10 +823,7 @@ const navItems = [
   },
 
   { name: 'Support', path: '/support' }
-
 ];
-
-
 
 const indicatorStyle = ref({ width: '0px', left: '0px', opacity: 0 });
 
@@ -886,7 +832,6 @@ const indicatorStyle = ref({ width: '0px', left: '0px', opacity: 0 });
 // --- Core Logic: Update the White Indicator ---
 
 const updateIndicator = () => {
-
   if (!navMenu.value) return;
 
  
@@ -894,21 +839,13 @@ const updateIndicator = () => {
   // Select all links and find the one corresponding to the current activeIndex
 
   const links = navMenu.value.querySelectorAll('.nav-link');
-
   const activeElement = links[activeIndex.value];
 
  
-
   if (activeElement) {
 
-    // Math to ensure the line is centered exactly under the text
-
     const reducedWidth = activeElement.offsetWidth * 0.7;
-
     const left = activeElement.offsetLeft + (activeElement.offsetWidth - reducedWidth) / 2;
-
-   
-
     indicatorStyle.value = {
 
       width: `${reducedWidth}px`,
@@ -918,9 +855,7 @@ const updateIndicator = () => {
       opacity: 1
 
     };
-
   }
-
 };
 
 
@@ -984,9 +919,6 @@ const syncIndicatorWithRoute = () => {
 };
 
 
-
-// --- Utilities ---
-
 const handleClickOutside = (event) => {
 
   const navContainer = document.querySelector('.food-pill-container');
@@ -1020,35 +952,23 @@ watch(() => route.path, () => {
 }, { immediate: true });
 
 
-
-// --- Lifecycle Hooks ---
-
 onMounted(() => {
 
   checkScreen();
-
   updateIndicator();
-
   window.addEventListener('resize', () => {
 
     checkScreen();
-
     updateIndicator();
 
   });
-
   window.addEventListener('click', handleClickOutside);
-
 });
 
 
-
 onBeforeUnmount(() => {
-
   window.removeEventListener('resize', checkScreen);
-
   window.removeEventListener('click', handleClickOutside);
-
 });
 
  
