@@ -640,6 +640,7 @@ const steps = [
  </script>
 
  <style scoped>
+
 .usd1{
   text-align: center;
   margin: 0 auto;
@@ -1903,7 +1904,7 @@ input[type="checkbox"]:checked ~ .wanda-expectedusd6 {
   max-width: 1000px;
   height: 320px;
   border-radius: 24px;
-  padding: 60px 40px;
+  padding: 30px 10px;
   text-align: center;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
@@ -1963,6 +1964,8 @@ input[type="checkbox"]:checked ~ .wanda-expectedusd6 {
   display: block; 
   flex-shrink: 0;
 }
+
+
 
 
 @media only screen and (max-width: 1180px) {
