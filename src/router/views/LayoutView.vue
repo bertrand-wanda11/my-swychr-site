@@ -670,6 +670,7 @@ position: absolute;
           text-align: justify;
           align-items: center;
           padding: 5px;
+          margin-top: 1rem;
         } 
 
         .icon-fblay{
