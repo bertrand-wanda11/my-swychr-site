@@ -6,7 +6,7 @@
     <img src="@/assets/images/motive.png" alt="Logo" class="dreak" width="127" height="32">
   </h2>
   
-  <div class="food-pill-containerlay">
+ <div class="food-pill-containerlay">
     <ul class="mannavlay" ref="navMenu"> 
       <li v-for="(item, index) in navItems" :key="item.name" class="nav-item-wrapper">
         <router-link 
