@@ -1901,9 +1901,8 @@ input[type="checkbox"]:checked ~ .wanda-expectedusd6 {
   background-color: #e2e4e7; 
   width: 100%;
   max-width: 1000px;
-  height: 320px;
+  height: 300px;
   border-radius: 24px;
-  padding: 30px 10px;
   text-align: center;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
@@ -1920,7 +1919,6 @@ input[type="checkbox"]:checked ~ .wanda-expectedusd6 {
 .cta-subtext {
   font-size: 1.1rem;
   color: #4b5563;
-  margin-bottom: 40px;
   font-weight: 500;
 }
 
