@@ -1,57 +1,116 @@
 <template>
     <div class="server">
 <section class="section1">
- <nav class="numero">
+<nav class="numero">
+
   <h2 class="seam">
+
     <img src="@/assets/images/motive.png" alt="Logo" class="dreak" width="127" height="32">
+
   </h2>
-  
-  <div class="food-pill-container">
-    <ul class="mannav" ref="navMenu"> 
-      <li v-for="(item, index) in navItems" :key="item.name" class="nav-item-wrapper">
-        <router-link 
-          :to="item.path" 
-          class="nav-link"
-          :class="{ active: activeIndex === index }"
-          @click="(e) => { 
-            if(item.children) { 
-              e.preventDefault(); 
-              toggleDropdown(index); 
-            } else { 
-              setActive(index); 
-            }
-          }" 
-        >
-          {{ item.name }}
-          <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }">▾</span>
-        </router-link>
 
-        <div v-if="item.children && openDropdownIndex === index" class="mega-dropdown">
-          <p class="dropdown-label">{{ item.dropdownTitle }}</p>
-          <div class="dropdown-grid" :class="{ 'company-grid': item.name === 'Company' }">
-            <router-link 
-              v-for="child in item.children" 
-              :key="child.name" 
-              :to="child.path" 
-              class="dropdown-item"
-              @click="openDropdownIndex = null" 
-            >
-              <span class="item-icon">
-                <img :src="child.icon" :alt="child.name" class="nav-icon-img">
-              </span>
-              <span class="item-text">{{ child.name }}</span>
-            </router-link>
-          </div>
+ 
+
+<div class="food-pill-container">
+
+  <ul class="mannav" ref="navMenu">
+
+    <li
+
+      v-for="(item, index) in navItems"
+
+      :key="item.name"
+
+      class="nav-item-wrapper"
+
+    >
+
+ <router-link
+
+  :to="item.path"
+
+  class="nav-link"
+
+  :class="{ active: activeIndex === index }"
+
+  @click="(e) => {
+
+    if(item.children) {
+
+      e.preventDefault();
+
+      toggleDropdown(index);
+
+    } else {
+
+      setActive(index);
+
+      openDropdownIndex = null;
+
+    }
+
+  }"
+
+>
+
+  {{ item.name }}
+
+  <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }">▾</span>
+
+</router-link>
+
+
+
+      <div v-if="item.children && openDropdownIndex === index" class="mega-dropdown">
+
+        <p class="dropdown-label">{{ item.dropdownTitle }}</p>
+
+        <div class="dropdown-grid" :class="{ 'company-grid': item.name === 'Company' }">
+
+          <router-link
+
+            v-for="child in item.children"
+
+            :key="child.name"
+
+            :to="child.path"
+
+            class="dropdown-item"
+
+            @click="openDropdownIndex = null"
+
+          >
+
+            <span class="item-icon">
+
+              <img :src="child.icon" :alt="child.name" class="nav-icon-img">
+
+            </span>
+
+            <span class="item-text">{{ child.name }}</span>
+
+          </router-link>
+
         </div>
-      </li>
-      <div class="nav-indicator" :style="indicatorStyle"></div>
-    </ul>
-  </div>
 
-  <div class="stavo-container"> 
-    <li class="stavo"><a href="/sales">Contact Sales</a></li>
+      </div>
+
+    </li>
+
+    <div class="nav-indicator" :style="indicatorStyle"></div>
+
+  </ul>
+
+</div>
+
+
+
+  <div class="stavo-container">
+
+       <li class="stavo"><a href="/sales">Contact Sales</a></li>
+
   </div>
-</nav>
+</nav> 
     
 <div class="inside1">
      <div class="tech">
@@ -697,122 +756,302 @@ the Swychr mobile application, Swychr Connect web platform, and API suites are f
 </template>
 
 <script setup>
-import { ref, onMounted,  watch } from 'vue';
+import { ref, onMounted, onBeforeUnmount, nextTick, watch } from 'vue';
+
 import { useRoute } from 'vue-router';
+
 import img1 from '@/assets/images/firstly.png'
+
 import img2 from '@/assets/images/middle.jpg'
+
 import img3 from '@/assets/images/lastlyy.png'
+
 import p2p from '@/assets/images/P2P.png';
+
 import billIcon from '@/assets/images/invoice.png';
+
 import cardIcon from '@/assets/images/card.png';
+
 import usdIcon from '@/assets/images/virtual bsnk.png';
+
 import onlinePayIcon from '@/assets/images/Online Payments.png';
+
 import crossBorderIcon from '@/assets/images/Cross Border Payments.png';
+
 import Virtualcard from '@/assets/images/Virtual Card Issuance.png';
+
 import About from '@/assets/images/About Us.png';
+
 import Careers from '@/assets/images/Careers.png';
+
 import Blogs from '@/assets/images/Blogs.png';
+
 import Culture from '@/assets/images/Culture.png';
 
+
+
+
 const route = useRoute();
-const navMenu = ref(null); 
+
+const navMenu = ref(null);
+
 const activeIndex = ref(0);
+
 const openDropdownIndex = ref(null);
+
 const isMobile = ref(false);
 
+
+
+// --- Navigation Data ---
+
 const navItems = [
+
   { name: 'Home', path: '/home' },
-  { 
-    name: 'Personal', path: '', dropdownTitle: 'Discover swychr Personal',
+
+  {
+
+    name: 'Personal',
+
+    path: '', // Empty path to prevent page navigation
+
+    dropdownTitle: 'Discover swychr Personal',
+
     children: [
+
       { name: 'Remit (Send)', icon: p2p, path: '/p2p'},
+
       { name: 'Cards (Spend)', icon: billIcon, path: '/Card' },
-      { name: 'USD Accounts', icon: cardIcon, path: '/Usdman' },
-      { name: 'Airtime', icon: usdIcon, path: '/Airtime' }
+
+      { name: 'USD Accounts(Receive)', icon: cardIcon, path: '/Usdman' },
+
+      { name: 'Airtime (Connect)', icon: usdIcon, path: '/Airtime' }
+
     ]
+
   },
-  { 
-    name: 'Business', path: '', dropdownTitle: 'Discover swychr Business',
+
+  {
+
+    name: 'Business',
+
+    path: '',
+
+    dropdownTitle: 'Discover swychr Business',
+
     children: [
+
       { name: 'Online Payments', icon: onlinePayIcon, path: '/Online'},
-      { name: 'Lastmile Delivery', icon: crossBorderIcon, path: '/Lastmile'},
-      { name: 'Virtual Cards', icon: Virtualcard, path: '/Issuance'}
+
+      { name: 'Lastmile Payment Delivery', icon: crossBorderIcon, path: '/Lastmile'},
+
+      { name: 'Virtual Card Issuance', icon: Virtualcard, path: '/Issuance'}
+
     ]
+
   },
-  { 
-    name: 'Company', path: '', dropdownTitle: 'Discover swychr',
+
+  {
+
+    name: 'Company',
+
+    path: '',
+
+    dropdownTitle: 'Discover swychr',
+
     children: [
+
       { name: 'About Us', icon: About, path: '/About'},
+
       { name: 'Careers', icon: Careers, path: '/Career'},
+
       { name: 'Blogs', icon: Blogs, path: '/Blog'},
+
       { name: 'Culture', icon: Culture, path: '/Culture'},
+
     ]
+
   },
+
   { name: 'Support', path: '/support' }
+
 ];
+
+
 
 const indicatorStyle = ref({ width: '0px', left: '0px', opacity: 0 });
 
+
+
+// --- Core Logic: Update the White Indicator ---
+
 const updateIndicator = () => {
+
   if (!navMenu.value) return;
+
+ 
+
+  // Select all links and find the one corresponding to the current activeIndex
+
   const links = navMenu.value.querySelectorAll('.nav-link');
+
   const activeElement = links[activeIndex.value];
-  
+
+ 
+
   if (activeElement) {
-    const reducedWidth = activeElement.offsetWidth * 0.7; 
+
+    // Math to ensure the line is centered exactly under the text
+
+    const reducedWidth = activeElement.offsetWidth * 0.7;
+
     const left = activeElement.offsetLeft + (activeElement.offsetWidth - reducedWidth) / 2;
-    
+
+   
+
     indicatorStyle.value = {
+
       width: `${reducedWidth}px`,
+
       left: `${left}px`,
+
       opacity: 1
+
     };
+
   }
+
 };
 
-const toggleDropdown = (index) => {
-  if (openDropdownIndex.value === index) {
-    openDropdownIndex.value = null;
-    syncWithRoute();
-  } else {
-    openDropdownIndex.value = index;
-    activeIndex.value = index; // Move indicator manually
-  }
-  setTimeout(updateIndicator, 50); // Delay for layout shift
-};
+
+
+// --- Click Handlers ---
 
 const setActive = (index) => {
+
   activeIndex.value = index;
-  openDropdownIndex.value = null;
-  setTimeout(updateIndicator, 50);
+
+  openDropdownIndex.value = null; // Close any open menu when a page is clicked
+
+  nextTick(() => updateIndicator());
+
 };
 
-const syncWithRoute = () => {
-  const pathName = route.path.replace('/', '').toLowerCase() || 'home';
-  const index = navItems.findIndex(item => item.name.toLowerCase() === pathName);
-  activeIndex.value = index !== -1 ? index : 0;
-  setTimeout(updateIndicator, 50);
+
+
+const toggleDropdown = (index) => {
+
+  if (openDropdownIndex.value === index) {
+
+    openDropdownIndex.value = null;
+
+    // When closing, snap the indicator back to the actual route page
+
+    syncIndicatorWithRoute();
+
+  } else {
+
+    openDropdownIndex.value = index;
+
+    activeIndex.value = index; // Move indicator to the clicked dropdown label
+
+  }
+
+  // Small timeout to allow mobile keyboard or layout shifts to settle
+
+  setTimeout(() => updateIndicator(), 50);
+
 };
+
+
+
+// --- Helper: Sync Indicator with URL ---
+
+const syncIndicatorWithRoute = () => {
+
+  const pathName = route.path.replace('/', '').toLowerCase() || 'home';
+
+  const index = navItems.findIndex(item => item.name.toLowerCase() === pathName);
+
+  if (index !== -1) {
+
+    activeIndex.value = index;
+
+    nextTick(updateIndicator);
+
+  }
+
+};
+
+
+
+// --- Utilities ---
+
+const handleClickOutside = (event) => {
+
+  const navContainer = document.querySelector('.food-pill-container');
+
+  if (navContainer && !navContainer.contains(event.target)) {
+
+    openDropdownIndex.value = null;
+
+    syncIndicatorWithRoute(); // Reset indicator if menu closed by clicking outside
+
+  }
+
+};
+
+
 
 const checkScreen = () => {
+
   isMobile.value = window.innerWidth <= 820;
+
 };
 
-watch(() => route.path, syncWithRoute, { immediate: true });
+
+
+// Watch for URL changes to move the indicator automatically
+
+watch(() => route.path, () => {
+
+  syncIndicatorWithRoute();
+
+}, { immediate: true });
+
+
+
+// --- Lifecycle Hooks ---
 
 onMounted(() => {
+
   checkScreen();
+
+  updateIndicator();
+
   window.addEventListener('resize', () => {
+
     checkScreen();
+
     updateIndicator();
+
   });
-  window.addEventListener('click', (e) => {
-    if (!e.target.closest('.food-pill-container')) {
-      openDropdownIndex.value = null;
-      syncWithRoute();
-    }
-  });
+
+  window.addEventListener('click', handleClickOutside);
+
 });
+
+
+
+onBeforeUnmount(() => {
+
+  window.removeEventListener('resize', checkScreen);
+
+  window.removeEventListener('click', handleClickOutside);
+
+});
+
+ 
 
 
 const cards = [
@@ -1095,6 +1334,8 @@ const features = [
   line-height: 1.4;
   text-align: center;
 }
+
+
 .numero {
   display: flex;
   align-items: center;
@@ -1103,103 +1344,564 @@ const features = [
   margin: 1.5rem auto;
 }
 
+
 .food-pill-container {
   border: 1px solid #FFF;
   border-radius: 50px;
+
   height: 3.5rem;
-  padding: 0 5px;
+
+  padding: 0 5px; /* Less padding to save space */
+
   display: flex;
+
   align-items: center;
+
   position: relative;
+
   overflow: visible;
+
 }
+
+
 
 .mannav {
+
   display: flex;
+
   list-style: none;
+
   padding: 0;
+
   margin: 0;
+
   width: 100%;
+
   height: 100%;
+
   align-items: center;
+
 }
+
+
 
 .nav-item-wrapper {
-  flex: 1; /* FORCES all items to fit inside the border */
+
+  flex: 1; /* Each item (Home, Personal, etc) gets EXACTLY 20% width */
+
   display: flex;
+
   justify-content: center;
+
   position: relative;
+
 }
+
+
 
 .nav-link {
+
   color: white;
+
   text-decoration: none;
+
   font-weight: 600;
-  font-size: 0.85rem;
+
+  font-size: 0.85rem; /* Smaller font for better fit */
+
   white-space: nowrap;
+
   padding: 0 2px;
-  cursor: pointer;
+
 }
+
+
 
 .nav-indicator {
+
   position: absolute;
+
   top: -2px;
+
   height: 5px;
+
   background: #fff;
+
   border-radius: 0 0 5px 5px;
-  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+
   z-index: 50;
+
   pointer-events: none;
+
+  display: block !important;
+
 }
 
-/* --- TABLET (iPad 820px) --- */
-@media screen and (max-width: 1180px) {
-  .food-pill-container {
-    width: 75% !important;
-  }
-  .nav-link {
-    font-size: 0.75rem;
-  }
+
+
+
+
+
+
+
+
+.mega-dropdown {
+
+  position: absolute;
+
+  top: calc(100% + 15px);
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  background: white;
+
+  padding: 20px 25px;
+
+  border-radius: 12px;
+
+  width: max-content;
+
+  min-width: 240px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+  z-index: 1000;
+
+  animation: dropdownFadeIn 0.2s ease-out;
+
 }
 
-/* --- MOBILE (iPhone 430px) --- */
+
+
+.dropdown-arrow {
+
+  transition: transform 0.3s ease;
+
+  display: inline-block;
+
+}
+
+
+
+.dropdown-arrow.rotated {
+
+  transform: rotate(180deg);
+
+}
+
+
+
+@keyframes dropdownFadeIn {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateX(-50%) translateY(5px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateX(-50%) translateY(0);
+
+  }
+
+}
+
+
+
+.dropdown-arrow {
+
+  transition: transform 0.3s ease;
+
+  display: inline-block;
+
+}
+
+
+
+.dropdown-arrow.rotated {
+
+  transform: rotate(180deg);
+
+}
+
+
+
+
+
+.dropdown-label {
+
+  color: #8C1BC1;
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  margin-bottom: 15px;
+
+  text-align: left;
+
+}
+
+
+
+.dropdown-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 12px 30px;
+
+}
+
+
+
+.company-grid {
+
+  grid-template-columns: 1fr !important;
+
+  min-width: 180px;
+
+}
+
+
+
+.dropdown-item {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  text-decoration: none !important;
+
+  padding: 8px 0;
+
+  transition: transform 0.2s ease;
+
+}
+
+
+
+.dropdown-item:hover {
+
+  transform: translateX(5px);
+
+}
+
+
+
+.item-text {
+
+  color: #333;
+
+  font-family: 'Montserrat', sans-serif;
+
+  font-size: 0.9rem;
+
+  text-decoration: none !important;
+
+  white-space: nowrap;
+
+}
+
+
+
+.nav-icon-img {
+
+  width: 22px;
+
+  height: 22px;
+
+  object-fit: contain;
+
+}
+
+
+
+.nav-item-wrapper:nth-child(4) .mega-dropdown {
+
+  left: 50% !important;
+
+  transform: translateX(-50%) !important;
+
+  width: 260px;
+
+}
+
+
+
+.nav-item-wrapper:nth-child(4) .mega-dropdown::before {
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+}
+
+
+
+
+
 @media screen and (max-width: 430px) {
-  .numero {
+
+ .numero {
+
     flex-direction: column !important;
-    gap: 1.2rem;
+
+    gap: 1rem !important;
+
+    width: 100% !important;
+
   }
+
+
+
   .food-pill-container {
-    width: 96vw !important;
-    height: 3rem !important;
+
+    width: 95vw !important; /* Full width minus tiny margin */
+
+    height: 2.8rem !important;
+
   }
+
+
+
   .nav-link {
-    font-size: 0.65rem !important;
+
+    font-size: 0.65rem !important; /* Smallest font for mobile */
+
   }
+
+
+
+  .nav-indicator {
+
+    top: -1px;
+
+    height: 4px;
+
+    display: block !important;
+
+    opacity: 1 !important;
+
+  }
+
+
+
   .mega-dropdown {
+
     position: fixed;
-    top: 22%;
+
+    top: 25%;
+
     left: 5% !important;
+
     width: 90% !important;
+
     transform: none !important;
-    padding: 24px;
-    border-radius: 24px;
-    background: white;
-    text-align: left;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+
+    z-index: 9999;
+
   }
+
+
+
   .dropdown-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+
+    grid-template-columns: 1fr;
+
   }
-  .dropdown-item {
-    text-decoration: none !important;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
+
 }
 
+
+
+@media screen and (max-width: 430px) {
+
+.mega-dropdown {
+
+    position: fixed;
+
+    top: 22%;
+
+    left: 5% !important;
+
+    right: 5% !important;
+
+    width: 90% !important;
+
+    transform: none !important;
+
+    padding: 24px;
+
+    border-radius: 24px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+
+    z-index: 9999;
+
+    text-align: left;
+
+  }
+
+
+
+  .dropdown-label {
+
+    text-align: left !important;
+
+    margin-left: 0 !important;
+
+    margin-bottom: 24px;
+
+    font-size: 0.85rem;
+
+    color: #8C1BC1;
+
+    width: 100%;
+
+    border-bottom: 1px solid #f0f0f0;
+
+    padding-bottom: 12px;
+
+  }
+
+
+
+
+
+  .dropdown-grid {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    width: 100%;
+
+  }
+
+
+
+  .dropdown-item {
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    width: 100%;
+
+    gap: 16px;
+
+    text-decoration: none !important;
+
+  }
+
+
+
+  .item-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 32px;
+
+  }
+
+
+
+  .nav-icon-img {
+
+    width: 28px;
+
+    height: 28px;
+
+    object-fit: contain;
+
+  }
+
+
+
+  .item-text {
+
+    font-size: 1.05rem;
+
+    font-weight: 600;
+
+    color: #282828;
+
+    text-align: left;
+
+    white-space: nowrap;
+
+  }
+
+}
+
+
+
+ 
+
+
+
+  @media screen and (max-width: 1180px) {
+
+  .numero {
+
+    width: 98% !important;
+
+    padding: 0 10px;
+
+  }
+
+  .food-pill-container {
+
+    width: 70%; /* Give the pill more room on tablet */
+
+  }
+
+  .nav-link {
+
+    font-size: 0.75rem; /* Shrink text to fit inside the border */
+
+  }
+
+
+
+  .stavo {
+
+    width: 9rem;
+
+    margin-right: 0;
+
+  }
+
+}
 
 @media screen and (max-width: 430px) {
   .Goon {
