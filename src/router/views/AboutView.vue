@@ -529,20 +529,20 @@ const values = [
 
 const milestones = [
   {
-    title: 'Category 1',
-    desc: 'M$5B+ Global Volume: Over $5 billion in transactions processed securely for our partners worldwide.'
+    title: 'M$5B+ Global Volume',
+    desc: 'Over $5 billion in transactions processed securely for our customers worldwide.'
   },
   {
-    title: 'Stablecoin Rails',
-    desc: '50,000+ Strong: Empowering a diverse community of over 50,000 customers across every industry.'
+    title: '50,000+ Strong',
+    desc: 'Empowering a diverse community of over 50,000 customers globally.'
   },
   {
-    title: '3 Countries',
-    desc: 'Borderless Reach: Scaling rapidly with an active operational footprint in 30+ countries.'
+    title: 'Borderless Reach',
+    desc: 'Scaling rapidly with an active operational footprint in 30+ countries.'
   },
   {
-    title: 'Institutional Seed',
-    desc: 'Versatile Solutions: Proven B2B and B2C products designed for both local markets and global scale.'
+    title: 'Versatile Solutions',
+    desc: 'Proven B2B and B2C products designed for both local markets and global scale.'
   }
 ];
 
