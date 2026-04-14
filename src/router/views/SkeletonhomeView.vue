@@ -776,9 +776,9 @@ const toggleDropdown = (index) => {
     syncWithRoute();
   } else {
     openDropdownIndex.value = index;
-    activeIndex.value = index; // Move indicator manually
+    activeIndex.value = index;
   }
-  setTimeout(updateIndicator, 50); // Delay for layout shift
+  setTimeout(updateIndicator, 50); 
 };
 
 const setActive = (index) => {
@@ -2548,58 +2548,6 @@ input[type="checkbox"]:checked ~ .wanda-expected {
   }
 }
 
-.dropdown-container {
-  position: relative;
-  display: inline-block;
-  font-family: sans-serif;
-}
-
-.dropdown-button {
-  border: none;
-  border-radius: 0.25rem; 
-  cursor: pointer;
-  margin-top: 0.625rem;
-  display: flex;
-  justify-content: space-between;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: white;
-  border: 0.0625rem solid #ddd;
-  border-radius: 0.25rem; 
-  padding: 0;
-  margin: 0.3125rem 0 0 0; 
-  list-style: none;
-  width: 100%;
-  box-shadow: 0 0.25rem 0.375rem rgba(0,0,0,0.1); 
-  z-index: 10;
-}
-
-.dropdown-item {
-  padding: 0.625rem; 
-  cursor: pointer;
-}
-
-
-.chevron {
-  display: inline-block;
-  border-right: 0.125rem solid #000; 
-  border-bottom: 0.125rem solid #000; 
-  width: 0.5rem; 
-  height: 0.5rem;
-  margin-left: 0.625rem; 
-  transform: rotate(45deg); 
-  transition: transform 0.3s ease; 
-  margin-top: -0.25rem;
-}
-
-.chevron.open {
-  transform: rotate(-135deg);
-  margin-top: 0.25rem;
-}
 
 .trotas {
   display: inline-flex;
