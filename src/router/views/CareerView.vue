@@ -537,20 +537,20 @@ const values = [
 
 const milestonescareer = [
   {
-    title: 'Think Borderless',
-    desc: 'We dont see barriers; we see bridges. We build solutions that work across every frontier.'
+    title: 'Performance Over Presence',
+    desc: 'We don’t measure success by hours logged, but by the impact created. We hire "A-players" who are self-driven, giving you the autonomy to own your work and the excellence to deliver world-class results.'
   },
   {
-    title: 'Stablecoin Rails',
-    desc: 'We value speed and quality. We ship fast, learn faster, and never settle for good enough.'
+    title: 'Radical Candor & Transparency',
+    desc: 'Great ideas thrive in the light. We foster a culture of open feedback and direct communication, ensuring that we challenge each other daily to grow, improve, and stay aligned with our global mission.'
   },
   {
-    title: '3 Countries',
-    desc: 'Every line of code and every sales pitch is designed to make our users lives simpler'
+    title: 'Owners, Not Employees',
+    desc: 'At Swychr, every team member thinks like a founder. We look for proactive problem-solvers who take full accountability for their vertical, driving innovation from the local level to the global stage.'
   },
   {
-    title: 'Compliance First',
-    desc: 'We operate in a regulated world. We win by being the most trusted and compliant partner in the ecosystem.'
+    title: 'A Culture of Continuous Evolution',
+    desc: 'Operating in 30+ countries requires a "learn-fast" mindset. We invest in those who are curious and adaptable, ensuring our team evolves as quickly as the global markets we serve.'
   }
 ];
 

@@ -511,8 +511,6 @@ onBeforeUnmount(() => {
 });
 
 
-
-
 const values = [
   { 
     icon: trustIcon, 
@@ -534,19 +532,19 @@ const values = [
 const milestones = [
   {
     title: 'Category 1',
-    desc: 'Microfinance licensing secured, establishing a regulated foundation.'
+    desc: 'M$5B+ Global Volume: Over $5 billion in transactions processed securely for our partners worldwide.'
   },
   {
     title: 'Stablecoin Rails',
-    desc: 'Deployment of proprietary settlement layers for instant cross-border clearing.'
+    desc: '50,000+ Strong: Empowering a diverse community of over 50,000 customers across every industry.'
   },
   {
     title: '3 Countries',
-    desc: 'Operational hubs established in Delaware, Cameroon, and Rwanda.'
+    desc: 'Borderless Reach: Scaling rapidly with an active operational footprint in 30+ countries.'
   },
   {
     title: 'Institutional Seed',
-    desc: 'Secured funding from top-tier global venture firms and fintech angels.'
+    desc: 'Versatile Solutions: Proven B2B and B2C products designed for both local markets and global scale.'
   }
 ];
 
@@ -568,14 +566,14 @@ const team = [
   {
     name: 'Aaron Munga',
     role: 'Founder & Chief Executive Officer',
-    bio: 'Aaron is a serial entrepreneur in the tech and hospitality and financial infrastructure sector across Africa.',
+    bio: 'Aaron brings over a decade of high-level experience across the corporate and startup landscapes to Swychr. A finance professional by training and a second-time founder, he previously served as Co-founder and CEO of the e-grocery startup Jump the Q. As the visionary behind Swychr, Aaron has successfully transitioned the company from a foundational concept into a global powerhouse, now serving over 50,000 customers with an operational footprint spanning more than 30 countries. He holds a Bachelor’s degree in Applied Accounting from Oxford Brookes University.',
     image: aaronImg,
     linkedin: 'https://www.linkedin.com/in/aaron-munga-1b793672/'
   },
   {
     name: 'Harshit Sinha',
     role: 'Co-Founder & Chief Technology Officer',
-    bio: 'A technology expert and builder of large-scale fintech infrastructure systems for high-growth startups.',
+    bio: 'Harshit directs the technical evolution of Swychr, bringing over 15 years of experience in building transformative technology from the ground up. A third-time founder and a graduate of the prestigious Indian Institute of Technology (IIT), Harshit previously co-founded and served as CTO of the e-grocery platform Jump the Q. At Swychr, he has shepherded the product from its initial concept to a sophisticated multi-vertical ecosystem, successfully launching B2B, B2C, local, and global solutions that power our international reach.',
     image: conradImg,
     linkedin: 'https://www.linkedin.com/in/harshit-sinha-21075617/'
   }
