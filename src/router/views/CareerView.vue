@@ -150,7 +150,7 @@ the builders, and the problem-solvers to join our Dream Team.
               <p class="role-tagline">{{ role.tagline }}</p>
             </div>
             <div class="role-action">
-              <span class="arrow-icon">→</span>
+              <span class="arrow-icon">Closed</span>
             </div>
           </div>
         </div>
@@ -1656,8 +1656,12 @@ list-style: none;
 
 .arrow-iconcareer5 {
   font-size: 1.5rem;
-  color: #8B949E;
+  color: #000;
   transition: color 0.3s;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 150px;
+  height: 2.5rem;
 }
 
 .role-card:hover .arrow-iconcareer5 {
