@@ -200,12 +200,11 @@ import Careers from '@/assets/images/Careers.png';
 import Blogs from '@/assets/images/Blogs.png';
 import Culture from '@/assets/images/Culture.png';
 
-
-
 const route = useRoute();
 const navMenu = ref(null);
 const activeIndex = ref(0);
 const openDropdownIndex = ref(null);
+const isMobile = ref(false);
 // --- Navigation Data ---
 
 const navItems = [
@@ -286,40 +285,118 @@ const updateIndicator = () => {
 };
 
 
+
+// --- Click Handlers ---
+
 const setActive = (index) => {
+
   activeIndex.value = index;
-  openDropdownIndex.value = null; 
+
+  openDropdownIndex.value = null; // Close any open menu when a page is clicked
+
   nextTick(() => updateIndicator());
+
 };
 
 
 
 const toggleDropdown = (index) => {
+
   if (openDropdownIndex.value === index) {
 
     openDropdownIndex.value = null;
+
+    // When closing, snap the indicator back to the actual route page
+
     syncIndicatorWithRoute();
 
   } else {
 
     openDropdownIndex.value = index;
-    activeIndex.value = index; 
+
+    activeIndex.value = index; // Move indicator to the clicked dropdown label
 
   }
+
+  // Small timeout to allow mobile keyboard or layout shifts to settle
+
   setTimeout(() => updateIndicator(), 50);
+
 };
 
 
+
+// --- Helper: Sync Indicator with URL ---
+
 const syncIndicatorWithRoute = () => {
+
   const pathName = route.path.replace('/', '').toLowerCase() || 'home';
+
   const index = navItems.findIndex(item => item.name.toLowerCase() === pathName);
 
   if (index !== -1) {
+
     activeIndex.value = index;
+
     nextTick(updateIndicator);
 
   }
+
 };
+
+
+const handleClickOutside = (event) => {
+
+  const navContainer = document.querySelector('.food-pill-container');
+
+  if (navContainer && !navContainer.contains(event.target)) {
+
+    openDropdownIndex.value = null;
+
+    syncIndicatorWithRoute(); // Reset indicator if menu closed by clicking outside
+
+  }
+
+};
+
+
+
+const checkScreen = () => {
+
+  isMobile.value = window.innerWidth <= 820;
+
+};
+
+
+
+// Watch for URL changes to move the indicator automatically
+
+watch(() => route.path, () => {
+
+  syncIndicatorWithRoute();
+
+}, { immediate: true });
+
+
+onMounted(() => {
+
+  checkScreen();
+  updateIndicator();
+  window.addEventListener('resize', () => {
+
+    checkScreen();
+    updateIndicator();
+
+  });
+  window.addEventListener('click', handleClickOutside);
+});
+
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', checkScreen);
+  window.removeEventListener('click', handleClickOutside);
+});
+
 </script>
 
 <style>
