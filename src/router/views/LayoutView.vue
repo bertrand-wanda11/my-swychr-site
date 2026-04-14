@@ -316,19 +316,20 @@ onMounted(() => {
   width: 95%;
   margin: 1.5rem auto;
   background-color: #A9AAB2;
-  margin-bottom: 5rem;
+ 
 }
 
 .food-pill-containerlay {
 border: 1px solid #FFF;
   border-radius: 50px;
-  height: 3.5rem;
+  height: 3rem;
   padding: 0 1rem;
   display: flex;
   align-items: center;
   position: relative; 
   overflow: visible;
   background-color: #A9AAB2;
+  margin-bottom: 3rem;
 }
 
 .nav-indicatorlay {
