@@ -939,7 +939,6 @@ const features = [
   margin-top: 0.625rem;
 }
 
-
 .stavo a {
   text-decoration: none;
   color: #000;
@@ -1125,7 +1124,7 @@ const features = [
 }
 
 .nav-item-wrapper {
-  flex: 1; /* FORCES all items to fit inside the border */
+  flex: 1; 
   display: flex;
   justify-content: center;
   position: relative;
@@ -1151,7 +1150,7 @@ const features = [
   z-index: 50;
   pointer-events: none;
 }
-/* --- TABLET (iPad 820px) --- */
+
 @media screen and (max-width: 1180px) {
   .food-pill-container {
     width: 75% !important;
@@ -1161,7 +1160,7 @@ const features = [
   }
 }
 
-/* --- MOBILE (iPhone 430px) --- */
+
 @media screen and (max-width: 430px) {
   .numero {
     flex-direction: column !important;
@@ -3588,7 +3587,11 @@ line-height: 120%;
 
   .lemon1, .lemontea1, .greentea1 {
     width: 14rem !important; 
-    margin-left:0 auto ;
+    display: flex !important;
+    justify-content: center !important;
+    gap: 1.5rem !important;
+    margin-top: 2rem !important;
+    width: 100% !important;
   }
 }
 
