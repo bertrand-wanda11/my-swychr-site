@@ -3583,6 +3583,11 @@ line-height: 120%;
 
   .lemon, .lemontea, .greentea {
     width: 14rem !important; 
+    display: flex !important;
+    justify-content: center !important;
+    gap: 1.5rem !important;
+    margin-top: 2rem !important;
+    width: 100% !important;
   }
 
   .lemon1, .lemontea1, .greentea1 {
