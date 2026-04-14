@@ -316,7 +316,7 @@ onMounted(() => {
   width: 95%;
   margin: 1.5rem auto;
   background-color: #A9AAB2;
- 
+ margin-bottom: 7rem;
 }
 
 .food-pill-containerlay {
@@ -329,7 +329,7 @@ border: 1px solid #FFF;
   position: relative; 
   overflow: visible;
   background-color: #A9AAB2;
-  margin-bottom: 3rem;
+  
 }
 
 .nav-indicatorlay {
