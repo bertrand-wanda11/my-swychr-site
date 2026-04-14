@@ -499,7 +499,6 @@ import About from '@/assets/images/About Us.png';
 import Careers from '@/assets/images/Careers.png';
 import Blogs from '@/assets/images/Blogs.png';
 import Culture from '@/assets/images/Culture.png';
-import vestor from '@/assets/images/sabinus.png';
 import usaFlag from '@/assets/images/usa.svg';
 import ukFlag from '@/assets/images/uk.svg';
 import ngFlag from '@/assets/images/nigeria.svg';
@@ -561,7 +560,6 @@ const navItems = [
       { name: 'Careers', icon: Careers,path: '/Career'},
       { name: 'Blogs', icon: Blogs,path: '/Blog'},
       { name: 'Culture', icon: Culture,path: '/Culture'},
-      { name: 'Investors', icon: vestor,path: '/Invest'}
     ]
   },
   { name: 'Support', path: '/support' }
