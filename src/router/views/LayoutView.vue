@@ -316,6 +316,7 @@ onMounted(() => {
   width: 95%;
   margin: 1.5rem auto;
   background-color: #A9AAB2;
+  margin-bottom: 3rem;
 }
 
 .food-pill-containerlay {
