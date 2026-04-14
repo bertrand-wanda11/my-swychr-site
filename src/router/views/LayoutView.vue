@@ -265,7 +265,7 @@ const toggleDropdown = (index) => {
     openDropdownIndex.value = index;
     activeIndex.value = index;
   }
-  setTimeout(updateIndicator, 50);
+  setTimeout(updateIndicator, 50); 
 };
 
 const setActive = (index) => {
@@ -300,6 +300,7 @@ onMounted(() => {
     }
   });
 });
+
 
 </script>
 
