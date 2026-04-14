@@ -300,8 +300,6 @@ onMounted(() => {
     }
   });
 });
-
-
 </script>
 
 <style>
