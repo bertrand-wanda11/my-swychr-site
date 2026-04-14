@@ -29,7 +29,7 @@ import AboutView from './views/AboutView.vue'
 import CultureView from './views/CultureView.vue'
 import CareerView from './views/CareerView.vue'
 import InvestView from './views/InvestView.vue'
-import BusinessView from './views/BusinessView.vue'
+import RolesView from './views/RolesView.vue'
 
 const routes = [
   { path: '/', name: 'skeletonhome', component: SkeletonhomeView },
@@ -62,7 +62,7 @@ const routes = [
   { path: '/Culture', name: 'Culture', component: CultureView },
   { path: '/Career', name: 'Career', component: CareerView },
   { path: '/Invest', name: 'Invest', component: InvestView },
-  { path: '/business', name: 'business', component: BusinessView },
+  { path: '/roles', name: 'roles', component: RolesView },
 ]
 
 const router = createRouter({
