@@ -263,9 +263,9 @@ const toggleDropdown = (index) => {
     syncWithRoute();
   } else {
     openDropdownIndex.value = index;
-    activeIndex.value = index; // Move indicator manually
+    activeIndex.value = index;
   }
-  setTimeout(updateIndicator, 50); // Delay for layout shift
+  setTimeout(updateIndicator, 50);
 };
 
 const setActive = (index) => {
