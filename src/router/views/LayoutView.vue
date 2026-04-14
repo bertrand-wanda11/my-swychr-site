@@ -206,7 +206,6 @@ const route = useRoute();
 const navMenu = ref(null);
 const activeIndex = ref(0);
 const openDropdownIndex = ref(null);
-const isMobile = ref(false);
 // --- Navigation Data ---
 
 const navItems = [
