@@ -697,7 +697,7 @@ the Swychr mobile application, Swychr Connect web platform, and API suites are f
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from 'vue';
+import { ref, onMounted, onBeforeUnmount, nextTick, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import img1 from '@/assets/images/firstly.png'
 import img2 from '@/assets/images/middle.jpg'
@@ -746,6 +746,7 @@ const navItems = [
       { name: 'Careers', icon: Careers, path: '/Career'},
       { name: 'Blogs', icon: Blogs, path: '/Blog'},
       { name: 'Culture', icon: Culture, path: '/Culture'},
+      { name: 'Investors', icon: vestor, path: '/Invest'}
     ]
   },
   { name: 'Support', path: '/support' }
@@ -776,9 +777,9 @@ const toggleDropdown = (index) => {
     syncWithRoute();
   } else {
     openDropdownIndex.value = index;
-    activeIndex.value = index;
+    activeIndex.value = index; // Move indicator manually
   }
-  setTimeout(updateIndicator, 50); 
+  setTimeout(updateIndicator, 50); // Delay for layout shift
 };
 
 const setActive = (index) => {
@@ -813,6 +814,7 @@ onMounted(() => {
     }
   });
 });
+
 
 const cards = [
   {
@@ -862,6 +864,7 @@ const features = [
 
 
 <style>
+
 .section1 {
   text-align: center;
   margin: 0 auto;
@@ -1093,7 +1096,6 @@ const features = [
   line-height: 1.4;
   text-align: center;
 }
-
 .numero {
   display: flex;
   align-items: center;
@@ -1124,7 +1126,7 @@ const features = [
 }
 
 .nav-item-wrapper {
-  flex: 1; 
+  flex: 1; /* FORCES all items to fit inside the border */
   display: flex;
   justify-content: center;
   position: relative;
@@ -1151,6 +1153,7 @@ const features = [
   pointer-events: none;
 }
 
+/* --- TABLET (iPad 820px) --- */
 @media screen and (max-width: 1180px) {
   .food-pill-container {
     width: 75% !important;
@@ -1160,7 +1163,7 @@ const features = [
   }
 }
 
-
+/* --- MOBILE (iPhone 430px) --- */
 @media screen and (max-width: 430px) {
   .numero {
     flex-direction: column !important;
