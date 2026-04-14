@@ -222,7 +222,7 @@ const navItems = [
     name: 'Business', path: '', dropdownTitle: 'Discover swychr Business',
     children: [
       { name: 'Online Payments', icon: onlinePayIcon, path: '/Online'},
-      { name: 'Lastmile Delivery', icon: crossBorderIcon, path: '/Lastmile'},
+      { name: 'Lastmile Payment Delivery', icon: crossBorderIcon, path: '/Lastmile'},
       { name: 'Virtual Cards', icon: Virtualcard, path: '/Issuance'}
     ]
   },
