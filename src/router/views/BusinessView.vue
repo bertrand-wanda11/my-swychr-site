@@ -1,7 +1,7 @@
 <template>
     <LayoutView>
 <div>
-  <h2>This is Business</h2>  
+  <h2>No Open Roles For Now</h2>  
 </div>
 </LayoutView>
  </template> 

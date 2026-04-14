@@ -57,7 +57,7 @@ the builders, and the problem-solvers to join our Dream Team.
 </p>
 <div class="protoncareer">
  <div class="stavocareer5-con"> 
-    <li class="stavocareer5"><a href="https://urlgeni.us/swychr">View Open Role</a></li>
+    <li class="stavocareer5"><a href="/Business">View Open Role</a></li>
   </div>
   
 </div>
@@ -990,7 +990,7 @@ display: flex;
   margin-bottom: 0;
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
-  font-size: 3rem; 
+  font-size: 2.5rem; 
   font-style: normal;
   font-weight: 600;
   line-height: 95%;
