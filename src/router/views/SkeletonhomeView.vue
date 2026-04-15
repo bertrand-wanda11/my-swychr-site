@@ -778,13 +778,12 @@ const navMenu = ref(null);
 const activeIndex = ref(0);
 const openDropdownIndex = ref(null);
 const isMobile = ref(false);
-// --- Navigation Data ---
 
 const navItems = [
-  { name: 'Home', path: '/home' },
+  { name: 'Home', path: '/skeletonhome' },
   {
     name: 'Personal',
-    path: '', // Empty path to prevent page navigation
+    path: '', 
     dropdownTitle: 'Discover swychr Personal',
     children: [
       { name: 'Remit (Send)', icon: p2p, path: '/p2p'},
@@ -828,14 +827,10 @@ const indicatorStyle = ref({ width: '0px', left: '0px', opacity: 0 });
 
 
 
-// --- Core Logic: Update the White Indicator ---
-
 const updateIndicator = () => {
   if (!navMenu.value) return;
 
  
-
-  // Select all links and find the one corresponding to the current activeIndex
 
   const links = navMenu.value.querySelectorAll('.nav-link');
   const activeElement = links[activeIndex.value];
