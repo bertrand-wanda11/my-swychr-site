@@ -825,8 +825,6 @@ const navItems = [
 
 const indicatorStyle = ref({ width: '0px', left: '0px', opacity: 0 });
 
-
-
 const updateIndicator = () => {
   if (!navMenu.value) return;
 
@@ -843,115 +841,61 @@ const updateIndicator = () => {
     indicatorStyle.value = {
 
       width: `${reducedWidth}px`,
-
       left: `${left}px`,
-
       opacity: 1
 
     };
   }
 };
 
-
-
-// --- Click Handlers ---
-
 const setActive = (index) => {
-
   activeIndex.value = index;
-
-  openDropdownIndex.value = null; // Close any open menu when a page is clicked
-
+  openDropdownIndex.value = null; 
   nextTick(() => updateIndicator());
-
 };
-
-
 
 const toggleDropdown = (index) => {
-
   if (openDropdownIndex.value === index) {
-
     openDropdownIndex.value = null;
-
-    // When closing, snap the indicator back to the actual route page
-
     syncIndicatorWithRoute();
-
-  } else {
-
+  } 
+  
+  else {
     openDropdownIndex.value = index;
-
-    activeIndex.value = index; // Move indicator to the clicked dropdown label
-
+    activeIndex.value = index; 
   }
-
-  // Small timeout to allow mobile keyboard or layout shifts to settle
-
   setTimeout(() => updateIndicator(), 50);
-
 };
-
-
-
-// --- Helper: Sync Indicator with URL ---
 
 const syncIndicatorWithRoute = () => {
-
   const pathName = route.path.replace('/', '').toLowerCase() || 'home';
-
   const index = navItems.findIndex(item => item.name.toLowerCase() === pathName);
-
   if (index !== -1) {
-
     activeIndex.value = index;
-
     nextTick(updateIndicator);
-
   }
-
 };
-
 
 const handleClickOutside = (event) => {
-
   const navContainer = document.querySelector('.food-pill-container');
-
   if (navContainer && !navContainer.contains(event.target)) {
-
     openDropdownIndex.value = null;
-
-    syncIndicatorWithRoute(); // Reset indicator if menu closed by clicking outside
-
+    syncIndicatorWithRoute(); 
   }
-
 };
-
-
 
 const checkScreen = () => {
-
   isMobile.value = window.innerWidth <= 820;
-
 };
 
-
-
-// Watch for URL changes to move the indicator automatically
-
 watch(() => route.path, () => {
-
   syncIndicatorWithRoute();
-
 }, { immediate: true });
 
-
 onMounted(() => {
-
   checkScreen();
   updateIndicator();
   window.addEventListener('resize', () => {
-
     checkScreen();
     updateIndicator();
 
@@ -959,14 +903,12 @@ onMounted(() => {
   window.addEventListener('click', handleClickOutside);
 });
 
-
 onBeforeUnmount(() => {
   window.removeEventListener('resize', checkScreen);
   window.removeEventListener('click', handleClickOutside);
 });
 
  
-
 
 const cards = [
   {
