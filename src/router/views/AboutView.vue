@@ -2032,21 +2032,6 @@ margin-left: 67px;
     min-height: 100vh;
   }
 
-  .numeroabout1{
-    width: 98%;
-    margin: 1.25rem auto;
-  }
-
-  .food-pill-container {
-    height: 3.2rem;
-    padding: 0 0.625rem;
-  }
-
-  .nav-link {
-    font-size: 0.875rem;
-    padding: 0 0.625rem;
-  }
-
   .insideabout1 {
     padding-top: 8rem;
     width: 92vw;
@@ -2058,10 +2043,6 @@ margin-left: 67px;
 
   .mathsabout{
     max-width: 85%;
-  }
-
-  .steveabout, .obusabout{
-    width: 15rem;
   }
 }
 
@@ -2077,36 +2058,6 @@ margin-left: 67px;
     height: 100%;
   }
 
-  .numeroabout1{
-    flex-direction: column;
-    gap: 1.25rem;
-    margin: 1rem auto;
-  }
-
-  .seam {
-    margin: 0;
-    text-align: center;
-  }
-
-  .food-pill-container {
-    width: 96vw;
-    height: 3rem;
-    padding: 0 0.25rem;
-  }
-
-  .mannav {
-    justify-content: space-around;
-  }
-
-  .nav-link {
-    font-size: 0.72rem;
-    padding: 0;
-    white-space: nowrap;
-  }
-
-  .dropdown-arrow, .nav-indicator {
-    display: none !important;
-  }
 
   .insideabout1 {
     padding-top: 4rem;
@@ -2139,17 +2090,6 @@ margin-left: 67px;
     gap: 1rem;
     width: 100%;
     margin-top: 2rem;
-  }
-
-  .steveabout, .obusabout {
-    width: 85vw;
-    height: 3.125rem;
-    margin-left: 0 !important; 
-  }
-
-  .steveabout a, .obusabout a {
-    font-size: 1rem;
-    padding: 0.625rem 1.25rem;
   }
 
   .stavoabout-con {
