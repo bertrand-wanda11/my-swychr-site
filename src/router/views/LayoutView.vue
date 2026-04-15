@@ -671,10 +671,11 @@ position: absolute;
 
 .footerlay {
            font-family: 'Montserrat', sans-serif;
-            margin-top: 2rem;
+            margin: 0;
             background: linear-gradient(#29013E,#28013C,#170124);
             color: #fff;
             width: 100%;  
+           margin: 0 auto;
         }
            
         
@@ -685,8 +686,8 @@ position: absolute;
            margin-left: 55px;
         }
         
- .mother11lay{
-            margin: 0.3rem;
+.mother11lay{
+            margin: 1.1rem;
             text-align: center;
             text-align: justify; 
             margin-left: 2rem;
@@ -698,22 +699,23 @@ position: absolute;
           display: inline-flex;
           align-items: center;
           justify-content: center;
+       
         }
 
         .mother-pip11lay{
           flex: 1;
           text-align: justify;
           align-items: center;
-          padding: 5px;
+          padding: 10px;
         } 
 
-        .icon-fblay{
+        .icon-fb{
           width: 24px;
          height: 24px;
          aspect-ratio: 1/1;
         }
         
-        .arrow-1lay{
+        .arrow-1{
           color: white;
           width: 24px;
           height: 24px;
@@ -726,12 +728,12 @@ color:  #ffffff;
 font-family: 'Montserrat', sans-serif;
 font-size: 14px;
 font-style: normal;
-font-weight: 470;
-line-height: 75%;
+font-weight: 535;
+line-height: 120%;
 text-align:justify;
 }
 
-.footerlay i{
+.footerlayi{
     margin-right: 8px;
         }
         
@@ -783,7 +785,7 @@ line-height: 120%;
 }
 
 
-.zoukielay {
+.zoukielay{
   margin-right: 0; 
   text-align: left;
 }
@@ -798,17 +800,22 @@ line-height: 120%;
 }
 
 
-.chana1lay {
+.chana1lay{
   white-space: nowrap;
 }
 
 
-.rufuslay {
+.rufuslay{
   margin: 40px auto; 
   width: 90%;
   text-align: justify;
   font-size: 14px;
   line-height: 1.6;
+}
+
+.seam{
+margin-top: 20px;
+margin-left: 67px;
 }
 
 @media screen and (max-width: 430px) {
