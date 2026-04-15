@@ -443,7 +443,7 @@ onBeforeUnmount(() => {
 
 
 const statistics = [
-  { number: '25+', label: 'Markets Active' },
+  { number: '30+', label: 'Markets Active' },
   { number: '$5B+', label: 'Value Processed' },
   { number: '24/7', label: 'Uptime Mandate' }
 ];
