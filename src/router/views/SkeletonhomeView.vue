@@ -2964,7 +2964,7 @@ line-height: 120%;
 text-align:justify;
 }
 
-.footerlayi{
+.footerlay i{
     margin-right: 8px;
         }
         
