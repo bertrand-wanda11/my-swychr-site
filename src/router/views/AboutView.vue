@@ -807,7 +807,7 @@ display: flex;
 }
 
 @media screen and (max-width: 430px) {
-  .numeroabout{
+  .numeroabout1{
     flex-wrap: wrap; 
     justify-content: space-between;
     margin: 1rem auto;
@@ -949,7 +949,6 @@ display: flex;
     margin-right: 0; 
   }
 }
-
 
 .insideabout1 {
   padding-top: 5rem; 
