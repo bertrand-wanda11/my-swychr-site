@@ -208,7 +208,7 @@ const isMobile = ref(false);
 
 
 const navItems = [
-  { name: 'home', path: '/skeletonhome' },
+  { name: 'home', path: '/' },
   {
     name: 'Personal',
     path: '', 
