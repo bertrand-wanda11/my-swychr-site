@@ -58,6 +58,7 @@
     </li>
     <div class="nav-indicator" :style="indicatorStyle"></div>
   </ul>
+
 </div>
 
 
@@ -65,6 +66,7 @@
     <li class="stavop2p"><a href="https://urlgeni.us/swychr">Open Web App  <img src="@/assets/images/ror.png" alt="App Store"  width="13px"/></a></li>
   </div>
 </nav>      
+
  <div class="insidep2p1">
   <div class="techp2p">
 <p class="smartp2p">Send money home.Fast,<br> fair and effortlessly.</p>
@@ -509,6 +511,7 @@ import About from '@/assets/images/About Us.png';
 import Careers from '@/assets/images/Careers.png';
 import Blogs from '@/assets/images/Blogs.png';
 import Culture from '@/assets/images/Culture.png';
+
 const route = useRoute();
 const navMenu = ref(null);
 const activeIndex = ref(0);
@@ -641,6 +644,8 @@ onBeforeUnmount(() => {
 });
 
 
+
+
 const features = [
   {
     title: 'Near-Instant Speed',
@@ -739,48 +744,6 @@ margin-left: 67px;
   margin-left: 6.61vw; 
 }
 
-.numerop2p {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 95%;
-  margin: 1.5rem auto;
-
-}
-
-.food-pill-container {
-border: 1px solid #FFF;
-  border-radius: 50px;
-  height: 3.5rem;
-  padding: 0 1rem;
-  display: flex;
-  align-items: center;
-  position: relative; 
-  overflow: visible;
-}
-
-.nav-indicator {
-  position: absolute;
-  top: -1px; 
-  height: 6px; 
-  background: #fff;
-  border-radius: 0 0 5px 5px;
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  z-index: 10;
-   width: 4px;
-}
-
-.mannav {
-display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  position: relative; 
-  height: 100%;
-  width: 100%;
-  align-items: center;
-}
-
 .insidep2p1 {
   padding-top: 2.7rem; 
   display: block;
@@ -867,7 +830,7 @@ display: flex;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-    padding: 10px 24px;
+  padding: 10px 24px;
 }
 
 .obusp2p {
@@ -897,37 +860,73 @@ display: flex;
   padding: 10px 24px;
 }
 
+.numerop2p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  margin: 1.5rem auto;
+}
+
+.food-pill-container {
+  border: 1px solid #FFF;
+  border-radius: 50px;
+  height: 3.5rem;
+  padding: 0 5px; 
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: visible;
+}
+
+.mannav {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+.nav-item-wrapper {
+  flex: 1; 
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
 
 .nav-link {
   color: white;
   text-decoration: none;
-  padding: 0 15px;
   font-weight: 600;
-  font-size: 0.95rem;
-  display: flex;
-  align-items: center;
-  gap: 5px;
+  font-size: 0.85rem; 
+  white-space: nowrap;
+  padding: 0 2px;
 }
 
-
-.nav-item-wrapper {
-  position: relative;
-  height: 100%;
-  display: flex;
-  align-items: center;
+.nav-indicator {
+  position: absolute;
+  top: -2px;
+  height: 5px;
+  background: #fff;
+  border-radius: 0 0 5px 5px;
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 50;
+  pointer-events: none;
+  display: block !important;
 }
-
 
 .mega-dropdown {
   position: absolute;
-  top: calc(100% + 15px); 
+  top: calc(100% + 15px);
   left: 50%;
   transform: translateX(-50%);
   background: white;
   padding: 20px 25px;
   border-radius: 12px;
-  width: max-content; 
-  min-width: 240px; 
+  width: max-content;
+  min-width: 240px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   z-index: 1000;
   animation: dropdownFadeIn 0.2s ease-out;
@@ -962,19 +961,8 @@ display: flex;
   transform: rotate(180deg);
 }
 
-.nav-indicator {
-  position: absolute;
-  top: -1px;
-  height: 6px;
-  background: #fff;
-  border-radius: 0 0 5px 5px;
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  z-index: 10;
-  pointer-events: none;
-}
-
 .dropdown-label {
-  color: #8C1BC1; 
+  color: #8C1BC1;
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -985,7 +973,7 @@ display: flex;
 
 .dropdown-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
+  grid-template-columns: repeat(2, 1fr);
   gap: 12px 30px;
 }
 
@@ -998,7 +986,7 @@ display: flex;
   display: flex;
   align-items: center;
   gap: 12px;
-  text-decoration: none !important; 
+  text-decoration: none !important;
   padding: 8px 0;
   transition: transform 0.2s ease;
 }
@@ -1011,7 +999,7 @@ display: flex;
   color: #333;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
-  text-decoration: none !important; 
+  text-decoration: none !important;
   white-space: nowrap;
 }
 
@@ -1024,7 +1012,7 @@ display: flex;
 .nav-item-wrapper:nth-child(4) .mega-dropdown {
   left: 50% !important;
   transform: translateX(-50%) !important;
-  width: 260px; 
+  width: 260px;
 }
 
 .nav-item-wrapper:nth-child(4) .mega-dropdown::before {
@@ -1032,42 +1020,30 @@ display: flex;
   transform: translateX(-50%);
 }
 
+
 @media screen and (max-width: 430px) {
-  .numerop2p {
-    flex-wrap: wrap; 
-    justify-content: space-between;
-    margin: 1rem auto;
-  }
-
-  .seam {
-    margin-left: 0;
-    order: 1;
-  }
-
-  .stavop2p-container {
-    order: 2; 
+ .numerop2p {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    width: 100% !important;
   }
 
   .food-pill-container {
-    order: 3; 
-    width: 100%;
-    margin-top: 15px;
-    justify-content: center;
-    overflow-x: auto; 
-  }
-
-  .mannav {
-    justify-content: center;
-    width: auto;
+    width: 95vw !important;
+    height: 2.8rem !important;
   }
 
   .nav-link {
-    font-size: 0.8rem;
-    padding: 0 8px;
-    white-space: nowrap;
+  font-size: 0.65rem !important; 
   }
 
-  @media screen and (max-width: 430px) {
+  .nav-indicator {
+    top: -1px;
+    height: 4px;
+    display: block !important;
+    opacity: 1 !important;
+  }
+
   .mega-dropdown {
     position: fixed;
     top: 25%;
@@ -1078,25 +1054,19 @@ display: flex;
   }
 
   .dropdown-grid {
-    grid-template-columns: 1fr; 
-  }
-}
-
-  .nav-indicator {
-    display: block !important; 
-    height: 4px;
+    grid-template-columns: 1fr;
   }
 }
 
 @media screen and (max-width: 430px) {
 .mega-dropdown {
     position: fixed;
-    top: 22%; 
+    top: 22%;
     left: 5% !important;
     right: 5% !important;
     width: 90% !important;
     transform: none !important;
-    padding: 24px; 
+    padding: 24px;
     border-radius: 24px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.25);
     z-index: 9999;
@@ -1114,22 +1084,21 @@ display: flex;
     padding-bottom: 12px;
   }
 
-
   .dropdown-grid {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; 
+    align-items: flex-start;
     gap: 20px;
     width: 100%;
   }
 
   .dropdown-item {
     display: flex;
-    flex-direction: row; 
-    align-items: center; 
-    justify-content: flex-start; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
     width: 100%;
-    gap: 16px; 
+    gap: 16px;
     text-decoration: none !important;
   }
 
@@ -1137,7 +1106,7 @@ display: flex;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px; 
+    width: 32px;
   }
 
   .nav-icon-img {
@@ -1153,27 +1122,52 @@ display: flex;
     text-align: left;
     white-space: nowrap;
   }
+
+    .p2p1 {
+    background: url('@/assets/images/kirak.png') !important;
+    background-size: cover !important; 
+    background-position: center !important;
+    height: auto !important;
+    min-height: 100vh !important; 
+    aspect-ratio: auto !important; 
+    padding-bottom: 3rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .insidep2p1 {
+    padding-top: 2rem !important;
+    margin-top: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+      .stavo {
+    order: 3 !important;
+    margin-right: 0 !important;
+  }
 }
 
-@media screen and (max-width: 1180px) {
-  .numerop2p {
-    width: 95%;
-    gap: 10px; 
+
+  @media screen and (max-width: 1180px) {
+  .numerop2p{
+    width: 98% !important;
+    padding: 0 10px;
   }
 
   .food-pill-container {
-    padding: 0 5px;
-    height: 3.2rem;
+    width: 70%; 
   }
 
   .nav-link {
-    padding: 0 10px;
-    font-size: 0.85rem;
+    font-size: 0.75rem; 
   }
 
-  .stavop2p {
-    width: 9rem; 
-    margin-right: 0; 
+  .stavo {
+    width: 9rem;
+    margin-right: 0;
   }
 }
 
@@ -2251,7 +2245,7 @@ margin-left: 67px;
     min-height: 100vh;
   }
 
-  .numeroP2p {
+  .numerop2p {
     width: 98%;
     margin: 1.25rem auto;
   }
@@ -2294,13 +2288,6 @@ margin-left: 67px;
   .background-video {
     width: 100%;
     height: 100%;
-  }
-
-
-  .numerop2p {
-    flex-direction: column;
-    gap: 1.25rem;
-    margin: 1rem auto;
   }
 
   .seam {
