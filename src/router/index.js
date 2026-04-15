@@ -32,7 +32,7 @@ import InvestView from './views/InvestView.vue'
 import RolesView from './views/RolesView.vue'
 
 const routes = [
-  { path: '/Skeletonhome', name: 'skeletonhome', component: SkeletonhomeView },
+  { path: '/', name: 'skeletonhome', component: SkeletonhomeView },
   { path: '/layout', name: 'layout', component: LayoutView },
   { path: '/support', name: 'support', component: SupportView },
   { path: '/sales', name: 'sales', component: SalesView },
