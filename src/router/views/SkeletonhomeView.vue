@@ -2902,13 +2902,14 @@ input[type="checkbox"]:checked ~ .wanda-expected {
 
 .footerlay {
            font-family: 'Montserrat', sans-serif;
-            margin-top: 2rem;
+            margin: 0;
             background: linear-gradient(#29013E,#28013C,#170124);
             color: #fff;
             width: 100%;  
+           margin: 0 auto;
         }
            
-        
+       
 .mothers11lay{
           display: flex;
           margin-bottom: 20px;
@@ -2916,8 +2917,8 @@ input[type="checkbox"]:checked ~ .wanda-expected {
            margin-left: 55px;
         }
         
- .mother11lay{
-            margin: 0.3rem;
+.mother11lay{
+            margin: 1.1rem;
             text-align: center;
             text-align: justify; 
             margin-left: 2rem;
@@ -2936,16 +2937,16 @@ input[type="checkbox"]:checked ~ .wanda-expected {
           flex: 1;
           text-align: justify;
           align-items: center;
-          padding: 5px;
+          padding: 10px;
         } 
 
-        .icon-fblay{
+        .icon-fb{
           width: 24px;
          height: 24px;
          aspect-ratio: 1/1;
         }
         
-        .arrow-1lay{
+        .arrow-1{
           color: white;
           width: 24px;
           height: 24px;
@@ -2958,12 +2959,12 @@ color:  #ffffff;
 font-family: 'Montserrat', sans-serif;
 font-size: 14px;
 font-style: normal;
-font-weight: 470;
-line-height: 75%;
+font-weight: 535;
+line-height: 120%;
 text-align:justify;
 }
 
-.footerlay i{
+.footerlayi{
     margin-right: 8px;
         }
         
@@ -2976,7 +2977,6 @@ font-style: normal;
 font-weight: 550;
 line-height: 120%;
 margin-right: 2.8rem;
-
 }
 
 .span2lay{
@@ -3005,7 +3005,6 @@ font-weight: 535;
 line-height: 120%;
  }
  
-
 .sergiolay {
   display: flex; 
   justify-content: space-between;
@@ -3015,12 +3014,10 @@ line-height: 120%;
   padding: 0;
 }
 
-
-.zoukielay {
+.zoukielay{
   margin-right: 0; 
   text-align: left;
 }
-
 
 .chanalay {
   margin-right: 0;
@@ -3030,18 +3027,21 @@ line-height: 120%;
   padding: 0;
 }
 
-
-.chana1lay {
+.chana1lay{
   white-space: nowrap;
 }
 
-
-.rufuslay {
+.rufuslay{
   margin: 40px auto; 
   width: 90%;
   text-align: justify;
   font-size: 14px;
   line-height: 1.6;
+}
+
+.seam{
+margin-top: 20px;
+margin-left: 67px;
 }
 
 @media only screen and (max-width: 820px) {
