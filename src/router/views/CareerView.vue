@@ -371,9 +371,7 @@ import securitycareer from '@/assets/images/flash3.png'
 import trustcareer4 from '@/assets/images/life1.png'
 import visioncareer4 from '@/assets/images/life2.png'
 import securitycareer4 from '@/assets/images/life3.png'
-import codeIcon from '@/assets/images/niron1.png'
-import salesIcon from '@/assets/images/niron2.png'
-import talentIcon from '@/assets/images/niron3.png' 
+
 
 
 const bertoImg = '/berto.PNG';

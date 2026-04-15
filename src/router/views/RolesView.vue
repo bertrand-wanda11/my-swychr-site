@@ -35,7 +35,9 @@
 
   <script setup>
 import LayoutView from './LayoutView.vue'; 
- 
+ import codeIcon from '@/assets/images/niron1.png'
+import salesIcon from '@/assets/images/niron2.png'
+import talentIcon from '@/assets/images/niron3.png' 
 
 const roleGroups = [
   {
