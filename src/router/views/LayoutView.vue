@@ -729,11 +729,10 @@ position: absolute;
 
 .footerlay {
            font-family: 'Montserrat', sans-serif;
-            margin: 0;
+            margin-top: 2rem;
             background: linear-gradient(#29013E,#28013C,#170124);
             color: #fff;
             width: 100%;  
-           margin: 0 auto;
         }
            
         
@@ -763,7 +762,7 @@ position: absolute;
           flex: 1;
           text-align: justify;
           align-items: center;
-          padding: 3px;
+          padding: 5px;
         } 
 
         .icon-fblay{
