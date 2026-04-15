@@ -803,7 +803,6 @@ font-style: normal;
 font-weight: 550;
 line-height: 120%;
 margin-right: 2.8rem;
-margin-top: 3rem;
 }
 
 .span2lay{
