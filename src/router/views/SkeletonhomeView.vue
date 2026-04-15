@@ -1263,482 +1263,240 @@ const features = [
   margin: 1.5rem auto;
 }
 
-
 .food-pill-container {
   border: 1px solid #FFF;
   border-radius: 50px;
-
   height: 3.5rem;
-
-  padding: 0 5px; /* Less padding to save space */
-
+  padding: 0 5px; 
   display: flex;
-
   align-items: center;
-
   position: relative;
-
   overflow: visible;
-
 }
-
-
 
 .mannav {
-
   display: flex;
-
   list-style: none;
-
   padding: 0;
-
   margin: 0;
-
   width: 100%;
-
   height: 100%;
-
   align-items: center;
-
 }
-
-
 
 .nav-item-wrapper {
-
-  flex: 1; /* Each item (Home, Personal, etc) gets EXACTLY 20% width */
-
+  flex: 1; 
   display: flex;
-
   justify-content: center;
-
   position: relative;
-
 }
-
-
 
 .nav-link {
-
   color: white;
-
   text-decoration: none;
-
   font-weight: 600;
-
-  font-size: 0.85rem; /* Smaller font for better fit */
-
+  font-size: 0.85rem; 
   white-space: nowrap;
-
   padding: 0 2px;
-
 }
-
-
 
 .nav-indicator {
-
   position: absolute;
-
   top: -2px;
-
   height: 5px;
-
   background: #fff;
-
   border-radius: 0 0 5px 5px;
-
   transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
-
   z-index: 50;
-
   pointer-events: none;
-
   display: block !important;
-
 }
-
-
-
-
-
-
-
-
 
 .mega-dropdown {
-
   position: absolute;
-
   top: calc(100% + 15px);
-
   left: 50%;
-
   transform: translateX(-50%);
-
   background: white;
-
   padding: 20px 25px;
-
   border-radius: 12px;
-
   width: max-content;
-
   min-width: 240px;
-
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-
   z-index: 1000;
-
   animation: dropdownFadeIn 0.2s ease-out;
-
 }
-
-
 
 .dropdown-arrow {
-
   transition: transform 0.3s ease;
-
   display: inline-block;
-
 }
-
-
 
 .dropdown-arrow.rotated {
-
   transform: rotate(180deg);
-
 }
-
-
 
 @keyframes dropdownFadeIn {
-
   from {
-
     opacity: 0;
-
     transform: translateX(-50%) translateY(5px);
-
   }
-
   to {
-
     opacity: 1;
-
     transform: translateX(-50%) translateY(0);
-
   }
-
 }
-
-
 
 .dropdown-arrow {
-
   transition: transform 0.3s ease;
-
   display: inline-block;
-
 }
-
-
 
 .dropdown-arrow.rotated {
-
   transform: rotate(180deg);
-
 }
-
-
-
-
 
 .dropdown-label {
-
   color: #8C1BC1;
-
   font-size: 0.75rem;
-
   font-weight: 700;
-
   text-transform: uppercase;
-
   letter-spacing: 1px;
-
   margin-bottom: 15px;
-
   text-align: left;
-
 }
-
-
 
 .dropdown-grid {
-
   display: grid;
-
   grid-template-columns: repeat(2, 1fr);
-
   gap: 12px 30px;
-
 }
-
-
 
 .company-grid {
-
   grid-template-columns: 1fr !important;
-
   min-width: 180px;
-
 }
-
-
 
 .dropdown-item {
-
   display: flex;
-
   align-items: center;
-
   gap: 12px;
-
   text-decoration: none !important;
-
   padding: 8px 0;
-
   transition: transform 0.2s ease;
-
 }
-
-
 
 .dropdown-item:hover {
-
   transform: translateX(5px);
-
 }
-
-
 
 .item-text {
-
   color: #333;
-
   font-family: 'Montserrat', sans-serif;
-
   font-size: 0.9rem;
-
   text-decoration: none !important;
-
   white-space: nowrap;
-
 }
-
-
 
 .nav-icon-img {
-
   width: 22px;
-
   height: 22px;
-
   object-fit: contain;
-
 }
-
-
 
 .nav-item-wrapper:nth-child(4) .mega-dropdown {
-
   left: 50% !important;
-
   transform: translateX(-50%) !important;
-
   width: 260px;
-
 }
-
 
 
 .nav-item-wrapper:nth-child(4) .mega-dropdown::before {
-
   left: 50%;
-
   transform: translateX(-50%);
-
 }
 
 
-
-
-
 @media screen and (max-width: 430px) {
-
  .numero {
-
     flex-direction: column !important;
-
     gap: 1rem !important;
-
     width: 100% !important;
-
   }
-
-
 
   .food-pill-container {
-
-    width: 95vw !important; /* Full width minus tiny margin */
-
+    width: 95vw !important;
     height: 2.8rem !important;
-
   }
-
-
 
   .nav-link {
-
-    font-size: 0.65rem !important; /* Smallest font for mobile */
-
+  font-size: 0.65rem !important; 
   }
-
-
 
   .nav-indicator {
-
     top: -1px;
-
     height: 4px;
-
     display: block !important;
-
     opacity: 1 !important;
-
   }
-
-
 
   .mega-dropdown {
-
     position: fixed;
-
     top: 25%;
-
     left: 5% !important;
-
     width: 90% !important;
-
     transform: none !important;
-
     z-index: 9999;
-
   }
-
-
 
   .dropdown-grid {
-
     grid-template-columns: 1fr;
-
   }
-
 }
 
-
-
 @media screen and (max-width: 430px) {
-
 .mega-dropdown {
-
     position: fixed;
-
     top: 22%;
-
     left: 5% !important;
-
     right: 5% !important;
-
     width: 90% !important;
-
     transform: none !important;
-
     padding: 24px;
-
     border-radius: 24px;
-
     box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-
     z-index: 9999;
-
     text-align: left;
-
   }
-
-
 
   .dropdown-label {
-
     text-align: left !important;
-
     margin-left: 0 !important;
-
     margin-bottom: 24px;
-
     font-size: 0.85rem;
-
     color: #8C1BC1;
-
     width: 100%;
-
     border-bottom: 1px solid #f0f0f0;
-
     padding-bottom: 12px;
-
   }
-
-
-
-
 
   .dropdown-grid {
-
     display: flex;
-
     flex-direction: column;
-
     align-items: flex-start;
-
     gap: 20px;
-
     width: 100%;
-
   }
-
-
 
   .dropdown-item {
-
     display: flex;
-
     flex-direction: row;
-
     align-items: center;
-
     justify-content: flex-start;
-
     width: 100%;
-
     gap: 16px;
-
     text-decoration: none !important;
-
   }
-
-
 
   .item-icon {
     display: flex;
@@ -1747,14 +1505,11 @@ const features = [
     width: 32px;
   }
 
-
   .nav-icon-img {
     width: 28px;
     height: 28px;
     object-fit: contain;
   }
-
-
 
   .item-text {
     font-size: 1.05rem;
@@ -1763,45 +1518,26 @@ const features = [
     text-align: left;
     white-space: nowrap;
   }
-
 }
 
 
-
- 
-
-
-
   @media screen and (max-width: 1180px) {
-
   .numero {
-
     width: 98% !important;
-
     padding: 0 10px;
-
   }
 
   .food-pill-container {
-
-    width: 70%; /* Give the pill more room on tablet */
-
+    width: 70%; 
   }
 
   .nav-link {
-
-    font-size: 0.75rem; /* Shrink text to fit inside the border */
-
+    font-size: 0.75rem; 
   }
 
-
-
   .stavo {
-
     width: 9rem;
-
     margin-right: 0;
-
   }
 
 }

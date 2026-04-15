@@ -1,13 +1,13 @@
 <template>
     <div>
     <section class="bloodline">
-<nav class="numero">
-  <h2 class="seam">
+<nav class="numerolay">
+  <h2 class="seamlay">
     <img src="@/assets/images/motive.png" alt="Logo" class="dreak" width="127" height="32">
   </h2>
   
-  <div class="food-pill-container">
-    <ul class="mannav" ref="navMenu"> 
+  <div class="food-pill-containerlay">
+    <ul class="mannavlay" ref="navMenu"> 
       <li v-for="(item, index) in navItems" :key="item.name" class="nav-item-wrapper">
         <router-link 
           :to="item.path" 
@@ -44,7 +44,7 @@
           </div>
         </div>
       </li>
-      <div class="nav-indicator" :style="indicatorStyle"></div>
+      <div class="nav-indicatorlay" :style="indicatorStyle"></div>
     </ul>
   </div>
 
@@ -205,13 +205,13 @@ const navMenu = ref(null);
 const activeIndex = ref(0);
 const openDropdownIndex = ref(null);
 const isMobile = ref(false);
-// --- Navigation Data ---
+
 
 const navItems = [
   { name: 'Home', path: '/home' },
   {
     name: 'Personal',
-    path: '', // Empty path to prevent page navigation
+    path: '', 
     dropdownTitle: 'Discover swychr Personal',
     children: [
       { name: 'Remit (Send)', icon: p2p, path: '/p2p'},
@@ -243,138 +243,79 @@ const navItems = [
       { name: 'Careers', icon: Careers, path: '/Career'},
       { name: 'Blogs', icon: Blogs, path: '/Blog'},
       { name: 'Culture', icon: Culture, path: '/Culture'},
-
     ]
-
   },
-
   { name: 'Support', path: '/support' }
 ];
-
 const indicatorStyle = ref({ width: '0px', left: '0px', opacity: 0 });
 
 
-
-// --- Core Logic: Update the White Indicator ---
-
 const updateIndicator = () => {
   if (!navMenu.value) return;
-
- 
-
-  // Select all links and find the one corresponding to the current activeIndex
 
   const links = navMenu.value.querySelectorAll('.nav-link');
   const activeElement = links[activeIndex.value];
 
  
   if (activeElement) {
-
     const reducedWidth = activeElement.offsetWidth * 0.7;
     const left = activeElement.offsetLeft + (activeElement.offsetWidth - reducedWidth) / 2;
     indicatorStyle.value = {
-
       width: `${reducedWidth}px`,
-
       left: `${left}px`,
-
       opacity: 1
-
     };
   }
 };
 
 
-
-// --- Click Handlers ---
-
 const setActive = (index) => {
-
   activeIndex.value = index;
-
-  openDropdownIndex.value = null; // Close any open menu when a page is clicked
-
+  openDropdownIndex.value = null; 
   nextTick(() => updateIndicator());
-
 };
-
 
 
 const toggleDropdown = (index) => {
-
   if (openDropdownIndex.value === index) {
-
     openDropdownIndex.value = null;
 
-    // When closing, snap the indicator back to the actual route page
-
     syncIndicatorWithRoute();
-
   } else {
 
     openDropdownIndex.value = index;
-
-    activeIndex.value = index; // Move indicator to the clicked dropdown label
-
+    activeIndex.value = index; 
   }
-
-  // Small timeout to allow mobile keyboard or layout shifts to settle
-
   setTimeout(() => updateIndicator(), 50);
-
 };
 
 
-
-// --- Helper: Sync Indicator with URL ---
-
 const syncIndicatorWithRoute = () => {
-
   const pathName = route.path.replace('/', '').toLowerCase() || 'home';
 
   const index = navItems.findIndex(item => item.name.toLowerCase() === pathName);
-
   if (index !== -1) {
-
     activeIndex.value = index;
-
     nextTick(updateIndicator);
-
   }
-
 };
-
 
 const handleClickOutside = (event) => {
-
   const navContainer = document.querySelector('.food-pill-container');
-
   if (navContainer && !navContainer.contains(event.target)) {
-
     openDropdownIndex.value = null;
-
-    syncIndicatorWithRoute(); // Reset indicator if menu closed by clicking outside
-
+    syncIndicatorWithRoute(); 
   }
-
 };
-
-
 
 const checkScreen = () => {
-
   isMobile.value = window.innerWidth <= 820;
-
 };
 
 
 
-// Watch for URL changes to move the indicator automatically
-
 watch(() => route.path, () => {
-
   syncIndicatorWithRoute();
-
 }, { immediate: true });
 
 
@@ -400,6 +341,7 @@ onBeforeUnmount(() => {
 </script>
 
 <style>
+
 .seamlay{
   margin-top: 1.25rem;
   margin-left:4rem;
