@@ -512,7 +512,7 @@ const openDropdownIndex = ref(null);
 const isMobile = ref(false);
 
 const navItems = [
-  { name: 'home', path: '/' }
+  { name: 'home', path: '/' }, 
   { 
     name: 'Personal', 
     path: '',
