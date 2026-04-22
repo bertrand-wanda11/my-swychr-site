@@ -530,9 +530,7 @@ onBeforeUnmount(() => {
   max-width: 450px;
   color: #333;
   box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-  justify-content: center;
-  align-items: center;
-  margin-left:15rem 
+  margin-left:15rem ;
 }
 
 .card-tagline {
