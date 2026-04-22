@@ -1,5 +1,4 @@
 <template>
- <layoutView>
  <div>
 
  <section class="time1">
@@ -202,12 +201,10 @@ How secure is my money?
 
 
 
- </div>
- </layoutView>   
+ </div> 
 </template>
 
 <script setup>
-
 import { ref, onMounted, onBeforeUnmount, nextTick, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import p2p from '@/assets/images/P2P.png';
