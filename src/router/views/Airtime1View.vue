@@ -521,7 +521,7 @@ onBeforeUnmount(() => {
 }
 
 .topup-card {
-  margin-top: 4rem;  
+  margin-top: 9rem;  
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border-radius: 24px;
@@ -532,7 +532,7 @@ onBeforeUnmount(() => {
   box-shadow: 0 20px 40px rgba(0,0,0,0.2);
   justify-content: center;
   align-items: center;
-  margin-left:8rem 
+  margin-left:15rem 
 }
 
 .card-tagline {
