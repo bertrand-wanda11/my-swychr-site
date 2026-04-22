@@ -848,9 +848,6 @@ input[type="checkbox"]:checked ~ .wanda-expectedtime6 {
 
 
 
-
-
-
 .numerotime{
   display: flex;
   align-items: center;

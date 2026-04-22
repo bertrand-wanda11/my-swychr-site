@@ -1092,6 +1092,7 @@ margin-left: 67px;
   flex-shrink: 0;
 }
 
+
 .usd2 {
   padding: 5rem 1.25rem; 
   background-color: #f9f9f9;
