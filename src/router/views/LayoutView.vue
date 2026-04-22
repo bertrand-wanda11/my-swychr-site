@@ -49,7 +49,7 @@
   </div>
 
   <div class="stavo-containerlay"> 
-    <li class="stavo"><a href="/sales">Contact Sales</a></li>
+    <li class="stavo"><a href="/sales">Open Web App</a></li>
   </div>
 </nav>
     </section>

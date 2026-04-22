@@ -30,6 +30,7 @@ import CultureView from './views/CultureView.vue'
 import CareerView from './views/CareerView.vue'
 import InvestView from './views/InvestView.vue'
 import RolesView from './views/RolesView.vue'
+import Airtime1View from './views/Airtime1View.vue'
 
 const routes = [
   { path: '/', name: 'skeletonhome', component: SkeletonhomeView },
@@ -63,6 +64,7 @@ const routes = [
   { path: '/Career', name: 'Career', component: CareerView },
   { path: '/Invest', name: 'Invest', component: InvestView },
   { path: '/roles', name: 'roles', component: RolesView },
+  { path: '/Airtime1', name: 'Airtime1', component: Airtime1View }
 ]
 
 const router = createRouter({
