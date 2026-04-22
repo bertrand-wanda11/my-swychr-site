@@ -35,13 +35,13 @@
     </div>
   </section>   
 
- <section class="usd6">
-  <div class="insideusd6">
-    <div class="thedonusd6">
+ <section class="time6">
+  <div class="insidetime6">
+    <div class="thedontime6">
 <div class="">
-  <div class="complyusd6">
-<div class="spirusd6"> Frequently Asked</div>
-<div class="personusd6">Question</div>
+  <div class="complytime6">
+<div class="spirtime6"> Frequently Asked</div>
+<div class="persontime6">Question</div>
 </div>
 
 <br>  
@@ -50,25 +50,25 @@
 <br> 
 <br>  
 <br> 
-<div class="tropicusd6">
-  <h1 class="millof1usd6">Can’t find the answers you’re looking for?</h1>
-  <p class="millofusd6">
+<div class="tropictime6">
+  <h1 class="millof1time6">Can’t find the answers you’re looking for?</h1>
+  <p class="milloftime6">
     Explore our detailed FAQ page</p>
     <div class=""> 
-      <li class="steveusd6"><a href="Frequent">More FAQs</a></li>
+      <li class="stevetime6"><a href="Frequent">More FAQs</a></li>
 </div>
 </div> 
 </div>
 
 <div class="">
-<div class="supportsectionusd6">
-<div class="wanda-villausd6">
+<div class="supportsectiontime6">
+<div class="wanda-villatime6">
   <input type="checkbox" id="wanda-3">
-  <label for="wanda-3" class="wanda-requestusd6">
+  <label for="wanda-3" class="wanda-requesttime6">
     How can Swychremit be much cheaper than bank?
     <span class="wanda-icon"></span>
   </label>
-  <div class="wanda-expectedusd6">
+  <div class="wanda-expectedtime6">
     <p>Banks use outdated systems (SWIFT) and charge "hidden" margins on 
       the exchange rate. We’ve built our own direct liquidity rails into 
        emerging markets, allowing us to cut out the middlemen and pass the 
@@ -76,13 +76,13 @@
   </div>
 </div>
 
-<div class="wanda-villausd6">
+<div class="wanda-villatime6">
   <input type="checkbox" id="wanda-4">
-  <label for="wanda-4" class="wanda-requestusd6">
+  <label for="wanda-4" class="wanda-requesttime6">
    Is it really Instant?
     <span class="wanda-icon"></span>
   </label>
-  <div class="wanda-expectedusd6">
+  <div class="wanda-expectedtime6">
     <p>SwyChr Connect provides a suite of APIs that enable <br>
       businesses, fintechs, and organizations to scale their operations<br>
       by integrating solutions for payments, virtual card issuance,<br>
@@ -91,13 +91,13 @@
 </div>
 
 
-<div class="wanda-villausd6">
+<div class="wanda-villatime6">
   <input type="checkbox" id="wanda-5">
-  <label for="wanda-5" class="wanda-requestusd6">
+  <label for="wanda-5" class="wanda-requesttime6">
   Which countries can I send from?
     <span class="wanda-icon"></span>
   </label>
-  <div class="wanda-expectedusd6">
+  <div class="wanda-expectedtime6">
     <p>Yes, SwyChr uses secure blockchain technology, encryption, <br>
       and real-time transaction tracking to ensure your money and<br>
       data are safe.</p>
@@ -105,13 +105,13 @@
 </div>
 
 
-<div class="wanda-villausd6">
+<div class="wanda-villatime6">
   <input type="checkbox" id="wanda-6">
-  <label for="wanda-6" class="wanda-requestusd6">
+  <label for="wanda-6" class="wanda-requesttime6">
 How secure is my money?
     <span class="wanda-icon"></span>
   </label>
-  <div class="wanda-expectedusd6">
+  <div class="wanda-expectedtime6">
     <p>With SwyChr, you can send money across 60+ countries using <br>
       blockchain-powered technology and stable coins for secure and<br>
       fast transactions.</p>
@@ -119,13 +119,13 @@ How secure is my money?
 </div>
  
 
-<div class="wanda-villausd6">
+<div class="wanda-villatime6">
   <input type="checkbox" id="wanda-7">
-  <label for="wanda-7" class="wanda-requestusd6">
+  <label for="wanda-7" class="wanda-requesttime6">
   What if I send money to the wrong number?
     <span class="wanda-icon"></span>
   </label>
-  <div class="wanda-expectedusd6">
+  <div class="wanda-expectedtime6">
     <p> 
         You will receive an email notifying you when your funds are delivered.</p>
   </div>
@@ -309,7 +309,7 @@ import LayoutView from './LayoutView.vue';
 }
 
 
- .usd6 {
+ .time6 {
   padding: 3.125rem 0; 
   text-align: center;
   width: 100%; 
@@ -318,17 +318,17 @@ import LayoutView from './LayoutView.vue';
   color: #000;
 }
 
-.insideusd6{
+.insidetime6{
   align-items: center;
   max-width: 100%; 
   margin: 0 auto;
   padding: 0 1.25rem; 
   justify-content: center;
-  margin-left: 5rem;
+  margin-left: 3.5rem;
   margin-right: auto;
 }
 
-.thedonusd6 {
+.thedontime6 {
   display: inline-flex;
   align-items: center;
   text-align: center; 
@@ -338,7 +338,7 @@ import LayoutView from './LayoutView.vue';
   border-radius: 1.25rem; 
 }
 
-.personusd6 {
+.persontime6 {
   color: var(--Black-Main, #282828);
   font-family: 'Montserrat', sans-serif;
   font-size: 3.375rem; 
@@ -352,7 +352,7 @@ import LayoutView from './LayoutView.vue';
   width: 36.6875rem;
 }
 
-.spirusd6 {
+.spirtime6 {
   color: #626262;
   font-family: 'Montserrat', sans-serif;
   font-size: 3.375rem; 
@@ -364,12 +364,12 @@ import LayoutView from './LayoutView.vue';
   gap: 0.625rem; 
 }
 
-.complyusd6{
+.complytime6{
   margin-left: 0.625rem; 
   padding-bottom: 0.625rem; 
 }
 
-.tropicusd6 {
+.tropictime6{
   text-align: justify;
   width: 30.4375rem; 
   height: 17.125rem;
@@ -380,7 +380,7 @@ import LayoutView from './LayoutView.vue';
   margin-bottom: 2.5rem; 
 }
 
-.millof1usd6 {
+.millof1time6{
   color: var(--Black-Main, #282828);
   font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem; 
@@ -391,7 +391,7 @@ import LayoutView from './LayoutView.vue';
   margin-left: 1.25rem; 
 }
 
-.millofusd6 {
+.milloftime6{
   color: var(--Purple-600, #2F0644);
   font-family: 'Montserrat', sans-serif;
   font-size: 1.25rem; 
@@ -401,7 +401,7 @@ import LayoutView from './LayoutView.vue';
   margin-left: 1.25rem; 
 }
 
-.steveusd6 {
+.stevetime6 {
   border: none;
   background-color: #A84FDA;
   width: 10.4375rem; 
@@ -418,11 +418,11 @@ import LayoutView from './LayoutView.vue';
   margin-top: 5rem;
 }
 
-.steveusd6 li {
+.stevetime6 li {
   position: relative;
 }
 
-.steveusd6 a {
+.stevetime6 a {
   color: var(--WhiTE-mAIN, #FFF);
   font-family: 'Montserrat', sans-serif;
   font-size: 1.25rem; 
@@ -432,13 +432,13 @@ import LayoutView from './LayoutView.vue';
   text-decoration: none;
 }
    
-.supportsectionusd6 {
+.supportsectiontime6{
     margin: 1.25rem auto; 
     padding: 1.25rem; 
     border-radius: 0.5rem; 
 }
 
-.wanda-requestusd6 {
+.wanda-requesttime6 {
     padding: 2.1875rem 0.9375rem; 
     background-color: #FAFAFA;
     cursor: pointer;
@@ -472,15 +472,15 @@ input[type="checkbox"] {
     display: none;
 }
 
-input[type="checkbox"]:checked + .wanda-requestusd6{
+input[type="checkbox"]:checked + .wanda-requesttime6{
     background-color: #fff;
 }
 
-input[type="checkbox"]:checked + .wanda-requestusd6 .wanda-icon {
+input[type="checkbox"]:checked + .wanda-requesttime6 .wanda-icon {
     transform: translateY(-50%) rotate(45deg);  
 }
 
-.wanda-expectedusd6 {
+.wanda-expectedtime6{
     padding: 0.9375rem; 
     overflow: hidden;
     max-height: 0;
@@ -494,7 +494,7 @@ input[type="checkbox"]:checked + .wanda-requestusd6 .wanda-icon {
     line-height: 120%;
 }
 
-input[type="checkbox"]:checked ~ .wanda-expectedusd6 {
+input[type="checkbox"]:checked ~ .wanda-expectedtime6 {
     max-height: 31.25rem; 
     border-top: none;
     margin-top: 0;
@@ -503,12 +503,12 @@ input[type="checkbox"]:checked ~ .wanda-expectedusd6 {
 }
 
 @media only screen and (max-width: 1180px) {
-  .insideusd6 {
+  .insidetime6 {
     margin-left: 0;
     padding: 0 3.125rem; 
   }
 
-  .thedonusd6{
+  .thedontime6{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -517,18 +517,18 @@ input[type="checkbox"]:checked ~ .wanda-expectedusd6 {
   }
 
 
-  .complyusd6{
+  .complytime6{
     text-align: left;
     width: 100%;
   }
 
-  .spirusd6, .personusd6{
+  .spirtime6, .persontime6{
     font-size: 2.8rem;
     width: auto;
     text-align: left;
   }
 
-  .tropicusd6 {
+  .tropictime6 {
     width: 100% !important;
     max-width: 22rem; 
     height: auto;
@@ -537,37 +537,37 @@ input[type="checkbox"]:checked ~ .wanda-expectedusd6 {
     margin-top: 2rem;
   }
 
-  .steveusd6 {
+  .stevetime6 {
     margin: 1.5rem 0 0 0; 
     width: 100%;
     max-width: 10rem;
   }
 
-  .supportsectionusd6 {
+  .supportsectiontime6{
     flex: 1.5;
   }
 
-  .wanda-requestusd6 {
+  .wanda-requesttime6 {
     width: 100% !important;
   }
 }
 
 @media only screen and (max-width: 430px) {
-  .usd6 {
+  .time6 {
     padding: 3rem 0;
   }
 
-  .insideusd6 {
+  .insidetime6{
     margin-left: 0;
     padding: 0 1.25rem;
   }
 
-  .thedonusd6{
+  .thedontime6{
     flex-direction: column;
     gap: 0;
   }
 
-  .spirusd6, .personusd6{
+  .spirtime6, .persontime6{
     font-size: 2.1rem;
     text-align: center;
     width: 100%;
@@ -575,11 +575,11 @@ input[type="checkbox"]:checked ~ .wanda-expectedusd6 {
     margin: 0;
   }
 
-  .personusd6 {
+  .persontime6 {
     margin-bottom: 2rem;
   }
 
-  .tropicusd6{
+  .tropictime6{
     width: 100%;
     height: auto;
     padding: 2rem 1rem;
@@ -591,38 +591,38 @@ input[type="checkbox"]:checked ~ .wanda-expectedusd6 {
     align-items: center;
   }
 
-  .millof1usd6{
+  .milloftime6{
     margin: 0 0 0.5rem 0;
     font-size: 1rem;
   }
 
-  .millofusd6{
+  .milloftime6{
     margin: 0;
     font-size: 1.1rem;
   }
 
-  .steveusd6{
+  .stevetime6{
     margin: 1.5rem 0 0 0; 
     height: 3rem;
     width: 9rem;
   }
 
-  .supportsectionusd6{
+  .supportsectiontime6{
     width: 100%;
   }
 
-  .wanda-villausd6{
+  .wanda-villatime6{
     margin-bottom: 0.75rem;
   }
 
-  .wanda-requestusd6 {
+  .wanda-requesttime6 {
     width: 100% !important;
     padding: 1.25rem 2.5rem 1.25rem 1rem;
     font-size: 1rem;
     line-height: 1.3;
   }
 
-  .wanda-expectedusd6 {
+  .wanda-expectedtime6 {
     font-size: 0.9rem;
     padding: 0.5rem 1rem 1rem 1rem;
   }
