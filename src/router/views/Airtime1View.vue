@@ -351,18 +351,20 @@ onBeforeUnmount(() => {
 <style scoped>
 
 .time1 {
-  width: 95vw;
-  min-height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
- url('@/assets/images/Chaca.png'); 
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 80px;
-  color: white;
   text-align: center;
+  margin: 0 auto;
+  padding: 0.625rem 0;
+  height: auto;
+  position: relative; 
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  background-image: url('@/assets/images/Chaca.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .insidetime1 {
@@ -399,6 +401,8 @@ onBeforeUnmount(() => {
   max-width: 450px;
   color: #333;
   box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  justify-content: center;
+  align-items: center;
 }
 
 .card-tagline {
