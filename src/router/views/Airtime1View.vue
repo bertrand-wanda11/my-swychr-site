@@ -90,6 +90,12 @@
         <button class="continue-btn">Continue</button>
       </div>
     </div>
+    <div class="steps-section">
+      <h3 class="steps-title">Three simple steps to connect</h3>
+      <p class="steps-subtitle">
+        We've removed the complexity from global top-ups. No registrations required for your first transfer.
+      </p>
+    </div>
         </div>
   </section>   
 
@@ -461,6 +467,24 @@ onBeforeUnmount(() => {
   cursor: pointer;
 }
 
+.steps-section {
+  background: white;
+  width: 100%;
+  padding: 60px 20px;
+  color: #333;
+}
+
+.steps-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.steps-subtitle {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #666;
+}
 
 @media screen and (max-width: 1180px) {
   .hero-title {
@@ -496,6 +520,10 @@ onBeforeUnmount(() => {
 
   .card-title {
     font-size: 1.25rem;
+  }
+
+  .steps-title {
+    font-size: 1.6rem;
   }
 }
 
