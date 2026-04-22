@@ -147,6 +147,7 @@ import LayoutView from './LayoutView.vue';
 </script>
 
 <style scoped>
+
 .time1 {
   width: 100%;
   min-height: 100vh;
@@ -175,6 +176,7 @@ import LayoutView from './LayoutView.vue';
   line-height: 1.6;
   opacity: 0.9;
   margin-bottom: 3rem;
+  font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -187,7 +189,6 @@ import LayoutView from './LayoutView.vue';
   max-width: 550px;
   color: #333;
   box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-  margin-bottom: 50px;
 }
 
 .card-tagline {
