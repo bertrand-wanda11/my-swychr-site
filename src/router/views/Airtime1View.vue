@@ -66,7 +66,6 @@
   </div>
 </nav>  
 
- <div class="insidetime1">
     <div class="hero-content">
       <h1 class="hero-title">Top up mobile credit.<br>Anywhere. Instantly.</h1>
       <p class="hero-subtitle">
@@ -89,7 +88,7 @@
         
         <button class="continue-btn">Continue</button>
       </div>
-    </div>
+    
   
         </div>
           <div class="steps-section">
@@ -521,7 +520,7 @@ onBeforeUnmount(() => {
 }
 
 .topup-card {
-  margin-top: 9rem;  
+ 
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border-radius: 24px;
@@ -530,7 +529,7 @@ onBeforeUnmount(() => {
   max-width: 450px;
   color: #333;
   box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-  margin-left:15rem ;
+
 }
 
 .card-tagline {
