@@ -90,13 +90,14 @@
         <button class="continue-btn">Continue</button>
       </div>
     </div>
-    <div class="steps-section">
+  
+        </div>
+          <div class="steps-section">
       <h3 class="steps-title">Three simple steps to connect</h3>
       <p class="steps-subtitle">
         We've removed the complexity from global top-ups. No registrations required for your first transfer.
       </p>
     </div>
-        </div>
   </section>   
 
  <section class="time6">
@@ -407,6 +408,7 @@ onBeforeUnmount(() => {
   box-shadow: 0 20px 40px rgba(0,0,0,0.2);
   justify-content: center;
   align-items: center;
+  margin-left:4rem 
 }
 
 .card-tagline {
