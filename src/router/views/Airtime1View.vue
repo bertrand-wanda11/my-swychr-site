@@ -151,7 +151,7 @@ import LayoutView from './LayoutView.vue';
   width: 100%;
   min-height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
- url('@/assets/images/chaca.png'); 
+ url('@/assets/images/Chaca.png'); 
   background-size: cover;
   background-position: center;
   display: flex;
