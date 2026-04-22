@@ -202,7 +202,7 @@ How secure is my money?
 </section>
 
 
-  <section  class="footetime">
+  <section  class="footertime">
       <div class="mothers11time">
 
         <div class="mother11time">
@@ -520,8 +520,8 @@ onBeforeUnmount(() => {
   font-family: 'Montserrat', sans-serif;
 }
 
-
 .topup-card {
+  margin-top: 4rem;  
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border-radius: 24px;
@@ -532,7 +532,7 @@ onBeforeUnmount(() => {
   box-shadow: 0 20px 40px rgba(0,0,0,0.2);
   justify-content: center;
   align-items: center;
-  margin-left:4rem 
+  margin-left:8rem 
 }
 
 .card-tagline {
@@ -971,7 +971,6 @@ input[type="checkbox"]:checked ~ .wanda-expectedtime6 {
     padding: 0.5rem 1rem 1rem 1rem;
   }
 } 
-
 
 
 .numerotime{
@@ -1431,7 +1430,7 @@ line-height: 120%;
   line-height: 1.6;
 }
 
-.seam{
+.seamtime{
 margin-top: 20px;
 margin-left: 67px;
 }
