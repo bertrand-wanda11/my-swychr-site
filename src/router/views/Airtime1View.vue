@@ -90,14 +90,7 @@
         <button class="continue-btn">Continue</button>
       </div>
     </div>
-    </div>
-
-    <div class="steps-section">
-      <h3 class="steps-title">Three simple steps to connect</h3>
-      <p class="steps-subtitle">
-        We've removed the complexity from global top-ups. No registrations required for your first transfer.
-      </p>
-    </div>
+        </div>
   </section>   
 
  <section class="time6">
@@ -358,7 +351,7 @@ onBeforeUnmount(() => {
 <style scoped>
 
 .time1 {
-  width: 90vw;
+  width: 95vw;
   min-height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
  url('@/assets/images/Chaca.png'); 
@@ -374,7 +367,6 @@ onBeforeUnmount(() => {
 
 .insidetime1 {
   padding-top: 4rem; 
-  display: block;
   align-items: center;
   justify-content: center;
   width: 90vw;
@@ -404,7 +396,7 @@ onBeforeUnmount(() => {
   border-radius: 24px;
   padding: 40px;
   width: 100%;
-  max-width: 550px;
+  max-width: 450px;
   color: #333;
   box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
@@ -467,24 +459,6 @@ onBeforeUnmount(() => {
   cursor: pointer;
 }
 
-.steps-section {
-  background: white;
-  width: 100%;
-  padding: 60px 20px;
-  color: #333;
-}
-
-.steps-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 15px;
-}
-
-.steps-subtitle {
-  max-width: 600px;
-  margin: 0 auto;
-  color: #666;
-}
 
 @media screen and (max-width: 1180px) {
   .hero-title {
@@ -521,12 +495,7 @@ onBeforeUnmount(() => {
   .card-title {
     font-size: 1.25rem;
   }
-
-  .steps-title {
-    font-size: 1.6rem;
-  }
 }
-
 
  .time6 {
   padding: 3.125rem 0; 
