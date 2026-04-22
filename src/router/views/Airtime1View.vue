@@ -2,6 +2,39 @@
  <layoutView>
  <div>
 
+ <section class="time1">
+    <div class="hero-content">
+      <h1 class="hero-title">Top up mobile credit.<br>Anywhere. Instantly.</h1>
+      <p class="hero-subtitle">
+        Send airtime to any phone number across Africa and beyond in seconds.<br>
+        No delays. No stress. Just fast, reliable top-ups.
+      </p>
+
+      <div class="topup-card">
+        <p class="card-tagline">Top Up from anywhere</p>
+        <h2 class="card-title">Ready to send a top-up?</h2>
+        <p class="card-subtitle">Instant transfers across 40+ global digits</p>
+        
+        <div class="input-group">
+          <div class="country-picker">
+            <span class="globe-icon">🌐</span>
+            <span class="chevron-down">▾</span>
+          </div>
+          <input type="text" placeholder="Enter recipient Number" class="topup-input">
+        </div>
+        
+        <button class="continue-btn">Continue</button>
+      </div>
+    </div>
+
+    <div class="steps-section">
+      <h3 class="steps-title">Three simple steps to connect</h3>
+      <p class="steps-subtitle">
+        We've removed the complexity from global top-ups. No registrations required for your first transfer.
+      </p>
+    </div>
+  </section>   
+
  <section class="usd6">
   <div class="insideusd6">
     <div class="thedonusd6">
@@ -114,6 +147,167 @@ import LayoutView from './LayoutView.vue';
 </script>
 
 <style scoped>
+.time1 {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+ url('@/assets/images/chaca.png'); 
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+  color: white;
+  text-align: center;
+}
+
+.hero-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 3rem;
+}
+
+
+.topup-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 40px;
+  width: 100%;
+  max-width: 550px;
+  color: #333;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  margin-bottom: 50px;
+}
+
+.card-tagline {
+  color: #8C1BC1;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.card-subtitle {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+
+.input-group {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  margin-bottom: 30px;
+}
+
+.country-picker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-right: 15px;
+  border-right: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.topup-input {
+  border: none;
+  background: transparent;
+  padding-left: 15px;
+  font-size: 1rem;
+  width: 100%;
+  outline: none;
+}
+
+.continue-btn {
+  width: 100%;
+  padding: 15px;
+  background: #f0f0f0; 
+  border: none;
+  border-radius: 50px;
+  color: #999;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.steps-section {
+  background: white;
+  width: 100%;
+  padding: 60px 20px;
+  color: #333;
+}
+
+.steps-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.steps-subtitle {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #666;
+}
+
+@media screen and (max-width: 1180px) {
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .topup-card {
+    max-width: 500px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .time1 {
+    padding-top: 40px;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+    padding: 0 20px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    padding: 0 25px;
+    br { display: none; } 
+  }
+
+  .topup-card {
+    width: 90%;
+    padding: 25px 20px;
+    margin-bottom: 30px;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .steps-title {
+    font-size: 1.6rem;
+  }
+}
+
 
  .usd6 {
   padding: 3.125rem 0; 
