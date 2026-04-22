@@ -66,6 +66,7 @@
   </div>
 </nav>  
 
+ <div class="insidetime1">
     <div class="hero-content">
       <h1 class="hero-title">Top up mobile credit.<br>Anywhere. Instantly.</h1>
       <p class="hero-subtitle">
@@ -88,6 +89,7 @@
         
         <button class="continue-btn">Continue</button>
       </div>
+    </div>
     </div>
 
     <div class="steps-section">
@@ -356,7 +358,7 @@ onBeforeUnmount(() => {
 <style scoped>
 
 .time1 {
-  width: 100%;
+  width: 90vw;
   min-height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
  url('@/assets/images/Chaca.png'); 
@@ -368,6 +370,15 @@ onBeforeUnmount(() => {
   padding-top: 80px;
   color: white;
   text-align: center;
+}
+
+.insidetime1 {
+  padding-top: 4rem; 
+  display: block;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+  margin-top: 0; 
 }
 
 .hero-title {
@@ -980,6 +991,32 @@ input[type="checkbox"]:checked ~ .wanda-expectedtime6 {
   left: 50%;
   transform: translateX(-50%);
 }
+
+.stavotime{
+  border: none;
+  background: #fff;
+  width: 13rem;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem; 
+  text-align: center;
+  display: flex;
+  border-radius: 6.25rem;
+  margin-right: 6.25vw; 
+  margin-top: 0.625rem;
+}
+
+.stavotime a {
+  text-decoration: none;
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  padding: 0 0.9375rem;
+}
+
 
 @media screen and (max-width: 430px) {
   .numerotime{
