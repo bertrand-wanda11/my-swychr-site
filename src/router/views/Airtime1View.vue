@@ -849,9 +849,9 @@ const steps = [
   flex-direction: column;
 }
 
-.card-purple { background-color: #f1f0ff; }
-.card-dark { background-color: #1e146d; }
-.card-light { border: 1px solid #e0e0e0; }
+.card-purple { background-color: #F4F2FD; }
+.card-dark { background-color: #8C1BC1; }
+.card-light { border: 1px solid #EAD3F6; }
 
 .card-icon { width: 32px; margin-bottom: 20px; }
 .icon-light { filter: brightness(0) invert(1); }
@@ -1231,6 +1231,7 @@ input[type="checkbox"]:checked ~ .wanda-expectedtime6 {
  font-style: normal;
    border-radius: 24px;
  background-color: #f3f3f3;
+
 }
 
 .text-side {
@@ -1240,27 +1241,30 @@ input[type="checkbox"]:checked ~ .wanda-expectedtime6 {
 
 .title {
   font-size: 48px;
-  font-weight: 700;
+  font-weight: 400;
   color: #1a1a1a;
   margin-bottom: 16px;
    font-family: 'Montserrat', sans-serif;
     font-style: normal;
+    margin-left:1rem;
 }
 
 .subtitle {
   font-size: 18px;
   color: #4a4a4a;
-  line-height: 1.5;
+  line-height: 1.1;
   margin-bottom: 32px;
    font-family: 'Montserrat', sans-serif;
     font-style: normal;
+     margin-left:1rem;
 }
 
 .store-buttons {
   display: flex;
   gap: 20px;
    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
+   font-style: normal;
+   margin-bottom:2rem;  
 }
 
 .store-link {
@@ -1286,7 +1290,7 @@ input[type="checkbox"]:checked ~ .wanda-expectedtime6 {
 }
 
 .phone-img {
-  max-width: 320px;
+  max-width: 270px;
   height: auto;
   filter: drop-shadow(0px 20px 40px rgba(0,0,0,0.1));
 }
@@ -1301,7 +1305,7 @@ input[type="checkbox"]:checked ~ .wanda-expectedtime6 {
   }
   
   .phone-img {
-    max-width: 280px;
+    max-width: 230px;
   }
 }
 
