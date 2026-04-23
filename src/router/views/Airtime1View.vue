@@ -555,12 +555,16 @@ onBeforeUnmount(() => {
   color: var(--Purple-500, #8C1BC1);
   border-radius: 6.25rem; 
   background: var(--Purple-50, rgba(245, 233, 251, 0.45));
+   font-family: 'Montserrat', sans-serif;
+    font-style: normal;
 }
 
 .continue-btn{
-      color: var(--Purple-500, #8C1BC1);
+  color: var(--Purple-500, #8C1BC1);
   border-radius: 6.25rem; 
   background: var(--Purple-50, rgba(245, 233, 251, 0.45));
+   font-family: 'Montserrat', sans-serif;
+    font-style: normal;
 }
 
 @media screen and (max-width: 430px) {
@@ -764,8 +768,8 @@ input[type="checkbox"]:checked + .wanda-requesttime6 .wanda-icon {
     text-align: justify;
     color: var(--Gray-800, #424242);
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.125rem; 
     font-style: normal;
+    font-size: 1.125rem; 
     font-weight: 400;
     line-height: 120%;
 }
@@ -906,8 +910,9 @@ input[type="checkbox"]:checked ~ .wanda-expectedtime6 {
   }
 } 
 
+
 .cta-container {
-  background-color: #f3f3f3; 
+  background-color: #28013C; 
   border-radius: 24px;
   margin: 20px;
   padding: 60px 80px;
@@ -924,6 +929,9 @@ input[type="checkbox"]:checked ~ .wanda-expectedtime6 {
   max-width: 1200px;
   width: 100%;
   gap: 40px;
+ font-family: 'Montserrat', sans-serif;
+ font-style: normal;
+ background-color: #f3f3f3;
 }
 
 .text-side {
@@ -936,6 +944,8 @@ input[type="checkbox"]:checked ~ .wanda-expectedtime6 {
   font-weight: 700;
   color: #1a1a1a;
   margin-bottom: 16px;
+   font-family: 'Montserrat', sans-serif;
+    font-style: normal;
 }
 
 .subtitle {
@@ -943,11 +953,15 @@ input[type="checkbox"]:checked ~ .wanda-expectedtime6 {
   color: #4a4a4a;
   line-height: 1.5;
   margin-bottom: 32px;
+   font-family: 'Montserrat', sans-serif;
+    font-style: normal;
 }
 
 .store-buttons {
   display: flex;
   gap: 20px;
+   font-family: 'Montserrat', sans-serif;
+    font-style: normal;
 }
 
 .store-link {
@@ -957,6 +971,8 @@ input[type="checkbox"]:checked ~ .wanda-expectedtime6 {
   text-decoration: none;
   color: #1a1a1a;
   font-weight: 500;
+   font-family: 'Montserrat', sans-serif;
+    font-style: normal;
 }
 
 .icon {
