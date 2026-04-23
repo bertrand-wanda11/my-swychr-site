@@ -566,6 +566,8 @@ onBeforeUnmount(() => {
 @media screen and (max-width: 430px) {
   .time1{
     height: 60vh; 
+    padding-top: 40px;
+
   }
 
   .topup-card-wrapper {
