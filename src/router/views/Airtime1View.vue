@@ -481,15 +481,20 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .time1 {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0.625rem 0;
+  height: auto;
+  position: relative; 
   width: 100%;
-  height: 90vh; 
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-              url('@/assets/images/Chaca.png');
-  background-size: cover;
-  background-position: center;
-  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  align-items: center;
   justify-content: center;
-  padding-top: 1.5rem;
+  background-image: url('@/assets/images/chaca.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
