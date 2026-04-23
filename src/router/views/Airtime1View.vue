@@ -520,7 +520,6 @@ onBeforeUnmount(() => {
 }
 
 .topup-card {
- 
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border-radius: 24px;
@@ -529,7 +528,7 @@ onBeforeUnmount(() => {
   max-width: 450px;
   color: #333;
   box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-
+  margin-left: 4rem;
 }
 
 .card-tagline {
