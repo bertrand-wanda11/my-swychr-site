@@ -83,7 +83,7 @@
       
       <div class="input-group">
         <div class="country-picker">
-          <span class="globe-icon">🌐</span>
+          <span class="globe-icon"><img src="@/assets/images/Globe.png"></span>
           <span class="chevron-down">▾</span>
         </div>
         <input type="text" placeholder="Enter recipient Number" class="topup-input">
@@ -689,7 +689,7 @@ const steps = [
   color: #666;
   line-height: 1.6;
   max-width: 280px;
-    font-family: 'Montserrat', sans-serif;
+ font-family: 'Montserrat', sans-serif;
 }
 
 
