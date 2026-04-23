@@ -65,39 +65,40 @@
     <li class="stavotime"><a href="https://urlgeni.us/swychr">Open Web App  <img src="@/assets/images/ror.png" alt="App Store"  width="13px"/></a></li>
   </div>
 </nav>  
+  <div class="hero-content">
+    <h1 class="hero-title">Top up mobile credit.<br>Anywhere. Instantly.</h1>
+    <p class="hero-subtitle">
+      Send airtime to any phone number across Africa and beyond in seconds.<br>
+      No delays. No stress. Just fast, reliable top-ups.
+    </p>
+  </div>
+</section>
 
-    <div class="hero-content">
-      <h1 class="hero-title">Top up mobile credit.<br>Anywhere. Instantly.</h1>
-      <p class="hero-subtitle">
-        Send airtime to any phone number across Africa and beyond in seconds.<br>
-        No delays. No stress. Just fast, reliable top-ups.
-      </p>
-
-      <div class="topup-card">
-        <p class="card-tagline">Top Up from anywhere</p>
-        <h2 class="card-title">Ready to send a top-up?</h2>
-        <p class="card-subtitle">Instant transfers across 40+ global digits</p>
-        
-        <div class="input-group">
-          <div class="country-picker">
-            <span class="globe-icon">🌐</span>
-            <span class="chevron-down">▾</span>
-          </div>
-          <input type="text" placeholder="Enter recipient Number" class="topup-input">
+<section class="white-section">
+  <div class="topup-card-wrapper">
+    <div class="topup-card">
+      <p class="card-tagline">Top Up from anywhere</p>
+      <h2 class="card-title">Ready to send a top-up?</h2>
+      <p class="card-subtitle">Instant transfers across 40+ global digits</p>
+      
+      <div class="input-group">
+        <div class="country-picker">
+          <span class="globe-icon">🌐</span>
+          <span class="chevron-down">▾</span>
         </div>
-        
-        <button class="continue-btn">Continue</button>
+        <input type="text" placeholder="Enter recipient Number" class="topup-input">
       </div>
-    
-  
-        </div>
-          <div class="steps-section">
-      <h3 class="steps-title">Three simple steps to connect</h3>
-      <p class="steps-subtitle">
-        We've removed the complexity from global top-ups. No registrations required for your first transfer.
-      </p>
+      <button class="continue-btn">Continue</button>
     </div>
-  </section>   
+  </div>
+
+  <div class="steps-section">
+    <h3 class="steps-title">Three simple steps to connect</h3>
+    <p class="steps-subtitle">
+      We've removed the complexity from global top-ups. No registrations required for your first transfer.
+    </p>
+  </div>
+</section>
 
  <section class="time6">
   <div class="insidetime6">
@@ -479,174 +480,65 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
-
 .time1 {
   width: 100%;
-  min-height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
- url('@/assets/images/Chaca.png'); 
+  height: 70vh; 
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+              url('@/assets/images/Chaca.png');
   background-size: cover;
   background-position: center;
   display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  padding-top: 100px;
+}
+
+
+.white-section {
+  background: #fdfdfd;
+  width: 100%;
+  position: relative;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 30px;
-  color: white;
-  text-align: center;
 }
 
-.insidetime1 {
-  padding-top: 4rem; 
-  align-items: center;
+.topup-card-wrapper {
+  width: 100%;
+  display: flex;
   justify-content: center;
-  width: 90vw;
-  margin-top: 0; 
-}
-
-.hero-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 3.5rem;
-  font-weight: 700;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
-}
-
-.hero-subtitle {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  opacity: 0.9;
-  margin-bottom: 3rem;
-  font-family: 'Montserrat', sans-serif;
+  margin-top: -180px; 
+  padding: 0 20px;
+  z-index: 10;
 }
 
 .topup-card {
-  margin-top: 8rem;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  background: white;
   border-radius: 24px;
   padding: 40px;
-  width: 100%;
-  max-width: 450px;
-  color: #333;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-  margin-left: 2rem;
+  max-width: 550px;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
-.card-tagline {
-  color: #8C1BC1;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.card-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-
-.card-subtitle {
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 25px;
-}
-
-
-.input-group {
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid #ddd;
-  padding: 10px 0;
-  margin-bottom: 30px;
-}
-
-.country-picker {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding-right: 15px;
-  border-right: 1px solid #ddd;
-  cursor: pointer;
-}
-
-.topup-input {
-  border: none;
-  background: transparent;
-  padding-left: 15px;
-  font-size: 1rem;
-  width: 100%;
-  outline: none;
-}
-
-.continue-btn {
-  width: 100%;
-  padding: 15px;
-  background: #f0f0f0; 
-  border: none;
-  border-radius: 50px;
-  color: #999;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.steps-section {
-  background: white;
-  width: 100%;
-  padding: 60px 20px;
-  color: #333;
-}
-
-.steps-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 15px;
-}
-
-.steps-subtitle {
-  max-width: 600px;
-  margin: 0 auto;
-  color: #666;
-}
-
-@media screen and (max-width: 1180px) {
-  .hero-title {
-    font-size: 2.8rem;
-  }
-
-  .topup-card {
-    max-width: 500px;
-  }
-}
 
 @media screen and (max-width: 430px) {
-  .time1 {
-    padding-top: 40px;
+  .time1{
+    height: 60vh; 
   }
 
-  .hero-title {
-    font-size: 2.2rem;
-    padding: 0 20px;
-  }
-
-  .hero-subtitle {
-    font-size: 0.95rem;
-    padding: 0 25px;
-    br { display: none; } 
+  .topup-card-wrapper {
+    margin-top: -150px; 
   }
 
   .topup-card {
-    width: 90%;
-    padding: 25px 20px;
-    margin-bottom: 30px;
+    padding: 25px;
   }
+}
 
-  .card-title {
-    font-size: 1.25rem;
-  }
-
-  .steps-title {
-    font-size: 1.6rem;
+@media screen and (min-width: 820px) and (max-width: 1180px) {
+  .topup-card-wrapper {
+    margin-top: -200px;
   }
 }
 
