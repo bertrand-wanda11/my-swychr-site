@@ -913,7 +913,7 @@ input[type="checkbox"]:checked ~ .wanda-expectedtime6 {
 
 .cta-container {
   background-color: #28013C; 
-  border-radius: 24px;
+ width:100%;
   margin: 20px;
   padding: 60px 80px;
   overflow: hidden;
@@ -926,11 +926,13 @@ input[type="checkbox"]:checked ~ .wanda-expectedtime6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 1000px;
   width: 100%;
-  gap: 40px;
+  gap: 20px;
+  padding-left: 1rem;
  font-family: 'Montserrat', sans-serif;
  font-style: normal;
+   border-radius: 24px;
  background-color: #f3f3f3;
 }
 
