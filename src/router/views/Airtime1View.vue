@@ -202,6 +202,35 @@ How secure is my money?
 </section>
 
 
+<section class="cta-container">
+    <div class="cta-content">
+      <div class="text-side">
+        <h1 class="title">Ready to bridge the distance?</h1>
+        <p class="subtitle">
+          Join millions of users who trust Swychr for their global communication needs.
+          <br />
+          <span>Get started</span>
+        </p>
+
+        <div class="store-buttons">
+          <a href="#" class="store-link">
+            <img src="@/assets/images/appt.png" alt="App Store" class="icon" />
+            <span>App Store</span>
+          </a>
+          <a href="#" class="store-link">
+            <img src="@/assets/images/playt.png" alt="Google Play" class="icon" />
+            <span>Google Play</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="image-side">
+        <img src="@/assets/images/13p.png" alt="Swychr App" class="phone-img" />
+      </div>
+    </div>
+  </section>
+
+
   <section  class="footertime">
       <div class="mothers11time">
 
@@ -494,8 +523,7 @@ onBeforeUnmount(() => {
   color: white;
   text-align: center;
 }
-
-
+  
 .white-section {
   background: #fdfdfd;
   width: 100%;
@@ -523,6 +551,17 @@ onBeforeUnmount(() => {
   border: 1px solid rgba(0,0,0,0.05);
 }
 
+.card-tagline{
+  color: var(--Purple-500, #8C1BC1);
+  border-radius: 6.25rem; 
+  background: var(--Purple-50, rgba(245, 233, 251, 0.45));
+}
+
+.continue-btn{
+      color: var(--Purple-500, #8C1BC1);
+  border-radius: 6.25rem; 
+  background: var(--Purple-50, rgba(245, 233, 251, 0.45));
+}
 
 @media screen and (max-width: 430px) {
   .time1{
@@ -787,6 +826,8 @@ input[type="checkbox"]:checked ~ .wanda-expectedtime6 {
   }
 }
 
+
+
 @media only screen and (max-width: 430px) {
   .time6 {
     padding: 3rem 0;
@@ -863,6 +904,136 @@ input[type="checkbox"]:checked ~ .wanda-expectedtime6 {
   }
 } 
 
+.cta-container {
+  background-color: #f3f3f3; 
+  border-radius: 24px;
+  margin: 20px;
+  padding: 60px 80px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  gap: 40px;
+}
+
+.text-side {
+  flex: 1;
+  text-align: left;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #4a4a4a;
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+
+.store-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.store-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.image-side {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.phone-img {
+  max-width: 320px;
+  height: auto;
+  filter: drop-shadow(0px 20px 40px rgba(0,0,0,0.1));
+}
+
+@media (max-width: 1180px) {
+  .cta-container {
+    padding: 40px;
+  }
+  
+  .title {
+    font-size: 36px;
+  }
+  
+  .phone-img {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 820px) {
+  .cta-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .text-side {
+    text-align: center;
+  }
+  
+  .store-buttons {
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  
+  .image-side {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 430px) {
+  .cta-container {
+    padding: 40px 20px;
+    margin: 10px;
+    border-radius: 16px;
+  }
+
+  .title {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .store-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .phone-img {
+    max-width: 240px; 
+  }
+}
 
 .numerotime{
   display: flex;
