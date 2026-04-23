@@ -481,8 +481,8 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .time1 {
-width: 100%;
-  min-height: 70vh;
+  width: 100%;
+  min-height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
               url('@/assets/images/Chaca.png');
   background-size: cover;
@@ -490,7 +490,7 @@ width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 80px;
+  padding-top: 2rem;
   color: white;
   text-align: center;
 }
