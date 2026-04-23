@@ -595,7 +595,6 @@ const steps = [
 }
 
 .continue-btn{
-    padding-top: 1rem;
   color: var(--Purple-500, #8C1BC1);
   border-radius: 6.25rem; 
   background: var(--Purple-50, rgba(245, 233, 251, 0.45));
@@ -1068,7 +1067,6 @@ input[type="checkbox"]:checked ~ .wanda-expectedtime6 {
 .cta-container {
   background-color: #28013C; 
  width:100%;
-  margin: 20px;
   padding: 60px 80px;
   overflow: hidden;
   display: flex;
