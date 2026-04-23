@@ -113,6 +113,59 @@
     </div>
   </section>
 
+<section class="advantage-section">
+    <div class="container">
+      <h2 class="main-title">The Swychr Advantage</h2>
+
+      <div class="feature-grid">
+        
+        <div class="card card-purple instant">
+          <img src="@/assets/images/challe.png" alt="Delivery" class="card-icon" />
+          <h3 class="card-title">Instant delivery</h3>
+          <p class="card-text">
+            Our direct partnerships with 600+ operators worldwide ensure your
+            top-up arrives in milliseconds, not minutes.
+          </p>
+        </div>
+
+        <div class="card card-dark global">
+          <img src="@/assets/images/woerman.png" alt="Global Reach" class="card-icon icon-light" />
+          <h3 class="card-title text-light">Global reach</h3>
+          <p class="card-text text-light">
+            Support for over 160 countries across Africa, Asia, and the Americas.
+          </p>
+        </div>
+
+        <div class="card card-purple secure">
+          <img src="@/assets/images/woerman1.png" alt="Secure" class="card-icon" />
+          <h3 class="card-title">Secure</h3>
+          <p class="card-text">Bank-grade encryption for all transactions.</p>
+        </div>
+
+        <div class="card card-purple pricing pricing-row">
+          <img src="@/assets/images/key.png" alt="Pricing" class="card-icon" />
+          <h3 class="card-title">Transparent pricing</h3>
+          <p class="card-text">
+            What you see is what you pay. We pride ourselves on having the
+            lowest service fees in the industry with no hidden charges.
+          </p>
+          <div class="embedded-price-img-container">
+            <img src="@/assets/images/compass.png" alt="Pricing Detail" class="embedded-img" />
+          </div>
+        </div>
+
+        <div class="card card-light support support-row">
+          <h3 class="card-title">24/7 Support</h3>
+          <p class="card-text">
+            Real humans, real answers. Our team is here to help you around the
+            clock across all timezones.
+          </p>
+          <img src="@/assets/images/face.png" alt="Support Headset" class="support-icon" />
+        </div>
+      </div>
+    </div>
+  </section>
+
 
  <section class="time6">
   <div class="insidetime6">
@@ -740,6 +793,169 @@ const steps = [
     font-size: 18px;
     
   }
+}
+
+
+.advantage-section {
+  background-color: #f7f7f7; 
+  padding: 80px 20px;
+  font-family: 'Poppins', sans-serif; 
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main-title {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  color: #111;
+  margin-bottom: 60px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-rows: auto auto; 
+  gap: 30px;
+}
+
+.instant, .global, .secure {
+  grid-row: 1;
+}
+
+.feature-grid .card:not(.pricing-row):not(.support-row) {
+    display: none;
+}
+
+.feature-grid::before {
+    content: '';
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; 
+    grid-column: 1 / -1; 
+    gap: 30px;
+}
+
+
+.pricing-row, .support-row {
+  grid-row: 2; 
+}
+
+.feature-grid {
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto; 
+    gap: 30px;
+}
+
+.row-one-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; 
+    gap: 30px;
+}
+
+.row-two-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+
+
+.feature-grid { display: block; } 
+.row-one-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 30px; margin-bottom: 30px; }
+.row-two-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+
+
+.card {
+  padding: 40px;
+  border-radius: 20px;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.card:hover { transform: translateY(-5px); } 
+
+.card-purple { background-color: #f1f0ff; } 
+.card-dark { background-color: #2b1f8b; } 
+.card-light { background-color: transparent; border: 1px solid #eaeaea; } 
+
+.card-icon { width: 32px; height: 32px; margin-bottom: 24px; display: block;}
+.icon-light { filter: invert(1); } 
+
+
+.card-title { font-size: 22px; font-weight: 600; margin-bottom: 12px; color: #1a1a1a; }
+.card-text { font-size: 15px; color: #666; line-height: 1.6; }
+.text-light { color: #fff; opacity: 0.9; }
+
+.global { text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;}
+
+.pricing {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.embedded-price-img-container {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end; 
+  width: 100%;
+}
+
+.embedded-img {
+  max-width: 180px; 
+  max-height: 80px;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+
+.support {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.support-content-wrapper { flex: 1; margin-right: 20px;}
+
+.support-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin: 0;
+}
+
+
+@media (max-width: 1180px) {
+  .main-title { font-size: 28px; }
+  .row-one-grid { grid-template-columns: 1fr; gap: 20px; } 
+  .row-two-grid { grid-template-columns: 1fr; gap: 20px; } 
+  .support { flex-direction: column; align-items: flex-start; } 
+  .support-icon { margin-top: 20px; width: 50px; height: 50px; }
+}
+
+
+@media (max-width: 430px) {
+  .advantage-section { padding: 60px 15px; }
+  .main-title { font-size: 24px; margin-bottom: 40px; }
+  .card { padding: 30px 20px; }
+  .card-title { font-size: 19px; }
+ 
+  .row-one-grid, .row-two-grid { gap: 15px; grid-template-columns: 1fr; }
+  
+  .global { align-items: flex-start; text-align: left; }
+  .global .card-icon { margin-left: 0; }
+
+  .embedded-price-img-container {
+    justify-content: center; 
+    margin-top: 20px;
+  }
+  .embedded-img { max-width: 150px; }
 }
 
 
