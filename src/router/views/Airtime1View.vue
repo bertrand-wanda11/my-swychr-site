@@ -91,14 +91,28 @@
       <button class="continue-btn">Continue</button>
     </div>
   </div>
-
-  <div class="steps-section">
-    <h3 class="steps-title">Three simple steps to connect</h3>
-    <p class="steps-subtitle">
-      We've removed the complexity from global top-ups. No registrations required for your first transfer.
-    </p>
-  </div>
 </section>
+
+
+<section class="steps-section">
+    <div class="header">
+      <h2>Three simple steps to connect</h2>
+      <p>
+        We've removed the complexity from global top-ups. No registrations required for your first transfer.
+      </p>
+    </div>
+
+    <div class="steps-container">
+      <div v-for="(step, index) in steps" :key="index" class="step-card">
+        <div class="icon-wrapper">
+          <img :src="step.icon" :alt="step.title" class="step-icon" />
+        </div>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.description }}</p>
+      </div>
+    </div>
+  </section>
+
 
  <section class="time6">
   <div class="insidetime6">
@@ -373,7 +387,9 @@ import About from '@/assets/images/About Us.png';
 import Careers from '@/assets/images/Careers.png';
 import Blogs from '@/assets/images/Blogs.png';
 import Culture from '@/assets/images/Culture.png';
-
+import iconPhone from '@/assets/images/lawman1.png';
+import iconAmount from '@/assets/images/lawman2.png';
+import iconSend from '@/assets/images/lawman3.png';
 
 const route = useRoute();
 const navMenu = ref(null);
@@ -506,6 +522,25 @@ onBeforeUnmount(() => {
   window.removeEventListener('click', handleClickOutside);
 });
 
+
+
+const steps = [
+  {
+    title: 'Enter number',
+    description: 'Enter the recipient\'s phone number. We automatically detect the network.',
+    icon: iconPhone
+  },
+  {
+    title: 'Choose amount',
+    description: 'Select from our pre-defined plans or enter a custom amount to send.',
+    icon: iconAmount
+  },
+  {
+    title: 'Pay & send',
+    description: 'Complete your secure payment and the credit arrives instantly. Done!',
+    icon: iconSend
+  }
+]
 </script>
 
 <style scoped>
@@ -589,6 +624,125 @@ onBeforeUnmount(() => {
     margin-top: -200px;
   }
 }
+
+
+.header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.header p {
+  font-size: 16px;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 60px;
+  line-height: 1.5;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.steps-container {
+  font-family: 'Montserrat', sans-serif;  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.step-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.icon-wrapper {
+  background-color: #e8e8ff;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.step-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.step-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.step-card p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  max-width: 280px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+@media (max-width: 1180px) {
+  .steps-container {
+    gap: 20px;
+    padding: 0 40px;
+  }
+  
+  .header h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 820px) {
+  .steps-container {
+    grid-template-columns: 1fr; 
+    gap: 50px;
+  }
+  
+  .step-card p {
+    max-width: 400px; 
+  }
+}
+
+
+@media (max-width: 430px) {
+  .steps-section {
+    padding: 60px 24px;
+  }
+
+  .header h2 {
+    font-size: 24px;
+  }
+
+  .header p {
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+
+  .icon-wrapper {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 16px;
+  }
+
+  .step-card h3 {
+    font-size: 18px;
+    
+  }
+}
+
 
  .time6 {
   padding: 3.125rem 0; 
