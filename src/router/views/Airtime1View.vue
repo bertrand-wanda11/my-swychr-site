@@ -88,8 +88,8 @@
         </div>
         <input type="text" placeholder="Enter recipient Number" class="topup-input">
       </div>
-      <button class="continue-btn">Continue</button>
     </div>
+  <button class="continue-btn">Continue</button>
   </div>
 </section>
 
@@ -659,6 +659,10 @@ const steps = [
   background: var(--Purple-50, rgba(245, 233, 251, 0.45));
    font-family: 'Montserrat', sans-serif;
     font-style: normal;
+}
+
+.globe-icon img{
+  width: 1.5rem;
 }
 
 @media screen and (max-width: 430px) {
