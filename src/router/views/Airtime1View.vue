@@ -88,8 +88,9 @@
         </div>
         <input type="text" placeholder="Enter recipient Number" class="topup-input">
       </div>
+        <button class="continue-btn">Continue</button>
     </div>
-  <button class="continue-btn">Continue</button>
+
   </div>
 </section>
 
