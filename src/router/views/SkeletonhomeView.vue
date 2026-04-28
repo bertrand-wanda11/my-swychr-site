@@ -1908,7 +1908,7 @@ const features = [
 
 .second {
   display: block;
-  width: 12.875rem; 
+  width: 16.875rem; 
   height: 2.4375rem;
   padding: 0.625rem;
   justify-content: center;
