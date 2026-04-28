@@ -26,7 +26,6 @@
     } else {
 
       setActive(index);
-
       openDropdownIndex = null;
     }
   }"
@@ -781,6 +780,138 @@ import NavBar from '@/components/NavBar.vue';
 import img1 from '@/assets/images/firstly.png'
 import img2 from '@/assets/images/middle.jpg'
 import img3 from '@/assets/images/lastlyy.png'
+
+
+const route = useRoute();
+const navMenu = ref(null);
+const activeIndex = ref(0);
+const openDropdownIndex = ref(null);
+const isMobile = ref(false);
+
+const navItems = [
+  { name: 'home', path: '/' },
+  {
+    name: 'Personal',
+    path: '', 
+    dropdownTitle: 'Discover swychr Personal',
+    children: [
+      { name: 'Remit (Send)', icon: p2p, path: '/p2p'},
+      { name: 'Cards (Spend)', icon: billIcon, path: '/Card' },
+      { name: 'USD Accounts(Receive)', icon: cardIcon, path: '/Usdman' },
+      { name: 'Airtime (Connect)', icon: usdIcon, path: '/Airtime' }
+    ]
+  },
+
+  {
+    name: 'Business',
+    path: '',
+    dropdownTitle: 'Discover swychr Business',
+
+    children: [
+      { name: 'Online Payments', icon: onlinePayIcon, path: '/Online'},
+      { name: 'Lastmile Payment Delivery', icon: crossBorderIcon, path: '/Lastmile'},
+      { name: 'Virtual Card Issuance', icon: Virtualcard, path: '/Issuance'}
+    ]
+  },
+  {
+
+    name: 'Company',
+    path: '',
+    dropdownTitle: 'Discover swychr',
+    children: [
+
+      { name: 'About Us', icon: About, path: '/About'},
+      { name: 'Careers', icon: Careers, path: '/Career'},
+      { name: 'Blogs', icon: Blogs, path: '/Blog'},
+      { name: 'Culture', icon: Culture, path: '/Culture'},
+
+    ]
+
+  },
+
+  { name: 'Support', path: '/support' }
+];
+
+const indicatorStyle = ref({ width: '0px', left: '0px', opacity: 0 });
+const updateIndicator = () => {
+  if (!navMenu.value) return;
+  const links = navMenu.value.querySelectorAll('.nav-link');
+  const activeElement = links[activeIndex.value];
+
+ 
+  if (activeElement) {
+
+    const reducedWidth = activeElement.offsetWidth * 0.7;
+    const left = activeElement.offsetLeft + (activeElement.offsetWidth - reducedWidth) / 2;
+    indicatorStyle.value = {
+
+      width: `${reducedWidth}px`,
+      left: `${left}px`,
+      opacity: 1
+
+    };
+  }
+};
+
+const setActive = (index) => {
+  activeIndex.value = index;
+  openDropdownIndex.value = null; 
+  nextTick(() => updateIndicator());
+};
+
+const toggleDropdown = (index) => {
+  if (openDropdownIndex.value === index) {
+    openDropdownIndex.value = null;
+    syncIndicatorWithRoute();
+  } 
+  
+  else {
+    openDropdownIndex.value = index;
+    activeIndex.value = index; 
+  }
+  setTimeout(() => updateIndicator(), 50);
+};
+
+const syncIndicatorWithRoute = () => {
+  const pathName = route.path.replace('/', '').toLowerCase() || 'home';
+  const index = navItems.findIndex(item => item.name.toLowerCase() === pathName);
+  if (index !== -1) {
+    activeIndex.value = index;
+    nextTick(updateIndicator);
+  }
+};
+
+const handleClickOutside = (event) => {
+  const navContainer = document.querySelector('.food-pill-container');
+  if (navContainer && !navContainer.contains(event.target)) {
+    openDropdownIndex.value = null;
+    syncIndicatorWithRoute(); 
+  }
+};
+
+const checkScreen = () => {
+  isMobile.value = window.innerWidth <= 820;
+};
+
+watch(() => route.path, () => {
+  syncIndicatorWithRoute();
+}, { immediate: true });
+
+onMounted(() => {
+  checkScreen();
+  updateIndicator();
+  window.addEventListener('resize', () => {
+    checkScreen();
+    updateIndicator();
+
+  });
+  window.addEventListener('click', handleClickOutside);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', checkScreen);
+  window.removeEventListener('click', handleClickOutside);
+});
 
 
 
