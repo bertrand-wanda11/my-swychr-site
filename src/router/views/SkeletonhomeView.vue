@@ -1754,7 +1754,7 @@ const features = [
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-  text-align: justify;
+  text-align: left;
  
 }
 
@@ -1923,7 +1923,7 @@ const features = [
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-  text-align: justify;
+   text-align: left;
 }
 
 .second1111 { width: 36.1875rem; flex-shrink: 0; }
@@ -2107,7 +2107,7 @@ const features = [
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-  text-align: justify;
+  text-align: left;
 }
 
 .third1111 { width: 36.1875rem; flex-shrink: 0; }
