@@ -241,7 +241,7 @@
    and connectivity tools for businesses, fintechs, and NGOs. From<br>bulk payments to virtual card 
    issuance and cross-border transactions</p>
   <p class ="third1111"><span class="Diose">1</span>Sign up as a business and access the dashboard or APIs.</p>
-  <p class ="third11111"><span class="Diose">2</span><span class="rooming">Choose your service:</span> bulk payments, virtual cards,
+  <p class ="third11111"><span class="Diose">2</span><span class="rooming"> Choose your service: </span> bulk payments, virtual cards,
     payout APIs, USD accounts, or airtime distribution.</p>
   <p class ="third111111"><span class="Diose">3</span>Integrate via API or use our web dashboard for no-<br>
   code operations.</p>
@@ -263,7 +263,6 @@
 <h1 class="person8">What they say <span class="spir8">About Swychr</span></h1>
 <p class="tilla8">Real stories from individuals and businesses using SwyChr every day</p>
 </div>
-
 
 <div class="marquee-container">
 <div class="bike8">
@@ -645,11 +644,10 @@ the Swychr mobile application, Swychr Connect web platform, and API suites are f
 
 <script setup>
 import NavBar from '@/components/NavBar.vue';
+import FooterView from './FooterView.vue';
 import img1 from '@/assets/images/firstly.png'
 import img2 from '@/assets/images/middle.jpg'
 import img3 from '@/assets/images/lastlyy.png'
-
-
 
 
 const cards = [
@@ -2131,7 +2129,7 @@ const features = [
   margin-left: 11rem;
   border-radius: 6.25rem; 
   display: flex;
-  width: 16.1375rem; 
+  width: 18.1375rem; 
   height: 2.8125rem; 
   padding: 0.125rem;
   justify-content: center;
@@ -2154,8 +2152,10 @@ const features = [
 }
 
 .rooming{
+  margin: 0 auto;
   font-weight: bold;
 }
+
 .papa3 {
   display: inline-flex;
 }
