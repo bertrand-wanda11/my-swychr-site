@@ -1,51 +1,7 @@
 <template>
 <div>
 <section class="about1">
- <nav class="numeroabout1">
-  <h2 class="seam">
-    <img src="@/assets/images/motive.png" alt="Logo" class="dreak" width="127" height="32">
-  </h2>
-  
-   <div class="food-pill-container">
-    <ul class="mannav" ref="navMenu"> 
-     <li v-for="(item, index) in navItems" :key="item.name" class="nav-item-wrapper">
-  <router-link 
-    :to="item.path" 
-    class="nav-link"
-    :class="{ active: activeIndex === index }"
-    @click="item.children ? toggleDropdown(index) : setActive(index)" 
-  >
-    {{ item.name }}
-    <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }">▾</span>
-  </router-link>
-
-  <div v-if="item.children && openDropdownIndex === index" class="mega-dropdown">
-    <p class="dropdown-label">{{ item.dropdownTitle }}</p>
-    <div class="dropdown-grid" :class="{ 'company-grid': item.name === 'Company' }">
-      <router-link 
-        v-for="child in item.children" 
-        :key="child.name" 
-        :to="child.path" 
-        class="dropdown-item"
-        @click="openDropdownIndex = null" 
-      >
-        <span class="item-icon">
-          <img :src="child.icon" :alt="child.name" class="nav-icon-img">
-        </span>
-        <span class="item-text">{{ child.name }}</span>
-      </router-link>
-    </div>
-  </div>
-</li>
-
-      <div class="nav-indicator" :style="indicatorStyle"></div>
-    </ul>
-  </div>
-
-  <div class="stavoabout-con"> 
-    <li class="stavoabout"><a href="https://urlgeni.us/swychr">Open Web App  <img src="@/assets/images/ror.png" alt="App Store"  width="13px"/></a></li>
-  </div>
-</nav>      
+ <NavBar />      
  <div class="insideabout1">
   <div class="techabout">
 <p class="smartabout">We change the way you<br>move money.</p>
@@ -379,19 +335,7 @@ the Swychr mobile application, Swychr Connect web platform, and API suites are f
  </template> 
 
   <script setup>
-import { ref, onMounted, onBeforeUnmount, nextTick, watch } from 'vue';
-import { useRoute } from 'vue-router';
-import p2p from '@/assets/images/P2P.png';
-import billIcon from '@/assets/images/invoice.png';
-import cardIcon from '@/assets/images/card.png';
-import usdIcon from '@/assets/images/virtual bsnk.png';
-import onlinePayIcon from '@/assets/images/Online Payments.png';
-import crossBorderIcon from '@/assets/images/Cross Border Payments.png';
-import Virtualcard from '@/assets/images/Virtual Card Issuance.png';
-import About from '@/assets/images/About Us.png';
-import Careers from '@/assets/images/Careers.png';
-import Blogs from '@/assets/images/Blogs.png';
-import Culture from '@/assets/images/Culture.png';
+import NavBar from '@/components/NavBar.vue';
 import trustIcon from '@/assets/images/bum1.png'
 import visionIcon from '@/assets/images/bum2.png'
 import securityIcon from '@/assets/images/bum3.png'
@@ -402,112 +346,6 @@ import nikolaiImg from '@/assets/images/nikolai.png'
 import nabilImg from '@/assets/images/nabil.jpeg'
 import locIcon from '@/assets/images/bvlog.png'
 const conradImg = '/conrad.PNG';
-
-const route = useRoute();
-const navMenu = ref(null); 
-const activeIndex = ref(0);
-const openDropdownIndex = ref(null);
-const isMobile = ref(false);
-
-const navItems = [
-  { name: 'Home', path: '/skeletonhome' },
-  { 
-    name: 'Personal', 
-    path: '',
-    dropdownTitle: 'Discover swychr Personal',
-    children: [
-      { name: 'Remit (Send)', icon: p2p, path: '/p2p'},
-      { name: 'Cards (Spend)', icon: billIcon, path: '/Card' },
-      { name: 'USD Accounts(Receive)', icon: cardIcon, path: '/Usdman' },
-      { name: 'Airtime (Connect)', icon: usdIcon, path: '/Airtime' }
-   
-    ]
-  },
-  { 
-    name: 'Business', 
-    path: '',
-    dropdownTitle: 'Discover swychr Business',
-    children: [
-      { name: 'Online Payments', icon: onlinePayIcon,path: '/Online'},
-      { name: 'Lastmile Payment Delivery', icon: crossBorderIcon,path: '/Lastmile'},
-      { name: 'Virtual Card Issuance', icon:Virtualcard ,path: '/Issuance'}
-    ]
-  },
-  { 
-    name: 'Company', 
-    path: '',
-    dropdownTitle: 'Discover swychr',
-    children: [
-    { name: 'About Us', icon: About,path: '/About'},
-      { name: 'Careers', icon: Careers,path: '/Career'},
-      { name: 'Blogs', icon: Blogs,path: '/Blog'},
-      { name: 'Culture', icon: Culture,path: '/Culture'},
-    ]
-  },
-  { name: 'Support', path: '/support' }
-];
-
-const indicatorStyle = ref({ width: '0px', left: '0px', opacity: 0 });
-
-const updateIndicator = () => {
-  if (!navMenu.value) return;
-  const activeElement = navMenu.value.querySelector('.nav-link.active');
-  
-  if (activeElement) {
-    const reducedWidth = activeElement.offsetWidth * 0.6;
-    const left = activeElement.offsetLeft + (activeElement.offsetWidth - reducedWidth) / 2;
-    indicatorStyle.value = { width: `${reducedWidth}px`, left: `${left}px`, opacity: 1 };
-  } else {
-    indicatorStyle.value.opacity = 0;
-  }
-};
-
-const setActive = (index) => {
-  activeIndex.value = index;
-  nextTick(() => updateIndicator());
-};
-
-const toggleDropdown = (index) => {
-  openDropdownIndex.value = openDropdownIndex.value === index ? null : index;
-};
-
-const handleClickOutside = (event) => {
-  const navContainer = document.querySelector('.food-pill-container');
-  if (navContainer && !navContainer.contains(event.target)) {
-    openDropdownIndex.value = null;
-  }
-};
-
-const checkScreen = () => {
-  isMobile.value = window.innerWidth <= 820; 
-};
-
-
-watch(() => route.path, (newPath) => {
-  const pathName = newPath.replace('/', '').toLowerCase() || 'home';
-  const index = navItems.findIndex(item => item.name.toLowerCase() === pathName);
-  if (index !== -1) {
-    activeIndex.value = index;
-    nextTick(updateIndicator);
-  }
-}, { immediate: true });
-
-onMounted(() => {
-  checkScreen();
-  updateIndicator();
-  window.addEventListener('resize', () => {
-    checkScreen();
-    updateIndicator();
-  });
-
-  window.addEventListener('click', handleClickOutside);
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener('resize', checkScreen);
-  window.removeEventListener('click', handleClickOutside);
-});
-
 
 const values = [
   { 
