@@ -1387,19 +1387,23 @@ const features = [
 }
 
 .nick {
-  width: 5rem;     
-  margin: 0 auto 1.5625rem;
+ width: fit-content;           /* Shrink to fit text */
+  min-width: 200px;             /* Optional: ensures it's not TOO small */
+  
+  /* 2. Center it properly */
+  margin: 0 auto 1.5625rem auto; /* Centers the button and removes the vw margin */
+  
+  /* 3. Padding (CRITICAL) */
+  padding: 0 2.5rem;            /* Gives the text space inside the pill */
+
+  /* Your existing styles */
   border-radius: 6.25rem;
-  background: linear-gradient(270deg, 
-  var(--Purple-400, #A34FD3) 0%, var(--Purple-500, #8C1BC1) 100%), var(--Purple-400, #A34FD3);
-  margin: 0;
-  margin-left: 40.375vw; 
-  margin-top: 0;
+  background: linear-gradient(270deg, var(--Purple-400, #A34FD3) 0%, var(--Purple-500, #8C1BC1) 100%), var(--Purple-400, #A34FD3);
   display: flex;
   height: 3.125rem;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1.5625rem; 
+  list-style: none;
 }
 
 .nick a {
