@@ -1958,6 +1958,7 @@ const features = [
   font-weight: 400;
   line-height: 120%;
   text-align: justify;
+  display:inline-flex;
 }
 
 .second1111 { width: 36.1875rem; flex-shrink: 0; }
