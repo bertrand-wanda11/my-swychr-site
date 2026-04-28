@@ -1937,56 +1937,41 @@ const features = [
 .second111111 { width: 40.375rem; }
 .second1111111 { width: 40.375rem; }
 
+.lemontea a, .lemontea1 a {
+  text-decoration: none;
+  color: var(--WhiTE-mAIN, #FFF);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+
+  /* --- ADD THESE LINES --- */
+  display: flex;
+  align-items: center;  /* Vertically centers icons and text */
+  gap: 8px;            /* Adds a nice consistent space between icons and text */
+}
+
+/* Optional: To make the arrow push slightly to the right */
+.arrow-1 {
+  margin-left: auto;   /* This will push the arrow to the far right of the button if you want */
+}
+
+
+.lemontea, .lemontea1 {
+  display: flex;
+  width: 9.5rem; /* Increased slightly to fit text + icons comfortably */
+  height: 2.8125rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.9375rem; 
+  background: linear-gradient(270deg, var(--Purple-400, #A34FD3) 0%, var(--Purple-500, #8C1BC1) 100%);
+  margin-top: 4rem;
+}
+
+/* Move the specific margin-left to just the first button */
 .lemontea {
-   justify-content: center;
-  align-items: center;
-  margin-top: 4rem;
   margin-left: 9rem;
-  display: flex;
-  width: 9rem; 
-  height: 2.8125rem;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0.9375rem; 
-  background: linear-gradient(270deg, var(--Purple-400, #A34FD3) 0%, 
-  var(--Purple-500, #8C1BC1) 100%), var(--Purple-400, #A34FD3);
-  box-shadow: 0 0.25rem 0.40625rem 0 rgba(57, 6, 82, 0.18);
-}
-
-
-.lemontea a {
-  text-decoration: none;
-  color: var(--WhiTE-mAIN, #FFF);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
-}
-
-.lemontea1 {
-  justify-content: center;
-  align-items: center;
-  margin-top: 4rem;
-  display: flex;
-  width: 9rem; 
-  height: 2.8125rem;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0.9375rem; 
-  background: linear-gradient(270deg, var(--Purple-400, #A34FD3) 0%, 
-  var(--Purple-500, #8C1BC1) 100%), var(--Purple-400, #A34FD3);
-  box-shadow: 0 0.25rem 0.40625rem 0 rgba(57, 6, 82, 0.18);
-}
-
-.lemontea1 a{
-  text-decoration: none;
-  color: var(--WhiTE-mAIN, #FFF);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 120%;
 }
 
 .papa2 {
