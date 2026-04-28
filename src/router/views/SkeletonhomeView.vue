@@ -1761,21 +1761,21 @@ const features = [
   width: 47.6875rem;
 }
 
-.first1111, .first11111, .first111111, .first1111111 {
+ .first111111, .first1111111 {
   color: var(--Gray-800, #424242);
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem; 
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-  text-align: justify;
+  text-align: left;
 }
 
 .step-row {
-  display: flex;
-  align-items: flex-start; /* Keeps number at the top if text is long */
-  gap: 15px;               /* Space between the number and the text */
-  margin-bottom: 20px;     /* Space between each row */
+ flex: 1;             /* This tells the text to expand horizontally */
+  text-align: left;    /* Ensures text starts from the left */
+  min-width: 0;        /* Helper to prevent flex items from overflowing */
+  word-wrap: normal; /* Space between each row */
 }
 
 /* This ensures the text block stays aligned to the left */
