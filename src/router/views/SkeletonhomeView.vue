@@ -2,103 +2,58 @@
     <div class="server">
 <section class="section1">
 <nav class="numero">
-
   <h2 class="seam">
-
     <img src="@/assets/images/motive.png" alt="Logo" class="dreak" width="127" height="32">
-
   </h2>
 
- 
-
 <div class="food-pill-container">
-
   <ul class="mannav" ref="navMenu">
-
     <li
-
       v-for="(item, index) in navItems"
-
       :key="item.name"
-
       class="nav-item-wrapper"
-
     >
 
  <router-link
-
   :to="item.path"
-
   class="nav-link"
-
   :class="{ active: activeIndex === index }"
-
   @click="(e) => {
-
     if(item.children) {
-
       e.preventDefault();
-
       toggleDropdown(index);
-
     } else {
 
       setActive(index);
-
       openDropdownIndex = null;
-
     }
-
   }"
-
 >
-
   {{ item.name }}
-
   <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }">▾</span>
-
 </router-link>
 
-
-
       <div v-if="item.children && openDropdownIndex === index" class="mega-dropdown">
-
         <p class="dropdown-label">{{ item.dropdownTitle }}</p>
-
         <div class="dropdown-grid" :class="{ 'company-grid': item.name === 'Company' }">
-
           <router-link
-
             v-for="child in item.children"
-
             :key="child.name"
-
             :to="child.path"
-
             class="dropdown-item"
-
             @click="openDropdownIndex = null"
-
           >
 
             <span class="item-icon">
-
               <img :src="child.icon" :alt="child.name" class="nav-icon-img">
-
             </span>
-
             <span class="item-text">{{ child.name }}</span>
-
           </router-link>
-
         </div>
-
       </div>
 
     </li>
-
     <div class="nav-indicator" :style="indicatorStyle"></div>
-
   </ul>
 
 </div>
@@ -772,7 +727,6 @@ import Careers from '@/assets/images/Careers.png';
 import Blogs from '@/assets/images/Blogs.png';
 import Culture from '@/assets/images/Culture.png';
 
-
 const route = useRoute();
 const navMenu = ref(null);
 const activeIndex = ref(0);
@@ -824,12 +778,8 @@ const navItems = [
 ];
 
 const indicatorStyle = ref({ width: '0px', left: '0px', opacity: 0 });
-
 const updateIndicator = () => {
   if (!navMenu.value) return;
-
- 
-
   const links = navMenu.value.querySelectorAll('.nav-link');
   const activeElement = links[activeIndex.value];
 
@@ -908,7 +858,6 @@ onBeforeUnmount(() => {
   window.removeEventListener('click', handleClickOutside);
 });
 
- 
 
 const cards = [
   {
@@ -1191,7 +1140,6 @@ const features = [
   text-align: center;
 }
 
-
 .numero {
   display: flex;
   align-items: center;
@@ -1455,6 +1403,32 @@ const features = [
     text-align: left;
     white-space: nowrap;
   }
+
+    .section1 {
+    background: url('@/assets/images/kirak.png') !important;
+    background-size: cover !important; 
+    background-position: center !important;
+    height: auto !important;
+    min-height: 100vh !important; 
+    aspect-ratio: auto !important; 
+    padding-bottom: 3rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .inside1 {
+    padding-top: 2rem !important;
+    margin-top: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+      .stavo {
+    order: 3 !important;
+    margin-right: 0 !important;
+  }
 }
 
 
@@ -1616,7 +1590,7 @@ const features = [
   font-style: normal;
   font-weight: 500;
   line-height: 120%;
-  text-align: justify;
+  text-align: left;
 }
 
 .nick {
@@ -1627,7 +1601,6 @@ const features = [
   margin-left: 40.375vw; 
   margin-top: 0;
   display: flex;
-  width: 12.875rem; 
   height: 3.125rem;
   justify-content: center;
   align-items: center;
@@ -1669,6 +1642,7 @@ const features = [
 }
 
 .tembi {
+  padding-top: 3rem;
   color: black;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
@@ -1950,13 +1924,13 @@ const features = [
 }
 
 .first1 {
-  color: var(--Purple-500, #8C1BC1);
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem; 
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
+  color: var(--Purple-500, #8C1BC1);
   border-radius: 6.25rem; 
   background: var(--Purple-50, rgba(245, 233, 251, 0.45));
 }
@@ -3606,7 +3580,6 @@ margin-left: 67px;
     flex-direction: column !important;
   }
 
-
   .inside1 {
     padding-top: 2rem !important;
     margin-top: 0 !important;
@@ -3614,6 +3587,11 @@ margin-left: 67px;
     flex-direction: column !important;
     align-items: center !important;
     width: 100% !important;
+  }
+
+      .stavo {
+    order: 3 !important;
+    margin-right: 0 !important;
   }
 
   .tech {
@@ -3647,6 +3625,8 @@ margin-left: 67px;
     width: 100% !important;
     margin-top: 1rem !important;
   }
+
+
 
   .steve, .obus {
     width: 15rem !important; 
