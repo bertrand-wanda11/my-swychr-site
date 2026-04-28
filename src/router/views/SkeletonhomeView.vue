@@ -2129,7 +2129,7 @@ const features = [
   margin-left: 11rem;
   border-radius: 6.25rem; 
   display: flex;
-  width: 22.1375rem; 
+  width: 30.1375rem; 
   height: 2.8125rem; 
   padding: 0.125rem;
   justify-content: center;
