@@ -298,7 +298,7 @@
 <div class="republic">
 <div class="first">
   <p  class="first1">First</p>
-   <p  class="first11">Swychr – Global eWallet App</p>
+   <p  class="first11">Swychr - Global eWallet App</p>
    <p class="first111">Swychr is your global digital wallet for instant, secure, and low-<br>
     cost cross-border transactions. Send money across 100+<br>countries</p>
   <p class ="first1111"><span class="Diose">1</span> Create an account and verify your identity.</p>
@@ -330,7 +330,7 @@
  <div class="republich">
   <div class="second">
   <p  class="second1">Second</p>
-   <p  class="second11">Swychr Pay – Local eWallet App</p>
+   <p  class="second11">Swychr Pay - Local eWallet App</p>
    <p class="second111">Swychr Pay is a local digital wallet designed to simplify<br>
     payments within specific local markets. Receive money, pay<br>bills, buy airtime, make merchant payments</p>
   <p class ="second1111"><span class="Diose">1</span>Download the app and sign up in minutes.</p>
@@ -368,7 +368,7 @@
 <div class="republic2">
    <div class="third">
   <p  class="third1">Third</p>
-   <p  class="third11">Swychr Connect – B2B Payments &<br>Infrastructure</p>
+   <p  class="third11">Swychr Connect - B2B Payments &<br>Infrastructure</p>
    <p class="third111">Swychr Connect is a powerful B2B platform that provides APIs<br>
    and connectivity tools for businesses, fintechs, and NGOs. From<br>bulk payments to virtual card 
    issuance and cross-border transactions</p>
@@ -562,7 +562,7 @@
 <br>  
 <br> 
 <div class="tropic">
-  <h1 class="millof1">Can’t find the answers you’re looking for?</h1>
+  <h1 class="millof1">Can't find the answers you're looking for?</h1>
   <p class="millof">
     Explore our detailed FAQ page</p>
     <div class=""> 
@@ -781,7 +781,7 @@ import img1 from '@/assets/images/firstly.png'
 import img2 from '@/assets/images/middle.jpg'
 import img3 from '@/assets/images/lastlyy.png'
 
-<<<<<<< HEAD
+ HEAD
 const route = useRoute();
 const navMenu = ref(null);
 const activeIndex = ref(0);
@@ -913,10 +913,7 @@ onBeforeUnmount(() => {
   window.removeEventListener('click', handleClickOutside);
 });
 
-=======
 
- 
->>>>>>> e00175bf0db96b227a02bec300ba7c43fcd7c097
 
 const cards = [
   {
