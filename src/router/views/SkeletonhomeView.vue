@@ -169,9 +169,16 @@
    <p  class="first11">Swychr - Global eWallet App</p>
    <p class="first111">Swychr is your global digital wallet for instant, secure, and low-<br>
     cost cross-border transactions. Send money across 100+<br>countries</p>
-  <p class ="first1111"><span class="Diose">1</span> Create an account and verify your identity.</p>
-  <p class ="first11111"><span class="Diose">2</span>Add funds via card, bank transfer, mobile money,<br>
-    crypto or other supported payment methods.</p>
+<p class="step-row">
+  <span class="Diose">1</span>
+  <span class="step-text">Create an account and verify your identity.</span>
+</p>
+
+ <p class="step-row">
+  <span class="Diose">2</span>
+  <span class="step-text">Add funds via card, bank transfer, mobile money, crypto or other supported payment methods.</span>
+</p>
+
   <p class ="first111111"><span class="Diose">3</span><span class="rooming">Transact globally:</span> send money, buy digital products,<br>
     or pay bills instantly.</p>
   <p class ="first1111111"><span class="Diose">4</span>Use virtual cards for safe and seamless online<br>
@@ -1762,23 +1769,43 @@ const features = [
   font-weight: 400;
   line-height: 120%;
   text-align: justify;
- 
 }
 
-.first1111 { width: 36.1875rem; flex-shrink: 0; }
-.first11111 { width: 40.375rem; }
-.first111111 { width: 40.375rem; }
-.first1111111 { width: 40.375rem; }
+.step-row {
+  display: flex;
+  align-items: flex-start; /* Keeps number at the top if text is long */
+  gap: 15px;               /* Space between the number and the text */
+  margin-bottom: 20px;     /* Space between each row */
+}
 
-.Diose {
-  color: var(--Purple-500, #8C1BC1);
+/* This ensures the text block stays aligned to the left */
+.step-text {
+  flex: 1;                 /* Takes up the remaining width */
+  color: #424242;
   font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  line-height: 140%;       /* Increased slightly for better readability */
+  text-align: left;        /* Changed from justify to prevent weird gaps */
+}
+
+/* Your existing circle style (keep your Diose styles, just ensure these are set) */
+.Diose {
+  flex-shrink: 0;          /* Prevents the circle from squishing */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   color: var(--Purple-500, #8C1BC1);
+     font-family: 'Montserrat', sans-serif;
   font-size: 1.2311rem; 
   font-style: normal;
   font-weight: 500;
   line-height: 120%;
-  margin-right: 1.25rem; 
+  /* Keep your existing width, height, background, and border-radius here */
 }
+.first111111 { width: 40.375rem; }
+.first1111111 { width: 40.375rem; }
+
+
 
 .lemon {
    justify-content: center;
