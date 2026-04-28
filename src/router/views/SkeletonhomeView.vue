@@ -172,7 +172,7 @@
   <p class ="first1111"><span class="Diose">1</span> Create an account and verify your identity.</p>
   <p class ="first11111"><span class="Diose">2</span>Add funds via card, bank transfer, mobile money,<br>
     crypto or other supported payment methods.</p>
-  <p class ="first111111"><span class="Diose">3</span><span class="rooming">Transact globally:</span> send money, buy digital products,
+  <p class ="first111111"><span class="Diose">3</span><span class="rooming">Transact globally:</span>send money, buy digital products,
     or pay bills instantly.</p>
   <p class ="first1111111"><span class="Diose">4</span>Use virtual cards for safe and seamless online<br>
      payments and in-store payments.</p>
@@ -241,8 +241,8 @@
    and connectivity tools for businesses, fintechs, and NGOs. From<br>bulk payments to virtual card 
    issuance and cross-border transactions</p>
   <p class ="third1111"><span class="Diose">1</span>Sign up as a business and access the dashboard or APIs.</p>
-  <p class ="third11111"><span class="Diose">2</span><span class="rooming"> Choose your service: </span> bulk payments, virtual cards,
-    payout APIs <br>, USD accounts, or airtime distribution.</p>
+  <p class ="third11111"><span class="Diose">2</span><span class="rooming">Choose your service:</span>bulk payments, virtual cards,
+    payout APIs , USD accounts,or<br>airtime distribution.</p>
   <p class ="third111111"><span class="Diose">3</span>Integrate via API or use our web dashboard for no-<br>
   code operations.</p>
   <p class ="third1111111"><span class="Diose">4</span>Make payments globally or deliver digital value <br>
