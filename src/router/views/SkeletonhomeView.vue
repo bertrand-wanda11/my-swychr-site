@@ -1399,12 +1399,10 @@ const features = [
   margin-bottom: 1.5625rem; 
 }
 
-.nick li{
-  width: fit-content;     
-  margin: 0 auto 1.5625rem;
-}
 
 .nick a {
+   width: fit-content;     
+  margin: 0 auto 1.5625rem;
   text-decoration: none;
   color: var(--WhiTE-mAIN, #FFF);
   font-family: 'Montserrat', sans-serif;
