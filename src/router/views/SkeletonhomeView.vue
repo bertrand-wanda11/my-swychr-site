@@ -2131,7 +2131,7 @@ const features = [
   margin-left: 11rem;
   border-radius: 6.25rem; 
   display: flex;
-  width: 11.1375rem; 
+  width: 13.1375rem; 
   height: 2.8125rem; 
   padding: 0.125rem;
   justify-content: center;
