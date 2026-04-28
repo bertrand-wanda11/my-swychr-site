@@ -1387,6 +1387,8 @@ const features = [
 }
 
 .nick {
+  width: fit-content;     
+  margin: 0 auto 1.5625rem;
   border-radius: 6.25rem;
   background: linear-gradient(270deg, 
   var(--Purple-400, #A34FD3) 0%, var(--Purple-500, #8C1BC1) 100%), var(--Purple-400, #A34FD3);
