@@ -26,6 +26,7 @@
     } else {
 
       setActive(index);
+
       openDropdownIndex = null;
     }
   }"
@@ -782,7 +783,7 @@ import img2 from '@/assets/images/middle.jpg'
 import img3 from '@/assets/images/lastlyy.png'
 
 
-const route = useRoute();
+
 const navMenu = ref(null);
 const activeIndex = ref(0);
 const openDropdownIndex = ref(null);
