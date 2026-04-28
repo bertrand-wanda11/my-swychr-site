@@ -2152,7 +2152,6 @@ const features = [
 }
 
 .rooming{
-  margin: 0 auto;
   font-weight: bold;
 }
 
