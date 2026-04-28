@@ -644,7 +644,7 @@ the Swychr mobile application, Swychr Connect web platform, and API suites are f
 
 <script setup>
 import NavBar from '@/components/NavBar.vue';
-import FooterView from './FooterView.vue';
+
 import img1 from '@/assets/images/firstly.png'
 import img2 from '@/assets/images/middle.jpg'
 import img3 from '@/assets/images/lastlyy.png'
