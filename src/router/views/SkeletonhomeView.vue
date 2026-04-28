@@ -169,16 +169,9 @@
    <p  class="first11">Swychr - Global eWallet App</p>
    <p class="first111">Swychr is your global digital wallet for instant, secure, and low-<br>
     cost cross-border transactions. Send money across 100+<br>countries</p>
-<p class="step-row">
-  <span class="Diose">1</span>
-  <span class="step-text">Create an account and verify your identity.</span>
-</p>
-
- <p class="step-row">
-  <span class="Diose">2</span>
-  <span class="step-text">Add funds via card, bank transfer, mobile money, crypto or other supported payment methods.</span>
-</p>
-
+  <p class ="first1111"><span class="Diose">1</span> Create an account and verify your identity.</p>
+  <p class ="first11111"><span class="Diose">2</span>Add funds via card, bank transfer, mobile money,<br>
+    crypto or other supported payment methods.</p>
   <p class ="first111111"><span class="Diose">3</span><span class="rooming">Transact globally:</span> send money, buy digital products,<br>
     or pay bills instantly.</p>
   <p class ="first1111111"><span class="Diose">4</span>Use virtual cards for safe and seamless online<br>
@@ -1761,51 +1754,31 @@ const features = [
   width: 47.6875rem;
 }
 
- .first111111, .first1111111 {
+.first1111, .first11111, .first111111, .first1111111 {
   color: var(--Gray-800, #424242);
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem; 
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-  text-align: left;
+  text-align: justify;
+   display:inline-flex;
 }
 
-.step-row {
- flex: 1;             /* This tells the text to expand horizontally */
-  text-align: left;    /* Ensures text starts from the left */
-  min-width: 0;        /* Helper to prevent flex items from overflowing */
-  word-wrap: normal; /* Space between each row */
-}
+.first1111 { width: 36.1875rem; flex-shrink: 0; }
+.first11111 { width: 40.375rem; }
+.first111111 { width: 40.375rem; }
+.first1111111 { width: 40.375rem; }
 
-/* This ensures the text block stays aligned to the left */
-.step-text {
-  flex: 1;                 /* Takes up the remaining width */
-  color: #424242;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.2rem;
-  line-height: 140%;       /* Increased slightly for better readability */
-  text-align: left;        /* Changed from justify to prevent weird gaps */
-}
-
-/* Your existing circle style (keep your Diose styles, just ensure these are set) */
 .Diose {
-  flex-shrink: 0;          /* Prevents the circle from squishing */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-   color: var(--Purple-500, #8C1BC1);
-     font-family: 'Montserrat', sans-serif;
+  color: var(--Purple-500, #8C1BC1);
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.2311rem; 
   font-style: normal;
   font-weight: 500;
   line-height: 120%;
-  /* Keep your existing width, height, background, and border-radius here */
+  margin-right: 1.25rem; 
 }
-.first111111 { width: 40.375rem; }
-.first1111111 { width: 40.375rem; }
-
-
 
 .lemon {
    justify-content: center;
@@ -1908,7 +1881,7 @@ const features = [
 
 .second {
   display: block;
-  width: 16.875rem; 
+  width: 9.875rem; 
   height: 2.4375rem;
   padding: 0.625rem;
   justify-content: center;
@@ -1958,7 +1931,7 @@ const features = [
   font-weight: 400;
   line-height: 120%;
   text-align: justify;
-  display:inline-flex;
+   display:inline-flex;
 }
 
 .second1111 { width: 36.1875rem; flex-shrink: 0; }
@@ -2143,6 +2116,7 @@ const features = [
   font-weight: 400;
   line-height: 120%;
   text-align: justify;
+   display:inline-flex;
 }
 
 .third1111 { width: 36.1875rem; flex-shrink: 0; }
