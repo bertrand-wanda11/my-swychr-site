@@ -1387,22 +1387,22 @@ const features = [
 }
 
 .nick {
-  width: fit-content;     
+  width: 5rem;     
   margin: 0 auto 1.5625rem;
   border-radius: 6.25rem;
-  background: linear-gradient(270deg, var(--Purple-400, #A34FD3) 0%, var(--Purple-500, #8C1BC1) 100%), var(--Purple-400, #A34FD3);
+  background: linear-gradient(270deg, 
+  var(--Purple-400, #A34FD3) 0%, var(--Purple-500, #8C1BC1) 100%), var(--Purple-400, #A34FD3);
+  margin: 0;
+  margin-left: 40.375vw; 
+  margin-top: 0;
   display: flex;
   height: 3.125rem;
-  padding: 0 2rem;         
   justify-content: center;
   align-items: center;
   margin-bottom: 1.5625rem; 
 }
 
-
 .nick a {
-   width: fit-content;     
-  margin: 0 auto 1.5625rem;
   text-decoration: none;
   color: var(--WhiTE-mAIN, #FFF);
   font-family: 'Montserrat', sans-serif;
@@ -1757,7 +1757,7 @@ const features = [
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-  text-align: left;
+  text-align: justify;
  
 }
 
@@ -1926,7 +1926,7 @@ const features = [
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-   text-align: left;
+  text-align: justify;
 }
 
 .second1111 { width: 36.1875rem; flex-shrink: 0; }
@@ -2110,7 +2110,7 @@ const features = [
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-  text-align: left;
+  text-align: justify;
 }
 
 .third1111 { width: 36.1875rem; flex-shrink: 0; }
