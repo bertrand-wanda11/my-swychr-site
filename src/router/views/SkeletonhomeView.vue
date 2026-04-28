@@ -72,7 +72,7 @@
 <p class="tilla">SwyChr brings together everything you need to manage money from payments<br>
   and currency to business tools and digital banking.</p>
      <div class=""> 
-      <li class="nick"><a href="https://urlgeni.us/swychr" class="">Explore More</a></li>
+      <div class="nick"><a href="https://urlgeni.us/swychr" class="">Explore More</a></div>
 
 </div>
 </div>
