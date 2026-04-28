@@ -31,6 +31,7 @@ import CareerView from './views/CareerView.vue'
 import InvestView from './views/InvestView.vue'
 import RolesView from './views/RolesView.vue'
 import Airtime1View from './views/Airtime1View.vue'
+import FooterView from './views/FooterView.vue'
 
 const routes = [
   { path: '/', name: 'skeletonhome', component: SkeletonhomeView },
@@ -64,7 +65,8 @@ const routes = [
   { path: '/Career', name: 'Career', component: CareerView },
   { path: '/Invest', name: 'Invest', component: InvestView },
   { path: '/roles', name: 'roles', component: RolesView },
-  { path: '/Airtime1', name: 'Airtime1', component: Airtime1View }
+  { path: '/Airtime1', name: 'Airtime1', component: Airtime1View },
+  { path: '/Footer', name: 'Footer', component: FooterView }
 ]
 
 const router = createRouter({
