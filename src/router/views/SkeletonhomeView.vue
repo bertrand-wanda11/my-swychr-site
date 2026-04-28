@@ -1399,6 +1399,11 @@ const features = [
   margin-bottom: 1.5625rem; 
 }
 
+.nick li{
+  width: fit-content;     
+  margin: 0 auto 1.5625rem;
+}
+
 .nick a {
   text-decoration: none;
   color: var(--WhiTE-mAIN, #FFF);
