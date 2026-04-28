@@ -1,6 +1,6 @@
 <template>
     <div class="server">
-<<<<<<< HEAD
+
 <section class="section1">
 <nav class="numero">
   <h2 class="seam">
@@ -131,7 +131,7 @@
 </div> 
 </div>
     </section>
-=======
+
         <section class="section1">
             <NavBar cta-text="Contact Sales" cta-url="/sales" cta-target="_self" :show-cta-icon="false" /> 
             <div class="inside1">
@@ -195,7 +195,7 @@
                 </div> 
             </div>
         </section>
->>>>>>> e00175bf0db96b227a02bec300ba7c43fcd7c097
+
 
     <section class="section2">
   <div class="inside2">
@@ -781,7 +781,7 @@ import img1 from '@/assets/images/firstly.png'
 import img2 from '@/assets/images/middle.jpg'
 import img3 from '@/assets/images/lastlyy.png'
 
-<<<<<<< HEAD
+
 const route = useRoute();
 const navMenu = ref(null);
 const activeIndex = ref(0);
@@ -913,10 +913,7 @@ onBeforeUnmount(() => {
   window.removeEventListener('click', handleClickOutside);
 });
 
-=======
 
- 
->>>>>>> e00175bf0db96b227a02bec300ba7c43fcd7c097
 
 const cards = [
   {
@@ -4630,6 +4627,7 @@ html { scroll-behavior: smooth; }
   transition: transform 300ms var(--ease-out), box-shadow 300ms ease, border-color 300ms ease !important;
 }
 .feature-card::before {
+  content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
@@ -4639,6 +4637,7 @@ html { scroll-behavior: smooth; }
   transition: opacity 300ms ease;
 }
 .feature-card::after {
+  content: '';
   position: absolute;
   inset: 0;
   background: radial-gradient(ellipse at top left, rgba(163,79,211,0.05) 0%, transparent 65%);
