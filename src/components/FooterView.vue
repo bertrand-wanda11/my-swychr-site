@@ -240,7 +240,6 @@ line-height: 120%;
   margin-left: 0 !important;  
   margin-right: 0 !important;
   padding: 0 !important;
-  margin-top: 2rem;
 }
 
 .schoollay {
