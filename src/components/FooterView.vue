@@ -9,7 +9,7 @@
          
         <div class="mother-pip115lay">
           <p class="showlay">Your all-in one digital finance Companion.<br> 
-            Fast,Secure,Borderless Finance.</p>
+            Fast, Secure, Borderless Finance.</p>
             <div class="sgrouplay">
             <a href=" https://web.facebook.com/swychrglobal" target="_blank"><i class="fab fa-facebook icon-fblay"></i> </a>
              <a href="https://www.linkedin.com/company/swychrglobal/?viewAsMember=true" target="_blank"> <i class="fab fa-linkedin icon-fblay"></i></a>  
@@ -84,7 +84,7 @@
     <li class="chana1lay"><a href="Privacy" >| Privacy Policy</a></li>
 </div>
     </div>
- </div>
+
 
      <p class="rufuslay">
  <b>Legal Disclosure & Regulatory Statement</b> <br>
@@ -124,7 +124,7 @@ the Swychr mobile application, Swychr Connect web platform, and API suites are f
      © 2026 The Swych Group(TSG). All rights reserved.
 
     </p>
-   
+    </div>
  </section>
     </div>
     </template>
