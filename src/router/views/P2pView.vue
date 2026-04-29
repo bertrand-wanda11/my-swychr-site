@@ -306,136 +306,13 @@ How secure is my money?
     </div>
   </section>
 
-
-  <section  class="footerp2p">
-      <div class="mothers11p2p">
-        <div class="mother11p2p">
-       <div class="mother-number11p2p"><b><span class="span2p2p">SwyChr</span></b></div>
-         
-        <div class="mother-pip115p2p">
-          <p class="showp2p">Your all-in one digital finance Companion.<br> 
-            Fast,Secure,Borderless Finance.</p>
-            <div class="sgroupp2p">
-            <a href=" https://web.facebook.com/swychrglobal" target="_blank"><i class="fab fa-facebook icon-fb"></i> </a>
-             <a href=" https://www.linkedin.com/authwall?tr" target="_blank"> <i class="fab fa-linkedin icon-fb"></i></a>  
-            <a href=" https://x.com/swychrglobal?mx=2" target="_blank"><i class="fas fa-times icon-fb"></i></a> 
-             <a href="https://www.instagram.com/swychrglobal" target="_blank"> <i class="fab fa-instagram icon-fb"></i></a> 
-        </div> 
-        </div>
-    </div>
-
-
-    <div class="mother11p2p">
-      <div class="mother-number11p2p"><b><span class="span1p2p">Quick Links</span></b></div>
-      <div class="mother-pip11p2p">
-          <a href=" " target="_blank">Personal</a><br><br>
-          <a href=" " target="_blank">Business</a><br><br>
-          <a href="" target="_blank">Company</a><br><br>
-          <a href=" " target="_blank">About Us</a><br><br>
-          <a href="" target="_blank">Contact Us</a><br>
-          
-</div>
-    </div>
-
-    <div class="mother11p2p">
-      <div class="mother-number11p2p"><b><span class="span1p2p">Product</span></b></div>
-      <div class="mother-pip1p2p">
-        <a href="" target="_blank">Payments</a><br><br>
-        <a href=" " target="_blank">Accounts </a><br><br>
-        <a href=" " target="_blank">Virtual & Physical Cards</a><br><br>
-        <a href="" target="_blank">Business</a><br><br>
-        <a href="" target="_blank">Currency Exchange</a><br><br>
-        <a href=" " target="_blank">Savings & Wallets</a>
-</div>
-    </div>
-
-    <div class="mother11p2p">
-      <div class="mother-number11p2p"><span class="span1p2p">Business</span></div>
-       <div class="mother-pip11p2p">
-        <a href="" target="_blank">Invoicing</a><br><br>
-        <a href="" target="_blank">Payroll</a><br><br>
-        <a href="" target="_blank">Bulk Transfers</a><br><br>
-        <a href="" target="_blank">Merchant Tools</a><br><br>
-        <a href="" target="_blank">Savings & Wallets</a><br>
-</div>
-    </div>
-
-    
-    <div class="mother11p2p">
-      <div class="mother-number11p2p"><b><span class="span1p2p">Company</span></b></div>
-      <div class="mother-pip11p2p">
-        <a href="" target="_blank">About Us</a><br><br>
-        <a href="" target="_blank">Our Mission</a><br><br>
-        <a href="" target="_blank">Press & Media</a><br><br>
-        <a href=" " target="_blank">Contact</a><br><br>
-        <a href="Blog" target="_blank">Blog</a><br>
-</div>
-    </div>
-
-  </div>
-
-<div class="schoolp2p">
-
-</div>
-
-    <div class="sergiop2p">
-      <div class="zoukiep2p">
- <h3 class="sergiopikanp2p">© 2026 SwyChr Technologies Africa limited</h3>
-<p class="sergiosonp2p">Borderless finance for a digital world.</p>
-</div>
-
-<div class="chanap2p">
-   <li class="chana1p2p"><a href="Term" >| Terms & Conditions</a></li>
-    <li class="chana1p2p"><a href="Privacy" >| Privacy Policy</a></li>
-</div>
-    </div>
-
-
-     <p class="rufusp2p">
- <b>Legal Disclosure & Regulatory Statement</b> <br>
- <b>Corporate Information</b> “Swychr” is the registered trading name of <b>Swychr Technology Africa
- Limited</b>, its parent company, subsidiaries, and affiliates (collectively, “the Group”).<br> Swychr
-Technology Africa Limited is a corporation duly registered in the Republic of Cameroon under 
-Registration Number <b>TPPRR/RC/BUA/2022/B/099.</b><br>
-<br>
-<b>Nature of Services</b> Swychr Technology Africa Limited operates as a Financial Technology
-(Fintech) company and is authorized to provide technological infrastructure and  <br> decentralized
- ledger (Blockchain) related services. <b>Swychr is not a bank, a deposit-taking institution, or a
- licensed financial institution.</b> <br>
-<br>
- All financial services, payment processing, and money transmission services offered via
-the Swychr mobile application, Swychr Connect web platform, and API suites are facilitated <br>through
- strategic partnerships with licensed financial institutions, regulated payment processors, and
- compliance partners within their respective jurisdictions. Swychr<br> provides the technological
- interface and software; the underlying regulated financial services and fund management are 
- executed by our third-party licensed partners.<br>
-<br>
-<b>User Acknowledgment</b>  By accessing or utilizing Swychr’s applications and API suites, the user 
- acknowledges and agrees that Swychr acts solely as a technology service provider. <br>All
-  transactional services are rendered by third-party licensed entities in accordance with the local 
-   regulations governing their specific domains and territories.<br>
-<br>
-  <b>Intellectual Property</b> The "Swychr" wordmark and logo are protected under trademark
-   registration number <b>134330</b>, granted under the seal of the African Intellectual Property <br>
-    Organization <b>(OAPI)</b>. Swychr Technology Africa Limited reserves all rights regarding its 
-     proprietary technology, branding, and intellectual assets. <br>
-<br>
-   <b>Jurisdiction-Specific Disclosures (Cameroon)</b> Local microfinance and banking services 
-   offered within the Republic of Cameroon through the Swychr Pay mobile and web<br>  app are 
-    provided under a Category 1 Microfinance Institution (Swychr Cooperative Society with Board
-     of Directors – SWYCOP BOD), operating  Financial Cooperative Submission<br> Number
-     <b>340/MINADER/DRADER/DDADER/SDR.</b><br>
-<br>
-     © 2026 Swychr Technology Africa Limited. All rights reserved.
-
-    </p>
- </section>
-
+<FooterView />
    
       </div>
  </template>  
  
   <script setup>
+import FooterView from '@/components/FooterView .vue';
 import NavBar from '@/components/NavBar.vue';
 import { ref, computed } from 'vue';
 
