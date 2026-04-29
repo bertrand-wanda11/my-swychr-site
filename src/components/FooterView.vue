@@ -206,41 +206,41 @@ font-size: 14px;
 font-style: normal;
 font-weight: 535;
 line-height: 120%;
-margin-top: 2rem;
+
  }
  
 
 .mother11lay {
-  margin: 1.1rem 0; /* Remove specific left margins */
+  margin: 1.1rem 0; 
   flex: 1;
 }
 
 .footer-content {
-  max-width: 1200px;  /* Or whatever width looks best for your site */
-  margin: 0 auto;     /* This centers the entire block of content */
-  padding: 0 40px;    /* This creates the "Equal Margin" on both sides */
+  max-width: 1200px; 
+  margin: 0 auto;   
+  padding: 0 40px;   
 }
 
-/* Now, make sure the children don't fight the wrapper */
 .mothers11lay{
   width: 100% !important; 
-  margin-left: 0 !important;   /* REMOVE any manual margins */
+  margin-left: 0 !important; 
   margin-right: 0 !important;
   padding: 0 !important;
 }
  
 .sergiolay{
   width: 100% !important; 
-  margin-left: 0 !important;   /* REMOVE any manual margins */
+  margin-left: 0 !important;   
   margin-right: 0 !important;
   padding-bottom: 0 !important;
 }
 
 .rufuslay {
   width: 100% !important; 
-  margin-left: 0 !important;   /* REMOVE any manual margins */
+  margin-left: 0 !important;  
   margin-right: 0 !important;
   padding: 0 !important;
+  margin-top: 2rem;
 }
 
 .schoollay {
@@ -252,7 +252,7 @@ margin-top: 2rem;
   color: #FFF;
   font-size: 17px;
   font-weight: 550;
-  display: block;  /* Ensures title stays on its own line */
+  display: block;
   margin-bottom: 15px;
 }
 
