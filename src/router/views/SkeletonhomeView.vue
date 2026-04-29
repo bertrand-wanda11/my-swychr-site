@@ -1927,78 +1927,45 @@ width: max-content;
 .second111111 { width: 40.375rem; }
 .second1111111 { width: 40.375rem; }
 
-.lemontea {
-   justify-content: center;
-  align-items: center;
-  margin-top: 4rem;
-  margin-left: 9rem;
-  display: flex;
-  width: 9rem; 
-  height: 2.8125rem;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0.9375rem; 
-  background: linear-gradient(270deg, var(--Purple-400, #A34FD3) 0%, 
-  var(--Purple-500, #8C1BC1) 100%), var(--Purple-400, #A34FD3);
-  box-shadow: 0 0.25rem 0.40625rem 0 rgba(57, 6, 82, 0.18);
-}
-
-
-.lemontea a {
- text-decoration: none;
-  color: var(--WhiTE-mAIN, #FFF);
+.lemontea a, .lemontea1 a {
+  text-decoration: none !important;
+  color: #FFFFFF !important;
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   font-weight: 600;
-  
-  /* --- THE ESSENTIAL ALIGNMENT CODE --- */
-  display: flex !important;       /* Forces flex mode */
-  flex-direction: row !important;  /* Ensures left-to-right flow */
-  align-items: center !important;  /* Centers everything vertically */
-  justify-content: center;         /* Centers the group inside the button */
-  gap: 0.5rem;                     /* Adds even space between icon, text, and arrow */
-  width: 100%;                     /* Makes the link fill the button */
-  height: 100%;
+
+  /* --- THE ALIGNMENT HAMMER --- */
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;   /* This forces vertical center */
+  justify-content: center !important;
+  gap: 10px !important;            /* Adds space between icons and text */
+  height: 100% !important;
+  width: 100% !important;
+  line-height: 1 !important;       /* Forces the text to have no extra top/bottom space */
 }
 
-.lemontea1 {
-  justify-content: center;
-  align-items: center;
-  margin-top: 4rem;
-  display: flex;
-  width: 9rem; 
+/* This targets the arrow specifically to ensure it isn't floating */
+.arrow-1 {
+  display: flex !important;
+  align-items: center !important;
+  margin-top: 0 !important;        /* Removes any accidental top margin */
+  font-size: 0.9rem !important;    /* Makes the arrow slightly smaller to match text height */
+}
+
+/* Base button styles */
+.lemontea, .lemontea1 {
+  list-style: none;
+  display: flex !important;
+  width: 10rem !important;        /* Increased slightly so text doesn't feel cramped */
   height: 2.8125rem;
-  justify-content: center;
-  align-items: center;
   border-radius: 0.9375rem; 
-  background: linear-gradient(270deg, var(--Purple-400, #A34FD3) 0%, 
-  var(--Purple-500, #8C1BC1) 100%), var(--Purple-400, #A34FD3);
-  box-shadow: 0 0.25rem 0.40625rem 0 rgba(57, 6, 82, 0.18);
+  background: linear-gradient(270deg, #A34FD3 0%, #8C1BC1 100%) !important;
+  margin-top: 4rem;
+  overflow: hidden;               /* Ensures nothing spills out */
 }
 
-.lemontea1 a{
-text-decoration: none;
-  color: var(--WhiTE-mAIN, #FFF);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  
-  /* --- THE ESSENTIAL ALIGNMENT CODE --- */
-  display: flex !important;       /* Forces flex mode */
-  flex-direction: row !important;  /* Ensures left-to-right flow */
-  align-items: center !important;  /* Centers everything vertically */
-  justify-content: center;         /* Centers the group inside the button */
-  gap: 0.5rem;                     /* Adds even space between icon, text, and arrow */
-  width: 100%;                     /* Makes the link fill the button */
-  height: 100%;
-}
-
-
-.lemontea i, .lemontea1 i {
-  display: inline-block;
-  margin: 0 !important; 
-  line-height: 1;
-}
+.lemontea { margin-left: 9rem; }
 
 .papa2 {
   display: inline-flex;
