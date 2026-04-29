@@ -71,10 +71,10 @@
 <h1 class="person">What SwyChr Offers</h1>
 <p class="tilla">SwyChr brings together everything you need to manage money from payments<br>
   and currency to business tools and digital banking.</p>
-     <div class=""> 
-      <div class="nick"><a href="https://urlgeni.us/swychr" class="">Explore More</a></div>
-
-</div>
+  
+<div class="nick">
+        <a href="https://urlgeni.us/swychr">Explore More</a>
+    </div>
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-10 bg-gray-100">  
@@ -1385,33 +1385,35 @@ const features = [
 }
 
 .nick {
- width: fit-content;           /* Shrink to fit text */
-  min-width: 200px;             /* Optional: ensures it's not TOO small */
+  /* 1. THE FIX: Size & Alignment */
+  width: max-content;            /* Forces width to exactly fit the text */
+  margin: 2rem auto;             /* Centers horizontally & adds vertical spacing */
+  padding: 0 2.5rem;             /* Adds breathing room inside the pill */
   
-  /* 2. Center it properly */
-  margin: 0 auto 1.5625rem auto; /* Centers the button and removes the vw margin */
-  
-  /* 3. Padding (CRITICAL) */
-  padding: 0 2.5rem;            /* Gives the text space inside the pill */
-
-  /* Your existing styles */
-  border-radius: 6.25rem;
-  background: linear-gradient(270deg, var(--Purple-400, #A34FD3) 0%, var(--Purple-500, #8C1BC1) 100%), var(--Purple-400, #A34FD3);
-  display: flex;
+  /* 2. Visual Styling */
   height: 3.125rem;
+  border-radius: 6.25rem;
+  background: linear-gradient(270deg, var(--Purple-400, #A34FD3) 0%, var(--Purple-500, #8C1BC1) 100%);
+  display: flex;                 /* Keeps text centered inside the pill */
   justify-content: center;
   align-items: center;
-  list-style: none;
+  list-style: none;              /* Removes bullet point if it appears */
+  
+  /* 3. Shadow & Clean up */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease; /* Optional: makes it feel like a button */
+}
+
+.nick:hover {
+  transform: scale(1.05);        /* Optional: slight grow on hover */
 }
 
 .nick a {
   text-decoration: none;
-  color: var(--WhiTE-mAIN, #FFF);
+  color: #FFFFFF;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.1875rem; 
-  font-style: normal;
-  font-weight: 400;
-  line-height: 120%;
+  font-weight: 600;
+  display: block;                /* Makes the whole pill clickable */
 }
 
 .section3 {
