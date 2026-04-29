@@ -243,8 +243,8 @@
    and connectivity tools for businesses, fintechs, and NGOs. From<br>bulk payments to virtual card 
    issuance and cross-border transactions</p>
   <p class ="third1111"><span class="Diose">1</span>Sign up as a business and access the dashboard or APIs.</p>
-  <p class ="third11111"><span class="Diose">2</span><span class="rooming">Choose your service:</span>bulk payments, virtual cards,<br>
-    payout APIs , USD accounts,or airtime,<br> distribution.</p>
+  <p class ="third11111"><span class="Diose">2</span><span class="rooming">Choose your service:</span>bulk payments, virtual cards,
+    payout APIs , USD accounts,or airtime.</p>
   <p class ="third111111"><span class="Diose">3</span>Integrate via API or use our web dashboard for no-<br>
   code operations.</p>
   <p class ="third1111111"><span class="Diose">4</span>Make payments globally or deliver digital value <br>
@@ -1934,35 +1934,34 @@ width: max-content;
   font-size: 1rem;
   font-weight: 600;
 
-  /* --- THE ALIGNMENT HAMMER --- */
+
   display: flex !important;
   flex-direction: row !important;
-  align-items: center !important;   /* This forces vertical center */
+  align-items: center !important;  
   justify-content: center !important;
-  gap: 10px !important;            /* Adds space between icons and text */
+  gap: 10px !important;         
   height: 100% !important;
   width: 100% !important;
-  line-height: 1 !important;       /* Forces the text to have no extra top/bottom space */
+  line-height: 1 !important;       
 }
 
-/* This targets the arrow specifically to ensure it isn't floating */
 .arrow-1 {
   display: flex !important;
   align-items: center !important;
-  margin-top: 0 !important;        /* Removes any accidental top margin */
-  font-size: 0.9rem !important;    /* Makes the arrow slightly smaller to match text height */
+  margin-top: 0 !important;       
+  font-size: 0.9rem !important;    
 }
 
-/* Base button styles */
+
 .lemontea, .lemontea1 {
   list-style: none;
   display: flex !important;
-  width: 10rem !important;        /* Increased slightly so text doesn't feel cramped */
+  width: 10rem !important;     
   height: 2.8125rem;
   border-radius: 0.9375rem; 
   background: linear-gradient(270deg, #A34FD3 0%, #8C1BC1 100%) !important;
   margin-top: 4rem;
-  overflow: hidden;               /* Ensures nothing spills out */
+  overflow: hidden;          
 }
 
 .lemontea { margin-left: 9rem; }
@@ -2104,7 +2103,6 @@ width: max-content;
   justify-content: center;
   align-items: center;
   margin-top: 4rem;
-  margin-left: 11rem;
   border-radius: 6.25rem; 
   display: flex;
   width: 30.1375rem; 
