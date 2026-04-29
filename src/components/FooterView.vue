@@ -242,7 +242,7 @@ line-height: 120%;
 
 /* 6. Align the Legal Text */
 .rufuslay {
-width: 90%;             /* Let it fill the available space */
+width: 85%;             /* Let it fill the available space */
   margin: 40px 0;          /* Space on top/bottom, 0 on left/right */
   padding: 0;              /* Ensure no internal padding is pushing it */
   text-align: justify;
