@@ -207,6 +207,7 @@ font-size: 14px;
 font-style: normal;
 font-weight: 535;
 line-height: 120%;
+text-align:left;
  }
  
  .span1lay, .span2lay {
