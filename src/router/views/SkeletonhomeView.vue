@@ -1386,24 +1386,16 @@ const features = [
   text-align: left;
 }
 .nick {
-  /* Forces the width to ONLY fit the text */
-  width: max-content !important; 
-  display: inline-flex !important; 
-  
-  /* Centers it on the page */
-  margin: 2rem auto !important; 
-  left: 50%;
-  transform: translateX(-50%);
-  position: relative;
-
-  /* Rest of your styles */
-  padding: 0 2.5rem !important;
-  height: 3.125rem !important;
-  border-radius: 6.25rem !important;
-  background: linear-gradient(270deg, #A34FD3 0%, #8C1BC1 100%) !important;
+width: max-content;     /* Keep this so it stays small */
+  display: flex; 
+  padding: 0 2.5rem;
+  height: 3.125rem;
+  border-radius: 6.25rem;
+  background: linear-gradient(270deg, #A34FD3 0%, #8C1BC1 100%);
   justify-content: center;
   align-items: center;
-  text-decoration: none;
+  /* Remove any margin-left or left: 50% properties you had before */
+  margin: 0;
 }
 
 .nick a {
