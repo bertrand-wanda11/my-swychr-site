@@ -1,7 +1,7 @@
 <template>
     <div>
  <section  class="footerlay">
-  <div style="max-width: 1200px; margin: 0 auto; padding: 0 40px;">
+  <div class="footer-content">
       <div class="mothers11lay">
 
         <div class="mother11lay">
@@ -209,14 +209,7 @@ line-height: 120%;
  }
  
 
-/* 2. Reset the columns container */
-.mothers11lay {
-  display: flex;
-  justify-content: space-between; /* Spreads columns evenly */
-  margin-bottom: 40px;
-  margin-left: 0; /* REMOVE THE 55px MARGIN */
-  text-align: left; /* Changed from justify for cleaner alignment */
-}
+
 
 /* 3. Reset individual columns */
 .mother11lay {
@@ -224,33 +217,26 @@ line-height: 120%;
   flex: 1;
 }
 
-/* 4. Align the horizontal line */
-.schoollay {
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-  width: 100%;    /* Make it fill the container */
-  margin: 20px 0; /* Remove the 60px margin */
+.footer-content {
+  max-width: 1200px;  /* Or whatever width looks best for your site */
+  margin: 0 auto;     /* This centers the entire block of content */
+  padding: 0 40px;    /* This creates the "Equal Margin" on both sides */
 }
 
-/* 5. Align the Bottom Section (Copyright/Terms) */
-.sergiolay {
-  display: flex; 
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;     /* Fill container */
-  margin: 30px 0;  /* Use 0 for left/right */
-}
-
-/* 6. Align the Legal Text */
+/* Now, make sure the children don't fight the wrapper */
+.mothers11lay, 
+.sergiolay, 
 .rufuslay {
-width: 85%;             /* Let it fill the available space */
-  margin: 40px 0;          /* Space on top/bottom, 0 on left/right */
-  padding: 0;              /* Ensure no internal padding is pushing it */
-  text-align: justify;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #ffffff;   /* Professional look for legal text */
+  width: 100% !important; 
+  margin-left: 0 !important;   /* REMOVE any manual margins */
+  margin-right: 0 !important;
+  padding: 0 !important;
 }
 
+.schoollay {
+  width: 100% !important;
+  margin: 20px 0 !important;
+}
 
 .span1lay {
   color: #FFF;
