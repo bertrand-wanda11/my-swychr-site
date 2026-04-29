@@ -84,7 +84,7 @@
     <li class="chana1lay"><a href="Privacy" >| Privacy Policy</a></li>
 </div>
     </div>
-
+ </div>
 
      <p class="rufuslay">
  <b>Legal Disclosure & Regulatory Statement</b> <br>
@@ -124,7 +124,7 @@ the Swychr mobile application, Swychr Connect web platform, and API suites are f
      © 2026 The Swych Group(TSG). All rights reserved.
 
     </p>
-    </div>
+   
  </section>
     </div>
     </template>
@@ -248,6 +248,7 @@ line-height: 120%;
 
 /* 6. Align the Legal Text */
 .rufuslay {
+  margin: 40px 0;  /* Remove auto and use 0 for left/right */
   width: 100%;     /* Fill container */
   text-align: justify;
   font-size: 14px;
