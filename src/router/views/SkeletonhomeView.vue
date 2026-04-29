@@ -1976,14 +1976,13 @@ width: max-content;
 .third1111111 { width: 40.375rem; }
 
 .greentea {
-  justify-content: center;
-  align-items: center;
+  width: max-content; 
+  min-width: 12rem; 
+  padding: 0 1.5rem;
   margin-top: 4rem;
   border-radius: 6.25rem; 
   display: flex;
-  width: 30.1375rem; 
   height: 2.8125rem; 
-  padding: 0.125rem;
   justify-content: center;
   align-items: center;
   gap: 0.125rem;
@@ -1991,6 +1990,7 @@ width: max-content;
   background: linear-gradient(270deg, var(--Purple-400, #A34FD3) 0%, 
   var(--Purple-500, #8C1BC1) 100%), var(--Purple-400, #A34FD3);
   box-shadow: 0 0.25rem 0.40625rem 0 rgba(57, 6, 82, 0.18);
+  list-style: none;
 }
 
 .greentea a {
@@ -2001,14 +2001,19 @@ width: max-content;
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
+  display: flex;
+  align-items: center;    
+  white-space: nowrap;   
+  gap: 10px;
+}
+
+
+.papa3 {
+  display: inline-flex;
 }
 
 .rooming{
   font-weight: bold;
-}
-
-.papa3 {
-  display: inline-flex;
 }
 
 
