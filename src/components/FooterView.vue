@@ -248,12 +248,14 @@ line-height: 120%;
 
 /* 6. Align the Legal Text */
 .rufuslay {
-  margin: 40px 0;  /* Remove auto and use 0 for left/right */
-  width: 100%;     /* Fill container */
+width: 100%;             /* Let it fill the available space */
+  margin: 40px 0;          /* Space on top/bottom, 0 on left/right */
+  padding: 0;              /* Ensure no internal padding is pushing it */
+  
   text-align: justify;
   font-size: 14px;
   line-height: 1.6;
-  opacity: 0.8;    /* Professional look for legal text */
+  color: #ffffff;   /* Professional look for legal text */
 }
 
 /* 7. Clean up the titles */
