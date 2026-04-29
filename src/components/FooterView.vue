@@ -258,7 +258,7 @@ width: 100%;             /* Let it fill the available space */
   color: #ffffff;   /* Professional look for legal text */
 }
 
-/* 7. Clean up the titles */
+
 .span1lay {
   color: #FFF;
   font-size: 17px;
