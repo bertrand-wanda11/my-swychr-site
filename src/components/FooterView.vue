@@ -1,7 +1,7 @@
 <template>
     <div>
  <section  class="footerlay">
-  <div class="footer-coro">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 40px;">
       <div class="mothers11lay">
 
         <div class="mother11lay">
@@ -208,12 +208,6 @@ font-weight: 535;
 line-height: 120%;
  }
  
- /* 1. The Container that forces equal alignment */
-.footer-coro {
-  max-width: 1200px; /* Adjust based on how wide you want the footer content */
-  margin: 0 auto;    /* Centers the entire block */
-  padding: 0 20px;   /* Consistent padding on left/right for mobile */
-}
 
 /* 2. Reset the columns container */
 .mothers11lay {
@@ -251,8 +245,7 @@ line-height: 120%;
 width: 100%;             /* Let it fill the available space */
   margin: 40px 0;          /* Space on top/bottom, 0 on left/right */
   padding: 0;              /* Ensure no internal padding is pushing it */
-  
-  text-align: left;
+  text-align: justify;
   font-size: 14px;
   line-height: 1.6;
   color: #ffffff;   /* Professional look for legal text */
