@@ -1,6 +1,7 @@
 <template>
     <div>
  <section  class="footerlay">
+  <div class="footer-coro">
       <div class="mothers11lay">
 
         <div class="mother11lay">
@@ -123,6 +124,7 @@ the Swychr mobile application, Swychr Connect web platform, and API suites are f
      © 2026 The Swych Group(TSG). All rights reserved.
 
     </p>
+    </div>
  </section>
     </div>
     </template>
@@ -138,20 +140,6 @@ the Swychr mobile application, Swychr Connect web platform, and API suites are f
            margin: 0 auto;
         }
            
-        
-.mothers11lay{
-          display: flex;
-          margin-bottom: 20px;
-          text-align: justify;
-           margin-left: 55px;
-        }
-        
-.mother11lay{
-            margin: 1.1rem;
-            text-align: center;
-            text-align: justify; 
-            margin-left: 2rem;
-        }  
 
         .mother-number11lay{
           font-size:20px;
@@ -197,16 +185,6 @@ text-align:justify;
     margin-right: 8px;
         }
         
- .span1lay{
-text-align: justify;
-color: var(--WhiTE-mAIN, #FFF);
-font-family: 'Montserrat', sans-serif;
-font-size: 17px;
-font-style: normal;
-font-weight: 550;
-line-height: 120%;
-margin-right: 2.8rem;
-}
 
 .span2lay{
   font-size: 25px;
@@ -219,11 +197,7 @@ margin-right: 2.8rem;
   color: #ffffff;
         } 
   
- .schoollay{
-  border-top: 1px solid #fff;
-  width: 92%;
-  margin-left: 60px;
- }   
+   
  
   .showlay{
 color: #ffffff;
@@ -234,16 +208,62 @@ font-weight: 535;
 line-height: 120%;
  }
  
+ /* 1. The Container that forces equal alignment */
+.footer-coro {
+  max-width: 1200px; /* Adjust based on how wide you want the footer content */
+  margin: 0 auto;    /* Centers the entire block */
+  padding: 0 20px;   /* Consistent padding on left/right for mobile */
+}
 
+/* 2. Reset the columns container */
+.mothers11lay {
+  display: flex;
+  justify-content: space-between; /* Spreads columns evenly */
+  margin-bottom: 40px;
+  margin-left: 0; /* REMOVE THE 55px MARGIN */
+  text-align: left; /* Changed from justify for cleaner alignment */
+}
+
+/* 3. Reset individual columns */
+.mother11lay {
+  margin: 1.1rem 0; /* Remove specific left margins */
+  flex: 1;
+}
+
+/* 4. Align the horizontal line */
+.schoollay {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  width: 100%;    /* Make it fill the container */
+  margin: 20px 0; /* Remove the 60px margin */
+}
+
+/* 5. Align the Bottom Section (Copyright/Terms) */
 .sergiolay {
   display: flex; 
   justify-content: space-between;
   align-items: center;
-  width: 90%;
-  margin: 30px auto; 
-  padding: 0;
+  width: 100%;     /* Fill container */
+  margin: 30px 0;  /* Use 0 for left/right */
 }
 
+/* 6. Align the Legal Text */
+.rufuslay {
+  margin: 40px 0;  /* Remove auto and use 0 for left/right */
+  width: 100%;     /* Fill container */
+  text-align: justify;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.8;    /* Professional look for legal text */
+}
+
+/* 7. Clean up the titles */
+.span1lay {
+  color: #FFF;
+  font-size: 17px;
+  font-weight: 550;
+  display: block;  /* Ensures title stays on its own line */
+  margin-bottom: 15px;
+}
 
 .zoukielay{
   margin-right: 0; 
@@ -262,15 +282,6 @@ line-height: 120%;
 
 .chana1lay{
   white-space: nowrap;
-}
-
-
-.rufuslay{
-  margin: 40px auto; 
-  width: 90%;
-  text-align: justify;
-  font-size: 14px;
-  line-height: 1.6;
 }
 
 .seam{
