@@ -1,6 +1,7 @@
 <template>
  <LayoutView>
  <div>
+   <NavBar />  
        <section class="small">
         <h1 class="support">Support Team</h1>
 <p class="big">Whether you have questions about your account, need assistance with our services, or want to<br>
@@ -104,14 +105,17 @@
     </div>
   </section>
 
+    <FooterView />
     </div>
     </LayoutView>
+
     </template>
 
 <script setup>
+import NavBar from '@/components/NavBar.vue';
 import LayoutView from './LayoutView.vue'; 
- 
- import { ref } from 'vue';
+import FooterView from '@/components/FooterView.vue'; 
+import { ref } from 'vue';
 
 
 const formData = ref({

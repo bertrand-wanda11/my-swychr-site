@@ -31,7 +31,7 @@ import CareerView from './views/CareerView.vue'
 import InvestView from './views/InvestView.vue'
 import RolesView from './views/RolesView.vue'
 import Airtime1View from './views/Airtime1View.vue'
-import FooterView from './views/FooterView.vue'
+import FooterView from '../components/FooterView.vue'
 
 const routes = [
   { path: '/', name: 'skeletonhome', component: SkeletonhomeView },
