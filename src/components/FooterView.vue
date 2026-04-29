@@ -192,9 +192,10 @@ text-align:justify;
 }
 
  .mother-pip115lay{ 
-  text-align: justify;
-  align-items: center;
-  color: #ffffff;
+ .mother-pip115lay {
+  margin-top: 20px !important;   /* Pushes text down from "SwyChr" title */
+  line-height: 1.6;              /* Gives text lines more room */
+}
         } 
   
    
@@ -208,6 +209,11 @@ font-weight: 535;
 line-height: 120%;
  }
  
+ .span1lay, .span2lay {
+  display: block;
+  margin-bottom: 25px !important; /* Pushes the links down from the title */
+}
+
 
 .mother11lay {
   margin: 1.1rem 0; /* Remove specific left margins */
@@ -221,9 +227,26 @@ line-height: 120%;
 }
 
 /* Now, make sure the children don't fight the wrapper */
-.mothers11lay, 
-.sergiolay, 
+.mothers11lay{
+  width: 100% !important; 
+  margin-left: 0 !important;   /* REMOVE any manual margins */
+  margin-right: 0 !important;
+  padding: 0 !important;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px !important;
+}
+
+.sergiolay{
+  width: 100% !important; 
+  margin-left: 0 !important;   /* REMOVE any manual margins */
+  margin-right: 0 !important;
+  padding: 0 !important;
+}
+
 .rufuslay {
+  width: 100%;
+  margin-top: 30px !important;
   width: 100% !important; 
   margin-left: 0 !important;   /* REMOVE any manual margins */
   margin-right: 0 !important;
@@ -231,8 +254,10 @@ line-height: 120%;
 }
 
 .schoollay {
-  width: 100% !important;
-  margin: 20px 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  width: 100%;
+  margin-top: 40px !important;    /* Space above the line */
+  margin-bottom: 50px !important;
 }
 
 .span1lay {
@@ -248,6 +273,9 @@ line-height: 120%;
   text-align: left;
 }
 
+.sgrouplay {
+  margin-top: 25px !important;   /* Pushes icons down from the paragraph */
+}
 
 .chanalay {
   margin-right: 0;
