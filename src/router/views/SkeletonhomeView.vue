@@ -214,7 +214,7 @@
       <div class="papa2"> 
 <li class="lemontea"><a href="https://apps.apple.com/ae/app/swychr/id1586029318">
    <i class="fab fa-apple"></i>
-  Appstore<i class="fas fa-arrow-right arrow-1"></i></a></li>
+  Appstore</a><i class="fas fa-arrow-right arrow-1"></i></li>
 <li class="lemontea1"><a href="https://play.google.com/store/apps/details?id=com.innobins.jtqwallet">
     <i class="fab fa-google-play"></i>
   Playtstore<i class="fas fa-arrow-right arrow-1"></i></a></li>
@@ -243,8 +243,8 @@
    and connectivity tools for businesses, fintechs, and NGOs. From<br>bulk payments to virtual card 
    issuance and cross-border transactions</p>
   <p class ="third1111"><span class="Diose">1</span>Sign up as a business and access the dashboard or APIs.</p>
-  <p class ="third11111"><span class="Diose">2</span><span class="rooming">Choose your service:</span>bulk payments, virtual cards,
-    payout APIs , USD accounts,or airtime distribution.</p>
+  <p class ="third11111"><span class="Diose">2</span><span class="rooming">Choose your service:</span>bulk payments, virtual cards,<br>
+    payout APIs , USD accounts,or airtime,<br> distribution.</p>
   <p class ="third111111"><span class="Diose">3</span>Integrate via API or use our web dashboard for no-<br>
   code operations.</p>
   <p class ="third1111111"><span class="Diose">4</span>Make payments globally or deliver digital value <br>
@@ -1385,8 +1385,9 @@ const features = [
   line-height: 120%;
   text-align: left;
 }
+
 .nick {
-width: max-content;     /* Keep this so it stays small */
+width: max-content;    
   display: flex; 
   padding: 0 2.5rem;
   height: 3.125rem;
@@ -1394,14 +1395,13 @@ width: max-content;     /* Keep this so it stays small */
   background: linear-gradient(270deg, #A34FD3 0%, #8C1BC1 100%);
   justify-content: center;
   align-items: center;
-  /* Remove any margin-left or left: 50% properties you had before */
   margin: 0;
 }
 
 .nick a {
   color: #FFFFFF !important;
   text-decoration: none !important;
-  white-space: nowrap !important; /* Prevents text from ever breaking */
+  white-space: nowrap !important;
 }
 
 .section3 {
