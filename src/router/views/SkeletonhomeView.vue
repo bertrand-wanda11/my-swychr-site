@@ -214,7 +214,7 @@
       <div class="papa2"> 
 <li class="lemontea"><a href="https://apps.apple.com/ae/app/swychr/id1586029318">
    <i class="fab fa-apple"></i>
-  Appstore</a><i class="fas fa-arrow-right arrow-1"></i></li>
+  Appstore<i class="fas fa-arrow-right arrow-1"></i></a></li>
 <li class="lemontea1"><a href="https://play.google.com/store/apps/details?id=com.innobins.jtqwallet">
     <i class="fab fa-google-play"></i>
   Playtstore<i class="fas fa-arrow-right arrow-1"></i></a></li>
@@ -1945,15 +1945,20 @@ width: max-content;
 
 
 .lemontea a {
-  text-decoration: none;
+ text-decoration: none;
   color: var(--WhiTE-mAIN, #FFF);
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
-  font-style: normal;
   font-weight: 600;
-  line-height: 120%;
-  display: flex;
-  align-items: center;
+  
+  /* --- THE ESSENTIAL ALIGNMENT CODE --- */
+  display: flex !important;       /* Forces flex mode */
+  flex-direction: row !important;  /* Ensures left-to-right flow */
+  align-items: center !important;  /* Centers everything vertically */
+  justify-content: center;         /* Centers the group inside the button */
+  gap: 0.5rem;                     /* Adds even space between icon, text, and arrow */
+  width: 100%;                     /* Makes the link fill the button */
+  height: 100%;
 }
 
 .lemontea1 {
@@ -1972,15 +1977,27 @@ width: max-content;
 }
 
 .lemontea1 a{
-  text-decoration: none;
+text-decoration: none;
   color: var(--WhiTE-mAIN, #FFF);
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
-  font-style: normal;
   font-weight: 600;
-  line-height: 120%;
-  display: flex;
-  align-items: center;
+  
+  /* --- THE ESSENTIAL ALIGNMENT CODE --- */
+  display: flex !important;       /* Forces flex mode */
+  flex-direction: row !important;  /* Ensures left-to-right flow */
+  align-items: center !important;  /* Centers everything vertically */
+  justify-content: center;         /* Centers the group inside the button */
+  gap: 0.5rem;                     /* Adds even space between icon, text, and arrow */
+  width: 100%;                     /* Makes the link fill the button */
+  height: 100%;
+}
+
+
+.lemontea i, .lemontea1 i {
+  display: inline-block;
+  margin: 0 !important; 
+  line-height: 1;
 }
 
 .papa2 {
