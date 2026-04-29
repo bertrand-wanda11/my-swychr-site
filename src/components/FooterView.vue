@@ -209,9 +209,6 @@ line-height: 120%;
  }
  
 
-
-
-/* 3. Reset individual columns */
 .mother11lay {
   margin: 1.1rem 0; /* Remove specific left margins */
   flex: 1;
@@ -224,8 +221,20 @@ line-height: 120%;
 }
 
 /* Now, make sure the children don't fight the wrapper */
-.mothers11lay, 
-.sergiolay, 
+.mothers11lay{
+  width: 100% !important; 
+  margin-left: 0 !important;   /* REMOVE any manual margins */
+  margin-right: 0 !important;
+  padding: 0 !important;
+}
+ 
+.sergiolay{
+  width: 100% !important; 
+  margin-left: 0 !important;   /* REMOVE any manual margins */
+  margin-right: 0 !important;
+  padding-bottom: 3rem !important;
+}
+
 .rufuslay {
   width: 100% !important; 
   margin-left: 0 !important;   /* REMOVE any manual margins */
