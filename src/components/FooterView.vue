@@ -206,6 +206,7 @@ font-size: 14px;
 font-style: normal;
 font-weight: 535;
 line-height: 120%;
+margin-top: 2rem;
  }
  
 
@@ -232,7 +233,7 @@ line-height: 120%;
   width: 100% !important; 
   margin-left: 0 !important;   /* REMOVE any manual margins */
   margin-right: 0 !important;
-  padding-bottom: 3rem !important;
+  padding-bottom: 0 !important;
 }
 
 .rufuslay {
