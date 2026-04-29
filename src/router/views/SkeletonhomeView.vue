@@ -242,7 +242,7 @@
    issuance and cross-border transactions</p>
   <p class ="third1111"><span class="Diose">1</span>Sign up as a business and access the dashboard or APIs.</p>
   <p class ="third11111"><span class="Diose">2</span><span class="rooming">Choose your service:</span>bulk payments, virtual cards,
-    payout APIs , USD accounts,or<br>airtime distribution.</p>
+    payout APIs <br>, USD accounts,or airtime distribution.</p>
   <p class ="third111111"><span class="Diose">3</span>Integrate via API or use our web dashboard for no-<br>
   code operations.</p>
   <p class ="third1111111"><span class="Diose">4</span>Make payments globally or deliver digital value <br>
