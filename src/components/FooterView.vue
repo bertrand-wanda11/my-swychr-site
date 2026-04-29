@@ -252,7 +252,7 @@ width: 100%;             /* Let it fill the available space */
   margin: 40px 0;          /* Space on top/bottom, 0 on left/right */
   padding: 0;              /* Ensure no internal padding is pushing it */
   
-  text-align: justify;
+  text-align: left;
   font-size: 14px;
   line-height: 1.6;
   color: #ffffff;   /* Professional look for legal text */
