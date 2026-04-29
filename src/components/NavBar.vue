@@ -315,7 +315,7 @@ onBeforeUnmount(() => {
 }
 
 /* ── Logo ─────────────────────────────────────────────────────────── */
-.nav-logo { margin: 0; flex-shrink: 0;margin-left : 3.7rem; }
+.nav-logo { margin: 0; flex-shrink: 0;margin-left : 3.5rem; }
 .nav-logo a { display: flex; }
 .dreak {
   filter: brightness(0) invert(1);
