@@ -1,5 +1,4 @@
 <template>
- <LayoutView>
  <div>
    <NavBar />  
        <section class="small">
@@ -107,13 +106,10 @@
 
     <FooterView />
     </div>
-    </LayoutView>
-
     </template>
 
 <script setup>
 import NavBar from '@/components/NavBar.vue';
-import LayoutView from './LayoutView.vue'; 
 import FooterView from '@/components/FooterView.vue'; 
 import { ref } from 'vue';
 
