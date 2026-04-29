@@ -72,9 +72,11 @@
 <p class="tilla">SwyChr brings together everything you need to manage money from payments<br>
   and currency to business tools and digital banking.</p>
   
-<div class="nick">
+    <div style="display: flex; justify-content: center; width: 100%;">
+    <div class="nick">
         <a href="https://urlgeni.us/swychr">Explore More</a>
     </div>
+</div>
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-10 bg-gray-100">  
@@ -1383,37 +1385,31 @@ const features = [
   line-height: 120%;
   text-align: left;
 }
-
 .nick {
-  /* 1. THE FIX: Size & Alignment */
-  width: max-content;            /* Forces width to exactly fit the text */
-  margin: 2rem auto;             /* Centers horizontally & adds vertical spacing */
-  padding: 0 2.5rem;             /* Adds breathing room inside the pill */
+  /* Forces the width to ONLY fit the text */
+  width: max-content !important; 
+  display: inline-flex !important; 
   
-  /* 2. Visual Styling */
-  height: 3.125rem;
-  border-radius: 6.25rem;
-  background: linear-gradient(270deg, var(--Purple-400, #A34FD3) 0%, var(--Purple-500, #8C1BC1) 100%);
-  display: flex;                 /* Keeps text centered inside the pill */
+  /* Centers it on the page */
+  margin: 2rem auto !important; 
+  left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+
+  /* Rest of your styles */
+  padding: 0 2.5rem !important;
+  height: 3.125rem !important;
+  border-radius: 6.25rem !important;
+  background: linear-gradient(270deg, #A34FD3 0%, #8C1BC1 100%) !important;
   justify-content: center;
   align-items: center;
-  list-style: none;              /* Removes bullet point if it appears */
-  
-  /* 3. Shadow & Clean up */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease; /* Optional: makes it feel like a button */
-}
-
-.nick:hover {
-  transform: scale(1.05);        /* Optional: slight grow on hover */
+  text-decoration: none;
 }
 
 .nick a {
-  text-decoration: none;
-  color: #FFFFFF;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  display: block;                /* Makes the whole pill clickable */
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+  white-space: nowrap !important; /* Prevents text from ever breaking */
 }
 
 .section3 {
