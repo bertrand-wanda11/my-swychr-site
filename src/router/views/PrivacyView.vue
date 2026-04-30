@@ -1,6 +1,6 @@
 <template>
-    <LayoutView>
 <div>
+  <NavBar />
      <section class="term">
         <div class="termson">
      <h2 class="question">Privacy Notice</h2>
@@ -339,12 +339,14 @@
      </p>
     </div>
     </section>
+
+    <FooterView />
 </div>
-</LayoutView>
  </template>
   
   <script>
-import LayoutView from './LayoutView.vue'; 
+import NavBar from '@/components/NavBar.vue';
+import FooterView from '@/components/FooterView.vue';
   export default{
     components: {
         LayoutView,

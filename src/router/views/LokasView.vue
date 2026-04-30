@@ -1,6 +1,6 @@
 <template>
-    <LayoutView>
 <div>
+  <NavBar />
    <h2 class="question">Category: Business</h2>
    
    <div class="dapes">
@@ -222,13 +222,14 @@ By </span>   <span class="pius-cuzo18"><li class="jolie8"><a href="Amina">Amina<
   </div>
 
   </section>
+
+  <FooterView />
  </div>
-</LayoutView>
  </template>  
 
   <script setup>
-import LayoutView from './LayoutView.vue'; 
- 
+import NavBar from '@/components/NavBar.vue';
+import FooterView from '@/components/FooterView.vue'; 
  </script>
 
  <style scoped>

@@ -1,6 +1,7 @@
 <template>
-    <LayoutView>
  <div>
+  <NavBar />
+  
 <section class="blogbeep">
    <div class="virg">
    <div class="stroll">
@@ -389,12 +390,13 @@ By </span>   <span class="face-cuzo1"><li class="face-jolie"><a href="Amina">Ami
  </div> 
 </section>
  
+<FooterView />
       </div>
-</LayoutView>
  </template>  
  
   <script setup>
-import LayoutView from './LayoutView.vue'; 
+import NavBar from '@/components/NavBar.vue';
+import FooterView from '@/components/FooterView.vue';
  import { ref } from 'vue';
 
 

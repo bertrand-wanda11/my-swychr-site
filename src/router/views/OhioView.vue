@@ -1,5 +1,5 @@
 <template>
-    <LayoutView>
+<NavBar />
  <div>
 <section class="blogbeep">
    <div class="virg">
@@ -389,13 +389,14 @@ By </span>   <span class="face-cuzo1"><li class="face-jolie"><a href="Amina">Ami
  </div> 
 </section>
  
+<FooterView />
       </div>
-</LayoutView>
  </template>  
  
   <script setup>
-import LayoutView from './LayoutView.vue'; 
- import { ref } from 'vue';
+import NavBar from '@/components/NavBar.vue';
+import FooterView from '@/components/FooterView.vue';
+import { ref } from 'vue';
 
 
 const formData = ref({
@@ -1339,9 +1340,6 @@ input:focus, select:focus, textarea:focus {
     font-size: 14px !important;    
   }
 }
-
-
-
 
 
 @media screen and (max-width: 430px) {

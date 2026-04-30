@@ -1,6 +1,6 @@
 <template>
-    <LayoutView>
 <div>
+  <NavBar />
   <h2>No Open Roles For Now</h2>  
   <section class="career5">
     <div class="insidecareer5">
@@ -29,12 +29,14 @@
       </div>
     </div>
   </section>
+
+  <FooterView />
 </div>
-</LayoutView>
  </template> 
 
   <script setup>
-import LayoutView from './LayoutView.vue'; 
+import NavBar from '@/components/NavBar.vue';
+import FooterView from '@/components/FooterView.vue';
  import codeIcon from '@/assets/images/niron1.png'
 import salesIcon from '@/assets/images/niron2.png'
 import talentIcon from '@/assets/images/niron3.png' 
