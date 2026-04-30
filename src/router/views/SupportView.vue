@@ -1,6 +1,20 @@
 <template>
  <div>
-   <NavBar />  
+   <section class="about1ss">
+ <NavBar />      
+ <div class="insideabout1ss">
+  <div class="techaboutss">
+<p class="smartaboutss">Explore swychr support <br> seamleamless at all moments .</p>
+<p class="mathsaboutss">
+Got any worries in the course of utilizing our services? <br> 
+Reach out to the support team for swift response and assistance<br>
+from our support team players.
+</p>
+ 
+</div>
+</div> 
+  </section> 
+
        <section class="small">
         <h1 class="support">Support Team</h1>
 <p class="big">Whether you have questions about your account, need assistance with our services, or want to<br>
@@ -184,6 +198,98 @@ const toggleFAQ = (index) => {
 </script>
 
 <style>
+.about1ss{
+  text-align: center;
+  margin: 0 auto;
+  padding: 0.625rem 0;
+  height: auto;
+  position: relative; 
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  background-image: url('@/assets/images/jrist.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.insideabout1ss{
+  padding-top: 5rem; 
+  display: block;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+  margin-top: 0; 
+}
+
+.smartaboutss{
+  margin-bottom: 0;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.9rem; 
+  font-style: normal;
+  font-weight: 600;
+  line-height: 95%;
+  padding-top: 0;
+  margin-right: 3.125vw;
+}
+
+.mathsaboutss{
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.960rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 136%;
+  letter-spacing: 0.075rem; 
+  margin-top: 0.5rem;
+}
+
+
+@media only screen and (max-width: 430px) {
+  .about1ss {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: visible;
+  }
+
+  .background-image {
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .insideabout1ss {
+    padding-top: 4rem;
+    width: 100%;
+  }
+
+  .techaboutss {
+    margin-left: 0;
+    text-align: center;
+    padding: 0 1.25rem;
+  }
+
+  .smartaboutss{
+    font-size: 2.1rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
+
+  .mathsaboutss{
+    font-size: 0.95rem;
+    line-height: 1.5;
+    letter-spacing: 0.02rem;
+    padding: 0 0.5rem;
+    br { display: none; } 
+  }
+}
+  
+
+
  .small{
   text-align: center;
   align-items: center;
