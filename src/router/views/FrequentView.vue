@@ -195,7 +195,7 @@ const toggleKid = (index) => {
 
 .smartaboutff{
   margin-bottom: 0;
-  color: #000;
+  color: #806D66;
   font-family: 'Montserrat', sans-serif;
   font-size: 2.9rem; 
   font-style: normal;
@@ -206,7 +206,7 @@ const toggleKid = (index) => {
 }
 
 .mathsaboutff{
-  color: #000;
+  color: #806D66;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.960rem;
   font-style: normal;
