@@ -209,7 +209,7 @@ const toggleFAQ = (index) => {
   overflow: hidden;
   align-items: center;
   justify-content: center;
-  background-image: url('@/assets/images/jrist.png');
+  background-image: url('@/assets/images/gura.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
