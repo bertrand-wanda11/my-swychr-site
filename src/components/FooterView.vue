@@ -193,8 +193,8 @@ text-align:justify;
 
  .mother-pip115lay{ 
  .mother-pip115lay {
-  margin-top: 20px !important;   /* Pushes text down from "SwyChr" title */
-  line-height: 1.6;              /* Gives text lines more room */
+  margin-top: 20px !important;   
+  line-height: 1.6;             
 }
         } 
   
@@ -212,25 +212,24 @@ text-align:left;
  
  .span1lay, .span2lay {
   display: block;
-  margin-bottom: 25px !important; /* Pushes the links down from the title */
+  margin-bottom: 25px !important;
 }
 
 
 .mother11lay {
-  margin: 1.1rem 0; /* Remove specific left margins */
+  margin: 1.1rem 0; 
   flex: 1;
 }
 
 .footer-content {
-  max-width: 1200px;  /* Or whatever width looks best for your site */
-  margin: 0 auto;     /* This centers the entire block of content */
-  padding: 0 40px;    /* This creates the "Equal Margin" on both sides */
+  max-width: 1200px; 
+  margin: 0 auto;    
+  padding: 0 40px;  
 }
 
-/* Now, make sure the children don't fight the wrapper */
 .mothers11lay{
   width: 100% !important; 
-  margin-left: 0 !important;   /* REMOVE any manual margins */
+  margin-left: 0 !important;   
   margin-right: 0 !important;
   padding: 0 !important;
   display: flex;
@@ -240,7 +239,7 @@ text-align:left;
 
 .sergiolay{
   width: 100% !important; 
-  margin-left: 0 !important;   /* REMOVE any manual margins */
+  margin-left: 0 !important;   
   margin-right: 0 !important;
   padding: 0 !important;
 }
@@ -249,7 +248,7 @@ text-align:left;
   width: 100%;
   margin-top: 30px !important;
   width: 100% !important; 
-  margin-left: 0 !important;   /* REMOVE any manual margins */
+  margin-left: 0 !important;  
   margin-right: 0 !important;
   padding: 0 !important;
 }
@@ -257,7 +256,7 @@ text-align:left;
 .schoollay {
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   width: 100%;
-  margin-top: 40px !important;    /* Space above the line */
+  margin-top: 20px !important;    
   margin-bottom: 50px !important;
 }
 
@@ -265,7 +264,7 @@ text-align:left;
   color: #FFF;
   font-size: 17px;
   font-weight: 550;
-  display: block;  /* Ensures title stays on its own line */
+  display: block;  
   margin-bottom: 15px;
 }
 
@@ -275,32 +274,26 @@ text-align:left;
 }
 
 .sgrouplay {
-  margin-top: 25px !important;   /* Pushes icons down from the paragraph */
+  margin-top: 25px !important;   
 }
 
 .sgrouplay a {
-  /* 1. Create the Circle */
   width: 40px; 
   height: 40px;
-  background-color: rgba(255, 255, 255, 0.1); /* Your circle color */
+  background-color: rgba(255, 255, 255, 0.1); 
   border-radius: 50%;
-  
-  /* 2. THE FIX: Perfect Centering */
   display: inline-flex !important;
-  justify-content: center !important; /* Horizontal center */
-  align-items: center !important;     /* Vertical center */
-  
-  /* 3. Reset any default shifts */
+  justify-content: center !important; 
+  align-items: center !important;    
   text-decoration: none;
   margin: 0 5px;
-  padding: 0 !important; /* Ensure no padding is pushing the icon */
+  padding: 0 !important; 
 }
 
 .sgrouplay i {
-  /* Ensure the icon font doesn't have its own weird spacing */
   line-height: 1 !important;
   margin: 0 !important;
-  font-size: 18px; /* Adjust size to fit your circle */
+  font-size: 18px; 
 }
 
 .chanalay {

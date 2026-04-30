@@ -206,7 +206,7 @@
   <p class="millofp2p">
     Explore our detailed FAQ page</p>
     <div class=""> 
-      <li class="steve9"><a href="Frequent">More FAQs</a></li>
+      <li class="steve9p2p"><a href="Frequent">More FAQs</a></li>
 </div>
 </div> 
 </div>
