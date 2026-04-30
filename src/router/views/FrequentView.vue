@@ -54,14 +54,15 @@ that answers your questions effectively.
       <div v-if="steadyIndex === index" class="faq-answer">
         <p>{{ kids.answer }}</p>
       </div>
-      <FooterView />
+    
     </div>
   </section>
+    <FooterView />
 </div>
  </template>  
  
  <script setup>
- import NavBar from '@/components/NavBar.vue';
+import NavBar from '@/components/NavBar.vue';
 import FooterView from '@/components/FooterView.vue'; 
 import { ref } from 'vue';
   
@@ -195,7 +196,7 @@ const toggleKid = (index) => {
 
 .smartaboutff{
   margin-bottom: 0;
-  color: #806D66;
+  color: #6E7470;
   font-family: 'Montserrat', sans-serif;
   font-size: 2.9rem; 
   font-style: normal;
@@ -206,7 +207,7 @@ const toggleKid = (index) => {
 }
 
 .mathsaboutff{
-  color: #806D66;
+  color: #6E7470;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.960rem;
   font-style: normal;
