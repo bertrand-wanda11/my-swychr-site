@@ -320,7 +320,7 @@ const toggleKid = (index) => {
    color: black;
    font-size: 58px;
    font-weight: 700;
-   margin-left: 20px;
+   margin-left: 28px;
    padding-bottom: 100px;
    margin-top: 100px;
 }
