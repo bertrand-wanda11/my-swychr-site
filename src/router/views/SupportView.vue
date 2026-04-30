@@ -224,6 +224,12 @@ const toggleFAQ = (index) => {
   margin-top: 0; 
 }
 
+.techaboutss{
+  text-align: justify;
+  line-height: 1;
+  margin-left: 6.61vw; 
+}
+
 .smartaboutss{
   margin-bottom: 0;
   color: #ffffff;
