@@ -1,6 +1,19 @@
 <template>
-    <LayoutView>
 <div>
+  <section class="about1ff">
+ <NavBar />      
+ <div class="insideabout1ff">
+  <div class="techaboutff">
+<p class="smartaboutff">Have any questions about<br> our services /organization?</p>
+<p class="mathsaboutff">
+Quickly check our FAQ page for well defined explanations <br> 
+that answers your questions effectively.
+</p>
+ 
+</div>
+</div> 
+  </section> 
+
   <h2 class="question">Frequently Asked Questions </h2>
     <h2 class="question1">FAQs – Individual Customers </h2>
  <section class="faq-container">
@@ -41,17 +54,16 @@
       <div v-if="steadyIndex === index" class="faq-answer">
         <p>{{ kids.answer }}</p>
       </div>
-      
+      <FooterView />
     </div>
   </section>
 </div>
-</LayoutView>
  </template>  
  
  <script setup>
-   import { ref } from 'vue';
-
-   import LayoutView from './LayoutView.vue'; 
+ import NavBar from '@/components/NavBar.vue';
+import FooterView from '@/components/FooterView.vue'; 
+import { ref } from 'vue';
   
 const activeIndex = ref(null);
 
@@ -149,6 +161,103 @@ const toggleKid = (index) => {
  </script>
 
  <style>
+ .about1ff{
+  text-align: center;
+  margin: 0 auto;
+  padding: 0.625rem 0;
+  height: auto;
+  position: relative; 
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  background-image: url('@/assets/images/frigoo.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.insideabout1ff{
+  padding-top: 5rem; 
+  display: block;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+  margin-top: 0; 
+}
+
+.techaboutff{
+  text-align: justify;
+  line-height: 1;
+  margin-left: 6.61vw; 
+}
+
+.smartaboutff{
+  margin-bottom: 0;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.9rem; 
+  font-style: normal;
+  font-weight: 600;
+  line-height: 95%;
+  padding-top: 0;
+  margin-right: 3.125vw;
+}
+
+.mathsaboutff{
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.960rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 136%;
+  letter-spacing: 0.075rem; 
+  margin-top: 0.5rem;
+}
+
+
+@media only screen and (max-width: 430px) {
+  .about1ff {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: visible;
+  }
+
+  .background-image {
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .insideabout1ff {
+    padding-top: 4rem;
+    width: 100%;
+  }
+
+  .techaboutff {
+    margin-left: 0;
+    text-align: center;
+    padding: 0 1.25rem;
+  }
+
+  .smartaboutff{
+    font-size: 2.1rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
+
+  .mathsaboutff{
+    font-size: 0.95rem;
+    line-height: 1.5;
+    letter-spacing: 0.02rem;
+    padding: 0 0.5rem;
+    br { display: none; } 
+  }
+}
+  
+
   .faq-container {
   font-family: 'Montserrat', sans-serif;
   max-width: 1300px;
