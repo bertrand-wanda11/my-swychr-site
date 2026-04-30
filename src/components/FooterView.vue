@@ -278,6 +278,31 @@ text-align:left;
   margin-top: 25px !important;   /* Pushes icons down from the paragraph */
 }
 
+.sgrouplay a {
+  /* 1. Create the Circle */
+  width: 40px; 
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1); /* Your circle color */
+  border-radius: 50%;
+  
+  /* 2. THE FIX: Perfect Centering */
+  display: inline-flex !important;
+  justify-content: center !important; /* Horizontal center */
+  align-items: center !important;     /* Vertical center */
+  
+  /* 3. Reset any default shifts */
+  text-decoration: none;
+  margin: 0 5px;
+  padding: 0 !important; /* Ensure no padding is pushing the icon */
+}
+
+.sgrouplay i {
+  /* Ensure the icon font doesn't have its own weird spacing */
+  line-height: 1 !important;
+  margin: 0 !important;
+  font-size: 18px; /* Adjust size to fit your circle */
+}
+
 .chanalay {
   margin-right: 0;
   display: flex;
