@@ -230,7 +230,7 @@ const handleSubmit = () => {
     line-height: 1.5;
     letter-spacing: 0.02rem;
     padding: 0 0.5rem;
-    br { display: none; } 
+    br { display: none } 
   }
 }
   
