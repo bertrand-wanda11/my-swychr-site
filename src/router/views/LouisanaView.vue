@@ -1,5 +1,5 @@
 <template>
-   <country />
+   <CountryView />
  <div>
 <section class="blogbeep">
    <div class="virg">
@@ -396,7 +396,7 @@ By </span>   <span class="face-cuzo1"><li class="face-jolie"><a href="Amina">Ami
  </template>  
  
   <script setup>
-import country from '@/components/country.vue';
+import CountryView from '@/components/CountryView.vue';
 import FooterView from '@/components/FooterView.vue'; 
  import { ref } from 'vue';
 
