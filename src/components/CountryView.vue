@@ -1,7 +1,8 @@
 <template>
  <div>
-     <NavBar/>
+
 <section class="about1count">
+       <NavBar/>
  <div class="insideabout1count">
   <div class="techaboutcount">
 <p class="smartaboutcount">Empowering Borderless Finance<br>Around The World.</p>
