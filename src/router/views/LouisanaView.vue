@@ -1,5 +1,5 @@
 <template>
-   <NavBar />
+   <country />
  <div>
 <section class="blogbeep">
    <div class="virg">
@@ -396,7 +396,7 @@ By </span>   <span class="face-cuzo1"><li class="face-jolie"><a href="Amina">Ami
  </template>  
  
   <script setup>
-import NavBar from '@/components/NavBar.vue';
+import country from '@/components/country.vue';
 import FooterView from '@/components/FooterView.vue'; 
  import { ref } from 'vue';
 
