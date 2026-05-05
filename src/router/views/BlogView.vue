@@ -280,7 +280,7 @@ import FooterView from '@/components/FooterView.vue';
    color: black;
    font-size: 70px;
    font-weight: 700;
-   padding-left: 50px;
+    margin-left: 6.61vw; 
 }  
 
 .bloggers{
