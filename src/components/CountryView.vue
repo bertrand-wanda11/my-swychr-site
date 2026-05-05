@@ -6,11 +6,6 @@
  <div class="insideabout1count">
   <div class="techaboutcount">
 <p class="smartaboutcount">Empowering Borderless Finance<br>Around The World.</p>
-<p class="mathsaboutcount">
-In today's fast-paced digital economy, the ability to move capital seamlessly<br> 
- across continents is no longer a luxury—it is a necessity., where advanced <br>
-financial technology meets human expertise.
-</p>
  
 </div>
 </div> 

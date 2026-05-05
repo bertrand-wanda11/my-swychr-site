@@ -5,10 +5,7 @@
  <div class="insideabout1ff">
   <div class="techaboutff">
 <p class="smartaboutff">Have any questions about<br> our services /organization?</p>
-<p class="mathsaboutff">
-Quickly check our FAQ page for well defined explanations <br> 
-that answers your questions effectively.
-</p>
+
  
 </div>
 </div> 
@@ -169,7 +166,7 @@ const toggleKid = (index) => {
   height: auto;
   position: relative; 
   width: 100%;
-  height: 48vh;
+  height: 50vh;
   overflow: hidden;
   align-items: center;
   justify-content: center;

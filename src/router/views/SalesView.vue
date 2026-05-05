@@ -145,7 +145,7 @@ const handleSubmit = () => {
   height: auto;
   position: relative; 
   width: 100%;
-  height: 48vh;
+  height: 50vh;
   overflow: hidden;
   align-items: center;
   justify-content: center;

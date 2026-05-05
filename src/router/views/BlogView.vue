@@ -5,11 +5,7 @@
  <div class="insideabout1bb">
   <div class="techaboutbb">
 <p class="smartaboutbb">Glance through our blog and view <br> the amazing blog contents of swychr.</p>
-<p class="mathsaboutbb">
-Checkout every blog post to get an insight of the swychr story.<br> 
-At swychr global we're doing our best to constantly tell the goodnews<br>
-about swychr always.
-</p>
+
  
 </div>
 </div> 
@@ -189,7 +185,7 @@ import FooterView from '@/components/FooterView.vue';
   height: auto;
   position: relative; 
   width: 100%;
-  height: 48vh;
+  height: 50vh;
   overflow: hidden;
   align-items: center;
   justify-content: center;
