@@ -1,6 +1,6 @@
 <template>
 <div>
-  <NavBar />
+  <CountryView />
      <section class="term">
         <div class="termson">
      <h2 class="question">Privacy Notice</h2>
@@ -345,7 +345,7 @@
  </template>
   
   <script  setup>
-import NavBar from '@/components/NavBar.vue';
+import CountryView from '@/components/CountryView.vue';
 import FooterView from '@/components/FooterView.vue';  
  </script>
 
