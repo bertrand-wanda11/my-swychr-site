@@ -189,7 +189,7 @@ import FooterView from '@/components/FooterView.vue';
   height: auto;
   position: relative; 
   width: 100%;
-  height: 100vh;
+  height: 48vh;
   overflow: hidden;
   align-items: center;
   justify-content: center;
