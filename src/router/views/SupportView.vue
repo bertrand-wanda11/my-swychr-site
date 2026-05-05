@@ -5,11 +5,6 @@
  <div class="insideabout1ss">
   <div class="techaboutss">
 <p class="smartaboutss">Explore swychr support <br> seamleamless at all moments .</p>
-<p class="mathsaboutss">
-Got any worries in the course of utilizing our services? <br> 
-Reach out to the support team for swift response and assistance<br>
-from our support team players.
-</p>
  
 </div>
 </div> 
@@ -205,7 +200,7 @@ const toggleFAQ = (index) => {
   height: auto;
   position: relative; 
   width: 100%;
-   height: 48vh;
+   height: 50vh;
   overflow: hidden;
   align-items: center;
   justify-content: center;
