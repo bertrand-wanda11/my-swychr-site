@@ -32,7 +32,7 @@ import NavBar from '@/components/NavBar.vue';
   overflow: hidden;
   align-items: center;
   justify-content: center;
-  background-image: url('@/assets/images/sarlice.png');
+  background-image: url('@/assets/images/sarlice.webp');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

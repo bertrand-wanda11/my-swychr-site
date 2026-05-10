@@ -149,7 +149,7 @@ const handleSubmit = () => {
   overflow: hidden;
   align-items: center;
   justify-content: center;
-  background-image: url('@/assets/images/sala.png');
+  background-image: url('@/assets/images/sala.webp');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

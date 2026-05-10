@@ -189,7 +189,7 @@ import FooterView from '@/components/FooterView.vue';
   overflow: hidden;
   align-items: center;
   justify-content: center;
-  background-image: url('@/assets/images/divi.png');
+  background-image: url('@/assets/images/divi.webp');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
