@@ -349,323 +349,6 @@ margin-left: 67px;
   margin-left: 6.61vw; 
 }
 
-.numeroabout1{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 95%;
-  margin: 1.5rem auto;
-}
-
-.food-pill-container {
-border: 1px solid #FFF;
-  border-radius: 50px;
-  height: 3.5rem;
-  padding: 0 1rem;
-  display: flex;
-  align-items: center;
-  position: relative; 
-  overflow: visible;
-}
-
-.nav-indicator {
-position: absolute;
-  top: -1px; 
-  height: 6px; 
-  background: #fff;
-  border-radius: 0 0 5px 5px;
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  z-index: 10;
-   width: 4px;
-}
-
-.mannav {
-display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  position: relative; 
-  height: 100%;
-  width: 100%;
-  align-items: center;
-}
-
-.nav-link {
-  color: white;
-  text-decoration: none;
-  padding: 0 15px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.nav-item-wrapper {
-  position: relative;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.mega-dropdown {
-  position: absolute;
-  top: calc(100% + 15px); 
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
-  padding: 20px 25px;
-  border-radius: 12px;
-  width: max-content; 
-  min-width: 240px; 
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  z-index: 1000;
-  animation: dropdownFadeIn 0.2s ease-out;
-}
-
-.dropdown-arrow {
-  transition: transform 0.3s ease;
-  display: inline-block;
-}
-
-.dropdown-arrow.rotated {
-  transform: rotate(180deg);
-}
-
-@keyframes dropdownFadeIn {
-  from {
-    opacity: 0;
-    transform: translateX(-50%) translateY(5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-}
-
-.dropdown-arrow {
-  transition: transform 0.3s ease;
-  display: inline-block;
-}
-
-.dropdown-arrow.rotated {
-  transform: rotate(180deg);
-}
-
-.nav-indicator {
-  position: absolute;
-  top: -1px;
-  height: 6px;
-  background: #fff;
-  border-radius: 0 0 5px 5px;
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  z-index: 10;
-  pointer-events: none;
-}
-
-.dropdown-label {
-  color: #8C1BC1; 
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-  text-align: left;
-}
-
-.dropdown-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 12px 30px;
-}
-
-.company-grid {
-  grid-template-columns: 1fr !important;
-  min-width: 180px;
-}
-
-.dropdown-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none !important; 
-  padding: 8px 0;
-  transition: transform 0.2s ease;
-}
-
-.dropdown-item:hover {
-  transform: translateX(5px);
-}
-
-.item-text {
-  color: #333;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
-  text-decoration: none !important; 
-  white-space: nowrap;
-}
-
-.nav-icon-img {
-  width: 22px;
-  height: 22px;
-  object-fit: contain;
-}
-
-.nav-item-wrapper:nth-child(4) .mega-dropdown {
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  width: 260px; 
-}
-
-.nav-item-wrapper:nth-child(4) .mega-dropdown::before {
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-@media screen and (max-width: 430px) {
-  .numeroabout1{
-    flex-wrap: wrap; 
-    justify-content: space-between;
-    margin: 1rem auto;
-  }
-
-  .seam {
-    margin-left: 0;
-    order: 1;
-  }
-
-  .stavoabout-con {
-    order: 2; 
-  }
-
-  .food-pill-container {
-    order: 3; 
-    width: 100%;
-    margin-top: 15px;
-    justify-content: center;
-    overflow-x: auto; 
-  }
-
-  .mannav {
-    justify-content: center;
-    width: auto;
-  }
-
-  .nav-link {
-    font-size: 0.8rem;
-    padding: 0 8px;
-    white-space: nowrap;
-  }
-
-  @media screen and (max-width: 430px) {
-  .mega-dropdown {
-    position: fixed;
-    top: 25%;
-    left: 5% !important;
-    width: 90% !important;
-    transform: none !important;
-    z-index: 9999;
-  }
-
-  .dropdown-grid {
-    grid-template-columns: 1fr; 
-  }
-}
-
-  .nav-indicator {
-    display: block !important; 
-    height: 4px;
-  }
-}
-
-@media screen and (max-width: 430px) {
-.mega-dropdown {
-    position: fixed;
-    top: 22%; 
-    left: 5% !important;
-    right: 5% !important;
-    width: 90% !important;
-    transform: none !important;
-    padding: 24px; 
-    border-radius: 24px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-    z-index: 9999;
-    text-align: left;
-  }
-
-  .dropdown-label {
-    text-align: left !important;
-    margin-left: 0 !important;
-    margin-bottom: 24px;
-    font-size: 0.85rem;
-    color: #8C1BC1;
-    width: 100%;
-    border-bottom: 1px solid #f0f0f0;
-    padding-bottom: 12px;
-  }
-
-  .dropdown-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
-    gap: 20px;
-    width: 100%;
-  }
-
-  .dropdown-item {
-    display: flex;
-    flex-direction: row; 
-    align-items: center; 
-    justify-content: flex-start; 
-    width: 100%;
-    gap: 16px; 
-    text-decoration: none !important;
-  }
-
-  .item-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px; 
-  }
-
-  .nav-icon-img {
-    width: 28px;
-    height: 28px;
-    object-fit: contain;
-  }
-
-  .item-text {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #282828;
-    text-align: left;
-    white-space: nowrap;
-  }
-}
-
-@media screen and (max-width: 1180px) {
-  .numeroabout1{
-    width: 95%;
-    gap: 10px; 
-  }
-
-  .food-pill-container {
-    padding: 0 5px;
-    height: 3.2rem;
-  }
-
-  .nav-link {
-    padding: 0 10px;
-    font-size: 0.85rem;
-  }
-
-  .stavoabout-con{
-    width: 9rem; 
-    margin-right: 0; 
-  }
-}
-
 .insideabout1 {
   padding-top: 5rem; 
   display: block;
@@ -698,30 +381,7 @@ display: flex;
   margin-top: 0.5rem;
 }
 
-.stavoabout {
-  border: none;
-  background: #fff;
-  width: 13rem;
-  align-items: center;
-  justify-content: center;
-  height: 2.5rem; 
-  text-align: center;
-  display: flex;
-  border-radius: 6.25rem;
-  margin-right: 6.25vw; 
-  margin-top: 0.625rem;
-}
 
-.stavoabout a {
-  text-decoration: none;
-  color: #000;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.1875rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 120%;
-  padding: 0 0.9375rem;
-}
 
 .about2{
   padding: 8rem 2rem;
@@ -1734,21 +1394,6 @@ margin-left: 67px;
     min-height: 100vh;
   }
 
-  .numeroabout1{
-    width: 98%;
-    margin: 1.25rem auto;
-  }
-
-  .food-pill-container {
-    height: 3.2rem;
-    padding: 0 0.625rem;
-  }
-
-  .nav-link {
-    font-size: 0.875rem;
-    padding: 0 0.625rem;
-  }
-
   .insideabout1 {
     padding-top: 8rem;
     width: 92vw;
@@ -1762,9 +1407,6 @@ margin-left: 67px;
     max-width: 85%;
   }
 
-  .steveabout, .obusabout{
-    width: 15rem;
-  }
 }
 
 @media only screen and (max-width: 430px) {
@@ -1779,35 +1421,11 @@ margin-left: 67px;
     height: 100%;
   }
 
-  .numeroabout1{
-    flex-direction: column;
-    gap: 1.25rem;
-    margin: 1rem auto;
-  }
-
-  .seam {
-    margin: 0;
-    text-align: center;
-  }
 
   .food-pill-container {
     width: 96vw;
     height: 3rem;
     padding: 0 0.25rem;
-  }
-
-  .mannav {
-    justify-content: space-around;
-  }
-
-  .nav-link {
-    font-size: 0.72rem;
-    padding: 0;
-    white-space: nowrap;
-  }
-
-  .dropdown-arrow, .nav-indicator {
-    display: none !important;
   }
 
   .insideabout1 {
@@ -1834,36 +1452,6 @@ margin-left: 67px;
     letter-spacing: 0.02rem;
     padding: 0 0.5rem;
     br { display: none; } 
-  }
-
-  .protonabout {
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-    margin-top: 2rem;
-  }
-
-  .steveabout, .obusabout {
-    width: 85vw;
-    height: 3.125rem;
-    margin-left: 0 !important; 
-  }
-
-  .steveabout a, .obusabout a {
-    font-size: 1rem;
-    padding: 0.625rem 1.25rem;
-  }
-
-  .stavoabout-con {
-    order: 3;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .stavoabout {
-    width: 85vw;
-    margin-right: 0;
   }
 }
 

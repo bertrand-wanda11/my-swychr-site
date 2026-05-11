@@ -330,11 +330,11 @@ function toggleFAQ(index) {
   height: 50vh;
   min-height: 340px;
   background-image: url('@/assets/images/gerrta11.webp');
-  background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
-  display: flex;
-  align-items: center;
+  background-position: center;
+  position: relative;
+  padding: 0 2rem 5rem;
+  text-align: center;
   /* top padding reserves space for the navbar sitting above */
   padding-top: 72px;
 }
@@ -347,8 +347,11 @@ function toggleFAQ(index) {
 
 .sv-hero__content {
   position: relative;
-  padding: 0 7vw;
   z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
 }
 
 .sv-hero__eyebrow {
