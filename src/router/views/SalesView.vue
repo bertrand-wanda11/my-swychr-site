@@ -34,7 +34,7 @@
               <div class="sl-info-icon"><i class="fa-solid fa-shield-halved"></i></div>
               <div>
                 <p class="sl-info-label">Trusted by</p>
-                <p class="sl-info-value">50,000+ businesses</p>
+                <p class="sl-info-value">500+ businesses</p>
               </div>
             </div>
             <div class="sl-info-row">
