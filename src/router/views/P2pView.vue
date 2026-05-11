@@ -32,58 +32,129 @@
 
   <section class="p2p2">
     <h2 class="person4p2p2">See exactly what they receive</h2>
-  <div class="converter-card">
-    <div class="input-group">
-      <div class="label-row">
-        <span>You send</span>
-      </div>
-      <div class="control-row">
-        <div class="currency-selector">
-          <img src="@/assets/images/Ellipse 35.png" alt="USD" class="flag" width="75px" />
-          <span class="currency-code">USD</span>
-          <i class="chevron-icon">▼</i>
+
+    <div class="cx-card-withdrawal">
+      <!-- Header -->
+      <div class="cx-header">
+        <div class="cx-header-left">
+          <span class="cx-title">Currency Converter</span>
+          <span class="cx-live-badge">
+            <span class="cx-live-dot"></span>Live
+          </span>
         </div>
-        <input type="number" v-model="sendAmount" class="amount-input" />
+        <span class="cx-powered">SwyChr</span>
       </div>
-    </div>
 
-    <div class="divider">
-      <div class="arrow-down">↓</div>
-    </div>
-
-    <div class="input-group secondary">
-      <div class="label-row">
-        <span>They receive</span>
-      </div>
-      <div class="control-row">
-        <div class="currency-selector">
-          <img src="@/assets/images/nigeria.svg" alt="NGN" class="flag" width="75px" />
-          <span class="currency-code">NGN</span>
-          <i class="chevron-icon">▼</i>
+      <!-- You Send -->
+      <div class="cx-field">
+        <span class="cx-label">You Send</span>
+        <div class="cx-row">
+          <div class="cx-currency-pill">
+            <img src="@/assets/images/Ellipse 35.png" class="cx-coin-img" alt="USD" />
+            <span class="cx-code">USD</span>
+          </div>
+          <div class="cx-input-wrap">
+            <span class="cx-prefix">$</span>
+            <input
+              class="cx-amount-input"
+              v-model.number="usdAmount"
+              type="number"
+              min="0"
+              placeholder="100"
+            />
+          </div>
         </div>
-        <div class="receive-amount">{{ formattedReceiveAmount }}</div>
       </div>
-    </div>
 
-    <div class="details-section">
-      <div class="detail-item">
-        <span>Exchange Rate</span>
-        <span class="value">1 USD = {{ rate }} NGN</span>
+      <!-- Swap -->
+      <div class="cx-swap-row">
+        <div class="cx-swap-line"></div>
+        <div class="cx-swap-btn">
+          <i class="fa-solid fa-arrow-down"></i>
+          <i class="fa-solid fa-arrow-up"></i>
+        </div>
+        <div class="cx-swap-line"></div>
       </div>
-      <div class="detail-item">
-        <span>Fee</span>
-        <span class="value">$0.00</span>
-      </div>
-      <div class="detail-item">
-        <span>Delivery Time</span>
-        <span class="value highlighted">Arrives in seconds</span>
-      </div>
-    </div>
 
-    <div class="footer-promise">
-      Our promise: No hidden markups
+      <!-- They Receive — Select2 dropdown -->
+      <div class="cx-field">
+        <span class="cx-label">They Receive</span>
+        <div class="cx-row">
+          <div
+            class="cx-select-pill"
+            :class="{ 'cx-open': dropdownOpen }"
+            ref="dropdownRef"
+            @click.stop="toggleDropdown"
+          >
+            <span class="cx-flag">{{ selectedRate ? selectedRate.flag_emoji : '🌐' }}</span>
+            <span class="cx-code-display">{{ selectedCode }}</span>
+            <i class="fa-solid fa-chevron-down cx-chevron" :class="{ 'cx-chevron-open': dropdownOpen }"></i>
+
+            <!-- Dropdown panel — opens upward -->
+            <div class="cx-dropdown-panel" v-if="dropdownOpen" @click.stop>
+              <div class="cx-search-wrap">
+                <i class="fa-solid fa-magnifying-glass cx-search-icon"></i>
+                <input
+                  class="cx-search-input"
+                  v-model="searchQuery"
+                  placeholder="Search currency…"
+                  ref="searchInput"
+                  @click.stop
+                />
+              </div>
+              <ul class="cx-option-list">
+                <li
+                  v-for="r in filteredRates"
+                  :key="r.code"
+                  class="cx-option"
+                  :class="{ 'cx-option-active': r.code === selectedCode }"
+                  @click="selectCurrency(r.code)"
+                >
+                  <span class="cx-opt-flag">{{ r.flag_emoji }}</span>
+                  <span class="cx-opt-code">{{ r.code }}</span>
+                  <span class="cx-opt-country">{{ r.country }}</span>
+                  <i v-if="r.code === selectedCode" class="fa-solid fa-check cx-opt-check"></i>
+                </li>
+                <li v-if="filteredRates.length === 0" class="cx-no-result">No results found</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="cx-result">
+            <span class="cx-converted">{{ fmt(grossAmount) }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Breakdown -->
+      <div class="cx-breakdown" v-if="selectedRate">
+        <div class="cx-breakdown-row">
+          <span class="cx-bd-label">
+            <i class="fa-solid fa-bolt cx-rate-icon"></i>
+            Exchange Rate
+          </span>
+          <span class="cx-bd-value">1 USD = {{ Number(selectedRate.coin_rate).toLocaleString('en-US', { maximumFractionDigits: 4 }) }} {{ selectedRate.code }}</span>
+        </div>
+        <div class="cx-breakdown-row">
+          <span class="cx-bd-label">
+            <i class="fa-solid fa-circle-minus cx-fee-icon"></i>
+            Withdrawal Fee ({{ WITHDRAWAL_FEE_PCT }}%)
+          </span>
+          <span class="cx-bd-value cx-bd-fee">− {{ fmt(feeAmount) }} {{ selectedRate.code }}</span>
+        </div>
+        <div class="cx-breakdown-divider"></div>
+        <div class="cx-breakdown-row cx-net-row">
+          <span class="cx-bd-label cx-net-label">
+            <i class="fa-solid fa-circle-check cx-net-icon"></i>
+            They Receive
+          </span>
+          <span class="cx-net-value">{{ fmt(netAmount) }} {{ selectedRate.code }}</span>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <p class="cx-disclaimer">Rates are indicative. Confirm in-app before transacting.</p>
     </div>
-  </div>
   </section>
 
  <section class="p2p3">
@@ -314,7 +385,91 @@ How secure is my money?
   <script setup>
 import FooterView from '@/components/FooterView.vue';
 import NavBar from '@/components/NavBar.vue';
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue';
+
+const API_BASE = process.env.VUE_APP_API_BASE || 'https://api.accountpe.com';
+
+// ── Exchange rate widget ────────────────────────────────────────
+const usdAmount     = ref(100);
+const exchangeRates = ref([]);
+const selectedCode  = ref('NGN');
+
+const dropdownOpen = ref(false);
+const searchQuery  = ref('');
+const dropdownRef  = ref(null);
+const searchInput  = ref(null);
+
+const selectedRate = computed(() =>
+  exchangeRates.value.find(r => r.code === selectedCode.value) || null
+);
+
+const filteredRates = computed(() => {
+  const q = searchQuery.value.toLowerCase().trim();
+  if (!q) return exchangeRates.value;
+  return exchangeRates.value.filter(r =>
+    r.code.toLowerCase().includes(q) || r.country.toLowerCase().includes(q)
+  );
+});
+
+const WITHDRAWAL_FEE_PCT = 2.5;
+
+const grossAmount = computed(() => {
+  const amount = parseFloat(usdAmount.value);
+  if (!selectedRate.value || isNaN(amount) || amount <= 0) return null;
+  return amount * selectedRate.value.coin_rate;
+});
+
+const feeAmount = computed(() => {
+  if (grossAmount.value === null) return null;
+  return grossAmount.value * (WITHDRAWAL_FEE_PCT / 100);
+});
+
+const netAmount = computed(() => {
+  if (grossAmount.value === null) return null;
+  return grossAmount.value - feeAmount.value;
+});
+
+const fmt = (n) => n === null ? '—' : n.toLocaleString('en-US', { maximumFractionDigits: 2 });
+
+function toggleDropdown() {
+  dropdownOpen.value = !dropdownOpen.value;
+  if (dropdownOpen.value) {
+    searchQuery.value = '';
+    nextTick(() => searchInput.value?.focus());
+  }
+}
+
+function selectCurrency(code) {
+  selectedCode.value = code;
+  dropdownOpen.value = false;
+  searchQuery.value  = '';
+}
+
+function handleOutsideClick(e) {
+  if (dropdownRef.value && !dropdownRef.value.contains(e.target)) {
+    dropdownOpen.value = false;
+  }
+}
+
+onMounted(async () => {
+  document.addEventListener('click', handleOutsideClick);
+  try {
+    const res  = await fetch(`${API_BASE}/api/web/exchange_rates`);
+    const json = await res.json();
+    if (json.data && json.data.length) {
+      exchangeRates.value = json.data;
+      if (!json.data.find(r => r.code === selectedCode.value)) {
+        selectedCode.value = json.data[0].code;
+      }
+    }
+  } catch (e) {
+    console.error('Failed to load exchange rates', e);
+  }
+});
+
+onUnmounted(() => {
+  document.removeEventListener('click', handleOutsideClick);
+});
 
 const features = [
   {
@@ -342,15 +497,6 @@ const features = [
     class: 'feature-standard'
   }
 ];
-
-
-const sendAmount = ref(1000);
-const rate = ref(1550); 
-
-const formattedReceiveAmount = computed(() => {
-  const total = sendAmount.value * rate.value;
-  return new Intl.NumberFormat().format(total);
-});
 
 
 const steps = [
@@ -863,117 +1009,406 @@ display: flex;
 }
 
 .person4p2p2{
-  margin-left: 38.375vw;
+  display: inline-block;
   color: #8C1BC1;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 120%;
-  margin-bottom: 0;
-  background-color:#F5E9FB;
-  width: 20rem;
-  height: 2.1rem;
+  line-height: 1;
+  background-color: #F5E9FB;
   border-radius: 6.25rem;
-  margin-bottom:30px;
-  padding: 8px 24px;
+  margin: 0 auto 30px auto;
+  padding: 10px 28px;
 }
 
-.converter-card {
-  background: #fdfdfd;
-  border: 1px solid #e0e0e0;
-  border-radius: 16px;
-  padding: 24px;
-  max-width: 800px;
-  font-family: 'Inter', sans-serif;
-  color: #555;
-   align-items: center;
+/* ═══════════════════════════════════════════════════════════
+   Enterprise Currency Converter Widget (P2P — ExchangeRate)
+   ═══════════════════════════════════════════════════════════ */
+.cx-card-withdrawal {
+  width: 100%;
+  max-width: 680px !important;
   margin: 0 auto;
-  padding: 0 1.25rem; 
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  height: 480px;
-}
-
-.input-group {
-  background: #fff;
-  border: 1px solid #efefef;
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-}
-
-.label-row {
-  text-align: right;
-  font-size: 14px;
-  margin-bottom: 8px;
-}
-
-.control-row {
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 24px 60px -8px rgba(0,0,0,0.15);
+  overflow: visible;
   display: flex;
+  flex-direction: column;
+  transition: box-shadow 320ms ease, transform 320ms cubic-bezier(0.16,1,0.3,1);
+}
+.cx-card-withdrawal:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.08), 0 32px 72px -8px rgba(0,0,0,0.22);
+}
+.cx-card-withdrawal::before {
+  content: '';
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, #10b981 0%, #3b82f6 50%, #8b5cf6 100%);
+  border-radius: 24px 24px 0 0;
+  flex-shrink: 0;
+}
+
+/* Header */
+.cx-header {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
+  padding: 1.1rem 1.4rem 0.6rem;
 }
-
-.currency-selector {
+.cx-header-left {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 12px;
-  background: #f8f8f8;
-  border-radius: 8px;
-  cursor: pointer;
+  gap: 0.55rem;
+}
+.cx-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #111827;
+}
+.cx-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 999px;
+  padding: 2px 9px 2px 6px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #065f46;
+  text-transform: uppercase;
+}
+.cx-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  flex-shrink: 0;
+  animation: cx-pulse-p2p 1.8s ease-in-out infinite;
+}
+@keyframes cx-pulse-p2p {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.7); }
+}
+.cx-powered {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #6b7280;
 }
 
-.amount-input {
+/* Field */
+.cx-field {
+  margin: 0 1.4rem;
+  background: #f9fafb;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 0.85rem 1rem;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+.cx-field:focus-within {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.12);
+}
+.cx-label {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 0.55rem;
+}
+.cx-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+/* Coin pill */
+.cx-currency-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 999px;
+  padding: 5px 12px 5px 6px;
+  flex-shrink: 0;
+}
+.cx-coin-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.cx-code {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: 0.02em;
+}
+
+/* Amount input */
+.cx-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  flex: 1;
+  justify-content: flex-end;
+}
+.cx-prefix {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #374151;
+  line-height: 1;
+}
+.cx-amount-input {
+  width: 110px;
   border: none;
-  text-align: right;
-  font-size: 28px;
-  font-weight: 600;
-  width: 50%;
   outline: none;
+  background: transparent;
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #111827;
+  text-align: right;
+  font-family: inherit;
+  min-width: 0;
 }
+.cx-amount-input::placeholder { color: #d1d5db; }
+.cx-amount-input::-webkit-inner-spin-button,
+.cx-amount-input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+.cx-amount-input[type=number] { -moz-appearance: textfield; }
 
-.receive-amount {
-  font-size: 28px;
-  font-weight: 600;
-  color: #333;
-}
-
-.divider {
+/* Swap divider */
+.cx-swap-row {
   display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.4rem;
+}
+.cx-swap-line {
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
+}
+.cx-swap-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+  display: flex;
+  align-items: center;
   justify-content: center;
-  margin: -10px 0;
-  z-index: 2;
+  gap: 2px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(99,102,241,0.35);
+}
+.cx-swap-btn i {
+  color: #ffffff;
+  font-size: 0.6rem;
 }
 
-.details-section {
-  margin-top: 20px;
-  padding: 0 10px;
+/* Select2 pill */
+.cx-select-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #ffffff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 999px;
+  padding: 6px 12px 6px 8px;
+  flex-shrink: 0;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
 }
+.cx-select-pill:hover { border-color: #93c5fd; }
+.cx-select-pill.cx-open {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+  border-radius: 0 0 12px 12px;
+}
+.cx-flag {
+  font-size: 1.3rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.cx-code-display {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: 0.02em;
+  min-width: 36px;
+}
+.cx-chevron {
+  font-size: 0.58rem;
+  color: #9ca3af;
+  pointer-events: none;
+  transition: transform 200ms ease;
+}
+.cx-chevron-open { transform: rotate(180deg); }
 
-.detail-item {
+/* Dropdown panel — opens upward */
+.cx-dropdown-panel {
+  position: absolute;
+  bottom: calc(100% + 1px);
+  left: -1.5px;
+  width: 260px;
+  background: #ffffff;
+  border: 1.5px solid #3b82f6;
+  border-bottom: none;
+  border-radius: 12px 12px 12px 0;
+  box-shadow: 0 -12px 40px rgba(0,0,0,0.14);
+  z-index: 999;
+  overflow: hidden;
+}
+.cx-search-wrap {
   display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #f3f4f6;
+  background: #f9fafb;
+}
+.cx-search-icon {
+  font-size: 0.7rem;
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+.cx-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.8rem;
+  color: #111827;
+  font-family: inherit;
+}
+.cx-search-input::placeholder { color: #d1d5db; }
+.cx-option-list {
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+  max-height: 210px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #e5e7eb transparent;
+}
+.cx-option-list::-webkit-scrollbar { width: 4px; }
+.cx-option-list::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 4px; }
+.cx-option {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: background 120ms ease;
+}
+.cx-option:hover { background: #eff6ff; }
+.cx-option-active { background: #eff6ff; }
+.cx-opt-flag { font-size: 1.15rem; line-height: 1; flex-shrink: 0; }
+.cx-opt-code { font-size: 0.8rem; font-weight: 700; color: #111827; min-width: 38px; }
+.cx-opt-country {
+  font-size: 0.75rem; color: #6b7280; flex: 1;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.cx-opt-check { font-size: 0.6rem; color: #3b82f6; flex-shrink: 0; }
+.cx-no-result { padding: 12px 14px; font-size: 0.76rem; color: #9ca3af; text-align: center; }
+
+/* Converted result */
+.cx-result { flex: 1; text-align: right; }
+.cx-converted {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #111827;
+  white-space: nowrap;
+  letter-spacing: -0.02em;
+}
+
+/* Rate strip */
+.cx-rate-strip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0.75rem 1.4rem 0;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  padding: 7px 12px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #1d4ed8;
+}
+.cx-rate-icon { font-size: 0.65rem; color: #3b82f6; flex-shrink: 0; }
+
+/* Fee breakdown */
+.cx-breakdown {
+  margin: 0.75rem 1.4rem 0;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 4px 0;
+  overflow: hidden;
+}
+.cx-breakdown-row {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  margin-bottom: 12px;
-  font-size: 14px;
+  padding: 9px 14px;
+  font-size: 0.76rem;
 }
-
-.value {
+.cx-bd-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #6b7280;
   font-weight: 500;
-  color: #333;
+}
+.cx-bd-value {
+  font-weight: 600;
+  color: #374151;
+}
+.cx-rate-icon { font-size: 0.6rem; color: #3b82f6; }
+.cx-fee-icon  { font-size: 0.6rem; color: #ef4444; }
+.cx-bd-fee    { color: #ef4444; }
+.cx-breakdown-divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 0 14px;
+}
+.cx-net-row {
+  background: #f0fdf4;
+  padding: 11px 14px;
+}
+.cx-net-label {
+  color: #166534;
+  font-weight: 700;
+}
+.cx-net-icon { font-size: 0.65rem; color: #16a34a; }
+.cx-net-value {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #16a34a;
+  letter-spacing: -0.01em;
 }
 
-.highlighted {
-  color: #1a1a1a;
-  font-weight: bold;
-}
-
-.footer-promise {
+/* Disclaimer */
+.cx-disclaimer {
+  font-size: 0.62rem;
+  color: #9ca3af;
+  line-height: 1.6;
   text-align: center;
-  font-size: 16px;
-  color: #8C1BC1;
+  margin: 0.8rem 1.4rem 1.2rem;
+  padding: 0;
 }
 
 .p2p3{
@@ -2067,89 +2502,23 @@ margin-left: 67px;
   }
 
   .person4p2p2 {
-    margin: 0 auto 2rem auto; 
-    width: 22rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
-  .converter-card {
-    max-width: 90%;
-    height: auto; 
-    padding: 2rem;
-  }
-
-  .amount-input, .receive-amount {
-    font-size: 1.5rem; 
-  }
+  .cx-card-withdrawal { max-width: 92%; }
 }
 
 @media only screen and (max-width: 430px) {
-  .p2p2 {
-    padding: 3rem 1rem;
-  }
+  .p2p2 { padding: 3rem 1rem; }
 
   .person4p2p2 {
-    margin: 0 auto 1.875rem auto; 
-    font-size: 1rem;
-    width: 90vw; 
-    height: auto;
-    padding: 0.625rem 1rem;
-    line-height: 1.2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    padding: 8px 20px;
   }
 
- 
-  .converter-card {
-    width: 100%;
-    height: auto; 
-    padding: 1.25rem;
-    border-radius: 1rem;
-  }
-
-  .input-group {
-    padding: 0.75rem;
-  }
-
-
-  .control-row {
-    flex-direction: row; 
-    gap: 0.5rem;
-  }
-
-  .currency-selector {
-    padding: 0.375rem 0.5rem;
-    gap: 0.3125rem;
-  }
-
-  .currency-selector img {
-    width: 2rem !important;
-  }
-
-  .currency-code {
-    font-size: 0.875rem;
-  }
-
-  .amount-input, .receive-amount {
-    font-size: 1.25rem; 
-    width: 60%;
-  }
-
- 
-  .details-section {
-    margin-top: 1.5rem;
-  }
-
-  .detail-item {
-    font-size: 0.8125rem; 
-    margin-bottom: 0.75rem;
-  }
-
-  .footer-promise {
-    font-size: 0.875rem;
-    margin-top: 1rem;
-  }
+  .cx-card-withdrawal { width: 100%; }
+  .cx-amount-input, .cx-converted { font-size: 1.25rem; }
 }
 
 @media only screen and (max-width: 1180px) {

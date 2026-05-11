@@ -20,47 +20,104 @@
                     </div>
                 </div>
 
-                <div class="Goon">
-                    <div class="bride">
-                        <div class="mates">
-                            <div class="amount">Amount
-
-                            </div>
-                            <span class="swiss1">
-                                <img src="@/assets/images/pusd.png" alt="" width="55px" height="54px"><span class="swiss1"><b>pUSD</b><div class="mates1"><h4>$200</h4></div></span>
+                <div class="cx-card">
+                    <!-- Header -->
+                    <div class="cx-header">
+                        <div class="cx-header-left">
+                            <span class="cx-title">Currency Converter</span>
+                            <span class="cx-live-badge">
+                                <span class="cx-live-dot"></span>Live
                             </span>
-                        
                         </div>
+                        <span class="cx-powered">SwyChr</span>
                     </div>
 
-                    <div class="trotas">
-                        <i class="fa-solid fa-arrow-down arrow-icon"></i>
-                        <i class="fa-solid fa-arrow-up arrow-icon"></i>
-                    </div>
-                    <br>
-
-                    <div class="groom">
-                        <div class="mates3">
-                        <div class="amount1">Converted to</div>
-                        <div class="swiss2">
-                            <span style="display: flex; align-items: center; gap: 8px;">
-                            <img src="@/assets/images/bug1.png" width="35px" height="35px">
-                            <b>NGN</b>
-                            <span class="chevron">▾</span>
-                            </span>
-                            
-                            <div class="mates4">
-                            <h4>N288,006</h4>
+                    <!-- Send -->
+                    <div class="cx-field">
+                        <span class="cx-label">You Send</span>
+                        <div class="cx-row">
+                            <div class="cx-currency-pill">
+                                <img src="@/assets/images/pusd.png" class="cx-coin-img" alt="pUSD" />
+                                <span class="cx-code">pUSD</span>
+                            </div>
+                            <div class="cx-input-wrap">
+                                <span class="cx-prefix">$</span>
+                                <input
+                                    class="cx-amount-input"
+                                    v-model.number="usdAmount"
+                                    type="number"
+                                    min="0"
+                                    placeholder="200"
+                                />
                             </div>
                         </div>
+                    </div>
+
+                    <!-- Swap -->
+                    <div class="cx-swap-row">
+                        <div class="cx-swap-line"></div>
+                        <div class="cx-swap-btn">
+                            <i class="fa-solid fa-arrow-down"></i>
+                            <i class="fa-solid fa-arrow-up"></i>
+                        </div>
+                        <div class="cx-swap-line"></div>
+                    </div>
+
+                    <!-- Receive -->
+                    <div class="cx-field">
+                        <span class="cx-label">You Receive</span>
+                        <div class="cx-row">
+                            <!-- Custom searchable dropdown -->
+                            <div class="cx-select-pill" :class="{ 'cx-open': dropdownOpen }" ref="dropdownRef" @click.stop="toggleDropdown">
+                                <span class="cx-flag">{{ selectedRate ? selectedRate.flag_emoji : '🌐' }}</span>
+                                <span class="cx-code-display">{{ selectedCode }}</span>
+                                <i class="fa-solid fa-chevron-down cx-chevron" :class="{ 'cx-chevron-open': dropdownOpen }"></i>
+
+                                <!-- Dropdown panel -->
+                                <div class="cx-dropdown-panel" v-if="dropdownOpen" @click.stop>
+                                    <div class="cx-search-wrap">
+                                        <i class="fa-solid fa-magnifying-glass cx-search-icon"></i>
+                                        <input
+                                            class="cx-search-input"
+                                            v-model="searchQuery"
+                                            placeholder="Search currency…"
+                                            ref="searchInput"
+                                            @click.stop
+                                        />
+                                    </div>
+                                    <ul class="cx-option-list">
+                                        <li
+                                            v-for="r in filteredRates"
+                                            :key="r.code"
+                                            class="cx-option"
+                                            :class="{ 'cx-option-active': r.code === selectedCode }"
+                                            @click="selectCurrency(r.code)"
+                                        >
+                                            <span class="cx-opt-flag">{{ r.flag_emoji }}</span>
+                                            <span class="cx-opt-code">{{ r.code }}</span>
+                                            <span class="cx-opt-country">{{ r.country }}</span>
+                                            <i v-if="r.code === selectedCode" class="fa-solid fa-check cx-opt-check"></i>
+                                        </li>
+                                        <li v-if="filteredRates.length === 0" class="cx-no-result">No results found</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="cx-result">
+                                <span class="cx-converted">{{ convertedAmount }}</span>
+                            </div>
                         </div>
                     </div>
 
-                    <p class="demas">Exchange rates are dynamic. Always remember to <br>
-                        check the applicable rate in-app before carrying <br>
-                        out your transactions.
-                    </p>
-                </div> 
+                    <!-- Rate strip -->
+                    <div class="cx-rate-strip" v-if="selectedRate">
+                        <i class="fa-solid fa-bolt cx-rate-icon"></i>
+                        <span>1 pUSD = {{ Number(selectedRate.coin_rate).toLocaleString('en-US', { maximumFractionDigits: 4 }) }} {{ selectedRate.code }}</span>
+                    </div>
+
+                    <!-- Footer -->
+                    <p class="cx-disclaimer">Rates are indicative. Confirm in-app before transacting.</p>
+                </div>
             </div>
         </section>
 
@@ -522,11 +579,84 @@
 </template>
 
 <script setup>
+import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue';
 import NavBar from '@/components/NavBar.vue';
 import img1 from '@/assets/images/firstly.png'
 import img2 from '@/assets/images/middle.jpg'
 import img3 from '@/assets/images/lastlyy.png'
 import FooterView from '@/components/FooterView.vue';
+
+const API_BASE = process.env.VUE_APP_API_BASE || 'https://api.accountpe.com';
+
+// ── Currency widget state ────────────────────────────────────────
+const usdAmount    = ref(100);
+const currencyRates = ref([]);
+const selectedCode  = ref('NGN');
+
+// dropdown
+const dropdownOpen = ref(false);
+const searchQuery  = ref('');
+const dropdownRef  = ref(null);
+const searchInput  = ref(null);
+
+const selectedRate = computed(() =>
+  currencyRates.value.find(r => r.code === selectedCode.value) || null
+);
+
+const filteredRates = computed(() => {
+  const q = searchQuery.value.toLowerCase().trim();
+  if (!q) return currencyRates.value;
+  return currencyRates.value.filter(r =>
+    r.code.toLowerCase().includes(q) || r.country.toLowerCase().includes(q)
+  );
+});
+
+const convertedAmount = computed(() => {
+  const amount = parseFloat(usdAmount.value);
+  if (!selectedRate.value || isNaN(amount) || amount <= 0) return '—';
+  const total = amount * selectedRate.value.coin_rate;
+  return total.toLocaleString('en-US', { maximumFractionDigits: 2 });
+});
+
+function toggleDropdown() {
+  dropdownOpen.value = !dropdownOpen.value;
+  if (dropdownOpen.value) {
+    searchQuery.value = '';
+    nextTick(() => searchInput.value?.focus());
+  }
+}
+
+function selectCurrency(code) {
+  selectedCode.value = code;
+  dropdownOpen.value = false;
+  searchQuery.value  = '';
+}
+
+function handleOutsideClick(e) {
+  if (dropdownRef.value && !dropdownRef.value.contains(e.target)) {
+    dropdownOpen.value = false;
+  }
+}
+
+onMounted(async () => {
+  document.addEventListener('click', handleOutsideClick);
+  try {
+    const res  = await fetch(`${API_BASE}/api/web/currency_rates`);
+    const json = await res.json();
+    if (json.data && json.data.length) {
+      currencyRates.value = json.data;
+      if (!json.data.find(r => r.code === selectedCode.value)) {
+        selectedCode.value = json.data[0].code;
+      }
+    }
+  } catch (e) {
+    console.error('Failed to load currency rates', e);
+  }
+});
+
+onUnmounted(() => {
+  document.removeEventListener('click', handleOutsideClick);
+});
 
 const cards = [
   {
@@ -3885,130 +4015,389 @@ html { scroll-behavior: smooth; }
   white-space: nowrap !important;
 }
 
-/* ── Currency widget ─────────────────────────────────────────────── */
-.Goon {
+/* ══════════════════════════════════════════════════════════════════
+   Enterprise Currency Converter Widget
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ── Card shell ──────────────────────────────────────────────────── */
+.cx-card {
   flex-shrink: 0 !important;
-  width: 360px !important;
+  width: 390px !important;
   max-width: 100% !important;
-  height: auto !important;
-  padding: 1.6rem 1.5rem 1.25rem !important;
-  border-radius: 28px !important;
-  background: rgba(255,255,255,0.12) !important;
-  backdrop-filter: blur(30px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(30px) saturate(180%) !important;
-  border: 1px solid rgba(255,255,255,0.28) !important;
+  background: #ffffff !important;
+  border-radius: 24px !important;
+  border: 1px solid #e5e7eb !important;
   box-shadow:
-    0 8px 48px rgba(0,0,0,0.28),
-    inset 0 1px 0 rgba(255,255,255,0.24) !important;
+    0 4px 6px -1px rgba(0,0,0,0.07),
+    0 24px 60px -8px rgba(0,0,0,0.18) !important;
+  overflow: hidden !important;
   display: flex !important;
   flex-direction: column !important;
-  align-items: stretch !important;
-  margin: 0 !important;
-  transition: transform 300ms cubic-bezier(0.16,1,0.3,1), box-shadow 300ms ease !important;
+  transition: box-shadow 320ms ease, transform 320ms cubic-bezier(0.16,1,0.3,1) !important;
 }
-.Goon:hover {
-  transform: translateY(-5px) !important;
+.cx-card:hover {
+  transform: translateY(-6px) !important;
   box-shadow:
-    0 22px 64px rgba(0,0,0,0.36),
-    inset 0 1px 0 rgba(255,255,255,0.24) !important;
+    0 4px 6px -1px rgba(0,0,0,0.08),
+    0 36px 80px -8px rgba(0,0,0,0.26) !important;
 }
 
-/* currency card rows */
-.bride, .groom {
-  background: #ffffff !important;
-  border-radius: 18px !important;
-  padding: 14px 16px !important;
-  margin: 0 !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.07) !important;
-  transition: box-shadow 200ms ease !important;
-}
-.bride:hover, .groom:hover {
-  box-shadow: 0 4px 18px rgba(0,0,0,0.12) !important;
+/* ── Accent bar at very top ──────────────────────────────────────── */
+.cx-card::before {
+  content: '' !important;
+  display: block !important;
+  height: 3px !important;
+  background: linear-gradient(90deg, #10b981 0%, #3b82f6 50%, #8b5cf6 100%) !important;
+  flex-shrink: 0 !important;
 }
 
-/* labels */
-.amount, .amount1 {
-  font-size: 0.68rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.10em !important;
-  text-transform: uppercase !important;
-  color: #9ca3af !important;
-  margin-bottom: 10px !important;
-  text-align: left !important;
-}
-
-/* currency row */
-.swiss1, .swiss2 {
+/* ── Header ──────────────────────────────────────────────────────── */
+.cx-header {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
-  width: 100% !important;
-  gap: 8px !important;
+  padding: 1.1rem 1.4rem 0.6rem !important;
 }
-.swiss1 img, .swiss2 img {
-  width: 36px !important;
-  height: 36px !important;
-  flex-shrink: 0 !important;
-  border-radius: 50% !important;
-}
-.swiss1 b, .swiss2 b {
-  font-size: 0.95rem !important;
-  font-weight: 700 !important;
-  color: #1a1a2e !important;
+.cx-header-left {
   display: flex !important;
   align-items: center !important;
-  gap: 5px !important;
+  gap: 0.55rem !important;
 }
-.mates1, .mates4 {
-  margin: 0 !important;
-  padding: 0 !important;
-  display: flex !important;
-  align-items: center !important;
-}
-.mates1 h4, .mates4 h4 {
-  margin: 0 !important;
-  font-size: 1.1rem !important;
+.cx-title {
+  font-size: 0.78rem !important;
   font-weight: 700 !important;
-  white-space: nowrap !important;
+  letter-spacing: 0.07em !important;
+  text-transform: uppercase !important;
   color: #111827 !important;
 }
-
-/* swap arrows */
-.trotas {
-  display: flex !important;
-  flex-direction: row !important;
+.cx-live-badge {
+  display: inline-flex !important;
   align-items: center !important;
-  justify-content: center !important;
-  gap: 10px !important;
-  margin: 12px 0 !important;
-  font-size: 0.75rem !important;
-  color: rgba(255,255,255,0.90) !important;
+  gap: 5px !important;
+  background: #ecfdf5 !important;
+  border: 1px solid #a7f3d0 !important;
+  border-radius: 999px !important;
+  padding: 2px 9px 2px 6px !important;
+  font-size: 0.65rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  color: #065f46 !important;
+  text-transform: uppercase !important;
 }
-.trotas .arrow-icon {
-  width: 30px !important;
-  height: 30px !important;
-  background: rgba(255,255,255,0.18) !important;
-  border: 1px solid rgba(255,255,255,0.32) !important;
+.cx-live-dot {
+  width: 7px !important;
+  height: 7px !important;
   border-radius: 50% !important;
+  background: #10b981 !important;
+  animation: cx-pulse 1.8s ease-in-out infinite !important;
+  flex-shrink: 0 !important;
+}
+@keyframes cx-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.7); }
+}
+.cx-powered {
+  font-size: 0.65rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  color: #6b7280 !important;
+}
+
+/* ── Field (shared container) ────────────────────────────────────── */
+.cx-field {
+  margin: 0 1.4rem 0 !important;
+  background: #f9fafb !important;
+  border: 1.5px solid #e5e7eb !important;
+  border-radius: 14px !important;
+  padding: 0.85rem 1rem !important;
+  transition: border-color 200ms ease, box-shadow 200ms ease !important;
+}
+.cx-field:focus-within {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.12) !important;
+}
+.cx-label {
+  display: block !important;
+  font-size: 0.62rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.09em !important;
+  text-transform: uppercase !important;
+  color: #9ca3af !important;
+  margin-bottom: 0.55rem !important;
+}
+.cx-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 0.5rem !important;
+}
+
+/* ── pUSD coin pill ──────────────────────────────────────────────── */
+.cx-currency-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: #ffffff !important;
+  border: 1.5px solid #e5e7eb !important;
+  border-radius: 999px !important;
+  padding: 5px 12px 5px 6px !important;
+  flex-shrink: 0 !important;
+}
+.cx-coin-img {
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+}
+.cx-code {
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  color: #111827 !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* ── Amount input ────────────────────────────────────────────────── */
+.cx-input-wrap {
+  display: flex !important;
+  align-items: center !important;
+  gap: 3px !important;
+  flex: 1 !important;
+  justify-content: flex-end !important;
+}
+.cx-prefix {
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  color: #374151 !important;
+  line-height: 1 !important;
+}
+.cx-amount-input {
+  width: 110px !important;
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  font-size: 1.55rem !important;
+  font-weight: 800 !important;
+  color: #111827 !important;
+  text-align: right !important;
+  font-family: inherit !important;
+  min-width: 0 !important;
+}
+.cx-amount-input::placeholder { color: #d1d5db !important; }
+.cx-amount-input::-webkit-inner-spin-button,
+.cx-amount-input::-webkit-outer-spin-button { -webkit-appearance: none !important; margin: 0 !important; }
+.cx-amount-input[type=number] { -moz-appearance: textfield !important; }
+
+/* ── Swap divider ────────────────────────────────────────────────── */
+.cx-swap-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  padding: 0.75rem 1.4rem !important;
+}
+.cx-swap-line {
+  flex: 1 !important;
+  height: 1px !important;
+  background: #e5e7eb !important;
+}
+.cx-swap-btn {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
+  gap: 2px !important;
+  flex-shrink: 0 !important;
+  box-shadow: 0 4px 12px rgba(99,102,241,0.35) !important;
+}
+.cx-swap-btn i {
   color: #ffffff !important;
-  font-size: 0.72rem !important;
+  font-size: 0.6rem !important;
 }
 
-/* disclaimer */
-.demas {
-  font-size: 0.70rem !important;
-  color: rgba(255,255,255,0.52) !important;
-  line-height: 1.65 !important;
-  text-align: center !important;
-  margin-top: 14px !important;
-  margin-bottom: 0 !important;
+/* ── Custom Select2 dropdown ─────────────────────────────────────── */
+.cx-select-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  background: #ffffff !important;
+  border: 1.5px solid #e5e7eb !important;
+  border-radius: 999px !important;
+  padding: 6px 12px 6px 8px !important;
+  flex-shrink: 0 !important;
+  cursor: pointer !important;
+  position: relative !important;
+  user-select: none !important;
+  transition: border-color 180ms ease, box-shadow 180ms ease !important;
 }
-.demas br { display: none !important; }
+.cx-select-pill:hover {
+  border-color: #93c5fd !important;
+}
+.cx-select-pill.cx-open {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.15) !important;
+  border-radius: 0 0 12px 12px !important;
+}
+.cx-flag {
+  font-size: 1.3rem !important;
+  line-height: 1 !important;
+  flex-shrink: 0 !important;
+}
+.cx-code-display {
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  color: #111827 !important;
+  letter-spacing: 0.02em !important;
+  min-width: 36px !important;
+}
+.cx-chevron {
+  font-size: 0.58rem !important;
+  color: #9ca3af !important;
+  pointer-events: none !important;
+  transition: transform 200ms ease !important;
+}
+.cx-chevron-open {
+  transform: rotate(180deg) !important;
+}
+
+/* Panel — opens upward */
+.cx-dropdown-panel {
+  position: absolute !important;
+  bottom: calc(100% + 1px) !important;
+  left: -1.5px !important;
+  width: 260px !important;
+  background: #ffffff !important;
+  border: 1.5px solid #3b82f6 !important;
+  border-bottom: none !important;
+  border-radius: 12px 12px 12px 0 !important;
+  box-shadow: 0 -12px 40px rgba(0,0,0,0.14) !important;
+  z-index: 999 !important;
+  overflow: hidden !important;
+}
+
+/* Search bar inside panel */
+.cx-search-wrap {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 8px 12px !important;
+  border-bottom: 1px solid #f3f4f6 !important;
+  background: #f9fafb !important;
+}
+.cx-search-icon {
+  font-size: 0.7rem !important;
+  color: #9ca3af !important;
+  flex-shrink: 0 !important;
+}
+.cx-search-input {
+  flex: 1 !important;
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  font-size: 0.8rem !important;
+  color: #111827 !important;
+  font-family: inherit !important;
+}
+.cx-search-input::placeholder { color: #d1d5db !important; }
+
+/* Option list */
+.cx-option-list {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 4px 0 !important;
+  max-height: 210px !important;
+  overflow-y: auto !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: #e5e7eb transparent !important;
+}
+.cx-option-list::-webkit-scrollbar { width: 4px !important; }
+.cx-option-list::-webkit-scrollbar-thumb { background: #e5e7eb !important; border-radius: 4px !important; }
+
+/* Single option row */
+.cx-option {
+  display: flex !important;
+  align-items: center !important;
+  gap: 9px !important;
+  padding: 8px 14px !important;
+  cursor: pointer !important;
+  transition: background 120ms ease !important;
+}
+.cx-option:hover { background: #eff6ff !important; }
+.cx-option-active { background: #eff6ff !important; }
+.cx-opt-flag {
+  font-size: 1.15rem !important;
+  line-height: 1 !important;
+  flex-shrink: 0 !important;
+}
+.cx-opt-code {
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  color: #111827 !important;
+  min-width: 38px !important;
+}
+.cx-opt-country {
+  font-size: 0.75rem !important;
+  color: #6b7280 !important;
+  flex: 1 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+.cx-opt-check {
+  font-size: 0.6rem !important;
+  color: #3b82f6 !important;
+  flex-shrink: 0 !important;
+}
+.cx-no-result {
+  padding: 12px 14px !important;
+  font-size: 0.76rem !important;
+  color: #9ca3af !important;
+  text-align: center !important;
+}
+
+/* ── Converted result ────────────────────────────────────────────── */
+.cx-result {
+  flex: 1 !important;
+  text-align: right !important;
+}
+.cx-converted {
+  font-size: 1.55rem !important;
+  font-weight: 800 !important;
+  color: #111827 !important;
+  white-space: nowrap !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* ── Rate strip ──────────────────────────────────────────────────── */
+.cx-rate-strip {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  margin: 0.75rem 1.4rem 0 !important;
+  background: #eff6ff !important;
+  border: 1px solid #bfdbfe !important;
+  border-radius: 8px !important;
+  padding: 7px 12px !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  color: #1d4ed8 !important;
+}
+.cx-rate-icon {
+  font-size: 0.65rem !important;
+  color: #3b82f6 !important;
+  flex-shrink: 0 !important;
+}
+
+/* ── Disclaimer ──────────────────────────────────────────────────── */
+.cx-disclaimer {
+  font-size: 0.62rem !important;
+  color: #9ca3af !important;
+  line-height: 1.6 !important;
+  text-align: center !important;
+  margin: 0.8rem 1.4rem 1.2rem !important;
+  padding: 0 !important;
+}
 
 /* ── Section-1 Responsive ────────────────────────────────────── */
 
@@ -4019,7 +4408,7 @@ html { scroll-behavior: smooth; }
     padding-top: 6.5rem !important;
     width: 92% !important;
   }
-  .Goon { width: 320px !important; }
+  .cx-card { width: 340px !important; }
   .smart { font-size: clamp(2rem, 4.5vw, 3.2rem) !important; }
 }
 
@@ -4048,7 +4437,7 @@ html { scroll-behavior: smooth; }
     font-size: 1rem !important;
   }
   .proton { justify-content: center !important; }
-  .Goon {
+  .cx-card {
     width: 100% !important;
     max-width: 420px !important;
   }
