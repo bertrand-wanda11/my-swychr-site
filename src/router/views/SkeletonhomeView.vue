@@ -4185,7 +4185,7 @@ html { scroll-behavior: smooth; }
 .cx-amount-input::placeholder { color: #d1d5db !important; }
 .cx-amount-input::-webkit-inner-spin-button,
 .cx-amount-input::-webkit-outer-spin-button { -webkit-appearance: none !important; margin: 0 !important; }
-.cx-amount-input[type=number] { -moz-appearance: textfield !important; }
+.cx-amount-input[type=number] { -moz-appearance: textfield !important; appearance: auto !important; }
 
 /* ── Swap divider ────────────────────────────────────────────────── */
 .cx-swap-row {
