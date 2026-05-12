@@ -238,7 +238,7 @@ text-align:left;
 }
 
 .sergiolay{
-  color: #ffffff;
+  color: #ffffff !important;
   width: 100% !important; 
   margin-left: 0 !important;   
   margin-right: 0 !important;
@@ -273,7 +273,7 @@ text-align:left;
 .zoukielay{
   margin-right: 0; 
   text-align: left;
-  color: #ffffff !important;
+  color: #FFFFFF !important;
 }
 
 .sgrouplay {
@@ -305,15 +305,15 @@ text-align:left;
   gap: 20px; 
   list-style: none;
   padding: 0;
-  color: #ffffff !important;
+  color: #FFFFFF !important;
 }
 
-.chana1lay  a{
-  color: #ffffff;
+.chanalay  a{
+  color: #FFFFFF;
 }
 
 .zoukielay h3, p{
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
 .chana1lay{
