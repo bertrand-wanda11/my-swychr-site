@@ -308,6 +308,13 @@ text-align:left;
   color: #ffffff !important;
 }
 
+.chana1lay  a{
+  color: #ffffff;
+}
+
+.zoukielay h3, p{
+  color: #ffffff;
+}
 
 .chana1lay{
   white-space: nowrap;
