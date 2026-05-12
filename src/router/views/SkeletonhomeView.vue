@@ -2033,22 +2033,24 @@ width: max-content;
 }
 
 .republic2 {
-  font-size: 2rem;
+  font-size: 2rem; 
   display: block; 
   align-items: center;
   text-align: center; 
   justify-content: center;
-  width: 42.0625rem; 
+  width: 42.0625rem;
   text-align: justify;
   margin-top: 0;
   padding-top: 0;
+  margin-left: 3.125vw; 
+  margin-bottom: 3.75rem; 
 }
 
 .third {
-  display: block;
+ display: block;
   width: 9.875rem; 
-  height: 2.4375rem; 
-  padding: 0.625rem; 
+  height: 2.4375rem;
+  padding: 0.625rem;
   justify-content: center;
   align-items: center;
   gap: 0.625rem;
