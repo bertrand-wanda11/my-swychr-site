@@ -812,7 +812,7 @@ const features = [
 
 .steve a {
   text-decoration: none;
-  color: #000;
+  color: #7B1FA2;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.125rem;
   font-style: normal;
