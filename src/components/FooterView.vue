@@ -238,7 +238,7 @@ text-align:left;
 }
 
 .sergiolay{
-  color: #ffffff;
+  color: #ffffff !important;
   width: 100% !important; 
   margin-left: 0 !important;   
   margin-right: 0 !important;
@@ -246,7 +246,7 @@ text-align:left;
 }
 
 .rufuslay {
-  color: #ffffff;
+  color: #ffffff !important;
   width: 100%;
   margin-top: 30px !important;
   width: 100% !important; 
