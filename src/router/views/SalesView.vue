@@ -102,6 +102,18 @@
                   required
                 />
               </div>
+
+                 <div class="sl-field">
+                <label class="sl-label">Phone Number <span class="sl-req">*</span></label>
+                <input
+                  class="sl-input"
+                  type="number"
+                  v-model="formData.number"
+                  placeholder="+2507839939303"
+                  required
+                />
+              </div>
+
             </div>
 
             <div class="sl-field">
