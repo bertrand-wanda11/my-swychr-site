@@ -273,6 +273,7 @@ text-align:left;
 .zoukielay{
   margin-right: 0; 
   text-align: left;
+  color: #ffffff;
 }
 
 .sgrouplay {
@@ -304,6 +305,7 @@ text-align:left;
   gap: 20px; 
   list-style: none;
   padding: 0;
+  color: #ffffff ;
 }
 
 
