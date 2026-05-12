@@ -238,7 +238,7 @@ text-align:left;
 }
 
 .sergiolay{
-  color: #ffffff !important;
+  color: #ffffff;
   width: 100% !important; 
   margin-left: 0 !important;   
   margin-right: 0 !important;
@@ -273,7 +273,7 @@ text-align:left;
 .zoukielay{
   margin-right: 0; 
   text-align: left;
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .sgrouplay {
@@ -305,7 +305,7 @@ text-align:left;
   gap: 20px; 
   list-style: none;
   padding: 0;
-  color: #ffffff ;
+  color: #ffffff !important;
 }
 
 
