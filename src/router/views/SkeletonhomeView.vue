@@ -2038,7 +2038,7 @@ width: max-content;
   align-items: center;
   text-align: center; 
   justify-content: center;
-  width: 42.0625rem;
+  width: 35.0625rem;
   text-align: justify;
   margin-top: 0;
   padding-top: 0;
@@ -2048,7 +2048,7 @@ width: max-content;
 
 .third {
  display: block;
-  width: 9.875rem; 
+  width: 7.875rem; 
   height: 2.4375rem;
   padding: 0.625rem;
   justify-content: center;
