@@ -179,7 +179,7 @@ import { ref } from 'vue';
 
 const API_BASE = process.env.VUE_APP_API_BASE || 'https://api.accountpe.com';
 
-const formData = ref({ name: '', email: '', website: '', subject: '', message: '' });
+const formData = ref({ name: '', email: '', phonenumber: '', website: '', subject: '', message: '' });
 const loading    = ref(false);
 const submitted  = ref(false);
 const successMsg = ref('');
