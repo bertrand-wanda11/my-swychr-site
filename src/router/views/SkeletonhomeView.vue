@@ -2097,11 +2097,11 @@ width: max-content;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-   display: flex;
-    align-items: flex-start; /* Keeps numbers at the top of the text block */
-    width: 100%;             /* Ensures they use the full width of the parent */
-    max-width: 35rem;        /* Adjust this value to set a uniform "end spot" for wrapping */
-    text-align: left;        /* Changed from 'justify' to prevent uneven spacing */
+   display:inline-flex;
+    align-items: flex-start; 
+    width: 100%; 
+    max-width: 35rem;        
+    text-align: left;       
     margin-bottom: 1.5rem;
 }
 
