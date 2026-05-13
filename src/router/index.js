@@ -33,6 +33,7 @@ import RolesView from './views/RolesView.vue'
 import Airtime1View from './views/Airtime1View.vue'
 import FooterView from '../components/FooterView.vue'
 import Country from '../components/CountryView.vue'
+import Board from '../components/BoardView.vue'
 
 const routes = [
   { path: '/', name: 'skeletonhome', component: SkeletonhomeView },
@@ -68,7 +69,8 @@ const routes = [
   { path: '/roles', name: 'roles', component: RolesView },
   { path: '/Airtime1', name: 'Airtime1', component: Airtime1View },
   { path: '/Footer', name: 'Footer', component: FooterView },
-  { path: '/Country', name: 'Country', component: Country }
+  { path: '/Country', name: 'Country', component: Country },
+  { path: '/Board', name: 'Board', component: Board }
 ]
 
 const router = createRouter({

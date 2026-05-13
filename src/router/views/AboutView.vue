@@ -165,28 +165,8 @@ simplify your financial world.
 
   <section class="about7">
     <div class="insideabout7">
-      <div class="header-group">
-        <span class="label-accent">Governance</span>
-        <h2 class="section-title">Board of Directors</h2>
-      </div>
-
-      <div class="board-grid">
-        <div v-for="(member, index) in board" :key="index" class="board-card">
-          <div class="member-photo-wrapper">
-            <img :src="member.image" :alt="member.name" class="member-photo" />
-          </div>
-          <div class="member-info">
-            <h3 class="member-name">{{ member.name }}</h3>
-            <p class="member-role">{{ member.role }}</p>
-            <p class="member-bio">{{ member.bio }}</p>
-            <a :href="member.link" class="linkedin-profile">
-              <i class="fab fa-linkedin"></i> Profile
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
+     <BoardView /> 
+   
     <div class="insideabout71">
       <h2 class="section-title">Our Dream Team</h2>
       <p class="team-description">
@@ -214,14 +194,13 @@ simplify your financial world.
   <script setup>
 import FooterView from '@/components/FooterView.vue';  
 import NavBar from '@/components/NavBar.vue';
+import BoardView from '@/components/BoardView.vue';
 import trustIcon from '@/assets/images/bum1.png'
 import visionIcon from '@/assets/images/bum2.png'
 import securityIcon from '@/assets/images/bum3.png'
 import boardIcon from '@/assets/images/Container.png'
 import policyIcon from '@/assets/images/Container (1).png'
 import aaronImg from '@/assets/images/aaron.jpeg' 
-import nikolaiImg from '@/assets/images/nikolai.png'
-import nabilImg from '@/assets/images/nabil.jpeg'
 import locIcon from '@/assets/images/bvlog.png'
 const conradImg = '/conrad.PNG';
 
@@ -265,7 +244,7 @@ const milestones = [
 const governanceLinks = [
   { 
     name: 'Meet the Board', 
-    url: '#', 
+    url: '/Board', 
     icon: boardIcon 
   },
   { 
@@ -293,24 +272,6 @@ const team = [
   }
 ];
 
-
-const board = [
-  {
-    name: 'Nikolai Beckers',
-    role: 'Chairman of the Board',
-    image: nikolaiImg,
-    bio: 'Decades of experience leading multi-billion dollar telecom giants including Ooredoo Algeria, Telekom Romania, Bakcell, and Deutsche Bank.',
-    link: 'https://www.linkedin.com/in/nikolai-beckers-5a2a52/'
-  },
-
-  {
-    name: 'Nabil Abdul Rahman',
-    role: 'Member, Board of Directors',
-    image: nabilImg,
-    bio: 'Over 20 years of mastery in global insurance and financial services. Nabil contributes critical expertise in risk mitigation and corporate strategy.',
-    link: 'https://www.linkedin.com/authwall?tr'
-  }
-];
 
 const locations = [
   { city: 'Delaware, USA', type: 'Global Headquarters', icon: locIcon },
