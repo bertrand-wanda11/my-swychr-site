@@ -244,7 +244,7 @@ const milestones = [
 const governanceLinks = [
   { 
     name: 'Meet the Board', 
-    url: '/Board', 
+    url: 'Board', 
     icon: boardIcon 
   },
   { 

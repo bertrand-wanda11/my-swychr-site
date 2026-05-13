@@ -951,7 +951,7 @@ display: flex;
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
-  margin-bottom: 0;
+  margin-bottom: 1rem;
   width: 39rem;
   height: 2.1rem;
   border-radius: 6.25rem;

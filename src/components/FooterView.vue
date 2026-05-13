@@ -27,7 +27,7 @@
           <a href=" " target="_blank">Business</a><br><br>
           <a href="" target="_blank">Company</a><br><br>
           <a href="About" target="_blank">About Us</a><br><br>
-          <a href="Contact" target="_blank">Contact Us</a><br>
+          <a href="Sales" target="_blank">Contact Us</a><br>
           
 </div>
     </div>

@@ -305,10 +305,7 @@
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedp2p">
-    <p>SwyChr Connect provides a suite of APIs that enable <br>
-      businesses, fintechs, and organizations to scale their operations<br>
-      by integrating solutions for payments, virtual card issuance,<br>
-      airtime distribution, and more.</p>
+    <p>Yes, transfers between Swychr accounts and completed instantly and cost Zero fees.</p>
   </div>
 </div>
 
@@ -321,8 +318,8 @@
   </label>
   <div class="wanda-expectedp2p">
     <p>We are a truly global platform as we support so many local <br>
-      and international payment/funding methods empowering users<br>
-      to transact from almost anywhere in the world.</p>
+       and international payment/funding methods empowering users to transact<br>
+     from almost anywhere in the world.</p>
   </div>
 </div>
 
@@ -347,8 +344,8 @@ How secure is my money?
   </label>
   <div class="wanda-expectedp2p">
     <p> 
-       In such cases we work closely with our partners to recover the funds.<br>
-       It helps this process a lot if the issue is reported timely</p>
+    In such cases we work closely with our partners to recover the funds.<br>
+   It helps this process a lot if the issue is reported timely.</p>
   </div>
 </div>
 </div> 
