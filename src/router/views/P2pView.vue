@@ -159,7 +159,7 @@
 
  <section class="p2p3">
   <div class="insidep2p3">
-<h2 class="person4p2p">Why Swychremit</h2>
+<h2 class="person4p2p">Why SwyChr</h2>
  <div class="bento-gridp2p">
   <div 
     v-for="(feature, index) in features" 
@@ -287,7 +287,7 @@
 <div class="wanda-villap2p">
   <input type="checkbox" id="wanda-3">
   <label for="wanda-3" class="wanda-requestp2p">
-    How can Swychremit be much cheaper than my bank?
+    How can  SwyChr be much cheaper than my bank?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedp2p">
@@ -320,9 +320,9 @@
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedp2p">
-    <p>Yes, SwyChr uses secure blockchain technology, encryption, <br>
-      and real-time transaction tracking to ensure your money and<br>
-      data are safe.</p>
+    <p>We are a truly global platform as we support so many local <br>
+      and international payment/funding methods empowering users<br>
+      to transact from almost anywhere in the world.</p>
   </div>
 </div>
 
@@ -334,9 +334,7 @@ How secure is my money?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedp2p">
-    <p>With SwyChr, you can send money across 60+ countries using <br>
-      blockchain-powered technology and stable coins for secure and<br>
-      fast transactions.</p>
+    <p>We employ bank level security to keep your hard earned funds safe .</p>
   </div>
 </div>
  
@@ -349,7 +347,8 @@ How secure is my money?
   </label>
   <div class="wanda-expectedp2p">
     <p> 
-        You will receive an email notifying you when your funds are delivered.</p>
+       In such cases we work closely with our partners to recover the funds.<br>
+       It helps this process a lot if the issue is reported timely</p>
   </div>
 </div>
 </div> 
@@ -1868,6 +1867,7 @@ display: flex;
     margin: 1.25rem auto; 
     padding: 1.25rem; 
     border-radius: 0.5rem; 
+    margin-right: 2rem;
 }
 
 .wanda-requestp2p {

@@ -206,24 +206,26 @@ beyond it lands in seconds.
 
 <div class="">
 <div class="supportsectionusd6">
+
+
 <div class="wanda-villausd6">
   <input type="checkbox" id="wanda-3">
   <label for="wanda-3" class="wanda-requestusd6">
-    How can Swychremit be much cheaper than bank?
+    What is SwyChr?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedusd6">
-    <p>Banks use outdated systems (SWIFT) and charge "hidden" margins on 
-      the exchange rate. We’ve built our own direct liquidity rails into 
-       emerging markets, allowing us to cut out the middlemen and pass the 
-      savings directly to you.</p>
+    <p>SwyChr is a global platform that allows individuals to send <br>
+      remittances, purchase digital products, and access financial <br>
+       services, including USD accounts and cryptocurrencies, all from<br>
+      a mobile app.</p>
   </div>
 </div>
 
 <div class="wanda-villausd6">
   <input type="checkbox" id="wanda-4">
   <label for="wanda-4" class="wanda-requestusd6">
-   Is it really Instant?
+    What is SwyChr Connect?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedusd6">
@@ -238,7 +240,7 @@ beyond it lands in seconds.
 <div class="wanda-villausd6">
   <input type="checkbox" id="wanda-5">
   <label for="wanda-5" class="wanda-requestusd6">
-  Which countries can I send from?
+   Is it safe to use SwyChr?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedusd6">
@@ -252,7 +254,7 @@ beyond it lands in seconds.
 <div class="wanda-villausd6">
   <input type="checkbox" id="wanda-6">
   <label for="wanda-6" class="wanda-requestusd6">
-How secure is my money?
+  How can I send money internationally with Swychr?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedusd6">
@@ -266,12 +268,14 @@ How secure is my money?
 <div class="wanda-villausd6">
   <input type="checkbox" id="wanda-7">
   <label for="wanda-7" class="wanda-requestusd6">
-  What if I send money to the wrong number?
+   What payment methods does SwyChr support?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedusd6">
     <p> 
-        You will receive an email notifying you when your funds are delivered.</p>
+       We support a range of local and international payment 
+        methods including but not limited to bank 
+       ransfer, card payment, crypto and mobile money payments</p>
   </div>
 </div>
 </div> 

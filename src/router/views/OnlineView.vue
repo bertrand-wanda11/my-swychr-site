@@ -217,25 +217,28 @@
 </div>
 
 <div class="">
+
 <div class="supportsection2online">
+
+
 <div class="wanda-villaonline">
   <input type="checkbox" id="wanda-3">
   <label for="wanda-3" class="wanda-requestonline">
-    How can Swychremit be much cheaper than bank?
+    What is SwyChr?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedonline">
-    <p>Banks use outdated systems (SWIFT) and charge "hidden" margins on 
-      the exchange rate. We’ve built our own direct liquidity rails into 
-       emerging markets, allowing us to cut out the middlemen and pass the 
-      savings directly to you.</p>
+    <p>SwyChr is a global platform that allows individuals to send <br>
+      remittances, purchase digital products, and access financial <br>
+       services, including USD accounts and cryptocurrencies, all from<br>
+      a mobile app.</p>
   </div>
 </div>
 
-<div class="wanda-villap2p">
+<div class="wanda-villaonline">
   <input type="checkbox" id="wanda-4">
   <label for="wanda-4" class="wanda-requestonline">
-   Is it really Instant?
+    What is SwyChr Connect?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedonline">
@@ -250,7 +253,7 @@
 <div class="wanda-villaonline">
   <input type="checkbox" id="wanda-5">
   <label for="wanda-5" class="wanda-requestonline">
-  Which countries can I send from?
+   Is it safe to use SwyChr?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedonline">
@@ -264,7 +267,7 @@
 <div class="wanda-villaonline">
   <input type="checkbox" id="wanda-6">
   <label for="wanda-6" class="wanda-requestonline">
-How secure is my money?
+  How can I send money internationally with Swychr?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedonline">
@@ -278,12 +281,14 @@ How secure is my money?
 <div class="wanda-villaonline">
   <input type="checkbox" id="wanda-7">
   <label for="wanda-7" class="wanda-requestonline">
-  What if I send money to the wrong number?
+   What payment methods does SwyChr support?
     <span class="wanda-icon"></span>
   </label>
   <div class="wanda-expectedonline">
     <p> 
-        You will receive an email notifying you when your funds are delivered.</p>
+       We support a range of local and international payment 
+        methods including but not limited to bank 
+       ransfer, card payment, crypto and mobile money payments</p>
   </div>
 </div>
 </div> 
@@ -1072,7 +1077,11 @@ display: flex;
 }
 
 .person4online {
-  margin-left: 36.375vw; 
+  display: flex;          
+  justify-content: center; 
+  align-items: center;    
+  text-align: center;      
+  margin: 0 auto;         
   color: #8C1BC1;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem;

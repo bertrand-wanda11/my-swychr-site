@@ -222,7 +222,7 @@
     </div>
     
     <p class="table-footer">
-      Both card types include 3D Secure protection and global merchant acceptance.
+   Premium card types include 3D Secure protection and global merchant acceptance.
     </p>
   </section>
 
@@ -910,7 +910,8 @@ display: flex;
   font-size: 0.95rem;
   margin-bottom: 0.75rem;
   display: flex;
-  align-items: center;
+   text-align:left;
+  align-items: flex-start;
   gap: 0.75rem;
   color: #616161;
   font-family: 'Montserrat', sans-serif;

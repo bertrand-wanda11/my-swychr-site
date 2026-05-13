@@ -12,7 +12,7 @@ made simple.
 </p>
 <div class="protonmile">
    <div class="stavomile401-con"> 
-    <li class="stavomile401"><a href="https://app.swychrconnect.com/">Contact Sales</a></li>
+    <li class="stavomile401"><a href="/Sales">Contact Sales</a></li>
   </div>
 
    <div class="stavomile400-con"> 
@@ -857,7 +857,8 @@ display: flex;
   font-size: 0.95rem;
   margin-bottom: 0.75rem;
   display: flex;
-  align-items: center;
+  text-align:left;
+  align-items: flex-start;
   gap: 0.75rem;
   color: #616161;
   font-family: 'Montserrat', sans-serif;
@@ -939,7 +940,11 @@ display: flex;
 }
 
 .person4mile3 {
-  margin-left: 27.375vw; 
+   display: flex;          
+  justify-content: center; 
+  align-items: center;    
+  text-align: center;      
+  margin: 0 auto;   
   color: #000;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.9rem;
@@ -954,7 +959,11 @@ display: flex;
 }
 
 .poka{
-   margin-left: 28.375vw; 
+     display: flex;          
+  justify-content: center; 
+  align-items: center;    
+  text-align: center;      
+  margin: 0 auto; 
   color: #000;
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;

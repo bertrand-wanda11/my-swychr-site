@@ -173,7 +173,7 @@ the builders, and the problem-solvers to join our Dream Team.
    
 
    <div class="stavocareer400-con"> 
-    <li class="stavocareer400"><img src="@/assets/images/cup.png" alt="" width="30px"/><a href="https://urlgeni.us/swychr">Send Your Cv</a></li>
+    <li class="stavocareer400"><img src="@/assets/images/cup.png" alt="" width="30px"/><a href="/Roles">Send Your Cv</a></li>
   </div>
         </div>
     </div>
@@ -194,7 +194,6 @@ import visioncareer4 from '@/assets/images/life2.png'
 import securitycareer4 from '@/assets/images/life3.png'
 
 
-
 const bertoImg = '/berto.PNG';
 const awungImg = '/awung.PNG';
 const values = [
@@ -206,7 +205,7 @@ const values = [
   { 
     icon: visioncareer, 
     title: 'A Culture of Ownership', 
-    desc: 'We operate with a Founders Mindset. We give our team the autonomy to solve complex problems and the resources to execute at scale. At Swychr, if you see a problem, you own the solution.into a unified, powerful economic block.' 
+    desc: 'We operate with a Founders Mindset. We give our team the autonomy to solve complex problems and the resources to execute at scale. At Swychr, if you see a problem, you own the solution into a unified, powerful economic block.' 
   },
   { 
     icon: securitycareer, 

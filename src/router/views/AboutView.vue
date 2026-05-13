@@ -245,7 +245,7 @@ const values = [
 
 const milestones = [
   {
-    title: 'M$5B+ Global Volume',
+    title: 'US$+ 250MGlobal Volume',
     desc: 'Over $5 billion in transactions processed securely for our customers worldwide.'
   },
   {
@@ -254,7 +254,7 @@ const milestones = [
   },
   {
     title: 'Borderless Reach',
-    desc: 'Scaling rapidly with an active operational footprint in 30+ countries.'
+    desc: 'Scaling rapidly with an active operational footprint in 60+ countries.'
   },
   {
     title: 'Versatile Solutions',

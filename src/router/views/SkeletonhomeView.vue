@@ -570,7 +570,9 @@
   </label>
   <div class="wanda-expected">
     <p> 
-        You will receive an email notifying you when your funds are delivered.</p>
+       We support a range of local and international payment 
+        methods including but not limited to bank 
+       ransfer, card payment, crypto and mobile money payments</p>
   </div>
 </div>
 </div> 

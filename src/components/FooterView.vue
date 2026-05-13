@@ -26,8 +26,8 @@
           <a href=" " target="_blank">Personal</a><br><br>
           <a href=" " target="_blank">Business</a><br><br>
           <a href="" target="_blank">Company</a><br><br>
-          <a href=" " target="_blank">About Us</a><br><br>
-          <a href="" target="_blank">Contact Us</a><br>
+          <a href="About" target="_blank">About Us</a><br><br>
+          <a href="Contact" target="_blank">Contact Us</a><br>
           
 </div>
     </div>
@@ -59,10 +59,10 @@
     <div class="mother11lay">
       <div class="mother-number11lay"><b><span class="span1lay">Company</span></b></div>
       <div class="mother-pip11lay">
-        <a href="" target="_blank">About Us</a><br><br>
+        <a href="About" target="_blank">About Us</a><br><br>
         <a href="" target="_blank">Our Mission</a><br><br>
         <a href="" target="_blank">Press & Media</a><br><br>
-        <a href=" " target="_blank">Contact</a><br><br>
+        <a href="Sales" target="_blank">Contact</a><br><br>
         <a href="Blog" target="_blank">Blog</a><br>
 </div>
     </div>
