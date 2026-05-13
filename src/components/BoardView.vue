@@ -1,6 +1,5 @@
 <template>
     <div>
-         <NavBar />
    <section class="aboutboard ">
       <div class="insideabout7">
       <div class="header-group">
@@ -26,13 +25,11 @@
     </div>
    </section>
     
-     <FooterView />
+
 </div>
     </template>
 
     <script setup>
-import NavBar from '@/components/NavBar.vue';
-import FooterView from '@/components/FooterView.vue';
 import nikolaiImg from '@/assets/images/nikolai.png'
 import nabilImg from '@/assets/images/nabil.jpeg'
 
