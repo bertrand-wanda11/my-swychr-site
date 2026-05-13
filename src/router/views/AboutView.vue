@@ -165,7 +165,6 @@ simplify your financial world.
 
   <section class="about7">
      <BoardView /> 
-    <div class="insideabout7">
     <div class="insideabout71">
       <h2 class="section-title">Our Dream Team</h2>
       <p class="team-description">
