@@ -194,7 +194,7 @@ import visioncareer4 from '@/assets/images/life2.png'
 import securitycareer4 from '@/assets/images/life3.png'
 
 
-const bertoImg = '/berto.PNG';
+const bertoImg = '/Berto.jpeg';
 const awungImg = '/awung.PNG';
 const values = [
   { 
