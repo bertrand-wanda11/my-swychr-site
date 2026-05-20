@@ -157,7 +157,7 @@ the Swychr mobile application, Swychr Connect web platform, and API suites are f
           padding: 10px;
         } 
 
-        .icon-fblay{
+        .icon-fb{
           width: 24px;
          height: 24px;
          aspect-ratio: 1/1;
