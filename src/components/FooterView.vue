@@ -140,7 +140,7 @@ the Swychr mobile application, Swychr Connect web platform, and API suites are f
            margin: 0 auto;
         }
            
-
+        
         .mother-number11lay{
           font-size:20px;
           font-weight: bold;
