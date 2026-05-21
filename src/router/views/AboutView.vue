@@ -30,7 +30,7 @@ simplify your financial world.
             <p>We believe that financial borders are the last remaining hurdle to true global equality. By leveraging
                regulated microfinance structures and blockchain technology, we are bridging the gap between local fiat and global digital assets.</p>
             <p>SwyChr is not just an app; it is a fundamental reconfiguration of value exchange
-              , built on the pillars of transparency, institutional security, and radical accessibility.</p>
+             built on the pillars of transparency, institutional security, and radical accessibility.</p>
           </div>
         </div>
       </div>
