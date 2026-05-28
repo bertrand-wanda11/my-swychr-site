@@ -1,17 +1,28 @@
 <template>
-  <div class="blog-post-container" v-if="article">
-    <!-- Banner Image -->
-    <img :src="article.image.url" alt="Article Banner" class="banner-img" />
-    
-    <!-- Title -->
+  <div v-if="article" class="blog-detail">
     <h1>{{ article.title }}</h1>
-    <p class="meta">Published on: {{ article.publishedDate }} | Read time: {{ article.readTime }}</p>
-    
-    <!-- Body Content -->
-    <div class="content" v-html="article.content.html"></div>
+    <p>{{ article.publishedDate }} • {{ article.readTime }}</p>
+    <img :src="article.image?.url" alt="Featured Image" class="featured-img" />
+
+    <div class="article-body">
+      <div v-for="block in article.content" :key="block.id">
+        
+        <div v-if="block.__typename === 'ArticleParagraph'" v-html="block.paragraphText?.html"></div>
+        
+        <div v-else-if="block.__typename === 'ArticleImageSection'">
+          <img :src="block.image?.url" class="content-section-img" />
+        </div>
+        
+        <div v-else-if="block.__typename === 'ArticleProductCallout'" class="product-callout">
+          <h3>{{ block.headline }}</h3>
+          <div v-html="block.calloutText?.html"></div>
+        </div>
+
+      </div>
+    </div>
   </div>
-  <div v-else class="loading">
-    <p>Loading article details...</p>
+  <div v-else>
+    Loading article details...
   </div>
 </template>
 
@@ -33,13 +44,28 @@ export default {
       
       // 2. Fetch data from your Hygraph API Endpoint
       const endpoint = "https://eu-west-2.cdn.hygraph.com/content/cmpp80hgg017m07waow6ie7iw/master"; 
-      const query = `
+     const query = `
         query GetArticleBySlug($slug: String!) {
-          article(where: { slug: $slug }) {
+          articles(where: { slug: $slug }) {
             title
             publishedDate
             readTime
-            content { html }
+            content {
+              __typename
+              ... on ArticleParagraph {
+                id
+                paragraphText: text { html }
+              }
+              ... on ArticleImageSection {
+                id
+                image { url }
+              }
+              ... on ArticleProductCallout {
+                id
+                headline
+                calloutText: text { html }
+              }
+            }
             image { url }
           }
         }
