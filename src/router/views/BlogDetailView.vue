@@ -77,8 +77,14 @@ export default {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ query, variables: { slug: currentSlug } })
         });
-        const result = await response.json();
-        this.article = result.data.article;
+       const result = await response.json();
+    
+    // Check if articles array exists and has at least one item
+    if (result.data && result.data.articles && result.data.articles.length > 0) {
+      this.article = result.data.articles[0];
+    } else {
+      console.error("No article matched this slug in Hygraph");
+    }
       } catch (error) {
         console.error("Error pulling article from Hygraph:", error);
       }
