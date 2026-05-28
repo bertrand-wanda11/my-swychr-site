@@ -72,7 +72,7 @@ const routes = [
   { path: '/Footer', name: 'Footer', component: FooterView },
   { path: '/Country', name: 'Country', component: Country },
   { path: '/Board', name: 'Board', component: Board },
-  { path: '/blog/:slug', name: 'BlogDetail', component: () => import('./views/BlogDetailView.vue') },
+  { path: '/blog/:slug', name: 'BlogDetail', component: () => import('@/router/views/BlogDetailView.vue') },
 ]
 
 const router = createRouter({
