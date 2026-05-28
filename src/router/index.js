@@ -34,6 +34,7 @@ import Airtime1View from './views/Airtime1View.vue'
 import FooterView from '../components/FooterView.vue'
 import Country from '../components/CountryView.vue'
 import Board from '../components/BoardView.vue'
+import BlogDetailView from './views/BlogDetailView.vue'
 
 
 const routes = [
@@ -72,7 +73,7 @@ const routes = [
   { path: '/Footer', name: 'Footer', component: FooterView },
   { path: '/Country', name: 'Country', component: Country },
   { path: '/Board', name: 'Board', component: Board },
-  { path: '/blog/:slug', name: 'BlogDetail', component: () => import('@/router/views/BlogDetailView.vue') },
+  { path: '/blog/:slug', name: 'BlogDetail', component: BlogDetailView },
 ]
 
 const router = createRouter({
