@@ -2460,6 +2460,7 @@ width: max-content;
   /* CHANGE HERE: Make the box take up 100% of its fluid container width */
   width: 100% !important; 
   box-sizing: border-box !important; /* Ensures padding stays contained inside the box */
+  position: relative !important;
   
   transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease !important;
   cursor: pointer !important;
