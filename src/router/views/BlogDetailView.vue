@@ -8,9 +8,7 @@
         <span class="divider">•</span>
         <span>{{ article.readTime }}</span>
       </div>
-      <div class="featured-image-wrapper">
-        <img :src="article.image?.url" alt="Featured Image" class="featured-img" />
-      </div>
+      
     </header>
 
     <article class="article-body">
