@@ -480,27 +480,22 @@
 <section class="section9">
   <div class="inside9">
     <div class="thedon9">
-<div class="">
-  <div class="comply">
-<div class="spir9"> Frequently Asked</div>
-<div class="person9">Question</div>
-</div>
-
-<br>  
-<br>   
-<br>  
-<br> 
-<br>  
-<br> 
-<div class="tropic">
-  <h1 class="millof1">Can't find the answers you're looking for?</h1>
-  <p class="millof">
-    Explore our detailed FAQ page</p>
-    <div class=""> 
-      <li class="steve9"><a href="Frequent">More FAQs</a></li>
-</div>
-</div> 
-</div>
+<div class="faq-sidebar">
+            <div class="comply">
+              <div class="spir9">Frequently Asked</div>
+              <div class="person9">Question</div>
+            </div>
+            
+            <br><br><br><br><br>
+            
+            <div class="tropic">
+              <h1 class="millof1">Can't find the answers you're looking for?</h1>
+              <p class="millof">Explore our detailed FAQ page</p>
+              <div class="">
+                <li class="steve9"><a href="Frequent">More FAQs</a></li>
+              </div>
+            </div>
+          </div>
 <div class="">
 <div class="supportsection2">
 
@@ -2334,14 +2329,24 @@ width: max-content;
   margin-right: auto;
 }
 
+.faq-sidebar {
+  flex: 0 1 400px !important;
+  min-width: 280px !important;
+  padding-left: 1.5rem !important; 
+  box-sizing: border-box !important;
+}
+
+
 .thedon9 { 
   display: flex !important;
-  max-width: 1200px !important; /* Forces the section into a centered reading grid */
-  margin: 0 auto !important;    /* Centers the entire row on large screens */
+  max-width: 1240px !important; 
+  margin: 0 auto !important;    
   gap: 4rem !important; 
   align-items: flex-start !important; 
-  justify-content: center !important; /* Centers the left card and right list together */
+  justify-content: space-between !important; 
   padding: 0 2rem !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 .person9 {
@@ -2456,8 +2461,6 @@ width: max-content;
   letter-spacing: -0.01em !important;
   line-height: 1.4 !important;
   box-shadow: var(--sh-xs) !important;
-  
-  /* CHANGE HERE: Make the box take up 100% of its fluid container width */
   width: 100% !important; 
   box-sizing: border-box !important; /* Ensures padding stays contained inside the box */
   position: relative !important;
@@ -4576,10 +4579,12 @@ html { scroll-behavior: smooth; }
   margin: 0.75rem !important;
   transition: transform 300ms var(--ease-out), box-shadow 300ms ease !important;
 }
+
 .semi8:hover {
   transform: translateY(-7px) !important;
   box-shadow: 0 20px 48px rgba(140,27,193,0.12), 0 6px 16px rgba(0,0,0,0.06) !important;
 }
+
 .kiman1 {
   display: flex !important;
   align-items: center !important;

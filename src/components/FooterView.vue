@@ -59,7 +59,7 @@
     <div class="mother11lay">
       <div class="mother-number11lay"><b><span class="span1lay">Company</span></b></div>
       <div class="mother-pip11lay">
-        <a href="About" target="_blank">Gallery</a><br><br>
+        <a href="Gallery" target="_blank">Gallery</a><br><br>
         <a href="" target="_blank">Our Mission</a><br><br>
         <a href="" target="_blank">Press & Media</a><br><br>
         <a href="Sales" target="_blank">Contact</a><br><br>
