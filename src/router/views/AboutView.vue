@@ -223,8 +223,8 @@ const values = [
 
 const milestones = [
   {
-    title: 'US$+ 250MGlobal Volume',
-    desc: 'Over $250M in transactions processed securely for our customers worldwide.'
+    title: 'US +$250M Global Volume',
+    desc: 'Over +$250M in transactions processed securely for our customers worldwide.'
   },
   {
     title: '50,000+ Strong',

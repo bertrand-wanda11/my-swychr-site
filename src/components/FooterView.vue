@@ -59,7 +59,7 @@
     <div class="mother11lay">
       <div class="mother-number11lay"><b><span class="span1lay">Company</span></b></div>
       <div class="mother-pip11lay">
-        <a href="About" target="_blank">About Us</a><br><br>
+        <a href="About" target="_blank">Gallery</a><br><br>
         <a href="" target="_blank">Our Mission</a><br><br>
         <a href="" target="_blank">Press & Media</a><br><br>
         <a href="Sales" target="_blank">Contact</a><br><br>
@@ -75,7 +75,7 @@
 
     <div class="sergiolay">
       <div class="zoukielay">
- <h3 class="sergiopikanlay"> © 2026 The Swych Group(TSG)</h3>
+ <h3 class="sergiopikanlay"> © 2026 The Swych Group Inc.(TSG)</h3>
 <p class="sergiosonlay">Borderless finance for a digital world.</p>
 </div>
 
@@ -121,7 +121,7 @@ the Swychr mobile application, Swychr Connect web platform, and API suites are f
      of Directors – SWYCO-COOP-BOD), operating  Financial Cooperative <br> Number
      <b>26/022/CMR/SW/53/282/CCA/036004/036004000</b><br>
 <br>
-     © 2026 The Swych Group(TSG). All rights reserved.
+     © 2026 The Swych Group Inc.(TSG). All rights reserved.
 
     </p>
     </div>

@@ -157,7 +157,7 @@ import securityculture4 from '@/assets/images/life3.png'
 
 const statistics = [
   { number: '30+', label: 'Markets Active' },
-  { number: '$5B+', label: 'Value Processed' },
+  { number: '+$250M', label: 'Value Processed' },
   { number: '24/7', label: 'Uptime Mandate' }
 ];
 
