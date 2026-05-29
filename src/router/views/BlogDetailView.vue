@@ -1,28 +1,39 @@
 <template>
-  <div v-if="article" class="blog-detail">
-    <h1>{{ article.title }}</h1>
-    <p>{{ article.publishedDate }} • {{ article.readTime }}</p>
-    <img :src="article.image?.url" alt="Featured Image" class="featured-img" />
+  <div v-if="article" class="blog-container">
+    
+    <header class="article-header">
+      <h1 class="main-title">{{ article.title }}</h1>
+      <div class="article-meta">
+        <span>{{ article.publishedDate }}</span>
+        <span class="divider">•</span>
+        <span>{{ article.readTime }}</span>
+      </div>
+      <div class="featured-image-wrapper">
+        <img :src="article.image?.url" alt="Featured Image" class="featured-img" />
+      </div>
+    </header>
 
-    <div class="article-body">
-      <div v-for="block in article.content" :key="block.id">
+    <article class="article-body">
+      <div v-for="block in article.content" :key="block.id" class="content-block">
         
-        <div v-if="block.__typename === 'ArticleParagraph'" v-html="block.paragraphText?.html"></div>
+        <div v-if="block.__typename === 'ArticleParagraph'" v-html="block.paragraphText?.html" class="paragraph-text"></div>
         
-        <div v-else-if="block.__typename === 'ArticleImageSection'">
-          <img :src="block.image?.url" class="content-section-img" />
+        <div v-else-if="block.__typename === 'ArticleImageSection'" class="inline-image-wrapper">
+          <img :src="block.image?.url" class="inline-content-img" />
         </div>
         
-        <div v-else-if="block.__typename === 'ArticleProductCallout'" class="product-callout">
-          <h3>{{ block.headline }}</h3>
-          <div v-html="block.calloutText?.html"></div>
+        <div v-else-if="block.__typename === 'ArticleProductCallout'" class="question-callout-box">
+          <h3 class="section-heading">{{ block.headline }}</h3>
+          <div v-html="block.calloutText?.html" class="callout-body-text"></div>
         </div>
 
       </div>
-    </div>
+    </article>
+
   </div>
-  <div v-else>
-    Loading article details...
+  <div v-else class="loading-wrapper">
+    <div class="spinner"></div>
+    <p>Loading article details...</p>
   </div>
 </template>
 
@@ -94,9 +105,132 @@ export default {
 </script>
 
 <style scoped>
-.blog-post-container { max-width: 800px; margin: 0 auto; padding: 2rem; }
-.banner-img { width: 100%; height: auto; border-radius: 8px; }
-h1 { margin-top: 1.5rem; font-size: 2.5rem; }
-.meta { color: #666; font-style: italic; }
-.content { margin-top: 2rem; line-height: 1.8; font-size: 1.1rem; }
+/* Main Content Wrapper Container */
+.blog-container {
+  max-width: 680px; /* Golden standard width for optimal reading line-length */
+  margin: 0 auto;
+  padding: 60px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #2d3748;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Header Text Alignments */
+.article-header {
+  margin-bottom: 40px;
+  text-align: left; /* Keep metadata and main title aligned cleanly left */
+}
+
+.main-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #1a202c;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+/* Metadata formatting */
+.article-meta {
+  font-size: 0.95rem;
+  color: #718096;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+.divider {
+  margin: 0 10px;
+  color: #cbd5e0;
+}
+
+/* Premium Image Frame Scaling */
+.featured-image-wrapper {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  margin-top: 24px;
+}
+
+.featured-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain; /* Prevents logo cropping while sizing nicely */
+  background-color: #f7fafc; /* Adds subtle frame around transparent imagery */
+  display: block;
+}
+
+/* Article Body Typography Alignment */
+.article-body {
+  text-align: left; /* Restores comfortable text line alignment */
+}
+
+.content-block {
+  margin-bottom: 32px;
+}
+
+/* Paragraph spacing rules */
+.paragraph-text {
+  font-size: 1.15rem;
+  color: #2d3748;
+  letter-spacing: -0.003em;
+}
+
+/* Headings Configuration (Your Questions) */
+.section-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a202c;
+  line-height: 1.3;
+  margin-top: 40px;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+/* Subtle frame for your questions & answers to keep them distinct */
+.question-callout-box {
+  background: #ffffff;
+  border-left: 4px solid #635bff; /* SwyChr branded color accent line */
+  padding: 8px 0 8px 24px;
+  margin: 35px 0;
+}
+
+.callout-body-text {
+  font-size: 1.15rem;
+  color: #4a5568;
+}
+
+/* Deep selection to safely style rich text raw HTML nodes natively */
+:deep(p) {
+  margin-bottom: 20px;
+}
+:deep(a) {
+  color: #635bff;
+  text-decoration: none;
+  font-weight: 600;
+}
+:deep(a:hover) {
+  text-decoration: underline;
+}
+
+/* Loading Layout */
+.loading-wrapper {
+  text-align: center;
+  padding: 100px 20px;
+  color: #718096;
+  font-size: 1.1rem;
+}
+
+/* Responsive UI Overrides for Mobile Web Browsers */
+@media (max-width: 640px) {
+  .main-title {
+    font-size: 1.95rem;
+  }
+  .blog-container {
+    padding: 30px 16px;
+  }
+  .section-heading {
+    font-size: 1.35rem;
+  }
+}
 </style>
