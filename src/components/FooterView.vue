@@ -118,8 +118,8 @@ the Swychr mobile application, Swychr Connect web platform, and API suites are f
    <b>Jurisdiction-Specific Disclosures (Cameroon)</b> Local microfinance and banking services 
    offered within the Republic of Cameroon through the Swychr Pay mobile and web<br>  app are 
     provided under a Category 1 Microfinance Institution (Swychr Cooperative Society with Board
-     of Directors – SWYCOP BOD), operating  Financial Cooperative Submission<br> Number
-     <b>340/MINADER/DRADER/DDADER/SDR.</b><br>
+     of Directors – SWYCO-COOP-BOD), operating  Financial Cooperative <br> Number
+     <b>26/022/CMR/SW/53/282/CCA/036004/036004000</b><br>
 <br>
      © 2026 The Swych Group(TSG). All rights reserved.
 
