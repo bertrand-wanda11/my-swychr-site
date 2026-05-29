@@ -2334,14 +2334,14 @@ width: max-content;
   margin-right: auto;
 }
 
-.thedon9 {
-  display: inline-flex;
-  align-items: center;
-  text-align: center; 
-  justify-content: center;
-  gap: 1.875rem; 
-  margin-right: 5.75vw; 
-  border-radius: 1.25rem; 
+.thedon9 { 
+  display: flex !important;
+  max-width: 1200px !important; /* Forces the section into a centered reading grid */
+  margin: 0 auto !important;    /* Centers the entire row on large screens */
+  gap: 4rem !important; 
+  align-items: flex-start !important; 
+  justify-content: center !important; /* Centers the left card and right list together */
+  padding: 0 2rem !important;
 }
 
 .person9 {
@@ -2438,30 +2438,32 @@ width: max-content;
   text-decoration: none;
 }
    
-.supportsection2 {
-    margin: 1.25rem auto; 
-    padding: 1.25rem; 
-    border-radius: 0.5rem; 
-    justify-content:left;
-    text-align: left;
+.supportsection2 { 
+  flex: 1 !important;
+  max-width: 640px !important; /* Limits how wide the questions can grow */
+  padding: 0 !important; 
+  margin: 0 !important; 
 }
 
 .wanda-request {
-    padding: 2.1875rem 0.9375rem; 
-    background-color: #FAFAFA;
-    cursor: pointer;
-    position: relative;  
-    display: block;
-    transition: background-color 0.2s;
-    text-align: justify;
-    width: 35.625rem; 
-    border-radius: 0.9375rem; 
-    color: var(--Black-Main, #282828);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.25rem; 
-    font-style: normal;
-    font-weight: 500;
-    line-height: 120%;
+  background: #ffffff !important;
+  border: 1px solid var(--c-gray-200) !important;
+  border-radius: 14px !important;
+  padding: 1.2rem 3.5rem 1.2rem 1.4rem !important;
+  font-size: 0.98rem !important;
+  font-weight: 600 !important;
+  color: var(--c-gray-800) !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.4 !important;
+  box-shadow: var(--sh-xs) !important;
+  
+  /* CHANGE HERE: Make the box take up 100% of its fluid container width */
+  width: 100% !important; 
+  box-sizing: border-box !important; /* Ensures padding stays contained inside the box */
+  
+  transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease !important;
+  cursor: pointer !important;
+  display: block !important;
 }
 
 .wanda-icon {
