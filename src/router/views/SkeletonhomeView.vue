@@ -2444,6 +2444,8 @@ width: max-content;
     margin: 1.25rem auto; 
     padding: 1.25rem; 
     border-radius: 0.5rem; 
+    justify-content:left;
+    text-align: left;
 }
 
 .wanda-request {

@@ -144,16 +144,16 @@ export default {
 }
 
 /* Premium Image Frame Scaling */
+
 .featured-image-wrapper {
-  width: 100%;
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
-  margin-top: 24px;
+  display: flex;
+  justify-content: center; /* Centers the image */
+  margin: 20px 0;         /* Adds space above and below */
 }
 
+
 .featured-img {
-  width: 250px; /* 👈 Change 100% to a small fixed size like this */
+  width: 100%; /* 👈 Change 100% to a small fixed size like this */
   height: auto; /* 👈 Keeps the aspect ratio from breaking */
   object-fit: contain; /* Prevents logo cropping while sizing nicely */
   background-color: #f7fafc; /* Adds subtle frame around transparent imagery */
