@@ -2,11 +2,12 @@
   <div>
 <section class="Gallery1">
  <NavBar /> 
-<h1>Welcome To SwyChr's Gallery</h1>  
+
 
 </section >
 
 <section class= "Gallery2">
+  <h1>Welcome To SwyChr's Gallery</h1>  
   <h3>A day at Swychr Cameroon office.</h3>
 <a href="https://drive.google.com/drive/folders/1vcgQKDfs4h8mkTHzmkhFvl6XezdWxmZX?usp=sharing" 
 target="_blank"
