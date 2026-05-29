@@ -151,8 +151,8 @@ export default {
 }
 
 .featured-img {
-  width: 100%;
-  max-height: 400px;
+  width: 250px; /* 👈 Change 100% to a small fixed size like this */
+  height: auto; /* 👈 Keeps the aspect ratio from breaking */
   object-fit: contain; /* Prevents logo cropping while sizing nicely */
   background-color: #f7fafc; /* Adds subtle frame around transparent imagery */
   display: block;
