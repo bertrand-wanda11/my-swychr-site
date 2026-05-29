@@ -1475,7 +1475,6 @@ width: max-content;
   position: absolute;
 }
 
-
 .ring-inner { 
   width: 30.195rem; 
   height: 30.427rem;
@@ -2162,7 +2161,6 @@ width: max-content;
   font-weight: bold;
 }
 
-
 .section8 {
   padding: 3.125rem 0; 
   text-align: center;
@@ -2342,7 +2340,7 @@ width: max-content;
   text-align: center; 
   justify-content: center;
   gap: 1.875rem; 
-  margin-right: 3.75vw; 
+  margin-right: 5.75vw; 
   border-radius: 1.25rem; 
 }
 
@@ -3519,7 +3517,7 @@ html { scroll-behavior: smooth; }
   backdrop-filter: blur(14px) saturate(160%) !important;
   -webkit-backdrop-filter: blur(14px) saturate(160%) !important;
   box-shadow: 0 2px 20px rgba(0,0,0,0.18),
-              inset 0 1px 0 rgba(255,255,255,0.14) !important;
+  inset 0 1px 0 rgba(255,255,255,0.14) !important;
 }
 
 .nav-link {
@@ -4607,6 +4605,7 @@ html { scroll-behavior: smooth; }
   color: var(--c-gray-700) !important;
   white-space: normal !important;
 }
+
 .kimani3 {
   display: flex !important;
   align-items: center !important;
@@ -4616,12 +4615,14 @@ html { scroll-behavior: smooth; }
   font-weight: 600 !important;
   color: var(--c-gray-500) !important;
 }
+
 .kimani3 p {
   margin: 0 !important;
   font-size: 0.8rem !important;
   font-weight: 600 !important;
   color: var(--c-gray-600) !important;
 }
+
 .kimani3 img {
   width: 30px !important;
   height: 30px !important;
@@ -4629,6 +4630,7 @@ html { scroll-behavior: smooth; }
   object-fit: cover !important;
   flex-shrink: 0;
 }
+
 .sophia, .soph { padding-left: 0 !important; margin-left: auto !important; }
 .sophia img, .soph img {
   width: 22px !important;
@@ -4807,6 +4809,5 @@ input[type="checkbox"]:checked + .wanda-request {
   margin: 0 auto !important;
   border-top: 1px solid rgba(255,255,255,0.06) !important;
 }
-
 
 </style>
