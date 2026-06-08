@@ -333,18 +333,19 @@ import FooterView from '@/components/FooterView.vue';
   height: auto;
   position: relative; 
   width: 100%;
+  overflow: hidden;
   align-items: center;
   justify-content: center;
 }
 
 .termson{
- text-align: center;
-  margin: 0 auto;
-  padding: 0.625rem 0;
-  height: auto;
-  position: relative; 
-  width: 100%;
+  padding-top: 4rem;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  text-align: justify;
+  line-height: 1;
+  margin-left: 6.61vw; 
+  margin-top: 0;
 }
  </style>

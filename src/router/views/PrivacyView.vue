@@ -362,12 +362,13 @@ import FooterView from '@/components/FooterView.vue';
 }  
 
 .term{ 
-  text-align: center;
+   text-align: center;
   margin: 0 auto;
   padding: 0.625rem 0;
   height: auto;
   position: relative; 
   width: 100%;
+  overflow: hidden;
   align-items: center;
   justify-content: center;
 }
@@ -377,7 +378,9 @@ import FooterView from '@/components/FooterView.vue';
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 90vw;
+  text-align: justify;
+  line-height: 1;
+  margin-left: 6.61vw; 
   margin-top: 0;
 }
  </style>
