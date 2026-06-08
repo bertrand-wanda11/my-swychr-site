@@ -381,8 +381,8 @@ import FooterView from '@/components/FooterView.vue';
 }
 
 .termp{
-    text-align: right;
+    text-align: left;
   line-height: 1;
-  margin-left: 3.61vw; 
+  margin-left: 1.61vw; 
 }
  </style>
