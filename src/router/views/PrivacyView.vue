@@ -362,25 +362,27 @@ import FooterView from '@/components/FooterView.vue';
 }  
 
 .term{ 
-   text-align: center;
+  text-align: center;
   margin: 0 auto;
   padding: 0.625rem 0;
   height: auto;
   position: relative; 
   width: 100%;
-  overflow: hidden;
   align-items: center;
   justify-content: center;
 }
 
 .termson{
-  padding-top: 4rem;
-  display: inline-flex;
+  padding-top: 3rem; 
+  display: block;
   align-items: center;
   justify-content: center;
-  text-align: justify;
+  margin-top: 0; 
+}
+
+.termp{
+    text-align: justify;
   line-height: 1;
-  margin-left: 6.61vw; 
-  margin-top: 0;
+  margin-left: 2.61vw; 
 }
  </style>
