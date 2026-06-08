@@ -378,11 +378,13 @@ import FooterView from '@/components/FooterView.vue';
   align-items: center;
   justify-content: center;
   margin-top: 0; 
+   width: 95vw;
 }
 
 .termp{
   text-align: justify;
   line-height: 1;
   margin-left: 6.61vw; 
+    width: 95%;
 }
  </style>
