@@ -373,19 +373,11 @@ import FooterView from '@/components/FooterView.vue';
 }
 
 .termson{
+  padding-top: 4rem;
+  display: inline-flex;
   align-items: center;
-  max-width: 100%; 
-  margin:0 auto;
-  padding: 0 20px;
-  text-align: justify;
   justify-content: center;
-  margin-left: auto;
-  margin-right: auto; 
-  color: #000;
- font-family: 'Montserrat', sans-serif;
-font-size: 20px;
-font-style: normal;
-font-weight: 500;
-line-height: 120% 
+  width: 90vw;
+  margin-top: 0;
 }
  </style>
