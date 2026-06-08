@@ -362,12 +362,14 @@ import FooterView from '@/components/FooterView.vue';
 }  
 
 .term{ 
-  padding: 50px 0;
   text-align: center;
-  width:100%; 
   margin: 0 auto;
-  background-color: #fff;
-   font-family: 'Montserrat', sans-serif;
+  padding: 0.625rem 0;
+  height: auto;
+  position: relative; 
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .termson{

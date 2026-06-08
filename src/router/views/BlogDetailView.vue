@@ -151,7 +151,6 @@ export default {
   margin: 20px 0;         /* Adds space above and below */
 }
 
-
 .featured-img {
   width: 100%; /* 👈 Change 100% to a small fixed size like this */
   height: auto; /* 👈 Keeps the aspect ratio from breaking */
