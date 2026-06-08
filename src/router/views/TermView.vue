@@ -350,6 +350,6 @@ import FooterView from '@/components/FooterView.vue';
   text-align: justify;
   line-height: 1;
   margin-left: 6.61vw; 
-  width: 94%;
+  width: 93%;
 }
  </style>
