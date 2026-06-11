@@ -495,7 +495,7 @@ onBeforeUnmount(() => {
 .nav-cta-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.18);
-}
+} 
 .nav-cta-btn a {
   color: #8C1BC1;
   font-size: 0.825rem;

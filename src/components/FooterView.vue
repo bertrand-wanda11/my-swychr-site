@@ -121,8 +121,8 @@ the Swychr mobile application, Swychr Connect web platform, and API suites are f
      of Directors – SWYCO-COOP-BOD), operating  Financial Cooperative <br> Number
      <b>26/022/CMR/SW/53/282/CCA/036004/036004000</b><br>
 <br>
-     © 2026 The Swych Group Inc.(TSG). All rights reserved.
-
+     © 2026 The Swych Group Inc.(TSG). All rights reserved.<br>
+     Swychr Technology Africa Limited is a member of Cameroon Fintech Association (CFIA)
     </p>
     </div>
  </section>
