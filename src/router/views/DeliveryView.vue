@@ -28,6 +28,67 @@
 
     </div>
 </section>
+
+<section class="features-section">
+    <div class="features-container">
+      
+      <div class="features-section-header">
+        <h2 class="features-main-title">Core Product Features</h2>
+        <p class="features-section-subtitle">Why leading global platforms choose Swychr Connect infrastructure.</p>
+      </div>
+
+      <div class="features-grid">
+        
+        <div class="feature-card">
+          <div class="feature-icon-frame">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          </div>
+          <h3 class="feature-title">Truly Borderless Coverage</h3>
+          <p class="feature-description">
+            Don't limit your app to local borders. Give your users the power to reach home instantly. Our infrastructure connects your platform to <strong>over 500 major Telcos</strong> (including MTN, Orange, Vodafone, Airtel, Safaricom, and Globe) spanning Africa, Asia, Europe, and Latin America.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-frame">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+          </div>
+          <h3 class="feature-title">100% White-Labeled Infrastructure</h3>
+          <p class="feature-description">
+            Your customers stay <em>your</em> customers. The entire transaction happens natively inside your existing mobile app or web portal. <strong>Swychr</strong> operates strictly in the background as your silent technology engine.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-frame">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          </div>
+          <h3 class="feature-title">Stable Pricing with Interbank FX Optimization</h3>
+          <p class="feature-description">
+            Eliminate the headache of managing multi-currency liquidity reserves.
+          </p>
+          <ul class="feature-list-bullet">
+            <li>Our API is a <strong>purely USD-denominated product</strong>.</li>
+            <li>We supply inventory below face value in USD, and you bill clients in USD.</li>
+            <li>End-beneficiaries receive local value at competitive conversion rates updated weekly by our internal treasury desk.</li>
+          </ul>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-frame">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          </div>
+          <h3 class="feature-title">Instant, Automated Provisioning</h3>
+          <p class="feature-description">
+            No delays, no manual queues. Airtime refills and high-speed data bundles are systematically routed and delivered to the destination mobile number in milliseconds, backed by our 24/7 automated network infrastructure.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
 <FooterView />
  
  </div> 
@@ -58,6 +119,8 @@ export default {
 </script>
 
 <style scoped>
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 .hero-section {
   width: 100%;
   min-height: 75vh;
@@ -217,6 +280,164 @@ export default {
   .btn {
     width: 100%; /* Spreads button click paths to match thumb margins on screen profiles */
     font-size: 1.05rem;
+  }
+}
+
+
+/* ==========================================================================
+   🖥️ GLOBAL VALUES & DESKTOP FEATURE ROWS
+   ========================================================================== */
+.features-section {
+  width: 100%;
+  background-color: #fcfbfe; /* Light background contrast color */
+  padding: 6rem 2rem;
+  font-family: 'Montserrat', sans-serif; /* Explicit Montserrat Requirement */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.features-container {
+  max-width: 1240px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.features-section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.features-main-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a0830;
+  margin: 0 0 0.75rem 0;
+  letter-spacing: -0.02em;
+}
+
+.features-section-subtitle {
+  font-size: 1.1rem;
+  color: #6c5e7e;
+  margin: 0;
+}
+
+/* Feature Row Grid Matrix Settings */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Clean desktop horizontal presentation */
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* Feature Box Layout Cards */
+.feature-card {
+  background-color: #ffffff;
+  border: 1px solid #efeaf6;
+  border-radius: 16px;
+  padding: 2.25rem 1.75rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(59, 21, 101, 0.06);
+}
+
+/* Icon Enclosure Circles */
+.feature-icon-frame {
+  width: 48px;
+  height: 48px;
+  background-color: #f4effc;
+  color: #3b1565; /* Swychr brand purple */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.feature-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a0830;
+  line-height: 1.4;
+  margin: 0 0 1rem 0;
+}
+
+.feature-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #5c4e6e;
+  margin: 0;
+}
+
+/* Specialized Bulleted List for FX feature block */
+.feature-list-bullet {
+  margin: 1rem 0 0 0;
+  padding-left: 1.2rem;
+  list-style-type: disc;
+}
+
+.feature-list-bullet li {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #5c4e6e;
+  margin-bottom: 0.75rem;
+}
+
+.feature-list-bullet li:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   📱 TABLET & MOBILE VIEW BREAKPOINTS
+   ========================================================================== */
+
+/* 1. Tablet Screens Optimization (Max Width: 1024px) */
+@media (max-width: 1024px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr); /* Drops to a clean 2x2 grid setup */
+    gap: 1.75rem;
+  }
+  
+  .features-main-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* 2. Mobile Phone Screens Optimization (Max Width: 640px) */
+@media (max-width: 640px) {
+  .features-section {
+    padding: 4rem 1.25rem; /* Tightens side padding margins on touchscreens */
+  }
+
+  .features-section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .features-main-title {
+    font-size: 1.8rem;
+  }
+
+  .features-section-subtitle {
+    font-size: 1rem;
+  }
+
+  /* Force cards to stack completely vertical for easy scrolling */
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .feature-card {
+    padding: 2rem 1.5rem;
   }
 }
 </style>
