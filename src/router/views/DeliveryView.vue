@@ -203,7 +203,7 @@ export default {
     margin-bottom: 2rem;
   }
 
-  /* Stack button loops cleanly on ultra-narrow frames */
+  
   .hero-cta-group {
     flex-direction: column;
     width: 100%;
