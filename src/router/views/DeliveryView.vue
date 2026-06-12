@@ -1,6 +1,6 @@
 <template>
  <div>
-<header class="hero-section">
+<section class="hero-section">
    <NavBar />
     <div class="hero-container">
       
@@ -27,7 +27,7 @@
       </div>
 
     </div>
-  </header>
+</section>
 <FooterView />
 
  </div> 
