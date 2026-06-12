@@ -29,7 +29,7 @@
     </div>
 </section>
 <FooterView />
-
+ 
  </div> 
 </template>
 
@@ -38,6 +38,10 @@ import NavBar from '@/components/NavBar.vue';
 import FooterView from '@/components/FooterView.vue';
 export default {
   name: "WebsiteHero",
+  components: {
+    NavBar,
+    FooterView
+  },
   methods: {
     handleGetApiKeys() {
       // Direct your developers straight to registration paths or documentation handles
