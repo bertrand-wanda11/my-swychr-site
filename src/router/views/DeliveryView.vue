@@ -1,7 +1,7 @@
 <template>
  <div>
+     <NavBar />
 <section class="hero-section">
-   <NavBar />
     <div class="hero-container">
       
       <div class="hero-content">
