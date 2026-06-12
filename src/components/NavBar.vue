@@ -179,7 +179,7 @@ const navItems = [
       { name: 'Online Payments',           icon: onlinePayIcon,   path: '/Online'   },
       { name: 'Lastmile Payment Delivery', icon: crossBorderIcon, path: '/Lastmile' },
       { name: 'Virtual Card Issuance',     icon: Virtualcard,     path: '/Issuance' },
-      { name: 'Airtime Delivery',     icon: Cupcake,     path: '/Issuance' },
+      { name: 'Airtime Delivery',     icon: Cupcake,     path: '/Delivery' },
     ],
   },
   {
