@@ -139,6 +139,8 @@ import About           from '@/assets/images/About Us.png';
 import Careers         from '@/assets/images/Careers.png';
 import Blogs           from '@/assets/images/Blogs.png';
 import Culture         from '@/assets/images/Culture.png';
+import Cupcake         from   '@/assets/images/grenn.svg';
+
 
 defineProps({
   ctaText:     { type: String,  default: 'Open Web App' },
@@ -177,6 +179,7 @@ const navItems = [
       { name: 'Online Payments',           icon: onlinePayIcon,   path: '/Online'   },
       { name: 'Lastmile Payment Delivery', icon: crossBorderIcon, path: '/Lastmile' },
       { name: 'Virtual Card Issuance',     icon: Virtualcard,     path: '/Issuance' },
+      { name: 'Airtime Delivery',     icon: Cupcake,     path: '/Issuance' },
     ],
   },
   {

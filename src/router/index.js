@@ -36,6 +36,7 @@ import Country from '../components/CountryView.vue'
 import Board from '../components/BoardView.vue'
 import BlogDetailView from './views/BlogDetailView.vue'
 import GalleryView from './views/GalleryView.vue'
+import DeliveryView from './views/DeliveryView.vue'
 
 const routes = [
   { path: '/', name: 'skeletonhome', component: SkeletonhomeView },
@@ -74,7 +75,8 @@ const routes = [
   { path: '/Country', name: 'Country', component: Country },
   { path: '/Board', name: 'Board', component: Board },
   { path: '/blog/:slug', name: 'BlogDetail', component: BlogDetailView },
-  { path: '/Gallery', name: 'Gallery', component: GalleryView }
+  { path: '/Gallery', name: 'Gallery', component: GalleryView },
+  { path: '/Delivery', name: 'Delivery', component: DeliveryView }
 ]
 
 const router = createRouter({

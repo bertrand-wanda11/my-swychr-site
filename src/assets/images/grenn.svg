@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#3b1565" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect x="136" y="48" width="240" height="416" rx="36" fill="#3b1565" filter="url(#soft-shadow)" />
+  
+  <rect x="156" y="68" width="200" height="376" rx="22" fill="#250943" />
+  
+  <rect x="226" y="56" width="60" height="6" rx="3" fill="#1b0334" opacity="0.4" />
+
+  <g fill="#00d293" opacity="0.8">
+    <rect x="312" y="86" width="4" height="12" rx="1" />
+    <rect x="320" y="82" width="4" height="16" rx="1" />
+    <rect x="328" y="76" width="4" height="22" rx="1" />
+    <rect x="336" y="70" width="4" height="28" rx="1" />
+  </g>
+
+  <path d="M280 130 L170 280 L245 280 L210 390 L340 230 L260 230 Z" 
+        fill="#00d293" 
+        stroke="#ffffff" 
+        stroke-width="4" 
+        stroke-linejoin="round" />
+
+  <circle cx="256" cy="424" r="10" fill="#ffffff" opacity="0.2" />
+</svg>
