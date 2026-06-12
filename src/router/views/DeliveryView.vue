@@ -1,7 +1,6 @@
 <template>
  <div>
     <CountryView /> 
-     <NavBar />
 <section class="hero-section">
     <div class="hero-container">
       
@@ -36,12 +35,10 @@
 
 <script >
 import CountryView from '@/components/CountryView.vue';
-import NavBar from '@/components/NavBar.vue';
 import FooterView from '@/components/FooterView.vue';
 export default {
   name: "WebsiteHero",
   components: {
-    NavBar,
     FooterView,
     CountryView
   },
