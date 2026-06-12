@@ -157,7 +157,7 @@
   <input type="checkbox" id="wanda-4">
   <label for="wanda-4" class="wanda-requesttime6">
    Is it really Instant?
-    <span class="wanda-icon"></span>
+
   </label>
   <div class="wanda-expectedtime6">
     <p>SwyChr Connect provides a suite of APIs that enable <br>
