@@ -89,6 +89,68 @@
     </div>
   </section>
 
+
+  <section class="revenue-section">
+    <div class="revenue-container">
+
+      <div class="revenue-header">
+        <h2 class="revenue-main-title">3. The B2B Revenue Model</h2>
+        <p class="revenue-subtitle">
+          We don't just provide a service; we launch a new revenue stream for your business. When you integrate our global top-up API, you unlock <strong>two highly flexible monetization channels</strong>:
+        </p>
+      </div>
+
+      <div class="revenue-flow-chassis">
+        <div class="flow-step step-cost">
+          <span class="step-label">Your Wholesale Cost</span>
+          <p class="step-desc">Buy from Swychr below retail face value in USD</p>
+        </div>
+        
+        <div class="flow-connector-arrow">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </div>
+
+        <div class="flow-options-branch">
+          <div class="branch-card option-a">
+            <span class="branch-tag">Option A</span>
+            <h4>Keep the Retail Spread</h4>
+            <p>Capture the margin variance automatically</p>
+          </div>
+          <div class="branch-card option-b">
+            <span class="branch-tag">Option B</span>
+            <h4>Introduce a Custom Fee</h4>
+            <p>100% yours, straight to your bottom line</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="channels-list">
+        
+        <div class="channel-card">
+          <div class="channel-num-badge">01</div>
+          <div class="channel-body">
+            <h3 class="channel-title">Channel 1: Capture the Spread (Discounted Wholesale Pricing)</h3>
+            <p class="channel-description">
+              Because <strong>Swychr</strong> provisions airtime and data bundles to you at a discounted wholesale rate (less than face value), you can retail them at standard face value to your users. The margin variance goes directly into your operating revenue.
+            </p>
+          </div>
+        </div>
+
+        <div class="channel-card">
+          <div class="channel-num-badge">02</div>
+          <div class="channel-body">
+            <h3 class="channel-title">Channel 2: Custom Convenience Fees</h3>
+            <p class="channel-description">
+              International airtime delivery is a premium convenience for diaspora communities. <strong>Swychr</strong> charges you <strong>zero transaction processing fees</strong> on this API, giving you total freedom to implement a fixed local convenience charge per transaction—adding pure profit straight to your bottom line.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
 <FooterView />
  
  </div> 
@@ -438,6 +500,229 @@ export default {
 
   .feature-card {
     padding: 2rem 1.5rem;
+  }
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+/* ==========================================================================
+   🖥️ DESKTOP STRUCTURAL FRAMEWORK
+   ========================================================================== */
+.revenue-section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 6rem 2rem;
+  font-family: 'Montserrat', sans-serif; /* Explicit Montserrat Setting */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.revenue-container {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.revenue-header {
+  text-align: left;
+  margin-bottom: 3.5rem;
+}
+
+.revenue-main-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1a0830;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.02em;
+}
+
+.revenue-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #5c4e6e;
+  margin: 0;
+}
+
+/* 📊 Visual Diagram Flow Components */
+.revenue-flow-chassis {
+  display: flex;
+  align-items: center;
+  background-color: #fbf9fe;
+  border: 1px solid #efeaf6;
+  border-radius: 20px;
+  padding: 2.5rem;
+  margin-bottom: 4rem;
+  gap: 2rem;
+}
+
+.flow-step {
+  flex: 1;
+  background: #3b1565;
+  color: #ffffff;
+  padding: 2rem 1.5rem;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.flow-step .step-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: #00d293; /* Accent green */
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.flow-step .step-desc {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.flow-connector-arrow {
+  color: #3b1565;
+  display: flex;
+  align-items: center;
+}
+
+.flow-options-branch {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.branch-card {
+  background: #ffffff;
+  border: 1px solid #e5dff2;
+  border-left: 5px solid #3b1565;
+  padding: 1.25rem 1.5rem;
+  border-radius: 4px 12px 12px 4px;
+  text-align: left;
+}
+
+.branch-card h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a0830;
+  margin: 0 0 0.25rem 0;
+}
+
+.branch-card p {
+  font-size: 0.9rem;
+  color: #6c5e7e;
+  margin: 0;
+}
+
+.branch-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #3b1565;
+  background: #f4effc;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 0.4rem;
+}
+
+/* 💡 Text Channels Layout Elements */
+.channels-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.channel-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.75rem;
+  padding: 2rem;
+  background: #ffffff;
+  border: 1px solid #efeaf6;
+  border-radius: 16px;
+  text-align: left;
+}
+
+.channel-num-badge {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #3b1565;
+  background: #f4effc;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.channel-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a0830;
+  margin: 0 0 0.75rem 0;
+}
+
+.channel-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #5c4e6e;
+  margin: 0;
+}
+
+/* ==========================================================================
+   📱 TABLET & MOBILE VIEW BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 850px) {
+  /* Resizes the horizontal diagram into a clean downward vertical stack */
+  .revenue-flow-chassis {
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .flow-step {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .flow-connector-arrow {
+    transform: rotate(90deg); /* Points the connector arrow downward on mobile screens */
+    margin: 0.5rem 0;
+  }
+
+  .flow-options-branch {
+    width: 100%;
+  }
+
+  .channel-card {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .revenue-section {
+    padding: 4rem 1.25rem;
+  }
+
+  .revenue-main-title {
+    font-size: 1.75rem;
+  }
+
+  .revenue-subtitle {
+    font-size: 1rem;
+  }
+
+  .channel-title {
+    font-size: 1.15rem;
   }
 }
 </style>
