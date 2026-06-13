@@ -151,6 +151,77 @@
     </div>
   </section>
 
+
+  <section class="integration-section">
+    <div class="integration-container">
+      
+      <div class="integration-info">
+        <span class="section-tagline">Built by Developers, for Developers</span>
+        <h2 class="integration-main-title">4. Technical Integration &amp; Developer Experience</h2>
+        <p class="integration-subtitle">
+          We know that a product is only as good as its documentation. <strong>Swychr Connect</strong> offers a lightweight, robust, RESTful API environment designed to minimize engineering sprint cycles.
+        </p>
+
+        <div class="integration-features-stack">
+          
+          <div class="tech-feature-node">
+            <h3 class="tech-node-title">Frictionless SDKs &amp; Documentation</h3>
+            <p class="tech-node-desc">
+              Clean JSON structures and comprehensive testing sandboxes mean your team can go from sandbox registration to live global distribution in <strong>under 48 hours</strong>.
+            </p>
+          </div>
+
+          <div class="tech-feature-node">
+            <h3 class="tech-node-title">Programmatic Pre-Transaction Validation</h3>
+            <p class="tech-node-desc">
+              Our API features an automated <strong>Telco Lookup &amp; Rate Preview</strong> function. Before your user hits "Confirm," our system automatically identifies the operator and fetches the exact local currency value the beneficiary will receive, preventing failed transactions and customer support friction.
+            </p>
+          </div>
+
+          <div class="tech-feature-node">
+            <h3 class="tech-node-title">Bank-Grade Compliance</h3>
+            <p class="tech-node-desc">
+              Fully backed by <strong>Swychr's</strong> secure financial infrastructure, ensuring every transaction is encrypted, tracked, and compliant with international cross-border financial data standards.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="integration-visual-terminal">
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="terminal-tab-title">POST /v1/airtime/lookup</span>
+          </div>
+          <div class="terminal-body">
+            <pre><code><span class="token-comment">// Telco Lookup &amp; Rate Preview Response</span>
+{
+  <span class="token-key">"status"</span>: <span class="token-string">"success"</span>,
+  <span class="token-key">"lookup"</span>: {
+    <span class="token-key">"phone"</span>: <span class="token-string">"+2348031234567"</span>,
+    <span class="token-key">"operator"</span>: <span class="token-string">"MTN Nigeria"</span>,
+    <span class="token-key">"supported"</span>: <span class="token-boolean">true</span>
+  },
+  <span class="token-key">"pricing"</span>: {
+    <span class="token-key">"source_currency"</span>: <span class="token-string">"USD"</span>,
+    <span class="token-key">"face_value"</span>: <span class="token-number">10.00</span>,
+    <span class="token-key">"exchange_rate"</span>: <span class="token-number">1485.50</span>,
+    <span class="token-key">"destination_value"</span>: <span class="token-string">"14,855.00 NGN"</span>
+  },
+  <span class="token-key">"provisioning"</span>: <span class="token-string">"instant_automated"</span>
+}</code></pre>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
 <FooterView />
  
  </div> 
@@ -723,6 +794,213 @@ export default {
 
   .channel-title {
     font-size: 1.15rem;
+  }
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+
+/* ==========================================================================
+   🖥️ DESKTOP SPLIT-SCREEN LAYOUT
+   ========================================================================== */
+.integration-section {
+  width: 100%;
+  background-color: #fbf9fe; /* Alternating page break background */
+  padding: 6rem 2rem;
+  font-family: 'Montserrat', sans-serif; /* Explicit Montserrat Setting */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.integration-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 4rem; /* Generous breathing room between columns */
+}
+
+/* Text Information Column */
+.integration-info {
+  flex: 1.2;
+  text-align: left;
+}
+
+.section-tagline {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #00d293; /* Brand interactive green */
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.integration-main-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1a0830;
+  margin: 0 0 1.25rem 0;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.integration-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #5c4e6e;
+  margin: 0 0 3rem 0;
+}
+
+.integration-features-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.tech-feature-node {
+  border-left: 3px solid #3b1565; /* Elegant trailing line highlight */
+  padding-left: 1.5rem;
+}
+
+.tech-node-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a0830;
+  margin: 0 0 0.5rem 0;
+}
+
+.tech-node-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #6c5e7e;
+  margin: 0;
+}
+
+/* Code Terminal Presentation Wrapper */
+.integration-visual-terminal {
+  flex: 1.0;
+  display: flex;
+  justify-content: center;
+}
+
+.terminal-window {
+  width: 100%;
+  max-width: 500px;
+  background-color: #160a22; /* Dark terminal environment matching palette */
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(26, 8, 48, 0.25);
+  overflow: hidden;
+  border: 1px solid #2e1b42;
+}
+
+.terminal-header {
+  background-color: #1d0f2c;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid #2e1b42;
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot.red { background-color: #ff5f56; }
+.dot.yellow { background-color: #ffbd2e; }
+.dot.green { background-color: #27c93f; }
+
+.terminal-tab-title {
+  color: #bfaecf;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  font-weight: 500;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.terminal-body {
+  padding: 1.5rem;
+  margin: 0;
+  overflow-x: auto;
+  text-align: left;
+}
+
+.terminal-body pre {
+  margin: 0;
+}
+
+.terminal-body code {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* JSON Code Syntax Highlighting Colors */
+.token-comment { color: #79668e; font-style: italic; }
+.token-key { color: #a27bf1; }
+.token-string { color: #00d293; }
+.token-number { color: #ffb86c; }
+.token-boolean { color: #ff79c6; }
+
+/* ==========================================================================
+   📱 TABLET & MOBILE VIEW BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 968px) {
+  /* Collapses the split view layout columns safely down to a stacked single viewport orientation */
+  .integration-container {
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  .integration-info, .integration-visual-terminal {
+    width: 100%;
+    flex: none;
+  }
+
+  .terminal-window {
+    max-width: 100%; /* Spreads the code box full screen on tablets */
+  }
+}
+
+@media (max-width: 640px) {
+  .integration-section {
+    padding: 4rem 1.25rem;
+  }
+
+  .integration-main-title {
+    font-size: 1.75rem;
+  }
+
+  .integration-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .tech-feature-node {
+    padding-left: 1rem;
+  }
+
+  .tech-node-title {
+    font-size: 1.1rem;
+  }
+
+  .terminal-body {
+    padding: 1rem; /* Compacts padding to save mobile screenspace dimensions */
+  }
+
+  .terminal-body code {
+    font-size: 0.8rem; /* Drops code down slightly to avoid awkward line-wrapping breaks */
   }
 }
 </style>
