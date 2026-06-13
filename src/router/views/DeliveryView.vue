@@ -94,7 +94,7 @@
     <div class="revenue-container">
 
       <div class="revenue-header">
-        <h2 class="revenue-main-title">3. The B2B Revenue Model</h2>
+        <h2 class="revenue-main-title"> The B2B Revenue Model</h2>
         <p class="revenue-subtitle">
           We don't just provide a service; we launch a new revenue stream for your business. When you integrate our global top-up API, you unlock <strong>two highly flexible monetization channels</strong>:
         </p>
@@ -157,7 +157,7 @@
       
       <div class="integration-info">
         <span class="section-tagline">Built by Developers, for Developers</span>
-        <h2 class="integration-main-title">4. Technical Integration &amp; Developer Experience</h2>
+        <h2 class="integration-main-title">Technical Integration &amp; Developer Experience</h2>
         <p class="integration-subtitle">
           We know that a product is only as good as its documentation. <strong>Swychr Connect</strong> offers a lightweight, robust, RESTful API environment designed to minimize engineering sprint cycles.
         </p>
@@ -226,7 +226,7 @@
     <div class="use-cases-container">
       
       <div class="use-cases-header">
-        <h2 class="use-cases-main-title">5. Ideal Use Cases (Who is this for?)</h2>
+        <h2 class="use-cases-main-title"> Ideal Use Cases (Who is this for?)</h2>
         <p class="use-cases-subtitle">
           Discover how diverse industry platforms utilize Swychr Connect to offer cross-border value-added services.
         </p>
@@ -285,12 +285,11 @@ export default {
   },
   methods: {
     handleGetApiKeys() {
-      // Direct your developers straight to registration paths or documentation handles
+
       console.log("Navigating directly to developer portal registration...");
       this.$emit("get-started");
     },
     handleTalkToExpert() {
-      // Pull up contact modals or calendly routing configurations
       console.log("Opening account management scheduling sequence...");
       this.$emit("contact-sales");
     }
@@ -304,7 +303,7 @@ export default {
 .hero-section {
   width: 100%;
   min-height: 75vh;
-  background-color: #ffffff; /* Clean, modern minimalist profile spacing */
+  background-color: #ffffff; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -322,7 +321,7 @@ export default {
 }
 
 .hero-content {
-  max-width: 850px; /* Restricts row length to improve text readability metrics */
+  max-width: 850px; 
   text-align: left;
 }
 
@@ -330,13 +329,13 @@ export default {
   font-size: 3.2rem;
   font-weight: 800;
   line-height: 1.2;
-  color: #1a0830; /* Dark premium background slate core color */
+  color: #9927D0;
   letter-spacing: -0.03em;
   margin: 0 0 1.5rem 0;
 }
 
 .hero-headline .accent-text {
-  color: #3b1565; /* Swychr brand purple base indicator */
+  color: #9927D0;
   display: block;
   margin-top: 0.25rem;
 }
@@ -344,20 +343,20 @@ export default {
 .hero-subheadline {
   font-size: 1.25rem;
   line-height: 1.65;
-  color: #5c4e6e; /* Softened secondary readability text color */
+  color: #9927D0;
   margin: 0 0 3rem 0;
 }
 
 .hero-subheadline strong {
-  color: #1a0830;
+  color: #9927D0;
 }
 
 .hero-subheadline .brand-highlight {
-  color: #3b1565;
+  color: #9927D0;
   font-weight: 700;
 }
 
-/* Call to Action Button Grid Components */
+
 .hero-cta-group {
   display: flex;
   align-items: center;
@@ -369,7 +368,7 @@ export default {
   font-size: 1rem;
   font-weight: 600;
   padding: 1rem 2rem;
-  border-radius: 12px; /* Smooth professional corporate profiling handles */
+  border-radius: 12px; 
   border: 2px solid transparent;
   cursor: pointer;
   display: inline-flex;
@@ -382,13 +381,13 @@ export default {
 }
 
 .btn-primary {
-  background-color: #3b1565;
+  background-color: #9927D0;
   color: #ffffff;
   box-shadow: 0 4px 14px rgba(59, 21, 101, 0.2);
 }
 
 .btn-primary:hover {
-  background-color: #2a0e4a;
+  background-color: #9927D0;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(59, 21, 101, 0.3);
 }
@@ -398,18 +397,18 @@ export default {
 }
 
 .btn-primary:hover .arrow-icon {
-  transform: translateX(4px); /* Engaging interactive micro-animation loop */
+  transform: translateX(4px); 
 }
 
 .btn-secondary {
   background-color: transparent;
   border-color: #e2d9f3;
-  color: #3b1565;
+  color: #9927D0;
 }
 
 .btn-secondary:hover {
   background-color: #f7f4fc;
-  border-color: #3b1565;
+  border-color: #9927D0;
   transform: translateY(-2px);
 }
 
@@ -417,9 +416,6 @@ export default {
   display: inline;
 }
 
-/* ==========================================================================
-   📱 MOBILE & TABLET RESPONSIVE DEVIATION CHASSIS
-   ========================================================================== */
 @media (max-width: 768px) {
   .hero-section {
     padding: 4rem 1.5rem;
@@ -427,12 +423,12 @@ export default {
   }
 
   .hero-content {
-    text-align: center; /* Centers layout weighting alignment perfectly for phone frames */
+    text-align: center; 
     max-width: 100%;
   }
 
   .hero-headline {
-    font-size: 2.2rem; /* Proportionately scales down text density frames */
+    font-size: 2.2rem; 
     line-height: 1.25;
   }
 
@@ -441,7 +437,7 @@ export default {
   }
 
   .desktop-only {
-    display: none; /* Collapses breaks to allow text to fill container screens gracefully */
+    display: none; 
   }
 
   .hero-subheadline {
@@ -458,20 +454,17 @@ export default {
   }
 
   .btn {
-    width: 100%; /* Spreads button click paths to match thumb margins on screen profiles */
+    width: 100%; 
     font-size: 1.05rem;
   }
 }
 
 
-/* ==========================================================================
-   🖥️ GLOBAL VALUES & DESKTOP FEATURE ROWS
-   ========================================================================== */
 .features-section {
   width: 100%;
-  background-color: #fcfbfe; /* Light background contrast color */
+  background-color: #fcfbfe;
   padding: 6rem 2rem;
-  font-family: 'Montserrat', sans-serif; /* Explicit Montserrat Requirement */
+  font-family: 'Montserrat', sans-serif; 
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -492,7 +485,7 @@ export default {
 .features-main-title {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #1a0830;
+  color: #9927D0;
   margin: 0 0 0.75rem 0;
   letter-spacing: -0.02em;
 }
@@ -503,15 +496,15 @@ export default {
   margin: 0;
 }
 
-/* Feature Row Grid Matrix Settings */
+
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Clean desktop horizontal presentation */
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   align-items: stretch;
 }
 
-/* Feature Box Layout Cards */
+
 .feature-card {
   background-color: #ffffff;
   border: 1px solid #efeaf6;
@@ -530,12 +523,12 @@ export default {
   box-shadow: 0 12px 30px rgba(59, 21, 101, 0.06);
 }
 
-/* Icon Enclosure Circles */
+
 .feature-icon-frame {
   width: 48px;
   height: 48px;
   background-color: #f4effc;
-  color: #3b1565; /* Swychr brand purple */
+  color: #9927D0;
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -546,7 +539,7 @@ export default {
 .feature-title {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #1a0830;
+  color: #9927D0;
   line-height: 1.4;
   margin: 0 0 1rem 0;
 }
@@ -558,7 +551,7 @@ export default {
   margin: 0;
 }
 
-/* Specialized Bulleted List for FX feature block */
+
 .feature-list-bullet {
   margin: 1rem 0 0 0;
   padding-left: 1.2rem;
@@ -576,14 +569,11 @@ export default {
   margin-bottom: 0;
 }
 
-/* ==========================================================================
-   📱 TABLET & MOBILE VIEW BREAKPOINTS
-   ========================================================================== */
 
-/* 1. Tablet Screens Optimization (Max Width: 1024px) */
+
 @media (max-width: 1024px) {
   .features-grid {
-    grid-template-columns: repeat(2, 1fr); /* Drops to a clean 2x2 grid setup */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 1.75rem;
   }
   
@@ -592,10 +582,10 @@ export default {
   }
 }
 
-/* 2. Mobile Phone Screens Optimization (Max Width: 640px) */
+
 @media (max-width: 640px) {
   .features-section {
-    padding: 4rem 1.25rem; /* Tightens side padding margins on touchscreens */
+    padding: 4rem 1.25rem; 
   }
 
   .features-section-header {
@@ -610,7 +600,7 @@ export default {
     font-size: 1rem;
   }
 
-  /* Force cards to stack completely vertical for easy scrolling */
+
   .features-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -624,14 +614,12 @@ export default {
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 
-/* ==========================================================================
-   🖥️ DESKTOP STRUCTURAL FRAMEWORK
-   ========================================================================== */
+
 .revenue-section {
   width: 100%;
   background-color: #ffffff;
   padding: 6rem 2rem;
-  font-family: 'Montserrat', sans-serif; /* Explicit Montserrat Setting */
+  font-family: 'Montserrat', sans-serif; 
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -652,7 +640,7 @@ export default {
 .revenue-main-title {
   font-size: 2.2rem;
   font-weight: 800;
-  color: #1a0830;
+  color: #9927D0;
   margin: 0 0 1rem 0;
   letter-spacing: -0.02em;
 }
@@ -664,7 +652,7 @@ export default {
   margin: 0;
 }
 
-/* 📊 Visual Diagram Flow Components */
+
 .revenue-flow-chassis {
   display: flex;
   align-items: center;
@@ -678,7 +666,7 @@ export default {
 
 .flow-step {
   flex: 1;
-  background: #3b1565;
+  background: #9927D0;
   color: #ffffff;
   padding: 2rem 1.5rem;
   border-radius: 14px;
@@ -690,7 +678,7 @@ export default {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 700;
-  color: #00d293; /* Accent green */
+  color: #9927D0;
   display: block;
   margin-bottom: 0.5rem;
 }
@@ -703,7 +691,7 @@ export default {
 }
 
 .flow-connector-arrow {
-  color: #3b1565;
+  color: #9927D0;
   display: flex;
   align-items: center;
 }
@@ -718,7 +706,7 @@ export default {
 .branch-card {
   background: #ffffff;
   border: 1px solid #e5dff2;
-  border-left: 5px solid #3b1565;
+  border-left: 5px solid #9927D0;
   padding: 1.25rem 1.5rem;
   border-radius: 4px 12px 12px 4px;
   text-align: left;
@@ -727,7 +715,7 @@ export default {
 .branch-card h4 {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #1a0830;
+  color: #9927D0;
   margin: 0 0 0.25rem 0;
 }
 
@@ -740,7 +728,7 @@ export default {
 .branch-tag {
   font-size: 0.75rem;
   font-weight: 700;
-  color: #3b1565;
+  color: #9927D0;
   background: #f4effc;
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
@@ -748,7 +736,7 @@ export default {
   margin-bottom: 0.4rem;
 }
 
-/* 💡 Text Channels Layout Elements */
+
 .channels-list {
   display: flex;
   flex-direction: column;
@@ -769,7 +757,7 @@ export default {
 .channel-num-badge {
   font-size: 1.25rem;
   font-weight: 800;
-  color: #3b1565;
+  color: #9927D0;
   background: #f4effc;
   width: 44px;
   height: 44px;
@@ -783,7 +771,7 @@ export default {
 .channel-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #1a0830;
+  color: #9927D0;
   margin: 0 0 0.75rem 0;
 }
 
@@ -794,11 +782,8 @@ export default {
   margin: 0;
 }
 
-/* ==========================================================================
-   📱 TABLET & MOBILE VIEW BREAKPOINTS
-   ========================================================================== */
+
 @media (max-width: 850px) {
-  /* Resizes the horizontal diagram into a clean downward vertical stack */
   .revenue-flow-chassis {
     flex-direction: column;
     padding: 1.5rem;
@@ -811,7 +796,7 @@ export default {
   }
 
   .flow-connector-arrow {
-    transform: rotate(90deg); /* Points the connector arrow downward on mobile screens */
+    transform: rotate(90deg); 
     margin: 0.5rem 0;
   }
 
@@ -847,14 +832,12 @@ export default {
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
 
-/* ==========================================================================
-   🖥️ DESKTOP SPLIT-SCREEN LAYOUT
-   ========================================================================== */
+
 .integration-section {
   width: 100%;
-  background-color: #fbf9fe; /* Alternating page break background */
+  background-color: #fbf9fe;
   padding: 6rem 2rem;
-  font-family: 'Montserrat', sans-serif; /* Explicit Montserrat Setting */
+  font-family: 'Montserrat', sans-serif; 
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -865,10 +848,10 @@ export default {
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 4rem; /* Generous breathing room between columns */
+  gap: 4rem; 
 }
 
-/* Text Information Column */
+
 .integration-info {
   flex: 1.2;
   text-align: left;
@@ -877,7 +860,7 @@ export default {
 .section-tagline {
   font-size: 0.85rem;
   font-weight: 700;
-  color: #00d293; /* Brand interactive green */
+  color:#9927D0;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   display: block;
@@ -887,7 +870,7 @@ export default {
 .integration-main-title {
   font-size: 2.2rem;
   font-weight: 800;
-  color: #1a0830;
+  color: #9927D0;
   margin: 0 0 1.25rem 0;
   line-height: 1.25;
   letter-spacing: -0.02em;
@@ -907,14 +890,14 @@ export default {
 }
 
 .tech-feature-node {
-  border-left: 3px solid #3b1565; /* Elegant trailing line highlight */
+  border-left: 3px solid #3b1565; 
   padding-left: 1.5rem;
 }
 
 .tech-node-title {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #1a0830;
+  color: #9927D0;
   margin: 0 0 0.5rem 0;
 }
 
@@ -925,7 +908,7 @@ export default {
   margin: 0;
 }
 
-/* Code Terminal Presentation Wrapper */
+
 .integration-visual-terminal {
   flex: 1.0;
   display: flex;
@@ -935,7 +918,7 @@ export default {
 .terminal-window {
   width: 100%;
   max-width: 500px;
-  background-color: #160a22; /* Dark terminal environment matching palette */
+  background-color: #9927D0;
   border-radius: 12px;
   box-shadow: 0 20px 40px rgba(26, 8, 48, 0.25);
   overflow: hidden;
@@ -943,7 +926,7 @@ export default {
 }
 
 .terminal-header {
-  background-color: #1d0f2c;
+  background-color: #9927D0;
   padding: 0.85rem 1.25rem;
   display: flex;
   align-items: center;
@@ -993,18 +976,16 @@ export default {
   line-height: 1.5;
 }
 
-/* JSON Code Syntax Highlighting Colors */
+
 .token-comment { color: #79668e; font-style: italic; }
 .token-key { color: #a27bf1; }
 .token-string { color: #00d293; }
 .token-number { color: #ffb86c; }
 .token-boolean { color: #ff79c6; }
 
-/* ==========================================================================
-   📱 TABLET & MOBILE VIEW BREAKPOINTS
-   ========================================================================== */
+
 @media (max-width: 968px) {
-  /* Collapses the split view layout columns safely down to a stacked single viewport orientation */
+
   .integration-container {
     flex-direction: column;
     gap: 3.5rem;
@@ -1016,7 +997,7 @@ export default {
   }
 
   .terminal-window {
-    max-width: 100%; /* Spreads the code box full screen on tablets */
+    max-width: 100%; 
   }
 }
 
@@ -1043,25 +1024,21 @@ export default {
   }
 
   .terminal-body {
-    padding: 1rem; /* Compacts padding to save mobile screenspace dimensions */
+    padding: 1rem;
   }
 
   .terminal-body code {
-    font-size: 0.8rem; /* Drops code down slightly to avoid awkward line-wrapping breaks */
+    font-size: 0.8rem; 
   }
 }
 
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
-
-/* ==========================================================================
-   🖥️ DESKTOP TRIPLE-COLUMN MATRIX
-   ========================================================================== */
 .use-cases-section {
   width: 100%;
-  background-color: #ffffff; /* Fresh crisp alternative contrast frame color */
+  background-color: #ffffff; 
   padding: 6rem 2rem;
-  font-family: 'Montserrat', sans-serif; /* Strict Montserrat Parameter */
+  font-family: 'Montserrat', sans-serif; 
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -1082,7 +1059,7 @@ export default {
 .use-cases-main-title {
   font-size: 2.2rem;
   font-weight: 800;
-  color: #1a0830;
+  color: #9927D0;
   margin: 0 0 1rem 0;
   letter-spacing: -0.02em;
   line-height: 1.25;
@@ -1096,15 +1073,15 @@ export default {
   margin: 0;
 }
 
-/* Three Column Grid Array Wrapper */
+
 .use-cases-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem; /* Generous element gutter frames */
+  gap: 2.5rem;
   align-items: stretch;
 }
 
-/* Individual Profile Value Enclosure Box */
+
 .use-case-card {
   background: #fbf9fe;
   border: 1px solid #efeaf6;
@@ -1126,11 +1103,11 @@ export default {
   box-shadow: 0 16px 36px rgba(59, 21, 101, 0.06);
 }
 
-/* Custom Mini Icon Badge Holder */
+
 .card-icon-enclosure {
   width: 52px;
   height: 52px;
-  background-color: #3b1565; /* Swychr Core Royal Purple */
+  background-color: #9927D0;
   color: #ffffff;
   border-radius: 14px;
   display: flex;
@@ -1143,7 +1120,7 @@ export default {
 .card-profile-title {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #1a0830;
+  color: #9927D0;
   line-height: 1.4;
   margin: 0 0 1rem 0;
 }
@@ -1155,14 +1132,10 @@ export default {
   margin: 0;
 }
 
-/* ==========================================================================
-   📱 TABLET & MOBILE VIEW RESIZING LAYOUT
-   ========================================================================== */
 
-/* Tablet View Optimization Breakpoint (Max Width: 992px) */
 @media (max-width: 992px) {
   .use-cases-grid {
-    grid-template-columns: 1fr; /* Collapses safely down into a stacked architecture track */
+    grid-template-columns: 1fr;
     gap: 2rem;
   }
 
@@ -1175,15 +1148,15 @@ export default {
   }
 }
 
-/* Phone View Optimization Breakpoint (Max Width: 640px) */
+
 @media (max-width: 640px) {
   .use-cases-section {
-    padding: 4rem 1.25rem; /* Narrower touch margins to preserve screen area */
+    padding: 4rem 1.25rem;
   }
 
   .use-cases-header {
     margin-bottom: 2.5rem;
-    text-align: center; /* Balanced focus structure on tiny monitors */
+    text-align: center; 
   }
 
   .use-cases-main-title {
@@ -1195,7 +1168,7 @@ export default {
   }
 
   .use-case-card {
-    align-items: center; /* Centers the icon + titles for unified flow readability */
+    align-items: center;
     text-align: center;
     padding: 2.25rem 1.5rem;
   }
