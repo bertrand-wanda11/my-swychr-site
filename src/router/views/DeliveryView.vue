@@ -222,6 +222,53 @@
     </div>
   </section>
 
+  <section class="use-cases-section">
+    <div class="use-cases-container">
+      
+      <div class="use-cases-header">
+        <h2 class="use-cases-main-title">5. Ideal Use Cases (Who is this for?)</h2>
+        <p class="use-cases-subtitle">
+          Discover how diverse industry platforms utilize Swychr Connect to offer cross-border value-added services.
+        </p>
+      </div>
+
+      <div class="use-cases-grid">
+        
+        <div class="use-case-card">
+          <div class="card-icon-enclosure">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect><line x1="12" y1="4" x2="12" y2="20"></line></svg>
+          </div>
+          <h3 class="card-profile-title">Fintech Startups &amp; Digital Wallets</h3>
+          <p class="card-profile-desc">
+            Enhance your customer retention metrics by turning your app into a "super-app" where immigrants can manage remittances, utility payments, and family mobile refills in one place.
+          </p>
+        </div>
+
+        <div class="use-case-card">
+          <div class="card-icon-enclosure">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 10h18M5 21V10M19 21V10M9 21V10M15 21V10M12 3l7 7H5l7-7z"></path></svg>
+          </div>
+          <h3 class="card-profile-title">Neobanks &amp; Digital Banking Platforms</h3>
+          <p class="card-profile-desc">
+            Provide corporate or retail users with global cross-border value-added services without licensing complexities.
+          </p>
+        </div>
+
+        <div class="use-case-card">
+          <div class="card-icon-enclosure">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          </div>
+          <h3 class="card-profile-title">E-Commerce &amp; Crypto Marketplaces</h3>
+          <p class="card-profile-desc">
+            Allow your users to instantly cash out or convert digital rewards, balances, or loyalty points directly into real-world utility assets like mobile high-speed data.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
 <FooterView />
  
  </div> 
@@ -1001,6 +1048,164 @@ export default {
 
   .terminal-body code {
     font-size: 0.8rem; /* Drops code down slightly to avoid awkward line-wrapping breaks */
+  }
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+/* ==========================================================================
+   🖥️ DESKTOP TRIPLE-COLUMN MATRIX
+   ========================================================================== */
+.use-cases-section {
+  width: 100%;
+  background-color: #ffffff; /* Fresh crisp alternative contrast frame color */
+  padding: 6rem 2rem;
+  font-family: 'Montserrat', sans-serif; /* Strict Montserrat Parameter */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.use-cases-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.use-cases-header {
+  text-align: left;
+  margin-bottom: 4rem;
+}
+
+.use-cases-main-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1a0830;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.use-cases-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #5c4e6e;
+  max-width: 800px;
+  margin: 0;
+}
+
+/* Three Column Grid Array Wrapper */
+.use-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem; /* Generous element gutter frames */
+  align-items: stretch;
+}
+
+/* Individual Profile Value Enclosure Box */
+.use-case-card {
+  background: #fbf9fe;
+  border: 1px solid #efeaf6;
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.use-case-card:hover {
+  transform: translateY(-5px);
+  border-color: #dcd1ed;
+  box-shadow: 0 16px 36px rgba(59, 21, 101, 0.06);
+}
+
+/* Custom Mini Icon Badge Holder */
+.card-icon-enclosure {
+  width: 52px;
+  height: 52px;
+  background-color: #3b1565; /* Swychr Core Royal Purple */
+  color: #ffffff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 16px rgba(59, 21, 101, 0.15);
+}
+
+.card-profile-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a0830;
+  line-height: 1.4;
+  margin: 0 0 1rem 0;
+}
+
+.card-profile-desc {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #5c4e6e;
+  margin: 0;
+}
+
+/* ==========================================================================
+   📱 TABLET & MOBILE VIEW RESIZING LAYOUT
+   ========================================================================== */
+
+/* Tablet View Optimization Breakpoint (Max Width: 992px) */
+@media (max-width: 992px) {
+  .use-cases-grid {
+    grid-template-columns: 1fr; /* Collapses safely down into a stacked architecture track */
+    gap: 2rem;
+  }
+
+  .use-case-card {
+    padding: 2.5rem 2rem;
+  }
+
+  .use-cases-main-title {
+    font-size: 2rem;
+  }
+}
+
+/* Phone View Optimization Breakpoint (Max Width: 640px) */
+@media (max-width: 640px) {
+  .use-cases-section {
+    padding: 4rem 1.25rem; /* Narrower touch margins to preserve screen area */
+  }
+
+  .use-cases-header {
+    margin-bottom: 2.5rem;
+    text-align: center; /* Balanced focus structure on tiny monitors */
+  }
+
+  .use-cases-main-title {
+    font-size: 1.75rem;
+  }
+
+  .use-cases-subtitle {
+    font-size: 1rem;
+  }
+
+  .use-case-card {
+    align-items: center; /* Centers the icon + titles for unified flow readability */
+    text-align: center;
+    padding: 2.25rem 1.5rem;
+  }
+
+  .card-icon-enclosure {
+    margin-bottom: 1.5rem;
+  }
+
+  .card-profile-title {
+    font-size: 1.2rem;
   }
 }
 </style>
