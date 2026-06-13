@@ -199,7 +199,7 @@
             <span class="terminal-tab-title">POST /v1/airtime/lookup</span>
           </div>
           <div class="terminal-body">
-            <pre><code><span class="token-comment">// Telco Lookup &amp; Rate Preview Response</span>
+            <pre><code><span class="token-comment"> Telco Lookup &amp; Rate Preview Response</span>
 {
   <span class="token-key">"status"</span>: <span class="token-string">"success"</span>,
   <span class="token-key">"lookup"</span>: {
@@ -343,7 +343,7 @@ export default {
 .hero-subheadline {
   font-size: 1.25rem;
   line-height: 1.65;
-  color: #9927D0;
+  color: #000020;
   margin: 0 0 3rem 0;
 }
 
@@ -918,7 +918,7 @@ export default {
 .terminal-window {
   width: 100%;
   max-width: 500px;
-  background-color: #9927D0;
+  background-color: #000020;
   border-radius: 12px;
   box-shadow: 0 20px 40px rgba(26, 8, 48, 0.25);
   overflow: hidden;
