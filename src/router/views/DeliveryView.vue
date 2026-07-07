@@ -1183,7 +1183,7 @@ export default {
   }
 
   .card-profile-title {
-    font-size: 1.2rem;
+    font-size: 1.2rem
   }
 }
 </style>
