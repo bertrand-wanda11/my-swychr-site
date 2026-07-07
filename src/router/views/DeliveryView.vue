@@ -6,7 +6,7 @@
       
       <div class="hero-content">
         <h1 class="hero-headline">
-          Launch a Global Airtime &amp; Data Service. <br class="desktop-only" />
+          Launch a Global Airtime &amp; Data Service. 
           <span class="accent-text">Zero Hassle. Infinite Scale.</span>
         </h1>
         
@@ -21,7 +21,7 @@
           </button>
           
           <button class="btn btn-secondary" @click="handleTalkToExpert">
-            Talk to an FX Expert
+            Talk to Sales Expert
           </button>
         </div>
       </div>
@@ -465,7 +465,7 @@ export default {
 
 .features-section {
   width: 100%;
-  background-color: #fcfbfe;
+  background-color: #000000;
   padding: 6rem 2rem;
   font-family: 'Montserrat', sans-serif; 
   box-sizing: border-box;
@@ -488,7 +488,7 @@ export default {
 .features-main-title {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #9927D0;
+  color: #ffffff;
   margin: 0 0 0.75rem 0;
   letter-spacing: -0.02em;
 }
@@ -542,7 +542,7 @@ export default {
 .feature-title {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #9927D0;
+  color: #ffffff;
   line-height: 1.4;
   margin: 0 0 1rem 0;
 }
@@ -620,7 +620,7 @@ export default {
 
 .revenue-section {
   width: 100%;
-  background-color: #ffffff;
+  background-color: #000000;
   padding: 6rem 2rem;
   font-family: 'Montserrat', sans-serif; 
   box-sizing: border-box;
@@ -643,7 +643,7 @@ export default {
 .revenue-main-title {
   font-size: 2.2rem;
   font-weight: 800;
-  color: #9927D0;
+  color: #ffffff;
   margin: 0 0 1rem 0;
   letter-spacing: -0.02em;
 }
@@ -718,7 +718,7 @@ export default {
 .branch-card h4 {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #9927D0;
+  color: #ffffff;
   margin: 0 0 0.25rem 0;
 }
 
@@ -731,7 +731,7 @@ export default {
 .branch-tag {
   font-size: 0.75rem;
   font-weight: 700;
-  color: #9927D0;
+  color: #ffffff;
   background: #f4effc;
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
@@ -774,7 +774,7 @@ export default {
 .channel-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #9927D0;
+  color: #ffffff;
   margin: 0 0 0.75rem 0;
 }
 
@@ -838,7 +838,7 @@ export default {
 
 .integration-section {
   width: 100%;
-  background-color: #fbf9fe;
+  background-color: #000000;
   padding: 6rem 2rem;
   font-family: 'Montserrat', sans-serif; 
   box-sizing: border-box;
@@ -863,7 +863,7 @@ export default {
 .section-tagline {
   font-size: 0.85rem;
   font-weight: 700;
-  color:#9927D0;
+  color:#ffffff;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   display: block;
@@ -873,7 +873,7 @@ export default {
 .integration-main-title {
   font-size: 2.2rem;
   font-weight: 800;
-  color: #9927D0;
+  color: #ffffff;
   margin: 0 0 1.25rem 0;
   line-height: 1.25;
   letter-spacing: -0.02em;
@@ -900,7 +900,7 @@ export default {
 .tech-node-title {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #9927D0;
+  color: #ffffff;
   margin: 0 0 0.5rem 0;
 }
 
@@ -1039,7 +1039,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 .use-cases-section {
   width: 100%;
-  background-color: #ffffff; 
+  background-color: #000000; 
   padding: 6rem 2rem;
   font-family: 'Montserrat', sans-serif; 
   box-sizing: border-box;
@@ -1062,7 +1062,7 @@ export default {
 .use-cases-main-title {
   font-size: 2.2rem;
   font-weight: 800;
-  color: #9927D0;
+  color: #ffffff;
   margin: 0 0 1rem 0;
   letter-spacing: -0.02em;
   line-height: 1.25;
@@ -1123,7 +1123,7 @@ export default {
 .card-profile-title {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #9927D0;
+  color: #ffffff;
   line-height: 1.4;
   margin: 0 0 1rem 0;
 }
