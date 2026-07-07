@@ -465,7 +465,6 @@ export default {
 
 .features-section {
   width: 100%;
-  background-color: #000000;
   padding: 6rem 2rem;
   font-family: 'Montserrat', sans-serif; 
   box-sizing: border-box;
@@ -474,6 +473,7 @@ export default {
 }
 
 .features-container {
+  background-color: #000000;
   max-width: 1240px;
   width: 100%;
   display: flex;
@@ -620,7 +620,7 @@ export default {
 
 .revenue-section {
   width: 100%;
-  background-color: #000000;
+
   padding: 6rem 2rem;
   font-family: 'Montserrat', sans-serif; 
   box-sizing: border-box;
@@ -629,6 +629,7 @@ export default {
 }
 
 .revenue-container {
+  background-color: #000000;
   max-width: 1000px;
   width: 100%;
   display: flex;
@@ -838,7 +839,6 @@ export default {
 
 .integration-section {
   width: 100%;
-  background-color: #000000;
   padding: 6rem 2rem;
   font-family: 'Montserrat', sans-serif; 
   box-sizing: border-box;
@@ -847,6 +847,7 @@ export default {
 }
 
 .integration-container {
+  background-color: #000000;
   max-width: 1200px;
   width: 100%;
   display: flex;
@@ -1039,7 +1040,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 .use-cases-section {
   width: 100%;
-  background-color: #000000; 
+ 
   padding: 6rem 2rem;
   font-family: 'Montserrat', sans-serif; 
   box-sizing: border-box;
@@ -1048,6 +1049,7 @@ export default {
 }
 
 .use-cases-container {
+    background-color: #000000;
   max-width: 1200px;
   width: 100%;
   display: flex;
