@@ -326,12 +326,15 @@ export default {
 }
 
 .hero-headline {
-  font-size: 3.2rem;
-  font-weight: 800;
-  line-height: 1.2;
+  margin-bottom: 0;
   color: #9927D0;
-  letter-spacing: -0.03em;
-  margin: 0 0 1.5rem 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5625rem; 
+  font-style: normal;
+  font-weight: 600;
+  line-height: 95%;
+  padding-top: 0;
+  margin-right: 3.125vw;
 }
 
 .hero-headline .accent-text {
