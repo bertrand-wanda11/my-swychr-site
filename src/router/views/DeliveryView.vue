@@ -333,8 +333,8 @@ export default {
   font-family: 'Montserrat', sans-serif;
   font-size: 2.5625rem; 
   font-style: normal;
-  font-weight: 400;
-  line-height: 55%;
+  font-weight: 500;
+  line-height: 100%;
   padding-top: 0;
   margin-right: 3.125vw;
 }
