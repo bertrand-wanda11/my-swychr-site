@@ -18,7 +18,7 @@
 
   <RouterLink to="/api-keys" class="btn btn-primary">
     Get API Keys
-    <svg xmlns="https://app.swychrconnect.com/auth/login4 24" fill="none" stroke="currentColor">...</svg>
+    <svg xmlns="https://app.swychrconnect.com/auth/login4 24" fill="none" stroke="currentColor"></svg>
   </RouterLink>
 
 
