@@ -300,11 +300,10 @@ export default {
 </script>
 
 <style scoped>
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 .hero-section {
   width: 100%;
-  min-height: 75vh;
+  min-height: 60vh;
   background-color: #ffffff; 
   display: flex;
   align-items: center;
@@ -338,7 +337,6 @@ export default {
   padding-top: 0;
   margin-right: 3.125vw;
 }
-
 
 .hero-subheadline {
   font-size: 1.25rem;
@@ -495,7 +493,6 @@ export default {
   color: #6c5e7e;
   margin: 0;
 }
-
 
 .features-grid {
   display: grid;
@@ -1178,7 +1175,7 @@ export default {
   }
 
   .card-profile-title {
-    font-size: 1.2rem
+    font-size: 1.2rem;
   }
 }
 </style>
