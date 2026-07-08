@@ -16,11 +16,10 @@
         
     <div class="hero-cta-group">
 
-  <RouterLink to="/api-keys" class="btn btn-primary">
-    Get API Keys
-   <svg xmlns="https://app.swychrconnect.com/" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"></svg>
-  </RouterLink>
-
+ <RouterLink to="/api-keys" class="btn btn-primary">
+  Get API Keys
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"></svg>
+</RouterLink>
 
   <RouterLink to="/sales"  class="btn btn-secondary">
     Talk to Sales Expert
