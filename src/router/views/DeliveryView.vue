@@ -1117,7 +1117,7 @@ export default {
 .card-profile-title {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #000000;
   line-height: 1.4;
   margin: 0 0 1rem 0;
 }
