@@ -7,7 +7,7 @@
       <div class="hero-content">
         <h1 class="hero-headline">
           Launch a Global Airtime &amp; Data Service. 
-          <span class="accent-text">Zero Hassle. Infinite Scale.</span>
+        Zero Hassle. Infinite Scale.
         </h1>
         
         <p class="hero-subheadline">
@@ -1181,7 +1181,7 @@ export default {
   }
 
   .card-profile-title {
-    font-size: 1.2rem;
+    font-size: 1.2rem
   }
 }
 </style>
