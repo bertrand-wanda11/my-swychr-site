@@ -327,7 +327,7 @@ export default {
 
 .hero-headline {
   margin-bottom: 0;
-  color: #9927D0;
+  color: #000001;
   font-family: 'Montserrat', sans-serif;
   font-size: 2.5625rem; 
   font-style: normal;
