@@ -11,7 +11,7 @@
         </h1>
         
         <p class="hero-subheadline">
-          Integrate <strong class="brand-highlight">Swychr Connect’s</strong> developer-first API to empower your users to send instant mobile top-ups and data bundles to loved ones across <strong>125+ countries</strong> and <strong>500+ global telecom networks</strong>. Completely white-labeled. Fully denominated in USD.
+          Integrate <strong class="brand-highlight">Swychr Connect</strong> developer-first API to empower your users to send instant mobile top-ups and data bundles to loved ones across <strong>125+ countries</strong> and <strong>500+ global telecom networks</strong>. Completely white-labeled. Fully denominated in USD.
         </p>
         
     <div class="hero-cta-group">
