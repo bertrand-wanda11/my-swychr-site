@@ -303,7 +303,7 @@ export default {
 .hero-section {
   width: 100%;
   min-height: 75vh;
-  background-color: #000000; 
+  background-color: #ffffff; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -329,7 +329,7 @@ export default {
   margin-bottom: 0;
   color: #9927D0;
   font-family: 'Montserrat', sans-serif;
-  font-size: 3.5625rem; 
+  font-size: 2.5625rem; 
   font-style: normal;
   font-weight: 600;
   line-height: 95%;
