@@ -740,7 +740,7 @@ export default {
 .channels-list {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2rem
 }
 
 .channel-card {
