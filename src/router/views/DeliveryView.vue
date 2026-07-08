@@ -14,16 +14,18 @@
           Integrate <strong class="brand-highlight">Swychr Connect’s</strong> developer-first API to empower your users to send instant mobile top-ups and data bundles to loved ones across <strong>125+ countries</strong> and <strong>500+ global telecom networks</strong>. Completely white-labeled. Fully denominated in USD.
         </p>
         
-        <div class="hero-cta-group">
-          <button class="btn btn-primary" @click="handleGetApiKeys">
-            Get API Keys
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow-icon"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </button>
-          
-          <button class="btn btn-secondary" @click="handleTalkToExpert">
-            Talk to Sales Expert
-          </button>
-        </div>
+    <div class="hero-cta-group">
+
+  <RouterLink to="/api-keys" class="btn btn-primary">
+    Get API Keys
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor">...</svg>
+  </RouterLink>
+
+
+  <RouterLink to="/contact" class="btn btn-secondary">
+    Talk to Sales Expert
+  </RouterLink>
+</div>
       </div>
 
     </div>
@@ -326,22 +328,17 @@ export default {
 }
 
 .hero-headline {
-  margin-bottom: 0;
-  color: #000001;
+  margin-bottom: 1rem;
+  color: #000000;
   font-family: 'Montserrat', sans-serif;
   font-size: 2.5625rem; 
   font-style: normal;
-  font-weight: 600;
-  line-height: 95%;
+  font-weight: 400;
+  line-height: 55%;
   padding-top: 0;
   margin-right: 3.125vw;
 }
 
-.hero-headline .accent-text {
-  color: #9927D0;
-  display: block;
-  margin-top: 0.25rem;
-}
 
 .hero-subheadline {
   font-size: 1.25rem;
