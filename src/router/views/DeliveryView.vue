@@ -539,7 +539,7 @@ export default {
 .feature-title {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #000000;
   line-height: 1.4;
   margin: 0 0 1rem 0;
 }
@@ -728,7 +728,7 @@ export default {
 .branch-tag {
   font-size: 0.75rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #000000;
   background: #f4effc;
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
