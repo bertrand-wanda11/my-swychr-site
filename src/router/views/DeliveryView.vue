@@ -15,8 +15,6 @@
         </p>
         
  <div class="hero-cta-group">
-  
-
   <RouterLink to="https://app.swychrconnect.com/" class="btn btn-primary">
     Get API Keys
     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"></svg>
@@ -376,6 +374,7 @@ export default {
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   height: 54px;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 .btn-primary {
