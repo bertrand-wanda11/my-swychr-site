@@ -307,7 +307,8 @@ export default {
   background-color: #ffffff; 
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
+  padding: 3rem 2rem;
   box-sizing: border-box;
 }
 
