@@ -15,6 +15,15 @@ rel="noopener noreferrer" class="link-image-wrapper">
   <img src="@/assets/images/SwyChr30.jpg" alt="Clickable Advertisement" class="clickable-img" />
 </a>
 </section>
+
+<section class= "Gallery3">
+  <h3> Swychr Team at the Tech-Fusion event in  Buea Cameroon</h3>
+<a href="https://drive.google.com/drive/folders/1vcgQKDfs4h8mkTHzmkhFvl6XezdWxmZX?usp=sharing" 
+target="_blank"
+rel="noopener noreferrer" class="link-image-wrapper">
+  <img src="@/assets/images/romo1.jpeg" alt="Clickable Advertisement" class="clickable-img" />
+</a>
+</section>
     <FooterView />
   </div>
   </template>

@@ -124,7 +124,6 @@
 </template>
 
 <script setup>
-/* eslint-disable no-undef */
 import { ref, watch, onMounted, onBeforeUnmount, nextTick } from 'vue';
 import { useRoute } from 'vue-router';
 
