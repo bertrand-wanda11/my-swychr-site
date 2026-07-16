@@ -546,10 +546,6 @@ margin-left: 67px;
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.footer-download-highlight::before {
-  content: "📥";
-  font-size: 0.40rem;
-}
 
 .footer-download-highlight:hover {
   color: #ffffff !important;

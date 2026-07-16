@@ -43,7 +43,7 @@
         </a>
 
         <a 
-          href="https://play.google.com/store/apps/details?id=com.swychr" 
+          href="https://play.google.com/store/apps/details?id=com.innobins.jtqwallet" 
           target="_blank" 
           rel="noopener"
           class="store-btn google-play"

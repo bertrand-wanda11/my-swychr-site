@@ -18,10 +18,10 @@ rel="noopener noreferrer" class="link-image-wrapper">
 
 <section class= "Gallery3">
   <h3> Swychr Team at the Tech-Fusion event in  Buea Cameroon</h3>
-<a href="https://drive.google.com/drive/folders/1vcgQKDfs4h8mkTHzmkhFvl6XezdWxmZX?usp=sharing" 
+<a href="https://betterfoto64.pixieset.com/swychr/" 
 target="_blank"
 rel="noopener noreferrer" class="link-image-wrapper">
-  <img src="@/assets/images/romo1.jpeg" alt="Clickable Advertisement" class="clickable-img" />
+  <img src="@/assets/images/ellem.jpg" alt="Clickable Advertisement" class="clickable-img" />
 </a>
 </section>
     <FooterView />
