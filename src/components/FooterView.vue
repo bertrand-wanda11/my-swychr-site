@@ -20,22 +20,20 @@
     </div>
 
 
-    <div class="mother11lay">
-      <div class="mother-number11lay"><b><span class="span1lay">Quick Links</span></b></div>
-      <div class="mother-pip11lay">
-          <a href=" " target="_blank">Personal</a><br><br>
-          <a href=" " target="_blank">Business</a><br><br>
-          <a href="" target="_blank">Company</a><br><br>
-          <a href="About" target="_blank">About Us</a><br><br>
-          <a href="Sales" target="_blank">Contact Us</a><br>
-          <li>
-      <router-link to="/download" class="footer-download-highlight">
-        Download
-      </router-link>
-    </li>
-          
+ <div class="mother11lay">
+  <div class="mother-number11lay"><b><span class="span1lay">Quick Links</span></b></div>
+  <div class="mother-pip11lay">
+    <a href="#" target="_blank">Personal</a><br><br>
+    <a href="#" target="_blank">Business</a><br><br>
+    <a href="#" target="_blank">Company</a><br><br>
+    <a href="About" target="_blank">About Us</a><br><br>
+    <a href="Sales" target="_blank">Contact Us</a><br><br>
+    
+    <router-link to="/download" class="footer-download-highlight">
+      Download
+    </router-link>
+  </div>
 </div>
-    </div>
 
     <div class="mother11lay">
       <div class="mother-number11lay"><b><span class="span1lay">Product</span></b></div>
@@ -69,7 +67,7 @@
         <a href="" target="_blank">Press & Media</a><br><br>
         <a href="Sales" target="_blank">Contact</a><br><br>
         <a href="Blog" target="_blank">Blog</a><br>
-         <a href="Download" target="_blank">Download App</a><br><br>
+
 </div>
     </div>
 
@@ -540,7 +538,7 @@ margin-left: 67px;
 
 
 .footer-download-highlight {
-  color: #00d293 !important; /* Swychr Brand Green */
+  color: green !important; 
   font-weight: 700;
   display: inline-flex;
   align-items: center;

@@ -1,10 +1,11 @@
 <template>
+     <NavBar /> 
   <div class="download-page">
     <div class="download-card-container">
       
       <div class="download-header">
         <span class="download-badge">Official App</span>
-        <h1 class="download-title">Get SwyChr Remit</h1>
+        <h1 class="download-title">Get SwyChr App.</h1>
         <p class="download-subtitle">
           Send money globally, hold multi-currency balances, and manage your transfers with zero hassle.
         </p>
@@ -18,7 +19,7 @@
       <div class="download-buttons-cluster">
         
         <a 
-          href="https://apps.apple.com/us/app/swychr/id1234567890" 
+          href="https://apps.apple.com/ae/app/swychr/id1586029318" 
           target="_blank" 
           rel="noopener"
           class="store-btn apple-store"
@@ -37,7 +38,7 @@
         </a>
 
         <a 
-          href="https://play.google.com/store/apps/details?id=com.swychr" 
+          href="https://play.google.com/store/apps/details?id=com.innobins.jtqwallet" 
           target="_blank" 
           rel="noopener"
           class="store-btn google-play"
@@ -63,11 +64,21 @@
 
     </div>
   </div>
+    <FooterView />
 </template>
 
 <script>
+// 🌟 Manually import your global components
+import NavBar from '@/components/NavBar.vue';
+import FooterView from '@/components/FooterView.vue';
+
 export default {
   name: "DownloadView",
+  components: {
+    // 🌟 Register them so they are usable in your template
+    NavBar,
+    FooterView
+  },
   data() {
     return {
       detectedOS: "",
@@ -184,7 +195,7 @@ export default {
 .store-btn {
   display: flex;
   align-items: center;
-  background-color: #1a0830;
+  background-color: #761D9F;
   color: #ffffff;
   text-decoration: none;
   padding: 1rem 1.75rem;
@@ -232,7 +243,7 @@ export default {
   line-height: 1.2;
 }
 
-/* Recommended OS Smart Pulse */
+
 .recommended-pulse {
   background-color: #3b1565;
   border-color: #00d293;
