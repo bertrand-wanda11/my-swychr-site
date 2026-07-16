@@ -124,7 +124,7 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted, onBeforeUnmount, nextTick } from 'vue';
+import { ref, watch, onMounted, onBeforeUnmount, nextTick, defineProps } from 'vue';
 import { useRoute } from 'vue-router';
 
 import p2p             from '@/assets/images/P2P.png';
