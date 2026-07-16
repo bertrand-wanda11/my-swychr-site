@@ -28,6 +28,11 @@
           <a href="" target="_blank">Company</a><br><br>
           <a href="About" target="_blank">About Us</a><br><br>
           <a href="Sales" target="_blank">Contact Us</a><br>
+          <li>
+      <router-link to="/download" class="footer-download-highlight">
+        Download
+      </router-link>
+    </li>
           
 </div>
     </div>
@@ -64,6 +69,7 @@
         <a href="" target="_blank">Press & Media</a><br><br>
         <a href="Sales" target="_blank">Contact</a><br><br>
         <a href="Blog" target="_blank">Blog</a><br>
+         <a href="Download" target="_blank">Download App</a><br><br>
 </div>
     </div>
 
@@ -528,5 +534,27 @@ margin-left: 67px;
   .mother-pip11lay br {
     display: none !important;
   }
+}
+
+
+
+
+.footer-download-highlight {
+  color: #00d293 !important; /* Swychr Brand Green */
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.footer-download-highlight::before {
+  content: "📥";
+  font-size: 0.95rem;
+}
+
+.footer-download-highlight:hover {
+  color: #ffffff !important;
+  transform: translateX(4px);
 }
 </style>
