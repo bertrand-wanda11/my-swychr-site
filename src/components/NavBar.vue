@@ -193,6 +193,7 @@ const navItems = [
     ],
   },
   { name: 'Support', path: '/support' },
+  { name: 'Download', path: '/Download'},
 ];
 
 /* ── Indicator ──────────────────────────────────────────────────────── */
