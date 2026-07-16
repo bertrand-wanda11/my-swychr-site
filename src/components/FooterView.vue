@@ -538,7 +538,7 @@ margin-left: 67px;
 
 
 .footer-download-highlight {
-  color: green !important; 
+  color: #FFFFFF !important; 
   font-weight: 700;
   display: inline-flex;
   align-items: center;
@@ -548,7 +548,7 @@ margin-left: 67px;
 
 .footer-download-highlight::before {
   content: "📥";
-  font-size: 0.95rem;
+  font-size: 0.40rem;
 }
 
 .footer-download-highlight:hover {

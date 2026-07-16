@@ -1,5 +1,10 @@
 <template>
-     <NavBar /> 
+   <section class="Gallery1">
+ <NavBar /> 
+
+
+</section >
+
   <div class="download-page">
     <div class="download-card-container">
       
@@ -38,7 +43,7 @@
         </a>
 
         <a 
-          href="https://play.google.com/store/apps/details?id=com.innobins.jtqwallet" 
+          href="https://play.google.com/store/apps/details?id=com.swychr" 
           target="_blank" 
           rel="noopener"
           class="store-btn google-play"
@@ -110,6 +115,23 @@ export default {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+.Gallery1{
+  text-align: center;
+  margin: 0 auto;
+  padding: 0.625rem 0;
+  height: auto;
+  position: relative; 
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  background-image: url('@/assets/images/divi.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 .download-page {
   display: flex;
