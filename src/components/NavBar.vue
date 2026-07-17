@@ -27,14 +27,13 @@
           {{ item.name }}
           <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }"></span>
         </a>
-
-        <!-- 🏠 2. CASE B: Internal links use <router-link> -->
-        <router-link
+        
+<router-link
           v-else
           :to="item.path || '#'"
           class="nav-link"
           :class="{ active: activeIndex === index }"
-          @click.native="(e) => {
+          @click="(e) => {
             if (item.children) {
               e.preventDefault();
               toggleDropdown(index);

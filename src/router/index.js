@@ -34,7 +34,6 @@ import Airtime1View from './views/Airtime1View.vue'
 import FooterView from '../components/FooterView.vue'
 import Country from '../components/CountryView.vue'
 import Board from '../components/BoardView.vue'
-import BlogDetailView from './views/BlogDetailView.vue'
 import GalleryView from './views/GalleryView.vue'
 import DeliveryView from './views/DeliveryView.vue'
 import DownloadView from './views/DownloadView.vue'
@@ -82,18 +81,17 @@ const routes = [
       window.location.href = 'https://blog.swychr.com/';
     }
   },
-  // 🌟 2. Catch-all for capitalized variants (like /Blog)
+
   {
     path: '/Blog',
     beforeEnter() {
       window.location.href = 'https://blog.swychr.com/';
     }
   },
-  // 🌟 3. Optional: Intercept deep links to old internal posts (e.g., /blog/some-slug)
+
   {
     path: '/blog/:slug',
-    beforeEnter(to) {
-      // Gracefully send them to the main new external landing page
+    beforeEnter() {
       window.location.href = 'https://blog.swychr.com/';
     }
   },
