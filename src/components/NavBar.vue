@@ -27,7 +27,7 @@
           {{ item.name }}
           <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }"></span>
         </a>
-        
+
 <router-link
           v-else
           :to="item.path || '#'"
@@ -114,7 +114,7 @@
             </div>
           </template>
 
-          <!-- Simple link -->
+          
           <router-link
             v-else
             :to="item.path"
