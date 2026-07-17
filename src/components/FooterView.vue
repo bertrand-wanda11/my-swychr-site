@@ -66,7 +66,7 @@
         <a href="" target="_blank">Our Mission</a><br><br>
         <a href="" target="_blank">Press & Media</a><br><br>
         <a href="Sales" target="_blank">Contact</a><br><br>
-        <a href="Blog" target="_blank">Blog</a><br>
+        <a href="https://blog.swychr.com/" target="_blank" rel="noopener">Blog</a><br><br>
 
 </div>
     </div>

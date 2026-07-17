@@ -15,22 +15,37 @@
           :key="item.name"
           class="nav-item-wrapper"
         >
-          <router-link
-            :to="item.path"
-            class="nav-link"
-            :class="{ active: activeIndex === index }"
-            @click="(e) => {
-              if (item.children) {
-                e.preventDefault();
-                toggleDropdown(index);
-              } else {
-                setActive(index);
-              }
-            }"
-          >
-            {{ item.name }}
-            <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }">▾</span>
-          </router-link>
+     <a
+          v-if="item.path && item.path.startsWith('http')"
+          :href="item.path"
+          target="_blank"
+          rel="noopener"
+          class="nav-link"
+          :class="{ active: activeIndex === index }"
+          @click="setActive(index)"
+        >
+          {{ item.name }}
+          <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }"></span>
+        </a>
+
+        <!-- 🏠 2. CASE B: Internal links use <router-link> -->
+        <router-link
+          v-else
+          :to="item.path || '#'"
+          class="nav-link"
+          :class="{ active: activeIndex === index }"
+          @click.native="(e) => {
+            if (item.children) {
+              e.preventDefault();
+              toggleDropdown(index);
+            } else {
+              setActive(index);
+            }
+          }"
+        >
+          {{ item.name }}
+          <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }"></span>
+        </router-link>
 
           <div v-if="item.children && openDropdownIndex === index" class="mega-dropdown">
             <p class="dropdown-label">{{ item.dropdownTitle }}</p>
@@ -188,7 +203,7 @@ const navItems = [
     children: [
       { name: 'About Us', icon: About,   path: '/About'   },
       { name: 'Careers',  icon: Careers, path: '/Career'  },
-      { name: 'Blogs',    icon: Blogs,   path: '/Blog'    },
+      { name: 'Blogs',  icon: Blogs,  path: 'https://blog.swychr.com/' },
       { name: 'Culture',  icon: Culture, path: '/Culture' },
     ],
   },

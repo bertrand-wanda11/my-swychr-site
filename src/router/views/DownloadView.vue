@@ -73,14 +73,12 @@
 </template>
 
 <script>
-// 🌟 Manually import your global components
 import NavBar from '@/components/NavBar.vue';
 import FooterView from '@/components/FooterView.vue';
 
 export default {
   name: "DownloadView",
   components: {
-    // 🌟 Register them so they are usable in your template
     NavBar,
     FooterView
   },
@@ -98,12 +96,12 @@ export default {
     detectDeviceOS() {
       const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-      // Check iOS
+   
       if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
         this.detectedOS = "iOS";
         this.isIOS = true;
       } 
-      // Check Android
+    
       else if (/android/i.test(userAgent)) {
         this.detectedOS = "Android";
         this.isAndroid = true;
