@@ -93,7 +93,13 @@ const routes = [
     path: '/blog/:slug',
     beforeEnter() {
       window.location.href = 'https://blog.swychr.com/';
-    }
+    },
+  },
+  {
+    path: '/https://blog.swychr.com/',
+    beforeEnter() {
+      window.location.href = 'https://blog.swychr.com/';
+    },
   },
   { path: '/Gallery', name: 'Gallery', component: GalleryView },
   { path: '/Delivery', name: 'Delivery', component: DeliveryView },

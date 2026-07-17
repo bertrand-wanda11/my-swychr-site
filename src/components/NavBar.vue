@@ -15,52 +15,74 @@
           :key="item.name"
           class="nav-item-wrapper"
         >
-     <a
-          v-if="item.path && item.path.startsWith('http')"
-          :href="item.path"
-          target="_blank"
-          rel="noopener"
-          class="nav-link"
-          :class="{ active: activeIndex === index }"
-          @click="setActive(index)"
-        >
-          {{ item.name }}
-          <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }"></span>
-        </a>
+          <!-- Parent Element: External Link Case -->
+          <a
+            v-if="item.path && item.path.startsWith('http')"
+            :href="item.path"
+            target="_blank"
+            rel="noopener"
+            class="nav-link"
+            :class="{ active: activeIndex === index }"
+            @click="setActive(index)"
+          >
+            {{ item.name }}
+            <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }"></span>
+          </a>
 
-<router-link
-          v-else
-          :to="item.path || '#'"
-          class="nav-link"
-          :class="{ active: activeIndex === index }"
-          @click="(e) => {
-            if (item.children) {
-              e.preventDefault();
-              toggleDropdown(index);
-            } else {
-              setActive(index);
-            }
-          }"
-        >
-          {{ item.name }}
-          <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }"></span>
-        </router-link>
+          <!-- Parent Element: Internal Router Link Case -->
+          <router-link
+            v-else
+            :to="item.path || '#'"
+            class="nav-link"
+            :class="{ active: activeIndex === index }"
+            @click="(e) => {
+              if (item.children) {
+                e.preventDefault();
+                toggleDropdown(index);
+              } else {
+                setActive(index);
+              }
+            }"
+          >
+            {{ item.name }}
+            <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }"></span>
+          </router-link>
 
+          <!-- 💻 DESKTOP DROPDOWN (FIXED) -->
           <div v-if="item.children && openDropdownIndex === index" class="mega-dropdown">
             <p class="dropdown-label">{{ item.dropdownTitle }}</p>
             <div class="dropdown-grid" :class="{ 'company-grid': item.name === 'Company' }">
-              <router-link
-                v-for="child in item.children"
-                :key="child.name"
-                :to="child.path"
-                class="dropdown-item"
-                @click="openDropdownIndex = null"
-              >
-                <span class="item-icon">
-                  <img :src="child.icon" :alt="child.name" class="nav-icon-img">
-                </span>
-                <span class="item-text">{{ child.name }}</span>
-              </router-link>
+              <template v-for="child in item.children" :key="child.name">
+                
+                <!-- External Dropdown Child (e.g., Blog) -->
+                <a
+                  v-if="child.path && child.path.startsWith('http')"
+                  :href="child.path"
+                  target="_blank"
+                  rel="noopener"
+                  class="dropdown-item"
+                  @click="openDropdownIndex = null"
+                >
+                  <span class="item-icon">
+                    <img :src="child.icon" :alt="child.name" class="nav-icon-img">
+                  </span>
+                  <span class="item-text">{{ child.name }}</span>
+                </a>
+
+                <!-- Internal Dropdown Child -->
+                <router-link
+                  v-else
+                  :to="child.path"
+                  class="dropdown-item"
+                  @click="openDropdownIndex = null"
+                >
+                  <span class="item-icon">
+                    <img :src="child.icon" :alt="child.name" class="nav-icon-img">
+                  </span>
+                  <span class="item-text">{{ child.name }}</span>
+                </router-link>
+
+              </template>
             </div>
           </div>
         </li>
@@ -98,23 +120,43 @@
               {{ item.name }}
               <span class="dropdown-arrow" :class="{ rotated: mobileOpenIndex === index }">▾</span>
             </button>
+            
+            <!-- 📱 MOBILE SUBMENU (FIXED) -->
             <div v-if="mobileOpenIndex === index" class="mobile-submenu">
-              <router-link
-                v-for="child in item.children"
-                :key="child.name"
-                :to="child.path"
-                class="mobile-submenu-item"
-                @click="closeMenu"
-              >
-                <span class="mobile-item-icon">
-                  <img :src="child.icon" :alt="child.name" class="nav-icon-img">
-                </span>
-                {{ child.name }}
-              </router-link>
+              <template v-for="child in item.children" :key="child.name">
+
+                <!-- External Mobile Child -->
+                <a
+                  v-if="child.path && child.path.startsWith('http')"
+                  :href="child.path"
+                  target="_blank"
+                  rel="noopener"
+                  class="mobile-submenu-item"
+                  @click="closeMenu"
+                >
+                  <span class="mobile-item-icon">
+                    <img :src="child.icon" :alt="child.name" class="nav-icon-img">
+                  </span>
+                  {{ child.name }}
+                </a>
+
+                <!-- Internal Mobile Child -->
+                <router-link
+                  v-else
+                  :to="child.path"
+                  class="mobile-submenu-item"
+                  @click="closeMenu"
+                >
+                  <span class="mobile-item-icon">
+                    <img :src="child.icon" :alt="child.name" class="nav-icon-img">
+                  </span>
+                  {{ child.name }}
+                </router-link>
+
+              </template>
             </div>
           </template>
 
-          
           <router-link
             v-else
             :to="item.path"
@@ -136,6 +178,7 @@
     </div>
   </div>
 </template>
+
 
 <script setup>
 import { ref, watch, onMounted, onBeforeUnmount, nextTick, defineProps } from 'vue';
