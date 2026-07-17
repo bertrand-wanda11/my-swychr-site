@@ -75,7 +75,28 @@ const routes = [
   { path: '/Footer', name: 'Footer', component: FooterView },
   { path: '/Country', name: 'Country', component: Country },
   { path: '/Board', name: 'Board', component: Board },
-  { path: '/blog/:slug', name: 'BlogDetail', component: BlogDetailView },
+  {
+    path: '/blog',
+    name: 'BlogRedirect',
+    beforeEnter() {
+      window.location.href = 'https://blog.swychr.com/';
+    }
+  },
+  // 🌟 2. Catch-all for capitalized variants (like /Blog)
+  {
+    path: '/Blog',
+    beforeEnter() {
+      window.location.href = 'https://blog.swychr.com/';
+    }
+  },
+  // 🌟 3. Optional: Intercept deep links to old internal posts (e.g., /blog/some-slug)
+  {
+    path: '/blog/:slug',
+    beforeEnter(to) {
+      // Gracefully send them to the main new external landing page
+      window.location.href = 'https://blog.swychr.com/';
+    }
+  },
   { path: '/Gallery', name: 'Gallery', component: GalleryView },
   { path: '/Delivery', name: 'Delivery', component: DeliveryView },
   { path: '/Download', name: 'Download', component: DownloadView }

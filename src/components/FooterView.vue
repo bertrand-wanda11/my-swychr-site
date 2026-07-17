@@ -135,7 +135,6 @@ the Swychr mobile application, Swychr Connect web platform, and API suites are f
     </template>
 
 <style scoped>
-
 .footerlay {
            font-family: 'Montserrat', sans-serif;
             margin: 0;
@@ -535,8 +534,6 @@ margin-left: 67px;
 }
 
 
-
-
 .footer-download-highlight {
   color: #FFFFFF !important; 
   font-weight: 700;
@@ -545,7 +542,6 @@ margin-left: 67px;
   gap: 0.3rem;
   transition: transform 0.2s ease, color 0.2s ease;
 }
-
 
 .footer-download-highlight:hover {
   color: #ffffff !important;
