@@ -245,10 +245,10 @@ const navItems = [
     children: [
       { name: 'About Us', icon: About,   path: '/About'   },
       { name: 'Careers',  icon: Careers, path: '/Career'  },
-      { name: 'Blogs',  icon: Blogs,  path: 'https://blog.swychr.com/' },
       { name: 'Culture',  icon: Culture, path: '/Culture' },
     ],
   },
+    { name: 'Blogs',  icon: Blogs,  path: 'https://blog.swychr.com/' },
   { name: 'Support', path: '/support' },
 ];
 
@@ -497,7 +497,9 @@ onBeforeUnmount(() => {
   grid-template-columns: 1fr;
   gap: 2px;
 }
-.company-grid { grid-template-columns: 1fr 1fr; }
+.company-grid { 
+  grid-template-columns: 1fr; 
+}
 
 .dropdown-item {
   display: flex;
