@@ -425,10 +425,10 @@ function toggleFAQ(index) {
 }
 
 .sv-form-section__image {
- width: 100%;
+ width: 60%;
   height: 100%;
-  min-height: 480px;  
-  object-fit: cover;  
+  min-height: 480px; 
+  object-fit: cover; 
   border-radius: 20px;
   display: block;
 }
