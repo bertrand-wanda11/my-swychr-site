@@ -210,7 +210,7 @@ async function handleSubmit() {
     if (res.ok) {
       successMsg.value = json.message || "Thank you! We'll be in touch shortly.";
       submitted.value  = true;
-      formData.value   = { name: '', email: '', website: '', subject: '', message: '' };
+      formData.value   = { name: '', email: '', phonenumber:'', website: '', subject: '', message: '' };
     } else {
       errorMsg.value = json.message || 'Something went wrong. Please try again.';
     }
