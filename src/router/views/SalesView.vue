@@ -20,7 +20,7 @@
 
         <!-- Left panel -->
         <aside class="sl-left">
-          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" class="sl-contact-img" alt="SwyChr Sales Team" />
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" class="sl-contact-img" alt="SwyChr Sales Team" />
 
           <div class="sl-info-block">
             <div class="sl-info-row">
