@@ -103,16 +103,16 @@
                 />
               </div>
 
-                 <div class="sl-field">
-                <label class="sl-label">Phone Number <span class="sl-req">*</span></label>
-                <input
-                  class="sl-input"
-                  type="number"
-                  v-model="formData.number"
-                  placeholder="+2507839939303"
-                  required
-                />
-              </div>
+             <div class="sl-field">
+      <label class="sl-label">Phone Number <span class="sl-req">*</span></label>
+         <input
+           class="sl-input"
+            type="tel"
+           v-model="formData.phonenumber"
+            placeholder="+2507839939303"
+         required
+            />
+         </div>
 
             </div>
 
@@ -179,7 +179,7 @@ import { ref } from 'vue';
 
 const API_BASE = process.env.VUE_APP_API_BASE || 'https://api.accountpe.com';
 
-const formData = ref({ name: '', email: '', phonenumber: '', website: '', subject: '', message: '' });
+const formData = ref({ name: '', email: '', number: '', website: '', subject: '', message: '' });
 const loading    = ref(false);
 const submitted  = ref(false);
 const successMsg = ref('');
@@ -195,9 +195,8 @@ const options = [
 ];
 
 async function handleSubmit() {
-  loading.value  = false;
-  errorMsg.value = '';
   loading.value  = true;
+  errorMsg.value = '';
 
   try {
     const res  = await fetch(`${API_BASE}/api/web/leads`, {
@@ -210,7 +209,8 @@ async function handleSubmit() {
     if (res.ok) {
       successMsg.value = json.message || "Thank you! We'll be in touch shortly.";
       submitted.value  = true;
-      formData.value   = { name: '', email: '', phonenumber:'', website: '', subject: '', message: '' };
+    
+      formData.value   = { name: '', email: '', phonenumber: '', website: '', subject: '', message: '' };
     } else {
       errorMsg.value = json.message || 'Something went wrong. Please try again.';
     }
