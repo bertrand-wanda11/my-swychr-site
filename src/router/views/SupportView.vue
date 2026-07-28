@@ -38,7 +38,7 @@
         <!-- Left image -->
         <div class="sv-form-section__image-col">
           <img
-            src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&w=800&q=80"
+            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80"
             alt="Contact"
             class="sv-form-section__image"
           />
