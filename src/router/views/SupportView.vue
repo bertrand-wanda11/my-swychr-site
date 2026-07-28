@@ -38,7 +38,7 @@
         <!-- Left image -->
         <div class="sv-form-section__image-col">
           <img
-            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80"
+            src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&w=800&q=80"
             alt="Contact"
             class="sv-form-section__image"
           />
@@ -425,11 +425,11 @@ function toggleFAQ(index) {
 }
 
 .sv-form-section__image {
- width: 60%;
-  height: 100%;
-  min-height: 480px; 
-  object-fit: cover; 
+  width: 237px;
+  height: 842px;
+  object-fit: cover;
   border-radius: 20px;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.14);
   display: block;
 }
 
