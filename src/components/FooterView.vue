@@ -1,138 +1,130 @@
 <template>
-    <div>
- <section  class="footerlay">
-  <div class="footer-content">
-      <div class="mothers11lay">
+  <div>
+    <section class="footerlay">
+      <div class="footer-content">
+        <div class="mothers11lay">
 
-        <div class="mother11lay">
-       <div class="mother-number11lay"><b><span class="span2lay">SwyChr</span></b></div>
-         
-        <div class="mother-pip115lay">
-          <p class="showlay">Your all-in one digital finance Companion.<br> 
-            Fast, Secure, Borderless Finance.</p>
-            <div class="sgrouplay">
-            <a href=" https://web.facebook.com/swychrglobal" target="_blank"><i class="fab fa-facebook icon-fblay"></i> </a>
-             <a href="https://www.linkedin.com/company/swychrglobal/?viewAsMember=true" target="_blank"> <i class="fab fa-linkedin icon-fblay"></i></a>  
-            <a href=" https://x.com/swychrglobal?mx=2" target="_blank"><i class="fas fa-times icon-fblay"></i></a> 
-             <a href="https://www.instagram.com/swychrglobal" target="_blank"> <i class="fab fa-instagram icon-fblay"></i></a> 
-        </div> 
+          <!-- Column 1: Brand, Socials & CFIA Badge -->
+          <div class="mother11lay">
+            <div class="mother-number11lay"><b><span class="span2lay">SwyChr</span></b></div>
+            
+            <div class="mother-pip115lay">
+              <p class="showlay">Your all-in one digital finance Companion.<br> 
+              Fast, Secure, Borderless Finance.</p>
+              
+              <!-- Social Icons -->
+              <div class="sgrouplay">
+                <a href="https://web.facebook.com/swychrglobal" target="_blank" rel="noopener"><i class="fab fa-facebook icon-fblay"></i></a>
+                <a href="https://www.linkedin.com/company/swychrglobal/?viewAsMember=true" target="_blank" rel="noopener"><i class="fab fa-linkedin icon-fblay"></i></a>  
+                <a href="https://x.com/swychrglobal?mx=2" target="_blank" rel="noopener"><i class="fas fa-times icon-fblay"></i></a> 
+                <a href="https://www.instagram.com/swychrglobal" target="_blank" rel="noopener"><i class="fab fa-instagram icon-fblay"></i></a> 
+              </div>
+
+              <!-- CFIA Membership Badge Section -->
+              <div class="cfia-badge-container">
+                <a href="https://cmrfintech.com" target="_blank" rel="noopener" title="Cameroon Fintech Association">
+                  <img src="@/assets/images/cfia-corporate-badge-white.png" 
+                       alt="Cameroon Fintech Association Corporate Member" 
+                       class="cfia-badge-img">
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Links -->
+          <div class="mother11lay">
+            <div class="mother-number11lay"><b><span class="span1lay">Quick Links</span></b></div>
+            <div class="mother-pip11lay">
+              <a href="#" target="_blank">Personal</a><br><br>
+              <a href="#" target="_blank">Business</a><br><br>
+              <a href="#" target="_blank">Company</a><br><br>
+              <a href="About" target="_blank">About Us</a><br><br>
+              <a href="Sales" target="_blank">Contact Us</a><br><br>
+              
+              <router-link to="/download" class="footer-download-highlight">
+                Download
+              </router-link>
+            </div>
+          </div>
+
+          <!-- Column 3: Product -->
+          <div class="mother11lay">
+            <div class="mother-number11lay"><b><span class="span1lay">Product</span></b></div>
+            <div class="mother-pip1lay">
+              <a href="" target="_blank">Payments</a><br><br>
+              <a href="" target="_blank">Accounts</a><br><br>
+              <a href="" target="_blank">Virtual & Physical Cards</a><br><br>
+              <a href="" target="_blank">Business</a><br><br>
+              <a href="" target="_blank">Currency Exchange</a><br><br>
+            </div>
+          </div>
+
+          <!-- Column 4: Business -->
+          <div class="mother11lay">
+            <div class="mother-number11lay"><span class="span1lay">Business</span></div>
+            <div class="mother-pip11lay">
+              <a href="" target="_blank">Invoicing</a><br><br>
+              <a href="" target="_blank">Payroll</a><br><br>
+              <a href="" target="_blank">Bulk Transfers</a><br><br>
+              <a href="" target="_blank">Merchant Tools</a><br><br>
+              <a href="" target="_blank">Savings & Wallets</a><br>
+            </div>
+          </div>
+
+          <!-- Column 5: Company -->
+          <div class="mother11lay">
+            <div class="mother-number11lay"><b><span class="span1lay">Company</span></b></div>
+            <div class="mother-pip11lay">
+              <a href="Gallery" target="_blank">Gallery</a><br><br>
+              <a href="" target="_blank">Our Mission</a><br><br>
+              <a href="" target="_blank">Press & Media</a><br><br>
+              <a href="Sales" target="_blank">Contact</a><br><br>
+              <a href="https://blog.swychr.com/" target="_blank" rel="noopener">Blog</a><br><br>
+            </div>
+          </div>
+
         </div>
-    </div>
 
+        <div class="schoollay"></div>
 
- <div class="mother11lay">
-  <div class="mother-number11lay"><b><span class="span1lay">Quick Links</span></b></div>
-  <div class="mother-pip11lay">
-    <a href="#" target="_blank">Personal</a><br><br>
-    <a href="#" target="_blank">Business</a><br><br>
-    <a href="#" target="_blank">Company</a><br><br>
-    <a href="About" target="_blank">About Us</a><br><br>
-    <a href="Sales" target="_blank">Contact Us</a><br><br>
-    
-    <router-link to="/download" class="footer-download-highlight">
-      Download
-    </router-link>
+        <!-- Copyright & Terms -->
+        <div class="sergiolay">
+          <div class="zoukielay">
+            <h3 class="sergiopikanlay"> © 2026 The Swych Group Inc.(TSG)</h3>
+            <p class="sergiosonlay">Borderless finance for a digital world.</p>
+          </div>
+
+          <div class="chanalay">
+            <li class="chana1lay"><a href="Term">| Terms & Conditions</a></li>
+            <li class="chana1lay"><a href="Privacy">| Privacy Policy</a></li>
+          </div>
+        </div>
+
+        <!-- Legal Statement -->
+        <p class="rufuslay">
+          <b>Legal Disclosure & Regulatory Statement</b> <br>
+          <b>Corporate Information</b> “Swychr” is the registered trading name of <b>Swychr Technology Africa Limited</b>, its parent company, subsidiaries, and affiliates (collectively, “the Group”).<br> 
+          Swychr Technology Africa Limited is a corporation duly registered in the Republic of Cameroon under Registration Number <b>TPPRR/RC/BUA/2022/B/099.</b><br><br>
+          
+          <b>Nature of Services</b> Swychr Technology Africa Limited operates as a Financial Technology (Fintech) company and is authorized to provide technological infrastructure and decentralized ledger (Blockchain) related services. <b>Swychr is not a bank, a deposit-taking institution, or a licensed financial institution.</b> <br><br>
+          
+          All financial services, payment processing, and money transmission services offered via the Swychr mobile application, Swychr Connect web platform, and API suites are facilitated through strategic partnerships with licensed financial institutions, regulated payment processors, and compliance partners within their respective jurisdictions. Swychr provides the technological interface and software; the underlying regulated financial services and fund management are executed by our third-party licensed partners.<br><br>
+          
+          <b>User Acknowledgment</b> By accessing or utilizing Swychr’s applications and API suites, the user acknowledges and agrees that Swychr acts solely as a technology service provider. All transactional services are rendered by third-party licensed entities in accordance with the local regulations governing their specific domains and territories.<br><br>
+          
+          <b>Intellectual Property</b> The "Swychr" wordmark and logo are protected under trademark registration number <b>134330</b>, granted under the seal of the African Intellectual Property Organization <b>(OAPI)</b>. Swychr Technology Africa Limited reserves all rights regarding its proprietary technology, branding, and intellectual assets. <br><br>
+          
+          <b>Jurisdiction-Specific Disclosures (Cameroon)</b> Local microfinance and banking services offered within the Republic of Cameroon through the Swychr Pay mobile and web app are provided under a Category 1 Microfinance Institution (Swychr Cooperative Society with Board of Directors – SWYCO-COOP-BOD), operating Financial Cooperative Number <b>26/022/CMR/SW/53/282/CCA/036004/036004000</b><br><br>
+          
+          <b>Swychr Technology Africa Limited is a member of Cameroon Fintech Association (CFIA)</b><br><br>
+          
+          © 2026 The Swych Group Inc.(TSG). All rights reserved.
+        </p>
+      </div>
+    </section>
   </div>
-</div>
+</template>
 
-    <div class="mother11lay">
-      <div class="mother-number11lay"><b><span class="span1lay">Product</span></b></div>
-      <div class="mother-pip1lay">
-        <a href="" target="_blank">Payments</a><br><br>
-        <a href=" " target="_blank">Accounts </a><br><br>
-        <a href=" " target="_blank">Virtual & Physical Cards</a><br><br>
-        <a href="" target="_blank">Business</a><br><br>
-        <a href="" target="_blank">Currency Exchange</a><br><br>
-  
-</div>
-    </div>
-
-    <div class="mother11lay">
-      <div class="mother-number11lay"><span class="span1lay">Business</span></div>
-       <div class="mother-pip11lay">
-        <a href="" target="_blank">Invoicing</a><br><br>
-        <a href="" target="_blank">Payroll</a><br><br>
-        <a href="" target="_blank">Bulk Transfers</a><br><br>
-        <a href="" target="_blank">Merchant Tools</a><br><br>
-        <a href="" target="_blank">Savings & Wallets</a><br>
-</div>
-    </div>
-
-    
-    <div class="mother11lay">
-      <div class="mother-number11lay"><b><span class="span1lay">Company</span></b></div>
-      <div class="mother-pip11lay">
-        <a href="Gallery" target="_blank">Gallery</a><br><br>
-        <a href="" target="_blank">Our Mission</a><br><br>
-        <a href="" target="_blank">Press & Media</a><br><br>
-        <a href="Sales" target="_blank">Contact</a><br><br>
-        <a href="https://blog.swychr.com/" target="_blank" rel="noopener">Blog</a><br><br>
-
-</div>
-    </div>
-
-  </div>
-
-<div class="schoollay">
-
-</div>
-
-    <div class="sergiolay">
-      <div class="zoukielay">
- <h3 class="sergiopikanlay"> © 2026 The Swych Group Inc.(TSG)</h3>
-<p class="sergiosonlay">Borderless finance for a digital world.</p>
-</div>
-
-<div class="chanalay">
-   <li class="chana1lay"><a href="Term" >| Terms & Conditions</a></li>
-    <li class="chana1lay"><a href="Privacy" >| Privacy Policy</a></li>
-</div>
-    </div>
-
-
-     <p class="rufuslay">
- <b>Legal Disclosure & Regulatory Statement</b> <br>
- <b>Corporate Information</b> “Swychr” is the registered trading name of <b>Swychr Technology Africa
- Limited</b>, its parent company, subsidiaries, and affiliates (collectively, “the Group”).<br> Swychr
-Technology Africa Limited is a corporation duly registered in the Republic of Cameroon under 
-Registration Number <b>TPPRR/RC/BUA/2022/B/099.</b><br>
-<br>
-<b>Nature of Services</b> Swychr Technology Africa Limited operates as a Financial Technology
-(Fintech) company and is authorized to provide technological infrastructure and  <br> decentralized
- ledger (Blockchain) related services. <b>Swychr is not a bank, a deposit-taking institution, or a
- licensed financial institution.</b> <br>
-<br>
- All financial services, payment processing, and money transmission services offered via
-the Swychr mobile application, Swychr Connect web platform, and API suites are facilitated <br>through
- strategic partnerships with licensed financial institutions, regulated payment processors, and
- compliance partners within their respective jurisdictions. Swychr<br> provides the technological
- interface and software; the underlying regulated financial services and fund management are 
- executed by our third-party licensed partners.<br>
-<br>
-<b>User Acknowledgment</b>  By accessing or utilizing Swychr’s applications and API suites, the user 
- acknowledges and agrees that Swychr acts solely as a technology service provider. <br>All
-  transactional services are rendered by third-party licensed entities in accordance with the local 
-   regulations governing their specific domains and territories.<br>
-<br>
-  <b>Intellectual Property</b> The "Swychr" wordmark and logo are protected under trademark
-   registration number <b>134330</b>, granted under the seal of the African Intellectual Property <br>
-    Organization <b>(OAPI)</b>. Swychr Technology Africa Limited reserves all rights regarding its 
-     proprietary technology, branding, and intellectual assets. <br>
-<br>
-   <b>Jurisdiction-Specific Disclosures (Cameroon)</b> Local microfinance and banking services 
-   offered within the Republic of Cameroon through the Swychr Pay mobile and web<br>  app are 
-    provided under a Category 1 Microfinance Institution (Swychr Cooperative Society with Board
-     of Directors – SWYCO-COOP-BOD), operating  Financial Cooperative <br> Number
-     <b>26/022/CMR/SW/53/282/CCA/036004/036004000</b><br><br>
-      <b>Swychr Technology Africa Limited is a member of Cameroon Fintech Association (CFIA)</b><br>
-<br>
-     © 2026 The Swych Group Inc.(TSG). All rights reserved.
-     
-    </p>
-    </div>
- </section>
-    </div>
-    </template>
 
 <style scoped>
 .footerlay {
@@ -546,5 +538,33 @@ margin-left: 67px;
 .footer-download-highlight:hover {
   color: #ffffff !important;
   transform: translateX(4px);
+}
+
+
+/* CFIA Badge Specific Styles */
+.cfia-badge-container {
+  margin-top: 25px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.cfia-badge-img {
+  width: 210px; 
+  height: auto;
+  display: block;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.cfia-badge-img:hover {
+  opacity: 0.85;
+}
+
+
+@media only screen and (max-width: 430px) {
+  .cfia-badge-container {
+    justify-content: center !important;
+    margin-top: 20px;
+  }
 }
 </style>
