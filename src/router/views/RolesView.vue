@@ -1,6 +1,6 @@
 <template>
+   <CountryView />
   <div>
-    <CountryView />
     <NavBar />
 
     <section class="career5">
