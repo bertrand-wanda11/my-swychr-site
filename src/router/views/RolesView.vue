@@ -1,8 +1,6 @@
 <template>
    <CountryView />
   <div>
-    <NavBar />
-
     <section class="career5">
       <div class="insidecareer5">
         <h2 class="careers-main-title">Roles</h2>
@@ -78,7 +76,6 @@
 <script setup>
 import { ref } from 'vue';
 import CountryView from '@/components/CountryView.vue';
-import NavBar from '@/components/NavBar.vue';
 import FooterView from '@/components/FooterView.vue';
 import codeIcon from '@/assets/images/niron1.png';
 import salesIcon from '@/assets/images/niron2.png';
