@@ -72,7 +72,6 @@
     <FooterView />
   </div>
 </template>
-
 <script setup>
 import { ref } from 'vue';
 import CountryView from '@/components/CountryView.vue';
@@ -122,6 +121,35 @@ const roleGroups = ref([
     category: 'Future Talent',
     icon: talentIcon,
     roles: [
+      { 
+        title: 'Digital Marketing Intern (04 Roles)', 
+        location: 'Buea, SW Region, Cameroon (Hybrid)', 
+        tagline: 'Assist in planning, executing, and optimizing marketing campaigns across digital channels.', 
+        isOpen: true,
+        expanded: false,
+        applyEmail: 'hr@swychr.com',
+        subjectLine: 'Application for Digital Marketing Intern',
+        requirements: [
+          'Degree in Marketing, Communications, Business, Digital Media, or a related field.',
+          'Must be based in Buea, SW Region, Cameroon.',
+          'Familiarity with digital marketing concepts (SEO, SEM, PPC, social media, and email marketing).',
+          'Proficiency with social media platforms (Instagram, Facebook, Twitter, LinkedIn, TikTok).',
+          'Basic graphic design skills or familiarity with Canva / Adobe Creative Suite.',
+          'Strong written and verbal communication skills for copy, blogs, and captions.',
+          'Meticulous attention to detail, time management, and organizational skills.',
+          'Basic familiarity with tools like Google Analytics, Ads, Mailchimp, or WordPress is a plus.'
+        ],
+        whatYouWillLearn: [
+          'Content Creation (blog posts, social media content, graphics, and newsletters)',
+          'Social Media Management & Community Engagement',
+          'Email Marketing campaign design, distribution, and list segmentation',
+          'SEO & Keyword Research to optimize web content',
+          'Data Analysis & Performance Reporting across digital channels',
+          'Paid Advertising (PPC) monitoring (Google Ads, Meta Ads)',
+          'Competitor Analysis & Market Trend Research',
+          'Website Content Management (WordPress / CMS handling)'
+        ]
+      },
       { 
         title: 'B2B Sales Officer Intern', 
         location: 'Buea, Cameroon', 
