@@ -15,39 +15,42 @@
           :key="item.name"
           class="nav-item-wrapper"
         >
-          <!-- Parent Element: External Link Case -->
-          <a
-            v-if="item.path && item.path.startsWith('http')"
-            :href="item.path"
-            target="_blank"
-            rel="noopener"
-            class="nav-link"
-            :class="{ active: activeIndex === index }"
-            @click="setActive(index)"
-          >
-            {{ item.name }}
-            <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }"></span>
-          </a>
+          <!-- Main Parent Menu Loop -->
+<li 
+  v-for="(item, index) in navItems" 
+  :key="item.name"
+  :class="{ active: activeIndex === index }"
+>
+  <!-- Case 1: External Link (e.g. Blog -> https://blog.swychr.com) -->
+  <a
+    v-if="item.path && item.path.startsWith('http')"
+    :href="item.path"
+    class="nav-link"
+    :class="{ active: activeIndex === index }"
+  >
+    {{ item.name }}
+  </a>
 
-          <!-- Parent Element: Internal Router Link Case -->
-          <router-link
-            v-else
-            :to="item.path || '#'"
-            class="nav-link"
-            :class="{ active: activeIndex === index }"
-            @click="(e) => {
-              if (item.children) {
-                e.preventDefault();
-                toggleDropdown(index);
-              } else {
-                setActive(index);
-              }
-            }"
-          >
-            {{ item.name }}
-            <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }"></span>
-          </router-link>
-
+  <!-- Case 2: Internal Router Link -->
+  <router-link
+    v-else
+    :to="item.path || '#'"
+    class="nav-link"
+    :class="{ active: activeIndex === index }"
+    @click="(e) => {
+      if (item.children) {
+        e.preventDefault();
+        toggleDropdown(index);
+      } else {
+        setActive(index);
+      }
+    }"
+  >
+    {{ item.name }}
+    <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }"></span>
+  </router-link>
+</li>
+         
           <!-- 💻 DESKTOP DROPDOWN (FIXED) -->
           <div v-if="item.children && openDropdownIndex === index" class="mega-dropdown">
             <p class="dropdown-label">{{ item.dropdownTitle }}</p>
