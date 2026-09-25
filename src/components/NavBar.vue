@@ -248,7 +248,7 @@ const navItems = [
       { name: 'Culture',  icon: Culture, path: '/Culture' },
     ],
   },
-__________
+
     { name: 'Blog', icon: Blogs, path: 'https://blog.swychr.com' },
   { name: 'Support', path: '/support' },
 ];
@@ -360,6 +360,8 @@ onBeforeUnmount(() => {
   document.body.style.overflow = '';
 });
 </script>
+
+
 
 <style scoped>
 /* ── Navbar root ──────────────────────────────────────────────────── */
