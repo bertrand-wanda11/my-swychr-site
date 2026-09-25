@@ -10,42 +10,44 @@
     <!-- Desktop pill nav -->
     <div class="food-pill-container">
       <ul class="mannav" ref="navMenu">
-      
- <li 
-  v-for="(item, index) in navItems" 
-  :key="item.name"
-  :class="{ active: activeIndex === index }"
->
-  <template v-if="item.path && item.path.startsWith('http')">
-    <a
-      :href="item.path"
-      class="nav-link"
-      :class="{ active: activeIndex === index }"
-    >
-      {{ item.name }}
-    </a>
-  </template>
+        <li
+          v-for="(item, index) in navItems"
+          :key="item.name"
+          class="nav-item-wrapper"
+        >
+          <!-- Parent Element: External Link Case -->
+          <a
+            v-if="item.path && item.path.startsWith('http')"
+            :href="item.path"
+            target="_blank"
+            rel="noopener"
+            class="nav-link"
+            :class="{ active: activeIndex === index }"
+            @click="setActive(index)"
+          >
+            {{ item.name }}
+            <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }"></span>
+          </a>
 
-  <template v-else>
-    <router-link
-      :to="item.path || '#'"
-      class="nav-link"
-      :class="{ active: activeIndex === index }"
-      @click="(e) => {
-        if (item.children) {
-          e.preventDefault();
-          toggleDropdown(index);
-        } else {
-          setActive(index);
-        }
-      }"
-    >
-      {{ item.name }}
-      <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }"></span>
-    </router-link>
-  </template>
-</li>
-         
+          <!-- Parent Element: Internal Router Link Case -->
+          <router-link
+            v-else
+            :to="item.path || '#'"
+            class="nav-link"
+            :class="{ active: activeIndex === index }"
+            @click="(e) => {
+              if (item.children) {
+                e.preventDefault();
+                toggleDropdown(index);
+              } else {
+                setActive(index);
+              }
+            }"
+          >
+            {{ item.name }}
+            <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }"></span>
+          </router-link>
+
           <!-- 💻 DESKTOP DROPDOWN (FIXED) -->
           <div v-if="item.children && openDropdownIndex === index" class="mega-dropdown">
             <p class="dropdown-label">{{ item.dropdownTitle }}</p>
@@ -83,7 +85,7 @@
               </template>
             </div>
           </div>
-      
+        </li>
 
         <div class="nav-indicator" :style="indicatorStyle"></div>
       </ul>
@@ -358,8 +360,6 @@ onBeforeUnmount(() => {
   document.body.style.overflow = '';
 });
 </script>
-
-
 
 <style scoped>
 /* ── Navbar root ──────────────────────────────────────────────────── */
