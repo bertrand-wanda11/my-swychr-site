@@ -248,7 +248,8 @@ const navItems = [
       { name: 'Culture',  icon: Culture, path: '/Culture' },
     ],
   },
-    { name: 'Blog',  icon: Blogs,  path: 'https://blog.swychr.com/' },
+__________
+    { name: 'Blog', icon: Blogs, path: 'https://blog.swychr.com' },
   { name: 'Support', path: '/support' },
 ];
 
