@@ -15,13 +15,11 @@
           :key="item.name"
           class="nav-item-wrapper"
         >
-          <!-- Main Parent Menu Loop -->
-<li 
+  <li 
   v-for="(item, index) in navItems" 
   :key="item.name"
   :class="{ active: activeIndex === index }"
 >
-  <!-- Case 1: External Link (e.g. Blog -> https://blog.swychr.com) -->
   <a
     v-if="item.path && item.path.startsWith('http')"
     :href="item.path"
@@ -30,8 +28,6 @@
   >
     {{ item.name }}
   </a>
-
-  <!-- Case 2: Internal Router Link -->
   <router-link
     v-else
     :to="item.path || '#'"
