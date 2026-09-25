@@ -10,41 +10,40 @@
     <!-- Desktop pill nav -->
     <div class="food-pill-container">
       <ul class="mannav" ref="navMenu">
-        <li
-          v-for="(item, index) in navItems"
-          :key="item.name"
-          class="nav-item-wrapper"
-        >
-  <li 
+      
+ <li 
   v-for="(item, index) in navItems" 
   :key="item.name"
   :class="{ active: activeIndex === index }"
 >
-  <a
-    v-if="item.path && item.path.startsWith('http')"
-    :href="item.path"
-    class="nav-link"
-    :class="{ active: activeIndex === index }"
-  >
-    {{ item.name }}
-  </a>
-  <router-link
-    v-else
-    :to="item.path || '#'"
-    class="nav-link"
-    :class="{ active: activeIndex === index }"
-    @click="(e) => {
-      if (item.children) {
-        e.preventDefault();
-        toggleDropdown(index);
-      } else {
-        setActive(index);
-      }
-    }"
-  >
-    {{ item.name }}
-    <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }"></span>
-  </router-link>
+  <template v-if="item.path && item.path.startsWith('http')">
+    <a
+      :href="item.path"
+      class="nav-link"
+      :class="{ active: activeIndex === index }"
+    >
+      {{ item.name }}
+    </a>
+  </template>
+
+  <template v-else>
+    <router-link
+      :to="item.path || '#'"
+      class="nav-link"
+      :class="{ active: activeIndex === index }"
+      @click="(e) => {
+        if (item.children) {
+          e.preventDefault();
+          toggleDropdown(index);
+        } else {
+          setActive(index);
+        }
+      }"
+    >
+      {{ item.name }}
+      <span v-if="item.children" class="dropdown-arrow" :class="{ rotated: openDropdownIndex === index }"></span>
+    </router-link>
+  </template>
 </li>
          
           <!-- 💻 DESKTOP DROPDOWN (FIXED) -->
@@ -84,7 +83,7 @@
               </template>
             </div>
           </div>
-        </li>
+      
 
         <div class="nav-indicator" :style="indicatorStyle"></div>
       </ul>
