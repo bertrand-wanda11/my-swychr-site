@@ -24,6 +24,16 @@ rel="noopener noreferrer" class="link-image-wrapper">
   <img src="@/assets/images/ellem.jpg" alt="Clickable Advertisement" class="clickable-img" />
 </a>
 </section>
+
+<section class= "Gallery3">
+  <h3>35 under 35 award celebration at Swychr Cameroon office</h3>
+<a href="https://betterfoto64.pixieset.com/swychr/" 
+target="_blank"
+rel="noopener noreferrer" class="link-image-wrapper">
+  <img src="@/assets/images/SwyChr22.jpg" alt="Clickable Advertisement" class="clickable-img" />
+</a>
+</section>
+
     <FooterView />
   </div>
   </template>
