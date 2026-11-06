@@ -16,7 +16,8 @@ rel="noopener noreferrer" class="link-image-wrapper">
 </a>
 </section>
 
-<section class= "Gallery3">
+
+<section class= "Gallery2">
   <h3> Swychr Team at the Tech-Fusion event in  Buea Cameroon</h3>
 <a href="https://betterfoto64.pixieset.com/swychr/" 
 target="_blank"
@@ -25,7 +26,8 @@ rel="noopener noreferrer" class="link-image-wrapper">
 </a>
 </section>
 
-<section class= "Gallery3">
+
+<section class= "Gallery2">
   <h3>35 under 35 award celebration at Swychr Cameroon office</h3>
 <a href="https://betterfoto64.pixieset.com/swychr/" 
 target="_blank"
